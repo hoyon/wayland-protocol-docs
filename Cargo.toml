@@ -5,6 +5,7 @@ authors = ["Ho-Yon Mak <hoyon.mak@gmail.com>"]
 
 [dependencies]
 askama = "0.7"
+xmltree = "0.8"
 
 [build-dependencies]
 askama = "0.7"
