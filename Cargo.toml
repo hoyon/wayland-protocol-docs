@@ -1,0 +1,10 @@
+[package]
+name = "wayland-protocol-docs"
+version = "0.1.0"
+authors = ["Ho-Yon Mak <hoyon.mak@gmail.com>"]
+
+[dependencies]
+askama = "0.7"
+
+[build-dependencies]
+askama = "0.7"

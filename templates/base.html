@@ -1,0 +1,16 @@
+{# -*- engine:django -*- #}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>{% block title %}{{ title }} - Wayland protocol docs{% endblock %}</title>
+    {% block head %} {% endblock %}
+  </head>
+  <body>
+    <div id="content">
+    {% block content %}{% endblock %}
+    </div>
+
+    <script src="/bundle.js"></script>
+  </body>
+</html>
