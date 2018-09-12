@@ -1,18 +1,24 @@
 {# -*- engine:django -*- #}
 {% extends "base.html" %}
 
-{% block title %}Index{% endblock %}
-
-{% block head %}
-<style>
-</style>
-{% endblock %}
+{% block title %}{{ protocol.name }}{% endblock %}
 
 {% block content %}
-  <h1>Interfaces</h1>
+  <h1>{{ protocol.name }}</h1>
+  <div>{{ protocol.copyright|unwrap }}</div>
   <ul>
-    {% for interface in interfaces %}
-      <li>{{ interface.name }} -- {{ interface.description.summary }} -- {{ interface.description.full }}</li>
+    {% for interface in protocol.interfaces %}
+      <li>
+        {{ interface.name }} -
+        <strong>{{ interface.description|desc_summary }}</strong>
+        <ul>
+          {% for request in interface.requests %}
+            <li>
+              {{ request.name }} - {{ request.description|desc_summary }}
+            </li>
+          {% endfor %}
+        </ul>
+      </li>
     {% endfor %}
   </ul>
 {% endblock %}

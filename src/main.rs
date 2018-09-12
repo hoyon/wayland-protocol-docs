@@ -5,49 +5,21 @@ extern crate xmltree;
 use askama::Template;
 use std::fs::File;
 use std::io::prelude::*;
-use xmltree::Element;
 
-struct Description {
-    full: String,
-    summary: String,
-}
-
-impl Description {
-    fn from_parent(parent: &Element) -> Self {
-        let element = parent.get_child("description").unwrap();
-        Description {
-            full: element.text.as_ref().unwrap().to_string(),
-            summary: element.attributes["summary"].to_string(),
-        }
-    }
-}
-
-struct Interface {
-    name: String,
-    description: Description,
-}
+mod protocol;
+use protocol::Protocol;
+mod filters;
 
 #[derive(Template)]
 #[template(path = "protocol.html")]
 struct ProtocolTemplate<'a> {
-    interfaces: &'a Vec<Interface>,
+    protocol: &'a Protocol,
 }
 
 fn main() -> std::io::Result<()> {
-    let file = File::open("./data/xdg-shell.xml")?;
-    let protocol = Element::parse(file).unwrap();
-    let interfaces: Vec<Interface> = protocol
-        .children
-        .into_iter()
-        .filter(|x| x.name == "interface")
-        .map(|i| Interface {
-            name: i.attributes["name"].to_string(),
-            description: Description::from_parent(&i),
-        })
-        .collect();
-
+    let protocol = Protocol::from_file("./data/xdg-shell.xml");
     let template = ProtocolTemplate {
-        interfaces: &interfaces,
+        protocol: &protocol
     };
     render_to_file(&template, "site/index.html")?;
     Ok(())
