@@ -10,11 +10,11 @@
     {% for interface in protocol.interfaces %}
       <li>
         {{ interface.name }} -
-        <strong>{{ interface.description|desc_summary }}</strong>
+        <strong>{{ interface|desc_full }}</strong>
         <ul>
           {% for request in interface.requests %}
             <li>
-              {{ request.name }} - {{ request.description|desc_summary }}
+              {{ request.name }} - {{ request|desc_summary }}
             </li>
           {% endfor %}
         </ul>

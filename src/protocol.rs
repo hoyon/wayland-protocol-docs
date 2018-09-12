@@ -1,5 +1,5 @@
-use xmltree::Element;
 use std::fs::File;
+use xmltree::Element;
 
 pub struct Protocol {
     pub name: String,
@@ -13,15 +13,10 @@ impl Protocol {
         let protocol = Element::parse(file).unwrap();
 
         let name = protocol.attributes["name"].to_string();
-
-        let interfaces: Vec<Interface> = protocol
-            .children
-            .clone()
-            .into_iter()
-            .filter(|x| x.name == "interface")
-            .map(|i| Interface::from_element(&i))
-            .collect();
-        let copyright = protocol.get_child("copyright").map(|e| e.text.as_ref().unwrap().to_string());
+        let interfaces = element_map(&protocol, "interface", |i| Interface::from_element(&i));
+        let copyright = protocol
+            .get_child("copyright")
+            .map(|e| e.text.as_ref().unwrap().to_string());
         Protocol {
             name,
             interfaces,
@@ -30,6 +25,7 @@ impl Protocol {
     }
 }
 
+#[derive(Describable)]
 pub struct Interface {
     pub name: String,
     pub version: String,
@@ -39,13 +35,7 @@ pub struct Interface {
 
 impl Interface {
     pub fn from_element(element: &Element) -> Interface {
-        let requests: Vec<Request> = element
-            .children
-            .clone()
-            .into_iter()
-            .filter(|x| x.name == "request")
-            .map(|r| Request::from_element(&r))
-            .collect();
+        let requests = element_map(element, "request", |r| Request::from_element(&r));
         Interface {
             name: element.attributes["name"].to_string(),
             version: element.attributes["version"].to_string(),
@@ -55,20 +45,7 @@ impl Interface {
     }
 }
 
-pub struct Description {
-    pub full: String,
-    pub summary: String,
-}
-
-impl Description {
-    pub fn from_parent(parent: &Element) -> Option<Description> {
-        parent.get_child("description").map(|element| Description {
-            full: element.text.as_ref().unwrap().to_string(),
-            summary: element.attributes["summary"].to_string(),
-        })
-    }
-}
-
+#[derive(Describable)]
 pub struct Request {
     pub name: String,
     pub request_type: Option<String>,
@@ -85,4 +62,37 @@ impl Request {
             description: Description::from_parent(&element),
         }
     }
+}
+
+pub trait Describable {
+    fn get_full(&self) -> Option<String>;
+    fn get_summary(&self) -> Option<String>;
+}
+
+#[derive(Clone)]
+pub struct Description {
+    pub full: String,
+    pub summary: String,
+}
+
+impl Description {
+    pub fn from_parent(parent: &Element) -> Option<Description> {
+        parent.get_child("description").map(|element| Description {
+            full: element.text.as_ref().unwrap().to_string(),
+            summary: element.attributes["summary"].to_string(),
+        })
+    }
+}
+
+fn element_map<T, F>(element: &Element, name: &str, f: F) -> Vec<T>
+where
+    F: FnMut(Element) -> T,
+{
+    element
+        .children
+        .clone()
+        .into_iter()
+        .filter(|x| x.name == name)
+        .map(f)
+        .collect()
 }
