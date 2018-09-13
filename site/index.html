@@ -51,19 +51,7 @@
         <ul>
           
             <li>
-              destroy - destroy xdg_wm_base
-            </li>
-          
-            <li>
-              create_positioner - create a positioner object
-            </li>
-          
-            <li>
-              get_xdg_surface - create a shell surface from a surface
-            </li>
-          
-            <li>
-              pong - respond to a ping event
+              ping - check if the client is alive
             </li>
           
         </ul>
@@ -93,34 +81,6 @@
       positioning a surface raises an error.
     </strong>
         <ul>
-          
-            <li>
-              destroy - destroy the xdg_positioner object
-            </li>
-          
-            <li>
-              set_size - set the size of the to-be positioned rectangle
-            </li>
-          
-            <li>
-              set_anchor_rect - set the anchor rectangle within the parent surface
-            </li>
-          
-            <li>
-              set_anchor - set anchor rectangle anchor
-            </li>
-          
-            <li>
-              set_gravity - set child surface gravity
-            </li>
-          
-            <li>
-              set_constraint_adjustment - set the adjustment to be done when constrained
-            </li>
-          
-            <li>
-              set_offset - set surface position offset
-            </li>
           
         </ul>
       </li>
@@ -171,23 +131,7 @@
         <ul>
           
             <li>
-              destroy - destroy the xdg_surface
-            </li>
-          
-            <li>
-              get_toplevel - assign the xdg_toplevel surface role
-            </li>
-          
-            <li>
-              get_popup - assign the xdg_popup surface role
-            </li>
-          
-            <li>
-              set_window_geometry - set the new window geometry
-            </li>
-          
-            <li>
-              ack_configure - ack a configure event
+              configure - suggest a surface change
             </li>
           
         </ul>
@@ -213,59 +157,11 @@
         <ul>
           
             <li>
-              destroy - destroy the xdg_toplevel
+              configure - suggest a surface change
             </li>
           
             <li>
-              set_parent - set the parent of this surface
-            </li>
-          
-            <li>
-              set_title - set surface title
-            </li>
-          
-            <li>
-              set_app_id - set application ID
-            </li>
-          
-            <li>
-              show_window_menu - show the window menu
-            </li>
-          
-            <li>
-              move - start an interactive move
-            </li>
-          
-            <li>
-              resize - start an interactive resize
-            </li>
-          
-            <li>
-              set_max_size - set the maximum size
-            </li>
-          
-            <li>
-              set_min_size - set the minimum size
-            </li>
-          
-            <li>
-              set_maximized - maximize the window
-            </li>
-          
-            <li>
-              unset_maximized - unmaximize the window
-            </li>
-          
-            <li>
-              set_fullscreen - set the window as fullscreen on an output
-            </li>
-          
-            <li>
-              unset_fullscreen - unset the window as fullscreen
-            </li>
-          
-            <li>
-              set_minimized - set the window as minimized
+              close - surface wants to be closed
             </li>
           
         </ul>
@@ -308,11 +204,11 @@
         <ul>
           
             <li>
-              destroy - remove xdg_popup interface
+              configure - configure the popup surface
             </li>
           
             <li>
-              grab - make the popup take an explicit grab
+              popup_done - popup interaction is done
             </li>
           
         </ul>
