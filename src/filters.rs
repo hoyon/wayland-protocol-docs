@@ -1,5 +1,6 @@
 use askama::Result;
-use protocol::Describable;
+use protocol::{Describable, Request};
+use format;
 
 pub fn unwrap(option: &Option<String>) -> Result<&str> {
     match option {
@@ -20,4 +21,8 @@ pub fn desc_summary<D: Describable>(describable: &D) -> Result<String> {
         Some(summary) => Ok(summary),
         None => Ok("".to_string()),
     }
+}
+
+pub fn format_request(request: &Request, protocol_name: &str) -> Result<String> {
+    Ok(format::format_request(&request, protocol_name))
 }

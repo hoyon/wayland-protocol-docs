@@ -51,7 +51,47 @@
         <ul>
           
             <li>
-              ping - check if the client is alive
+              destroy - destroy xdg_wm_base
+              <br />
+              <code>
+                
+
+<span style="color:blue">static</span>
+<span style="color:pink">void </span><span style="color:red">xdg_wm_base_destroy</span>(<span style="color:green">struct xdg_wm_base *xdg_wm_base</span>)
+              </code>
+            </li>
+          
+            <li>
+              create_positioner - create a positioner object
+              <br />
+              <code>
+                
+
+<span style="color:blue">static</span>
+<span style="color:pink">struct xdg_positioner *</span><span style="color:red">xdg_wm_base_create_positioner</span>(<span style="color:green">struct xdg_wm_base *xdg_wm_base</span>)
+              </code>
+            </li>
+          
+            <li>
+              get_xdg_surface - create a shell surface from a surface
+              <br />
+              <code>
+                
+
+<span style="color:blue">static</span>
+<span style="color:pink">struct xdg_surface *</span><span style="color:red">xdg_wm_base_get_xdg_surface</span>(<span style="color:green">struct xdg_wm_base *xdg_wm_base, struct wl_surface *surface</span>)
+              </code>
+            </li>
+          
+            <li>
+              pong - respond to a ping event
+              <br />
+              <code>
+                
+
+<span style="color:blue">static</span>
+<span style="color:pink">void </span><span style="color:red">xdg_wm_base_pong</span>(<span style="color:green">struct xdg_wm_base *xdg_wm_base, uint32_t serial</span>)
+              </code>
             </li>
           
         </ul>
@@ -81,6 +121,83 @@
       positioning a surface raises an error.
     </strong>
         <ul>
+          
+            <li>
+              destroy - destroy the xdg_positioner object
+              <br />
+              <code>
+                
+
+<span style="color:blue">static</span>
+<span style="color:pink">void </span><span style="color:red">xdg_positioner_destroy</span>(<span style="color:green">struct xdg_positioner *xdg_positioner</span>)
+              </code>
+            </li>
+          
+            <li>
+              set_size - set the size of the to-be positioned rectangle
+              <br />
+              <code>
+                
+
+<span style="color:blue">static</span>
+<span style="color:pink">void </span><span style="color:red">xdg_positioner_set_size</span>(<span style="color:green">struct xdg_positioner *xdg_positioner, int32_t width, int32_t height</span>)
+              </code>
+            </li>
+          
+            <li>
+              set_anchor_rect - set the anchor rectangle within the parent surface
+              <br />
+              <code>
+                
+
+<span style="color:blue">static</span>
+<span style="color:pink">void </span><span style="color:red">xdg_positioner_set_anchor_rect</span>(<span style="color:green">struct xdg_positioner *xdg_positioner, int32_t x, int32_t y, int32_t width, int32_t height</span>)
+              </code>
+            </li>
+          
+            <li>
+              set_anchor - set anchor rectangle anchor
+              <br />
+              <code>
+                
+
+<span style="color:blue">static</span>
+<span style="color:pink">void </span><span style="color:red">xdg_positioner_set_anchor</span>(<span style="color:green">struct xdg_positioner *xdg_positioner, uint32_t anchor</span>)
+              </code>
+            </li>
+          
+            <li>
+              set_gravity - set child surface gravity
+              <br />
+              <code>
+                
+
+<span style="color:blue">static</span>
+<span style="color:pink">void </span><span style="color:red">xdg_positioner_set_gravity</span>(<span style="color:green">struct xdg_positioner *xdg_positioner, uint32_t gravity</span>)
+              </code>
+            </li>
+          
+            <li>
+              set_constraint_adjustment - set the adjustment to be done when constrained
+              <br />
+              <code>
+                
+
+<span style="color:blue">static</span>
+<span style="color:pink">void </span><span style="color:red">xdg_positioner_set_constraint_adjustment</span>(<span style="color:green">struct xdg_positioner *xdg_positioner, uint32_t constraint_adjustment</span>)
+              </code>
+            </li>
+          
+            <li>
+              set_offset - set surface position offset
+              <br />
+              <code>
+                
+
+<span style="color:blue">static</span>
+<span style="color:pink">void </span><span style="color:red">xdg_positioner_set_offset</span>(<span style="color:green">struct xdg_positioner *xdg_positioner, int32_t x, int32_t y</span>)
+              </code>
+            </li>
           
         </ul>
       </li>
@@ -131,7 +248,58 @@
         <ul>
           
             <li>
-              configure - suggest a surface change
+              destroy - destroy the xdg_surface
+              <br />
+              <code>
+                
+
+<span style="color:blue">static</span>
+<span style="color:pink">void </span><span style="color:red">xdg_surface_destroy</span>(<span style="color:green">struct xdg_surface *xdg_surface</span>)
+              </code>
+            </li>
+          
+            <li>
+              get_toplevel - assign the xdg_toplevel surface role
+              <br />
+              <code>
+                
+
+<span style="color:blue">static</span>
+<span style="color:pink">struct xdg_toplevel *</span><span style="color:red">xdg_surface_get_toplevel</span>(<span style="color:green">struct xdg_surface *xdg_surface</span>)
+              </code>
+            </li>
+          
+            <li>
+              get_popup - assign the xdg_popup surface role
+              <br />
+              <code>
+                
+
+<span style="color:blue">static</span>
+<span style="color:pink">struct xdg_popup *</span><span style="color:red">xdg_surface_get_popup</span>(<span style="color:green">struct xdg_surface *xdg_surface, struct xdg_surface *parent, struct xdg_positioner *positioner</span>)
+              </code>
+            </li>
+          
+            <li>
+              set_window_geometry - set the new window geometry
+              <br />
+              <code>
+                
+
+<span style="color:blue">static</span>
+<span style="color:pink">void </span><span style="color:red">xdg_surface_set_window_geometry</span>(<span style="color:green">struct xdg_surface *xdg_surface, int32_t x, int32_t y, int32_t width, int32_t height</span>)
+              </code>
+            </li>
+          
+            <li>
+              ack_configure - ack a configure event
+              <br />
+              <code>
+                
+
+<span style="color:blue">static</span>
+<span style="color:pink">void </span><span style="color:red">xdg_surface_ack_configure</span>(<span style="color:green">struct xdg_surface *xdg_surface, uint32_t serial</span>)
+              </code>
             </li>
           
         </ul>
@@ -157,11 +325,157 @@
         <ul>
           
             <li>
-              configure - suggest a surface change
+              destroy - destroy the xdg_toplevel
+              <br />
+              <code>
+                
+
+<span style="color:blue">static</span>
+<span style="color:pink">void </span><span style="color:red">xdg_toplevel_destroy</span>(<span style="color:green">struct xdg_toplevel *xdg_toplevel</span>)
+              </code>
             </li>
           
             <li>
-              close - surface wants to be closed
+              set_parent - set the parent of this surface
+              <br />
+              <code>
+                
+
+<span style="color:blue">static</span>
+<span style="color:pink">void </span><span style="color:red">xdg_toplevel_set_parent</span>(<span style="color:green">struct xdg_toplevel *xdg_toplevel, struct xdg_toplevel *parent</span>)
+              </code>
+            </li>
+          
+            <li>
+              set_title - set surface title
+              <br />
+              <code>
+                
+
+<span style="color:blue">static</span>
+<span style="color:pink">void </span><span style="color:red">xdg_toplevel_set_title</span>(<span style="color:green">struct xdg_toplevel *xdg_toplevel, const char *title</span>)
+              </code>
+            </li>
+          
+            <li>
+              set_app_id - set application ID
+              <br />
+              <code>
+                
+
+<span style="color:blue">static</span>
+<span style="color:pink">void </span><span style="color:red">xdg_toplevel_set_app_id</span>(<span style="color:green">struct xdg_toplevel *xdg_toplevel, const char *app_id</span>)
+              </code>
+            </li>
+          
+            <li>
+              show_window_menu - show the window menu
+              <br />
+              <code>
+                
+
+<span style="color:blue">static</span>
+<span style="color:pink">void </span><span style="color:red">xdg_toplevel_show_window_menu</span>(<span style="color:green">struct xdg_toplevel *xdg_toplevel, struct wl_seat *seat, uint32_t serial, int32_t x, int32_t y</span>)
+              </code>
+            </li>
+          
+            <li>
+              move - start an interactive move
+              <br />
+              <code>
+                
+
+<span style="color:blue">static</span>
+<span style="color:pink">void </span><span style="color:red">xdg_toplevel_move</span>(<span style="color:green">struct xdg_toplevel *xdg_toplevel, struct wl_seat *seat, uint32_t serial</span>)
+              </code>
+            </li>
+          
+            <li>
+              resize - start an interactive resize
+              <br />
+              <code>
+                
+
+<span style="color:blue">static</span>
+<span style="color:pink">void </span><span style="color:red">xdg_toplevel_resize</span>(<span style="color:green">struct xdg_toplevel *xdg_toplevel, struct wl_seat *seat, uint32_t serial, uint32_t edges</span>)
+              </code>
+            </li>
+          
+            <li>
+              set_max_size - set the maximum size
+              <br />
+              <code>
+                
+
+<span style="color:blue">static</span>
+<span style="color:pink">void </span><span style="color:red">xdg_toplevel_set_max_size</span>(<span style="color:green">struct xdg_toplevel *xdg_toplevel, int32_t width, int32_t height</span>)
+              </code>
+            </li>
+          
+            <li>
+              set_min_size - set the minimum size
+              <br />
+              <code>
+                
+
+<span style="color:blue">static</span>
+<span style="color:pink">void </span><span style="color:red">xdg_toplevel_set_min_size</span>(<span style="color:green">struct xdg_toplevel *xdg_toplevel, int32_t width, int32_t height</span>)
+              </code>
+            </li>
+          
+            <li>
+              set_maximized - maximize the window
+              <br />
+              <code>
+                
+
+<span style="color:blue">static</span>
+<span style="color:pink">void </span><span style="color:red">xdg_toplevel_set_maximized</span>(<span style="color:green">struct xdg_toplevel *xdg_toplevel</span>)
+              </code>
+            </li>
+          
+            <li>
+              unset_maximized - unmaximize the window
+              <br />
+              <code>
+                
+
+<span style="color:blue">static</span>
+<span style="color:pink">void </span><span style="color:red">xdg_toplevel_unset_maximized</span>(<span style="color:green">struct xdg_toplevel *xdg_toplevel</span>)
+              </code>
+            </li>
+          
+            <li>
+              set_fullscreen - set the window as fullscreen on an output
+              <br />
+              <code>
+                
+
+<span style="color:blue">static</span>
+<span style="color:pink">void </span><span style="color:red">xdg_toplevel_set_fullscreen</span>(<span style="color:green">struct xdg_toplevel *xdg_toplevel, struct wl_output *output</span>)
+              </code>
+            </li>
+          
+            <li>
+              unset_fullscreen - unset the window as fullscreen
+              <br />
+              <code>
+                
+
+<span style="color:blue">static</span>
+<span style="color:pink">void </span><span style="color:red">xdg_toplevel_unset_fullscreen</span>(<span style="color:green">struct xdg_toplevel *xdg_toplevel</span>)
+              </code>
+            </li>
+          
+            <li>
+              set_minimized - set the window as minimized
+              <br />
+              <code>
+                
+
+<span style="color:blue">static</span>
+<span style="color:pink">void </span><span style="color:red">xdg_toplevel_set_minimized</span>(<span style="color:green">struct xdg_toplevel *xdg_toplevel</span>)
+              </code>
             </li>
           
         </ul>
@@ -204,11 +518,25 @@
         <ul>
           
             <li>
-              configure - configure the popup surface
+              destroy - remove xdg_popup interface
+              <br />
+              <code>
+                
+
+<span style="color:blue">static</span>
+<span style="color:pink">void </span><span style="color:red">xdg_popup_destroy</span>(<span style="color:green">struct xdg_popup *xdg_popup</span>)
+              </code>
             </li>
           
             <li>
-              popup_done - popup interaction is done
+              grab - make the popup take an explicit grab
+              <br />
+              <code>
+                
+
+<span style="color:blue">static</span>
+<span style="color:pink">void </span><span style="color:red">xdg_popup_grab</span>(<span style="color:green">struct xdg_popup *xdg_popup, struct wl_seat *seat, uint32_t serial</span>)
+              </code>
             </li>
           
         </ul>

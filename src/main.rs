@@ -11,6 +11,7 @@ use std::io::prelude::*;
 mod protocol;
 use protocol::Protocol;
 mod filters;
+mod format;
 
 #[derive(Template)]
 #[template(path = "protocol.html")]

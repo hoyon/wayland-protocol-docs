@@ -12,9 +12,13 @@
         {{ interface.name }} -
         <strong>{{ interface|desc_full }}</strong>
         <ul>
-          {% for event in interface.events %}
+          {% for request in interface.requests %}
             <li>
-              {{ event.name }} - {{ event|desc_summary }}
+              {{ request.name }} - {{ request|desc_summary }}
+              <br />
+              <code>
+                {{ request|format_request(interface.name)|safe}}
+              </code>
             </li>
           {% endfor %}
         </ul>
