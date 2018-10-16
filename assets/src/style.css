@@ -1,0 +1,11 @@
+.top-0-3 {
+  top: 0.3rem;
+}
+
+.hover-silver:hover div {
+  visibility: visible;
+}
+
+.hover-silver div {
+  visibility: hidden;
+}

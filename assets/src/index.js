@@ -1,2 +1,2 @@
-import 'tachyons';
+// import 'tachyons';
 import './style.css';
