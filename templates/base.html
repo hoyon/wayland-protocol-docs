@@ -3,12 +3,16 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{% block title %}{{ title }} - Wayland protocol docs{% endblock %}</title>
     {% block head %} {% endblock %}
   </head>
-  <body>
-    <div id="content">
-    {% block content %}{% endblock %}
+  <body class="bg-near-white near-black sans-serif pa3 ph5-ns">
+
+    {% include "breadcrumbs.html" %}
+
+    <div id="content" class="lh-copy">
+      {% block content %}{% endblock %}
     </div>
 
     <script src="/bundle.js"></script>
