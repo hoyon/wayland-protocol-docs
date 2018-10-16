@@ -12,61 +12,62 @@
   <body class="bg-near-white near-black sans-serif pa3 ph5-ns">
 
     
-<div class="f3 lh-copy">
+<div class="f3 lh-copy breadcrumbs">
   <span class="link mid-gray hover-silver">
-    wayland<div class="material-icons relative top-0-3">keyboard_arrow_down</div>
+    wayland
+    <div class="material-icons arrow">keyboard_arrow_down</div>
   </span>
   /
   <span class="link mid-gray hover-silver">
-    stable<div class="material-icons relative top-0-3">keyboard_arrow_down</div>
+    stable
+    <div class="material-icons arrow">keyboard_arrow_down</div>
   </span>
   /
   <span class="link mid-gray hover-silver">
-    xdg_shell<div class="material-icons relative top-0-3">keyboard_arrow_down</div>
+    xdg_shell
+    <div class="material-icons arrow">keyboard_arrow_down</div>
   </span>
 </div>
 
     <div id="content" class="lh-copy">
       
   <h1>xdg_shell</h1>
-  <div>
-    Copyright © 2008-2013 Kristian Høgsberg
-    Copyright © 2013      Rafael Antognolli
-    Copyright © 2013      Jasper St. Pierre
-    Copyright © 2010-2013 Intel Corporation
-    Copyright © 2015-2017 Samsung Electronics Co., Ltd
-    Copyright © 2015-2017 Red Hat Inc.
+  <pre>Copyright © 2008-2013 Kristian Høgsberg
+Copyright © 2013      Rafael Antognolli
+Copyright © 2013      Jasper St. Pierre
+Copyright © 2010-2013 Intel Corporation
+Copyright © 2015-2017 Samsung Electronics Co., Ltd
+Copyright © 2015-2017 Red Hat Inc.
 
-    Permission is hereby granted, free of charge, to any person obtaining a
-    copy of this software and associated documentation files (the &quot;Software&quot;),
-    to deal in the Software without restriction, including without limitation
-    the rights to use, copy, modify, merge, publish, distribute, sublicense,
-    and&#x2f;or sell copies of the Software, and to permit persons to whom the
-    Software is furnished to do so, subject to the following conditions:
+Permission is hereby granted, free of charge, to any person obtaining a
+copy of this software and associated documentation files (the &quot;Software&quot;),
+to deal in the Software without restriction, including without limitation
+the rights to use, copy, modify, merge, publish, distribute, sublicense,
+and&#x2f;or sell copies of the Software, and to permit persons to whom the
+Software is furnished to do so, subject to the following conditions:
 
-    The above copyright notice and this permission notice (including the next
-    paragraph) shall be included in all copies or substantial portions of the
-    Software.
+The above copyright notice and this permission notice (including the next
+paragraph) shall be included in all copies or substantial portions of the
+Software.
 
-    THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL
-    THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-    FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
-    DEALINGS IN THE SOFTWARE.
-  </div>
+THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL
+THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+DEALINGS IN THE SOFTWARE.
+</pre>
   <ul>
     
       <li>
-        xdg_wm_base -
-        <strong>
-      The xdg_wm_base interface is exposed as a global object enabling clients
-      to turn their wl_surfaces into windows in a desktop environment. It
-      defines the basic functionality needed for clients and the compositor to
-      create windows that can be dragged, resized, maximized, etc, as well as
-      creating transient windows such as popup menus.
-    </strong>
+        xdg_wm_base
+        <pre>The xdg_wm_base interface is exposed as a global object enabling clients
+to turn their wl_surfaces into windows in a desktop environment. It
+defines the basic functionality needed for clients and the compositor to
+create windows that can be dragged, resized, maximized, etc, as well as
+creating transient windows such as popup menus.
+</pre>
         <ul>
           
             <li>
@@ -117,28 +118,27 @@
       </li>
     
       <li>
-        xdg_positioner -
-        <strong>
-      The xdg_positioner provides a collection of rules for the placement of a
-      child surface relative to a parent surface. Rules can be defined to ensure
-      the child surface remains within the visible area&#x27;s borders, and to
-      specify how the child surface changes its position, such as sliding along
-      an axis, or flipping around a rectangle. These positioner-created rules are
-      constrained by the requirement that a child surface must intersect with or
-      be at least partially adjacent to its parent surface.
+        xdg_positioner
+        <pre>The xdg_positioner provides a collection of rules for the placement of a
+child surface relative to a parent surface. Rules can be defined to ensure
+the child surface remains within the visible area&#x27;s borders, and to
+specify how the child surface changes its position, such as sliding along
+an axis, or flipping around a rectangle. These positioner-created rules are
+constrained by the requirement that a child surface must intersect with or
+be at least partially adjacent to its parent surface.
 
-      See the various requests for details about possible rules.
+See the various requests for details about possible rules.
 
-      At the time of the request, the compositor makes a copy of the rules
-      specified by the xdg_positioner. Thus, after the request is complete the
-      xdg_positioner object can be destroyed or reused; further changes to the
-      object will have no effect on previous usages.
+At the time of the request, the compositor makes a copy of the rules
+specified by the xdg_positioner. Thus, after the request is complete the
+xdg_positioner object can be destroyed or reused; further changes to the
+object will have no effect on previous usages.
 
-      For an xdg_positioner object to be considered complete, it must have a
-      non-zero size set by set_size, and a non-zero anchor rectangle set by
-      set_anchor_rect. Passing an incomplete xdg_positioner object when
-      positioning a surface raises an error.
-    </strong>
+For an xdg_positioner object to be considered complete, it must have a
+non-zero size set by set_size, and a non-zero anchor rectangle set by
+set_anchor_rect. Passing an incomplete xdg_positioner object when
+positioning a surface raises an error.
+</pre>
         <ul>
           
             <li>
@@ -222,9 +222,8 @@
       </li>
     
       <li>
-        xdg_surface -
-        <strong>
-      An interface that may be implemented by a wl_surface, for
+        xdg_surface
+        <pre>      An interface that may be implemented by a wl_surface, for
       implementations that provide a desktop-style user interface.
 
       It provides a base set of functionality required to construct user
@@ -263,7 +262,7 @@
       A newly-unmapped surface is considered to have met condition (1) out
       of the 3 required conditions for mapping a surface if its role surface
       has not been destroyed.
-    </strong>
+    </pre>
         <ul>
           
             <li>
@@ -325,22 +324,21 @@
       </li>
     
       <li>
-        xdg_toplevel -
-        <strong>
-      This interface defines an xdg_surface role which allows a surface to,
-      among other things, set window-like properties such as maximize,
-      fullscreen, and minimize, set application-specific metadata like title and
-      id, and well as trigger user interactive operations such as interactive
-      resize and move.
+        xdg_toplevel
+        <pre>This interface defines an xdg_surface role which allows a surface to,
+among other things, set window-like properties such as maximize,
+fullscreen, and minimize, set application-specific metadata like title and
+id, and well as trigger user interactive operations such as interactive
+resize and move.
 
-      Unmapping an xdg_toplevel means that the surface cannot be shown
-      by the compositor until it is explicitly mapped again.
-      All active operations (e.g., move, resize) are canceled and all
-      attributes (e.g. title, state, stacking, ...) are discarded for
-      an xdg_toplevel surface when it is unmapped.
+Unmapping an xdg_toplevel means that the surface cannot be shown
+by the compositor until it is explicitly mapped again.
+All active operations (e.g., move, resize) are canceled and all
+attributes (e.g. title, state, stacking, ...) are discarded for
+an xdg_toplevel surface when it is unmapped.
 
-      Attaching a null buffer to a toplevel unmaps the surface.
-    </strong>
+Attaching a null buffer to a toplevel unmaps the surface.
+</pre>
         <ul>
           
             <li>
@@ -501,39 +499,38 @@
       </li>
     
       <li>
-        xdg_popup -
-        <strong>
-      A popup surface is a short-lived, temporary surface. It can be used to
-      implement for example menus, popovers, tooltips and other similar user
-      interface concepts.
+        xdg_popup
+        <pre>A popup surface is a short-lived, temporary surface. It can be used to
+implement for example menus, popovers, tooltips and other similar user
+interface concepts.
 
-      A popup can be made to take an explicit grab. See xdg_popup.grab for
-      details.
+A popup can be made to take an explicit grab. See xdg_popup.grab for
+details.
 
-      When the popup is dismissed, a popup_done event will be sent out, and at
-      the same time the surface will be unmapped. See the xdg_popup.popup_done
-      event for details.
+When the popup is dismissed, a popup_done event will be sent out, and at
+the same time the surface will be unmapped. See the xdg_popup.popup_done
+event for details.
 
-      Explicitly destroying the xdg_popup object will also dismiss the popup and
-      unmap the surface. Clients that want to dismiss the popup when another
-      surface of their own is clicked should dismiss the popup using the destroy
-      request.
+Explicitly destroying the xdg_popup object will also dismiss the popup and
+unmap the surface. Clients that want to dismiss the popup when another
+surface of their own is clicked should dismiss the popup using the destroy
+request.
 
-      A newly created xdg_popup will be stacked on top of all previously created
-      xdg_popup surfaces associated with the same xdg_toplevel.
+A newly created xdg_popup will be stacked on top of all previously created
+xdg_popup surfaces associated with the same xdg_toplevel.
 
-      The parent of an xdg_popup must be mapped (see the xdg_surface
-      description) before the xdg_popup itself.
+The parent of an xdg_popup must be mapped (see the xdg_surface
+description) before the xdg_popup itself.
 
-      The x and y arguments passed when creating the popup object specify
-      where the top left of the popup should be placed, relative to the
-      local surface coordinates of the parent surface. See
-      xdg_surface.get_popup. An xdg_popup must intersect with or be at least
-      partially adjacent to its parent surface.
+The x and y arguments passed when creating the popup object specify
+where the top left of the popup should be placed, relative to the
+local surface coordinates of the parent surface. See
+xdg_surface.get_popup. An xdg_popup must intersect with or be at least
+partially adjacent to its parent surface.
 
-      The client must call wl_surface.commit on the corresponding wl_surface
-      for the xdg_popup state to take effect.
-    </strong>
+The client must call wl_surface.commit on the corresponding wl_surface
+for the xdg_popup state to take effect.
+</pre>
         <ul>
           
             <li>

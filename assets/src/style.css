@@ -1,11 +1,12 @@
-.top-0-3 {
-  top: 0.3rem;
+.breadcrumbs {
+  .arrow {
+    position: relative;
+    top: 0.2rem;
+    margin-left: -0.5rem;
+    margin-right: -0.5rem;
+  }
 }
 
-.hover-silver:hover div {
-  visibility: visible;
-}
-
-.hover-silver div {
-  visibility: hidden;
+.link:hover {
+  cursor: pointer;
 }

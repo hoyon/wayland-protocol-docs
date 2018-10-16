@@ -5,12 +5,12 @@
 
 {% block content %}
   <h1>{{ protocol.name }}</h1>
-  <div>{{ protocol.copyright|unwrap }}</div>
+  <pre>{{ protocol.copyright|unwrap }}</pre>
   <ul>
     {% for interface in protocol.interfaces %}
       <li>
-        {{ interface.name }} -
-        <strong>{{ interface|desc_full }}</strong>
+        {{ interface.name }}
+        <pre>{{ interface|desc_full }}</pre>
         <ul>
           {% for request in interface.requests %}
             <li>

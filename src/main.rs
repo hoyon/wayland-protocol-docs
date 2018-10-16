@@ -3,6 +3,7 @@ extern crate wayland_protocol_docs_derive;
 #[macro_use]
 extern crate askama;
 extern crate xmltree;
+extern crate unindent;
 
 use askama::Template;
 use std::fs::File;
