@@ -205,5 +205,6 @@ fn get_optional_attribute(element: &Element, attribute: &str) -> Option<String> 
 }
 
 fn unindent(s: String) -> String {
-    unindent::unindent(&s)
+    let replaced = s.replace("\t", "    ");
+    unindent::unindent(&replaced)
 }
