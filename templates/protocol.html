@@ -4,25 +4,31 @@
 {% block title %}{{ protocol.name }}{% endblock %}
 
 {% block content %}
-  <h1>{{ protocol.name }}</h1>
-  <pre>{{ protocol.copyright|unwrap }}</pre>
-  <ul>
+  <h1 class="f1 lh-title">{{ protocol.name }}</h1>
+  <ul class="list pl0">
     {% for interface in protocol.interfaces %}
       <li>
-        {{ interface.name }}
-        <pre>{{ interface|desc_full }}</pre>
-        <ul>
+        <div class="f2 lh-copy">
+          {{ interface.name }}
+        </div>
+        <div class="f6 lh-copy ws-pre-line courier">{{ interface|desc_full }}</div>
+        <ul class="list pl0">
           {% for request in interface.requests %}
             <li>
-              {{ request.name }} - {{ request|desc_summary }}
-              <br />
-              <code>
-                {{ request|format_request(interface.name)|safe}}
-              </code>
+              <div class="f4 lh-title">
+                {{ request.name }}
+              </div>
+              <div class="f5 lh-copy">
+                {{ request|desc_summary }}
+              </div>
+              {{ request|format_request(interface.name)|safe}}
             </li>
           {% endfor %}
         </ul>
       </li>
     {% endfor %}
   </ul>
+
+  <h2 class="f2 lh-title">Copyright Info</h2>
+  <div class="f6 lh-copy ws-pre-line courier">{{ protocol.copyright|unwrap }}</div>
 {% endblock %}

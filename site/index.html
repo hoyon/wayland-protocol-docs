@@ -4,122 +4,111 @@
   <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>xdg_shell</title>
+    <title>xdg_shell_unstable_v6</title>
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
      
   </head>
-  <body class="bg-near-white near-black sans-serif pa3 ph5-ns">
+  <body class="bg-near-white black-70 sans-serif pa2 ph6-l">
 
     
 <div class="f3 lh-copy breadcrumbs">
-  <span class="link mid-gray hover-silver">
+  <span class="link mid-gray dim hover-pointer">
     wayland
     <div class="material-icons arrow">keyboard_arrow_down</div>
   </span>
   /
-  <span class="link mid-gray hover-silver">
+  <span class="link mid-gray dim hover-pointer">
     stable
     <div class="material-icons arrow">keyboard_arrow_down</div>
   </span>
   /
-  <span class="link mid-gray hover-silver">
+  <span class="link mid-gray dim hover-pointer">
     xdg_shell
     <div class="material-icons arrow">keyboard_arrow_down</div>
   </span>
 </div>
 
-    <div id="content" class="lh-copy">
+    <div id="content">
       
-  <h1>xdg_shell</h1>
-  <pre>Copyright © 2008-2013 Kristian Høgsberg
-Copyright © 2013      Rafael Antognolli
-Copyright © 2013      Jasper St. Pierre
-Copyright © 2010-2013 Intel Corporation
-Copyright © 2015-2017 Samsung Electronics Co., Ltd
-Copyright © 2015-2017 Red Hat Inc.
-
-Permission is hereby granted, free of charge, to any person obtaining a
-copy of this software and associated documentation files (the &quot;Software&quot;),
-to deal in the Software without restriction, including without limitation
-the rights to use, copy, modify, merge, publish, distribute, sublicense,
-and&#x2f;or sell copies of the Software, and to permit persons to whom the
-Software is furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice (including the next
-paragraph) shall be included in all copies or substantial portions of the
-Software.
-
-THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL
-THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
-DEALINGS IN THE SOFTWARE.
-</pre>
-  <ul>
+  <h1 class="f1 lh-title">xdg_shell_unstable_v6</h1>
+  <ul class="list pl0">
     
       <li>
-        xdg_wm_base
-        <pre>The xdg_wm_base interface is exposed as a global object enabling clients
-to turn their wl_surfaces into windows in a desktop environment. It
-defines the basic functionality needed for clients and the compositor to
-create windows that can be dragged, resized, maximized, etc, as well as
-creating transient windows such as popup menus.
-</pre>
-        <ul>
+        <div class="f2 lh-copy">
+          zxdg_shell_v6
+        </div>
+        <div class="f6 lh-copy ws-pre-line courier">xdg_shell allows clients to turn a wl_surface into a &quot;real window&quot;
+which can be dragged, resized, stacked, and moved around by the
+user. Everything about this interface is suited towards traditional
+desktop environments.
+</div>
+        <ul class="list pl0">
           
             <li>
-              destroy - destroy xdg_wm_base
-              <br />
-              <code>
-                
-
-<span style="color:blue">static</span>
-<span style="color:pink">void </span><span style="color:red">xdg_wm_base_destroy</span>(<span style="color:green">struct xdg_wm_base *xdg_wm_base</span>)
-              </code>
+              <div class="f4 lh-title">
+                destroy
+              </div>
+              <div class="f5 lh-copy">
+                destroy xdg_shell
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>static</span>
+  <span>void </span><span class="orange">zxdg_shell_v6_destroy</span>(<span class="purple">struct zxdg_shell_v6 *zxdg_shell_v6</span>)
+</div>
             </li>
           
             <li>
-              create_positioner - create a positioner object
-              <br />
-              <code>
-                
-
-<span style="color:blue">static</span>
-<span style="color:pink">struct xdg_positioner *</span><span style="color:red">xdg_wm_base_create_positioner</span>(<span style="color:green">struct xdg_wm_base *xdg_wm_base</span>)
-              </code>
+              <div class="f4 lh-title">
+                create_positioner
+              </div>
+              <div class="f5 lh-copy">
+                create a positioner object
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>static</span>
+  <span>struct zxdg_positioner_v6 *</span><span class="orange">zxdg_shell_v6_create_positioner</span>(<span class="purple">struct zxdg_shell_v6 *zxdg_shell_v6</span>)
+</div>
             </li>
           
             <li>
-              get_xdg_surface - create a shell surface from a surface
-              <br />
-              <code>
-                
-
-<span style="color:blue">static</span>
-<span style="color:pink">struct xdg_surface *</span><span style="color:red">xdg_wm_base_get_xdg_surface</span>(<span style="color:green">struct xdg_wm_base *xdg_wm_base, struct wl_surface *surface</span>)
-              </code>
+              <div class="f4 lh-title">
+                get_xdg_surface
+              </div>
+              <div class="f5 lh-copy">
+                create a shell surface from a surface
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>static</span>
+  <span>struct zxdg_surface_v6 *</span><span class="orange">zxdg_shell_v6_get_xdg_surface</span>(<span class="purple">struct zxdg_shell_v6 *zxdg_shell_v6, struct wl_surface *surface</span>)
+</div>
             </li>
           
             <li>
-              pong - respond to a ping event
-              <br />
-              <code>
-                
-
-<span style="color:blue">static</span>
-<span style="color:pink">void </span><span style="color:red">xdg_wm_base_pong</span>(<span style="color:green">struct xdg_wm_base *xdg_wm_base, uint32_t serial</span>)
-              </code>
+              <div class="f4 lh-title">
+                pong
+              </div>
+              <div class="f5 lh-copy">
+                respond to a ping event
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>static</span>
+  <span>void </span><span class="orange">zxdg_shell_v6_pong</span>(<span class="purple">struct zxdg_shell_v6 *zxdg_shell_v6, uint32_t serial</span>)
+</div>
             </li>
           
         </ul>
       </li>
     
       <li>
-        xdg_positioner
-        <pre>The xdg_positioner provides a collection of rules for the placement of a
+        <div class="f2 lh-copy">
+          zxdg_positioner_v6
+        </div>
+        <div class="f6 lh-copy ws-pre-line courier">The xdg_positioner provides a collection of rules for the placement of a
 child surface relative to a parent surface. Rules can be defined to ensure
 the child surface remains within the visible area&#x27;s borders, and to
 specify how the child surface changes its position, such as sliding along
@@ -138,92 +127,115 @@ For an xdg_positioner object to be considered complete, it must have a
 non-zero size set by set_size, and a non-zero anchor rectangle set by
 set_anchor_rect. Passing an incomplete xdg_positioner object when
 positioning a surface raises an error.
-</pre>
-        <ul>
+</div>
+        <ul class="list pl0">
           
             <li>
-              destroy - destroy the xdg_positioner object
-              <br />
-              <code>
-                
-
-<span style="color:blue">static</span>
-<span style="color:pink">void </span><span style="color:red">xdg_positioner_destroy</span>(<span style="color:green">struct xdg_positioner *xdg_positioner</span>)
-              </code>
+              <div class="f4 lh-title">
+                destroy
+              </div>
+              <div class="f5 lh-copy">
+                destroy the xdg_positioner object
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>static</span>
+  <span>void </span><span class="orange">zxdg_positioner_v6_destroy</span>(<span class="purple">struct zxdg_positioner_v6 *zxdg_positioner_v6</span>)
+</div>
             </li>
           
             <li>
-              set_size - set the size of the to-be positioned rectangle
-              <br />
-              <code>
-                
-
-<span style="color:blue">static</span>
-<span style="color:pink">void </span><span style="color:red">xdg_positioner_set_size</span>(<span style="color:green">struct xdg_positioner *xdg_positioner, int32_t width, int32_t height</span>)
-              </code>
+              <div class="f4 lh-title">
+                set_size
+              </div>
+              <div class="f5 lh-copy">
+                set the size of the to-be positioned rectangle
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>static</span>
+  <span>void </span><span class="orange">zxdg_positioner_v6_set_size</span>(<span class="purple">struct zxdg_positioner_v6 *zxdg_positioner_v6, int32_t width, int32_t height</span>)
+</div>
             </li>
           
             <li>
-              set_anchor_rect - set the anchor rectangle within the parent surface
-              <br />
-              <code>
-                
-
-<span style="color:blue">static</span>
-<span style="color:pink">void </span><span style="color:red">xdg_positioner_set_anchor_rect</span>(<span style="color:green">struct xdg_positioner *xdg_positioner, int32_t x, int32_t y, int32_t width, int32_t height</span>)
-              </code>
+              <div class="f4 lh-title">
+                set_anchor_rect
+              </div>
+              <div class="f5 lh-copy">
+                set the anchor rectangle within the parent surface
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>static</span>
+  <span>void </span><span class="orange">zxdg_positioner_v6_set_anchor_rect</span>(<span class="purple">struct zxdg_positioner_v6 *zxdg_positioner_v6, int32_t x, int32_t y, int32_t width, int32_t height</span>)
+</div>
             </li>
           
             <li>
-              set_anchor - set anchor rectangle anchor
-              <br />
-              <code>
-                
-
-<span style="color:blue">static</span>
-<span style="color:pink">void </span><span style="color:red">xdg_positioner_set_anchor</span>(<span style="color:green">struct xdg_positioner *xdg_positioner, uint32_t anchor</span>)
-              </code>
+              <div class="f4 lh-title">
+                set_anchor
+              </div>
+              <div class="f5 lh-copy">
+                set anchor rectangle anchor edges
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>static</span>
+  <span>void </span><span class="orange">zxdg_positioner_v6_set_anchor</span>(<span class="purple">struct zxdg_positioner_v6 *zxdg_positioner_v6, uint32_t anchor</span>)
+</div>
             </li>
           
             <li>
-              set_gravity - set child surface gravity
-              <br />
-              <code>
-                
-
-<span style="color:blue">static</span>
-<span style="color:pink">void </span><span style="color:red">xdg_positioner_set_gravity</span>(<span style="color:green">struct xdg_positioner *xdg_positioner, uint32_t gravity</span>)
-              </code>
+              <div class="f4 lh-title">
+                set_gravity
+              </div>
+              <div class="f5 lh-copy">
+                set child surface gravity
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>static</span>
+  <span>void </span><span class="orange">zxdg_positioner_v6_set_gravity</span>(<span class="purple">struct zxdg_positioner_v6 *zxdg_positioner_v6, uint32_t gravity</span>)
+</div>
             </li>
           
             <li>
-              set_constraint_adjustment - set the adjustment to be done when constrained
-              <br />
-              <code>
-                
-
-<span style="color:blue">static</span>
-<span style="color:pink">void </span><span style="color:red">xdg_positioner_set_constraint_adjustment</span>(<span style="color:green">struct xdg_positioner *xdg_positioner, uint32_t constraint_adjustment</span>)
-              </code>
+              <div class="f4 lh-title">
+                set_constraint_adjustment
+              </div>
+              <div class="f5 lh-copy">
+                set the adjustment to be done when constrained
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>static</span>
+  <span>void </span><span class="orange">zxdg_positioner_v6_set_constraint_adjustment</span>(<span class="purple">struct zxdg_positioner_v6 *zxdg_positioner_v6, uint32_t constraint_adjustment</span>)
+</div>
             </li>
           
             <li>
-              set_offset - set surface position offset
-              <br />
-              <code>
-                
-
-<span style="color:blue">static</span>
-<span style="color:pink">void </span><span style="color:red">xdg_positioner_set_offset</span>(<span style="color:green">struct xdg_positioner *xdg_positioner, int32_t x, int32_t y</span>)
-              </code>
+              <div class="f4 lh-title">
+                set_offset
+              </div>
+              <div class="f5 lh-copy">
+                set surface position offset
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>static</span>
+  <span>void </span><span class="orange">zxdg_positioner_v6_set_offset</span>(<span class="purple">struct zxdg_positioner_v6 *zxdg_positioner_v6, int32_t x, int32_t y</span>)
+</div>
             </li>
           
         </ul>
       </li>
     
       <li>
-        xdg_surface
-        <pre>An interface that may be implemented by a wl_surface, for
+        <div class="f2 lh-copy">
+          zxdg_surface_v6
+        </div>
+        <div class="f6 lh-copy ws-pre-line courier">An interface that may be implemented by a wl_surface, for
 implementations that provide a desktop-style user interface.
 
 It provides a base set of functionality required to construct user
@@ -248,259 +260,303 @@ committed is a client error, and any attempts by a client to attach or
 manipulate a buffer prior to the first xdg_surface.configure call must
 also be treated as errors.
 
-Mapping an xdg_surface-based role surface is defined as making it
-possible for the surface to be shown by the compositor. Note that
-a mapped surface is not guaranteed to be visible once it is mapped.
-
-For an xdg_surface to be mapped by the compositor, the following
-conditions must be met:
-(1) the client has assigned an xdg_surface-based role to the surface
-(2) the client has set and committed the xdg_surface state and the
-role-dependent state to the surface
-(3) the client has committed a buffer to the surface
-
-A newly-unmapped surface is considered to have met condition (1) out
-of the 3 required conditions for mapping a surface if its role surface
-has not been destroyed.
-</pre>
-        <ul>
+For a surface to be mapped by the compositor, the following conditions
+must be met: (1) the client has assigned a xdg_surface based role to the
+surface, (2) the client has set and committed the xdg_surface state and
+the role dependent state to the surface and (3) the client has committed a
+buffer to the surface.
+</div>
+        <ul class="list pl0">
           
             <li>
-              destroy - destroy the xdg_surface
-              <br />
-              <code>
-                
-
-<span style="color:blue">static</span>
-<span style="color:pink">void </span><span style="color:red">xdg_surface_destroy</span>(<span style="color:green">struct xdg_surface *xdg_surface</span>)
-              </code>
+              <div class="f4 lh-title">
+                destroy
+              </div>
+              <div class="f5 lh-copy">
+                destroy the xdg_surface
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>static</span>
+  <span>void </span><span class="orange">zxdg_surface_v6_destroy</span>(<span class="purple">struct zxdg_surface_v6 *zxdg_surface_v6</span>)
+</div>
             </li>
           
             <li>
-              get_toplevel - assign the xdg_toplevel surface role
-              <br />
-              <code>
-                
-
-<span style="color:blue">static</span>
-<span style="color:pink">struct xdg_toplevel *</span><span style="color:red">xdg_surface_get_toplevel</span>(<span style="color:green">struct xdg_surface *xdg_surface</span>)
-              </code>
+              <div class="f4 lh-title">
+                get_toplevel
+              </div>
+              <div class="f5 lh-copy">
+                assign the xdg_toplevel surface role
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>static</span>
+  <span>struct zxdg_toplevel_v6 *</span><span class="orange">zxdg_surface_v6_get_toplevel</span>(<span class="purple">struct zxdg_surface_v6 *zxdg_surface_v6</span>)
+</div>
             </li>
           
             <li>
-              get_popup - assign the xdg_popup surface role
-              <br />
-              <code>
-                
-
-<span style="color:blue">static</span>
-<span style="color:pink">struct xdg_popup *</span><span style="color:red">xdg_surface_get_popup</span>(<span style="color:green">struct xdg_surface *xdg_surface, struct xdg_surface *parent, struct xdg_positioner *positioner</span>)
-              </code>
+              <div class="f4 lh-title">
+                get_popup
+              </div>
+              <div class="f5 lh-copy">
+                assign the xdg_popup surface role
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>static</span>
+  <span>struct zxdg_popup_v6 *</span><span class="orange">zxdg_surface_v6_get_popup</span>(<span class="purple">struct zxdg_surface_v6 *zxdg_surface_v6, struct zxdg_surface_v6 *parent, struct zxdg_positioner_v6 *positioner</span>)
+</div>
             </li>
           
             <li>
-              set_window_geometry - set the new window geometry
-              <br />
-              <code>
-                
-
-<span style="color:blue">static</span>
-<span style="color:pink">void </span><span style="color:red">xdg_surface_set_window_geometry</span>(<span style="color:green">struct xdg_surface *xdg_surface, int32_t x, int32_t y, int32_t width, int32_t height</span>)
-              </code>
+              <div class="f4 lh-title">
+                set_window_geometry
+              </div>
+              <div class="f5 lh-copy">
+                set the new window geometry
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>static</span>
+  <span>void </span><span class="orange">zxdg_surface_v6_set_window_geometry</span>(<span class="purple">struct zxdg_surface_v6 *zxdg_surface_v6, int32_t x, int32_t y, int32_t width, int32_t height</span>)
+</div>
             </li>
           
             <li>
-              ack_configure - ack a configure event
-              <br />
-              <code>
-                
-
-<span style="color:blue">static</span>
-<span style="color:pink">void </span><span style="color:red">xdg_surface_ack_configure</span>(<span style="color:green">struct xdg_surface *xdg_surface, uint32_t serial</span>)
-              </code>
+              <div class="f4 lh-title">
+                ack_configure
+              </div>
+              <div class="f5 lh-copy">
+                ack a configure event
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>static</span>
+  <span>void </span><span class="orange">zxdg_surface_v6_ack_configure</span>(<span class="purple">struct zxdg_surface_v6 *zxdg_surface_v6, uint32_t serial</span>)
+</div>
             </li>
           
         </ul>
       </li>
     
       <li>
-        xdg_toplevel
-        <pre>This interface defines an xdg_surface role which allows a surface to,
+        <div class="f2 lh-copy">
+          zxdg_toplevel_v6
+        </div>
+        <div class="f6 lh-copy ws-pre-line courier">This interface defines an xdg_surface role which allows a surface to,
 among other things, set window-like properties such as maximize,
 fullscreen, and minimize, set application-specific metadata like title and
 id, and well as trigger user interactive operations such as interactive
 resize and move.
-
-Unmapping an xdg_toplevel means that the surface cannot be shown
-by the compositor until it is explicitly mapped again.
-All active operations (e.g., move, resize) are canceled and all
-attributes (e.g. title, state, stacking, ...) are discarded for
-an xdg_toplevel surface when it is unmapped.
-
-Attaching a null buffer to a toplevel unmaps the surface.
-</pre>
-        <ul>
+</div>
+        <ul class="list pl0">
           
             <li>
-              destroy - destroy the xdg_toplevel
-              <br />
-              <code>
-                
-
-<span style="color:blue">static</span>
-<span style="color:pink">void </span><span style="color:red">xdg_toplevel_destroy</span>(<span style="color:green">struct xdg_toplevel *xdg_toplevel</span>)
-              </code>
+              <div class="f4 lh-title">
+                destroy
+              </div>
+              <div class="f5 lh-copy">
+                destroy the xdg_toplevel
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>static</span>
+  <span>void </span><span class="orange">zxdg_toplevel_v6_destroy</span>(<span class="purple">struct zxdg_toplevel_v6 *zxdg_toplevel_v6</span>)
+</div>
             </li>
           
             <li>
-              set_parent - set the parent of this surface
-              <br />
-              <code>
-                
-
-<span style="color:blue">static</span>
-<span style="color:pink">void </span><span style="color:red">xdg_toplevel_set_parent</span>(<span style="color:green">struct xdg_toplevel *xdg_toplevel, struct xdg_toplevel *parent</span>)
-              </code>
+              <div class="f4 lh-title">
+                set_parent
+              </div>
+              <div class="f5 lh-copy">
+                set the parent of this surface
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>static</span>
+  <span>void </span><span class="orange">zxdg_toplevel_v6_set_parent</span>(<span class="purple">struct zxdg_toplevel_v6 *zxdg_toplevel_v6, struct zxdg_toplevel_v6 *parent</span>)
+</div>
             </li>
           
             <li>
-              set_title - set surface title
-              <br />
-              <code>
-                
-
-<span style="color:blue">static</span>
-<span style="color:pink">void </span><span style="color:red">xdg_toplevel_set_title</span>(<span style="color:green">struct xdg_toplevel *xdg_toplevel, const char *title</span>)
-              </code>
+              <div class="f4 lh-title">
+                set_title
+              </div>
+              <div class="f5 lh-copy">
+                set surface title
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>static</span>
+  <span>void </span><span class="orange">zxdg_toplevel_v6_set_title</span>(<span class="purple">struct zxdg_toplevel_v6 *zxdg_toplevel_v6, const char *title</span>)
+</div>
             </li>
           
             <li>
-              set_app_id - set application ID
-              <br />
-              <code>
-                
-
-<span style="color:blue">static</span>
-<span style="color:pink">void </span><span style="color:red">xdg_toplevel_set_app_id</span>(<span style="color:green">struct xdg_toplevel *xdg_toplevel, const char *app_id</span>)
-              </code>
+              <div class="f4 lh-title">
+                set_app_id
+              </div>
+              <div class="f5 lh-copy">
+                set application ID
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>static</span>
+  <span>void </span><span class="orange">zxdg_toplevel_v6_set_app_id</span>(<span class="purple">struct zxdg_toplevel_v6 *zxdg_toplevel_v6, const char *app_id</span>)
+</div>
             </li>
           
             <li>
-              show_window_menu - show the window menu
-              <br />
-              <code>
-                
-
-<span style="color:blue">static</span>
-<span style="color:pink">void </span><span style="color:red">xdg_toplevel_show_window_menu</span>(<span style="color:green">struct xdg_toplevel *xdg_toplevel, struct wl_seat *seat, uint32_t serial, int32_t x, int32_t y</span>)
-              </code>
+              <div class="f4 lh-title">
+                show_window_menu
+              </div>
+              <div class="f5 lh-copy">
+                show the window menu
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>static</span>
+  <span>void </span><span class="orange">zxdg_toplevel_v6_show_window_menu</span>(<span class="purple">struct zxdg_toplevel_v6 *zxdg_toplevel_v6, struct wl_seat *seat, uint32_t serial, int32_t x, int32_t y</span>)
+</div>
             </li>
           
             <li>
-              move - start an interactive move
-              <br />
-              <code>
-                
-
-<span style="color:blue">static</span>
-<span style="color:pink">void </span><span style="color:red">xdg_toplevel_move</span>(<span style="color:green">struct xdg_toplevel *xdg_toplevel, struct wl_seat *seat, uint32_t serial</span>)
-              </code>
+              <div class="f4 lh-title">
+                move
+              </div>
+              <div class="f5 lh-copy">
+                start an interactive move
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>static</span>
+  <span>void </span><span class="orange">zxdg_toplevel_v6_move</span>(<span class="purple">struct zxdg_toplevel_v6 *zxdg_toplevel_v6, struct wl_seat *seat, uint32_t serial</span>)
+</div>
             </li>
           
             <li>
-              resize - start an interactive resize
-              <br />
-              <code>
-                
-
-<span style="color:blue">static</span>
-<span style="color:pink">void </span><span style="color:red">xdg_toplevel_resize</span>(<span style="color:green">struct xdg_toplevel *xdg_toplevel, struct wl_seat *seat, uint32_t serial, uint32_t edges</span>)
-              </code>
+              <div class="f4 lh-title">
+                resize
+              </div>
+              <div class="f5 lh-copy">
+                start an interactive resize
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>static</span>
+  <span>void </span><span class="orange">zxdg_toplevel_v6_resize</span>(<span class="purple">struct zxdg_toplevel_v6 *zxdg_toplevel_v6, struct wl_seat *seat, uint32_t serial, uint32_t edges</span>)
+</div>
             </li>
           
             <li>
-              set_max_size - set the maximum size
-              <br />
-              <code>
-                
-
-<span style="color:blue">static</span>
-<span style="color:pink">void </span><span style="color:red">xdg_toplevel_set_max_size</span>(<span style="color:green">struct xdg_toplevel *xdg_toplevel, int32_t width, int32_t height</span>)
-              </code>
+              <div class="f4 lh-title">
+                set_max_size
+              </div>
+              <div class="f5 lh-copy">
+                set the maximum size
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>static</span>
+  <span>void </span><span class="orange">zxdg_toplevel_v6_set_max_size</span>(<span class="purple">struct zxdg_toplevel_v6 *zxdg_toplevel_v6, int32_t width, int32_t height</span>)
+</div>
             </li>
           
             <li>
-              set_min_size - set the minimum size
-              <br />
-              <code>
-                
-
-<span style="color:blue">static</span>
-<span style="color:pink">void </span><span style="color:red">xdg_toplevel_set_min_size</span>(<span style="color:green">struct xdg_toplevel *xdg_toplevel, int32_t width, int32_t height</span>)
-              </code>
+              <div class="f4 lh-title">
+                set_min_size
+              </div>
+              <div class="f5 lh-copy">
+                set the minimum size
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>static</span>
+  <span>void </span><span class="orange">zxdg_toplevel_v6_set_min_size</span>(<span class="purple">struct zxdg_toplevel_v6 *zxdg_toplevel_v6, int32_t width, int32_t height</span>)
+</div>
             </li>
           
             <li>
-              set_maximized - maximize the window
-              <br />
-              <code>
-                
-
-<span style="color:blue">static</span>
-<span style="color:pink">void </span><span style="color:red">xdg_toplevel_set_maximized</span>(<span style="color:green">struct xdg_toplevel *xdg_toplevel</span>)
-              </code>
+              <div class="f4 lh-title">
+                set_maximized
+              </div>
+              <div class="f5 lh-copy">
+                maximize the window
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>static</span>
+  <span>void </span><span class="orange">zxdg_toplevel_v6_set_maximized</span>(<span class="purple">struct zxdg_toplevel_v6 *zxdg_toplevel_v6</span>)
+</div>
             </li>
           
             <li>
-              unset_maximized - unmaximize the window
-              <br />
-              <code>
-                
-
-<span style="color:blue">static</span>
-<span style="color:pink">void </span><span style="color:red">xdg_toplevel_unset_maximized</span>(<span style="color:green">struct xdg_toplevel *xdg_toplevel</span>)
-              </code>
+              <div class="f4 lh-title">
+                unset_maximized
+              </div>
+              <div class="f5 lh-copy">
+                unmaximize the window
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>static</span>
+  <span>void </span><span class="orange">zxdg_toplevel_v6_unset_maximized</span>(<span class="purple">struct zxdg_toplevel_v6 *zxdg_toplevel_v6</span>)
+</div>
             </li>
           
             <li>
-              set_fullscreen - set the window as fullscreen on an output
-              <br />
-              <code>
-                
-
-<span style="color:blue">static</span>
-<span style="color:pink">void </span><span style="color:red">xdg_toplevel_set_fullscreen</span>(<span style="color:green">struct xdg_toplevel *xdg_toplevel, struct wl_output *output</span>)
-              </code>
+              <div class="f4 lh-title">
+                set_fullscreen
+              </div>
+              <div class="f5 lh-copy">
+                set the window as fullscreen on a monitor
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>static</span>
+  <span>void </span><span class="orange">zxdg_toplevel_v6_set_fullscreen</span>(<span class="purple">struct zxdg_toplevel_v6 *zxdg_toplevel_v6, struct wl_output *output</span>)
+</div>
             </li>
           
             <li>
-              unset_fullscreen - unset the window as fullscreen
-              <br />
-              <code>
+              <div class="f4 lh-title">
+                unset_fullscreen
+              </div>
+              <div class="f5 lh-copy">
                 
-
-<span style="color:blue">static</span>
-<span style="color:pink">void </span><span style="color:red">xdg_toplevel_unset_fullscreen</span>(<span style="color:green">struct xdg_toplevel *xdg_toplevel</span>)
-              </code>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>static</span>
+  <span>void </span><span class="orange">zxdg_toplevel_v6_unset_fullscreen</span>(<span class="purple">struct zxdg_toplevel_v6 *zxdg_toplevel_v6</span>)
+</div>
             </li>
           
             <li>
-              set_minimized - set the window as minimized
-              <br />
-              <code>
-                
-
-<span style="color:blue">static</span>
-<span style="color:pink">void </span><span style="color:red">xdg_toplevel_set_minimized</span>(<span style="color:green">struct xdg_toplevel *xdg_toplevel</span>)
-              </code>
+              <div class="f4 lh-title">
+                set_minimized
+              </div>
+              <div class="f5 lh-copy">
+                set the window as minimized
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>static</span>
+  <span>void </span><span class="orange">zxdg_toplevel_v6_set_minimized</span>(<span class="purple">struct zxdg_toplevel_v6 *zxdg_toplevel_v6</span>)
+</div>
             </li>
           
         </ul>
       </li>
     
       <li>
-        xdg_popup
-        <pre>A popup surface is a short-lived, temporary surface. It can be used to
+        <div class="f2 lh-copy">
+          zxdg_popup_v6
+        </div>
+        <div class="f6 lh-copy ws-pre-line courier">A popup surface is a short-lived, temporary surface. It can be used to
 implement for example menus, popovers, tooltips and other similar user
 interface concepts.
 
@@ -516,6 +572,9 @@ unmap the surface. Clients that want to dismiss the popup when another
 surface of their own is clicked should dismiss the popup using the destroy
 request.
 
+The parent surface must have either the xdg_toplevel or xdg_popup surface
+role.
+
 A newly created xdg_popup will be stacked on top of all previously created
 xdg_popup surfaces associated with the same xdg_toplevel.
 
@@ -530,35 +589,67 @@ partially adjacent to its parent surface.
 
 The client must call wl_surface.commit on the corresponding wl_surface
 for the xdg_popup state to take effect.
-</pre>
-        <ul>
+</div>
+        <ul class="list pl0">
           
             <li>
-              destroy - remove xdg_popup interface
-              <br />
-              <code>
-                
-
-<span style="color:blue">static</span>
-<span style="color:pink">void </span><span style="color:red">xdg_popup_destroy</span>(<span style="color:green">struct xdg_popup *xdg_popup</span>)
-              </code>
+              <div class="f4 lh-title">
+                destroy
+              </div>
+              <div class="f5 lh-copy">
+                remove xdg_popup interface
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>static</span>
+  <span>void </span><span class="orange">zxdg_popup_v6_destroy</span>(<span class="purple">struct zxdg_popup_v6 *zxdg_popup_v6</span>)
+</div>
             </li>
           
             <li>
-              grab - make the popup take an explicit grab
-              <br />
-              <code>
-                
-
-<span style="color:blue">static</span>
-<span style="color:pink">void </span><span style="color:red">xdg_popup_grab</span>(<span style="color:green">struct xdg_popup *xdg_popup, struct wl_seat *seat, uint32_t serial</span>)
-              </code>
+              <div class="f4 lh-title">
+                grab
+              </div>
+              <div class="f5 lh-copy">
+                make the popup take an explicit grab
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>static</span>
+  <span>void </span><span class="orange">zxdg_popup_v6_grab</span>(<span class="purple">struct zxdg_popup_v6 *zxdg_popup_v6, struct wl_seat *seat, uint32_t serial</span>)
+</div>
             </li>
           
         </ul>
       </li>
     
   </ul>
+
+  <h2 class="f2 lh-title">Copyright Info</h2>
+  <div class="f6 lh-copy ws-pre-line courier">Copyright © 2008-2013 Kristian Høgsberg
+Copyright © 2013      Rafael Antognolli
+Copyright © 2013      Jasper St. Pierre
+Copyright © 2010-2013 Intel Corporation
+
+Permission is hereby granted, free of charge, to any person obtaining a
+copy of this software and associated documentation files (the &quot;Software&quot;),
+to deal in the Software without restriction, including without limitation
+the rights to use, copy, modify, merge, publish, distribute, sublicense,
+and&#x2f;or sell copies of the Software, and to permit persons to whom the
+Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice (including the next
+paragraph) shall be included in all copies or substantial portions of the
+Software.
+
+THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL
+THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+DEALINGS IN THE SOFTWARE.
+</div>
 
     </div>
 

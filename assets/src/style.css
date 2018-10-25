@@ -7,6 +7,10 @@
   }
 }
 
-.link:hover {
+.hover-pointer {
   cursor: pointer;
+}
+
+.ws-pre-line {
+  white-space: pre-line;
 }

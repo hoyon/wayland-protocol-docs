@@ -21,7 +21,7 @@ struct ProtocolTemplate<'a> {
 }
 
 fn main() -> std::io::Result<()> {
-    let protocol = Protocol::from_file("./data/xdg-shell.xml");
+    let protocol = Protocol::from_file("./data/xdg-shell-unstable-v6.xml");
     let template = ProtocolTemplate {
         protocol: &protocol
     };
