@@ -7,8 +7,10 @@ use protocol::{Arg, Request};
 struct RequestTemplate {
     name: String,
     ret: String,
-    args: String,
+    args: Vec<ArgTuple>,
 }
+
+type ArgTuple = (String, String);
 
 pub fn format_request(request: &Request, protocol_name: &str) -> String {
     match request.request_type {
@@ -25,7 +27,7 @@ pub fn format_request(request: &Request, protocol_name: &str) -> String {
                 let template = RequestTemplate {
                     name: format!("{}_{}", protocol_name, request.name),
                     ret: "void ".to_string(),
-                    args: this_arg(protocol_name),
+                    args: [this_arg(protocol_name)].to_vec(),
                 };
                 template.render().unwrap()
             } else {
@@ -38,41 +40,41 @@ pub fn format_request(request: &Request, protocol_name: &str) -> String {
 fn format_return(request: &Request) -> String {
     let id = request.args.iter().find(|&x| x.arg_type == "new_id");
     match id {
-        Some(arg) => format!("struct {} *", arg.interface.clone().unwrap()),
+        Some(arg) => format!("struct {}* ", arg.interface.clone().unwrap()),
         None => "void ".to_string(),
     }
 }
 
-fn format_args(request: &Request, protocol_name: &str) -> String {
-    let arg_strings = request
+fn format_args(request: &Request, protocol_name: &str) -> Vec<ArgTuple> {
+    let arg_tuples = request
         .args
         .iter()
         .filter(|&a| a.arg_type != "new_id")
         .map(format_arg)
-        .collect::<Vec<String>>();
+        .collect::<Vec<ArgTuple>>();
 
     let mut default = vec![this_arg(protocol_name)];
-    default.extend(arg_strings);
-    default.join(", ")
+    default.extend(arg_tuples);
+    default
 }
 
-fn format_arg(arg: &Arg) -> String {
+fn format_arg(arg: &Arg) -> ArgTuple {
     let arg_type = match arg.arg_type.as_ref() {
-        "int" => "int32_t ".to_string(),
-        "uint" => "uint32_t ".to_string(),
+        "int" => "int32_t".to_string(),
+        "uint" => "uint32_t".to_string(),
         "fixed" => "wl_fixed_t".to_string(),
-        "string" => "const char *".to_string(),
-        "object" => format!("struct {} *", arg.interface.clone().unwrap()),
-        "array" => "struct wl_array *".to_string(),
+        "string" => "const char*".to_string(),
+        "object" => format!("struct {}*", arg.interface.clone().unwrap()),
+        "array" => "struct wl_array*".to_string(),
         "fd" => "int32_t".to_string(),
         _ => {
             panic!("Unknown argument type");
         }
     };
-
-    format!("{}{}", arg_type, arg.name)
+    (arg_type, arg.name.to_string())
 }
 
-fn this_arg(protocol_name: &str) -> String {
-    format!("struct {} *{}", protocol_name, protocol_name)
+fn this_arg(protocol_name: &str) -> ArgTuple {
+    let arg_type = format!("struct {}*", protocol_name);
+    (arg_type, protocol_name.to_string())
 }

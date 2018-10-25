@@ -14,3 +14,7 @@
 .ws-pre-line {
   white-space: pre-line;
 }
+
+.ws-pre-wrap {
+  white-space: pre-wrap;
+}

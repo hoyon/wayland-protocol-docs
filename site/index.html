@@ -54,8 +54,11 @@ desktop environments.
               </div>
               
 <div class="f6 lh-copy courier">
-  <span>static</span>
-  <span>void </span><span class="orange">zxdg_shell_v6_destroy</span>(<span class="purple">struct zxdg_shell_v6 *zxdg_shell_v6</span>)
+  <span>void </span><span class="orange">zxdg_shell_v6_destroy</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zxdg_shell_v6*</span> zxdg_shell_v6</div>
+    
+  )
 </div>
             </li>
           
@@ -68,8 +71,11 @@ desktop environments.
               </div>
               
 <div class="f6 lh-copy courier">
-  <span>static</span>
-  <span>struct zxdg_positioner_v6 *</span><span class="orange">zxdg_shell_v6_create_positioner</span>(<span class="purple">struct zxdg_shell_v6 *zxdg_shell_v6</span>)
+  <span>struct zxdg_positioner_v6* </span><span class="orange">zxdg_shell_v6_create_positioner</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zxdg_shell_v6*</span> zxdg_shell_v6</div>
+    
+  )
 </div>
             </li>
           
@@ -82,8 +88,13 @@ desktop environments.
               </div>
               
 <div class="f6 lh-copy courier">
-  <span>static</span>
-  <span>struct zxdg_surface_v6 *</span><span class="orange">zxdg_shell_v6_get_xdg_surface</span>(<span class="purple">struct zxdg_shell_v6 *zxdg_shell_v6, struct wl_surface *surface</span>)
+  <span>struct zxdg_surface_v6* </span><span class="orange">zxdg_shell_v6_get_xdg_surface</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zxdg_shell_v6*</span> zxdg_shell_v6,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_surface*</span> surface</div>
+    
+  )
 </div>
             </li>
           
@@ -96,8 +107,13 @@ desktop environments.
               </div>
               
 <div class="f6 lh-copy courier">
-  <span>static</span>
-  <span>void </span><span class="orange">zxdg_shell_v6_pong</span>(<span class="purple">struct zxdg_shell_v6 *zxdg_shell_v6, uint32_t serial</span>)
+  <span>void </span><span class="orange">zxdg_shell_v6_pong</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zxdg_shell_v6*</span> zxdg_shell_v6,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> serial</div>
+    
+  )
 </div>
             </li>
           
@@ -139,8 +155,11 @@ positioning a surface raises an error.
               </div>
               
 <div class="f6 lh-copy courier">
-  <span>static</span>
-  <span>void </span><span class="orange">zxdg_positioner_v6_destroy</span>(<span class="purple">struct zxdg_positioner_v6 *zxdg_positioner_v6</span>)
+  <span>void </span><span class="orange">zxdg_positioner_v6_destroy</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zxdg_positioner_v6*</span> zxdg_positioner_v6</div>
+    
+  )
 </div>
             </li>
           
@@ -153,8 +172,15 @@ positioning a surface raises an error.
               </div>
               
 <div class="f6 lh-copy courier">
-  <span>static</span>
-  <span>void </span><span class="orange">zxdg_positioner_v6_set_size</span>(<span class="purple">struct zxdg_positioner_v6 *zxdg_positioner_v6, int32_t width, int32_t height</span>)
+  <span>void </span><span class="orange">zxdg_positioner_v6_set_size</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zxdg_positioner_v6*</span> zxdg_positioner_v6,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> width,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> height</div>
+    
+  )
 </div>
             </li>
           
@@ -167,8 +193,19 @@ positioning a surface raises an error.
               </div>
               
 <div class="f6 lh-copy courier">
-  <span>static</span>
-  <span>void </span><span class="orange">zxdg_positioner_v6_set_anchor_rect</span>(<span class="purple">struct zxdg_positioner_v6 *zxdg_positioner_v6, int32_t x, int32_t y, int32_t width, int32_t height</span>)
+  <span>void </span><span class="orange">zxdg_positioner_v6_set_anchor_rect</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zxdg_positioner_v6*</span> zxdg_positioner_v6,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> x,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> y,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> width,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> height</div>
+    
+  )
 </div>
             </li>
           
@@ -181,8 +218,13 @@ positioning a surface raises an error.
               </div>
               
 <div class="f6 lh-copy courier">
-  <span>static</span>
-  <span>void </span><span class="orange">zxdg_positioner_v6_set_anchor</span>(<span class="purple">struct zxdg_positioner_v6 *zxdg_positioner_v6, uint32_t anchor</span>)
+  <span>void </span><span class="orange">zxdg_positioner_v6_set_anchor</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zxdg_positioner_v6*</span> zxdg_positioner_v6,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> anchor</div>
+    
+  )
 </div>
             </li>
           
@@ -195,8 +237,13 @@ positioning a surface raises an error.
               </div>
               
 <div class="f6 lh-copy courier">
-  <span>static</span>
-  <span>void </span><span class="orange">zxdg_positioner_v6_set_gravity</span>(<span class="purple">struct zxdg_positioner_v6 *zxdg_positioner_v6, uint32_t gravity</span>)
+  <span>void </span><span class="orange">zxdg_positioner_v6_set_gravity</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zxdg_positioner_v6*</span> zxdg_positioner_v6,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> gravity</div>
+    
+  )
 </div>
             </li>
           
@@ -209,8 +256,13 @@ positioning a surface raises an error.
               </div>
               
 <div class="f6 lh-copy courier">
-  <span>static</span>
-  <span>void </span><span class="orange">zxdg_positioner_v6_set_constraint_adjustment</span>(<span class="purple">struct zxdg_positioner_v6 *zxdg_positioner_v6, uint32_t constraint_adjustment</span>)
+  <span>void </span><span class="orange">zxdg_positioner_v6_set_constraint_adjustment</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zxdg_positioner_v6*</span> zxdg_positioner_v6,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> constraint_adjustment</div>
+    
+  )
 </div>
             </li>
           
@@ -223,8 +275,15 @@ positioning a surface raises an error.
               </div>
               
 <div class="f6 lh-copy courier">
-  <span>static</span>
-  <span>void </span><span class="orange">zxdg_positioner_v6_set_offset</span>(<span class="purple">struct zxdg_positioner_v6 *zxdg_positioner_v6, int32_t x, int32_t y</span>)
+  <span>void </span><span class="orange">zxdg_positioner_v6_set_offset</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zxdg_positioner_v6*</span> zxdg_positioner_v6,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> x,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> y</div>
+    
+  )
 </div>
             </li>
           
@@ -277,8 +336,11 @@ buffer to the surface.
               </div>
               
 <div class="f6 lh-copy courier">
-  <span>static</span>
-  <span>void </span><span class="orange">zxdg_surface_v6_destroy</span>(<span class="purple">struct zxdg_surface_v6 *zxdg_surface_v6</span>)
+  <span>void </span><span class="orange">zxdg_surface_v6_destroy</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zxdg_surface_v6*</span> zxdg_surface_v6</div>
+    
+  )
 </div>
             </li>
           
@@ -291,8 +353,11 @@ buffer to the surface.
               </div>
               
 <div class="f6 lh-copy courier">
-  <span>static</span>
-  <span>struct zxdg_toplevel_v6 *</span><span class="orange">zxdg_surface_v6_get_toplevel</span>(<span class="purple">struct zxdg_surface_v6 *zxdg_surface_v6</span>)
+  <span>struct zxdg_toplevel_v6* </span><span class="orange">zxdg_surface_v6_get_toplevel</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zxdg_surface_v6*</span> zxdg_surface_v6</div>
+    
+  )
 </div>
             </li>
           
@@ -305,8 +370,15 @@ buffer to the surface.
               </div>
               
 <div class="f6 lh-copy courier">
-  <span>static</span>
-  <span>struct zxdg_popup_v6 *</span><span class="orange">zxdg_surface_v6_get_popup</span>(<span class="purple">struct zxdg_surface_v6 *zxdg_surface_v6, struct zxdg_surface_v6 *parent, struct zxdg_positioner_v6 *positioner</span>)
+  <span>struct zxdg_popup_v6* </span><span class="orange">zxdg_surface_v6_get_popup</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zxdg_surface_v6*</span> zxdg_surface_v6,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zxdg_surface_v6*</span> parent,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zxdg_positioner_v6*</span> positioner</div>
+    
+  )
 </div>
             </li>
           
@@ -319,8 +391,19 @@ buffer to the surface.
               </div>
               
 <div class="f6 lh-copy courier">
-  <span>static</span>
-  <span>void </span><span class="orange">zxdg_surface_v6_set_window_geometry</span>(<span class="purple">struct zxdg_surface_v6 *zxdg_surface_v6, int32_t x, int32_t y, int32_t width, int32_t height</span>)
+  <span>void </span><span class="orange">zxdg_surface_v6_set_window_geometry</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zxdg_surface_v6*</span> zxdg_surface_v6,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> x,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> y,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> width,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> height</div>
+    
+  )
 </div>
             </li>
           
@@ -333,8 +416,13 @@ buffer to the surface.
               </div>
               
 <div class="f6 lh-copy courier">
-  <span>static</span>
-  <span>void </span><span class="orange">zxdg_surface_v6_ack_configure</span>(<span class="purple">struct zxdg_surface_v6 *zxdg_surface_v6, uint32_t serial</span>)
+  <span>void </span><span class="orange">zxdg_surface_v6_ack_configure</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zxdg_surface_v6*</span> zxdg_surface_v6,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> serial</div>
+    
+  )
 </div>
             </li>
           
@@ -362,8 +450,11 @@ resize and move.
               </div>
               
 <div class="f6 lh-copy courier">
-  <span>static</span>
-  <span>void </span><span class="orange">zxdg_toplevel_v6_destroy</span>(<span class="purple">struct zxdg_toplevel_v6 *zxdg_toplevel_v6</span>)
+  <span>void </span><span class="orange">zxdg_toplevel_v6_destroy</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zxdg_toplevel_v6*</span> zxdg_toplevel_v6</div>
+    
+  )
 </div>
             </li>
           
@@ -376,8 +467,13 @@ resize and move.
               </div>
               
 <div class="f6 lh-copy courier">
-  <span>static</span>
-  <span>void </span><span class="orange">zxdg_toplevel_v6_set_parent</span>(<span class="purple">struct zxdg_toplevel_v6 *zxdg_toplevel_v6, struct zxdg_toplevel_v6 *parent</span>)
+  <span>void </span><span class="orange">zxdg_toplevel_v6_set_parent</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zxdg_toplevel_v6*</span> zxdg_toplevel_v6,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zxdg_toplevel_v6*</span> parent</div>
+    
+  )
 </div>
             </li>
           
@@ -390,8 +486,13 @@ resize and move.
               </div>
               
 <div class="f6 lh-copy courier">
-  <span>static</span>
-  <span>void </span><span class="orange">zxdg_toplevel_v6_set_title</span>(<span class="purple">struct zxdg_toplevel_v6 *zxdg_toplevel_v6, const char *title</span>)
+  <span>void </span><span class="orange">zxdg_toplevel_v6_set_title</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zxdg_toplevel_v6*</span> zxdg_toplevel_v6,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">const char*</span> title</div>
+    
+  )
 </div>
             </li>
           
@@ -404,8 +505,13 @@ resize and move.
               </div>
               
 <div class="f6 lh-copy courier">
-  <span>static</span>
-  <span>void </span><span class="orange">zxdg_toplevel_v6_set_app_id</span>(<span class="purple">struct zxdg_toplevel_v6 *zxdg_toplevel_v6, const char *app_id</span>)
+  <span>void </span><span class="orange">zxdg_toplevel_v6_set_app_id</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zxdg_toplevel_v6*</span> zxdg_toplevel_v6,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">const char*</span> app_id</div>
+    
+  )
 </div>
             </li>
           
@@ -418,8 +524,19 @@ resize and move.
               </div>
               
 <div class="f6 lh-copy courier">
-  <span>static</span>
-  <span>void </span><span class="orange">zxdg_toplevel_v6_show_window_menu</span>(<span class="purple">struct zxdg_toplevel_v6 *zxdg_toplevel_v6, struct wl_seat *seat, uint32_t serial, int32_t x, int32_t y</span>)
+  <span>void </span><span class="orange">zxdg_toplevel_v6_show_window_menu</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zxdg_toplevel_v6*</span> zxdg_toplevel_v6,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_seat*</span> seat,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> serial,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> x,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> y</div>
+    
+  )
 </div>
             </li>
           
@@ -432,8 +549,15 @@ resize and move.
               </div>
               
 <div class="f6 lh-copy courier">
-  <span>static</span>
-  <span>void </span><span class="orange">zxdg_toplevel_v6_move</span>(<span class="purple">struct zxdg_toplevel_v6 *zxdg_toplevel_v6, struct wl_seat *seat, uint32_t serial</span>)
+  <span>void </span><span class="orange">zxdg_toplevel_v6_move</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zxdg_toplevel_v6*</span> zxdg_toplevel_v6,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_seat*</span> seat,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> serial</div>
+    
+  )
 </div>
             </li>
           
@@ -446,8 +570,17 @@ resize and move.
               </div>
               
 <div class="f6 lh-copy courier">
-  <span>static</span>
-  <span>void </span><span class="orange">zxdg_toplevel_v6_resize</span>(<span class="purple">struct zxdg_toplevel_v6 *zxdg_toplevel_v6, struct wl_seat *seat, uint32_t serial, uint32_t edges</span>)
+  <span>void </span><span class="orange">zxdg_toplevel_v6_resize</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zxdg_toplevel_v6*</span> zxdg_toplevel_v6,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_seat*</span> seat,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> serial,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> edges</div>
+    
+  )
 </div>
             </li>
           
@@ -460,8 +593,15 @@ resize and move.
               </div>
               
 <div class="f6 lh-copy courier">
-  <span>static</span>
-  <span>void </span><span class="orange">zxdg_toplevel_v6_set_max_size</span>(<span class="purple">struct zxdg_toplevel_v6 *zxdg_toplevel_v6, int32_t width, int32_t height</span>)
+  <span>void </span><span class="orange">zxdg_toplevel_v6_set_max_size</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zxdg_toplevel_v6*</span> zxdg_toplevel_v6,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> width,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> height</div>
+    
+  )
 </div>
             </li>
           
@@ -474,8 +614,15 @@ resize and move.
               </div>
               
 <div class="f6 lh-copy courier">
-  <span>static</span>
-  <span>void </span><span class="orange">zxdg_toplevel_v6_set_min_size</span>(<span class="purple">struct zxdg_toplevel_v6 *zxdg_toplevel_v6, int32_t width, int32_t height</span>)
+  <span>void </span><span class="orange">zxdg_toplevel_v6_set_min_size</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zxdg_toplevel_v6*</span> zxdg_toplevel_v6,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> width,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> height</div>
+    
+  )
 </div>
             </li>
           
@@ -488,8 +635,11 @@ resize and move.
               </div>
               
 <div class="f6 lh-copy courier">
-  <span>static</span>
-  <span>void </span><span class="orange">zxdg_toplevel_v6_set_maximized</span>(<span class="purple">struct zxdg_toplevel_v6 *zxdg_toplevel_v6</span>)
+  <span>void </span><span class="orange">zxdg_toplevel_v6_set_maximized</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zxdg_toplevel_v6*</span> zxdg_toplevel_v6</div>
+    
+  )
 </div>
             </li>
           
@@ -502,8 +652,11 @@ resize and move.
               </div>
               
 <div class="f6 lh-copy courier">
-  <span>static</span>
-  <span>void </span><span class="orange">zxdg_toplevel_v6_unset_maximized</span>(<span class="purple">struct zxdg_toplevel_v6 *zxdg_toplevel_v6</span>)
+  <span>void </span><span class="orange">zxdg_toplevel_v6_unset_maximized</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zxdg_toplevel_v6*</span> zxdg_toplevel_v6</div>
+    
+  )
 </div>
             </li>
           
@@ -516,8 +669,13 @@ resize and move.
               </div>
               
 <div class="f6 lh-copy courier">
-  <span>static</span>
-  <span>void </span><span class="orange">zxdg_toplevel_v6_set_fullscreen</span>(<span class="purple">struct zxdg_toplevel_v6 *zxdg_toplevel_v6, struct wl_output *output</span>)
+  <span>void </span><span class="orange">zxdg_toplevel_v6_set_fullscreen</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zxdg_toplevel_v6*</span> zxdg_toplevel_v6,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_output*</span> output</div>
+    
+  )
 </div>
             </li>
           
@@ -530,8 +688,11 @@ resize and move.
               </div>
               
 <div class="f6 lh-copy courier">
-  <span>static</span>
-  <span>void </span><span class="orange">zxdg_toplevel_v6_unset_fullscreen</span>(<span class="purple">struct zxdg_toplevel_v6 *zxdg_toplevel_v6</span>)
+  <span>void </span><span class="orange">zxdg_toplevel_v6_unset_fullscreen</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zxdg_toplevel_v6*</span> zxdg_toplevel_v6</div>
+    
+  )
 </div>
             </li>
           
@@ -544,8 +705,11 @@ resize and move.
               </div>
               
 <div class="f6 lh-copy courier">
-  <span>static</span>
-  <span>void </span><span class="orange">zxdg_toplevel_v6_set_minimized</span>(<span class="purple">struct zxdg_toplevel_v6 *zxdg_toplevel_v6</span>)
+  <span>void </span><span class="orange">zxdg_toplevel_v6_set_minimized</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zxdg_toplevel_v6*</span> zxdg_toplevel_v6</div>
+    
+  )
 </div>
             </li>
           
@@ -601,8 +765,11 @@ for the xdg_popup state to take effect.
               </div>
               
 <div class="f6 lh-copy courier">
-  <span>static</span>
-  <span>void </span><span class="orange">zxdg_popup_v6_destroy</span>(<span class="purple">struct zxdg_popup_v6 *zxdg_popup_v6</span>)
+  <span>void </span><span class="orange">zxdg_popup_v6_destroy</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zxdg_popup_v6*</span> zxdg_popup_v6</div>
+    
+  )
 </div>
             </li>
           
@@ -615,8 +782,15 @@ for the xdg_popup state to take effect.
               </div>
               
 <div class="f6 lh-copy courier">
-  <span>static</span>
-  <span>void </span><span class="orange">zxdg_popup_v6_grab</span>(<span class="purple">struct zxdg_popup_v6 *zxdg_popup_v6, struct wl_seat *seat, uint32_t serial</span>)
+  <span>void </span><span class="orange">zxdg_popup_v6_grab</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zxdg_popup_v6*</span> zxdg_popup_v6,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_seat*</span> seat,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> serial</div>
+    
+  )
 </div>
             </li>
           
