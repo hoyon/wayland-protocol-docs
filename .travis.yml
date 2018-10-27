@@ -1,11 +1,15 @@
 language: rust
 rust:
   - stable
-node_js:
-  - "lts/*"
 cache: cargo
 script:
-  - ./build
+  - nvm install stable
+  - nvm use stable
+  - yarn --cwd assets install
+  - yarn --cwd assets run build
+  - cargo build
+  - bash update_protocols.sh
+  - target/debug/wayland-protocol-docs
 
 deploy:
   provider: pages
