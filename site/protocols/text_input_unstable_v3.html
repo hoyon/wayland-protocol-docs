@@ -1,0 +1,310 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>text_input_unstable_v3</title>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+     
+  </head>
+  <body class="bg-near-white black-70 sans-serif pa2 ph6-l">
+
+    
+<div class="f3 lh-copy breadcrumbs">
+  <span class="link mid-gray dim hover-pointer">
+    wayland
+    <div class="material-icons arrow">keyboard_arrow_down</div>
+  </span>
+  /
+  <span class="link mid-gray dim hover-pointer">
+    stable
+    <div class="material-icons arrow">keyboard_arrow_down</div>
+  </span>
+  /
+  <span class="link mid-gray dim hover-pointer">
+    xdg_shell
+    <div class="material-icons arrow">keyboard_arrow_down</div>
+  </span>
+</div>
+
+    <div id="content">
+      
+  <h1 class="f1 lh-title">text_input_unstable_v3</h1>
+  <ul class="list pl0">
+    
+      <li>
+        <div class="f2 lh-copy">
+          zwp_text_input_v3
+        </div>
+        <div class="f6 lh-copy ws-pre-line courier">The zwp_text_input_v3 interface represents text input and input methods
+associated with a seat. It provides enter&#x2f;leave events to follow the
+text input focus for a seat.
+
+Requests are used to enable&#x2f;disable the text-input object and set
+state information like surrounding and selected text or the content type.
+The information about the entered text is sent to the text-input object
+via the preedit_string and commit_string events.
+
+Text is valid UTF-8 encoded, indices and lengths are in bytes. Indices
+must not point to middle bytes inside a code point: they must either
+point to the first byte of a code point or to the end of the buffer.
+Lengths must be measured between two valid indices.
+
+Focus moving throughout surfaces will result in the emission of
+zwp_text_input_v3.enter and zwp_text_input_v3.leave events. The focused
+surface must commit zwp_text_input_v3.enable and
+zwp_text_input_v3.disable requests as the keyboard focus moves across
+editable and non-editable elements of the UI. Those two requests are not
+expected to be paired with each other, the compositor must be able to
+handle consecutive series of the same request.
+
+State is sent by the state requests (set_surrounding_text,
+set_content_type and set_cursor_rectangle) and a commit request. After an
+enter event or disable request all state information is invalidated and
+needs to be resent by the client.
+</div>
+        <ul class="list pl0">
+          
+            <li>
+              <div class="f4 lh-title">
+                destroy
+              </div>
+              <div class="f5 lh-copy">
+                Destroy the wp_text_input
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="orange">zwp_text_input_v3_destroy</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwp_text_input_v3*</span> zwp_text_input_v3</div>
+    
+  )
+</div>
+            </li>
+          
+            <li>
+              <div class="f4 lh-title">
+                enable
+              </div>
+              <div class="f5 lh-copy">
+                Request text input to be enabled
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="orange">zwp_text_input_v3_enable</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwp_text_input_v3*</span> zwp_text_input_v3</div>
+    
+  )
+</div>
+            </li>
+          
+            <li>
+              <div class="f4 lh-title">
+                disable
+              </div>
+              <div class="f5 lh-copy">
+                Disable text input on a surface
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="orange">zwp_text_input_v3_disable</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwp_text_input_v3*</span> zwp_text_input_v3</div>
+    
+  )
+</div>
+            </li>
+          
+            <li>
+              <div class="f4 lh-title">
+                set_surrounding_text
+              </div>
+              <div class="f5 lh-copy">
+                sets the surrounding text
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="orange">zwp_text_input_v3_set_surrounding_text</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwp_text_input_v3*</span> zwp_text_input_v3,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">const char*</span> text,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> cursor,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> anchor</div>
+    
+  )
+</div>
+            </li>
+          
+            <li>
+              <div class="f4 lh-title">
+                set_text_change_cause
+              </div>
+              <div class="f5 lh-copy">
+                indicates the cause of surrounding text change
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="orange">zwp_text_input_v3_set_text_change_cause</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwp_text_input_v3*</span> zwp_text_input_v3,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> cause</div>
+    
+  )
+</div>
+            </li>
+          
+            <li>
+              <div class="f4 lh-title">
+                set_content_type
+              </div>
+              <div class="f5 lh-copy">
+                set content purpose and hint
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="orange">zwp_text_input_v3_set_content_type</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwp_text_input_v3*</span> zwp_text_input_v3,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> hint,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> purpose</div>
+    
+  )
+</div>
+            </li>
+          
+            <li>
+              <div class="f4 lh-title">
+                set_cursor_rectangle
+              </div>
+              <div class="f5 lh-copy">
+                set cursor position
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="orange">zwp_text_input_v3_set_cursor_rectangle</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwp_text_input_v3*</span> zwp_text_input_v3,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> x,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> y,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> width,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> height</div>
+    
+  )
+</div>
+            </li>
+          
+            <li>
+              <div class="f4 lh-title">
+                commit
+              </div>
+              <div class="f5 lh-copy">
+                commit state
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="orange">zwp_text_input_v3_commit</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwp_text_input_v3*</span> zwp_text_input_v3</div>
+    
+  )
+</div>
+            </li>
+          
+        </ul>
+      </li>
+    
+      <li>
+        <div class="f2 lh-copy">
+          zwp_text_input_manager_v3
+        </div>
+        <div class="f6 lh-copy ws-pre-line courier">A factory for text-input objects. This object is a global singleton.
+</div>
+        <ul class="list pl0">
+          
+            <li>
+              <div class="f4 lh-title">
+                destroy
+              </div>
+              <div class="f5 lh-copy">
+                Destroy the wp_text_input_manager
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="orange">zwp_text_input_manager_v3_destroy</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwp_text_input_manager_v3*</span> zwp_text_input_manager_v3</div>
+    
+  )
+</div>
+            </li>
+          
+            <li>
+              <div class="f4 lh-title">
+                get_text_input
+              </div>
+              <div class="f5 lh-copy">
+                create a new text input object
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>struct zwp_text_input_v3* </span><span class="orange">zwp_text_input_manager_v3_get_text_input</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwp_text_input_manager_v3*</span> zwp_text_input_manager_v3,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_seat*</span> seat</div>
+    
+  )
+</div>
+            </li>
+          
+        </ul>
+      </li>
+    
+  </ul>
+
+  <h2 class="f2 lh-title">Copyright Info</h2>
+  <div class="f6 lh-copy ws-pre-line courier">Copyright © 2012, 2013 Intel Corporation
+Copyright © 2015, 2016 Jan Arne Petersen
+Copyright © 2017, 2018 Red Hat, Inc.
+Copyright © 2018       Purism SPC
+
+Permission to use, copy, modify, distribute, and sell this
+software and its documentation for any purpose is hereby granted
+without fee, provided that the above copyright notice appear in
+all copies and that both that copyright notice and this permission
+notice appear in supporting documentation, and that the name of
+the copyright holders not be used in advertising or publicity
+pertaining to distribution of the software without specific,
+written prior permission.  The copyright holders make no
+representations about the suitability of this software for any
+purpose.  It is provided &quot;as is&quot; without express or implied
+warranty.
+
+THE COPYRIGHT HOLDERS DISCLAIM ALL WARRANTIES WITH REGARD TO THIS
+SOFTWARE, INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND
+FITNESS, IN NO EVENT SHALL THE COPYRIGHT HOLDERS BE LIABLE FOR ANY
+SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN
+AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION,
+ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF
+THIS SOFTWARE.
+</div>
+
+    </div>
+
+    <script src="/bundle.js"></script>
+  </body>
+</html>

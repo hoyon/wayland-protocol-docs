@@ -1,0 +1,567 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>xdg_shell_unstable_v5</title>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+     
+  </head>
+  <body class="bg-near-white black-70 sans-serif pa2 ph6-l">
+
+    
+<div class="f3 lh-copy breadcrumbs">
+  <span class="link mid-gray dim hover-pointer">
+    wayland
+    <div class="material-icons arrow">keyboard_arrow_down</div>
+  </span>
+  /
+  <span class="link mid-gray dim hover-pointer">
+    stable
+    <div class="material-icons arrow">keyboard_arrow_down</div>
+  </span>
+  /
+  <span class="link mid-gray dim hover-pointer">
+    xdg_shell
+    <div class="material-icons arrow">keyboard_arrow_down</div>
+  </span>
+</div>
+
+    <div id="content">
+      
+  <h1 class="f1 lh-title">xdg_shell_unstable_v5</h1>
+  <ul class="list pl0">
+    
+      <li>
+        <div class="f2 lh-copy">
+          xdg_shell
+        </div>
+        <div class="f6 lh-copy ws-pre-line courier">xdg_shell allows clients to turn a wl_surface into a &quot;real window&quot;
+which can be dragged, resized, stacked, and moved around by the
+user. Everything about this interface is suited towards traditional
+desktop environments.
+</div>
+        <ul class="list pl0">
+          
+            <li>
+              <div class="f4 lh-title">
+                destroy
+              </div>
+              <div class="f5 lh-copy">
+                destroy xdg_shell
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="orange">xdg_shell_destroy</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct xdg_shell*</span> xdg_shell</div>
+    
+  )
+</div>
+            </li>
+          
+            <li>
+              <div class="f4 lh-title">
+                use_unstable_version
+              </div>
+              <div class="f5 lh-copy">
+                enable use of this unstable version
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="orange">xdg_shell_use_unstable_version</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct xdg_shell*</span> xdg_shell,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> version</div>
+    
+  )
+</div>
+            </li>
+          
+            <li>
+              <div class="f4 lh-title">
+                get_xdg_surface
+              </div>
+              <div class="f5 lh-copy">
+                create a shell surface from a surface
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>struct xdg_surface* </span><span class="orange">xdg_shell_get_xdg_surface</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct xdg_shell*</span> xdg_shell,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_surface*</span> surface</div>
+    
+  )
+</div>
+            </li>
+          
+            <li>
+              <div class="f4 lh-title">
+                get_xdg_popup
+              </div>
+              <div class="f5 lh-copy">
+                create a popup for a surface
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>struct xdg_popup* </span><span class="orange">xdg_shell_get_xdg_popup</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct xdg_shell*</span> xdg_shell,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_surface*</span> surface,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_surface*</span> parent,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_seat*</span> seat,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> serial,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> x,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> y</div>
+    
+  )
+</div>
+            </li>
+          
+            <li>
+              <div class="f4 lh-title">
+                pong
+              </div>
+              <div class="f5 lh-copy">
+                respond to a ping event
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="orange">xdg_shell_pong</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct xdg_shell*</span> xdg_shell,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> serial</div>
+    
+  )
+</div>
+            </li>
+          
+        </ul>
+      </li>
+    
+      <li>
+        <div class="f2 lh-copy">
+          xdg_surface
+        </div>
+        <div class="f6 lh-copy ws-pre-line courier">An interface that may be implemented by a wl_surface, for
+implementations that provide a desktop-style user interface.
+
+It provides requests to treat surfaces like windows, allowing to set
+properties like maximized, fullscreen, minimized, and to move and resize
+them, and associate metadata like title and app id.
+
+The client must call wl_surface.commit on the corresponding wl_surface
+for the xdg_surface state to take effect. Prior to committing the new
+state, it can set up initial configuration, such as maximizing or setting
+a window geometry.
+
+Even without attaching a buffer the compositor must respond to initial
+committed configuration, for instance sending a configure event with
+expected window geometry if the client maximized its surface during
+initialization.
+
+For a surface to be mapped by the compositor the client must have
+committed both an xdg_surface state and a buffer.
+</div>
+        <ul class="list pl0">
+          
+            <li>
+              <div class="f4 lh-title">
+                destroy
+              </div>
+              <div class="f5 lh-copy">
+                Destroy the xdg_surface
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="orange">xdg_surface_destroy</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct xdg_surface*</span> xdg_surface</div>
+    
+  )
+</div>
+            </li>
+          
+            <li>
+              <div class="f4 lh-title">
+                set_parent
+              </div>
+              <div class="f5 lh-copy">
+                set the parent of this surface
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="orange">xdg_surface_set_parent</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct xdg_surface*</span> xdg_surface,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct xdg_surface*</span> parent</div>
+    
+  )
+</div>
+            </li>
+          
+            <li>
+              <div class="f4 lh-title">
+                set_title
+              </div>
+              <div class="f5 lh-copy">
+                set surface title
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="orange">xdg_surface_set_title</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct xdg_surface*</span> xdg_surface,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">const char*</span> title</div>
+    
+  )
+</div>
+            </li>
+          
+            <li>
+              <div class="f4 lh-title">
+                set_app_id
+              </div>
+              <div class="f5 lh-copy">
+                set application ID
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="orange">xdg_surface_set_app_id</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct xdg_surface*</span> xdg_surface,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">const char*</span> app_id</div>
+    
+  )
+</div>
+            </li>
+          
+            <li>
+              <div class="f4 lh-title">
+                show_window_menu
+              </div>
+              <div class="f5 lh-copy">
+                show the window menu
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="orange">xdg_surface_show_window_menu</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct xdg_surface*</span> xdg_surface,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_seat*</span> seat,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> serial,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> x,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> y</div>
+    
+  )
+</div>
+            </li>
+          
+            <li>
+              <div class="f4 lh-title">
+                move
+              </div>
+              <div class="f5 lh-copy">
+                start an interactive move
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="orange">xdg_surface_move</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct xdg_surface*</span> xdg_surface,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_seat*</span> seat,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> serial</div>
+    
+  )
+</div>
+            </li>
+          
+            <li>
+              <div class="f4 lh-title">
+                resize
+              </div>
+              <div class="f5 lh-copy">
+                start an interactive resize
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="orange">xdg_surface_resize</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct xdg_surface*</span> xdg_surface,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_seat*</span> seat,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> serial,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> edges</div>
+    
+  )
+</div>
+            </li>
+          
+            <li>
+              <div class="f4 lh-title">
+                ack_configure
+              </div>
+              <div class="f5 lh-copy">
+                ack a configure event
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="orange">xdg_surface_ack_configure</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct xdg_surface*</span> xdg_surface,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> serial</div>
+    
+  )
+</div>
+            </li>
+          
+            <li>
+              <div class="f4 lh-title">
+                set_window_geometry
+              </div>
+              <div class="f5 lh-copy">
+                set the new window geometry
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="orange">xdg_surface_set_window_geometry</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct xdg_surface*</span> xdg_surface,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> x,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> y,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> width,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> height</div>
+    
+  )
+</div>
+            </li>
+          
+            <li>
+              <div class="f4 lh-title">
+                set_maximized
+              </div>
+              <div class="f5 lh-copy">
+                maximize the window
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="orange">xdg_surface_set_maximized</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct xdg_surface*</span> xdg_surface</div>
+    
+  )
+</div>
+            </li>
+          
+            <li>
+              <div class="f4 lh-title">
+                unset_maximized
+              </div>
+              <div class="f5 lh-copy">
+                unmaximize the window
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="orange">xdg_surface_unset_maximized</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct xdg_surface*</span> xdg_surface</div>
+    
+  )
+</div>
+            </li>
+          
+            <li>
+              <div class="f4 lh-title">
+                set_fullscreen
+              </div>
+              <div class="f5 lh-copy">
+                set the window as fullscreen on a monitor
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="orange">xdg_surface_set_fullscreen</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct xdg_surface*</span> xdg_surface,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_output*</span> output</div>
+    
+  )
+</div>
+            </li>
+          
+            <li>
+              <div class="f4 lh-title">
+                unset_fullscreen
+              </div>
+              <div class="f5 lh-copy">
+                
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="orange">xdg_surface_unset_fullscreen</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct xdg_surface*</span> xdg_surface</div>
+    
+  )
+</div>
+            </li>
+          
+            <li>
+              <div class="f4 lh-title">
+                set_minimized
+              </div>
+              <div class="f5 lh-copy">
+                set the window as minimized
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="orange">xdg_surface_set_minimized</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct xdg_surface*</span> xdg_surface</div>
+    
+  )
+</div>
+            </li>
+          
+        </ul>
+      </li>
+    
+      <li>
+        <div class="f2 lh-copy">
+          xdg_popup
+        </div>
+        <div class="f6 lh-copy ws-pre-line courier">A popup surface is a short-lived, temporary surface that can be
+used to implement menus. It takes an explicit grab on the surface
+that will be dismissed when the user dismisses the popup. This can
+be done by the user clicking outside the surface, using the keyboard,
+or even locking the screen through closing the lid or a timeout.
+
+When the popup is dismissed, a popup_done event will be sent out,
+and at the same time the surface will be unmapped. The xdg_popup
+object is now inert and cannot be reactivated, so clients should
+destroy it. Explicitly destroying the xdg_popup object will also
+dismiss the popup and unmap the surface.
+
+Clients will receive events for all their surfaces during this
+grab (which is an &quot;owner-events&quot; grab in X11 parlance). This is
+done so that users can navigate through submenus and other
+&quot;nested&quot; popup windows without having to dismiss the topmost
+popup.
+
+Clients that want to dismiss the popup when another surface of
+their own is clicked should dismiss the popup using the destroy
+request.
+
+The parent surface must have either an xdg_surface or xdg_popup
+role.
+
+Specifying an xdg_popup for the parent means that the popups are
+nested, with this popup now being the topmost popup. Nested
+popups must be destroyed in the reverse order they were created
+in, e.g. the only popup you are allowed to destroy at all times
+is the topmost one.
+
+If there is an existing popup when creating a new popup, the
+parent must be the current topmost popup.
+
+A parent surface must be mapped before the new popup is mapped.
+
+When compositors choose to dismiss a popup, they will likely
+dismiss every nested popup as well. When a compositor dismisses
+popups, it will follow the same dismissing order as required
+from the client.
+
+The x and y arguments passed when creating the popup object specify
+where the top left of the popup should be placed, relative to the
+local surface coordinates of the parent surface. See
+xdg_shell.get_xdg_popup.
+
+The client must call wl_surface.commit on the corresponding wl_surface
+for the xdg_popup state to take effect.
+
+For a surface to be mapped by the compositor the client must have
+committed both the xdg_popup state and a buffer.
+</div>
+        <ul class="list pl0">
+          
+            <li>
+              <div class="f4 lh-title">
+                destroy
+              </div>
+              <div class="f5 lh-copy">
+                remove xdg_popup interface
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="orange">xdg_popup_destroy</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct xdg_popup*</span> xdg_popup</div>
+    
+  )
+</div>
+            </li>
+          
+        </ul>
+      </li>
+    
+  </ul>
+
+  <h2 class="f2 lh-title">Copyright Info</h2>
+  <div class="f6 lh-copy ws-pre-line courier">Copyright © 2008-2013 Kristian Høgsberg
+Copyright © 2013      Rafael Antognolli
+Copyright © 2013      Jasper St. Pierre
+Copyright © 2010-2013 Intel Corporation
+
+Permission is hereby granted, free of charge, to any person obtaining a
+copy of this software and associated documentation files (the &quot;Software&quot;),
+to deal in the Software without restriction, including without limitation
+the rights to use, copy, modify, merge, publish, distribute, sublicense,
+and&#x2f;or sell copies of the Software, and to permit persons to whom the
+Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice (including the next
+paragraph) shall be included in all copies or substantial portions of the
+Software.
+
+THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL
+THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+DEALINGS IN THE SOFTWARE.
+</div>
+
+    </div>
+
+    <script src="/bundle.js"></script>
+  </body>
+</html>

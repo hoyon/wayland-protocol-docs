@@ -20,7 +20,7 @@ fn impl_describable(ast: &syn::DeriveInput) -> proc_macro2::TokenStream {
     quote! {
         impl<'a> Describable for &'a #name {
             fn get_full(&self) -> Option<String> {
-                self.description.clone().map(|d| d.full)
+                self.description.clone().and_then(|d| d.full)
             }
 
             fn get_summary(&self) -> Option<String> {

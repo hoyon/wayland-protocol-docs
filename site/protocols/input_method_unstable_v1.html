@@ -1,0 +1,493 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>input_method_unstable_v1</title>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+     
+  </head>
+  <body class="bg-near-white black-70 sans-serif pa2 ph6-l">
+
+    
+<div class="f3 lh-copy breadcrumbs">
+  <span class="link mid-gray dim hover-pointer">
+    wayland
+    <div class="material-icons arrow">keyboard_arrow_down</div>
+  </span>
+  /
+  <span class="link mid-gray dim hover-pointer">
+    stable
+    <div class="material-icons arrow">keyboard_arrow_down</div>
+  </span>
+  /
+  <span class="link mid-gray dim hover-pointer">
+    xdg_shell
+    <div class="material-icons arrow">keyboard_arrow_down</div>
+  </span>
+</div>
+
+    <div id="content">
+      
+  <h1 class="f1 lh-title">input_method_unstable_v1</h1>
+  <ul class="list pl0">
+    
+      <li>
+        <div class="f2 lh-copy">
+          zwp_input_method_context_v1
+        </div>
+        <div class="f6 lh-copy ws-pre-line courier">Corresponds to a text input on the input method side. An input method context
+is created on text input activation on the input method side. It allows
+receiving information about the text input from the application via events.
+Input method contexts do not keep state after deactivation and should be
+destroyed after deactivation is handled.
+
+Text is generally UTF-8 encoded, indices and lengths are in bytes.
+
+Serials are used to synchronize the state between the text input and
+an input method. New serials are sent by the text input in the
+commit_state request and are used by the input method to indicate
+the known text input state in events like preedit_string, commit_string,
+and keysym. The text input can then ignore events from the input method
+which are based on an outdated state (for example after a reset).
+
+Warning! The protocol described in this file is experimental and
+backward incompatible changes may be made. Backward compatible changes
+may be added together with the corresponding interface version bump.
+Backward incompatible changes are done by bumping the version number in
+the protocol and interface names and resetting the interface version.
+Once the protocol is to be declared stable, the &#x27;z&#x27; prefix and the
+version number in the protocol and interface names are removed and the
+interface version number is reset.
+</div>
+        <ul class="list pl0">
+          
+            <li>
+              <div class="f4 lh-title">
+                destroy
+              </div>
+              <div class="f5 lh-copy">
+                
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="orange">zwp_input_method_context_v1_destroy</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwp_input_method_context_v1*</span> zwp_input_method_context_v1</div>
+    
+  )
+</div>
+            </li>
+          
+            <li>
+              <div class="f4 lh-title">
+                commit_string
+              </div>
+              <div class="f5 lh-copy">
+                commit string
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="orange">zwp_input_method_context_v1_commit_string</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwp_input_method_context_v1*</span> zwp_input_method_context_v1,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> serial,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">const char*</span> text</div>
+    
+  )
+</div>
+            </li>
+          
+            <li>
+              <div class="f4 lh-title">
+                preedit_string
+              </div>
+              <div class="f5 lh-copy">
+                pre-edit string
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="orange">zwp_input_method_context_v1_preedit_string</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwp_input_method_context_v1*</span> zwp_input_method_context_v1,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> serial,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">const char*</span> text,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">const char*</span> commit</div>
+    
+  )
+</div>
+            </li>
+          
+            <li>
+              <div class="f4 lh-title">
+                preedit_styling
+              </div>
+              <div class="f5 lh-copy">
+                pre-edit styling
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="orange">zwp_input_method_context_v1_preedit_styling</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwp_input_method_context_v1*</span> zwp_input_method_context_v1,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> index,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> length,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> style</div>
+    
+  )
+</div>
+            </li>
+          
+            <li>
+              <div class="f4 lh-title">
+                preedit_cursor
+              </div>
+              <div class="f5 lh-copy">
+                pre-edit cursor
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="orange">zwp_input_method_context_v1_preedit_cursor</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwp_input_method_context_v1*</span> zwp_input_method_context_v1,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> index</div>
+    
+  )
+</div>
+            </li>
+          
+            <li>
+              <div class="f4 lh-title">
+                delete_surrounding_text
+              </div>
+              <div class="f5 lh-copy">
+                delete text
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="orange">zwp_input_method_context_v1_delete_surrounding_text</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwp_input_method_context_v1*</span> zwp_input_method_context_v1,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> index,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> length</div>
+    
+  )
+</div>
+            </li>
+          
+            <li>
+              <div class="f4 lh-title">
+                cursor_position
+              </div>
+              <div class="f5 lh-copy">
+                set cursor to a new position
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="orange">zwp_input_method_context_v1_cursor_position</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwp_input_method_context_v1*</span> zwp_input_method_context_v1,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> index,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> anchor</div>
+    
+  )
+</div>
+            </li>
+          
+            <li>
+              <div class="f4 lh-title">
+                modifiers_map
+              </div>
+              <div class="f5 lh-copy">
+                
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="orange">zwp_input_method_context_v1_modifiers_map</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwp_input_method_context_v1*</span> zwp_input_method_context_v1,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_array*</span> map</div>
+    
+  )
+</div>
+            </li>
+          
+            <li>
+              <div class="f4 lh-title">
+                keysym
+              </div>
+              <div class="f5 lh-copy">
+                keysym
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="orange">zwp_input_method_context_v1_keysym</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwp_input_method_context_v1*</span> zwp_input_method_context_v1,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> serial,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> time,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> sym,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> state,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> modifiers</div>
+    
+  )
+</div>
+            </li>
+          
+            <li>
+              <div class="f4 lh-title">
+                grab_keyboard
+              </div>
+              <div class="f5 lh-copy">
+                grab hardware keyboard
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>struct wl_keyboard* </span><span class="orange">zwp_input_method_context_v1_grab_keyboard</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwp_input_method_context_v1*</span> zwp_input_method_context_v1</div>
+    
+  )
+</div>
+            </li>
+          
+            <li>
+              <div class="f4 lh-title">
+                key
+              </div>
+              <div class="f5 lh-copy">
+                forward key event
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="orange">zwp_input_method_context_v1_key</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwp_input_method_context_v1*</span> zwp_input_method_context_v1,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> serial,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> time,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> key,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> state</div>
+    
+  )
+</div>
+            </li>
+          
+            <li>
+              <div class="f4 lh-title">
+                modifiers
+              </div>
+              <div class="f5 lh-copy">
+                forward modifiers event
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="orange">zwp_input_method_context_v1_modifiers</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwp_input_method_context_v1*</span> zwp_input_method_context_v1,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> serial,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> mods_depressed,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> mods_latched,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> mods_locked,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> group</div>
+    
+  )
+</div>
+            </li>
+          
+            <li>
+              <div class="f4 lh-title">
+                language
+              </div>
+              <div class="f5 lh-copy">
+                
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="orange">zwp_input_method_context_v1_language</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwp_input_method_context_v1*</span> zwp_input_method_context_v1,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> serial,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">const char*</span> language</div>
+    
+  )
+</div>
+            </li>
+          
+            <li>
+              <div class="f4 lh-title">
+                text_direction
+              </div>
+              <div class="f5 lh-copy">
+                
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="orange">zwp_input_method_context_v1_text_direction</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwp_input_method_context_v1*</span> zwp_input_method_context_v1,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> serial,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> direction</div>
+    
+  )
+</div>
+            </li>
+          
+        </ul>
+      </li>
+    
+      <li>
+        <div class="f2 lh-copy">
+          zwp_input_method_v1
+        </div>
+        <div class="f6 lh-copy ws-pre-line courier">An input method object is responsible for composing text in response to
+input from hardware or virtual keyboards. There is one input method
+object per seat. On activate there is a new input method context object
+created which allows the input method to communicate with the text input.
+</div>
+        <ul class="list pl0">
+          
+        </ul>
+      </li>
+    
+      <li>
+        <div class="f2 lh-copy">
+          zwp_input_panel_v1
+        </div>
+        <div class="f6 lh-copy ws-pre-line courier">Only one client can bind this interface at a time.
+</div>
+        <ul class="list pl0">
+          
+            <li>
+              <div class="f4 lh-title">
+                get_input_panel_surface
+              </div>
+              <div class="f5 lh-copy">
+                
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>struct zwp_input_panel_surface_v1* </span><span class="orange">zwp_input_panel_v1_get_input_panel_surface</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwp_input_panel_v1*</span> zwp_input_panel_v1,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_surface*</span> surface</div>
+    
+  )
+</div>
+            </li>
+          
+        </ul>
+      </li>
+    
+      <li>
+        <div class="f2 lh-copy">
+          zwp_input_panel_surface_v1
+        </div>
+        <div class="f6 lh-copy ws-pre-line courier"></div>
+        <ul class="list pl0">
+          
+            <li>
+              <div class="f4 lh-title">
+                set_toplevel
+              </div>
+              <div class="f5 lh-copy">
+                set the surface type as a keyboard
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="orange">zwp_input_panel_surface_v1_set_toplevel</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwp_input_panel_surface_v1*</span> zwp_input_panel_surface_v1,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_output*</span> output,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> position</div>
+    
+  )
+</div>
+            </li>
+          
+            <li>
+              <div class="f4 lh-title">
+                set_overlay_panel
+              </div>
+              <div class="f5 lh-copy">
+                set the surface type as an overlay panel
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="orange">zwp_input_panel_surface_v1_set_overlay_panel</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwp_input_panel_surface_v1*</span> zwp_input_panel_surface_v1</div>
+    
+  )
+</div>
+            </li>
+          
+        </ul>
+      </li>
+    
+  </ul>
+
+  <h2 class="f2 lh-title">Copyright Info</h2>
+  <div class="f6 lh-copy ws-pre-line courier">Copyright © 2012, 2013 Intel Corporation
+
+Permission is hereby granted, free of charge, to any person obtaining a
+copy of this software and associated documentation files (the &quot;Software&quot;),
+to deal in the Software without restriction, including without limitation
+the rights to use, copy, modify, merge, publish, distribute, sublicense,
+and&#x2f;or sell copies of the Software, and to permit persons to whom the
+Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice (including the next
+paragraph) shall be included in all copies or substantial portions of the
+Software.
+
+THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL
+THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+DEALINGS IN THE SOFTWARE.
+</div>
+
+    </div>
+
+    <script src="/bundle.js"></script>
+  </body>
+</html>

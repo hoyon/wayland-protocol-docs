@@ -170,14 +170,14 @@ pub trait Describable {
 
 #[derive(Clone)]
 pub struct Description {
-    pub full: String,
+    pub full: Option<String>,
     pub summary: String,
 }
 
 impl Description {
     pub fn from_parent(parent: &Element) -> Option<Description> {
         parent.get_child("description").map(|element| Description {
-            full: unindent(element.text.as_ref().unwrap().to_string()),
+            full: element.text.as_ref().map(|s| unindent(s.to_string())),
             summary: unindent(element.attributes["summary"].to_string()),
         })
     }

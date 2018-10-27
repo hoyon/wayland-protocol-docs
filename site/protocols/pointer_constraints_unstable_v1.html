@@ -1,0 +1,309 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>pointer_constraints_unstable_v1</title>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+     
+  </head>
+  <body class="bg-near-white black-70 sans-serif pa2 ph6-l">
+
+    
+<div class="f3 lh-copy breadcrumbs">
+  <span class="link mid-gray dim hover-pointer">
+    wayland
+    <div class="material-icons arrow">keyboard_arrow_down</div>
+  </span>
+  /
+  <span class="link mid-gray dim hover-pointer">
+    stable
+    <div class="material-icons arrow">keyboard_arrow_down</div>
+  </span>
+  /
+  <span class="link mid-gray dim hover-pointer">
+    xdg_shell
+    <div class="material-icons arrow">keyboard_arrow_down</div>
+  </span>
+</div>
+
+    <div id="content">
+      
+  <h1 class="f1 lh-title">pointer_constraints_unstable_v1</h1>
+  <ul class="list pl0">
+    
+      <li>
+        <div class="f2 lh-copy">
+          zwp_pointer_constraints_v1
+        </div>
+        <div class="f6 lh-copy ws-pre-line courier">The global interface exposing pointer constraining functionality. It
+exposes two requests: lock_pointer for locking the pointer to its
+position, and confine_pointer for locking the pointer to a region.
+
+The lock_pointer and confine_pointer requests create the objects
+wp_locked_pointer and wp_confined_pointer respectively, and the client can
+use these objects to interact with the lock.
+
+For any surface, only one lock or confinement may be active across all
+wl_pointer objects of the same seat. If a lock or confinement is requested
+when another lock or confinement is active or requested on the same surface
+and with any of the wl_pointer objects of the same seat, an
+&#x27;already_constrained&#x27; error will be raised.
+</div>
+        <ul class="list pl0">
+          
+            <li>
+              <div class="f4 lh-title">
+                destroy
+              </div>
+              <div class="f5 lh-copy">
+                destroy the pointer constraints manager object
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="orange">zwp_pointer_constraints_v1_destroy</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwp_pointer_constraints_v1*</span> zwp_pointer_constraints_v1</div>
+    
+  )
+</div>
+            </li>
+          
+            <li>
+              <div class="f4 lh-title">
+                lock_pointer
+              </div>
+              <div class="f5 lh-copy">
+                lock pointer to a position
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>struct zwp_locked_pointer_v1* </span><span class="orange">zwp_pointer_constraints_v1_lock_pointer</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwp_pointer_constraints_v1*</span> zwp_pointer_constraints_v1,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_surface*</span> surface,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_pointer*</span> pointer,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_region*</span> region,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> lifetime</div>
+    
+  )
+</div>
+            </li>
+          
+            <li>
+              <div class="f4 lh-title">
+                confine_pointer
+              </div>
+              <div class="f5 lh-copy">
+                confine pointer to a region
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>struct zwp_confined_pointer_v1* </span><span class="orange">zwp_pointer_constraints_v1_confine_pointer</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwp_pointer_constraints_v1*</span> zwp_pointer_constraints_v1,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_surface*</span> surface,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_pointer*</span> pointer,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_region*</span> region,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> lifetime</div>
+    
+  )
+</div>
+            </li>
+          
+        </ul>
+      </li>
+    
+      <li>
+        <div class="f2 lh-copy">
+          zwp_locked_pointer_v1
+        </div>
+        <div class="f6 lh-copy ws-pre-line courier">The wp_locked_pointer interface represents a locked pointer state.
+
+While the lock of this object is active, the wl_pointer objects of the
+associated seat will not emit any wl_pointer.motion events.
+
+This object will send the event &#x27;locked&#x27; when the lock is activated.
+Whenever the lock is activated, it is guaranteed that the locked surface
+will already have received pointer focus and that the pointer will be
+within the region passed to the request creating this object.
+
+To unlock the pointer, send the destroy request. This will also destroy
+the wp_locked_pointer object.
+
+If the compositor decides to unlock the pointer the unlocked event is
+sent. See wp_locked_pointer.unlock for details.
+
+When unlocking, the compositor may warp the cursor position to the set
+cursor position hint. If it does, it will not result in any relative
+motion events emitted via wp_relative_pointer.
+
+If the surface the lock was requested on is destroyed and the lock is not
+yet activated, the wp_locked_pointer object is now defunct and must be
+destroyed.
+</div>
+        <ul class="list pl0">
+          
+            <li>
+              <div class="f4 lh-title">
+                destroy
+              </div>
+              <div class="f5 lh-copy">
+                destroy the locked pointer object
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="orange">zwp_locked_pointer_v1_destroy</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwp_locked_pointer_v1*</span> zwp_locked_pointer_v1</div>
+    
+  )
+</div>
+            </li>
+          
+            <li>
+              <div class="f4 lh-title">
+                set_cursor_position_hint
+              </div>
+              <div class="f5 lh-copy">
+                set the pointer cursor position hint
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="orange">zwp_locked_pointer_v1_set_cursor_position_hint</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwp_locked_pointer_v1*</span> zwp_locked_pointer_v1,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">wl_fixed_t</span> surface_x,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">wl_fixed_t</span> surface_y</div>
+    
+  )
+</div>
+            </li>
+          
+            <li>
+              <div class="f4 lh-title">
+                set_region
+              </div>
+              <div class="f5 lh-copy">
+                set a new lock region
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="orange">zwp_locked_pointer_v1_set_region</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwp_locked_pointer_v1*</span> zwp_locked_pointer_v1,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_region*</span> region</div>
+    
+  )
+</div>
+            </li>
+          
+        </ul>
+      </li>
+    
+      <li>
+        <div class="f2 lh-copy">
+          zwp_confined_pointer_v1
+        </div>
+        <div class="f6 lh-copy ws-pre-line courier">The wp_confined_pointer interface represents a confined pointer state.
+
+This object will send the event &#x27;confined&#x27; when the confinement is
+activated. Whenever the confinement is activated, it is guaranteed that
+the surface the pointer is confined to will already have received pointer
+focus and that the pointer will be within the region passed to the request
+creating this object. It is up to the compositor to decide whether this
+requires some user interaction and if the pointer will warp to within the
+passed region if outside.
+
+To unconfine the pointer, send the destroy request. This will also destroy
+the wp_confined_pointer object.
+
+If the compositor decides to unconfine the pointer the unconfined event is
+sent. The wp_confined_pointer object is at this point defunct and should
+be destroyed.
+</div>
+        <ul class="list pl0">
+          
+            <li>
+              <div class="f4 lh-title">
+                destroy
+              </div>
+              <div class="f5 lh-copy">
+                destroy the confined pointer object
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="orange">zwp_confined_pointer_v1_destroy</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwp_confined_pointer_v1*</span> zwp_confined_pointer_v1</div>
+    
+  )
+</div>
+            </li>
+          
+            <li>
+              <div class="f4 lh-title">
+                set_region
+              </div>
+              <div class="f5 lh-copy">
+                set a new confine region
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="orange">zwp_confined_pointer_v1_set_region</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwp_confined_pointer_v1*</span> zwp_confined_pointer_v1,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_region*</span> region</div>
+    
+  )
+</div>
+            </li>
+          
+        </ul>
+      </li>
+    
+  </ul>
+
+  <h2 class="f2 lh-title">Copyright Info</h2>
+  <div class="f6 lh-copy ws-pre-line courier">Copyright © 2014      Jonas Ådahl
+Copyright © 2015      Red Hat Inc.
+
+Permission is hereby granted, free of charge, to any person obtaining a
+copy of this software and associated documentation files (the &quot;Software&quot;),
+to deal in the Software without restriction, including without limitation
+the rights to use, copy, modify, merge, publish, distribute, sublicense,
+and&#x2f;or sell copies of the Software, and to permit persons to whom the
+Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice (including the next
+paragraph) shall be included in all copies or substantial portions of the
+Software.
+
+THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL
+THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+DEALINGS IN THE SOFTWARE.
+</div>
+
+    </div>
+
+    <script src="/bundle.js"></script>
+  </body>
+</html>
