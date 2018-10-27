@@ -10,6 +10,7 @@ use askama::Template;
 use std::fs::File;
 use std::fs;
 use std::io::prelude::*;
+use std::env;
 use glob::glob;
 
 mod protocol;
@@ -19,14 +20,16 @@ mod format;
 
 #[derive(Template)]
 #[template(path = "protocol.html")]
-struct ProtocolTemplate<'a> {
+struct ProtocolTemplate<'a, 'b> {
     protocol: &'a Protocol,
+    base_url: &'b str,
 }
 
 #[derive(Template)]
 #[template(path = "index.html")]
-struct IndexTemplate {
+struct IndexTemplate<'a> {
     protocols: Vec<ProtocolDetails>,
+    base_url: &'a str,
 }
 
 struct ProtocolDetails {
@@ -35,6 +38,7 @@ struct ProtocolDetails {
 }
 
 fn main() -> std::io::Result<()> {
+    let base_url = env::var("BASE_URL").unwrap_or("".to_owned());
     let protocol_files = glob("./data/**/*.xml")
         .unwrap()
         .filter_map(Result::ok)
@@ -52,16 +56,16 @@ fn main() -> std::io::Result<()> {
 
     for protocol in protocols {
         {
-            let template = ProtocolTemplate{protocol: &protocol};
+            let template = ProtocolTemplate{protocol: &protocol, base_url: &base_url};
             let filename = format!("site/protocols/{}.html", protocol.name);
             render_to_file(&template, &filename)?;
         }
 
-        let url = format!("protocols/{}.html", protocol.name);
+        let url = format!("{}/protocols/{}.html", base_url, protocol.name);
         details.push(ProtocolDetails{url: url, name: protocol.name});
     }
 
-    let index_template = IndexTemplate{protocols: details};
+    let index_template = IndexTemplate{protocols: details, base_url: &base_url};
     render_to_file(&index_template, "site/index.html")?;
 
     Ok(())
