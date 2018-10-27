@@ -8,6 +8,7 @@ extern crate glob;
 
 use askama::Template;
 use std::fs::File;
+use std::fs;
 use std::io::prelude::*;
 use glob::glob;
 
@@ -46,6 +47,8 @@ fn main() -> std::io::Result<()> {
         .map(|s| Protocol::from_file(&s));
 
     let mut details = vec![];
+
+    fs::create_dir_all("site/protocols")?;
 
     for protocol in protocols {
         {
