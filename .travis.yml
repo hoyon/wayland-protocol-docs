@@ -1,6 +1,8 @@
 language: rust
 rust:
   - stable
+node_js:
+  - "lts/*"
 cache: cargo
 script:
   - ./build
