@@ -1,7 +1,8 @@
 {
   "private": true,
   "scripts": {
-    "watch": "webpack --watch --run-dev"
+    "watch": "webpack --watch --run-dev",
+    "build": "webpack --run-prod"
   },
   "devDependencies": {
     "css-loader": "^1.0.0",
