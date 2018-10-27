@@ -1,0 +1,243 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>xdg_foreign_unstable_v1</title>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+     
+  </head>
+  <body class="bg-near-white black-70 sans-serif pa2 ph6-l">
+
+    
+<div class="f3 lh-copy breadcrumbs">
+  <span class="link mid-gray dim hover-pointer">
+    wayland
+    <div class="material-icons arrow">keyboard_arrow_down</div>
+  </span>
+  /
+  <span class="link mid-gray dim hover-pointer">
+    stable
+    <div class="material-icons arrow">keyboard_arrow_down</div>
+  </span>
+  /
+  <span class="link mid-gray dim hover-pointer">
+    xdg_shell
+    <div class="material-icons arrow">keyboard_arrow_down</div>
+  </span>
+</div>
+
+    <div id="content">
+      
+  <h1 class="f1 lh-title">xdg_foreign_unstable_v1</h1>
+  <ul class="list pl0">
+    
+      <li>
+        <div class="f2 lh-copy">
+          zxdg_exporter_v1
+        </div>
+        <div class="f6 lh-copy ws-pre-line courier">A global interface used for exporting surfaces that can later be imported
+using xdg_importer.
+</div>
+        <ul class="list pl0">
+          
+            <li>
+              <div class="f4 lh-title">
+                destroy
+              </div>
+              <div class="f5 lh-copy">
+                destroy the xdg_exporter object
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="orange">zxdg_exporter_v1_destroy</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zxdg_exporter_v1*</span> zxdg_exporter_v1</div>
+    
+  )
+</div>
+            </li>
+          
+            <li>
+              <div class="f4 lh-title">
+                export
+              </div>
+              <div class="f5 lh-copy">
+                export a surface
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>struct zxdg_exported_v1* </span><span class="orange">zxdg_exporter_v1_export</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zxdg_exporter_v1*</span> zxdg_exporter_v1,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_surface*</span> surface</div>
+    
+  )
+</div>
+            </li>
+          
+        </ul>
+      </li>
+    
+      <li>
+        <div class="f2 lh-copy">
+          zxdg_importer_v1
+        </div>
+        <div class="f6 lh-copy ws-pre-line courier">A global interface used for importing surfaces exported by xdg_exporter.
+With this interface, a client can create a reference to a surface of
+another client.
+</div>
+        <ul class="list pl0">
+          
+            <li>
+              <div class="f4 lh-title">
+                destroy
+              </div>
+              <div class="f5 lh-copy">
+                destroy the xdg_importer object
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="orange">zxdg_importer_v1_destroy</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zxdg_importer_v1*</span> zxdg_importer_v1</div>
+    
+  )
+</div>
+            </li>
+          
+            <li>
+              <div class="f4 lh-title">
+                import
+              </div>
+              <div class="f5 lh-copy">
+                import a surface
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>struct zxdg_imported_v1* </span><span class="orange">zxdg_importer_v1_import</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zxdg_importer_v1*</span> zxdg_importer_v1,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">const char*</span> handle</div>
+    
+  )
+</div>
+            </li>
+          
+        </ul>
+      </li>
+    
+      <li>
+        <div class="f2 lh-copy">
+          zxdg_exported_v1
+        </div>
+        <div class="f6 lh-copy ws-pre-line courier">A xdg_exported object represents an exported reference to a surface. The
+exported surface may be referenced as long as the xdg_exported object not
+destroyed. Destroying the xdg_exported invalidates any relationship the
+importer may have established using xdg_imported.
+</div>
+        <ul class="list pl0">
+          
+            <li>
+              <div class="f4 lh-title">
+                destroy
+              </div>
+              <div class="f5 lh-copy">
+                unexport the exported surface
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="orange">zxdg_exported_v1_destroy</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zxdg_exported_v1*</span> zxdg_exported_v1</div>
+    
+  )
+</div>
+            </li>
+          
+        </ul>
+      </li>
+    
+      <li>
+        <div class="f2 lh-copy">
+          zxdg_imported_v1
+        </div>
+        <div class="f6 lh-copy ws-pre-line courier">A xdg_imported object represents an imported reference to surface exported
+by some client. A client can use this interface to manipulate
+relationships between its own surfaces and the imported surface.
+</div>
+        <ul class="list pl0">
+          
+            <li>
+              <div class="f4 lh-title">
+                destroy
+              </div>
+              <div class="f5 lh-copy">
+                destroy the xdg_imported object
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="orange">zxdg_imported_v1_destroy</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zxdg_imported_v1*</span> zxdg_imported_v1</div>
+    
+  )
+</div>
+            </li>
+          
+            <li>
+              <div class="f4 lh-title">
+                set_parent_of
+              </div>
+              <div class="f5 lh-copy">
+                set as the parent of some surface
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="orange">zxdg_imported_v1_set_parent_of</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zxdg_imported_v1*</span> zxdg_imported_v1,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_surface*</span> surface</div>
+    
+  )
+</div>
+            </li>
+          
+        </ul>
+      </li>
+    
+  </ul>
+
+  <h2 class="f2 lh-title">Copyright Info</h2>
+  <div class="f6 lh-copy ws-pre-line courier">Copyright © 2015-2016 Red Hat Inc.
+
+Permission is hereby granted, free of charge, to any person obtaining a
+copy of this software and associated documentation files (the &quot;Software&quot;),
+to deal in the Software without restriction, including without limitation
+the rights to use, copy, modify, merge, publish, distribute, sublicense,
+and&#x2f;or sell copies of the Software, and to permit persons to whom the
+Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice (including the next
+paragraph) shall be included in all copies or substantial portions of the
+Software.
+
+THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL
+THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+DEALINGS IN THE SOFTWARE.
+</div>
+
+    </div>
+
+    <script src="/bundle.js"></script>
+  </body>
+</html>

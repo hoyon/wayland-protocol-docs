@@ -1,0 +1,352 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>text_input_unstable_v1</title>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+     
+  </head>
+  <body class="bg-near-white black-70 sans-serif pa2 ph6-l">
+
+    
+<div class="f3 lh-copy breadcrumbs">
+  <span class="link mid-gray dim hover-pointer">
+    wayland
+    <div class="material-icons arrow">keyboard_arrow_down</div>
+  </span>
+  /
+  <span class="link mid-gray dim hover-pointer">
+    stable
+    <div class="material-icons arrow">keyboard_arrow_down</div>
+  </span>
+  /
+  <span class="link mid-gray dim hover-pointer">
+    xdg_shell
+    <div class="material-icons arrow">keyboard_arrow_down</div>
+  </span>
+</div>
+
+    <div id="content">
+      
+  <h1 class="f1 lh-title">text_input_unstable_v1</h1>
+  <ul class="list pl0">
+    
+      <li>
+        <div class="f2 lh-copy">
+          zwp_text_input_v1
+        </div>
+        <div class="f6 lh-copy ws-pre-line courier">An object used for text input. Adds support for text input and input
+methods to applications. A text_input object is created from a
+wl_text_input_manager and corresponds typically to a text entry in an
+application.
+
+Requests are used to activate&#x2f;deactivate the text_input object and set
+state information like surrounding and selected text or the content type.
+The information about entered text is sent to the text_input object via
+the pre-edit and commit events. Using this interface removes the need
+for applications to directly process hardware key events and compose text
+out of them.
+
+Text is generally UTF-8 encoded, indices and lengths are in bytes.
+
+Serials are used to synchronize the state between the text input and
+an input method. New serials are sent by the text input in the
+commit_state request and are used by the input method to indicate
+the known text input state in events like preedit_string, commit_string,
+and keysym. The text input can then ignore events from the input method
+which are based on an outdated state (for example after a reset).
+
+Warning! The protocol described in this file is experimental and
+backward incompatible changes may be made. Backward compatible changes
+may be added together with the corresponding interface version bump.
+Backward incompatible changes are done by bumping the version number in
+the protocol and interface names and resetting the interface version.
+Once the protocol is to be declared stable, the &#x27;z&#x27; prefix and the
+version number in the protocol and interface names are removed and the
+interface version number is reset.
+</div>
+        <ul class="list pl0">
+          
+            <li>
+              <div class="f4 lh-title">
+                activate
+              </div>
+              <div class="f5 lh-copy">
+                request activation
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="orange">zwp_text_input_v1_activate</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwp_text_input_v1*</span> zwp_text_input_v1,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_seat*</span> seat,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_surface*</span> surface</div>
+    
+  )
+</div>
+            </li>
+          
+            <li>
+              <div class="f4 lh-title">
+                deactivate
+              </div>
+              <div class="f5 lh-copy">
+                request deactivation
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="orange">zwp_text_input_v1_deactivate</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwp_text_input_v1*</span> zwp_text_input_v1,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_seat*</span> seat</div>
+    
+  )
+</div>
+            </li>
+          
+            <li>
+              <div class="f4 lh-title">
+                show_input_panel
+              </div>
+              <div class="f5 lh-copy">
+                show input panels
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="orange">zwp_text_input_v1_show_input_panel</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwp_text_input_v1*</span> zwp_text_input_v1</div>
+    
+  )
+</div>
+            </li>
+          
+            <li>
+              <div class="f4 lh-title">
+                hide_input_panel
+              </div>
+              <div class="f5 lh-copy">
+                hide input panels
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="orange">zwp_text_input_v1_hide_input_panel</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwp_text_input_v1*</span> zwp_text_input_v1</div>
+    
+  )
+</div>
+            </li>
+          
+            <li>
+              <div class="f4 lh-title">
+                reset
+              </div>
+              <div class="f5 lh-copy">
+                reset
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="orange">zwp_text_input_v1_reset</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwp_text_input_v1*</span> zwp_text_input_v1</div>
+    
+  )
+</div>
+            </li>
+          
+            <li>
+              <div class="f4 lh-title">
+                set_surrounding_text
+              </div>
+              <div class="f5 lh-copy">
+                sets the surrounding text
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="orange">zwp_text_input_v1_set_surrounding_text</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwp_text_input_v1*</span> zwp_text_input_v1,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">const char*</span> text,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> cursor,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> anchor</div>
+    
+  )
+</div>
+            </li>
+          
+            <li>
+              <div class="f4 lh-title">
+                set_content_type
+              </div>
+              <div class="f5 lh-copy">
+                set content purpose and hint
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="orange">zwp_text_input_v1_set_content_type</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwp_text_input_v1*</span> zwp_text_input_v1,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> hint,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> purpose</div>
+    
+  )
+</div>
+            </li>
+          
+            <li>
+              <div class="f4 lh-title">
+                set_cursor_rectangle
+              </div>
+              <div class="f5 lh-copy">
+                
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="orange">zwp_text_input_v1_set_cursor_rectangle</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwp_text_input_v1*</span> zwp_text_input_v1,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> x,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> y,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> width,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> height</div>
+    
+  )
+</div>
+            </li>
+          
+            <li>
+              <div class="f4 lh-title">
+                set_preferred_language
+              </div>
+              <div class="f5 lh-copy">
+                sets preferred language
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="orange">zwp_text_input_v1_set_preferred_language</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwp_text_input_v1*</span> zwp_text_input_v1,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">const char*</span> language</div>
+    
+  )
+</div>
+            </li>
+          
+            <li>
+              <div class="f4 lh-title">
+                commit_state
+              </div>
+              <div class="f5 lh-copy">
+                
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="orange">zwp_text_input_v1_commit_state</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwp_text_input_v1*</span> zwp_text_input_v1,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> serial</div>
+    
+  )
+</div>
+            </li>
+          
+            <li>
+              <div class="f4 lh-title">
+                invoke_action
+              </div>
+              <div class="f5 lh-copy">
+                
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="orange">zwp_text_input_v1_invoke_action</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwp_text_input_v1*</span> zwp_text_input_v1,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> button,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> index</div>
+    
+  )
+</div>
+            </li>
+          
+        </ul>
+      </li>
+    
+      <li>
+        <div class="f2 lh-copy">
+          zwp_text_input_manager_v1
+        </div>
+        <div class="f6 lh-copy ws-pre-line courier">A factory for text_input objects. This object is a global singleton.
+</div>
+        <ul class="list pl0">
+          
+            <li>
+              <div class="f4 lh-title">
+                create_text_input
+              </div>
+              <div class="f5 lh-copy">
+                create text input
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>struct zwp_text_input_v1* </span><span class="orange">zwp_text_input_manager_v1_create_text_input</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwp_text_input_manager_v1*</span> zwp_text_input_manager_v1</div>
+    
+  )
+</div>
+            </li>
+          
+        </ul>
+      </li>
+    
+  </ul>
+
+  <h2 class="f2 lh-title">Copyright Info</h2>
+  <div class="f6 lh-copy ws-pre-line courier">Copyright © 2012, 2013 Intel Corporation
+
+Permission is hereby granted, free of charge, to any person obtaining a
+copy of this software and associated documentation files (the &quot;Software&quot;),
+to deal in the Software without restriction, including without limitation
+the rights to use, copy, modify, merge, publish, distribute, sublicense,
+and&#x2f;or sell copies of the Software, and to permit persons to whom the
+Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice (including the next
+paragraph) shall be included in all copies or substantial portions of the
+Software.
+
+THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL
+THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+DEALINGS IN THE SOFTWARE.
+</div>
+
+    </div>
+
+    <script src="/bundle.js"></script>
+  </body>
+</html>

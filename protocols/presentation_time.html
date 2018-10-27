@@ -1,0 +1,155 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>presentation_time</title>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+     
+  </head>
+  <body class="bg-near-white black-70 sans-serif pa2 ph6-l">
+
+    
+<div class="f3 lh-copy breadcrumbs">
+  <span class="link mid-gray dim hover-pointer">
+    wayland
+    <div class="material-icons arrow">keyboard_arrow_down</div>
+  </span>
+  /
+  <span class="link mid-gray dim hover-pointer">
+    stable
+    <div class="material-icons arrow">keyboard_arrow_down</div>
+  </span>
+  /
+  <span class="link mid-gray dim hover-pointer">
+    xdg_shell
+    <div class="material-icons arrow">keyboard_arrow_down</div>
+  </span>
+</div>
+
+    <div id="content">
+      
+  <h1 class="f1 lh-title">presentation_time</h1>
+  <ul class="list pl0">
+    
+      <li>
+        <div class="f2 lh-copy">
+          wp_presentation
+        </div>
+        <div class="f6 lh-copy ws-pre-line courier">
+
+
+The main feature of this interface is accurate presentation
+timing feedback to ensure smooth video playback while maintaining
+audio&#x2f;video synchronization. Some features use the concept of a
+presentation clock, which is defined in the
+presentation.clock_id event.
+
+A content update for a wl_surface is submitted by a
+wl_surface.commit request. Request &#x27;feedback&#x27; associates with
+the wl_surface.commit and provides feedback on the content
+update, particularly the final realized presentation time.
+
+
+
+When the final realized presentation time is available, e.g.
+after a framebuffer flip completes, the requested
+presentation_feedback.presented events are sent. The final
+presentation time can differ from the compositor&#x27;s predicted
+display update time and the update&#x27;s target time, especially
+when the compositor misses its target vertical blanking period.
+</div>
+        <ul class="list pl0">
+          
+            <li>
+              <div class="f4 lh-title">
+                destroy
+              </div>
+              <div class="f5 lh-copy">
+                unbind from the presentation interface
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="orange">wp_presentation_destroy</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wp_presentation*</span> wp_presentation</div>
+    
+  )
+</div>
+            </li>
+          
+            <li>
+              <div class="f4 lh-title">
+                feedback
+              </div>
+              <div class="f5 lh-copy">
+                request presentation feedback information
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>struct wp_presentation_feedback* </span><span class="orange">wp_presentation_feedback</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wp_presentation*</span> wp_presentation,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_surface*</span> surface</div>
+    
+  )
+</div>
+            </li>
+          
+        </ul>
+      </li>
+    
+      <li>
+        <div class="f2 lh-copy">
+          wp_presentation_feedback
+        </div>
+        <div class="f6 lh-copy ws-pre-line courier">A presentation_feedback object returns an indication that a
+wl_surface content update has become visible to the user.
+One object corresponds to one content update submission
+(wl_surface.commit). There are two possible outcomes: the
+content update is presented to the user, and a presentation
+timestamp delivered; or, the user did not see the content
+update because it was superseded or its surface destroyed,
+and the content update is discarded.
+
+Once a presentation_feedback object has delivered a &#x27;presented&#x27;
+or &#x27;discarded&#x27; event it is automatically destroyed.
+</div>
+        <ul class="list pl0">
+          
+        </ul>
+      </li>
+    
+  </ul>
+
+  <h2 class="f2 lh-title">Copyright Info</h2>
+  <div class="f6 lh-copy ws-pre-line courier">Copyright © 2013-2014 Collabora, Ltd.
+
+Permission is hereby granted, free of charge, to any person obtaining a
+copy of this software and associated documentation files (the &quot;Software&quot;),
+to deal in the Software without restriction, including without limitation
+the rights to use, copy, modify, merge, publish, distribute, sublicense,
+and&#x2f;or sell copies of the Software, and to permit persons to whom the
+Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice (including the next
+paragraph) shall be included in all copies or substantial portions of the
+Software.
+
+THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL
+THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+DEALINGS IN THE SOFTWARE.
+</div>
+
+    </div>
+
+    <script src="/bundle.js"></script>
+  </body>
+</html>

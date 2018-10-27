@@ -1,0 +1,481 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>tablet_unstable_v2</title>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+     
+  </head>
+  <body class="bg-near-white black-70 sans-serif pa2 ph6-l">
+
+    
+<div class="f3 lh-copy breadcrumbs">
+  <span class="link mid-gray dim hover-pointer">
+    wayland
+    <div class="material-icons arrow">keyboard_arrow_down</div>
+  </span>
+  /
+  <span class="link mid-gray dim hover-pointer">
+    stable
+    <div class="material-icons arrow">keyboard_arrow_down</div>
+  </span>
+  /
+  <span class="link mid-gray dim hover-pointer">
+    xdg_shell
+    <div class="material-icons arrow">keyboard_arrow_down</div>
+  </span>
+</div>
+
+    <div id="content">
+      
+  <h1 class="f1 lh-title">tablet_unstable_v2</h1>
+  <ul class="list pl0">
+    
+      <li>
+        <div class="f2 lh-copy">
+          zwp_tablet_manager_v2
+        </div>
+        <div class="f6 lh-copy ws-pre-line courier">An object that provides access to the graphics tablets available on this
+system. All tablets are associated with a seat, to get access to the
+actual tablets, use wp_tablet_manager.get_tablet_seat.
+</div>
+        <ul class="list pl0">
+          
+            <li>
+              <div class="f4 lh-title">
+                get_tablet_seat
+              </div>
+              <div class="f5 lh-copy">
+                get the tablet seat
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>struct zwp_tablet_seat_v2* </span><span class="orange">zwp_tablet_manager_v2_get_tablet_seat</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwp_tablet_manager_v2*</span> zwp_tablet_manager_v2,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_seat*</span> seat</div>
+    
+  )
+</div>
+            </li>
+          
+            <li>
+              <div class="f4 lh-title">
+                destroy
+              </div>
+              <div class="f5 lh-copy">
+                release the memory for the tablet manager object
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="orange">zwp_tablet_manager_v2_destroy</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwp_tablet_manager_v2*</span> zwp_tablet_manager_v2</div>
+    
+  )
+</div>
+            </li>
+          
+        </ul>
+      </li>
+    
+      <li>
+        <div class="f2 lh-copy">
+          zwp_tablet_seat_v2
+        </div>
+        <div class="f6 lh-copy ws-pre-line courier">An object that provides access to the graphics tablets available on this
+seat. After binding to this interface, the compositor sends a set of
+wp_tablet_seat.tablet_added and wp_tablet_seat.tool_added events.
+</div>
+        <ul class="list pl0">
+          
+            <li>
+              <div class="f4 lh-title">
+                destroy
+              </div>
+              <div class="f5 lh-copy">
+                release the memory for the tablet seat object
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="orange">zwp_tablet_seat_v2_destroy</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwp_tablet_seat_v2*</span> zwp_tablet_seat_v2</div>
+    
+  )
+</div>
+            </li>
+          
+        </ul>
+      </li>
+    
+      <li>
+        <div class="f2 lh-copy">
+          zwp_tablet_tool_v2
+        </div>
+        <div class="f6 lh-copy ws-pre-line courier">An object that represents a physical tool that has been, or is
+currently in use with a tablet in this seat. Each wp_tablet_tool
+object stays valid until the client destroys it; the compositor
+reuses the wp_tablet_tool object to indicate that the object&#x27;s
+respective physical tool has come into proximity of a tablet again.
+
+A wp_tablet_tool object&#x27;s relation to a physical tool depends on the
+tablet&#x27;s ability to report serial numbers. If the tablet supports
+this capability, then the object represents a specific physical tool
+and can be identified even when used on multiple tablets.
+
+A tablet tool has a number of static characteristics, e.g. tool type,
+hardware_serial and capabilities. These capabilities are sent in an
+event sequence after the wp_tablet_seat.tool_added event before any
+actual events from this tool. This initial event sequence is
+terminated by a wp_tablet_tool.done event.
+
+Tablet tool events are grouped by wp_tablet_tool.frame events.
+Any events received before a wp_tablet_tool.frame event should be
+considered part of the same hardware state change.
+</div>
+        <ul class="list pl0">
+          
+            <li>
+              <div class="f4 lh-title">
+                set_cursor
+              </div>
+              <div class="f5 lh-copy">
+                set the tablet tool&#x27;s surface
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="orange">zwp_tablet_tool_v2_set_cursor</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwp_tablet_tool_v2*</span> zwp_tablet_tool_v2,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> serial,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_surface*</span> surface,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> hotspot_x,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> hotspot_y</div>
+    
+  )
+</div>
+            </li>
+          
+            <li>
+              <div class="f4 lh-title">
+                destroy
+              </div>
+              <div class="f5 lh-copy">
+                destroy the tool object
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="orange">zwp_tablet_tool_v2_destroy</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwp_tablet_tool_v2*</span> zwp_tablet_tool_v2</div>
+    
+  )
+</div>
+            </li>
+          
+        </ul>
+      </li>
+    
+      <li>
+        <div class="f2 lh-copy">
+          zwp_tablet_v2
+        </div>
+        <div class="f6 lh-copy ws-pre-line courier">The wp_tablet interface represents one graphics tablet device. The
+tablet interface itself does not generate events; all events are
+generated by wp_tablet_tool objects when in proximity above a tablet.
+
+A tablet has a number of static characteristics, e.g. device name and
+pid&#x2f;vid. These capabilities are sent in an event sequence after the
+wp_tablet_seat.tablet_added event. This initial event sequence is
+terminated by a wp_tablet.done event.
+</div>
+        <ul class="list pl0">
+          
+            <li>
+              <div class="f4 lh-title">
+                destroy
+              </div>
+              <div class="f5 lh-copy">
+                destroy the tablet object
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="orange">zwp_tablet_v2_destroy</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwp_tablet_v2*</span> zwp_tablet_v2</div>
+    
+  )
+</div>
+            </li>
+          
+        </ul>
+      </li>
+    
+      <li>
+        <div class="f2 lh-copy">
+          zwp_tablet_pad_ring_v2
+        </div>
+        <div class="f6 lh-copy ws-pre-line courier">A circular interaction area, such as the touch ring on the Wacom Intuos
+Pro series tablets.
+
+Events on a ring are logically grouped by the wl_tablet_pad_ring.frame
+event.
+</div>
+        <ul class="list pl0">
+          
+            <li>
+              <div class="f4 lh-title">
+                set_feedback
+              </div>
+              <div class="f5 lh-copy">
+                set compositor feedback
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="orange">zwp_tablet_pad_ring_v2_set_feedback</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwp_tablet_pad_ring_v2*</span> zwp_tablet_pad_ring_v2,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">const char*</span> description,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> serial</div>
+    
+  )
+</div>
+            </li>
+          
+            <li>
+              <div class="f4 lh-title">
+                destroy
+              </div>
+              <div class="f5 lh-copy">
+                destroy the ring object
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="orange">zwp_tablet_pad_ring_v2_destroy</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwp_tablet_pad_ring_v2*</span> zwp_tablet_pad_ring_v2</div>
+    
+  )
+</div>
+            </li>
+          
+        </ul>
+      </li>
+    
+      <li>
+        <div class="f2 lh-copy">
+          zwp_tablet_pad_strip_v2
+        </div>
+        <div class="f6 lh-copy ws-pre-line courier">A linear interaction area, such as the strips found in Wacom Cintiq
+models.
+
+Events on a strip are logically grouped by the wl_tablet_pad_strip.frame
+event.
+</div>
+        <ul class="list pl0">
+          
+            <li>
+              <div class="f4 lh-title">
+                set_feedback
+              </div>
+              <div class="f5 lh-copy">
+                set compositor feedback
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="orange">zwp_tablet_pad_strip_v2_set_feedback</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwp_tablet_pad_strip_v2*</span> zwp_tablet_pad_strip_v2,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">const char*</span> description,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> serial</div>
+    
+  )
+</div>
+            </li>
+          
+            <li>
+              <div class="f4 lh-title">
+                destroy
+              </div>
+              <div class="f5 lh-copy">
+                destroy the strip object
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="orange">zwp_tablet_pad_strip_v2_destroy</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwp_tablet_pad_strip_v2*</span> zwp_tablet_pad_strip_v2</div>
+    
+  )
+</div>
+            </li>
+          
+        </ul>
+      </li>
+    
+      <li>
+        <div class="f2 lh-copy">
+          zwp_tablet_pad_group_v2
+        </div>
+        <div class="f6 lh-copy ws-pre-line courier">A pad group describes a distinct (sub)set of buttons, rings and strips
+present in the tablet. The criteria of this grouping is usually positional,
+eg. if a tablet has buttons on the left and right side, 2 groups will be
+presented. The physical arrangement of groups is undisclosed and may
+change on the fly.
+
+Pad groups will announce their features during pad initialization. Between
+the corresponding wp_tablet_pad.group event and wp_tablet_pad_group.done, the
+pad group will announce the buttons, rings and strips contained in it,
+plus the number of supported modes.
+
+Modes are a mechanism to allow multiple groups of actions for every element
+in the pad group. The number of groups and available modes in each is
+persistent across device plugs. The current mode is user-switchable, it
+will be announced through the wp_tablet_pad_group.mode_switch event both
+whenever it is switched, and after wp_tablet_pad.enter.
+
+The current mode logically applies to all elements in the pad group,
+although it is at clients&#x27; discretion whether to actually perform different
+actions, and&#x2f;or issue the respective .set_feedback requests to notify the
+compositor. See the wp_tablet_pad_group.mode_switch event for more details.
+</div>
+        <ul class="list pl0">
+          
+            <li>
+              <div class="f4 lh-title">
+                destroy
+              </div>
+              <div class="f5 lh-copy">
+                destroy the pad object
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="orange">zwp_tablet_pad_group_v2_destroy</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwp_tablet_pad_group_v2*</span> zwp_tablet_pad_group_v2</div>
+    
+  )
+</div>
+            </li>
+          
+        </ul>
+      </li>
+    
+      <li>
+        <div class="f2 lh-copy">
+          zwp_tablet_pad_v2
+        </div>
+        <div class="f6 lh-copy ws-pre-line courier">A pad device is a set of buttons, rings and strips
+usually physically present on the tablet device itself. Some
+exceptions exist where the pad device is physically detached, e.g. the
+Wacom ExpressKey Remote.
+
+Pad devices have no axes that control the cursor and are generally
+auxiliary devices to the tool devices used on the tablet surface.
+
+A pad device has a number of static characteristics, e.g. the number
+of rings. These capabilities are sent in an event sequence after the
+wp_tablet_seat.pad_added event before any actual events from this pad.
+This initial event sequence is terminated by a wp_tablet_pad.done
+event.
+
+All pad features (buttons, rings and strips) are logically divided into
+groups and all pads have at least one group. The available groups are
+notified through the wp_tablet_pad.group event; the compositor will
+emit one event per group before emitting wp_tablet_pad.done.
+
+Groups may have multiple modes. Modes allow clients to map multiple
+actions to a single pad feature. Only one mode can be active per group,
+although different groups may have different active modes.
+</div>
+        <ul class="list pl0">
+          
+            <li>
+              <div class="f4 lh-title">
+                set_feedback
+              </div>
+              <div class="f5 lh-copy">
+                set compositor feedback
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="orange">zwp_tablet_pad_v2_set_feedback</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwp_tablet_pad_v2*</span> zwp_tablet_pad_v2,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> button,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">const char*</span> description,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> serial</div>
+    
+  )
+</div>
+            </li>
+          
+            <li>
+              <div class="f4 lh-title">
+                destroy
+              </div>
+              <div class="f5 lh-copy">
+                destroy the pad object
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="orange">zwp_tablet_pad_v2_destroy</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwp_tablet_pad_v2*</span> zwp_tablet_pad_v2</div>
+    
+  )
+</div>
+            </li>
+          
+        </ul>
+      </li>
+    
+  </ul>
+
+  <h2 class="f2 lh-title">Copyright Info</h2>
+  <div class="f6 lh-copy ws-pre-line courier">Copyright 2014 © Stephen &quot;Lyude&quot; Chandler Paul
+Copyright 2015-2016 © Red Hat, Inc.
+
+Permission is hereby granted, free of charge, to any person
+obtaining a copy of this software and associated documentation files
+(the &quot;Software&quot;), to deal in the Software without restriction,
+including without limitation the rights to use, copy, modify, merge,
+publish, distribute, sublicense, and&#x2f;or sell copies of the Software,
+and to permit persons to whom the Software is furnished to do so,
+subject to the following conditions:
+
+The above copyright notice and this permission notice (including the
+next paragraph) shall be included in all copies or substantial
+portions of the Software.
+
+THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+NONINFRINGEMENT.  IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
+BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
+ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+</div>
+
+    </div>
+
+    <script src="/bundle.js"></script>
+  </body>
+</html>

@@ -1,0 +1,193 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>pointer_gestures_unstable_v1</title>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+     
+  </head>
+  <body class="bg-near-white black-70 sans-serif pa2 ph6-l">
+
+    
+<div class="f3 lh-copy breadcrumbs">
+  <span class="link mid-gray dim hover-pointer">
+    wayland
+    <div class="material-icons arrow">keyboard_arrow_down</div>
+  </span>
+  /
+  <span class="link mid-gray dim hover-pointer">
+    stable
+    <div class="material-icons arrow">keyboard_arrow_down</div>
+  </span>
+  /
+  <span class="link mid-gray dim hover-pointer">
+    xdg_shell
+    <div class="material-icons arrow">keyboard_arrow_down</div>
+  </span>
+</div>
+
+    <div id="content">
+      
+  <h1 class="f1 lh-title">pointer_gestures_unstable_v1</h1>
+  <ul class="list pl0">
+    
+      <li>
+        <div class="f2 lh-copy">
+          zwp_pointer_gestures_v1
+        </div>
+        <div class="f6 lh-copy ws-pre-line courier">A global interface to provide semantic touchpad gestures for a given
+pointer.
+
+Two gestures are currently supported: swipe and zoom&#x2f;rotate.
+All gestures follow a three-stage cycle: begin, update, end and
+are identified by a unique id.
+
+Warning! The protocol described in this file is experimental and
+backward incompatible changes may be made. Backward compatible changes
+may be added together with the corresponding interface version bump.
+Backward incompatible changes are done by bumping the version number in
+the protocol and interface names and resetting the interface version.
+Once the protocol is to be declared stable, the &#x27;z&#x27; prefix and the
+version number in the protocol and interface names are removed and the
+interface version number is reset.
+</div>
+        <ul class="list pl0">
+          
+            <li>
+              <div class="f4 lh-title">
+                get_swipe_gesture
+              </div>
+              <div class="f5 lh-copy">
+                get swipe gesture
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>struct zwp_pointer_gesture_swipe_v1* </span><span class="orange">zwp_pointer_gestures_v1_get_swipe_gesture</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwp_pointer_gestures_v1*</span> zwp_pointer_gestures_v1,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_pointer*</span> pointer</div>
+    
+  )
+</div>
+            </li>
+          
+            <li>
+              <div class="f4 lh-title">
+                get_pinch_gesture
+              </div>
+              <div class="f5 lh-copy">
+                get pinch gesture
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>struct zwp_pointer_gesture_pinch_v1* </span><span class="orange">zwp_pointer_gestures_v1_get_pinch_gesture</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwp_pointer_gestures_v1*</span> zwp_pointer_gestures_v1,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_pointer*</span> pointer</div>
+    
+  )
+</div>
+            </li>
+          
+        </ul>
+      </li>
+    
+      <li>
+        <div class="f2 lh-copy">
+          zwp_pointer_gesture_swipe_v1
+        </div>
+        <div class="f6 lh-copy ws-pre-line courier">A swipe gesture object notifies a client about a multi-finger swipe
+gesture detected on an indirect input device such as a touchpad.
+The gesture is usually initiated by multiple fingers moving in the
+same direction but once initiated the direction may change.
+The precise conditions of when such a gesture is detected are
+implementation-dependent.
+
+A gesture consists of three stages: begin, update (optional) and end.
+There cannot be multiple simultaneous pinch or swipe gestures on a
+same pointer&#x2f;seat, how compositors prevent these situations is
+implementation-dependent.
+
+A gesture may be cancelled by the compositor or the hardware.
+Clients should not consider performing permanent or irreversible
+actions until the end of a gesture has been received.
+</div>
+        <ul class="list pl0">
+          
+            <li>
+              <div class="f4 lh-title">
+                destroy
+              </div>
+              <div class="f5 lh-copy">
+                destroy the pointer swipe gesture object
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="orange">zwp_pointer_gesture_swipe_v1_destroy</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwp_pointer_gesture_swipe_v1*</span> zwp_pointer_gesture_swipe_v1</div>
+    
+  )
+</div>
+            </li>
+          
+        </ul>
+      </li>
+    
+      <li>
+        <div class="f2 lh-copy">
+          zwp_pointer_gesture_pinch_v1
+        </div>
+        <div class="f6 lh-copy ws-pre-line courier">A pinch gesture object notifies a client about a multi-finger pinch
+gesture detected on an indirect input device such as a touchpad.
+The gesture is usually initiated by multiple fingers moving towards
+each other or away from each other, or by two or more fingers rotating
+around a logical center of gravity. The precise conditions of when
+such a gesture is detected are implementation-dependent.
+
+A gesture consists of three stages: begin, update (optional) and end.
+There cannot be multiple simultaneous pinch or swipe gestures on a
+same pointer&#x2f;seat, how compositors prevent these situations is
+implementation-dependent.
+
+A gesture may be cancelled by the compositor or the hardware.
+Clients should not consider performing permanent or irreversible
+actions until the end of a gesture has been received.
+</div>
+        <ul class="list pl0">
+          
+            <li>
+              <div class="f4 lh-title">
+                destroy
+              </div>
+              <div class="f5 lh-copy">
+                destroy the pinch gesture object
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="orange">zwp_pointer_gesture_pinch_v1_destroy</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwp_pointer_gesture_pinch_v1*</span> zwp_pointer_gesture_pinch_v1</div>
+    
+  )
+</div>
+            </li>
+          
+        </ul>
+      </li>
+    
+  </ul>
+
+  <h2 class="f2 lh-title">Copyright Info</h2>
+  <div class="f6 lh-copy ws-pre-line courier"></div>
+
+    </div>
+
+    <script src="/bundle.js"></script>
+  </body>
+</html>

@@ -1,0 +1,1769 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>wayland</title>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+     
+  </head>
+  <body class="bg-near-white black-70 sans-serif pa2 ph6-l">
+
+    
+<div class="f3 lh-copy breadcrumbs">
+  <span class="link mid-gray dim hover-pointer">
+    wayland
+    <div class="material-icons arrow">keyboard_arrow_down</div>
+  </span>
+  /
+  <span class="link mid-gray dim hover-pointer">
+    stable
+    <div class="material-icons arrow">keyboard_arrow_down</div>
+  </span>
+  /
+  <span class="link mid-gray dim hover-pointer">
+    xdg_shell
+    <div class="material-icons arrow">keyboard_arrow_down</div>
+  </span>
+</div>
+
+    <div id="content">
+      
+  <h1 class="f1 lh-title">wayland</h1>
+  <ul class="list pl0">
+    
+      <li>
+        <div class="f2 lh-copy">
+          wl_display
+        </div>
+        <div class="f6 lh-copy ws-pre-line courier">The core global object.  This is a special singleton object.  It
+is used for internal Wayland protocol features.
+</div>
+        <ul class="list pl0">
+          
+            <li>
+              <div class="f4 lh-title">
+                sync
+              </div>
+              <div class="f5 lh-copy">
+                asynchronous roundtrip
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>struct wl_callback* </span><span class="orange">wl_display_sync</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_display*</span> wl_display</div>
+    
+  )
+</div>
+            </li>
+          
+            <li>
+              <div class="f4 lh-title">
+                get_registry
+              </div>
+              <div class="f5 lh-copy">
+                get global registry object
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>struct wl_registry* </span><span class="orange">wl_display_get_registry</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_display*</span> wl_display</div>
+    
+  )
+</div>
+            </li>
+          
+        </ul>
+      </li>
+    
+      <li>
+        <div class="f2 lh-copy">
+          wl_registry
+        </div>
+        <div class="f6 lh-copy ws-pre-line courier">The singleton global registry object.  The server has a number of
+global objects that are available to all clients.  These objects
+typically represent an actual object in the server (for example,
+an input device) or they are singleton objects that provide
+extension functionality.
+
+When a client creates a registry object, the registry object
+will emit a global event for each global currently in the
+registry.  Globals come and go as a result of device or
+monitor hotplugs, reconfiguration or other events, and the
+registry will send out global and global_remove events to
+keep the client up to date with the changes.  To mark the end
+of the initial burst of events, the client can use the
+wl_display.sync request immediately after calling
+wl_display.get_registry.
+
+A client can bind to a global object by using the bind
+request.  This creates a client-side handle that lets the object
+emit events to the client and lets the client invoke requests on
+the object.
+</div>
+        <ul class="list pl0">
+          
+            <li>
+              <div class="f4 lh-title">
+                bind
+              </div>
+              <div class="f5 lh-copy">
+                bind an object to the display
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void* </span><span class="orange">wl_registry_bind</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_registry*</span> wl_registry,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> name</div>
+    
+  )
+</div>
+            </li>
+          
+        </ul>
+      </li>
+    
+      <li>
+        <div class="f2 lh-copy">
+          wl_callback
+        </div>
+        <div class="f6 lh-copy ws-pre-line courier">Clients can handle the &#x27;done&#x27; event to get notified when
+the related request is done.
+</div>
+        <ul class="list pl0">
+          
+        </ul>
+      </li>
+    
+      <li>
+        <div class="f2 lh-copy">
+          wl_compositor
+        </div>
+        <div class="f6 lh-copy ws-pre-line courier">A compositor.  This object is a singleton global.  The
+compositor is in charge of combining the contents of multiple
+surfaces into one displayable output.
+</div>
+        <ul class="list pl0">
+          
+            <li>
+              <div class="f4 lh-title">
+                create_surface
+              </div>
+              <div class="f5 lh-copy">
+                create new surface
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>struct wl_surface* </span><span class="orange">wl_compositor_create_surface</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_compositor*</span> wl_compositor</div>
+    
+  )
+</div>
+            </li>
+          
+            <li>
+              <div class="f4 lh-title">
+                create_region
+              </div>
+              <div class="f5 lh-copy">
+                create new region
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>struct wl_region* </span><span class="orange">wl_compositor_create_region</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_compositor*</span> wl_compositor</div>
+    
+  )
+</div>
+            </li>
+          
+        </ul>
+      </li>
+    
+      <li>
+        <div class="f2 lh-copy">
+          wl_shm_pool
+        </div>
+        <div class="f6 lh-copy ws-pre-line courier">The wl_shm_pool object encapsulates a piece of memory shared
+between the compositor and client.  Through the wl_shm_pool
+object, the client can allocate shared memory wl_buffer objects.
+All objects created through the same pool share the same
+underlying mapped memory. Reusing the mapped memory avoids the
+setup&#x2f;teardown overhead and is useful when interactively resizing
+a surface or for many small buffers.
+</div>
+        <ul class="list pl0">
+          
+            <li>
+              <div class="f4 lh-title">
+                create_buffer
+              </div>
+              <div class="f5 lh-copy">
+                create a buffer from the pool
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>struct wl_buffer* </span><span class="orange">wl_shm_pool_create_buffer</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_shm_pool*</span> wl_shm_pool,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> offset,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> width,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> height,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> stride,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> format</div>
+    
+  )
+</div>
+            </li>
+          
+            <li>
+              <div class="f4 lh-title">
+                destroy
+              </div>
+              <div class="f5 lh-copy">
+                destroy the pool
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="orange">wl_shm_pool_destroy</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_shm_pool*</span> wl_shm_pool</div>
+    
+  )
+</div>
+            </li>
+          
+            <li>
+              <div class="f4 lh-title">
+                resize
+              </div>
+              <div class="f5 lh-copy">
+                change the size of the pool mapping
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="orange">wl_shm_pool_resize</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_shm_pool*</span> wl_shm_pool,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> size</div>
+    
+  )
+</div>
+            </li>
+          
+        </ul>
+      </li>
+    
+      <li>
+        <div class="f2 lh-copy">
+          wl_shm
+        </div>
+        <div class="f6 lh-copy ws-pre-line courier">A singleton global object that provides support for shared
+memory.
+
+Clients can create wl_shm_pool objects using the create_pool
+request.
+
+At connection setup time, the wl_shm object emits one or more
+format events to inform clients about the valid pixel formats
+that can be used for buffers.
+</div>
+        <ul class="list pl0">
+          
+            <li>
+              <div class="f4 lh-title">
+                create_pool
+              </div>
+              <div class="f5 lh-copy">
+                create a shm pool
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>struct wl_shm_pool* </span><span class="orange">wl_shm_create_pool</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_shm*</span> wl_shm,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> fd,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> size</div>
+    
+  )
+</div>
+            </li>
+          
+        </ul>
+      </li>
+    
+      <li>
+        <div class="f2 lh-copy">
+          wl_buffer
+        </div>
+        <div class="f6 lh-copy ws-pre-line courier">A buffer provides the content for a wl_surface. Buffers are
+created through factory interfaces such as wl_drm, wl_shm or
+similar. It has a width and a height and can be attached to a
+wl_surface, but the mechanism by which a client provides and
+updates the contents is defined by the buffer factory interface.
+</div>
+        <ul class="list pl0">
+          
+            <li>
+              <div class="f4 lh-title">
+                destroy
+              </div>
+              <div class="f5 lh-copy">
+                destroy a buffer
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="orange">wl_buffer_destroy</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_buffer*</span> wl_buffer</div>
+    
+  )
+</div>
+            </li>
+          
+        </ul>
+      </li>
+    
+      <li>
+        <div class="f2 lh-copy">
+          wl_data_offer
+        </div>
+        <div class="f6 lh-copy ws-pre-line courier">A wl_data_offer represents a piece of data offered for transfer
+by another client (the source client).  It is used by the
+copy-and-paste and drag-and-drop mechanisms.  The offer
+describes the different mime types that the data can be
+converted to and provides the mechanism for transferring the
+data directly from the source client.
+</div>
+        <ul class="list pl0">
+          
+            <li>
+              <div class="f4 lh-title">
+                accept
+              </div>
+              <div class="f5 lh-copy">
+                accept one of the offered mime types
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="orange">wl_data_offer_accept</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_data_offer*</span> wl_data_offer,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> serial,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">const char*</span> mime_type</div>
+    
+  )
+</div>
+            </li>
+          
+            <li>
+              <div class="f4 lh-title">
+                receive
+              </div>
+              <div class="f5 lh-copy">
+                request that the data is transferred
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="orange">wl_data_offer_receive</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_data_offer*</span> wl_data_offer,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">const char*</span> mime_type,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> fd</div>
+    
+  )
+</div>
+            </li>
+          
+            <li>
+              <div class="f4 lh-title">
+                destroy
+              </div>
+              <div class="f5 lh-copy">
+                destroy data offer
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="orange">wl_data_offer_destroy</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_data_offer*</span> wl_data_offer</div>
+    
+  )
+</div>
+            </li>
+          
+            <li>
+              <div class="f4 lh-title">
+                finish
+              </div>
+              <div class="f5 lh-copy">
+                the offer will no longer be used
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="orange">wl_data_offer_finish</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_data_offer*</span> wl_data_offer</div>
+    
+  )
+</div>
+            </li>
+          
+            <li>
+              <div class="f4 lh-title">
+                set_actions
+              </div>
+              <div class="f5 lh-copy">
+                set the available&#x2f;preferred drag-and-drop actions
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="orange">wl_data_offer_set_actions</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_data_offer*</span> wl_data_offer,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> dnd_actions,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> preferred_action</div>
+    
+  )
+</div>
+            </li>
+          
+        </ul>
+      </li>
+    
+      <li>
+        <div class="f2 lh-copy">
+          wl_data_source
+        </div>
+        <div class="f6 lh-copy ws-pre-line courier">The wl_data_source object is the source side of a wl_data_offer.
+It is created by the source client in a data transfer and
+provides a way to describe the offered data and a way to respond
+to requests to transfer the data.
+</div>
+        <ul class="list pl0">
+          
+            <li>
+              <div class="f4 lh-title">
+                offer
+              </div>
+              <div class="f5 lh-copy">
+                add an offered mime type
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="orange">wl_data_source_offer</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_data_source*</span> wl_data_source,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">const char*</span> mime_type</div>
+    
+  )
+</div>
+            </li>
+          
+            <li>
+              <div class="f4 lh-title">
+                destroy
+              </div>
+              <div class="f5 lh-copy">
+                destroy the data source
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="orange">wl_data_source_destroy</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_data_source*</span> wl_data_source</div>
+    
+  )
+</div>
+            </li>
+          
+            <li>
+              <div class="f4 lh-title">
+                set_actions
+              </div>
+              <div class="f5 lh-copy">
+                set the available drag-and-drop actions
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="orange">wl_data_source_set_actions</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_data_source*</span> wl_data_source,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> dnd_actions</div>
+    
+  )
+</div>
+            </li>
+          
+        </ul>
+      </li>
+    
+      <li>
+        <div class="f2 lh-copy">
+          wl_data_device
+        </div>
+        <div class="f6 lh-copy ws-pre-line courier">There is one wl_data_device per seat which can be obtained
+from the global wl_data_device_manager singleton.
+
+A wl_data_device provides access to inter-client data transfer
+mechanisms such as copy-and-paste and drag-and-drop.
+</div>
+        <ul class="list pl0">
+          
+            <li>
+              <div class="f4 lh-title">
+                start_drag
+              </div>
+              <div class="f5 lh-copy">
+                start drag-and-drop operation
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="orange">wl_data_device_start_drag</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_data_device*</span> wl_data_device,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_data_source*</span> source,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_surface*</span> origin,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_surface*</span> icon,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> serial</div>
+    
+  )
+</div>
+            </li>
+          
+            <li>
+              <div class="f4 lh-title">
+                set_selection
+              </div>
+              <div class="f5 lh-copy">
+                copy data to the selection
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="orange">wl_data_device_set_selection</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_data_device*</span> wl_data_device,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_data_source*</span> source,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> serial</div>
+    
+  )
+</div>
+            </li>
+          
+            <li>
+              <div class="f4 lh-title">
+                release
+              </div>
+              <div class="f5 lh-copy">
+                destroy data device
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="orange">wl_data_device_release</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_data_device*</span> wl_data_device</div>
+    
+  )
+</div>
+            </li>
+          
+        </ul>
+      </li>
+    
+      <li>
+        <div class="f2 lh-copy">
+          wl_data_device_manager
+        </div>
+        <div class="f6 lh-copy ws-pre-line courier">The wl_data_device_manager is a singleton global object that
+provides access to inter-client data transfer mechanisms such as
+copy-and-paste and drag-and-drop.  These mechanisms are tied to
+a wl_seat and this interface lets a client get a wl_data_device
+corresponding to a wl_seat.
+
+Depending on the version bound, the objects created from the bound
+wl_data_device_manager object will have different requirements for
+functioning properly. See wl_data_source.set_actions,
+wl_data_offer.accept and wl_data_offer.finish for details.
+</div>
+        <ul class="list pl0">
+          
+            <li>
+              <div class="f4 lh-title">
+                create_data_source
+              </div>
+              <div class="f5 lh-copy">
+                create a new data source
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>struct wl_data_source* </span><span class="orange">wl_data_device_manager_create_data_source</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_data_device_manager*</span> wl_data_device_manager</div>
+    
+  )
+</div>
+            </li>
+          
+            <li>
+              <div class="f4 lh-title">
+                get_data_device
+              </div>
+              <div class="f5 lh-copy">
+                create a new data device
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>struct wl_data_device* </span><span class="orange">wl_data_device_manager_get_data_device</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_data_device_manager*</span> wl_data_device_manager,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_seat*</span> seat</div>
+    
+  )
+</div>
+            </li>
+          
+        </ul>
+      </li>
+    
+      <li>
+        <div class="f2 lh-copy">
+          wl_shell
+        </div>
+        <div class="f6 lh-copy ws-pre-line courier">This interface is implemented by servers that provide
+desktop-style user interfaces.
+
+It allows clients to associate a wl_shell_surface with
+a basic surface.
+
+Note! This protocol is deprecated and not intended for production use.
+For desktop-style user interfaces, use xdg_shell.
+</div>
+        <ul class="list pl0">
+          
+            <li>
+              <div class="f4 lh-title">
+                get_shell_surface
+              </div>
+              <div class="f5 lh-copy">
+                create a shell surface from a surface
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>struct wl_shell_surface* </span><span class="orange">wl_shell_get_shell_surface</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_shell*</span> wl_shell,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_surface*</span> surface</div>
+    
+  )
+</div>
+            </li>
+          
+        </ul>
+      </li>
+    
+      <li>
+        <div class="f2 lh-copy">
+          wl_shell_surface
+        </div>
+        <div class="f6 lh-copy ws-pre-line courier">An interface that may be implemented by a wl_surface, for
+implementations that provide a desktop-style user interface.
+
+It provides requests to treat surfaces like toplevel, fullscreen
+or popup windows, move, resize or maximize them, associate
+metadata like title and class, etc.
+
+On the server side the object is automatically destroyed when
+the related wl_surface is destroyed. On the client side,
+wl_shell_surface_destroy() must be called before destroying
+the wl_surface object.
+</div>
+        <ul class="list pl0">
+          
+            <li>
+              <div class="f4 lh-title">
+                pong
+              </div>
+              <div class="f5 lh-copy">
+                respond to a ping event
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="orange">wl_shell_surface_pong</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_shell_surface*</span> wl_shell_surface,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> serial</div>
+    
+  )
+</div>
+            </li>
+          
+            <li>
+              <div class="f4 lh-title">
+                move
+              </div>
+              <div class="f5 lh-copy">
+                start an interactive move
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="orange">wl_shell_surface_move</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_shell_surface*</span> wl_shell_surface,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_seat*</span> seat,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> serial</div>
+    
+  )
+</div>
+            </li>
+          
+            <li>
+              <div class="f4 lh-title">
+                resize
+              </div>
+              <div class="f5 lh-copy">
+                start an interactive resize
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="orange">wl_shell_surface_resize</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_shell_surface*</span> wl_shell_surface,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_seat*</span> seat,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> serial,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> edges</div>
+    
+  )
+</div>
+            </li>
+          
+            <li>
+              <div class="f4 lh-title">
+                set_toplevel
+              </div>
+              <div class="f5 lh-copy">
+                make the surface a toplevel surface
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="orange">wl_shell_surface_set_toplevel</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_shell_surface*</span> wl_shell_surface</div>
+    
+  )
+</div>
+            </li>
+          
+            <li>
+              <div class="f4 lh-title">
+                set_transient
+              </div>
+              <div class="f5 lh-copy">
+                make the surface a transient surface
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="orange">wl_shell_surface_set_transient</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_shell_surface*</span> wl_shell_surface,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_surface*</span> parent,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> x,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> y,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> flags</div>
+    
+  )
+</div>
+            </li>
+          
+            <li>
+              <div class="f4 lh-title">
+                set_fullscreen
+              </div>
+              <div class="f5 lh-copy">
+                make the surface a fullscreen surface
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="orange">wl_shell_surface_set_fullscreen</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_shell_surface*</span> wl_shell_surface,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> method,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> framerate,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_output*</span> output</div>
+    
+  )
+</div>
+            </li>
+          
+            <li>
+              <div class="f4 lh-title">
+                set_popup
+              </div>
+              <div class="f5 lh-copy">
+                make the surface a popup surface
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="orange">wl_shell_surface_set_popup</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_shell_surface*</span> wl_shell_surface,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_seat*</span> seat,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> serial,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_surface*</span> parent,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> x,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> y,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> flags</div>
+    
+  )
+</div>
+            </li>
+          
+            <li>
+              <div class="f4 lh-title">
+                set_maximized
+              </div>
+              <div class="f5 lh-copy">
+                make the surface a maximized surface
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="orange">wl_shell_surface_set_maximized</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_shell_surface*</span> wl_shell_surface,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_output*</span> output</div>
+    
+  )
+</div>
+            </li>
+          
+            <li>
+              <div class="f4 lh-title">
+                set_title
+              </div>
+              <div class="f5 lh-copy">
+                set surface title
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="orange">wl_shell_surface_set_title</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_shell_surface*</span> wl_shell_surface,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">const char*</span> title</div>
+    
+  )
+</div>
+            </li>
+          
+            <li>
+              <div class="f4 lh-title">
+                set_class
+              </div>
+              <div class="f5 lh-copy">
+                set surface class
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="orange">wl_shell_surface_set_class</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_shell_surface*</span> wl_shell_surface,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">const char*</span> class_</div>
+    
+  )
+</div>
+            </li>
+          
+        </ul>
+      </li>
+    
+      <li>
+        <div class="f2 lh-copy">
+          wl_surface
+        </div>
+        <div class="f6 lh-copy ws-pre-line courier">A surface is a rectangular area that is displayed on the screen.
+It has a location, size and pixel contents.
+
+The size of a surface (and relative positions on it) is described
+in surface-local coordinates, which may differ from the buffer
+coordinates of the pixel content, in case a buffer_transform
+or a buffer_scale is used.
+
+A surface without a &quot;role&quot; is fairly useless: a compositor does
+not know where, when or how to present it. The role is the
+purpose of a wl_surface. Examples of roles are a cursor for a
+pointer (as set by wl_pointer.set_cursor), a drag icon
+(wl_data_device.start_drag), a sub-surface
+(wl_subcompositor.get_subsurface), and a window as defined by a
+shell protocol (e.g. wl_shell.get_shell_surface).
+
+A surface can have only one role at a time. Initially a
+wl_surface does not have a role. Once a wl_surface is given a
+role, it is set permanently for the whole lifetime of the
+wl_surface object. Giving the current role again is allowed,
+unless explicitly forbidden by the relevant interface
+specification.
+
+Surface roles are given by requests in other interfaces such as
+wl_pointer.set_cursor. The request should explicitly mention
+that this request gives a role to a wl_surface. Often, this
+request also creates a new protocol object that represents the
+role and adds additional functionality to wl_surface. When a
+client wants to destroy a wl_surface, they must destroy this &#x27;role
+object&#x27; before the wl_surface.
+
+Destroying the role object does not remove the role from the
+wl_surface, but it may stop the wl_surface from &quot;playing the role&quot;.
+For instance, if a wl_subsurface object is destroyed, the wl_surface
+it was created for will be unmapped and forget its position and
+z-order. It is allowed to create a wl_subsurface for the same
+wl_surface again, but it is not allowed to use the wl_surface as
+a cursor (cursor is a different role than sub-surface, and role
+switching is not allowed).
+</div>
+        <ul class="list pl0">
+          
+            <li>
+              <div class="f4 lh-title">
+                destroy
+              </div>
+              <div class="f5 lh-copy">
+                delete surface
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="orange">wl_surface_destroy</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_surface*</span> wl_surface</div>
+    
+  )
+</div>
+            </li>
+          
+            <li>
+              <div class="f4 lh-title">
+                attach
+              </div>
+              <div class="f5 lh-copy">
+                set the surface contents
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="orange">wl_surface_attach</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_surface*</span> wl_surface,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_buffer*</span> buffer,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> x,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> y</div>
+    
+  )
+</div>
+            </li>
+          
+            <li>
+              <div class="f4 lh-title">
+                damage
+              </div>
+              <div class="f5 lh-copy">
+                mark part of the surface damaged
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="orange">wl_surface_damage</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_surface*</span> wl_surface,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> x,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> y,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> width,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> height</div>
+    
+  )
+</div>
+            </li>
+          
+            <li>
+              <div class="f4 lh-title">
+                frame
+              </div>
+              <div class="f5 lh-copy">
+                request a frame throttling hint
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>struct wl_callback* </span><span class="orange">wl_surface_frame</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_surface*</span> wl_surface</div>
+    
+  )
+</div>
+            </li>
+          
+            <li>
+              <div class="f4 lh-title">
+                set_opaque_region
+              </div>
+              <div class="f5 lh-copy">
+                set opaque region
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="orange">wl_surface_set_opaque_region</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_surface*</span> wl_surface,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_region*</span> region</div>
+    
+  )
+</div>
+            </li>
+          
+            <li>
+              <div class="f4 lh-title">
+                set_input_region
+              </div>
+              <div class="f5 lh-copy">
+                set input region
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="orange">wl_surface_set_input_region</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_surface*</span> wl_surface,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_region*</span> region</div>
+    
+  )
+</div>
+            </li>
+          
+            <li>
+              <div class="f4 lh-title">
+                commit
+              </div>
+              <div class="f5 lh-copy">
+                commit pending surface state
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="orange">wl_surface_commit</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_surface*</span> wl_surface</div>
+    
+  )
+</div>
+            </li>
+          
+            <li>
+              <div class="f4 lh-title">
+                set_buffer_transform
+              </div>
+              <div class="f5 lh-copy">
+                sets the buffer transformation
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="orange">wl_surface_set_buffer_transform</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_surface*</span> wl_surface,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> transform</div>
+    
+  )
+</div>
+            </li>
+          
+            <li>
+              <div class="f4 lh-title">
+                set_buffer_scale
+              </div>
+              <div class="f5 lh-copy">
+                sets the buffer scaling factor
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="orange">wl_surface_set_buffer_scale</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_surface*</span> wl_surface,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> scale</div>
+    
+  )
+</div>
+            </li>
+          
+            <li>
+              <div class="f4 lh-title">
+                damage_buffer
+              </div>
+              <div class="f5 lh-copy">
+                mark part of the surface damaged using buffer coordinates
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="orange">wl_surface_damage_buffer</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_surface*</span> wl_surface,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> x,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> y,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> width,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> height</div>
+    
+  )
+</div>
+            </li>
+          
+        </ul>
+      </li>
+    
+      <li>
+        <div class="f2 lh-copy">
+          wl_seat
+        </div>
+        <div class="f6 lh-copy ws-pre-line courier">A seat is a group of keyboards, pointer and touch devices. This
+object is published as a global during start up, or when such a
+device is hot plugged.  A seat typically has a pointer and
+maintains a keyboard focus and a pointer focus.
+</div>
+        <ul class="list pl0">
+          
+            <li>
+              <div class="f4 lh-title">
+                get_pointer
+              </div>
+              <div class="f5 lh-copy">
+                return pointer object
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>struct wl_pointer* </span><span class="orange">wl_seat_get_pointer</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_seat*</span> wl_seat</div>
+    
+  )
+</div>
+            </li>
+          
+            <li>
+              <div class="f4 lh-title">
+                get_keyboard
+              </div>
+              <div class="f5 lh-copy">
+                return keyboard object
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>struct wl_keyboard* </span><span class="orange">wl_seat_get_keyboard</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_seat*</span> wl_seat</div>
+    
+  )
+</div>
+            </li>
+          
+            <li>
+              <div class="f4 lh-title">
+                get_touch
+              </div>
+              <div class="f5 lh-copy">
+                return touch object
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>struct wl_touch* </span><span class="orange">wl_seat_get_touch</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_seat*</span> wl_seat</div>
+    
+  )
+</div>
+            </li>
+          
+            <li>
+              <div class="f4 lh-title">
+                release
+              </div>
+              <div class="f5 lh-copy">
+                release the seat object
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="orange">wl_seat_release</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_seat*</span> wl_seat</div>
+    
+  )
+</div>
+            </li>
+          
+        </ul>
+      </li>
+    
+      <li>
+        <div class="f2 lh-copy">
+          wl_pointer
+        </div>
+        <div class="f6 lh-copy ws-pre-line courier">The wl_pointer interface represents one or more input devices,
+such as mice, which control the pointer location and pointer_focus
+of a seat.
+
+The wl_pointer interface generates motion, enter and leave
+events for the surfaces that the pointer is located over,
+and button and axis events for button presses, button releases
+and scrolling.
+</div>
+        <ul class="list pl0">
+          
+            <li>
+              <div class="f4 lh-title">
+                set_cursor
+              </div>
+              <div class="f5 lh-copy">
+                set the pointer surface
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="orange">wl_pointer_set_cursor</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_pointer*</span> wl_pointer,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> serial,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_surface*</span> surface,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> hotspot_x,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> hotspot_y</div>
+    
+  )
+</div>
+            </li>
+          
+            <li>
+              <div class="f4 lh-title">
+                release
+              </div>
+              <div class="f5 lh-copy">
+                release the pointer object
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="orange">wl_pointer_release</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_pointer*</span> wl_pointer</div>
+    
+  )
+</div>
+            </li>
+          
+        </ul>
+      </li>
+    
+      <li>
+        <div class="f2 lh-copy">
+          wl_keyboard
+        </div>
+        <div class="f6 lh-copy ws-pre-line courier">The wl_keyboard interface represents one or more keyboards
+associated with a seat.
+</div>
+        <ul class="list pl0">
+          
+            <li>
+              <div class="f4 lh-title">
+                release
+              </div>
+              <div class="f5 lh-copy">
+                release the keyboard object
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="orange">wl_keyboard_release</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_keyboard*</span> wl_keyboard</div>
+    
+  )
+</div>
+            </li>
+          
+        </ul>
+      </li>
+    
+      <li>
+        <div class="f2 lh-copy">
+          wl_touch
+        </div>
+        <div class="f6 lh-copy ws-pre-line courier">The wl_touch interface represents a touchscreen
+associated with a seat.
+
+Touch interactions can consist of one or more contacts.
+For each contact, a series of events is generated, starting
+with a down event, followed by zero or more motion events,
+and ending with an up event. Events relating to the same
+contact point can be identified by the ID of the sequence.
+</div>
+        <ul class="list pl0">
+          
+            <li>
+              <div class="f4 lh-title">
+                release
+              </div>
+              <div class="f5 lh-copy">
+                release the touch object
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="orange">wl_touch_release</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_touch*</span> wl_touch</div>
+    
+  )
+</div>
+            </li>
+          
+        </ul>
+      </li>
+    
+      <li>
+        <div class="f2 lh-copy">
+          wl_output
+        </div>
+        <div class="f6 lh-copy ws-pre-line courier">An output describes part of the compositor geometry.  The
+compositor works in the &#x27;compositor coordinate system&#x27; and an
+output corresponds to a rectangular area in that space that is
+actually visible.  This typically corresponds to a monitor that
+displays part of the compositor space.  This object is published
+as global during start up, or when a monitor is hotplugged.
+</div>
+        <ul class="list pl0">
+          
+            <li>
+              <div class="f4 lh-title">
+                release
+              </div>
+              <div class="f5 lh-copy">
+                release the output object
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="orange">wl_output_release</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_output*</span> wl_output</div>
+    
+  )
+</div>
+            </li>
+          
+        </ul>
+      </li>
+    
+      <li>
+        <div class="f2 lh-copy">
+          wl_region
+        </div>
+        <div class="f6 lh-copy ws-pre-line courier">A region object describes an area.
+
+Region objects are used to describe the opaque and input
+regions of a surface.
+</div>
+        <ul class="list pl0">
+          
+            <li>
+              <div class="f4 lh-title">
+                destroy
+              </div>
+              <div class="f5 lh-copy">
+                destroy region
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="orange">wl_region_destroy</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_region*</span> wl_region</div>
+    
+  )
+</div>
+            </li>
+          
+            <li>
+              <div class="f4 lh-title">
+                add
+              </div>
+              <div class="f5 lh-copy">
+                add rectangle to region
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="orange">wl_region_add</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_region*</span> wl_region,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> x,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> y,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> width,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> height</div>
+    
+  )
+</div>
+            </li>
+          
+            <li>
+              <div class="f4 lh-title">
+                subtract
+              </div>
+              <div class="f5 lh-copy">
+                subtract rectangle from region
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="orange">wl_region_subtract</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_region*</span> wl_region,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> x,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> y,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> width,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> height</div>
+    
+  )
+</div>
+            </li>
+          
+        </ul>
+      </li>
+    
+      <li>
+        <div class="f2 lh-copy">
+          wl_subcompositor
+        </div>
+        <div class="f6 lh-copy ws-pre-line courier">The global interface exposing sub-surface compositing capabilities.
+A wl_surface, that has sub-surfaces associated, is called the
+parent surface. Sub-surfaces can be arbitrarily nested and create
+a tree of sub-surfaces.
+
+The root surface in a tree of sub-surfaces is the main
+surface. The main surface cannot be a sub-surface, because
+sub-surfaces must always have a parent.
+
+A main surface with its sub-surfaces forms a (compound) window.
+For window management purposes, this set of wl_surface objects is
+to be considered as a single window, and it should also behave as
+such.
+
+The aim of sub-surfaces is to offload some of the compositing work
+within a window from clients to the compositor. A prime example is
+a video player with decorations and video in separate wl_surface
+objects. This should allow the compositor to pass YUV video buffer
+processing to dedicated overlay hardware when possible.
+</div>
+        <ul class="list pl0">
+          
+            <li>
+              <div class="f4 lh-title">
+                destroy
+              </div>
+              <div class="f5 lh-copy">
+                unbind from the subcompositor interface
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="orange">wl_subcompositor_destroy</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_subcompositor*</span> wl_subcompositor</div>
+    
+  )
+</div>
+            </li>
+          
+            <li>
+              <div class="f4 lh-title">
+                get_subsurface
+              </div>
+              <div class="f5 lh-copy">
+                give a surface the role sub-surface
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>struct wl_subsurface* </span><span class="orange">wl_subcompositor_get_subsurface</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_subcompositor*</span> wl_subcompositor,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_surface*</span> surface,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_surface*</span> parent</div>
+    
+  )
+</div>
+            </li>
+          
+        </ul>
+      </li>
+    
+      <li>
+        <div class="f2 lh-copy">
+          wl_subsurface
+        </div>
+        <div class="f6 lh-copy ws-pre-line courier">An additional interface to a wl_surface object, which has been
+made a sub-surface. A sub-surface has one parent surface. A
+sub-surface&#x27;s size and position are not limited to that of the parent.
+Particularly, a sub-surface is not automatically clipped to its
+parent&#x27;s area.
+
+A sub-surface becomes mapped, when a non-NULL wl_buffer is applied
+and the parent surface is mapped. The order of which one happens
+first is irrelevant. A sub-surface is hidden if the parent becomes
+hidden, or if a NULL wl_buffer is applied. These rules apply
+recursively through the tree of surfaces.
+
+The behaviour of a wl_surface.commit request on a sub-surface
+depends on the sub-surface&#x27;s mode. The possible modes are
+synchronized and desynchronized, see methods
+wl_subsurface.set_sync and wl_subsurface.set_desync. Synchronized
+mode caches the wl_surface state to be applied when the parent&#x27;s
+state gets applied, and desynchronized mode applies the pending
+wl_surface state directly. A sub-surface is initially in the
+synchronized mode.
+
+Sub-surfaces have also other kind of state, which is managed by
+wl_subsurface requests, as opposed to wl_surface requests. This
+state includes the sub-surface position relative to the parent
+surface (wl_subsurface.set_position), and the stacking order of
+the parent and its sub-surfaces (wl_subsurface.place_above and
+.place_below). This state is applied when the parent surface&#x27;s
+wl_surface state is applied, regardless of the sub-surface&#x27;s mode.
+As the exception, set_sync and set_desync are effective immediately.
+
+The main surface can be thought to be always in desynchronized mode,
+since it does not have a parent in the sub-surfaces sense.
+
+Even if a sub-surface is in desynchronized mode, it will behave as
+in synchronized mode, if its parent surface behaves as in
+synchronized mode. This rule is applied recursively throughout the
+tree of surfaces. This means, that one can set a sub-surface into
+synchronized mode, and then assume that all its child and grand-child
+sub-surfaces are synchronized, too, without explicitly setting them.
+
+If the wl_surface associated with the wl_subsurface is destroyed, the
+wl_subsurface object becomes inert. Note, that destroying either object
+takes effect immediately. If you need to synchronize the removal
+of a sub-surface to the parent surface update, unmap the sub-surface
+first by attaching a NULL wl_buffer, update parent, and then destroy
+the sub-surface.
+
+If the parent wl_surface object is destroyed, the sub-surface is
+unmapped.
+</div>
+        <ul class="list pl0">
+          
+            <li>
+              <div class="f4 lh-title">
+                destroy
+              </div>
+              <div class="f5 lh-copy">
+                remove sub-surface interface
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="orange">wl_subsurface_destroy</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_subsurface*</span> wl_subsurface</div>
+    
+  )
+</div>
+            </li>
+          
+            <li>
+              <div class="f4 lh-title">
+                set_position
+              </div>
+              <div class="f5 lh-copy">
+                reposition the sub-surface
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="orange">wl_subsurface_set_position</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_subsurface*</span> wl_subsurface,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> x,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> y</div>
+    
+  )
+</div>
+            </li>
+          
+            <li>
+              <div class="f4 lh-title">
+                place_above
+              </div>
+              <div class="f5 lh-copy">
+                restack the sub-surface
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="orange">wl_subsurface_place_above</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_subsurface*</span> wl_subsurface,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_surface*</span> sibling</div>
+    
+  )
+</div>
+            </li>
+          
+            <li>
+              <div class="f4 lh-title">
+                place_below
+              </div>
+              <div class="f5 lh-copy">
+                restack the sub-surface
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="orange">wl_subsurface_place_below</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_subsurface*</span> wl_subsurface,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_surface*</span> sibling</div>
+    
+  )
+</div>
+            </li>
+          
+            <li>
+              <div class="f4 lh-title">
+                set_sync
+              </div>
+              <div class="f5 lh-copy">
+                set sub-surface to synchronized mode
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="orange">wl_subsurface_set_sync</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_subsurface*</span> wl_subsurface</div>
+    
+  )
+</div>
+            </li>
+          
+            <li>
+              <div class="f4 lh-title">
+                set_desync
+              </div>
+              <div class="f5 lh-copy">
+                set sub-surface to desynchronized mode
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="orange">wl_subsurface_set_desync</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_subsurface*</span> wl_subsurface</div>
+    
+  )
+</div>
+            </li>
+          
+        </ul>
+      </li>
+    
+  </ul>
+
+  <h2 class="f2 lh-title">Copyright Info</h2>
+  <div class="f6 lh-copy ws-pre-line courier">Copyright © 2008-2011 Kristian Høgsberg
+Copyright © 2010-2011 Intel Corporation
+Copyright © 2012-2013 Collabora, Ltd.
+
+Permission is hereby granted, free of charge, to any person
+obtaining a copy of this software and associated documentation files
+(the &quot;Software&quot;), to deal in the Software without restriction,
+including without limitation the rights to use, copy, modify, merge,
+publish, distribute, sublicense, and&#x2f;or sell copies of the Software,
+and to permit persons to whom the Software is furnished to do so,
+subject to the following conditions:
+
+The above copyright notice and this permission notice (including the
+next paragraph) shall be included in all copies or substantial
+portions of the Software.
+
+THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+NONINFRINGEMENT.  IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
+BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
+ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+</div>
+
+    </div>
+
+    <script src="/bundle.js"></script>
+  </body>
+</html>
