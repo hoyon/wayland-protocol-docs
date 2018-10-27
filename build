@@ -1,0 +1,5 @@
+#!/bin/bash
+
+yarn --cwd assets run build
+cargo build
+target/debug/wayland-protocol-docs

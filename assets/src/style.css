@@ -1,0 +1,20 @@
+.breadcrumbs {
+  .arrow {
+    position: relative;
+    top: 0.2rem;
+    margin-left: -0.5rem;
+    margin-right: -0.5rem;
+  }
+}
+
+.hover-pointer {
+  cursor: pointer;
+}
+
+.ws-pre-line {
+  white-space: pre-line;
+}
+
+.ws-pre-wrap {
+  white-space: pre-wrap;
+}

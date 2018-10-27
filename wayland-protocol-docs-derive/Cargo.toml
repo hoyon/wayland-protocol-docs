@@ -1,0 +1,12 @@
+[package]
+name = "wayland-protocol-docs-derive"
+version = "0.1.0"
+authors = ["Ho-Yon Mak <hoyon.mak@gmail.com>"]
+
+[lib]
+proc-macro = true
+
+[dependencies]
+syn = "0.15.4"
+quote = "0.6.8"
+proc-macro2 = "0.4.19"
