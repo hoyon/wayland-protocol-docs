@@ -57,7 +57,7 @@ fn main() -> std::io::Result<()> {
             render_to_file(&template, &filename)?;
         }
 
-        let url = format!("/protocols/{}.html", protocol.name);
+        let url = format!("./protocols/{}.html", protocol.name);
         details.push(ProtocolDetails{url: url, name: protocol.name});
     }
 
