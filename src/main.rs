@@ -4,10 +4,12 @@ extern crate wayland_protocol_docs_derive;
 extern crate askama;
 extern crate xmltree;
 extern crate unindent;
+extern crate glob;
 
 use askama::Template;
 use std::fs::File;
 use std::io::prelude::*;
+use glob::glob;
 
 mod protocol;
 use protocol::Protocol;
@@ -20,12 +22,45 @@ struct ProtocolTemplate<'a> {
     protocol: &'a Protocol,
 }
 
+#[derive(Template)]
+#[template(path = "index.html")]
+struct IndexTemplate {
+    protocols: Vec<ProtocolDetails>,
+}
+
+struct ProtocolDetails {
+    pub url: String,
+    pub name: String
+}
+
 fn main() -> std::io::Result<()> {
-    let protocol = Protocol::from_file("./data/xdg-shell-unstable-v6.xml");
-    let template = ProtocolTemplate {
-        protocol: &protocol
-    };
-    render_to_file(&template, "site/index.html")?;
+    let protocol_files = glob("./data/**/*.xml")
+        .unwrap()
+        .filter_map(Result::ok)
+        .collect::<Vec<_>>();
+
+    let protocols = protocol_files
+        .clone()
+        .into_iter()
+        .map(|p| p.to_str().unwrap().to_string())
+        .map(|s| Protocol::from_file(&s));
+
+    let mut details = vec![];
+
+    for protocol in protocols {
+        {
+            let template = ProtocolTemplate{protocol: &protocol};
+            let filename = format!("site/protocols/{}.html", protocol.name);
+            render_to_file(&template, &filename)?;
+        }
+
+        let url = format!("/protocols/{}.html", protocol.name);
+        details.push(ProtocolDetails{url: url, name: protocol.name});
+    }
+
+    let index_template = IndexTemplate{protocols: details};
+    render_to_file(&index_template, "site/index.html")?;
+
     Ok(())
 }
 

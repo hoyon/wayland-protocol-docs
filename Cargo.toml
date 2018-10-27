@@ -8,6 +8,7 @@ wayland-protocol-docs-derive = { path = "wayland-protocol-docs-derive" }
 askama = "0.7"
 xmltree = "0.8"
 unindent = "0.1.3"
+glob = "0.2"
 
 [build-dependencies]
 askama = "0.7"
