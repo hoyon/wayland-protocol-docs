@@ -1,8 +1,0 @@
-#!/bin/bash
-
-yarn --cwd assets run watch &
-livereload site > /dev/null &
-cargo watch -x 'run' -w src -w templates -w wayland-protocol-docs-derive &
-echo "Watching and reloading files.."
-trap "jobs -p | xargs kill" SIGINT
-wait
