@@ -11,7 +11,11 @@
   </head>
   <body class="bg-near-white black-70 sans-serif pa2 ph6-l">
 
-    {% include "breadcrumbs.html" %}
+    <a href="{{base_url}}/" class="f4 link near-black dim lh-title">
+      Home
+    </a>
+
+    {#% include "breadcrumbs.html" %#}
 
     <div id="content">
       {% block content %}{% endblock %}

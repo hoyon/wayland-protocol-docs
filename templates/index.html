@@ -5,10 +5,10 @@
 
 {% block content %}
   <h1 class="f1 lh-title">Wayland protocol docs</h1>
-  <ul class="list pl0">
+  <ul class="list pl0 lh-copy">
     {% for protocol in protocols %}
       <li>
-        <a href="{{ protocol.url }}">{{ protocol.name }}</a>
+        <a href="{{ protocol.url }}" class="link dim near-black">{{ protocol.name }}</a>
       </li>
     {% endfor %}
   </ul>
