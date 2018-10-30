@@ -46,6 +46,10 @@ for input events.
     
   )
 </div>
+              <div class="f6 lh-copy ws-pre-line courier">Informs the server that the client will no longer be using this
+protocol object. Existing objects created by this object are not
+affected.
+</div>
             </li>
           
             <li>
@@ -64,6 +68,15 @@ for input events.
       <div class="ws-pre-wrap">    <span class="purple">struct wl_keyboard*</span> keyboard</div>
     
   )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier">Creates a new input timestamps object that represents a subscription
+to high-resolution timestamp events for all wl_keyboard events that
+carry a timestamp.
+
+If the associated wl_keyboard object is invalidated, either through
+client action (e.g. release) or server-side changes, the input
+timestamps object becomes inert and the client should destroy it
+by calling zwp_input_timestamps_v1.destroy.
 </div>
             </li>
           
@@ -84,6 +97,15 @@ for input events.
     
   )
 </div>
+              <div class="f6 lh-copy ws-pre-line courier">Creates a new input timestamps object that represents a subscription
+to high-resolution timestamp events for all wl_pointer events that
+carry a timestamp.
+
+If the associated wl_pointer object is invalidated, either through
+client action (e.g. release) or server-side changes, the input
+timestamps object becomes inert and the client should destroy it
+by calling zwp_input_timestamps_v1.destroy.
+</div>
             </li>
           
             <li>
@@ -102,6 +124,15 @@ for input events.
       <div class="ws-pre-wrap">    <span class="purple">struct wl_touch*</span> touch</div>
     
   )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier">Creates a new input timestamps object that represents a subscription
+to high-resolution timestamp events for all wl_touch events that
+carry a timestamp.
+
+If the associated wl_touch object becomes invalid, either through
+client action (e.g. release) or server-side changes, the input
+timestamps object becomes inert and the client should destroy it
+by calling zwp_input_timestamps_v1.destroy.
 </div>
             </li>
           
@@ -132,6 +163,10 @@ zwp_input_timestamps_manager_v1 request used to create this object.
       <div class="ws-pre-wrap">    <span class="purple">struct zwp_input_timestamps_v1*</span> zwp_input_timestamps_v1</div>
     
   )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier">Informs the server that the client will no longer be using this
+protocol object. After the server processes the request, no more
+timestamp events will be emitted.
 </div>
             </li>
           

@@ -70,6 +70,9 @@ needs to be resent by the client.
     
   )
 </div>
+              <div class="f6 lh-copy ws-pre-line courier">Destroy the wp_text_input object. Also disables all surfaces enabled
+through this wp_text_input object.
+</div>
             </li>
           
             <li>
@@ -87,6 +90,30 @@ needs to be resent by the client.
     
   )
 </div>
+              <div class="f6 lh-copy ws-pre-line courier">Requests text input on the surface previously obtained from the enter
+event.
+
+This request must be issued every time the active text input changes
+to a new one, including within the current surface. Use
+zwp_text_input_v3.disable when there is no longer any input focus on
+the current surface.
+
+This request resets all state associated with previous enable, disable,
+set_surrounding_text, set_text_change_cause, set_content_type, and
+set_cursor_rectangle requests, as well as the state associated with
+preedit_string, commit_string, and delete_surrounding_text events.
+
+The set_surrounding_text, set_content_type and set_cursor_rectangle
+requests must follow if the text input supports the necessary
+functionality.
+
+State set with this request is double-buffered. It will get applied on
+the next zwp_text_input_v3.commit request, and stay valid until the
+next committed enable or disable request.
+
+The changes must be applied by the compositor after issuing a
+zwp_text_input_v3.commit request.
+</div>
             </li>
           
             <li>
@@ -103,6 +130,12 @@ needs to be resent by the client.
       <div class="ws-pre-wrap">    <span class="purple">struct zwp_text_input_v3*</span> zwp_text_input_v3</div>
     
   )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier">Explicitly disable text input on the current surface (typically when
+there is no focus on any text entry inside the surface).
+
+State set with this request is double-buffered. It will get applied on
+the next zwp_text_input_v3.commit request.
 </div>
             </li>
           
@@ -127,6 +160,38 @@ needs to be resent by the client.
     
   )
 </div>
+              <div class="f6 lh-copy ws-pre-line courier">Sets the surrounding plain text around the input, excluding the preedit
+text.
+
+The client should notify the compositor of any changes in any of the
+values carried with this request, including changes caused by handling
+incoming text-input events as well as changes caused by other
+mechanisms like keyboard typing.
+
+If the client is unaware of the text around the cursor, it should not
+issue this request, to signify lack of support to the compositor.
+
+Text is UTF-8 encoded, and should include the cursor position, the
+complete selection and additional characters before and after them.
+There is a maximum length of wayland messages, so text can not be
+longer than 4000 bytes.
+
+Cursor is the byte offset of the cursor within text buffer.
+
+Anchor is the byte offset of the selection anchor within text buffer.
+If there is no selected text, anchor is the same as cursor.
+
+If any preedit text is present, it is replaced with a cursor for the
+purpose of this event.
+
+Values set with this request are double-buffered. They will get applied
+on the next zwp_text_input_v3.commit request, and stay valid until the
+next committed enable or disable request.
+
+The initial state for affected fields is empty, meaning that the text
+input does not support sending surrounding text. If the empty values
+get applied, subsequent attempts to change them may have no effect.
+</div>
             </li>
           
             <li>
@@ -145,6 +210,21 @@ needs to be resent by the client.
       <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> cause</div>
     
   )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier">Tells the compositor why the text surrounding the cursor changed.
+
+Whenever the client detects an external change in text, cursor, or
+anchor posision, it must issue this request to the compositor. This
+request is intended to give the input method a chance to update the
+preedit text in an appropriate way, e.g. by removing it when the user
+starts typing with a keyboard.
+
+cause describes the source of the change.
+
+The value set with this request is double-buffered. It must be applied
+and reset to initial at the next zwp_text_input_v3.commit request.
+
+The initial value of cause is input_method.
 </div>
             </li>
           
@@ -166,6 +246,18 @@ needs to be resent by the client.
       <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> purpose</div>
     
   )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier">Sets the content purpose and content hint. While the purpose is the
+basic purpose of an input field, the hint flags allow to modify some of
+the behavior.
+
+Values set with this request are double-buffered. They will get applied
+on the next zwp_text_input_v3.commit request.
+Subsequent attempts to update them may have no effect. The values
+remain valid until the next committed enable or disable request.
+
+The initial value for hint is none, and the initial value for purpose
+is normal.
 </div>
             </li>
           
@@ -192,6 +284,24 @@ needs to be resent by the client.
     
   )
 </div>
+              <div class="f6 lh-copy ws-pre-line courier">Marks an area around the cursor as a x, y, width, height rectangle in
+surface local coordinates.
+
+Allows the compositor to put a window with word suggestions near the
+cursor, without obstructing the text being input.
+
+If the client is unaware of the position of edited text, it should not
+issue this request, to signify lack of support to the compositor.
+
+Values set with this request are double-buffered. They will get applied
+on the next zwp_text_input_v3.commit request, and stay valid until the
+next committed enable or disable request.
+
+The initial values describing a cursor rectangle are empty. That means
+the text input does not support describing the cursor area. If the
+empty values get applied, subsequent attempts to change them may have
+no effect.
+</div>
             </li>
           
             <li>
@@ -208,6 +318,30 @@ needs to be resent by the client.
       <div class="ws-pre-wrap">    <span class="purple">struct zwp_text_input_v3*</span> zwp_text_input_v3</div>
     
   )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier">Atomically applies state changes recently sent to the compositor.
+
+The commit request establishes and updates the state of the client, and
+must be issued after any changes to apply them.
+
+Text input state (enabled status, content purpose, content hint,
+surrounding text and change cause, cursor rectangle) is conceptually
+double-buffered within the context of a text input, i.e. between a
+committed enable request and the following committed enable or disable
+request.
+
+Protocol requests modify the pending state, as opposed to the current
+state in use by the input method. A commit request atomically applies
+all pending state, replacing the current state. After commit, the new
+pending state is as documented for each related request.
+
+Requests are applied in the order of arrival.
+
+Neither current nor pending state are modified unless noted otherwise.
+
+The compositor must count the number of commit requests coming from
+each zwp_text_input_v3 object and use the count as the serial in done
+events.
 </div>
             </li>
           
@@ -237,6 +371,8 @@ needs to be resent by the client.
     
   )
 </div>
+              <div class="f6 lh-copy ws-pre-line courier">Destroy the wp_text_input_manager object.
+</div>
             </li>
           
             <li>
@@ -255,6 +391,8 @@ needs to be resent by the client.
       <div class="ws-pre-wrap">    <span class="purple">struct wl_seat*</span> seat</div>
     
   )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier">Creates a new text-input object for a given seat.
 </div>
             </li>
           

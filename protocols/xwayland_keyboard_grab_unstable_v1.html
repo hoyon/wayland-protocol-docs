@@ -45,6 +45,8 @@
     
   )
 </div>
+              <div class="f6 lh-copy ws-pre-line courier">Destroy the keyboard grab manager.
+  </div>
             </li>
           
             <li>
@@ -66,6 +68,26 @@
     
   )
 </div>
+              <div class="f6 lh-copy ws-pre-line courier">The grab_keyboard request asks for a grab of the keyboard, forcing
+the keyboard focus for the given seat upon the given surface.
+
+The protocol provides no guarantee that the grab is ever satisfied,
+and does not require the compositor to send an error if the grab
+cannot ever be satisfied. It is thus possible to request a keyboard
+grab that will never be effective.
+
+The protocol:
+
+* does not guarantee that the grab itself is applied for a surface,
+  the grab request may be silently ignored by the compositor,
+* does not guarantee that any events are sent to this client even
+  if the grab is applied to a surface,
+* does not guarantee that events sent to this client are exhaustive,
+  a compositor may filter some events for its own consumption,
+* does not guarantee that events sent to this client are continuous,
+  a compositor may change and reroute keyboard events while the grab
+  is nominally active.
+  </div>
             </li>
           
         </ul>
@@ -94,6 +116,9 @@
     
   )
 </div>
+              <div class="f6 lh-copy ws-pre-line courier">Destroy the grabbed keyboard object. If applicable, the compositor
+will ungrab the keyboard.
+  </div>
             </li>
           
         </ul>

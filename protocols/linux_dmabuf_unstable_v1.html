@@ -101,6 +101,9 @@ interface version number is reset.
     
   )
 </div>
+              <div class="f6 lh-copy ws-pre-line courier">Objects created through this interface, especially wl_buffers, will
+remain valid.
+</div>
             </li>
           
             <li>
@@ -117,6 +120,11 @@ interface version number is reset.
       <div class="ws-pre-wrap">    <span class="purple">struct zwp_linux_dmabuf_v1*</span> zwp_linux_dmabuf_v1</div>
     
   )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier">This temporary object is used to collect multiple dmabuf handles into
+a single batch to create a wl_buffer. It can only be used once and
+should be destroyed after a &#x27;created&#x27; or &#x27;failed&#x27; event has been
+received.
 </div>
             </li>
           
@@ -159,6 +167,9 @@ be given in any order. Each plane index can be set only once.
     
   )
 </div>
+              <div class="f6 lh-copy ws-pre-line courier">Cleans up the temporary data sent to the server for dmabuf-based
+wl_buffer creation.
+</div>
             </li>
           
             <li>
@@ -188,6 +199,20 @@ be given in any order. Each plane index can be set only once.
     
   )
 </div>
+              <div class="f6 lh-copy ws-pre-line courier">This request adds one dmabuf to the set in this
+zwp_linux_buffer_params_v1.
+
+The 64-bit unsigned value combined from modifier_hi and modifier_lo
+is the dmabuf layout modifier. DRM AddFB2 ioctl calls this the
+fb modifier, which is defined in drm_mode.h of Linux UAPI.
+This is an opaque token. Drivers use this token to express tiling,
+compression, etc. driver-specific modifications to the base format
+defined by the DRM fourcc code.
+
+This request raises the PLANE_IDX error if plane_idx is too large.
+The error PLANE_SET is raised if attempting to set a plane that
+was already set.
+</div>
             </li>
           
             <li>
@@ -212,6 +237,66 @@ be given in any order. Each plane index can be set only once.
       <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> flags</div>
     
   )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier">This asks for creation of a wl_buffer from the added dmabuf
+buffers. The wl_buffer is not created immediately but returned via
+the &#x27;created&#x27; event if the dmabuf sharing succeeds. The sharing
+may fail at runtime for reasons a client cannot predict, in
+which case the &#x27;failed&#x27; event is triggered.
+
+The &#x27;format&#x27; argument is a DRM_FORMAT code, as defined by the
+libdrm&#x27;s drm_fourcc.h. The Linux kernel&#x27;s DRM sub-system is the
+authoritative source on how the format codes should work.
+
+The &#x27;flags&#x27; is a bitfield of the flags defined in enum &quot;flags&quot;.
+&#x27;y_invert&#x27; means the that the image needs to be y-flipped.
+
+Flag &#x27;interlaced&#x27; means that the frame in the buffer is not
+progressive as usual, but interlaced. An interlaced buffer as
+supported here must always contain both top and bottom fields.
+The top field always begins on the first pixel row. The temporal
+ordering between the two fields is top field first, unless
+&#x27;bottom_first&#x27; is specified. It is undefined whether &#x27;bottom_first&#x27;
+is ignored if &#x27;interlaced&#x27; is not set.
+
+This protocol does not convey any information about field rate,
+duration, or timing, other than the relative ordering between the
+two fields in one buffer. A compositor may have to estimate the
+intended field rate from the incoming buffer rate. It is undefined
+whether the time of receiving wl_surface.commit with a new buffer
+attached, applying the wl_surface state, wl_surface.frame callback
+trigger, presentation, or any other point in the compositor cycle
+is used to measure the frame or field times. There is no support
+for detecting missed or late frames&#x2f;fields&#x2f;buffers either, and
+there is no support whatsoever for cooperating with interlaced
+compositor output.
+
+The composited image quality resulting from the use of interlaced
+buffers is explicitly undefined. A compositor may use elaborate
+hardware features or software to deinterlace and create progressive
+output frames from a sequence of interlaced input buffers, or it
+may produce substandard image quality. However, compositors that
+cannot guarantee reasonable image quality in all cases are recommended
+to just reject all interlaced buffers.
+
+Any argument errors, including non-positive width or height,
+mismatch between the number of planes and the format, bad
+format, bad offset or stride, may be indicated by fatal protocol
+errors: INCOMPLETE, INVALID_FORMAT, INVALID_DIMENSIONS,
+OUT_OF_BOUNDS.
+
+Dmabuf import errors in the server that are not obvious client
+bugs are returned via the &#x27;failed&#x27; event as non-fatal. This
+allows attempting dmabuf sharing and falling back in the client
+if it fails.
+
+This request can be sent only once in the object&#x27;s lifetime, after
+which the only legal request is destroy. This object should be
+destroyed after issuing a &#x27;create&#x27; request. Attempting to use this
+object after issuing &#x27;create&#x27; raises ALREADY_USED protocol error.
+
+It is not mandatory to issue &#x27;create&#x27;. If a client wants to
+cancel the buffer creation, it can just destroy this object.
 </div>
             </li>
           
@@ -238,6 +323,30 @@ dmabufs
       <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> flags</div>
     
   )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier">This asks for immediate creation of a wl_buffer by importing the
+added dmabufs.
+
+In case of import success, no event is sent from the server, and the
+wl_buffer is ready to be used by the client.
+
+Upon import failure, either of the following may happen, as seen fit
+by the implementation:
+- the client is terminated with one of the following fatal protocol
+  errors:
+  - INCOMPLETE, INVALID_FORMAT, INVALID_DIMENSIONS, OUT_OF_BOUNDS,
+    in case of argument errors such as mismatch between the number
+    of planes and the format, bad format, non-positive width or
+    height, or bad offset or stride.
+  - INVALID_WL_BUFFER, in case the cause for failure is unknown or
+    plaform specific.
+- the server creates an invalid wl_buffer, marks it as failed and
+  sends a &#x27;failed&#x27; event to the client. The result of using this
+  invalid wl_buffer as an argument in any request by the client is
+  defined by the compositor implementation.
+
+This takes the same arguments as a &#x27;create&#x27; request, and obeys the
+same restrictions.
 </div>
             </li>
           

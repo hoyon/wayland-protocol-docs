@@ -66,6 +66,10 @@ when the compositor misses its target vertical blanking period.
     
   )
 </div>
+              <div class="f6 lh-copy ws-pre-line courier">Informs the server that the client will no longer be using
+this protocol object. Existing objects created by this object
+are not affected.
+</div>
             </li>
           
             <li>
@@ -84,6 +88,15 @@ when the compositor misses its target vertical blanking period.
       <div class="ws-pre-wrap">    <span class="purple">struct wl_surface*</span> surface</div>
     
   )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier">Request presentation feedback for the current content submission
+on the given surface. This creates a new presentation_feedback
+object, which will deliver the feedback information once. If
+multiple presentation_feedback objects are created for the same
+submission, they will all deliver the same information.
+
+For details on what information is returned, see the
+presentation_feedback interface.
 </div>
             </li>
           

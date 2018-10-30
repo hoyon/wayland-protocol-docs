@@ -50,6 +50,10 @@ surface size.
     
   )
 </div>
+              <div class="f6 lh-copy ws-pre-line courier">Informs the server that the client will not be using this
+protocol object anymore. This does not affect any other objects,
+wp_viewport objects included.
+  </div>
             </li>
           
             <li>
@@ -69,6 +73,11 @@ surface size.
     
   )
 </div>
+              <div class="f6 lh-copy ws-pre-line courier">Instantiate an interface extension for the given wl_surface to
+crop and scale its content. If the given wl_surface already has
+a wp_viewport object associated, the viewport_exists
+protocol error is raised.
+  </div>
             </li>
           
         </ul>
@@ -157,6 +166,9 @@ on the next wl_surface.commit.
     
   )
 </div>
+              <div class="f6 lh-copy ws-pre-line courier">The associated wl_surface&#x27;s crop and scale state is removed.
+The change is applied on the next wl_surface.commit.
+  </div>
             </li>
           
             <li>
@@ -182,6 +194,18 @@ on the next wl_surface.commit.
     
   )
 </div>
+              <div class="f6 lh-copy ws-pre-line courier">Set the source rectangle of the associated wl_surface. See
+wp_viewport for the description, and relation to the wl_buffer
+size.
+
+If all of x, y, width and height are -1.0, the source rectangle is
+unset instead. Any other set of values where width or height are zero
+or negative, or x or y are negative, raise the bad_value protocol
+error.
+
+The crop and scale state is double-buffered state, and will be
+applied on the next wl_surface.commit.
+  </div>
             </li>
           
             <li>
@@ -203,6 +227,18 @@ on the next wl_surface.commit.
     
   )
 </div>
+              <div class="f6 lh-copy ws-pre-line courier">Set the destination size of the associated wl_surface. See
+wp_viewport for the description, and relation to the wl_buffer
+size.
+
+If width is -1 and height is -1, the destination size is unset
+instead. Any other pair of values for width and height that
+contains zero or negative values raises the bad_value protocol
+error.
+
+The crop and scale state is double-buffered state, and will be
+applied on the next wl_surface.commit.
+  </div>
             </li>
           
         </ul>

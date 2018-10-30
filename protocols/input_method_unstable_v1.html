@@ -67,6 +67,7 @@ interface version number is reset.
     
   )
 </div>
+              <div class="f6 lh-copy ws-pre-line courier"></div>
             </li>
           
             <li>
@@ -88,6 +89,16 @@ interface version number is reset.
     
   )
 </div>
+              <div class="f6 lh-copy ws-pre-line courier">Send the commit string text for insertion to the application.
+
+The text to commit could be either just a single character after a key
+press or the result of some composing (pre-edit). It could be also an
+empty text when some text should be removed (see
+delete_surrounding_text) or when the input cursor should be moved (see
+cursor_position).
+
+Any previously set composing text will be removed.
+  </div>
             </li>
           
             <li>
@@ -111,6 +122,14 @@ interface version number is reset.
     
   )
 </div>
+              <div class="f6 lh-copy ws-pre-line courier">Send the pre-edit string text to the application text input.
+
+The commit text can be used to replace the pre-edit text on reset (for
+example on unfocus).
+
+Previously sent preedit_style and preedit_cursor requests are also
+processed by the text_input.
+  </div>
             </li>
           
             <li>
@@ -134,6 +153,13 @@ interface version number is reset.
     
   )
 </div>
+              <div class="f6 lh-copy ws-pre-line courier">Set the styling information on composing text. The style is applied for
+length in bytes from index relative to the beginning of
+the composing text (as byte offset). Multiple styles can
+be applied to a composing text.
+
+This request should be sent before sending a preedit_string request.
+  </div>
             </li>
           
             <li>
@@ -153,6 +179,13 @@ interface version number is reset.
     
   )
 </div>
+              <div class="f6 lh-copy ws-pre-line courier">Set the cursor position inside the composing text (as byte offset)
+relative to the start of the composing text.
+
+When index is negative no cursor should be displayed.
+
+This request should be sent before sending a preedit_string request.
+  </div>
             </li>
           
             <li>
@@ -174,6 +207,11 @@ interface version number is reset.
     
   )
 </div>
+              <div class="f6 lh-copy ws-pre-line courier">Remove the surrounding text.
+
+This request will be handled on the text_input side directly following
+a commit_string request.
+  </div>
             </li>
           
             <li>
@@ -195,6 +233,17 @@ interface version number is reset.
     
   )
 </div>
+              <div class="f6 lh-copy ws-pre-line courier">Set the cursor and anchor to a new position. Index is the new cursor
+position in bytes (when &gt;= 0 this is relative to the end of the inserted text,
+otherwise it is relative to the beginning of the inserted text). Anchor is
+the new anchor position in bytes (when &gt;= 0 this is relative to the end of the
+inserted text, otherwise it is relative to the beginning of the inserted
+text). When there should be no selected text, anchor should be the same
+as index.
+
+This request will be handled on the text_input side directly following
+a commit_string request.
+  </div>
             </li>
           
             <li>
@@ -214,6 +263,7 @@ interface version number is reset.
     
   )
 </div>
+              <div class="f6 lh-copy ws-pre-line courier"></div>
             </li>
           
             <li>
@@ -241,6 +291,11 @@ interface version number is reset.
     
   )
 </div>
+              <div class="f6 lh-copy ws-pre-line courier">Notify when a key event was sent. Key events should not be used for
+normal text input operations, which should be done with commit_string,
+delete_surrounding_text, etc. The key event follows the wl_keyboard key
+event convention. Sym is an XKB keysym, state is a wl_keyboard key_state.
+  </div>
             </li>
           
             <li>
@@ -258,6 +313,11 @@ interface version number is reset.
     
   )
 </div>
+              <div class="f6 lh-copy ws-pre-line courier">Allow an input method to receive hardware keyboard input and process
+key events to generate text events (with pre-edit) over the wire. This
+allows input methods which compose multiple key events for inputting
+text like it is done for CJK languages.
+  </div>
             </li>
           
             <li>
@@ -283,6 +343,13 @@ interface version number is reset.
     
   )
 </div>
+              <div class="f6 lh-copy ws-pre-line courier">Forward a wl_keyboard::key event to the client that was not processed
+by the input method itself. Should be used when filtering key events
+with grab_keyboard.  The arguments should be the ones from the
+wl_keyboard::key event.
+
+For generating custom key events use the keysym request instead.
+  </div>
             </li>
           
             <li>
@@ -310,6 +377,11 @@ interface version number is reset.
     
   )
 </div>
+              <div class="f6 lh-copy ws-pre-line courier">Forward a wl_keyboard::modifiers event to the client that was not
+processed by the input method itself.  Should be used when filtering
+key events with grab_keyboard. The arguments should be the ones
+from the wl_keyboard::modifiers event.
+  </div>
             </li>
           
             <li>
@@ -331,6 +403,7 @@ interface version number is reset.
     
   )
 </div>
+              <div class="f6 lh-copy ws-pre-line courier"></div>
             </li>
           
             <li>
@@ -352,6 +425,7 @@ interface version number is reset.
     
   )
 </div>
+              <div class="f6 lh-copy ws-pre-line courier"></div>
             </li>
           
         </ul>
@@ -396,6 +470,7 @@ created which allows the input method to communicate with the text input.
     
   )
 </div>
+              <div class="f6 lh-copy ws-pre-line courier"></div>
             </li>
           
         </ul>
@@ -427,6 +502,10 @@ created which allows the input method to communicate with the text input.
     
   )
 </div>
+              <div class="f6 lh-copy ws-pre-line courier">Set the input_panel_surface type to keyboard.
+
+A keyboard surface is only shown when a text input is active.
+  </div>
             </li>
           
             <li>
@@ -444,6 +523,11 @@ created which allows the input method to communicate with the text input.
     
   )
 </div>
+              <div class="f6 lh-copy ws-pre-line courier">Set the input_panel_surface to be an overlay panel.
+
+This is shown near the input cursor above the application window when
+a text input is active.
+  </div>
             </li>
           
         </ul>

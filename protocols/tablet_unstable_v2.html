@@ -49,6 +49,9 @@ actual tablets, use wp_tablet_manager.get_tablet_seat.
     
   )
 </div>
+              <div class="f6 lh-copy ws-pre-line courier">Get the wp_tablet_seat object for the given seat. This object
+provides access to all graphics tablets in this seat.
+  </div>
             </li>
           
             <li>
@@ -66,6 +69,9 @@ actual tablets, use wp_tablet_manager.get_tablet_seat.
     
   )
 </div>
+              <div class="f6 lh-copy ws-pre-line courier">Destroy the wp_tablet_manager object. Objects created from this
+object are unaffected and should be destroyed separately.
+  </div>
             </li>
           
         </ul>
@@ -96,6 +102,9 @@ wp_tablet_seat.tablet_added and wp_tablet_seat.tool_added events.
     
   )
 </div>
+              <div class="f6 lh-copy ws-pre-line courier">Destroy the wp_tablet_seat object. Objects created from this
+object are unaffected and should be destroyed separately.
+  </div>
             </li>
           
         </ul>
@@ -151,6 +160,37 @@ considered part of the same hardware state change.
     
   )
 </div>
+              <div class="f6 lh-copy ws-pre-line courier">Sets the surface of the cursor used for this tool on the given
+tablet. This request only takes effect if the tool is in proximity
+of one of the requesting client&#x27;s surfaces or the surface parameter
+is the current pointer surface. If there was a previous surface set
+with this request it is replaced. If surface is NULL, the cursor
+image is hidden.
+
+The parameters hotspot_x and hotspot_y define the position of the
+pointer surface relative to the pointer location. Its top-left corner
+is always at (x, y) - (hotspot_x, hotspot_y), where (x, y) are the
+coordinates of the pointer location, in surface-local coordinates.
+
+On surface.attach requests to the pointer surface, hotspot_x and
+hotspot_y are decremented by the x and y parameters passed to the
+request. Attach must be confirmed by wl_surface.commit as usual.
+
+The hotspot can also be updated by passing the currently set pointer
+surface to this request with new values for hotspot_x and hotspot_y.
+
+The current and pending input regions of the wl_surface are cleared,
+and wl_surface.set_input_region is ignored until the wl_surface is no
+longer used as the cursor. When the use as a cursor ends, the current
+and pending input regions become undefined, and the wl_surface is
+unmapped.
+
+This request gives the surface the role of a wp_tablet_tool cursor. A
+surface may only ever be used as the cursor surface for one
+wp_tablet_tool. If the surface already has another role or has
+previously been used as cursor surface for a different tool, a
+protocol error is raised.
+  </div>
             </li>
           
             <li>
@@ -168,6 +208,8 @@ considered part of the same hardware state change.
     
   )
 </div>
+              <div class="f6 lh-copy ws-pre-line courier">This destroys the client&#x27;s resource for this tool object.
+  </div>
             </li>
           
         </ul>
@@ -203,6 +245,8 @@ terminated by a wp_tablet.done event.
     
   )
 </div>
+              <div class="f6 lh-copy ws-pre-line courier">This destroys the client&#x27;s resource for this tablet object.
+  </div>
             </li>
           
         </ul>
@@ -239,6 +283,26 @@ event.
     
   )
 </div>
+              <div class="f6 lh-copy ws-pre-line courier">Request that the compositor use the provided feedback string
+associated with this ring. This request should be issued immediately
+after a wp_tablet_pad_group.mode_switch event from the corresponding
+group is received, or whenever the ring is mapped to a different
+action. See wp_tablet_pad_group.mode_switch for more details.
+
+Clients are encouraged to provide context-aware descriptions for
+the actions associated with the ring; compositors may use this
+information to offer visual feedback about the button layout
+(eg. on-screen displays).
+
+The provided string &#x27;description&#x27; is a UTF-8 encoded string to be
+associated with this ring, and is considered user-visible; general
+internationalization rules apply.
+
+The serial argument will be that of the last
+wp_tablet_pad_group.mode_switch event received for the group of this
+ring. Requests providing other serials than the most recent one will be
+ignored.
+  </div>
             </li>
           
             <li>
@@ -256,6 +320,8 @@ event.
     
   )
 </div>
+              <div class="f6 lh-copy ws-pre-line courier">This destroys the client&#x27;s resource for this ring object.
+  </div>
             </li>
           
         </ul>
@@ -292,6 +358,26 @@ event.
     
   )
 </div>
+              <div class="f6 lh-copy ws-pre-line courier">Requests the compositor to use the provided feedback string
+associated with this strip. This request should be issued immediately
+after a wp_tablet_pad_group.mode_switch event from the corresponding
+group is received, or whenever the strip is mapped to a different
+action. See wp_tablet_pad_group.mode_switch for more details.
+
+Clients are encouraged to provide context-aware descriptions for
+the actions associated with the strip, and compositors may use this
+information to offer visual feedback about the button layout
+(eg. on-screen displays).
+
+The provided string &#x27;description&#x27; is a UTF-8 encoded string to be
+associated with this ring, and is considered user-visible; general
+internationalization rules apply.
+
+The serial argument will be that of the last
+wp_tablet_pad_group.mode_switch event received for the group of this
+strip. Requests providing other serials than the most recent one will be
+ignored.
+  </div>
             </li>
           
             <li>
@@ -309,6 +395,8 @@ event.
     
   )
 </div>
+              <div class="f6 lh-copy ws-pre-line courier">This destroys the client&#x27;s resource for this strip object.
+  </div>
             </li>
           
         </ul>
@@ -357,6 +445,9 @@ compositor. See the wp_tablet_pad_group.mode_switch event for more details.
     
   )
 </div>
+              <div class="f6 lh-copy ws-pre-line courier">Destroy the wp_tablet_pad_group object. Objects created from this object
+are unaffected and should be destroyed separately.
+  </div>
             </li>
           
         </ul>
@@ -412,6 +503,31 @@ although different groups may have different active modes.
     
   )
 </div>
+              <div class="f6 lh-copy ws-pre-line courier">Requests the compositor to use the provided feedback string
+associated with this button. This request should be issued immediately
+after a wp_tablet_pad_group.mode_switch event from the corresponding
+group is received, or whenever a button is mapped to a different
+action. See wp_tablet_pad_group.mode_switch for more details.
+
+Clients are encouraged to provide context-aware descriptions for
+the actions associated with each button, and compositors may use
+this information to offer visual feedback on the button layout
+(e.g. on-screen displays).
+
+Button indices start at 0. Setting the feedback string on a button
+that is reserved by the compositor (i.e. not belonging to any
+wp_tablet_pad_group) does not generate an error but the compositor
+is free to ignore the request.
+
+The provided string &#x27;description&#x27; is a UTF-8 encoded string to be
+associated with this ring, and is considered user-visible; general
+internationalization rules apply.
+
+The serial argument will be that of the last
+wp_tablet_pad_group.mode_switch event received for the group of this
+button. Requests providing other serials than the most recent one will
+be ignored.
+  </div>
             </li>
           
             <li>
@@ -429,6 +545,9 @@ although different groups may have different active modes.
     
   )
 </div>
+              <div class="f6 lh-copy ws-pre-line courier">Destroy the wp_tablet_pad object. Objects created from this object
+are unaffected and should be destroyed separately.
+  </div>
             </li>
           
         </ul>

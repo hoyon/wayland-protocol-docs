@@ -77,6 +77,14 @@ interface version number is reset.
     
   )
 </div>
+              <div class="f6 lh-copy ws-pre-line courier">Requests the text_input object to be activated (typically when the
+text entry gets focus).
+
+The seat argument is a wl_seat which maintains the focus for this
+activation. The surface argument is a wl_surface assigned to the
+text_input object and tracked for focus lost. The enter event
+is emitted on successful activation.
+  </div>
             </li>
           
             <li>
@@ -96,6 +104,10 @@ interface version number is reset.
     
   )
 </div>
+              <div class="f6 lh-copy ws-pre-line courier">Requests the text_input object to be deactivated (typically when the
+text entry lost focus). The seat argument is a wl_seat which was used
+for activation.
+  </div>
             </li>
           
             <li>
@@ -113,6 +125,8 @@ interface version number is reset.
     
   )
 </div>
+              <div class="f6 lh-copy ws-pre-line courier">Requests input panels (virtual keyboard) to show.
+  </div>
             </li>
           
             <li>
@@ -130,6 +144,8 @@ interface version number is reset.
     
   )
 </div>
+              <div class="f6 lh-copy ws-pre-line courier">Requests input panels (virtual keyboard) to hide.
+  </div>
             </li>
           
             <li>
@@ -147,6 +163,10 @@ interface version number is reset.
     
   )
 </div>
+              <div class="f6 lh-copy ws-pre-line courier">Should be called by an editor widget when the input state should be
+reset, for example after the text was changed outside of the normal
+input method flow.
+  </div>
             </li>
           
             <li>
@@ -170,6 +190,12 @@ interface version number is reset.
     
   )
 </div>
+              <div class="f6 lh-copy ws-pre-line courier">Sets the plain surrounding text around the input position. Text is
+UTF-8 encoded. Cursor is the byte offset within the
+surrounding text. Anchor is the byte offset of the
+selection anchor within the surrounding text. If there is no selected
+text anchor, then it is the same as cursor.
+  </div>
             </li>
           
             <li>
@@ -191,6 +217,14 @@ interface version number is reset.
     
   )
 </div>
+              <div class="f6 lh-copy ws-pre-line courier">Sets the content purpose and content hint. While the purpose is the
+basic purpose of an input field, the hint flags allow to modify some
+of the behavior.
+
+When no content type is explicitly set, a normal content purpose with
+default hints (auto completion, auto correction, auto capitalization)
+should be assumed.
+  </div>
             </li>
           
             <li>
@@ -216,6 +250,7 @@ interface version number is reset.
     
   )
 </div>
+              <div class="f6 lh-copy ws-pre-line courier"></div>
             </li>
           
             <li>
@@ -235,6 +270,14 @@ interface version number is reset.
     
   )
 </div>
+              <div class="f6 lh-copy ws-pre-line courier">Sets a specific language. This allows for example a virtual keyboard to
+show a language specific layout. The &quot;language&quot; argument is an RFC-3066
+format language tag.
+
+It could be used for example in a word processor to indicate the
+language of the currently edited document or in an instant message
+application which tracks languages of contacts.
+  </div>
             </li>
           
             <li>
@@ -254,6 +297,7 @@ interface version number is reset.
     
   )
 </div>
+              <div class="f6 lh-copy ws-pre-line courier"></div>
             </li>
           
             <li>
@@ -275,6 +319,7 @@ interface version number is reset.
     
   )
 </div>
+              <div class="f6 lh-copy ws-pre-line courier"></div>
             </li>
           
         </ul>
@@ -303,6 +348,8 @@ interface version number is reset.
     
   )
 </div>
+              <div class="f6 lh-copy ws-pre-line courier">Creates a new text_input object.
+  </div>
             </li>
           
         </ul>

@@ -66,6 +66,9 @@ interface version number is reset.
     
   )
 </div>
+              <div class="f6 lh-copy ws-pre-line courier">Destroy the decoration manager. This doesn&#x27;t destroy objects created
+with the manager.
+</div>
             </li>
           
             <li>
@@ -84,6 +87,14 @@ interface version number is reset.
       <div class="ws-pre-wrap">    <span class="purple">struct xdg_toplevel*</span> toplevel</div>
     
   )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier">Create a new decoration object associated with the given toplevel.
+
+Creating an xdg_toplevel_decoration from an xdg_toplevel which has a
+buffer attached or committed is a client error, and any attempts by a
+client to attach or manipulate a buffer prior to the first
+xdg_toplevel_decoration.configure event must also be treated as
+errors.
 </div>
             </li>
           
@@ -118,6 +129,9 @@ xdg_toplevel.
     
   )
 </div>
+              <div class="f6 lh-copy ws-pre-line courier">Switch back to a mode without any server-side decorations at the next
+commit.
+</div>
             </li>
           
             <li>
@@ -137,6 +151,25 @@ xdg_toplevel.
     
   )
 </div>
+              <div class="f6 lh-copy ws-pre-line courier">Set the toplevel surface decoration mode. This informs the compositor
+that the client prefers the provided decoration mode.
+
+After requesting a decoration mode, the compositor will respond by
+emitting a xdg_surface.configure event. The client should then update
+its content, drawing it without decorations if the received mode is
+server-side decorations. The client must also acknowledge the configure
+when committing the new content (see xdg_surface.ack_configure).
+
+The compositor can decide not to use the client&#x27;s mode and enforce a
+different mode instead.
+
+Clients whose decoration mode depend on the xdg_toplevel state may send
+a set_mode request in response to a xdg_surface.configure event and wait
+for the next xdg_surface.configure event to prevent unwanted state.
+Such clients are responsible for preventing configure loops and must
+make sure not to send multiple successive set_mode requests with the
+same decoration mode.
+</div>
             </li>
           
             <li>
@@ -153,6 +186,11 @@ xdg_toplevel.
       <div class="ws-pre-wrap">    <span class="purple">struct zxdg_toplevel_decoration_v1*</span> zxdg_toplevel_decoration_v1</div>
     
   )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier">Unset the toplevel surface decoration mode. This informs the compositor
+that the client doesn&#x27;t prefer a particular decoration mode.
+
+This request has the same semantics as set_mode.
 </div>
             </li>
           

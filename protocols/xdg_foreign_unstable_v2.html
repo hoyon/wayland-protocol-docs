@@ -46,6 +46,9 @@ using xdg_importer.
     
   )
 </div>
+              <div class="f6 lh-copy ws-pre-line courier">Notify the compositor that the xdg_exporter object will no longer be
+used.
+  </div>
             </li>
           
             <li>
@@ -65,6 +68,15 @@ using xdg_importer.
     
   )
 </div>
+              <div class="f6 lh-copy ws-pre-line courier">The export_toplevel request exports the passed surface so that it can later be
+imported via xdg_importer. When called, a new xdg_exported object will
+be created and xdg_exported.handle will be sent immediately. See the
+corresponding interface and event for details.
+
+A surface may be exported multiple times, and each exported handle may
+be used to create a xdg_imported multiple times. Only xdg_toplevel
+equivalent surfaces may be exported.
+  </div>
             </li>
           
         </ul>
@@ -95,6 +107,9 @@ another client.
     
   )
 </div>
+              <div class="f6 lh-copy ws-pre-line courier">Notify the compositor that the xdg_importer object will no longer be
+used.
+  </div>
             </li>
           
             <li>
@@ -114,6 +129,12 @@ another client.
     
   )
 </div>
+              <div class="f6 lh-copy ws-pre-line courier">The import_toplevel request imports a surface from any client given a handle
+retrieved by exporting said surface using xdg_exporter.export_toplevel.
+When called, a new xdg_imported object will be created. This new object
+represents the imported surface, and the importing client can
+manipulate its relationship using it. See xdg_imported for details.
+  </div>
             </li>
           
         </ul>
@@ -145,6 +166,10 @@ importer may have established using xdg_imported.
     
   )
 </div>
+              <div class="f6 lh-copy ws-pre-line courier">Revoke the previously exported surface. This invalidates any
+relationship the importer may have set up using the xdg_imported created
+given the handle sent via xdg_exported.handle.
+  </div>
             </li>
           
         </ul>
@@ -175,6 +200,10 @@ relationships between its own surfaces and the imported surface.
     
   )
 </div>
+              <div class="f6 lh-copy ws-pre-line courier">Notify the compositor that it will no longer use the xdg_imported
+object. Any relationship that may have been set up will at this point
+be invalidated.
+  </div>
             </li>
           
             <li>
@@ -194,6 +223,11 @@ relationships between its own surfaces and the imported surface.
     
   )
 </div>
+              <div class="f6 lh-copy ws-pre-line courier">Set the imported surface as the parent of some surface of the client.
+The passed surface must be a xdg_toplevel equivalent. Calling this
+function sets up a surface to surface relation with the same stacking
+and positioning semantics as xdg_toplevel.set_parent.
+  </div>
             </li>
           
         </ul>
