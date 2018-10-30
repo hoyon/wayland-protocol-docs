@@ -22,6 +22,7 @@
                 {{ request|desc_summary }}
               </div>
               {{ request|format_request(interface.name)|safe}}
+              <div class="f6 lh-copy ws-pre-line courier">{{ request|desc_full }}</div>
             </li>
           {% endfor %}
         </ul>
