@@ -4,32 +4,37 @@
 {% block title %}{{ protocol.name }}{% endblock %}
 
 {% block content %}
-  <h1 class="f1 lh-title">{{ protocol.name }}</h1>
-  <ul class="list pl0">
-    {% for interface in protocol.interfaces %}
+  <div class="fl w-25 ph2">
+    {% include "protocol_index.html" %}
+  </div>
+  <div class="fl w-75 ph2">
+    <h1 class="f1 lh-title">{{ protocol.name }}</h1>
+    <ul class="list pl0">
+      {% for interface in protocol.interfaces %}
       <li class="mt2">
-        <div class="f2 lh-copy">
+        <div class="f2 lh-copy" id="{{ interface|interface_id }}">
           {{ interface.name }}
         </div>
         <div class="f6 lh-copy ws-pre-line courier">{{ interface|desc_full }}</div>
         <ul class="list pl0">
           {% for request in interface.requests %}
-            <li class="mt2">
-              <div class="f4 lh-title">
-                {{ request.name }}
-              </div>
-              <div class="f5 lh-copy mv1">
-                {{ request|desc_summary }}
-              </div>
-              {{ request|format_request(interface.name)|safe}}
-              <div class="f6 lh-copy ws-pre-line courier">{{ request|desc_full }}</div>
-            </li>
+          <li class="mt2">
+            <div class="f4 lh-title" id="{{ request|request_id(interface) }}">
+              {{ request.name }}
+            </div>
+            <div class="f5 lh-copy mv1 courier">
+              {{ request|desc_summary }}
+            </div>
+            {{ request|format_request(interface.name)|safe}}
+            <div class="f6 lh-copy ws-pre-line courier">{{ request|desc_full }}</div>
+          </li>
           {% endfor %}
         </ul>
       </li>
-    {% endfor %}
-  </ul>
+      {% endfor %}
+    </ul>
 
-  <h2 class="f4 lh-title">Copyright Info</h2>
-  <div class="f7 lh-copy ws-pre-line courier">{{ protocol.copyright|unwrap }}</div>
+    <h2 class="f4 lh-title">Copyright Info</h2>
+    <div class="f7 lh-copy ws-pre-line courier">{{ protocol.copyright|unwrap }}</div>
+  </div>
 {% endblock %}

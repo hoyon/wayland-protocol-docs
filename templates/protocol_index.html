@@ -1,0 +1,18 @@
+{# -*- engine:django -*- #}
+
+<div>
+  <ul class="list pl0">
+  {% for interface in protocol.interfaces %}
+    <li>
+      <a href="#{{ interface|interface_id }}" class="link blue underline-hover lh-copy">{{interface.name}}</a>
+      <ul class="list">
+        {% for request in interface.requests %}
+        <li>
+          <a href="#{{ request|request_id(interface) }}" class="link blue underline-hover lh-copy">{{request.name}}</a>
+        </li>
+        {% endfor %}
+      </ul>
+    </li>
+  {% endfor %}
+  </ul>
+</div>
