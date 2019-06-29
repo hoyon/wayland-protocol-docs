@@ -19,11 +19,58 @@
 
     <div id="content">
       
-  <h1 class="f1 lh-title">pointer_gestures_unstable_v1</h1>
-  <ul class="list pl0">
+  <div class="fl w-25 ph2">
     
-      <li>
-        <div class="f2 lh-copy">
+
+<div>
+  <ul class="list pl0">
+  
+    <li>
+      <a href="#i:zwp_pointer_gestures_v1" class="link blue underline-hover lh-copy">zwp_pointer_gestures_v1</a>
+      <ul class="list">
+        
+        <li>
+          <a href="#r:zwp_pointer_gestures_v1:get_swipe_gesture" class="link blue underline-hover lh-copy">get_swipe_gesture</a>
+        </li>
+        
+        <li>
+          <a href="#r:zwp_pointer_gestures_v1:get_pinch_gesture" class="link blue underline-hover lh-copy">get_pinch_gesture</a>
+        </li>
+        
+      </ul>
+    </li>
+  
+    <li>
+      <a href="#i:zwp_pointer_gesture_swipe_v1" class="link blue underline-hover lh-copy">zwp_pointer_gesture_swipe_v1</a>
+      <ul class="list">
+        
+        <li>
+          <a href="#r:zwp_pointer_gesture_swipe_v1:destroy" class="link blue underline-hover lh-copy">destroy</a>
+        </li>
+        
+      </ul>
+    </li>
+  
+    <li>
+      <a href="#i:zwp_pointer_gesture_pinch_v1" class="link blue underline-hover lh-copy">zwp_pointer_gesture_pinch_v1</a>
+      <ul class="list">
+        
+        <li>
+          <a href="#r:zwp_pointer_gesture_pinch_v1:destroy" class="link blue underline-hover lh-copy">destroy</a>
+        </li>
+        
+      </ul>
+    </li>
+  
+  </ul>
+</div>
+  </div>
+  <div class="fl w-75 ph2">
+    <h1 class="f1 lh-title">pointer_gestures_unstable_v1</h1>
+    <ul class="list pl0">
+      
+      <li class="mt2">
+        <div class="f2 lh-copy" id="i:zwp_pointer_gestures_v1">
           zwp_pointer_gestures_v1
         </div>
         <div class="f6 lh-copy ws-pre-line courier">A global interface to provide semantic touchpad gestures for a given
@@ -44,16 +91,16 @@ interface version number is reset.
 </div>
         <ul class="list pl0">
           
-            <li>
-              <div class="f4 lh-title">
-                get_swipe_gesture
-              </div>
-              <div class="f5 lh-copy">
-                get swipe gesture
-              </div>
-              
+          <li class="mt2">
+            <div class="f4 lh-title" id="r:zwp_pointer_gestures_v1:get_swipe_gesture">
+              get_swipe_gesture
+            </div>
+            <div class="f5 lh-copy mv1 courier">
+              get swipe gesture
+            </div>
+            
 <div class="f6 lh-copy courier">
-  <span>struct zwp_pointer_gesture_swipe_v1* </span><span class="orange">zwp_pointer_gestures_v1_get_swipe_gesture</span>(
+  <span>struct zwp_pointer_gesture_swipe_v1* </span><span class="dark-blue">zwp_pointer_gestures_v1_get_swipe_gesture</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwp_pointer_gestures_v1*</span> zwp_pointer_gestures_v1,</div>
     
@@ -61,21 +108,21 @@ interface version number is reset.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Create a swipe gesture object. See the
+            <div class="f6 lh-copy ws-pre-line courier">Create a swipe gesture object. See the
 wl_pointer_gesture_swipe interface for details.
   </div>
-            </li>
+          </li>
           
-            <li>
-              <div class="f4 lh-title">
-                get_pinch_gesture
-              </div>
-              <div class="f5 lh-copy">
-                get pinch gesture
-              </div>
-              
+          <li class="mt2">
+            <div class="f4 lh-title" id="r:zwp_pointer_gestures_v1:get_pinch_gesture">
+              get_pinch_gesture
+            </div>
+            <div class="f5 lh-copy mv1 courier">
+              get pinch gesture
+            </div>
+            
 <div class="f6 lh-copy courier">
-  <span>struct zwp_pointer_gesture_pinch_v1* </span><span class="orange">zwp_pointer_gestures_v1_get_pinch_gesture</span>(
+  <span>struct zwp_pointer_gesture_pinch_v1* </span><span class="dark-blue">zwp_pointer_gestures_v1_get_pinch_gesture</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwp_pointer_gestures_v1*</span> zwp_pointer_gestures_v1,</div>
     
@@ -83,16 +130,16 @@ wl_pointer_gesture_swipe interface for details.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Create a pinch gesture object. See the
+            <div class="f6 lh-copy ws-pre-line courier">Create a pinch gesture object. See the
 wl_pointer_gesture_pinch interface for details.
   </div>
-            </li>
+          </li>
           
         </ul>
       </li>
-    
-      <li>
-        <div class="f2 lh-copy">
+      
+      <li class="mt2">
+        <div class="f2 lh-copy" id="i:zwp_pointer_gesture_swipe_v1">
           zwp_pointer_gesture_swipe_v1
         </div>
         <div class="f6 lh-copy ws-pre-line courier">A swipe gesture object notifies a client about a multi-finger swipe
@@ -113,29 +160,29 @@ actions until the end of a gesture has been received.
 </div>
         <ul class="list pl0">
           
-            <li>
-              <div class="f4 lh-title">
-                destroy
-              </div>
-              <div class="f5 lh-copy">
-                destroy the pointer swipe gesture object
-              </div>
-              
+          <li class="mt2">
+            <div class="f4 lh-title" id="r:zwp_pointer_gesture_swipe_v1:destroy">
+              destroy
+            </div>
+            <div class="f5 lh-copy mv1 courier">
+              destroy the pointer swipe gesture object
+            </div>
+            
 <div class="f6 lh-copy courier">
-  <span>void </span><span class="orange">zwp_pointer_gesture_swipe_v1_destroy</span>(
+  <span>void </span><span class="dark-blue">zwp_pointer_gesture_swipe_v1_destroy</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwp_pointer_gesture_swipe_v1*</span> zwp_pointer_gesture_swipe_v1</div>
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier"></div>
-            </li>
+            <div class="f6 lh-copy ws-pre-line courier"></div>
+          </li>
           
         </ul>
       </li>
-    
-      <li>
-        <div class="f2 lh-copy">
+      
+      <li class="mt2">
+        <div class="f2 lh-copy" id="i:zwp_pointer_gesture_pinch_v1">
           zwp_pointer_gesture_pinch_v1
         </div>
         <div class="f6 lh-copy ws-pre-line courier">A pinch gesture object notifies a client about a multi-finger pinch
@@ -156,31 +203,32 @@ actions until the end of a gesture has been received.
 </div>
         <ul class="list pl0">
           
-            <li>
-              <div class="f4 lh-title">
-                destroy
-              </div>
-              <div class="f5 lh-copy">
-                destroy the pinch gesture object
-              </div>
-              
+          <li class="mt2">
+            <div class="f4 lh-title" id="r:zwp_pointer_gesture_pinch_v1:destroy">
+              destroy
+            </div>
+            <div class="f5 lh-copy mv1 courier">
+              destroy the pinch gesture object
+            </div>
+            
 <div class="f6 lh-copy courier">
-  <span>void </span><span class="orange">zwp_pointer_gesture_pinch_v1_destroy</span>(
+  <span>void </span><span class="dark-blue">zwp_pointer_gesture_pinch_v1_destroy</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwp_pointer_gesture_pinch_v1*</span> zwp_pointer_gesture_pinch_v1</div>
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier"></div>
-            </li>
+            <div class="f6 lh-copy ws-pre-line courier"></div>
+          </li>
           
         </ul>
       </li>
-    
-  </ul>
+      
+    </ul>
 
-  <h2 class="f2 lh-title">Copyright Info</h2>
-  <div class="f6 lh-copy ws-pre-line courier"></div>
+    <h2 class="f4 lh-title">Copyright Info</h2>
+    <div class="f7 lh-copy ws-pre-line courier"></div>
+  </div>
 
     </div>
 

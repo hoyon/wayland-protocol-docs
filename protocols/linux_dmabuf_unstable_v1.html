@@ -19,15 +19,64 @@
 
     <div id="content">
       
-  <h1 class="f1 lh-title">linux_dmabuf_unstable_v1</h1>
-  <ul class="list pl0">
+  <div class="fl w-25 ph2">
     
-      <li>
-        <div class="f2 lh-copy">
+
+<div>
+  <ul class="list pl0">
+  
+    <li>
+      <a href="#i:zwp_linux_dmabuf_v1" class="link blue underline-hover lh-copy">zwp_linux_dmabuf_v1</a>
+      <ul class="list">
+        
+        <li>
+          <a href="#r:zwp_linux_dmabuf_v1:destroy" class="link blue underline-hover lh-copy">destroy</a>
+        </li>
+        
+        <li>
+          <a href="#r:zwp_linux_dmabuf_v1:create_params" class="link blue underline-hover lh-copy">create_params</a>
+        </li>
+        
+      </ul>
+    </li>
+  
+    <li>
+      <a href="#i:zwp_linux_buffer_params_v1" class="link blue underline-hover lh-copy">zwp_linux_buffer_params_v1</a>
+      <ul class="list">
+        
+        <li>
+          <a href="#r:zwp_linux_buffer_params_v1:destroy" class="link blue underline-hover lh-copy">destroy</a>
+        </li>
+        
+        <li>
+          <a href="#r:zwp_linux_buffer_params_v1:add" class="link blue underline-hover lh-copy">add</a>
+        </li>
+        
+        <li>
+          <a href="#r:zwp_linux_buffer_params_v1:create" class="link blue underline-hover lh-copy">create</a>
+        </li>
+        
+        <li>
+          <a href="#r:zwp_linux_buffer_params_v1:create_immed" class="link blue underline-hover lh-copy">create_immed</a>
+        </li>
+        
+      </ul>
+    </li>
+  
+  </ul>
+</div>
+  </div>
+  <div class="fl w-75 ph2">
+    <h1 class="f1 lh-title">linux_dmabuf_unstable_v1</h1>
+    <ul class="list pl0">
+      
+      <li class="mt2">
+        <div class="f2 lh-copy" id="i:zwp_linux_dmabuf_v1">
           zwp_linux_dmabuf_v1
         </div>
         <div class="f6 lh-copy ws-pre-line courier">Following the interfaces from:
 https:&#x2f;&#x2f;www.khronos.org&#x2f;registry&#x2f;egl&#x2f;extensions&#x2f;EXT&#x2f;EGL_EXT_image_dma_buf_import.txt
+https:&#x2f;&#x2f;www.khronos.org&#x2f;registry&#x2f;EGL&#x2f;extensions&#x2f;EXT&#x2f;EGL_EXT_image_dma_buf_import_modifiers.txt
 and the Linux DRM sub-system&#x27;s AddFb2 ioctl.
 
 This interface offers ways to create generic dmabuf-based
@@ -86,53 +135,53 @@ interface version number is reset.
 </div>
         <ul class="list pl0">
           
-            <li>
-              <div class="f4 lh-title">
-                destroy
-              </div>
-              <div class="f5 lh-copy">
-                unbind the factory
-              </div>
-              
+          <li class="mt2">
+            <div class="f4 lh-title" id="r:zwp_linux_dmabuf_v1:destroy">
+              destroy
+            </div>
+            <div class="f5 lh-copy mv1 courier">
+              unbind the factory
+            </div>
+            
 <div class="f6 lh-copy courier">
-  <span>void </span><span class="orange">zwp_linux_dmabuf_v1_destroy</span>(
+  <span>void </span><span class="dark-blue">zwp_linux_dmabuf_v1_destroy</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwp_linux_dmabuf_v1*</span> zwp_linux_dmabuf_v1</div>
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Objects created through this interface, especially wl_buffers, will
+            <div class="f6 lh-copy ws-pre-line courier">Objects created through this interface, especially wl_buffers, will
 remain valid.
 </div>
-            </li>
+          </li>
           
-            <li>
-              <div class="f4 lh-title">
-                create_params
-              </div>
-              <div class="f5 lh-copy">
-                create a temporary object for buffer parameters
-              </div>
-              
+          <li class="mt2">
+            <div class="f4 lh-title" id="r:zwp_linux_dmabuf_v1:create_params">
+              create_params
+            </div>
+            <div class="f5 lh-copy mv1 courier">
+              create a temporary object for buffer parameters
+            </div>
+            
 <div class="f6 lh-copy courier">
-  <span>struct zwp_linux_buffer_params_v1* </span><span class="orange">zwp_linux_dmabuf_v1_create_params</span>(
+  <span>struct zwp_linux_buffer_params_v1* </span><span class="dark-blue">zwp_linux_dmabuf_v1_create_params</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwp_linux_dmabuf_v1*</span> zwp_linux_dmabuf_v1</div>
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">This temporary object is used to collect multiple dmabuf handles into
+            <div class="f6 lh-copy ws-pre-line courier">This temporary object is used to collect multiple dmabuf handles into
 a single batch to create a wl_buffer. It can only be used once and
 should be destroyed after a &#x27;created&#x27; or &#x27;failed&#x27; event has been
 received.
 </div>
-            </li>
+          </li>
           
         </ul>
       </li>
-    
-      <li>
-        <div class="f2 lh-copy">
+      
+      <li class="mt2">
+        <div class="f2 lh-copy" id="i:zwp_linux_buffer_params_v1">
           zwp_linux_buffer_params_v1
         </div>
         <div class="f6 lh-copy ws-pre-line courier">This temporary object is a collection of dmabufs and other
@@ -152,36 +201,36 @@ be given in any order. Each plane index can be set only once.
 </div>
         <ul class="list pl0">
           
-            <li>
-              <div class="f4 lh-title">
-                destroy
-              </div>
-              <div class="f5 lh-copy">
-                delete this object, used or not
-              </div>
-              
+          <li class="mt2">
+            <div class="f4 lh-title" id="r:zwp_linux_buffer_params_v1:destroy">
+              destroy
+            </div>
+            <div class="f5 lh-copy mv1 courier">
+              delete this object, used or not
+            </div>
+            
 <div class="f6 lh-copy courier">
-  <span>void </span><span class="orange">zwp_linux_buffer_params_v1_destroy</span>(
+  <span>void </span><span class="dark-blue">zwp_linux_buffer_params_v1_destroy</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwp_linux_buffer_params_v1*</span> zwp_linux_buffer_params_v1</div>
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Cleans up the temporary data sent to the server for dmabuf-based
+            <div class="f6 lh-copy ws-pre-line courier">Cleans up the temporary data sent to the server for dmabuf-based
 wl_buffer creation.
 </div>
-            </li>
+          </li>
           
-            <li>
-              <div class="f4 lh-title">
-                add
-              </div>
-              <div class="f5 lh-copy">
-                add a dmabuf to the temporary set
-              </div>
-              
+          <li class="mt2">
+            <div class="f4 lh-title" id="r:zwp_linux_buffer_params_v1:add">
+              add
+            </div>
+            <div class="f5 lh-copy mv1 courier">
+              add a dmabuf to the temporary set
+            </div>
+            
 <div class="f6 lh-copy courier">
-  <span>void </span><span class="orange">zwp_linux_buffer_params_v1_add</span>(
+  <span>void </span><span class="dark-blue">zwp_linux_buffer_params_v1_add</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwp_linux_buffer_params_v1*</span> zwp_linux_buffer_params_v1,</div>
     
@@ -199,7 +248,7 @@ wl_buffer creation.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">This request adds one dmabuf to the set in this
+            <div class="f6 lh-copy ws-pre-line courier">This request adds one dmabuf to the set in this
 zwp_linux_buffer_params_v1.
 
 The 64-bit unsigned value combined from modifier_hi and modifier_lo
@@ -209,22 +258,27 @@ This is an opaque token. Drivers use this token to express tiling,
 compression, etc. driver-specific modifications to the base format
 defined by the DRM fourcc code.
 
+Warning: It should be an error if the format&#x2f;modifier pair was not
+advertised with the modifier event. This is not enforced yet because
+some implementations always accept DRM_FORMAT_MOD_INVALID. Also
+version 2 of this protocol does not have the modifier event.
+
 This request raises the PLANE_IDX error if plane_idx is too large.
 The error PLANE_SET is raised if attempting to set a plane that
 was already set.
 </div>
-            </li>
+          </li>
           
-            <li>
-              <div class="f4 lh-title">
-                create
-              </div>
-              <div class="f5 lh-copy">
-                create a wl_buffer from the given dmabufs
-              </div>
-              
+          <li class="mt2">
+            <div class="f4 lh-title" id="r:zwp_linux_buffer_params_v1:create">
+              create
+            </div>
+            <div class="f5 lh-copy mv1 courier">
+              create a wl_buffer from the given dmabufs
+            </div>
+            
 <div class="f6 lh-copy courier">
-  <span>void </span><span class="orange">zwp_linux_buffer_params_v1_create</span>(
+  <span>void </span><span class="dark-blue">zwp_linux_buffer_params_v1_create</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwp_linux_buffer_params_v1*</span> zwp_linux_buffer_params_v1,</div>
     
@@ -238,7 +292,7 @@ was already set.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">This asks for creation of a wl_buffer from the added dmabuf
+            <div class="f6 lh-copy ws-pre-line courier">This asks for creation of a wl_buffer from the added dmabuf
 buffers. The wl_buffer is not created immediately but returned via
 the &#x27;created&#x27; event if the dmabuf sharing succeeds. The sharing
 may fail at runtime for reasons a client cannot predict, in
@@ -298,19 +352,19 @@ object after issuing &#x27;create&#x27; raises ALREADY_USED protocol error.
 It is not mandatory to issue &#x27;create&#x27;. If a client wants to
 cancel the buffer creation, it can just destroy this object.
 </div>
-            </li>
+          </li>
           
-            <li>
-              <div class="f4 lh-title">
-                create_immed
-              </div>
-              <div class="f5 lh-copy">
-                immediately create a wl_buffer from the given
+          <li class="mt2">
+            <div class="f4 lh-title" id="r:zwp_linux_buffer_params_v1:create_immed">
+              create_immed
+            </div>
+            <div class="f5 lh-copy mv1 courier">
+              immediately create a wl_buffer from the given
 dmabufs
-              </div>
-              
+            </div>
+            
 <div class="f6 lh-copy courier">
-  <span>struct wl_buffer* </span><span class="orange">zwp_linux_buffer_params_v1_create_immed</span>(
+  <span>struct wl_buffer* </span><span class="dark-blue">zwp_linux_buffer_params_v1_create_immed</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwp_linux_buffer_params_v1*</span> zwp_linux_buffer_params_v1,</div>
     
@@ -324,7 +378,7 @@ dmabufs
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">This asks for immediate creation of a wl_buffer by importing the
+            <div class="f6 lh-copy ws-pre-line courier">This asks for immediate creation of a wl_buffer by importing the
 added dmabufs.
 
 In case of import success, no event is sent from the server, and the
@@ -348,15 +402,15 @@ by the implementation:
 This takes the same arguments as a &#x27;create&#x27; request, and obeys the
 same restrictions.
 </div>
-            </li>
+          </li>
           
         </ul>
       </li>
-    
-  </ul>
+      
+    </ul>
 
-  <h2 class="f2 lh-title">Copyright Info</h2>
-  <div class="f6 lh-copy ws-pre-line courier">Copyright © 2014, 2015 Collabora, Ltd.
+    <h2 class="f4 lh-title">Copyright Info</h2>
+    <div class="f7 lh-copy ws-pre-line courier">Copyright © 2014, 2015 Collabora, Ltd.
 
 Permission is hereby granted, free of charge, to any person obtaining a
 copy of this software and associated documentation files (the &quot;Software&quot;),
@@ -377,6 +431,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
 FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 DEALINGS IN THE SOFTWARE.
 </div>
+  </div>
 
     </div>
 

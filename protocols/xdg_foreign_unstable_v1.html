@@ -19,11 +19,77 @@
 
     <div id="content">
       
-  <h1 class="f1 lh-title">xdg_foreign_unstable_v1</h1>
-  <ul class="list pl0">
+  <div class="fl w-25 ph2">
     
-      <li>
-        <div class="f2 lh-copy">
+
+<div>
+  <ul class="list pl0">
+  
+    <li>
+      <a href="#i:zxdg_exporter_v1" class="link blue underline-hover lh-copy">zxdg_exporter_v1</a>
+      <ul class="list">
+        
+        <li>
+          <a href="#r:zxdg_exporter_v1:destroy" class="link blue underline-hover lh-copy">destroy</a>
+        </li>
+        
+        <li>
+          <a href="#r:zxdg_exporter_v1:export" class="link blue underline-hover lh-copy">export</a>
+        </li>
+        
+      </ul>
+    </li>
+  
+    <li>
+      <a href="#i:zxdg_importer_v1" class="link blue underline-hover lh-copy">zxdg_importer_v1</a>
+      <ul class="list">
+        
+        <li>
+          <a href="#r:zxdg_importer_v1:destroy" class="link blue underline-hover lh-copy">destroy</a>
+        </li>
+        
+        <li>
+          <a href="#r:zxdg_importer_v1:import" class="link blue underline-hover lh-copy">import</a>
+        </li>
+        
+      </ul>
+    </li>
+  
+    <li>
+      <a href="#i:zxdg_exported_v1" class="link blue underline-hover lh-copy">zxdg_exported_v1</a>
+      <ul class="list">
+        
+        <li>
+          <a href="#r:zxdg_exported_v1:destroy" class="link blue underline-hover lh-copy">destroy</a>
+        </li>
+        
+      </ul>
+    </li>
+  
+    <li>
+      <a href="#i:zxdg_imported_v1" class="link blue underline-hover lh-copy">zxdg_imported_v1</a>
+      <ul class="list">
+        
+        <li>
+          <a href="#r:zxdg_imported_v1:destroy" class="link blue underline-hover lh-copy">destroy</a>
+        </li>
+        
+        <li>
+          <a href="#r:zxdg_imported_v1:set_parent_of" class="link blue underline-hover lh-copy">set_parent_of</a>
+        </li>
+        
+      </ul>
+    </li>
+  
+  </ul>
+</div>
+  </div>
+  <div class="fl w-75 ph2">
+    <h1 class="f1 lh-title">xdg_foreign_unstable_v1</h1>
+    <ul class="list pl0">
+      
+      <li class="mt2">
+        <div class="f2 lh-copy" id="i:zxdg_exporter_v1">
           zxdg_exporter_v1
         </div>
         <div class="f6 lh-copy ws-pre-line courier">A global interface used for exporting surfaces that can later be imported
@@ -31,36 +97,36 @@ using xdg_importer.
 </div>
         <ul class="list pl0">
           
-            <li>
-              <div class="f4 lh-title">
-                destroy
-              </div>
-              <div class="f5 lh-copy">
-                destroy the xdg_exporter object
-              </div>
-              
+          <li class="mt2">
+            <div class="f4 lh-title" id="r:zxdg_exporter_v1:destroy">
+              destroy
+            </div>
+            <div class="f5 lh-copy mv1 courier">
+              destroy the xdg_exporter object
+            </div>
+            
 <div class="f6 lh-copy courier">
-  <span>void </span><span class="orange">zxdg_exporter_v1_destroy</span>(
+  <span>void </span><span class="dark-blue">zxdg_exporter_v1_destroy</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zxdg_exporter_v1*</span> zxdg_exporter_v1</div>
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Notify the compositor that the xdg_exporter object will no longer be
+            <div class="f6 lh-copy ws-pre-line courier">Notify the compositor that the xdg_exporter object will no longer be
 used.
   </div>
-            </li>
+          </li>
           
-            <li>
-              <div class="f4 lh-title">
-                export
-              </div>
-              <div class="f5 lh-copy">
-                export a surface
-              </div>
-              
+          <li class="mt2">
+            <div class="f4 lh-title" id="r:zxdg_exporter_v1:export">
+              export
+            </div>
+            <div class="f5 lh-copy mv1 courier">
+              export a surface
+            </div>
+            
 <div class="f6 lh-copy courier">
-  <span>struct zxdg_exported_v1* </span><span class="orange">zxdg_exporter_v1_export</span>(
+  <span>struct zxdg_exported_v1* </span><span class="dark-blue">zxdg_exporter_v1_export</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zxdg_exporter_v1*</span> zxdg_exporter_v1,</div>
     
@@ -68,7 +134,7 @@ used.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">The export request exports the passed surface so that it can later be
+            <div class="f6 lh-copy ws-pre-line courier">The export request exports the passed surface so that it can later be
 imported via xdg_importer. When called, a new xdg_exported object will
 be created and xdg_exported.handle will be sent immediately. See the
 corresponding interface and event for details.
@@ -77,13 +143,13 @@ A surface may be exported multiple times, and each exported handle may
 be used to create a xdg_imported multiple times. Only xdg_surface
 surfaces may be exported.
   </div>
-            </li>
+          </li>
           
         </ul>
       </li>
-    
-      <li>
-        <div class="f2 lh-copy">
+      
+      <li class="mt2">
+        <div class="f2 lh-copy" id="i:zxdg_importer_v1">
           zxdg_importer_v1
         </div>
         <div class="f6 lh-copy ws-pre-line courier">A global interface used for importing surfaces exported by xdg_exporter.
@@ -92,36 +158,36 @@ another client.
 </div>
         <ul class="list pl0">
           
-            <li>
-              <div class="f4 lh-title">
-                destroy
-              </div>
-              <div class="f5 lh-copy">
-                destroy the xdg_importer object
-              </div>
-              
+          <li class="mt2">
+            <div class="f4 lh-title" id="r:zxdg_importer_v1:destroy">
+              destroy
+            </div>
+            <div class="f5 lh-copy mv1 courier">
+              destroy the xdg_importer object
+            </div>
+            
 <div class="f6 lh-copy courier">
-  <span>void </span><span class="orange">zxdg_importer_v1_destroy</span>(
+  <span>void </span><span class="dark-blue">zxdg_importer_v1_destroy</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zxdg_importer_v1*</span> zxdg_importer_v1</div>
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Notify the compositor that the xdg_importer object will no longer be
+            <div class="f6 lh-copy ws-pre-line courier">Notify the compositor that the xdg_importer object will no longer be
 used.
   </div>
-            </li>
+          </li>
           
-            <li>
-              <div class="f4 lh-title">
-                import
-              </div>
-              <div class="f5 lh-copy">
-                import a surface
-              </div>
-              
+          <li class="mt2">
+            <div class="f4 lh-title" id="r:zxdg_importer_v1:import">
+              import
+            </div>
+            <div class="f5 lh-copy mv1 courier">
+              import a surface
+            </div>
+            
 <div class="f6 lh-copy courier">
-  <span>struct zxdg_imported_v1* </span><span class="orange">zxdg_importer_v1_import</span>(
+  <span>struct zxdg_imported_v1* </span><span class="dark-blue">zxdg_importer_v1_import</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zxdg_importer_v1*</span> zxdg_importer_v1,</div>
     
@@ -129,19 +195,19 @@ used.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">The import request imports a surface from any client given a handle
+            <div class="f6 lh-copy ws-pre-line courier">The import request imports a surface from any client given a handle
 retrieved by exporting said surface using xdg_exporter.export. When
 called, a new xdg_imported object will be created. This new object
 represents the imported surface, and the importing client can
 manipulate its relationship using it. See xdg_imported for details.
   </div>
-            </li>
+          </li>
           
         </ul>
       </li>
-    
-      <li>
-        <div class="f2 lh-copy">
+      
+      <li class="mt2">
+        <div class="f2 lh-copy" id="i:zxdg_exported_v1">
           zxdg_exported_v1
         </div>
         <div class="f6 lh-copy ws-pre-line courier">A xdg_exported object represents an exported reference to a surface. The
@@ -151,32 +217,32 @@ importer may have established using xdg_imported.
 </div>
         <ul class="list pl0">
           
-            <li>
-              <div class="f4 lh-title">
-                destroy
-              </div>
-              <div class="f5 lh-copy">
-                unexport the exported surface
-              </div>
-              
+          <li class="mt2">
+            <div class="f4 lh-title" id="r:zxdg_exported_v1:destroy">
+              destroy
+            </div>
+            <div class="f5 lh-copy mv1 courier">
+              unexport the exported surface
+            </div>
+            
 <div class="f6 lh-copy courier">
-  <span>void </span><span class="orange">zxdg_exported_v1_destroy</span>(
+  <span>void </span><span class="dark-blue">zxdg_exported_v1_destroy</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zxdg_exported_v1*</span> zxdg_exported_v1</div>
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Revoke the previously exported surface. This invalidates any
+            <div class="f6 lh-copy ws-pre-line courier">Revoke the previously exported surface. This invalidates any
 relationship the importer may have set up using the xdg_imported created
 given the handle sent via xdg_exported.handle.
   </div>
-            </li>
+          </li>
           
         </ul>
       </li>
-    
-      <li>
-        <div class="f2 lh-copy">
+      
+      <li class="mt2">
+        <div class="f2 lh-copy" id="i:zxdg_imported_v1">
           zxdg_imported_v1
         </div>
         <div class="f6 lh-copy ws-pre-line courier">A xdg_imported object represents an imported reference to surface exported
@@ -185,37 +251,37 @@ relationships between its own surfaces and the imported surface.
 </div>
         <ul class="list pl0">
           
-            <li>
-              <div class="f4 lh-title">
-                destroy
-              </div>
-              <div class="f5 lh-copy">
-                destroy the xdg_imported object
-              </div>
-              
+          <li class="mt2">
+            <div class="f4 lh-title" id="r:zxdg_imported_v1:destroy">
+              destroy
+            </div>
+            <div class="f5 lh-copy mv1 courier">
+              destroy the xdg_imported object
+            </div>
+            
 <div class="f6 lh-copy courier">
-  <span>void </span><span class="orange">zxdg_imported_v1_destroy</span>(
+  <span>void </span><span class="dark-blue">zxdg_imported_v1_destroy</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zxdg_imported_v1*</span> zxdg_imported_v1</div>
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Notify the compositor that it will no longer use the xdg_imported
+            <div class="f6 lh-copy ws-pre-line courier">Notify the compositor that it will no longer use the xdg_imported
 object. Any relationship that may have been set up will at this point
 be invalidated.
   </div>
-            </li>
+          </li>
           
-            <li>
-              <div class="f4 lh-title">
-                set_parent_of
-              </div>
-              <div class="f5 lh-copy">
-                set as the parent of some surface
-              </div>
-              
+          <li class="mt2">
+            <div class="f4 lh-title" id="r:zxdg_imported_v1:set_parent_of">
+              set_parent_of
+            </div>
+            <div class="f5 lh-copy mv1 courier">
+              set as the parent of some surface
+            </div>
+            
 <div class="f6 lh-copy courier">
-  <span>void </span><span class="orange">zxdg_imported_v1_set_parent_of</span>(
+  <span>void </span><span class="dark-blue">zxdg_imported_v1_set_parent_of</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zxdg_imported_v1*</span> zxdg_imported_v1,</div>
     
@@ -223,20 +289,20 @@ be invalidated.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Set the imported surface as the parent of some surface of the client.
+            <div class="f6 lh-copy ws-pre-line courier">Set the imported surface as the parent of some surface of the client.
 The passed surface must be a toplevel xdg_surface. Calling this function
 sets up a surface to surface relation with the same stacking and positioning
 semantics as xdg_surface.set_parent.
   </div>
-            </li>
+          </li>
           
         </ul>
       </li>
-    
-  </ul>
+      
+    </ul>
 
-  <h2 class="f2 lh-title">Copyright Info</h2>
-  <div class="f6 lh-copy ws-pre-line courier">Copyright © 2015-2016 Red Hat Inc.
+    <h2 class="f4 lh-title">Copyright Info</h2>
+    <div class="f7 lh-copy ws-pre-line courier">Copyright © 2015-2016 Red Hat Inc.
 
 Permission is hereby granted, free of charge, to any person obtaining a
 copy of this software and associated documentation files (the &quot;Software&quot;),
@@ -257,6 +323,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
 FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 DEALINGS IN THE SOFTWARE.
 </div>
+  </div>
 
     </div>
 

@@ -19,11 +19,55 @@
 
     <div id="content">
       
-  <h1 class="f1 lh-title">xdg_decoration_unstable_v1</h1>
-  <ul class="list pl0">
+  <div class="fl w-25 ph2">
     
-      <li>
-        <div class="f2 lh-copy">
+
+<div>
+  <ul class="list pl0">
+  
+    <li>
+      <a href="#i:zxdg_decoration_manager_v1" class="link blue underline-hover lh-copy">zxdg_decoration_manager_v1</a>
+      <ul class="list">
+        
+        <li>
+          <a href="#r:zxdg_decoration_manager_v1:destroy" class="link blue underline-hover lh-copy">destroy</a>
+        </li>
+        
+        <li>
+          <a href="#r:zxdg_decoration_manager_v1:get_toplevel_decoration" class="link blue underline-hover lh-copy">get_toplevel_decoration</a>
+        </li>
+        
+      </ul>
+    </li>
+  
+    <li>
+      <a href="#i:zxdg_toplevel_decoration_v1" class="link blue underline-hover lh-copy">zxdg_toplevel_decoration_v1</a>
+      <ul class="list">
+        
+        <li>
+          <a href="#r:zxdg_toplevel_decoration_v1:destroy" class="link blue underline-hover lh-copy">destroy</a>
+        </li>
+        
+        <li>
+          <a href="#r:zxdg_toplevel_decoration_v1:set_mode" class="link blue underline-hover lh-copy">set_mode</a>
+        </li>
+        
+        <li>
+          <a href="#r:zxdg_toplevel_decoration_v1:unset_mode" class="link blue underline-hover lh-copy">unset_mode</a>
+        </li>
+        
+      </ul>
+    </li>
+  
+  </ul>
+</div>
+  </div>
+  <div class="fl w-75 ph2">
+    <h1 class="f1 lh-title">xdg_decoration_unstable_v1</h1>
+    <ul class="list pl0">
+      
+      <li class="mt2">
+        <div class="f2 lh-copy" id="i:zxdg_decoration_manager_v1">
           zxdg_decoration_manager_v1
         </div>
         <div class="f6 lh-copy ws-pre-line courier">This interface allows a compositor to announce support for server-side
@@ -51,36 +95,36 @@ interface version number is reset.
 </div>
         <ul class="list pl0">
           
-            <li>
-              <div class="f4 lh-title">
-                destroy
-              </div>
-              <div class="f5 lh-copy">
-                destroy the decoration manager object
-              </div>
-              
+          <li class="mt2">
+            <div class="f4 lh-title" id="r:zxdg_decoration_manager_v1:destroy">
+              destroy
+            </div>
+            <div class="f5 lh-copy mv1 courier">
+              destroy the decoration manager object
+            </div>
+            
 <div class="f6 lh-copy courier">
-  <span>void </span><span class="orange">zxdg_decoration_manager_v1_destroy</span>(
+  <span>void </span><span class="dark-blue">zxdg_decoration_manager_v1_destroy</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zxdg_decoration_manager_v1*</span> zxdg_decoration_manager_v1</div>
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Destroy the decoration manager. This doesn&#x27;t destroy objects created
+            <div class="f6 lh-copy ws-pre-line courier">Destroy the decoration manager. This doesn&#x27;t destroy objects created
 with the manager.
 </div>
-            </li>
+          </li>
           
-            <li>
-              <div class="f4 lh-title">
-                get_toplevel_decoration
-              </div>
-              <div class="f5 lh-copy">
-                create a new toplevel decoration object
-              </div>
-              
+          <li class="mt2">
+            <div class="f4 lh-title" id="r:zxdg_decoration_manager_v1:get_toplevel_decoration">
+              get_toplevel_decoration
+            </div>
+            <div class="f5 lh-copy mv1 courier">
+              create a new toplevel decoration object
+            </div>
+            
 <div class="f6 lh-copy courier">
-  <span>struct zxdg_toplevel_decoration_v1* </span><span class="orange">zxdg_decoration_manager_v1_get_toplevel_decoration</span>(
+  <span>struct zxdg_toplevel_decoration_v1* </span><span class="dark-blue">zxdg_decoration_manager_v1_get_toplevel_decoration</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zxdg_decoration_manager_v1*</span> zxdg_decoration_manager_v1,</div>
     
@@ -88,7 +132,7 @@ with the manager.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Create a new decoration object associated with the given toplevel.
+            <div class="f6 lh-copy ws-pre-line courier">Create a new decoration object associated with the given toplevel.
 
 Creating an xdg_toplevel_decoration from an xdg_toplevel which has a
 buffer attached or committed is a client error, and any attempts by a
@@ -96,13 +140,13 @@ client to attach or manipulate a buffer prior to the first
 xdg_toplevel_decoration.configure event must also be treated as
 errors.
 </div>
-            </li>
+          </li>
           
         </ul>
       </li>
-    
-      <li>
-        <div class="f2 lh-copy">
+      
+      <li class="mt2">
+        <div class="f2 lh-copy" id="i:zxdg_toplevel_decoration_v1">
           zxdg_toplevel_decoration_v1
         </div>
         <div class="f6 lh-copy ws-pre-line courier">The decoration object allows the compositor to toggle server-side window
@@ -114,36 +158,36 @@ xdg_toplevel.
 </div>
         <ul class="list pl0">
           
-            <li>
-              <div class="f4 lh-title">
-                destroy
-              </div>
-              <div class="f5 lh-copy">
-                destroy the decoration object
-              </div>
-              
+          <li class="mt2">
+            <div class="f4 lh-title" id="r:zxdg_toplevel_decoration_v1:destroy">
+              destroy
+            </div>
+            <div class="f5 lh-copy mv1 courier">
+              destroy the decoration object
+            </div>
+            
 <div class="f6 lh-copy courier">
-  <span>void </span><span class="orange">zxdg_toplevel_decoration_v1_destroy</span>(
+  <span>void </span><span class="dark-blue">zxdg_toplevel_decoration_v1_destroy</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zxdg_toplevel_decoration_v1*</span> zxdg_toplevel_decoration_v1</div>
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Switch back to a mode without any server-side decorations at the next
+            <div class="f6 lh-copy ws-pre-line courier">Switch back to a mode without any server-side decorations at the next
 commit.
 </div>
-            </li>
+          </li>
           
-            <li>
-              <div class="f4 lh-title">
-                set_mode
-              </div>
-              <div class="f5 lh-copy">
-                set the decoration mode
-              </div>
-              
+          <li class="mt2">
+            <div class="f4 lh-title" id="r:zxdg_toplevel_decoration_v1:set_mode">
+              set_mode
+            </div>
+            <div class="f5 lh-copy mv1 courier">
+              set the decoration mode
+            </div>
+            
 <div class="f6 lh-copy courier">
-  <span>void </span><span class="orange">zxdg_toplevel_decoration_v1_set_mode</span>(
+  <span>void </span><span class="dark-blue">zxdg_toplevel_decoration_v1_set_mode</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zxdg_toplevel_decoration_v1*</span> zxdg_toplevel_decoration_v1,</div>
     
@@ -151,7 +195,7 @@ commit.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Set the toplevel surface decoration mode. This informs the compositor
+            <div class="f6 lh-copy ws-pre-line courier">Set the toplevel surface decoration mode. This informs the compositor
 that the client prefers the provided decoration mode.
 
 After requesting a decoration mode, the compositor will respond by
@@ -170,37 +214,37 @@ Such clients are responsible for preventing configure loops and must
 make sure not to send multiple successive set_mode requests with the
 same decoration mode.
 </div>
-            </li>
+          </li>
           
-            <li>
-              <div class="f4 lh-title">
-                unset_mode
-              </div>
-              <div class="f5 lh-copy">
-                unset the decoration mode
-              </div>
-              
+          <li class="mt2">
+            <div class="f4 lh-title" id="r:zxdg_toplevel_decoration_v1:unset_mode">
+              unset_mode
+            </div>
+            <div class="f5 lh-copy mv1 courier">
+              unset the decoration mode
+            </div>
+            
 <div class="f6 lh-copy courier">
-  <span>void </span><span class="orange">zxdg_toplevel_decoration_v1_unset_mode</span>(
+  <span>void </span><span class="dark-blue">zxdg_toplevel_decoration_v1_unset_mode</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zxdg_toplevel_decoration_v1*</span> zxdg_toplevel_decoration_v1</div>
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Unset the toplevel surface decoration mode. This informs the compositor
+            <div class="f6 lh-copy ws-pre-line courier">Unset the toplevel surface decoration mode. This informs the compositor
 that the client doesn&#x27;t prefer a particular decoration mode.
 
 This request has the same semantics as set_mode.
 </div>
-            </li>
+          </li>
           
         </ul>
       </li>
-    
-  </ul>
+      
+    </ul>
 
-  <h2 class="f2 lh-title">Copyright Info</h2>
-  <div class="f6 lh-copy ws-pre-line courier">Copyright © 2018 Simon Ser
+    <h2 class="f4 lh-title">Copyright Info</h2>
+    <div class="f7 lh-copy ws-pre-line courier">Copyright © 2018 Simon Ser
 
 Permission is hereby granted, free of charge, to any person obtaining a
 copy of this software and associated documentation files (the &quot;Software&quot;),
@@ -221,6 +265,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
 FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 DEALINGS IN THE SOFTWARE.
 </div>
+  </div>
 
     </div>
 

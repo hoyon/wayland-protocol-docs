@@ -19,11 +19,47 @@
 
     <div id="content">
       
-  <h1 class="f1 lh-title">fullscreen_shell_unstable_v1</h1>
-  <ul class="list pl0">
+  <div class="fl w-25 ph2">
     
-      <li>
-        <div class="f2 lh-copy">
+
+<div>
+  <ul class="list pl0">
+  
+    <li>
+      <a href="#i:zwp_fullscreen_shell_v1" class="link blue underline-hover lh-copy">zwp_fullscreen_shell_v1</a>
+      <ul class="list">
+        
+        <li>
+          <a href="#r:zwp_fullscreen_shell_v1:release" class="link blue underline-hover lh-copy">release</a>
+        </li>
+        
+        <li>
+          <a href="#r:zwp_fullscreen_shell_v1:present_surface" class="link blue underline-hover lh-copy">present_surface</a>
+        </li>
+        
+        <li>
+          <a href="#r:zwp_fullscreen_shell_v1:present_surface_for_mode" class="link blue underline-hover lh-copy">present_surface_for_mode</a>
+        </li>
+        
+      </ul>
+    </li>
+  
+    <li>
+      <a href="#i:zwp_fullscreen_shell_mode_feedback_v1" class="link blue underline-hover lh-copy">zwp_fullscreen_shell_mode_feedback_v1</a>
+      <ul class="list">
+        
+      </ul>
+    </li>
+  
+  </ul>
+</div>
+  </div>
+  <div class="fl w-75 ph2">
+    <h1 class="f1 lh-title">fullscreen_shell_unstable_v1</h1>
+    <ul class="list pl0">
+      
+      <li class="mt2">
+        <div class="f2 lh-copy" id="i:zwp_fullscreen_shell_v1">
           zwp_fullscreen_shell_v1
         </div>
         <div class="f6 lh-copy ws-pre-line courier">Displays a single surface per output.
@@ -62,39 +98,39 @@ interface version number is reset.
 </div>
         <ul class="list pl0">
           
-            <li>
-              <div class="f4 lh-title">
-                release
-              </div>
-              <div class="f5 lh-copy">
-                release the wl_fullscreen_shell interface
-              </div>
-              
+          <li class="mt2">
+            <div class="f4 lh-title" id="r:zwp_fullscreen_shell_v1:release">
+              release
+            </div>
+            <div class="f5 lh-copy mv1 courier">
+              release the wl_fullscreen_shell interface
+            </div>
+            
 <div class="f6 lh-copy courier">
-  <span>void </span><span class="orange">zwp_fullscreen_shell_v1_release</span>(
+  <span>void </span><span class="dark-blue">zwp_fullscreen_shell_v1_release</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwp_fullscreen_shell_v1*</span> zwp_fullscreen_shell_v1</div>
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Release the binding from the wl_fullscreen_shell interface.
+            <div class="f6 lh-copy ws-pre-line courier">Release the binding from the wl_fullscreen_shell interface.
 
 This destroys the server-side object and frees this binding.  If
 the client binds to wl_fullscreen_shell multiple times, it may wish
 to free some of those bindings.
   </div>
-            </li>
+          </li>
           
-            <li>
-              <div class="f4 lh-title">
-                present_surface
-              </div>
-              <div class="f5 lh-copy">
-                present surface for display
-              </div>
-              
+          <li class="mt2">
+            <div class="f4 lh-title" id="r:zwp_fullscreen_shell_v1:present_surface">
+              present_surface
+            </div>
+            <div class="f5 lh-copy mv1 courier">
+              present surface for display
+            </div>
+            
 <div class="f6 lh-copy courier">
-  <span>void </span><span class="orange">zwp_fullscreen_shell_v1_present_surface</span>(
+  <span>void </span><span class="dark-blue">zwp_fullscreen_shell_v1_present_surface</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwp_fullscreen_shell_v1*</span> zwp_fullscreen_shell_v1,</div>
     
@@ -106,7 +142,7 @@ to free some of those bindings.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Present a surface on the given output.
+            <div class="f6 lh-copy ws-pre-line courier">Present a surface on the given output.
 
 If the output is null, the compositor will present the surface on
 whatever display (or displays) it thinks best.  In particular, this
@@ -124,18 +160,18 @@ operation on the surface.  This will override any kind of output
 scaling, so the buffer_scale property of the surface is effectively
 ignored.
   </div>
-            </li>
+          </li>
           
-            <li>
-              <div class="f4 lh-title">
-                present_surface_for_mode
-              </div>
-              <div class="f5 lh-copy">
-                present surface for display at a particular mode
-              </div>
-              
+          <li class="mt2">
+            <div class="f4 lh-title" id="r:zwp_fullscreen_shell_v1:present_surface_for_mode">
+              present_surface_for_mode
+            </div>
+            <div class="f5 lh-copy mv1 courier">
+              present surface for display at a particular mode
+            </div>
+            
 <div class="f6 lh-copy courier">
-  <span>struct zwp_fullscreen_shell_mode_feedback_v1* </span><span class="orange">zwp_fullscreen_shell_v1_present_surface_for_mode</span>(
+  <span>struct zwp_fullscreen_shell_mode_feedback_v1* </span><span class="dark-blue">zwp_fullscreen_shell_v1_present_surface_for_mode</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwp_fullscreen_shell_v1*</span> zwp_fullscreen_shell_v1,</div>
     
@@ -147,7 +183,7 @@ ignored.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Presents a surface on the given output for a particular mode.
+            <div class="f6 lh-copy ws-pre-line courier">Presents a surface on the given output for a particular mode.
 
 If the current size of the output differs from that of the surface,
 the compositor will attempt to change the size of the output to
@@ -185,13 +221,13 @@ then the compositor may choose a mode that matches either the buffer
 size or the surface size.  In either case, the surface will fill the
 output.
   </div>
-            </li>
+          </li>
           
         </ul>
       </li>
-    
-      <li>
-        <div class="f2 lh-copy">
+      
+      <li class="mt2">
+        <div class="f2 lh-copy" id="i:zwp_fullscreen_shell_mode_feedback_v1">
           zwp_fullscreen_shell_mode_feedback_v1
         </div>
         <div class="f6 lh-copy ws-pre-line courier"></div>
@@ -199,11 +235,11 @@ output.
           
         </ul>
       </li>
-    
-  </ul>
+      
+    </ul>
 
-  <h2 class="f2 lh-title">Copyright Info</h2>
-  <div class="f6 lh-copy ws-pre-line courier">Copyright © 2016 Yong Bakos
+    <h2 class="f4 lh-title">Copyright Info</h2>
+    <div class="f7 lh-copy ws-pre-line courier">Copyright © 2016 Yong Bakos
 Copyright © 2015 Jason Ekstrand
 Copyright © 2015 Jonas Ådahl
 
@@ -226,6 +262,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
 FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 DEALINGS IN THE SOFTWARE.
 </div>
+  </div>
 
     </div>
 

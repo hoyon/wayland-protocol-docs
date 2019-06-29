@@ -1,0 +1,376 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>wp_primary_selection_unstable_v1</title>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+     
+  </head>
+  <body class="bg-near-white black-70 sans-serif pa2 ph6-l">
+
+    <a href="&#x2f;wayland-protocol-docs/" class="f4 link near-black dim lh-title">
+      Home
+    </a>
+
+    
+
+    <div id="content">
+      
+  <div class="fl w-25 ph2">
+    
+
+<div>
+  <ul class="list pl0">
+  
+    <li>
+      <a href="#i:zwp_primary_selection_device_manager_v1" class="link blue underline-hover lh-copy">zwp_primary_selection_device_manager_v1</a>
+      <ul class="list">
+        
+        <li>
+          <a href="#r:zwp_primary_selection_device_manager_v1:create_source" class="link blue underline-hover lh-copy">create_source</a>
+        </li>
+        
+        <li>
+          <a href="#r:zwp_primary_selection_device_manager_v1:get_device" class="link blue underline-hover lh-copy">get_device</a>
+        </li>
+        
+        <li>
+          <a href="#r:zwp_primary_selection_device_manager_v1:destroy" class="link blue underline-hover lh-copy">destroy</a>
+        </li>
+        
+      </ul>
+    </li>
+  
+    <li>
+      <a href="#i:zwp_primary_selection_device_v1" class="link blue underline-hover lh-copy">zwp_primary_selection_device_v1</a>
+      <ul class="list">
+        
+        <li>
+          <a href="#r:zwp_primary_selection_device_v1:set_selection" class="link blue underline-hover lh-copy">set_selection</a>
+        </li>
+        
+        <li>
+          <a href="#r:zwp_primary_selection_device_v1:destroy" class="link blue underline-hover lh-copy">destroy</a>
+        </li>
+        
+      </ul>
+    </li>
+  
+    <li>
+      <a href="#i:zwp_primary_selection_offer_v1" class="link blue underline-hover lh-copy">zwp_primary_selection_offer_v1</a>
+      <ul class="list">
+        
+        <li>
+          <a href="#r:zwp_primary_selection_offer_v1:receive" class="link blue underline-hover lh-copy">receive</a>
+        </li>
+        
+        <li>
+          <a href="#r:zwp_primary_selection_offer_v1:destroy" class="link blue underline-hover lh-copy">destroy</a>
+        </li>
+        
+      </ul>
+    </li>
+  
+    <li>
+      <a href="#i:zwp_primary_selection_source_v1" class="link blue underline-hover lh-copy">zwp_primary_selection_source_v1</a>
+      <ul class="list">
+        
+        <li>
+          <a href="#r:zwp_primary_selection_source_v1:offer" class="link blue underline-hover lh-copy">offer</a>
+        </li>
+        
+        <li>
+          <a href="#r:zwp_primary_selection_source_v1:destroy" class="link blue underline-hover lh-copy">destroy</a>
+        </li>
+        
+      </ul>
+    </li>
+  
+  </ul>
+</div>
+  </div>
+  <div class="fl w-75 ph2">
+    <h1 class="f1 lh-title">wp_primary_selection_unstable_v1</h1>
+    <ul class="list pl0">
+      
+      <li class="mt2">
+        <div class="f2 lh-copy" id="i:zwp_primary_selection_device_manager_v1">
+          zwp_primary_selection_device_manager_v1
+        </div>
+        <div class="f6 lh-copy ws-pre-line courier">The primary selection device manager is a singleton global object that
+provides access to the primary selection. It allows to create
+wp_primary_selection_source objects, as well as retrieving the per-seat
+wp_primary_selection_device objects.
+</div>
+        <ul class="list pl0">
+          
+          <li class="mt2">
+            <div class="f4 lh-title" id="r:zwp_primary_selection_device_manager_v1:create_source">
+              create_source
+            </div>
+            <div class="f5 lh-copy mv1 courier">
+              create a new primary selection source
+            </div>
+            
+<div class="f6 lh-copy courier">
+  <span>struct zwp_primary_selection_source_v1* </span><span class="dark-blue">zwp_primary_selection_device_manager_v1_create_source</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwp_primary_selection_device_manager_v1*</span> zwp_primary_selection_device_manager_v1</div>
+    
+  )
+</div>
+            <div class="f6 lh-copy ws-pre-line courier">Create a new primary selection source.
+</div>
+          </li>
+          
+          <li class="mt2">
+            <div class="f4 lh-title" id="r:zwp_primary_selection_device_manager_v1:get_device">
+              get_device
+            </div>
+            <div class="f5 lh-copy mv1 courier">
+              create a new primary selection device
+            </div>
+            
+<div class="f6 lh-copy courier">
+  <span>struct zwp_primary_selection_device_v1* </span><span class="dark-blue">zwp_primary_selection_device_manager_v1_get_device</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwp_primary_selection_device_manager_v1*</span> zwp_primary_selection_device_manager_v1,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_seat*</span> seat</div>
+    
+  )
+</div>
+            <div class="f6 lh-copy ws-pre-line courier">Create a new data device for a given seat.
+</div>
+          </li>
+          
+          <li class="mt2">
+            <div class="f4 lh-title" id="r:zwp_primary_selection_device_manager_v1:destroy">
+              destroy
+            </div>
+            <div class="f5 lh-copy mv1 courier">
+              destroy the primary selection device manager
+            </div>
+            
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">zwp_primary_selection_device_manager_v1_destroy</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwp_primary_selection_device_manager_v1*</span> zwp_primary_selection_device_manager_v1</div>
+    
+  )
+</div>
+            <div class="f6 lh-copy ws-pre-line courier">Destroy the primary selection device manager.
+</div>
+          </li>
+          
+        </ul>
+      </li>
+      
+      <li class="mt2">
+        <div class="f2 lh-copy" id="i:zwp_primary_selection_device_v1">
+          zwp_primary_selection_device_v1
+        </div>
+        <div class="f6 lh-copy ws-pre-line courier"></div>
+        <ul class="list pl0">
+          
+          <li class="mt2">
+            <div class="f4 lh-title" id="r:zwp_primary_selection_device_v1:set_selection">
+              set_selection
+            </div>
+            <div class="f5 lh-copy mv1 courier">
+              set the primary selection
+            </div>
+            
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">zwp_primary_selection_device_v1_set_selection</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwp_primary_selection_device_v1*</span> zwp_primary_selection_device_v1,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwp_primary_selection_source_v1*</span> source,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> serial</div>
+    
+  )
+</div>
+            <div class="f6 lh-copy ws-pre-line courier">Replaces the current selection. The previous owner of the primary
+selection will receive a wp_primary_selection_source.cancelled event.
+
+To unset the selection, set the source to NULL.
+</div>
+          </li>
+          
+          <li class="mt2">
+            <div class="f4 lh-title" id="r:zwp_primary_selection_device_v1:destroy">
+              destroy
+            </div>
+            <div class="f5 lh-copy mv1 courier">
+              destroy the primary selection device
+            </div>
+            
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">zwp_primary_selection_device_v1_destroy</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwp_primary_selection_device_v1*</span> zwp_primary_selection_device_v1</div>
+    
+  )
+</div>
+            <div class="f6 lh-copy ws-pre-line courier">Destroy the primary selection device.
+</div>
+          </li>
+          
+        </ul>
+      </li>
+      
+      <li class="mt2">
+        <div class="f2 lh-copy" id="i:zwp_primary_selection_offer_v1">
+          zwp_primary_selection_offer_v1
+        </div>
+        <div class="f6 lh-copy ws-pre-line courier">A wp_primary_selection_offer represents an offer to transfer the contents
+of the primary selection clipboard to the client. Similar to
+wl_data_offer, the offer also describes the mime types that the data can
+be converted to and provides the mechanisms for transferring the data
+directly to the client.
+</div>
+        <ul class="list pl0">
+          
+          <li class="mt2">
+            <div class="f4 lh-title" id="r:zwp_primary_selection_offer_v1:receive">
+              receive
+            </div>
+            <div class="f5 lh-copy mv1 courier">
+              request that the data is transferred
+            </div>
+            
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">zwp_primary_selection_offer_v1_receive</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwp_primary_selection_offer_v1*</span> zwp_primary_selection_offer_v1,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">const char*</span> mime_type,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> fd</div>
+    
+  )
+</div>
+            <div class="f6 lh-copy ws-pre-line courier">To transfer the contents of the primary selection clipboard, the client
+issues this request and indicates the mime type that it wants to
+receive. The transfer happens through the passed file descriptor
+(typically created with the pipe system call). The source client writes
+the data in the mime type representation requested and then closes the
+file descriptor.
+
+The receiving client reads from the read end of the pipe until EOF and
+closes its end, at which point the transfer is complete.
+</div>
+          </li>
+          
+          <li class="mt2">
+            <div class="f4 lh-title" id="r:zwp_primary_selection_offer_v1:destroy">
+              destroy
+            </div>
+            <div class="f5 lh-copy mv1 courier">
+              destroy the primary selection offer
+            </div>
+            
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">zwp_primary_selection_offer_v1_destroy</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwp_primary_selection_offer_v1*</span> zwp_primary_selection_offer_v1</div>
+    
+  )
+</div>
+            <div class="f6 lh-copy ws-pre-line courier">Destroy the primary selection offer.
+</div>
+          </li>
+          
+        </ul>
+      </li>
+      
+      <li class="mt2">
+        <div class="f2 lh-copy" id="i:zwp_primary_selection_source_v1">
+          zwp_primary_selection_source_v1
+        </div>
+        <div class="f6 lh-copy ws-pre-line courier">The source side of a wp_primary_selection_offer, it provides a way to
+describe the offered data and respond to requests to transfer the
+requested contents of the primary selection clipboard.
+</div>
+        <ul class="list pl0">
+          
+          <li class="mt2">
+            <div class="f4 lh-title" id="r:zwp_primary_selection_source_v1:offer">
+              offer
+            </div>
+            <div class="f5 lh-copy mv1 courier">
+              add an offered mime type
+            </div>
+            
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">zwp_primary_selection_source_v1_offer</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwp_primary_selection_source_v1*</span> zwp_primary_selection_source_v1,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">const char*</span> mime_type</div>
+    
+  )
+</div>
+            <div class="f6 lh-copy ws-pre-line courier">This request adds a mime type to the set of mime types advertised to
+targets. Can be called several times to offer multiple types.
+</div>
+          </li>
+          
+          <li class="mt2">
+            <div class="f4 lh-title" id="r:zwp_primary_selection_source_v1:destroy">
+              destroy
+            </div>
+            <div class="f5 lh-copy mv1 courier">
+              destroy the primary selection source
+            </div>
+            
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">zwp_primary_selection_source_v1_destroy</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwp_primary_selection_source_v1*</span> zwp_primary_selection_source_v1</div>
+    
+  )
+</div>
+            <div class="f6 lh-copy ws-pre-line courier">Destroy the primary selection source.
+</div>
+          </li>
+          
+        </ul>
+      </li>
+      
+    </ul>
+
+    <h2 class="f4 lh-title">Copyright Info</h2>
+    <div class="f7 lh-copy ws-pre-line courier">Copyright © 2015, 2016 Red Hat
+
+Permission is hereby granted, free of charge, to any person obtaining a
+copy of this software and associated documentation files (the &quot;Software&quot;),
+to deal in the Software without restriction, including without limitation
+the rights to use, copy, modify, merge, publish, distribute, sublicense,
+and&#x2f;or sell copies of the Software, and to permit persons to whom the
+Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice (including the next
+paragraph) shall be included in all copies or substantial portions of the
+Software.
+
+THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL
+THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+DEALINGS IN THE SOFTWARE.
+</div>
+  </div>
+
+    </div>
+
+    <script src="&#x2f;wayland-protocol-docs/bundle.js"></script>
+  </body>
+</html>

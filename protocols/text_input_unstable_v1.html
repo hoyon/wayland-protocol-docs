@@ -19,11 +19,83 @@
 
     <div id="content">
       
-  <h1 class="f1 lh-title">text_input_unstable_v1</h1>
-  <ul class="list pl0">
+  <div class="fl w-25 ph2">
     
-      <li>
-        <div class="f2 lh-copy">
+
+<div>
+  <ul class="list pl0">
+  
+    <li>
+      <a href="#i:zwp_text_input_v1" class="link blue underline-hover lh-copy">zwp_text_input_v1</a>
+      <ul class="list">
+        
+        <li>
+          <a href="#r:zwp_text_input_v1:activate" class="link blue underline-hover lh-copy">activate</a>
+        </li>
+        
+        <li>
+          <a href="#r:zwp_text_input_v1:deactivate" class="link blue underline-hover lh-copy">deactivate</a>
+        </li>
+        
+        <li>
+          <a href="#r:zwp_text_input_v1:show_input_panel" class="link blue underline-hover lh-copy">show_input_panel</a>
+        </li>
+        
+        <li>
+          <a href="#r:zwp_text_input_v1:hide_input_panel" class="link blue underline-hover lh-copy">hide_input_panel</a>
+        </li>
+        
+        <li>
+          <a href="#r:zwp_text_input_v1:reset" class="link blue underline-hover lh-copy">reset</a>
+        </li>
+        
+        <li>
+          <a href="#r:zwp_text_input_v1:set_surrounding_text" class="link blue underline-hover lh-copy">set_surrounding_text</a>
+        </li>
+        
+        <li>
+          <a href="#r:zwp_text_input_v1:set_content_type" class="link blue underline-hover lh-copy">set_content_type</a>
+        </li>
+        
+        <li>
+          <a href="#r:zwp_text_input_v1:set_cursor_rectangle" class="link blue underline-hover lh-copy">set_cursor_rectangle</a>
+        </li>
+        
+        <li>
+          <a href="#r:zwp_text_input_v1:set_preferred_language" class="link blue underline-hover lh-copy">set_preferred_language</a>
+        </li>
+        
+        <li>
+          <a href="#r:zwp_text_input_v1:commit_state" class="link blue underline-hover lh-copy">commit_state</a>
+        </li>
+        
+        <li>
+          <a href="#r:zwp_text_input_v1:invoke_action" class="link blue underline-hover lh-copy">invoke_action</a>
+        </li>
+        
+      </ul>
+    </li>
+  
+    <li>
+      <a href="#i:zwp_text_input_manager_v1" class="link blue underline-hover lh-copy">zwp_text_input_manager_v1</a>
+      <ul class="list">
+        
+        <li>
+          <a href="#r:zwp_text_input_manager_v1:create_text_input" class="link blue underline-hover lh-copy">create_text_input</a>
+        </li>
+        
+      </ul>
+    </li>
+  
+  </ul>
+</div>
+  </div>
+  <div class="fl w-75 ph2">
+    <h1 class="f1 lh-title">text_input_unstable_v1</h1>
+    <ul class="list pl0">
+      
+      <li class="mt2">
+        <div class="f2 lh-copy" id="i:zwp_text_input_v1">
           zwp_text_input_v1
         </div>
         <div class="f6 lh-copy ws-pre-line courier">An object used for text input. Adds support for text input and input
@@ -58,16 +130,16 @@ interface version number is reset.
 </div>
         <ul class="list pl0">
           
-            <li>
-              <div class="f4 lh-title">
-                activate
-              </div>
-              <div class="f5 lh-copy">
-                request activation
-              </div>
-              
+          <li class="mt2">
+            <div class="f4 lh-title" id="r:zwp_text_input_v1:activate">
+              activate
+            </div>
+            <div class="f5 lh-copy mv1 courier">
+              request activation
+            </div>
+            
 <div class="f6 lh-copy courier">
-  <span>void </span><span class="orange">zwp_text_input_v1_activate</span>(
+  <span>void </span><span class="dark-blue">zwp_text_input_v1_activate</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwp_text_input_v1*</span> zwp_text_input_v1,</div>
     
@@ -77,7 +149,7 @@ interface version number is reset.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Requests the text_input object to be activated (typically when the
+            <div class="f6 lh-copy ws-pre-line courier">Requests the text_input object to be activated (typically when the
 text entry gets focus).
 
 The seat argument is a wl_seat which maintains the focus for this
@@ -85,18 +157,18 @@ activation. The surface argument is a wl_surface assigned to the
 text_input object and tracked for focus lost. The enter event
 is emitted on successful activation.
   </div>
-            </li>
+          </li>
           
-            <li>
-              <div class="f4 lh-title">
-                deactivate
-              </div>
-              <div class="f5 lh-copy">
-                request deactivation
-              </div>
-              
+          <li class="mt2">
+            <div class="f4 lh-title" id="r:zwp_text_input_v1:deactivate">
+              deactivate
+            </div>
+            <div class="f5 lh-copy mv1 courier">
+              request deactivation
+            </div>
+            
 <div class="f6 lh-copy courier">
-  <span>void </span><span class="orange">zwp_text_input_v1_deactivate</span>(
+  <span>void </span><span class="dark-blue">zwp_text_input_v1_deactivate</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwp_text_input_v1*</span> zwp_text_input_v1,</div>
     
@@ -104,81 +176,81 @@ is emitted on successful activation.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Requests the text_input object to be deactivated (typically when the
+            <div class="f6 lh-copy ws-pre-line courier">Requests the text_input object to be deactivated (typically when the
 text entry lost focus). The seat argument is a wl_seat which was used
 for activation.
   </div>
-            </li>
+          </li>
           
-            <li>
-              <div class="f4 lh-title">
-                show_input_panel
-              </div>
-              <div class="f5 lh-copy">
-                show input panels
-              </div>
-              
+          <li class="mt2">
+            <div class="f4 lh-title" id="r:zwp_text_input_v1:show_input_panel">
+              show_input_panel
+            </div>
+            <div class="f5 lh-copy mv1 courier">
+              show input panels
+            </div>
+            
 <div class="f6 lh-copy courier">
-  <span>void </span><span class="orange">zwp_text_input_v1_show_input_panel</span>(
+  <span>void </span><span class="dark-blue">zwp_text_input_v1_show_input_panel</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwp_text_input_v1*</span> zwp_text_input_v1</div>
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Requests input panels (virtual keyboard) to show.
+            <div class="f6 lh-copy ws-pre-line courier">Requests input panels (virtual keyboard) to show.
   </div>
-            </li>
+          </li>
           
-            <li>
-              <div class="f4 lh-title">
-                hide_input_panel
-              </div>
-              <div class="f5 lh-copy">
-                hide input panels
-              </div>
-              
+          <li class="mt2">
+            <div class="f4 lh-title" id="r:zwp_text_input_v1:hide_input_panel">
+              hide_input_panel
+            </div>
+            <div class="f5 lh-copy mv1 courier">
+              hide input panels
+            </div>
+            
 <div class="f6 lh-copy courier">
-  <span>void </span><span class="orange">zwp_text_input_v1_hide_input_panel</span>(
+  <span>void </span><span class="dark-blue">zwp_text_input_v1_hide_input_panel</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwp_text_input_v1*</span> zwp_text_input_v1</div>
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Requests input panels (virtual keyboard) to hide.
+            <div class="f6 lh-copy ws-pre-line courier">Requests input panels (virtual keyboard) to hide.
   </div>
-            </li>
+          </li>
           
-            <li>
-              <div class="f4 lh-title">
-                reset
-              </div>
-              <div class="f5 lh-copy">
-                reset
-              </div>
-              
+          <li class="mt2">
+            <div class="f4 lh-title" id="r:zwp_text_input_v1:reset">
+              reset
+            </div>
+            <div class="f5 lh-copy mv1 courier">
+              reset
+            </div>
+            
 <div class="f6 lh-copy courier">
-  <span>void </span><span class="orange">zwp_text_input_v1_reset</span>(
+  <span>void </span><span class="dark-blue">zwp_text_input_v1_reset</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwp_text_input_v1*</span> zwp_text_input_v1</div>
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Should be called by an editor widget when the input state should be
+            <div class="f6 lh-copy ws-pre-line courier">Should be called by an editor widget when the input state should be
 reset, for example after the text was changed outside of the normal
 input method flow.
   </div>
-            </li>
+          </li>
           
-            <li>
-              <div class="f4 lh-title">
-                set_surrounding_text
-              </div>
-              <div class="f5 lh-copy">
-                sets the surrounding text
-              </div>
-              
+          <li class="mt2">
+            <div class="f4 lh-title" id="r:zwp_text_input_v1:set_surrounding_text">
+              set_surrounding_text
+            </div>
+            <div class="f5 lh-copy mv1 courier">
+              sets the surrounding text
+            </div>
+            
 <div class="f6 lh-copy courier">
-  <span>void </span><span class="orange">zwp_text_input_v1_set_surrounding_text</span>(
+  <span>void </span><span class="dark-blue">zwp_text_input_v1_set_surrounding_text</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwp_text_input_v1*</span> zwp_text_input_v1,</div>
     
@@ -190,24 +262,24 @@ input method flow.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Sets the plain surrounding text around the input position. Text is
+            <div class="f6 lh-copy ws-pre-line courier">Sets the plain surrounding text around the input position. Text is
 UTF-8 encoded. Cursor is the byte offset within the
 surrounding text. Anchor is the byte offset of the
 selection anchor within the surrounding text. If there is no selected
 text anchor, then it is the same as cursor.
   </div>
-            </li>
+          </li>
           
-            <li>
-              <div class="f4 lh-title">
-                set_content_type
-              </div>
-              <div class="f5 lh-copy">
-                set content purpose and hint
-              </div>
-              
+          <li class="mt2">
+            <div class="f4 lh-title" id="r:zwp_text_input_v1:set_content_type">
+              set_content_type
+            </div>
+            <div class="f5 lh-copy mv1 courier">
+              set content purpose and hint
+            </div>
+            
 <div class="f6 lh-copy courier">
-  <span>void </span><span class="orange">zwp_text_input_v1_set_content_type</span>(
+  <span>void </span><span class="dark-blue">zwp_text_input_v1_set_content_type</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwp_text_input_v1*</span> zwp_text_input_v1,</div>
     
@@ -217,7 +289,7 @@ text anchor, then it is the same as cursor.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Sets the content purpose and content hint. While the purpose is the
+            <div class="f6 lh-copy ws-pre-line courier">Sets the content purpose and content hint. While the purpose is the
 basic purpose of an input field, the hint flags allow to modify some
 of the behavior.
 
@@ -225,18 +297,18 @@ When no content type is explicitly set, a normal content purpose with
 default hints (auto completion, auto correction, auto capitalization)
 should be assumed.
   </div>
-            </li>
+          </li>
           
-            <li>
-              <div class="f4 lh-title">
-                set_cursor_rectangle
-              </div>
-              <div class="f5 lh-copy">
-                
-              </div>
+          <li class="mt2">
+            <div class="f4 lh-title" id="r:zwp_text_input_v1:set_cursor_rectangle">
+              set_cursor_rectangle
+            </div>
+            <div class="f5 lh-copy mv1 courier">
               
+            </div>
+            
 <div class="f6 lh-copy courier">
-  <span>void </span><span class="orange">zwp_text_input_v1_set_cursor_rectangle</span>(
+  <span>void </span><span class="dark-blue">zwp_text_input_v1_set_cursor_rectangle</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwp_text_input_v1*</span> zwp_text_input_v1,</div>
     
@@ -250,19 +322,19 @@ should be assumed.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier"></div>
-            </li>
+            <div class="f6 lh-copy ws-pre-line courier"></div>
+          </li>
           
-            <li>
-              <div class="f4 lh-title">
-                set_preferred_language
-              </div>
-              <div class="f5 lh-copy">
-                sets preferred language
-              </div>
-              
+          <li class="mt2">
+            <div class="f4 lh-title" id="r:zwp_text_input_v1:set_preferred_language">
+              set_preferred_language
+            </div>
+            <div class="f5 lh-copy mv1 courier">
+              sets preferred language
+            </div>
+            
 <div class="f6 lh-copy courier">
-  <span>void </span><span class="orange">zwp_text_input_v1_set_preferred_language</span>(
+  <span>void </span><span class="dark-blue">zwp_text_input_v1_set_preferred_language</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwp_text_input_v1*</span> zwp_text_input_v1,</div>
     
@@ -270,7 +342,7 @@ should be assumed.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Sets a specific language. This allows for example a virtual keyboard to
+            <div class="f6 lh-copy ws-pre-line courier">Sets a specific language. This allows for example a virtual keyboard to
 show a language specific layout. The &quot;language&quot; argument is an RFC-3066
 format language tag.
 
@@ -278,18 +350,18 @@ It could be used for example in a word processor to indicate the
 language of the currently edited document or in an instant message
 application which tracks languages of contacts.
   </div>
-            </li>
+          </li>
           
-            <li>
-              <div class="f4 lh-title">
-                commit_state
-              </div>
-              <div class="f5 lh-copy">
-                
-              </div>
+          <li class="mt2">
+            <div class="f4 lh-title" id="r:zwp_text_input_v1:commit_state">
+              commit_state
+            </div>
+            <div class="f5 lh-copy mv1 courier">
               
+            </div>
+            
 <div class="f6 lh-copy courier">
-  <span>void </span><span class="orange">zwp_text_input_v1_commit_state</span>(
+  <span>void </span><span class="dark-blue">zwp_text_input_v1_commit_state</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwp_text_input_v1*</span> zwp_text_input_v1,</div>
     
@@ -297,19 +369,19 @@ application which tracks languages of contacts.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier"></div>
-            </li>
+            <div class="f6 lh-copy ws-pre-line courier"></div>
+          </li>
           
-            <li>
-              <div class="f4 lh-title">
-                invoke_action
-              </div>
-              <div class="f5 lh-copy">
-                
-              </div>
+          <li class="mt2">
+            <div class="f4 lh-title" id="r:zwp_text_input_v1:invoke_action">
+              invoke_action
+            </div>
+            <div class="f5 lh-copy mv1 courier">
               
+            </div>
+            
 <div class="f6 lh-copy courier">
-  <span>void </span><span class="orange">zwp_text_input_v1_invoke_action</span>(
+  <span>void </span><span class="dark-blue">zwp_text_input_v1_invoke_action</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwp_text_input_v1*</span> zwp_text_input_v1,</div>
     
@@ -319,46 +391,46 @@ application which tracks languages of contacts.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier"></div>
-            </li>
+            <div class="f6 lh-copy ws-pre-line courier"></div>
+          </li>
           
         </ul>
       </li>
-    
-      <li>
-        <div class="f2 lh-copy">
+      
+      <li class="mt2">
+        <div class="f2 lh-copy" id="i:zwp_text_input_manager_v1">
           zwp_text_input_manager_v1
         </div>
         <div class="f6 lh-copy ws-pre-line courier">A factory for text_input objects. This object is a global singleton.
 </div>
         <ul class="list pl0">
           
-            <li>
-              <div class="f4 lh-title">
-                create_text_input
-              </div>
-              <div class="f5 lh-copy">
-                create text input
-              </div>
-              
+          <li class="mt2">
+            <div class="f4 lh-title" id="r:zwp_text_input_manager_v1:create_text_input">
+              create_text_input
+            </div>
+            <div class="f5 lh-copy mv1 courier">
+              create text input
+            </div>
+            
 <div class="f6 lh-copy courier">
-  <span>struct zwp_text_input_v1* </span><span class="orange">zwp_text_input_manager_v1_create_text_input</span>(
+  <span>struct zwp_text_input_v1* </span><span class="dark-blue">zwp_text_input_manager_v1_create_text_input</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwp_text_input_manager_v1*</span> zwp_text_input_manager_v1</div>
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Creates a new text_input object.
+            <div class="f6 lh-copy ws-pre-line courier">Creates a new text_input object.
   </div>
-            </li>
+          </li>
           
         </ul>
       </li>
-    
-  </ul>
+      
+    </ul>
 
-  <h2 class="f2 lh-title">Copyright Info</h2>
-  <div class="f6 lh-copy ws-pre-line courier">Copyright © 2012, 2013 Intel Corporation
+    <h2 class="f4 lh-title">Copyright Info</h2>
+    <div class="f7 lh-copy ws-pre-line courier">Copyright © 2012, 2013 Intel Corporation
 
 Permission is hereby granted, free of charge, to any person obtaining a
 copy of this software and associated documentation files (the &quot;Software&quot;),
@@ -379,6 +451,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
 FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 DEALINGS IN THE SOFTWARE.
 </div>
+  </div>
 
     </div>
 

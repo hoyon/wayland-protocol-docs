@@ -19,11 +19,47 @@
 
     <div id="content">
       
-  <h1 class="f1 lh-title">idle_inhibit_unstable_v1</h1>
-  <ul class="list pl0">
+  <div class="fl w-25 ph2">
     
-      <li>
-        <div class="f2 lh-copy">
+
+<div>
+  <ul class="list pl0">
+  
+    <li>
+      <a href="#i:zwp_idle_inhibit_manager_v1" class="link blue underline-hover lh-copy">zwp_idle_inhibit_manager_v1</a>
+      <ul class="list">
+        
+        <li>
+          <a href="#r:zwp_idle_inhibit_manager_v1:destroy" class="link blue underline-hover lh-copy">destroy</a>
+        </li>
+        
+        <li>
+          <a href="#r:zwp_idle_inhibit_manager_v1:create_inhibitor" class="link blue underline-hover lh-copy">create_inhibitor</a>
+        </li>
+        
+      </ul>
+    </li>
+  
+    <li>
+      <a href="#i:zwp_idle_inhibitor_v1" class="link blue underline-hover lh-copy">zwp_idle_inhibitor_v1</a>
+      <ul class="list">
+        
+        <li>
+          <a href="#r:zwp_idle_inhibitor_v1:destroy" class="link blue underline-hover lh-copy">destroy</a>
+        </li>
+        
+      </ul>
+    </li>
+  
+  </ul>
+</div>
+  </div>
+  <div class="fl w-75 ph2">
+    <h1 class="f1 lh-title">idle_inhibit_unstable_v1</h1>
+    <ul class="list pl0">
+      
+      <li class="mt2">
+        <div class="f2 lh-copy" id="i:zwp_idle_inhibit_manager_v1">
           zwp_idle_inhibit_manager_v1
         </div>
         <div class="f6 lh-copy ws-pre-line courier">This interface permits inhibiting the idle behavior such as screen
@@ -41,35 +77,35 @@ interface version number is reset.
 </div>
         <ul class="list pl0">
           
-            <li>
-              <div class="f4 lh-title">
-                destroy
-              </div>
-              <div class="f5 lh-copy">
-                destroy the idle inhibitor object
-              </div>
-              
+          <li class="mt2">
+            <div class="f4 lh-title" id="r:zwp_idle_inhibit_manager_v1:destroy">
+              destroy
+            </div>
+            <div class="f5 lh-copy mv1 courier">
+              destroy the idle inhibitor object
+            </div>
+            
 <div class="f6 lh-copy courier">
-  <span>void </span><span class="orange">zwp_idle_inhibit_manager_v1_destroy</span>(
+  <span>void </span><span class="dark-blue">zwp_idle_inhibit_manager_v1_destroy</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwp_idle_inhibit_manager_v1*</span> zwp_idle_inhibit_manager_v1</div>
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Destroy the inhibit manager.
+            <div class="f6 lh-copy ws-pre-line courier">Destroy the inhibit manager.
   </div>
-            </li>
+          </li>
           
-            <li>
-              <div class="f4 lh-title">
-                create_inhibitor
-              </div>
-              <div class="f5 lh-copy">
-                create a new inhibitor object
-              </div>
-              
+          <li class="mt2">
+            <div class="f4 lh-title" id="r:zwp_idle_inhibit_manager_v1:create_inhibitor">
+              create_inhibitor
+            </div>
+            <div class="f5 lh-copy mv1 courier">
+              create a new inhibitor object
+            </div>
+            
 <div class="f6 lh-copy courier">
-  <span>struct zwp_idle_inhibitor_v1* </span><span class="orange">zwp_idle_inhibit_manager_v1_create_inhibitor</span>(
+  <span>struct zwp_idle_inhibitor_v1* </span><span class="dark-blue">zwp_idle_inhibit_manager_v1_create_inhibitor</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwp_idle_inhibit_manager_v1*</span> zwp_idle_inhibit_manager_v1,</div>
     
@@ -77,15 +113,15 @@ interface version number is reset.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Create a new inhibitor object associated with the given surface.
+            <div class="f6 lh-copy ws-pre-line courier">Create a new inhibitor object associated with the given surface.
   </div>
-            </li>
+          </li>
           
         </ul>
       </li>
-    
-      <li>
-        <div class="f2 lh-copy">
+      
+      <li class="mt2">
+        <div class="f2 lh-copy" id="i:zwp_idle_inhibitor_v1">
           zwp_idle_inhibitor_v1
         </div>
         <div class="f6 lh-copy ws-pre-line courier">An idle inhibitor prevents the output that the associated surface is
@@ -103,32 +139,32 @@ de-idles and re-idles the inhibitor will take effect.
 </div>
         <ul class="list pl0">
           
-            <li>
-              <div class="f4 lh-title">
-                destroy
-              </div>
-              <div class="f5 lh-copy">
-                destroy the idle inhibitor object
-              </div>
-              
+          <li class="mt2">
+            <div class="f4 lh-title" id="r:zwp_idle_inhibitor_v1:destroy">
+              destroy
+            </div>
+            <div class="f5 lh-copy mv1 courier">
+              destroy the idle inhibitor object
+            </div>
+            
 <div class="f6 lh-copy courier">
-  <span>void </span><span class="orange">zwp_idle_inhibitor_v1_destroy</span>(
+  <span>void </span><span class="dark-blue">zwp_idle_inhibitor_v1_destroy</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwp_idle_inhibitor_v1*</span> zwp_idle_inhibitor_v1</div>
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Remove the inhibitor effect from the associated wl_surface.
+            <div class="f6 lh-copy ws-pre-line courier">Remove the inhibitor effect from the associated wl_surface.
   </div>
-            </li>
+          </li>
           
         </ul>
       </li>
-    
-  </ul>
+      
+    </ul>
 
-  <h2 class="f2 lh-title">Copyright Info</h2>
-  <div class="f6 lh-copy ws-pre-line courier">Copyright © 2015 Samsung Electronics Co., Ltd
+    <h2 class="f4 lh-title">Copyright Info</h2>
+    <div class="f7 lh-copy ws-pre-line courier">Copyright © 2015 Samsung Electronics Co., Ltd
 
 Permission is hereby granted, free of charge, to any person obtaining a
 copy of this software and associated documentation files (the &quot;Software&quot;),
@@ -149,6 +185,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
 FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 DEALINGS IN THE SOFTWARE.
 </div>
+  </div>
 
     </div>
 

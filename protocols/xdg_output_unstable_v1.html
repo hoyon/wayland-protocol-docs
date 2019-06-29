@@ -19,49 +19,85 @@
 
     <div id="content">
       
-  <h1 class="f1 lh-title">xdg_output_unstable_v1</h1>
-  <ul class="list pl0">
+  <div class="fl w-25 ph2">
     
-      <li>
-        <div class="f2 lh-copy">
+
+<div>
+  <ul class="list pl0">
+  
+    <li>
+      <a href="#i:zxdg_output_manager_v1" class="link blue underline-hover lh-copy">zxdg_output_manager_v1</a>
+      <ul class="list">
+        
+        <li>
+          <a href="#r:zxdg_output_manager_v1:destroy" class="link blue underline-hover lh-copy">destroy</a>
+        </li>
+        
+        <li>
+          <a href="#r:zxdg_output_manager_v1:get_xdg_output" class="link blue underline-hover lh-copy">get_xdg_output</a>
+        </li>
+        
+      </ul>
+    </li>
+  
+    <li>
+      <a href="#i:zxdg_output_v1" class="link blue underline-hover lh-copy">zxdg_output_v1</a>
+      <ul class="list">
+        
+        <li>
+          <a href="#r:zxdg_output_v1:destroy" class="link blue underline-hover lh-copy">destroy</a>
+        </li>
+        
+      </ul>
+    </li>
+  
+  </ul>
+</div>
+  </div>
+  <div class="fl w-75 ph2">
+    <h1 class="f1 lh-title">xdg_output_unstable_v1</h1>
+    <ul class="list pl0">
+      
+      <li class="mt2">
+        <div class="f2 lh-copy" id="i:zxdg_output_manager_v1">
           zxdg_output_manager_v1
         </div>
         <div class="f6 lh-copy ws-pre-line courier">A global factory interface for xdg_output objects.
 </div>
         <ul class="list pl0">
           
-            <li>
-              <div class="f4 lh-title">
-                destroy
-              </div>
-              <div class="f5 lh-copy">
-                destroy the xdg_output_manager object
-              </div>
-              
+          <li class="mt2">
+            <div class="f4 lh-title" id="r:zxdg_output_manager_v1:destroy">
+              destroy
+            </div>
+            <div class="f5 lh-copy mv1 courier">
+              destroy the xdg_output_manager object
+            </div>
+            
 <div class="f6 lh-copy courier">
-  <span>void </span><span class="orange">zxdg_output_manager_v1_destroy</span>(
+  <span>void </span><span class="dark-blue">zxdg_output_manager_v1_destroy</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zxdg_output_manager_v1*</span> zxdg_output_manager_v1</div>
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Using this request a client can tell the server that it is not
+            <div class="f6 lh-copy ws-pre-line courier">Using this request a client can tell the server that it is not
 going to use the xdg_output_manager object anymore.
 
 Any objects already created through this instance are not affected.
   </div>
-            </li>
+          </li>
           
-            <li>
-              <div class="f4 lh-title">
-                get_xdg_output
-              </div>
-              <div class="f5 lh-copy">
-                create an xdg output from a wl_output
-              </div>
-              
+          <li class="mt2">
+            <div class="f4 lh-title" id="r:zxdg_output_manager_v1:get_xdg_output">
+              get_xdg_output
+            </div>
+            <div class="f5 lh-copy mv1 courier">
+              create an xdg output from a wl_output
+            </div>
+            
 <div class="f6 lh-copy courier">
-  <span>struct zxdg_output_v1* </span><span class="orange">zxdg_output_manager_v1_get_xdg_output</span>(
+  <span>struct zxdg_output_v1* </span><span class="dark-blue">zxdg_output_manager_v1_get_xdg_output</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zxdg_output_manager_v1*</span> zxdg_output_manager_v1,</div>
     
@@ -69,15 +105,15 @@ Any objects already created through this instance are not affected.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">This creates a new xdg_output object for the given wl_output.
+            <div class="f6 lh-copy ws-pre-line courier">This creates a new xdg_output object for the given wl_output.
   </div>
-            </li>
+          </li>
           
         </ul>
       </li>
-    
-      <li>
-        <div class="f2 lh-copy">
+      
+      <li class="mt2">
+        <div class="f2 lh-copy" id="i:zxdg_output_v1">
           zxdg_output_v1
         </div>
         <div class="f6 lh-copy ws-pre-line courier">An xdg_output describes part of the compositor geometry.
@@ -87,33 +123,33 @@ compositor space.
 </div>
         <ul class="list pl0">
           
-            <li>
-              <div class="f4 lh-title">
-                destroy
-              </div>
-              <div class="f5 lh-copy">
-                destroy the xdg_output object
-              </div>
-              
+          <li class="mt2">
+            <div class="f4 lh-title" id="r:zxdg_output_v1:destroy">
+              destroy
+            </div>
+            <div class="f5 lh-copy mv1 courier">
+              destroy the xdg_output object
+            </div>
+            
 <div class="f6 lh-copy courier">
-  <span>void </span><span class="orange">zxdg_output_v1_destroy</span>(
+  <span>void </span><span class="dark-blue">zxdg_output_v1_destroy</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zxdg_output_v1*</span> zxdg_output_v1</div>
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Using this request a client can tell the server that it is not
+            <div class="f6 lh-copy ws-pre-line courier">Using this request a client can tell the server that it is not
 going to use the xdg_output object anymore.
   </div>
-            </li>
+          </li>
           
         </ul>
       </li>
-    
-  </ul>
+      
+    </ul>
 
-  <h2 class="f2 lh-title">Copyright Info</h2>
-  <div class="f6 lh-copy ws-pre-line courier">Copyright © 2017 Red Hat Inc.
+    <h2 class="f4 lh-title">Copyright Info</h2>
+    <div class="f7 lh-copy ws-pre-line courier">Copyright © 2017 Red Hat Inc.
 
 Permission is hereby granted, free of charge, to any person obtaining a
 copy of this software and associated documentation files (the &quot;Software&quot;),
@@ -134,6 +170,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
 FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 DEALINGS IN THE SOFTWARE.
 </div>
+  </div>
 
     </div>
 

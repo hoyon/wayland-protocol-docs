@@ -19,11 +19,55 @@
 
     <div id="content">
       
-  <h1 class="f1 lh-title">input_timestamps_unstable_v1</h1>
-  <ul class="list pl0">
+  <div class="fl w-25 ph2">
     
-      <li>
-        <div class="f2 lh-copy">
+
+<div>
+  <ul class="list pl0">
+  
+    <li>
+      <a href="#i:zwp_input_timestamps_manager_v1" class="link blue underline-hover lh-copy">zwp_input_timestamps_manager_v1</a>
+      <ul class="list">
+        
+        <li>
+          <a href="#r:zwp_input_timestamps_manager_v1:destroy" class="link blue underline-hover lh-copy">destroy</a>
+        </li>
+        
+        <li>
+          <a href="#r:zwp_input_timestamps_manager_v1:get_keyboard_timestamps" class="link blue underline-hover lh-copy">get_keyboard_timestamps</a>
+        </li>
+        
+        <li>
+          <a href="#r:zwp_input_timestamps_manager_v1:get_pointer_timestamps" class="link blue underline-hover lh-copy">get_pointer_timestamps</a>
+        </li>
+        
+        <li>
+          <a href="#r:zwp_input_timestamps_manager_v1:get_touch_timestamps" class="link blue underline-hover lh-copy">get_touch_timestamps</a>
+        </li>
+        
+      </ul>
+    </li>
+  
+    <li>
+      <a href="#i:zwp_input_timestamps_v1" class="link blue underline-hover lh-copy">zwp_input_timestamps_v1</a>
+      <ul class="list">
+        
+        <li>
+          <a href="#r:zwp_input_timestamps_v1:destroy" class="link blue underline-hover lh-copy">destroy</a>
+        </li>
+        
+      </ul>
+    </li>
+  
+  </ul>
+</div>
+  </div>
+  <div class="fl w-75 ph2">
+    <h1 class="f1 lh-title">input_timestamps_unstable_v1</h1>
+    <ul class="list pl0">
+      
+      <li class="mt2">
+        <div class="f2 lh-copy" id="i:zwp_input_timestamps_manager_v1">
           zwp_input_timestamps_manager_v1
         </div>
         <div class="f6 lh-copy ws-pre-line courier">A global interface used for requesting high-resolution timestamps
@@ -31,37 +75,37 @@ for input events.
 </div>
         <ul class="list pl0">
           
-            <li>
-              <div class="f4 lh-title">
-                destroy
-              </div>
-              <div class="f5 lh-copy">
-                destroy the input timestamps manager object
-              </div>
-              
+          <li class="mt2">
+            <div class="f4 lh-title" id="r:zwp_input_timestamps_manager_v1:destroy">
+              destroy
+            </div>
+            <div class="f5 lh-copy mv1 courier">
+              destroy the input timestamps manager object
+            </div>
+            
 <div class="f6 lh-copy courier">
-  <span>void </span><span class="orange">zwp_input_timestamps_manager_v1_destroy</span>(
+  <span>void </span><span class="dark-blue">zwp_input_timestamps_manager_v1_destroy</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwp_input_timestamps_manager_v1*</span> zwp_input_timestamps_manager_v1</div>
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Informs the server that the client will no longer be using this
+            <div class="f6 lh-copy ws-pre-line courier">Informs the server that the client will no longer be using this
 protocol object. Existing objects created by this object are not
 affected.
 </div>
-            </li>
+          </li>
           
-            <li>
-              <div class="f4 lh-title">
-                get_keyboard_timestamps
-              </div>
-              <div class="f5 lh-copy">
-                subscribe to high-resolution keyboard timestamp events
-              </div>
-              
+          <li class="mt2">
+            <div class="f4 lh-title" id="r:zwp_input_timestamps_manager_v1:get_keyboard_timestamps">
+              get_keyboard_timestamps
+            </div>
+            <div class="f5 lh-copy mv1 courier">
+              subscribe to high-resolution keyboard timestamp events
+            </div>
+            
 <div class="f6 lh-copy courier">
-  <span>struct zwp_input_timestamps_v1* </span><span class="orange">zwp_input_timestamps_manager_v1_get_keyboard_timestamps</span>(
+  <span>struct zwp_input_timestamps_v1* </span><span class="dark-blue">zwp_input_timestamps_manager_v1_get_keyboard_timestamps</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwp_input_timestamps_manager_v1*</span> zwp_input_timestamps_manager_v1,</div>
     
@@ -69,7 +113,7 @@ affected.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Creates a new input timestamps object that represents a subscription
+            <div class="f6 lh-copy ws-pre-line courier">Creates a new input timestamps object that represents a subscription
 to high-resolution timestamp events for all wl_keyboard events that
 carry a timestamp.
 
@@ -78,18 +122,18 @@ client action (e.g. release) or server-side changes, the input
 timestamps object becomes inert and the client should destroy it
 by calling zwp_input_timestamps_v1.destroy.
 </div>
-            </li>
+          </li>
           
-            <li>
-              <div class="f4 lh-title">
-                get_pointer_timestamps
-              </div>
-              <div class="f5 lh-copy">
-                subscribe to high-resolution pointer timestamp events
-              </div>
-              
+          <li class="mt2">
+            <div class="f4 lh-title" id="r:zwp_input_timestamps_manager_v1:get_pointer_timestamps">
+              get_pointer_timestamps
+            </div>
+            <div class="f5 lh-copy mv1 courier">
+              subscribe to high-resolution pointer timestamp events
+            </div>
+            
 <div class="f6 lh-copy courier">
-  <span>struct zwp_input_timestamps_v1* </span><span class="orange">zwp_input_timestamps_manager_v1_get_pointer_timestamps</span>(
+  <span>struct zwp_input_timestamps_v1* </span><span class="dark-blue">zwp_input_timestamps_manager_v1_get_pointer_timestamps</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwp_input_timestamps_manager_v1*</span> zwp_input_timestamps_manager_v1,</div>
     
@@ -97,7 +141,7 @@ by calling zwp_input_timestamps_v1.destroy.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Creates a new input timestamps object that represents a subscription
+            <div class="f6 lh-copy ws-pre-line courier">Creates a new input timestamps object that represents a subscription
 to high-resolution timestamp events for all wl_pointer events that
 carry a timestamp.
 
@@ -106,18 +150,18 @@ client action (e.g. release) or server-side changes, the input
 timestamps object becomes inert and the client should destroy it
 by calling zwp_input_timestamps_v1.destroy.
 </div>
-            </li>
+          </li>
           
-            <li>
-              <div class="f4 lh-title">
-                get_touch_timestamps
-              </div>
-              <div class="f5 lh-copy">
-                subscribe to high-resolution touch timestamp events
-              </div>
-              
+          <li class="mt2">
+            <div class="f4 lh-title" id="r:zwp_input_timestamps_manager_v1:get_touch_timestamps">
+              get_touch_timestamps
+            </div>
+            <div class="f5 lh-copy mv1 courier">
+              subscribe to high-resolution touch timestamp events
+            </div>
+            
 <div class="f6 lh-copy courier">
-  <span>struct zwp_input_timestamps_v1* </span><span class="orange">zwp_input_timestamps_manager_v1_get_touch_timestamps</span>(
+  <span>struct zwp_input_timestamps_v1* </span><span class="dark-blue">zwp_input_timestamps_manager_v1_get_touch_timestamps</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwp_input_timestamps_manager_v1*</span> zwp_input_timestamps_manager_v1,</div>
     
@@ -125,7 +169,7 @@ by calling zwp_input_timestamps_v1.destroy.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Creates a new input timestamps object that represents a subscription
+            <div class="f6 lh-copy ws-pre-line courier">Creates a new input timestamps object that represents a subscription
 to high-resolution timestamp events for all wl_touch events that
 carry a timestamp.
 
@@ -134,13 +178,13 @@ client action (e.g. release) or server-side changes, the input
 timestamps object becomes inert and the client should destroy it
 by calling zwp_input_timestamps_v1.destroy.
 </div>
-            </li>
+          </li>
           
         </ul>
       </li>
-    
-      <li>
-        <div class="f2 lh-copy">
+      
+      <li class="mt2">
+        <div class="f2 lh-copy" id="i:zwp_input_timestamps_v1">
           zwp_input_timestamps_v1
         </div>
         <div class="f6 lh-copy ws-pre-line courier">Provides high-resolution timestamp events for a set of subscribed input
@@ -149,34 +193,34 @@ zwp_input_timestamps_manager_v1 request used to create this object.
 </div>
         <ul class="list pl0">
           
-            <li>
-              <div class="f4 lh-title">
-                destroy
-              </div>
-              <div class="f5 lh-copy">
-                destroy the input timestamps object
-              </div>
-              
+          <li class="mt2">
+            <div class="f4 lh-title" id="r:zwp_input_timestamps_v1:destroy">
+              destroy
+            </div>
+            <div class="f5 lh-copy mv1 courier">
+              destroy the input timestamps object
+            </div>
+            
 <div class="f6 lh-copy courier">
-  <span>void </span><span class="orange">zwp_input_timestamps_v1_destroy</span>(
+  <span>void </span><span class="dark-blue">zwp_input_timestamps_v1_destroy</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwp_input_timestamps_v1*</span> zwp_input_timestamps_v1</div>
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Informs the server that the client will no longer be using this
+            <div class="f6 lh-copy ws-pre-line courier">Informs the server that the client will no longer be using this
 protocol object. After the server processes the request, no more
 timestamp events will be emitted.
 </div>
-            </li>
+          </li>
           
         </ul>
       </li>
-    
-  </ul>
+      
+    </ul>
 
-  <h2 class="f2 lh-title">Copyright Info</h2>
-  <div class="f6 lh-copy ws-pre-line courier">Copyright © 2017 Collabora, Ltd.
+    <h2 class="f4 lh-title">Copyright Info</h2>
+    <div class="f7 lh-copy ws-pre-line courier">Copyright © 2017 Collabora, Ltd.
 
 Permission is hereby granted, free of charge, to any person obtaining a
 copy of this software and associated documentation files (the &quot;Software&quot;),
@@ -197,6 +241,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
 FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 DEALINGS IN THE SOFTWARE.
 </div>
+  </div>
 
     </div>
 

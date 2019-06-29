@@ -19,11 +19,47 @@
 
     <div id="content">
       
-  <h1 class="f1 lh-title">relative_pointer_unstable_v1</h1>
-  <ul class="list pl0">
+  <div class="fl w-25 ph2">
     
-      <li>
-        <div class="f2 lh-copy">
+
+<div>
+  <ul class="list pl0">
+  
+    <li>
+      <a href="#i:zwp_relative_pointer_manager_v1" class="link blue underline-hover lh-copy">zwp_relative_pointer_manager_v1</a>
+      <ul class="list">
+        
+        <li>
+          <a href="#r:zwp_relative_pointer_manager_v1:destroy" class="link blue underline-hover lh-copy">destroy</a>
+        </li>
+        
+        <li>
+          <a href="#r:zwp_relative_pointer_manager_v1:get_relative_pointer" class="link blue underline-hover lh-copy">get_relative_pointer</a>
+        </li>
+        
+      </ul>
+    </li>
+  
+    <li>
+      <a href="#i:zwp_relative_pointer_v1" class="link blue underline-hover lh-copy">zwp_relative_pointer_v1</a>
+      <ul class="list">
+        
+        <li>
+          <a href="#r:zwp_relative_pointer_v1:destroy" class="link blue underline-hover lh-copy">destroy</a>
+        </li>
+        
+      </ul>
+    </li>
+  
+  </ul>
+</div>
+  </div>
+  <div class="fl w-75 ph2">
+    <h1 class="f1 lh-title">relative_pointer_unstable_v1</h1>
+    <ul class="list pl0">
+      
+      <li class="mt2">
+        <div class="f2 lh-copy" id="i:zwp_relative_pointer_manager_v1">
           zwp_relative_pointer_manager_v1
         </div>
         <div class="f6 lh-copy ws-pre-line courier">A global interface used for getting the relative pointer object for a
@@ -31,36 +67,36 @@ given pointer.
 </div>
         <ul class="list pl0">
           
-            <li>
-              <div class="f4 lh-title">
-                destroy
-              </div>
-              <div class="f5 lh-copy">
-                destroy the relative pointer manager object
-              </div>
-              
+          <li class="mt2">
+            <div class="f4 lh-title" id="r:zwp_relative_pointer_manager_v1:destroy">
+              destroy
+            </div>
+            <div class="f5 lh-copy mv1 courier">
+              destroy the relative pointer manager object
+            </div>
+            
 <div class="f6 lh-copy courier">
-  <span>void </span><span class="orange">zwp_relative_pointer_manager_v1_destroy</span>(
+  <span>void </span><span class="dark-blue">zwp_relative_pointer_manager_v1_destroy</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwp_relative_pointer_manager_v1*</span> zwp_relative_pointer_manager_v1</div>
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Used by the client to notify the server that it will no longer use this
+            <div class="f6 lh-copy ws-pre-line courier">Used by the client to notify the server that it will no longer use this
 relative pointer manager object.
   </div>
-            </li>
+          </li>
           
-            <li>
-              <div class="f4 lh-title">
-                get_relative_pointer
-              </div>
-              <div class="f5 lh-copy">
-                get a relative pointer object
-              </div>
-              
+          <li class="mt2">
+            <div class="f4 lh-title" id="r:zwp_relative_pointer_manager_v1:get_relative_pointer">
+              get_relative_pointer
+            </div>
+            <div class="f5 lh-copy mv1 courier">
+              get a relative pointer object
+            </div>
+            
 <div class="f6 lh-copy courier">
-  <span>struct zwp_relative_pointer_v1* </span><span class="orange">zwp_relative_pointer_manager_v1_get_relative_pointer</span>(
+  <span>struct zwp_relative_pointer_v1* </span><span class="dark-blue">zwp_relative_pointer_manager_v1_get_relative_pointer</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwp_relative_pointer_manager_v1*</span> zwp_relative_pointer_manager_v1,</div>
     
@@ -68,16 +104,16 @@ relative pointer manager object.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Create a relative pointer interface given a wl_pointer object. See the
+            <div class="f6 lh-copy ws-pre-line courier">Create a relative pointer interface given a wl_pointer object. See the
 wp_relative_pointer interface for more details.
   </div>
-            </li>
+          </li>
           
         </ul>
       </li>
-    
-      <li>
-        <div class="f2 lh-copy">
+      
+      <li class="mt2">
+        <div class="f2 lh-copy" id="i:zwp_relative_pointer_v1">
           zwp_relative_pointer_v1
         </div>
         <div class="f6 lh-copy ws-pre-line courier">A wp_relative_pointer object is an extension to the wl_pointer interface
@@ -87,31 +123,31 @@ focus.
 </div>
         <ul class="list pl0">
           
-            <li>
-              <div class="f4 lh-title">
-                destroy
-              </div>
-              <div class="f5 lh-copy">
-                release the relative pointer object
-              </div>
-              
+          <li class="mt2">
+            <div class="f4 lh-title" id="r:zwp_relative_pointer_v1:destroy">
+              destroy
+            </div>
+            <div class="f5 lh-copy mv1 courier">
+              release the relative pointer object
+            </div>
+            
 <div class="f6 lh-copy courier">
-  <span>void </span><span class="orange">zwp_relative_pointer_v1_destroy</span>(
+  <span>void </span><span class="dark-blue">zwp_relative_pointer_v1_destroy</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwp_relative_pointer_v1*</span> zwp_relative_pointer_v1</div>
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier"></div>
-            </li>
+            <div class="f6 lh-copy ws-pre-line courier"></div>
+          </li>
           
         </ul>
       </li>
-    
-  </ul>
+      
+    </ul>
 
-  <h2 class="f2 lh-title">Copyright Info</h2>
-  <div class="f6 lh-copy ws-pre-line courier">Copyright © 2014      Jonas Ådahl
+    <h2 class="f4 lh-title">Copyright Info</h2>
+    <div class="f7 lh-copy ws-pre-line courier">Copyright © 2014      Jonas Ådahl
 Copyright © 2015      Red Hat Inc.
 
 Permission is hereby granted, free of charge, to any person obtaining a
@@ -133,6 +169,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
 FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 DEALINGS IN THE SOFTWARE.
 </div>
+  </div>
 
     </div>
 
