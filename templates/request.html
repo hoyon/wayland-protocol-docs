@@ -1,6 +1,6 @@
 {# -*- engine:django -*- #}
 <div class="f6 lh-copy courier">
-  <span>{{ ret }}</span><span class="orange">{{ name }}</span>(
+  <span>{{ ret }}</span><span class="dark-blue">{{ name }}</span>(
     {% for arg in args %}
       <div class="ws-pre-wrap">    <span class="purple">{{ arg.0 }}</span> {{ arg.1 }}{% if args.len() != loop.index %},{% endif %}</div>
     {% endfor %}

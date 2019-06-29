@@ -7,18 +7,18 @@
   <h1 class="f1 lh-title">{{ protocol.name }}</h1>
   <ul class="list pl0">
     {% for interface in protocol.interfaces %}
-      <li>
+      <li class="mt2">
         <div class="f2 lh-copy">
           {{ interface.name }}
         </div>
         <div class="f6 lh-copy ws-pre-line courier">{{ interface|desc_full }}</div>
         <ul class="list pl0">
           {% for request in interface.requests %}
-            <li>
+            <li class="mt2">
               <div class="f4 lh-title">
                 {{ request.name }}
               </div>
-              <div class="f5 lh-copy">
+              <div class="f5 lh-copy mv1">
                 {{ request|desc_summary }}
               </div>
               {{ request|format_request(interface.name)|safe}}
@@ -30,6 +30,6 @@
     {% endfor %}
   </ul>
 
-  <h2 class="f2 lh-title">Copyright Info</h2>
-  <div class="f6 lh-copy ws-pre-line courier">{{ protocol.copyright|unwrap }}</div>
+  <h2 class="f4 lh-title">Copyright Info</h2>
+  <div class="f7 lh-copy ws-pre-line courier">{{ protocol.copyright|unwrap }}</div>
 {% endblock %}

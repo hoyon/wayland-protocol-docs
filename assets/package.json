@@ -2,13 +2,15 @@
   "private": true,
   "scripts": {
     "watch": "webpack --watch --run-dev",
+    "serve": "live-server --port=8080 ../site",
     "build": "webpack --run-prod"
   },
   "devDependencies": {
-    "css-loader": "^1.0.0",
+    "css-loader": "^3.0.0",
+    "live-server": "^1.2.1",
     "postcss-loader": "^3.0.0",
     "postcss-preset-env": "^6.1.1",
-    "precss": "^3.1.2",
+    "precss": "^4.0.0",
     "style-loader": "^0.23.0",
     "tachyons": "^4.11.1",
     "webpack": "^4.17.2",
