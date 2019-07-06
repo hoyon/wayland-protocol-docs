@@ -28,55 +28,109 @@
   
     <li>
       <a href="#i:zwp_pointer_constraints_v1" class="link blue underline-hover lh-copy">zwp_pointer_constraints_v1</a>
-      <ul class="list">
-        
-        <li>
-          <a href="#r:zwp_pointer_constraints_v1:destroy" class="link blue underline-hover lh-copy">destroy</a>
-        </li>
-        
-        <li>
-          <a href="#r:zwp_pointer_constraints_v1:lock_pointer" class="link blue underline-hover lh-copy">lock_pointer</a>
-        </li>
-        
-        <li>
-          <a href="#r:zwp_pointer_constraints_v1:confine_pointer" class="link blue underline-hover lh-copy">confine_pointer</a>
-        </li>
-        
-      </ul>
+
+      
+        <div>
+          <a href="#rh:zwp_pointer_constraints_v1" class="link blue underline-hover lh-copy pl3">Requests</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#r:zwp_pointer_constraints_v1:destroy" class="link blue underline-hover lh-copy">destroy</a>
+          </li>
+          
+          <li>
+            <a href="#r:zwp_pointer_constraints_v1:lock_pointer" class="link blue underline-hover lh-copy">lock_pointer</a>
+          </li>
+          
+          <li>
+            <a href="#r:zwp_pointer_constraints_v1:confine_pointer" class="link blue underline-hover lh-copy">confine_pointer</a>
+          </li>
+          
+        </ul>
+      
+
+      
     </li>
   
     <li>
       <a href="#i:zwp_locked_pointer_v1" class="link blue underline-hover lh-copy">zwp_locked_pointer_v1</a>
-      <ul class="list">
-        
-        <li>
-          <a href="#r:zwp_locked_pointer_v1:destroy" class="link blue underline-hover lh-copy">destroy</a>
-        </li>
-        
-        <li>
-          <a href="#r:zwp_locked_pointer_v1:set_cursor_position_hint" class="link blue underline-hover lh-copy">set_cursor_position_hint</a>
-        </li>
-        
-        <li>
-          <a href="#r:zwp_locked_pointer_v1:set_region" class="link blue underline-hover lh-copy">set_region</a>
-        </li>
-        
-      </ul>
+
+      
+        <div>
+          <a href="#rh:zwp_locked_pointer_v1" class="link blue underline-hover lh-copy pl3">Requests</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#r:zwp_locked_pointer_v1:destroy" class="link blue underline-hover lh-copy">destroy</a>
+          </li>
+          
+          <li>
+            <a href="#r:zwp_locked_pointer_v1:set_cursor_position_hint" class="link blue underline-hover lh-copy">set_cursor_position_hint</a>
+          </li>
+          
+          <li>
+            <a href="#r:zwp_locked_pointer_v1:set_region" class="link blue underline-hover lh-copy">set_region</a>
+          </li>
+          
+        </ul>
+      
+
+      
+        <div>
+          <a href="#eh:zwp_locked_pointer_v1" class="link blue underline-hover lh-copy pl3">Events</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#e:zwp_locked_pointer_v1:locked" class="link blue underline-hover lh-copy">locked</a>
+          </li>
+          
+          <li>
+            <a href="#e:zwp_locked_pointer_v1:unlocked" class="link blue underline-hover lh-copy">unlocked</a>
+          </li>
+          
+        </ul>
+      
     </li>
   
     <li>
       <a href="#i:zwp_confined_pointer_v1" class="link blue underline-hover lh-copy">zwp_confined_pointer_v1</a>
-      <ul class="list">
-        
-        <li>
-          <a href="#r:zwp_confined_pointer_v1:destroy" class="link blue underline-hover lh-copy">destroy</a>
-        </li>
-        
-        <li>
-          <a href="#r:zwp_confined_pointer_v1:set_region" class="link blue underline-hover lh-copy">set_region</a>
-        </li>
-        
-      </ul>
+
+      
+        <div>
+          <a href="#rh:zwp_confined_pointer_v1" class="link blue underline-hover lh-copy pl3">Requests</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#r:zwp_confined_pointer_v1:destroy" class="link blue underline-hover lh-copy">destroy</a>
+          </li>
+          
+          <li>
+            <a href="#r:zwp_confined_pointer_v1:set_region" class="link blue underline-hover lh-copy">set_region</a>
+          </li>
+          
+        </ul>
+      
+
+      
+        <div>
+          <a href="#eh:zwp_confined_pointer_v1" class="link blue underline-hover lh-copy pl3">Events</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#e:zwp_confined_pointer_v1:confined" class="link blue underline-hover lh-copy">confined</a>
+          </li>
+          
+          <li>
+            <a href="#e:zwp_confined_pointer_v1:unconfined" class="link blue underline-hover lh-copy">unconfined</a>
+          </li>
+          
+        </ul>
+      
     </li>
   
   </ul>
@@ -104,16 +158,19 @@ when another lock or confinement is active or requested on the same surface
 and with any of the wl_pointer objects of the same seat, an
 &#x27;already_constrained&#x27; error will be raised.
 </div>
-        <ul class="list pl0">
-          
-          <li class="mt2">
-            <div class="f4 lh-title" id="r:zwp_pointer_constraints_v1:destroy">
-              destroy
-            </div>
-            <div class="f5 lh-copy mv1 courier">
-              destroy the pointer constraints manager object
-            </div>
+
+        
+          <h3 class=" f5 lh-title" id="rh:zwp_pointer_constraints_v1">Requests</h3>
+          <ul class="list pl0">
             
+            <li class="mt2">
+              <div class="f4 lh-title" id="r:zwp_pointer_constraints_v1:destroy">
+                destroy
+              </div>
+              <div class="f5 lh-copy mv1 courier">
+                destroy the pointer constraints manager object
+              </div>
+              
 <div class="f6 lh-copy courier">
   <span>void </span><span class="dark-blue">zwp_pointer_constraints_v1_destroy</span>(
     
@@ -121,19 +178,19 @@ and with any of the wl_pointer objects of the same seat, an
     
   )
 </div>
-            <div class="f6 lh-copy ws-pre-line courier">Used by the client to notify the server that it will no longer use this
+              <div class="f6 lh-copy ws-pre-line courier">Used by the client to notify the server that it will no longer use this
 pointer constraints object.
   </div>
-          </li>
-          
-          <li class="mt2">
-            <div class="f4 lh-title" id="r:zwp_pointer_constraints_v1:lock_pointer">
-              lock_pointer
-            </div>
-            <div class="f5 lh-copy mv1 courier">
-              lock pointer to a position
-            </div>
+            </li>
             
+            <li class="mt2">
+              <div class="f4 lh-title" id="r:zwp_pointer_constraints_v1:lock_pointer">
+                lock_pointer
+              </div>
+              <div class="f5 lh-copy mv1 courier">
+                lock pointer to a position
+              </div>
+              
 <div class="f6 lh-copy courier">
   <span>struct zwp_locked_pointer_v1* </span><span class="dark-blue">zwp_pointer_constraints_v1_lock_pointer</span>(
     
@@ -149,7 +206,7 @@ pointer constraints object.
     
   )
 </div>
-            <div class="f6 lh-copy ws-pre-line courier">The lock_pointer request lets the client request to disable movements of
+              <div class="f6 lh-copy ws-pre-line courier">The lock_pointer request lets the client request to disable movements of
 the virtual pointer (i.e. the cursor), effectively locking the pointer
 to a position. This request may not take effect immediately; in the
 future, when the compositor deems implementation-specific constraints
@@ -184,16 +241,16 @@ relative motion events will still be emitted via wp_relative_pointer
 objects of the same seat. wl_pointer.axis and wl_pointer.button events
 are unaffected.
   </div>
-          </li>
-          
-          <li class="mt2">
-            <div class="f4 lh-title" id="r:zwp_pointer_constraints_v1:confine_pointer">
-              confine_pointer
-            </div>
-            <div class="f5 lh-copy mv1 courier">
-              confine pointer to a region
-            </div>
+            </li>
             
+            <li class="mt2">
+              <div class="f4 lh-title" id="r:zwp_pointer_constraints_v1:confine_pointer">
+                confine_pointer
+              </div>
+              <div class="f5 lh-copy mv1 courier">
+                confine pointer to a region
+              </div>
+              
 <div class="f6 lh-copy courier">
   <span>struct zwp_confined_pointer_v1* </span><span class="dark-blue">zwp_pointer_constraints_v1_confine_pointer</span>(
     
@@ -209,7 +266,7 @@ are unaffected.
     
   )
 </div>
-            <div class="f6 lh-copy ws-pre-line courier">The confine_pointer request lets the client request to confine the
+              <div class="f6 lh-copy ws-pre-line courier">The confine_pointer request lets the client request to confine the
 pointer cursor to a given region. This request may not take effect
 immediately; in the future, when the compositor deems implementation-
 specific constraints are satisfied, the pointer confinement will be
@@ -227,9 +284,13 @@ to interact with the confinement as well as receive updates about its
 state. See the the description of wp_confined_pointer for further
 information.
   </div>
-          </li>
-          
-        </ul>
+            </li>
+            
+          </ul>
+        
+
+        
+
       </li>
       
       <li class="mt2">
@@ -260,16 +321,19 @@ If the surface the lock was requested on is destroyed and the lock is not
 yet activated, the wp_locked_pointer object is now defunct and must be
 destroyed.
 </div>
-        <ul class="list pl0">
-          
-          <li class="mt2">
-            <div class="f4 lh-title" id="r:zwp_locked_pointer_v1:destroy">
-              destroy
-            </div>
-            <div class="f5 lh-copy mv1 courier">
-              destroy the locked pointer object
-            </div>
+
+        
+          <h3 class=" f5 lh-title" id="rh:zwp_locked_pointer_v1">Requests</h3>
+          <ul class="list pl0">
             
+            <li class="mt2">
+              <div class="f4 lh-title" id="r:zwp_locked_pointer_v1:destroy">
+                destroy
+              </div>
+              <div class="f5 lh-copy mv1 courier">
+                destroy the locked pointer object
+              </div>
+              
 <div class="f6 lh-copy courier">
   <span>void </span><span class="dark-blue">zwp_locked_pointer_v1_destroy</span>(
     
@@ -277,19 +341,19 @@ destroyed.
     
   )
 </div>
-            <div class="f6 lh-copy ws-pre-line courier">Destroy the locked pointer object. If applicable, the compositor will
+              <div class="f6 lh-copy ws-pre-line courier">Destroy the locked pointer object. If applicable, the compositor will
 unlock the pointer.
   </div>
-          </li>
-          
-          <li class="mt2">
-            <div class="f4 lh-title" id="r:zwp_locked_pointer_v1:set_cursor_position_hint">
-              set_cursor_position_hint
-            </div>
-            <div class="f5 lh-copy mv1 courier">
-              set the pointer cursor position hint
-            </div>
+            </li>
             
+            <li class="mt2">
+              <div class="f4 lh-title" id="r:zwp_locked_pointer_v1:set_cursor_position_hint">
+                set_cursor_position_hint
+              </div>
+              <div class="f5 lh-copy mv1 courier">
+                set the pointer cursor position hint
+              </div>
+              
 <div class="f6 lh-copy courier">
   <span>void </span><span class="dark-blue">zwp_locked_pointer_v1_set_cursor_position_hint</span>(
     
@@ -301,7 +365,7 @@ unlock the pointer.
     
   )
 </div>
-            <div class="f6 lh-copy ws-pre-line courier">Set the cursor position hint relative to the top left corner of the
+              <div class="f6 lh-copy ws-pre-line courier">Set the cursor position hint relative to the top left corner of the
 surface.
 
 If the client is drawing its own cursor, it should update the position
@@ -313,16 +377,16 @@ The cursor position hint is double buffered. The new hint will only take
 effect when the associated surface gets it pending state applied. See
 wl_surface.commit for details.
   </div>
-          </li>
-          
-          <li class="mt2">
-            <div class="f4 lh-title" id="r:zwp_locked_pointer_v1:set_region">
-              set_region
-            </div>
-            <div class="f5 lh-copy mv1 courier">
-              set a new lock region
-            </div>
+            </li>
             
+            <li class="mt2">
+              <div class="f4 lh-title" id="r:zwp_locked_pointer_v1:set_region">
+                set_region
+              </div>
+              <div class="f5 lh-copy mv1 courier">
+                set a new lock region
+              </div>
+              
 <div class="f6 lh-copy courier">
   <span>void </span><span class="dark-blue">zwp_locked_pointer_v1_set_region</span>(
     
@@ -332,7 +396,7 @@ wl_surface.commit for details.
     
   )
 </div>
-            <div class="f6 lh-copy ws-pre-line courier">Set a new region used to lock the pointer.
+              <div class="f6 lh-copy ws-pre-line courier">Set a new region used to lock the pointer.
 
 The new lock region is double-buffered. The new lock region will
 only take effect when the associated surface gets its pending state
@@ -340,9 +404,48 @@ applied. See wl_surface.commit for details.
 
 For details about the lock region, see wp_locked_pointer.
   </div>
-          </li>
-          
-        </ul>
+            </li>
+            
+          </ul>
+        
+
+        
+          <h3 class=" f5 lh-title" id="eh:zwp_locked_pointer_v1">Events</h3>
+          <ul class="list pl0">
+            
+            <li class="mt2">
+
+              <div class="f4 lh-title" id="e:zwp_locked_pointer_v1:locked">
+                locked
+              </div>
+              <div class="f5 lh-copy mv1 courier">
+                lock activation event
+              </div>
+              <div class="f6 lh-copy ws-pre-line courier">Notification that the pointer lock of the seat&#x27;s pointer is activated.
+  </div>
+            </li>
+            
+            <li class="mt2">
+
+              <div class="f4 lh-title" id="e:zwp_locked_pointer_v1:unlocked">
+                unlocked
+              </div>
+              <div class="f5 lh-copy mv1 courier">
+                lock deactivation event
+              </div>
+              <div class="f6 lh-copy ws-pre-line courier">Notification that the pointer lock of the seat&#x27;s pointer is no longer
+active. If this is a oneshot pointer lock (see
+wp_pointer_constraints.lifetime) this object is now defunct and should
+be destroyed. If this is a persistent pointer lock (see
+wp_pointer_constraints.lifetime) this pointer lock may again
+reactivate in the future.
+  </div>
+            </li>
+            
+          </ul>
+
+        
+
       </li>
       
       <li class="mt2">
@@ -366,16 +469,19 @@ If the compositor decides to unconfine the pointer the unconfined event is
 sent. The wp_confined_pointer object is at this point defunct and should
 be destroyed.
 </div>
-        <ul class="list pl0">
-          
-          <li class="mt2">
-            <div class="f4 lh-title" id="r:zwp_confined_pointer_v1:destroy">
-              destroy
-            </div>
-            <div class="f5 lh-copy mv1 courier">
-              destroy the confined pointer object
-            </div>
+
+        
+          <h3 class=" f5 lh-title" id="rh:zwp_confined_pointer_v1">Requests</h3>
+          <ul class="list pl0">
             
+            <li class="mt2">
+              <div class="f4 lh-title" id="r:zwp_confined_pointer_v1:destroy">
+                destroy
+              </div>
+              <div class="f5 lh-copy mv1 courier">
+                destroy the confined pointer object
+              </div>
+              
 <div class="f6 lh-copy courier">
   <span>void </span><span class="dark-blue">zwp_confined_pointer_v1_destroy</span>(
     
@@ -383,19 +489,19 @@ be destroyed.
     
   )
 </div>
-            <div class="f6 lh-copy ws-pre-line courier">Destroy the confined pointer object. If applicable, the compositor will
+              <div class="f6 lh-copy ws-pre-line courier">Destroy the confined pointer object. If applicable, the compositor will
 unconfine the pointer.
   </div>
-          </li>
-          
-          <li class="mt2">
-            <div class="f4 lh-title" id="r:zwp_confined_pointer_v1:set_region">
-              set_region
-            </div>
-            <div class="f5 lh-copy mv1 courier">
-              set a new confine region
-            </div>
+            </li>
             
+            <li class="mt2">
+              <div class="f4 lh-title" id="r:zwp_confined_pointer_v1:set_region">
+                set_region
+              </div>
+              <div class="f5 lh-copy mv1 courier">
+                set a new confine region
+              </div>
+              
 <div class="f6 lh-copy courier">
   <span>void </span><span class="dark-blue">zwp_confined_pointer_v1_set_region</span>(
     
@@ -405,7 +511,7 @@ unconfine the pointer.
     
   )
 </div>
-            <div class="f6 lh-copy ws-pre-line courier">Set a new region used to confine the pointer.
+              <div class="f6 lh-copy ws-pre-line courier">Set a new region used to confine the pointer.
 
 The new confine region is double-buffered. The new confine region will
 only take effect when the associated surface gets its pending state
@@ -422,9 +528,49 @@ pointer.
 
 For details about the confine region, see wp_confined_pointer.
   </div>
-          </li>
-          
-        </ul>
+            </li>
+            
+          </ul>
+        
+
+        
+          <h3 class=" f5 lh-title" id="eh:zwp_confined_pointer_v1">Events</h3>
+          <ul class="list pl0">
+            
+            <li class="mt2">
+
+              <div class="f4 lh-title" id="e:zwp_confined_pointer_v1:confined">
+                confined
+              </div>
+              <div class="f5 lh-copy mv1 courier">
+                pointer confined
+              </div>
+              <div class="f6 lh-copy ws-pre-line courier">Notification that the pointer confinement of the seat&#x27;s pointer is
+activated.
+  </div>
+            </li>
+            
+            <li class="mt2">
+
+              <div class="f4 lh-title" id="e:zwp_confined_pointer_v1:unconfined">
+                unconfined
+              </div>
+              <div class="f5 lh-copy mv1 courier">
+                pointer unconfined
+              </div>
+              <div class="f6 lh-copy ws-pre-line courier">Notification that the pointer confinement of the seat&#x27;s pointer is no
+longer active. If this is a oneshot pointer confinement (see
+wp_pointer_constraints.lifetime) this object is now defunct and should
+be destroyed. If this is a persistent pointer confinement (see
+wp_pointer_constraints.lifetime) this pointer confinement may again
+reactivate in the future.
+  </div>
+            </li>
+            
+          </ul>
+
+        
+
       </li>
       
     </ul>

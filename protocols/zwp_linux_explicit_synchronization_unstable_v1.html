@@ -28,43 +28,75 @@
   
     <li>
       <a href="#i:zwp_linux_explicit_synchronization_v1" class="link blue underline-hover lh-copy">zwp_linux_explicit_synchronization_v1</a>
-      <ul class="list">
-        
-        <li>
-          <a href="#r:zwp_linux_explicit_synchronization_v1:destroy" class="link blue underline-hover lh-copy">destroy</a>
-        </li>
-        
-        <li>
-          <a href="#r:zwp_linux_explicit_synchronization_v1:get_synchronization" class="link blue underline-hover lh-copy">get_synchronization</a>
-        </li>
-        
-      </ul>
+
+      
+        <div>
+          <a href="#rh:zwp_linux_explicit_synchronization_v1" class="link blue underline-hover lh-copy pl3">Requests</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#r:zwp_linux_explicit_synchronization_v1:destroy" class="link blue underline-hover lh-copy">destroy</a>
+          </li>
+          
+          <li>
+            <a href="#r:zwp_linux_explicit_synchronization_v1:get_synchronization" class="link blue underline-hover lh-copy">get_synchronization</a>
+          </li>
+          
+        </ul>
+      
+
+      
     </li>
   
     <li>
       <a href="#i:zwp_linux_surface_synchronization_v1" class="link blue underline-hover lh-copy">zwp_linux_surface_synchronization_v1</a>
-      <ul class="list">
-        
-        <li>
-          <a href="#r:zwp_linux_surface_synchronization_v1:destroy" class="link blue underline-hover lh-copy">destroy</a>
-        </li>
-        
-        <li>
-          <a href="#r:zwp_linux_surface_synchronization_v1:set_acquire_fence" class="link blue underline-hover lh-copy">set_acquire_fence</a>
-        </li>
-        
-        <li>
-          <a href="#r:zwp_linux_surface_synchronization_v1:get_release" class="link blue underline-hover lh-copy">get_release</a>
-        </li>
-        
-      </ul>
+
+      
+        <div>
+          <a href="#rh:zwp_linux_surface_synchronization_v1" class="link blue underline-hover lh-copy pl3">Requests</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#r:zwp_linux_surface_synchronization_v1:destroy" class="link blue underline-hover lh-copy">destroy</a>
+          </li>
+          
+          <li>
+            <a href="#r:zwp_linux_surface_synchronization_v1:set_acquire_fence" class="link blue underline-hover lh-copy">set_acquire_fence</a>
+          </li>
+          
+          <li>
+            <a href="#r:zwp_linux_surface_synchronization_v1:get_release" class="link blue underline-hover lh-copy">get_release</a>
+          </li>
+          
+        </ul>
+      
+
+      
     </li>
   
     <li>
       <a href="#i:zwp_linux_buffer_release_v1" class="link blue underline-hover lh-copy">zwp_linux_buffer_release_v1</a>
-      <ul class="list">
-        
-      </ul>
+
+      
+
+      
+        <div>
+          <a href="#eh:zwp_linux_buffer_release_v1" class="link blue underline-hover lh-copy pl3">Events</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#e:zwp_linux_buffer_release_v1:fenced_release" class="link blue underline-hover lh-copy">fenced_release</a>
+          </li>
+          
+          <li>
+            <a href="#e:zwp_linux_buffer_release_v1:immediate_release" class="link blue underline-hover lh-copy">immediate_release</a>
+          </li>
+          
+        </ul>
+      
     </li>
   
   </ul>
@@ -95,16 +127,19 @@ Once the protocol is to be declared stable, the &#x27;z&#x27; prefix and the
 version number in the protocol and interface names are removed and the
 interface version number is reset.
 </div>
-        <ul class="list pl0">
-          
-          <li class="mt2">
-            <div class="f4 lh-title" id="r:zwp_linux_explicit_synchronization_v1:destroy">
-              destroy
-            </div>
-            <div class="f5 lh-copy mv1 courier">
-              destroy explicit synchronization factory object
-            </div>
+
+        
+          <h3 class=" f5 lh-title" id="rh:zwp_linux_explicit_synchronization_v1">Requests</h3>
+          <ul class="list pl0">
             
+            <li class="mt2">
+              <div class="f4 lh-title" id="r:zwp_linux_explicit_synchronization_v1:destroy">
+                destroy
+              </div>
+              <div class="f5 lh-copy mv1 courier">
+                destroy explicit synchronization factory object
+              </div>
+              
 <div class="f6 lh-copy courier">
   <span>void </span><span class="dark-blue">zwp_linux_explicit_synchronization_v1_destroy</span>(
     
@@ -112,20 +147,20 @@ interface version number is reset.
     
   )
 </div>
-            <div class="f6 lh-copy ws-pre-line courier">Destroy this explicit synchronization factory object. Other objects,
+              <div class="f6 lh-copy ws-pre-line courier">Destroy this explicit synchronization factory object. Other objects,
 including zwp_linux_surface_synchronization_v1 objects created by this
 factory, shall not be affected by this request.
 </div>
-          </li>
-          
-          <li class="mt2">
-            <div class="f4 lh-title" id="r:zwp_linux_explicit_synchronization_v1:get_synchronization">
-              get_synchronization
-            </div>
-            <div class="f5 lh-copy mv1 courier">
-              extend surface interface for explicit synchronization
-            </div>
+            </li>
             
+            <li class="mt2">
+              <div class="f4 lh-title" id="r:zwp_linux_explicit_synchronization_v1:get_synchronization">
+                get_synchronization
+              </div>
+              <div class="f5 lh-copy mv1 courier">
+                extend surface interface for explicit synchronization
+              </div>
+              
 <div class="f6 lh-copy courier">
   <span>struct zwp_linux_surface_synchronization_v1* </span><span class="dark-blue">zwp_linux_explicit_synchronization_v1_get_synchronization</span>(
     
@@ -135,7 +170,7 @@ factory, shall not be affected by this request.
     
   )
 </div>
-            <div class="f6 lh-copy ws-pre-line courier">Instantiate an interface extension for the given wl_surface to provide
+              <div class="f6 lh-copy ws-pre-line courier">Instantiate an interface extension for the given wl_surface to provide
 explicit synchronization.
 
 If the given wl_surface already has an explicit synchronization object
@@ -147,9 +182,13 @@ extension internally. If a client is using such an API for a
 wl_surface, it should not directly use this extension on that surface,
 to avoid raising a synchronization_exists protocol error.
 </div>
-          </li>
-          
-        </ul>
+            </li>
+            
+          </ul>
+        
+
+        
+
       </li>
       
       <li class="mt2">
@@ -187,16 +226,19 @@ of platform specific buffers described in the EGL_WL_bind_wayland_display
 extension. Compositors are free to support explicit synchronization for
 additional buffer types.
 </div>
-        <ul class="list pl0">
-          
-          <li class="mt2">
-            <div class="f4 lh-title" id="r:zwp_linux_surface_synchronization_v1:destroy">
-              destroy
-            </div>
-            <div class="f5 lh-copy mv1 courier">
-              destroy synchronization object
-            </div>
+
+        
+          <h3 class=" f5 lh-title" id="rh:zwp_linux_surface_synchronization_v1">Requests</h3>
+          <ul class="list pl0">
             
+            <li class="mt2">
+              <div class="f4 lh-title" id="r:zwp_linux_surface_synchronization_v1:destroy">
+                destroy
+              </div>
+              <div class="f5 lh-copy mv1 courier">
+                destroy synchronization object
+              </div>
+              
 <div class="f6 lh-copy courier">
   <span>void </span><span class="dark-blue">zwp_linux_surface_synchronization_v1_destroy</span>(
     
@@ -204,7 +246,7 @@ additional buffer types.
     
   )
 </div>
-            <div class="f6 lh-copy ws-pre-line courier">Destroy this explicit synchronization object.
+              <div class="f6 lh-copy ws-pre-line courier">Destroy this explicit synchronization object.
 
 Any fence set by this object with set_acquire_fence since the last
 commit will be discarded by the server. Any fences set by this object
@@ -213,16 +255,16 @@ before the last commit are not affected.
 zwp_linux_buffer_release_v1 objects created by this object are not
 affected by this request.
 </div>
-          </li>
-          
-          <li class="mt2">
-            <div class="f4 lh-title" id="r:zwp_linux_surface_synchronization_v1:set_acquire_fence">
-              set_acquire_fence
-            </div>
-            <div class="f5 lh-copy mv1 courier">
-              set the acquire fence
-            </div>
+            </li>
             
+            <li class="mt2">
+              <div class="f4 lh-title" id="r:zwp_linux_surface_synchronization_v1:set_acquire_fence">
+                set_acquire_fence
+              </div>
+              <div class="f5 lh-copy mv1 courier">
+                set the acquire fence
+              </div>
+              
 <div class="f6 lh-copy courier">
   <span>void </span><span class="dark-blue">zwp_linux_surface_synchronization_v1_set_acquire_fence</span>(
     
@@ -232,7 +274,7 @@ affected by this request.
     
   )
 </div>
-            <div class="f6 lh-copy ws-pre-line courier">Set the acquire fence that must be signaled before the compositor
+              <div class="f6 lh-copy ws-pre-line courier">Set the acquire fence that must be signaled before the compositor
 may sample from the buffer attached with wl_surface.attach. The fence
 is a dma_fence kernel object.
 
@@ -256,16 +298,16 @@ synchronization, an UNSUPPORTED_BUFFER error is raised.
 If at surface commit time there is no buffer attached, a NO_BUFFER
 error is raised.
 </div>
-          </li>
-          
-          <li class="mt2">
-            <div class="f4 lh-title" id="r:zwp_linux_surface_synchronization_v1:get_release">
-              get_release
-            </div>
-            <div class="f5 lh-copy mv1 courier">
-              release fence for last-attached buffer
-            </div>
+            </li>
             
+            <li class="mt2">
+              <div class="f4 lh-title" id="r:zwp_linux_surface_synchronization_v1:get_release">
+                get_release
+              </div>
+              <div class="f5 lh-copy mv1 courier">
+                release fence for last-attached buffer
+              </div>
+              
 <div class="f6 lh-copy courier">
   <span>struct zwp_linux_buffer_release_v1* </span><span class="dark-blue">zwp_linux_surface_synchronization_v1_get_release</span>(
     
@@ -273,7 +315,7 @@ error is raised.
     
   )
 </div>
-            <div class="f6 lh-copy ws-pre-line courier">Create a listener for the release of the buffer attached by the
+              <div class="f6 lh-copy ws-pre-line courier">Create a listener for the release of the buffer attached by the
 client with wl_surface.attach. See zwp_linux_buffer_release_v1
 documentation for more information.
 
@@ -291,9 +333,13 @@ is raised.
 If at surface commit time there is no buffer attached, a NO_BUFFER
 error is raised.
 </div>
-          </li>
-          
-        </ul>
+            </li>
+            
+          </ul>
+        
+
+        
+
       </li>
       
       <li class="mt2">
@@ -318,9 +364,61 @@ required to send those events.
 Once a buffer release object has delivered a &#x27;fenced_release&#x27; or an
 &#x27;immediate_release&#x27; event it is automatically destroyed.
 </div>
-        <ul class="list pl0">
-          
-        </ul>
+
+        
+
+        
+          <h3 class=" f5 lh-title" id="eh:zwp_linux_buffer_release_v1">Events</h3>
+          <ul class="list pl0">
+            
+            <li class="mt2">
+
+              <div class="f4 lh-title" id="e:zwp_linux_buffer_release_v1:fenced_release">
+                fenced_release
+              </div>
+              <div class="f5 lh-copy mv1 courier">
+                release buffer with fence
+              </div>
+              <div class="f6 lh-copy ws-pre-line courier">Sent when the compositor has finalised its usage of the associated
+buffer for the relevant commit, providing a dma_fence which will be
+signaled when all operations by the compositor on that buffer for that
+commit have finished.
+
+Once the fence has signaled, and assuming the associated buffer is not
+pending release from other wl_surface.commit requests, no additional
+explicit or implicit synchronization is required to safely reuse or
+destroy the buffer.
+
+This event destroys the zwp_linux_buffer_release_v1 object.
+</div>
+            </li>
+            
+            <li class="mt2">
+
+              <div class="f4 lh-title" id="e:zwp_linux_buffer_release_v1:immediate_release">
+                immediate_release
+              </div>
+              <div class="f5 lh-copy mv1 courier">
+                release buffer immediately
+              </div>
+              <div class="f6 lh-copy ws-pre-line courier">Sent when the compositor has finalised its usage of the associated
+buffer for the relevant commit, and either performed no operations
+using it, or has a guarantee that all its operations on that buffer for
+that commit have finished.
+
+Once this event is received, and assuming the associated buffer is not
+pending release from other wl_surface.commit requests, no additional
+explicit or implicit synchronization is required to safely reuse or
+destroy the buffer.
+
+This event destroys the zwp_linux_buffer_release_v1 object.
+</div>
+            </li>
+            
+          </ul>
+
+        
+
       </li>
       
     </ul>

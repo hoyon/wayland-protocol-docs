@@ -28,28 +28,44 @@
   
     <li>
       <a href="#i:zwp_idle_inhibit_manager_v1" class="link blue underline-hover lh-copy">zwp_idle_inhibit_manager_v1</a>
-      <ul class="list">
-        
-        <li>
-          <a href="#r:zwp_idle_inhibit_manager_v1:destroy" class="link blue underline-hover lh-copy">destroy</a>
-        </li>
-        
-        <li>
-          <a href="#r:zwp_idle_inhibit_manager_v1:create_inhibitor" class="link blue underline-hover lh-copy">create_inhibitor</a>
-        </li>
-        
-      </ul>
+
+      
+        <div>
+          <a href="#rh:zwp_idle_inhibit_manager_v1" class="link blue underline-hover lh-copy pl3">Requests</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#r:zwp_idle_inhibit_manager_v1:destroy" class="link blue underline-hover lh-copy">destroy</a>
+          </li>
+          
+          <li>
+            <a href="#r:zwp_idle_inhibit_manager_v1:create_inhibitor" class="link blue underline-hover lh-copy">create_inhibitor</a>
+          </li>
+          
+        </ul>
+      
+
+      
     </li>
   
     <li>
       <a href="#i:zwp_idle_inhibitor_v1" class="link blue underline-hover lh-copy">zwp_idle_inhibitor_v1</a>
-      <ul class="list">
-        
-        <li>
-          <a href="#r:zwp_idle_inhibitor_v1:destroy" class="link blue underline-hover lh-copy">destroy</a>
-        </li>
-        
-      </ul>
+
+      
+        <div>
+          <a href="#rh:zwp_idle_inhibitor_v1" class="link blue underline-hover lh-copy pl3">Requests</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#r:zwp_idle_inhibitor_v1:destroy" class="link blue underline-hover lh-copy">destroy</a>
+          </li>
+          
+        </ul>
+      
+
+      
     </li>
   
   </ul>
@@ -76,16 +92,19 @@ Once the protocol is to be declared stable, the &#x27;z&#x27; prefix and the
 version number in the protocol and interface names are removed and the
 interface version number is reset.
 </div>
-        <ul class="list pl0">
-          
-          <li class="mt2">
-            <div class="f4 lh-title" id="r:zwp_idle_inhibit_manager_v1:destroy">
-              destroy
-            </div>
-            <div class="f5 lh-copy mv1 courier">
-              destroy the idle inhibitor object
-            </div>
+
+        
+          <h3 class=" f5 lh-title" id="rh:zwp_idle_inhibit_manager_v1">Requests</h3>
+          <ul class="list pl0">
             
+            <li class="mt2">
+              <div class="f4 lh-title" id="r:zwp_idle_inhibit_manager_v1:destroy">
+                destroy
+              </div>
+              <div class="f5 lh-copy mv1 courier">
+                destroy the idle inhibitor object
+              </div>
+              
 <div class="f6 lh-copy courier">
   <span>void </span><span class="dark-blue">zwp_idle_inhibit_manager_v1_destroy</span>(
     
@@ -93,18 +112,18 @@ interface version number is reset.
     
   )
 </div>
-            <div class="f6 lh-copy ws-pre-line courier">Destroy the inhibit manager.
+              <div class="f6 lh-copy ws-pre-line courier">Destroy the inhibit manager.
   </div>
-          </li>
-          
-          <li class="mt2">
-            <div class="f4 lh-title" id="r:zwp_idle_inhibit_manager_v1:create_inhibitor">
-              create_inhibitor
-            </div>
-            <div class="f5 lh-copy mv1 courier">
-              create a new inhibitor object
-            </div>
+            </li>
             
+            <li class="mt2">
+              <div class="f4 lh-title" id="r:zwp_idle_inhibit_manager_v1:create_inhibitor">
+                create_inhibitor
+              </div>
+              <div class="f5 lh-copy mv1 courier">
+                create a new inhibitor object
+              </div>
+              
 <div class="f6 lh-copy courier">
   <span>struct zwp_idle_inhibitor_v1* </span><span class="dark-blue">zwp_idle_inhibit_manager_v1_create_inhibitor</span>(
     
@@ -114,11 +133,15 @@ interface version number is reset.
     
   )
 </div>
-            <div class="f6 lh-copy ws-pre-line courier">Create a new inhibitor object associated with the given surface.
+              <div class="f6 lh-copy ws-pre-line courier">Create a new inhibitor object associated with the given surface.
   </div>
-          </li>
-          
-        </ul>
+            </li>
+            
+          </ul>
+        
+
+        
+
       </li>
       
       <li class="mt2">
@@ -138,16 +161,19 @@ Likewise, the inhibitor isn&#x27;t honored if the system was already idled at
 the time the inhibitor was established, although if the system later
 de-idles and re-idles the inhibitor will take effect.
 </div>
-        <ul class="list pl0">
-          
-          <li class="mt2">
-            <div class="f4 lh-title" id="r:zwp_idle_inhibitor_v1:destroy">
-              destroy
-            </div>
-            <div class="f5 lh-copy mv1 courier">
-              destroy the idle inhibitor object
-            </div>
+
+        
+          <h3 class=" f5 lh-title" id="rh:zwp_idle_inhibitor_v1">Requests</h3>
+          <ul class="list pl0">
             
+            <li class="mt2">
+              <div class="f4 lh-title" id="r:zwp_idle_inhibitor_v1:destroy">
+                destroy
+              </div>
+              <div class="f5 lh-copy mv1 courier">
+                destroy the idle inhibitor object
+              </div>
+              
 <div class="f6 lh-copy courier">
   <span>void </span><span class="dark-blue">zwp_idle_inhibitor_v1_destroy</span>(
     
@@ -155,11 +181,15 @@ de-idles and re-idles the inhibitor will take effect.
     
   )
 </div>
-            <div class="f6 lh-copy ws-pre-line courier">Remove the inhibitor effect from the associated wl_surface.
+              <div class="f6 lh-copy ws-pre-line courier">Remove the inhibitor effect from the associated wl_surface.
   </div>
-          </li>
-          
-        </ul>
+            </li>
+            
+          </ul>
+        
+
+        
+
       </li>
       
     </ul>

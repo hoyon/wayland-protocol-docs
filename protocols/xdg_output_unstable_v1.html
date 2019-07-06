@@ -28,28 +28,71 @@
   
     <li>
       <a href="#i:zxdg_output_manager_v1" class="link blue underline-hover lh-copy">zxdg_output_manager_v1</a>
-      <ul class="list">
-        
-        <li>
-          <a href="#r:zxdg_output_manager_v1:destroy" class="link blue underline-hover lh-copy">destroy</a>
-        </li>
-        
-        <li>
-          <a href="#r:zxdg_output_manager_v1:get_xdg_output" class="link blue underline-hover lh-copy">get_xdg_output</a>
-        </li>
-        
-      </ul>
+
+      
+        <div>
+          <a href="#rh:zxdg_output_manager_v1" class="link blue underline-hover lh-copy pl3">Requests</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#r:zxdg_output_manager_v1:destroy" class="link blue underline-hover lh-copy">destroy</a>
+          </li>
+          
+          <li>
+            <a href="#r:zxdg_output_manager_v1:get_xdg_output" class="link blue underline-hover lh-copy">get_xdg_output</a>
+          </li>
+          
+        </ul>
+      
+
+      
     </li>
   
     <li>
       <a href="#i:zxdg_output_v1" class="link blue underline-hover lh-copy">zxdg_output_v1</a>
-      <ul class="list">
-        
-        <li>
-          <a href="#r:zxdg_output_v1:destroy" class="link blue underline-hover lh-copy">destroy</a>
-        </li>
-        
-      </ul>
+
+      
+        <div>
+          <a href="#rh:zxdg_output_v1" class="link blue underline-hover lh-copy pl3">Requests</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#r:zxdg_output_v1:destroy" class="link blue underline-hover lh-copy">destroy</a>
+          </li>
+          
+        </ul>
+      
+
+      
+        <div>
+          <a href="#eh:zxdg_output_v1" class="link blue underline-hover lh-copy pl3">Events</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#e:zxdg_output_v1:logical_position" class="link blue underline-hover lh-copy">logical_position</a>
+          </li>
+          
+          <li>
+            <a href="#e:zxdg_output_v1:logical_size" class="link blue underline-hover lh-copy">logical_size</a>
+          </li>
+          
+          <li>
+            <a href="#e:zxdg_output_v1:done" class="link blue underline-hover lh-copy">done</a>
+          </li>
+          
+          <li>
+            <a href="#e:zxdg_output_v1:name" class="link blue underline-hover lh-copy">name</a>
+          </li>
+          
+          <li>
+            <a href="#e:zxdg_output_v1:description" class="link blue underline-hover lh-copy">description</a>
+          </li>
+          
+        </ul>
+      
     </li>
   
   </ul>
@@ -65,16 +108,19 @@
         </div>
         <div class="f6 lh-copy ws-pre-line courier">A global factory interface for xdg_output objects.
 </div>
-        <ul class="list pl0">
-          
-          <li class="mt2">
-            <div class="f4 lh-title" id="r:zxdg_output_manager_v1:destroy">
-              destroy
-            </div>
-            <div class="f5 lh-copy mv1 courier">
-              destroy the xdg_output_manager object
-            </div>
+
+        
+          <h3 class=" f5 lh-title" id="rh:zxdg_output_manager_v1">Requests</h3>
+          <ul class="list pl0">
             
+            <li class="mt2">
+              <div class="f4 lh-title" id="r:zxdg_output_manager_v1:destroy">
+                destroy
+              </div>
+              <div class="f5 lh-copy mv1 courier">
+                destroy the xdg_output_manager object
+              </div>
+              
 <div class="f6 lh-copy courier">
   <span>void </span><span class="dark-blue">zxdg_output_manager_v1_destroy</span>(
     
@@ -82,21 +128,21 @@
     
   )
 </div>
-            <div class="f6 lh-copy ws-pre-line courier">Using this request a client can tell the server that it is not
+              <div class="f6 lh-copy ws-pre-line courier">Using this request a client can tell the server that it is not
 going to use the xdg_output_manager object anymore.
 
 Any objects already created through this instance are not affected.
   </div>
-          </li>
-          
-          <li class="mt2">
-            <div class="f4 lh-title" id="r:zxdg_output_manager_v1:get_xdg_output">
-              get_xdg_output
-            </div>
-            <div class="f5 lh-copy mv1 courier">
-              create an xdg output from a wl_output
-            </div>
+            </li>
             
+            <li class="mt2">
+              <div class="f4 lh-title" id="r:zxdg_output_manager_v1:get_xdg_output">
+                get_xdg_output
+              </div>
+              <div class="f5 lh-copy mv1 courier">
+                create an xdg output from a wl_output
+              </div>
+              
 <div class="f6 lh-copy courier">
   <span>struct zxdg_output_v1* </span><span class="dark-blue">zxdg_output_manager_v1_get_xdg_output</span>(
     
@@ -106,11 +152,15 @@ Any objects already created through this instance are not affected.
     
   )
 </div>
-            <div class="f6 lh-copy ws-pre-line courier">This creates a new xdg_output object for the given wl_output.
+              <div class="f6 lh-copy ws-pre-line courier">This creates a new xdg_output object for the given wl_output.
   </div>
-          </li>
-          
-        </ul>
+            </li>
+            
+          </ul>
+        
+
+        
+
       </li>
       
       <li class="mt2">
@@ -122,16 +172,19 @@ Any objects already created through this instance are not affected.
 This typically corresponds to a monitor that displays part of the
 compositor space.
 </div>
-        <ul class="list pl0">
-          
-          <li class="mt2">
-            <div class="f4 lh-title" id="r:zxdg_output_v1:destroy">
-              destroy
-            </div>
-            <div class="f5 lh-copy mv1 courier">
-              destroy the xdg_output object
-            </div>
+
+        
+          <h3 class=" f5 lh-title" id="rh:zxdg_output_v1">Requests</h3>
+          <ul class="list pl0">
             
+            <li class="mt2">
+              <div class="f4 lh-title" id="r:zxdg_output_v1:destroy">
+                destroy
+              </div>
+              <div class="f5 lh-copy mv1 courier">
+                destroy the xdg_output object
+              </div>
+              
 <div class="f6 lh-copy courier">
   <span>void </span><span class="dark-blue">zxdg_output_v1_destroy</span>(
     
@@ -139,12 +192,153 @@ compositor space.
     
   )
 </div>
-            <div class="f6 lh-copy ws-pre-line courier">Using this request a client can tell the server that it is not
+              <div class="f6 lh-copy ws-pre-line courier">Using this request a client can tell the server that it is not
 going to use the xdg_output object anymore.
   </div>
-          </li>
-          
-        </ul>
+            </li>
+            
+          </ul>
+        
+
+        
+          <h3 class=" f5 lh-title" id="eh:zxdg_output_v1">Events</h3>
+          <ul class="list pl0">
+            
+            <li class="mt2">
+
+              <div class="f4 lh-title" id="e:zxdg_output_v1:logical_position">
+                logical_position
+              </div>
+              <div class="f5 lh-copy mv1 courier">
+                position of the output within the global compositor space
+              </div>
+              <div class="f6 lh-copy ws-pre-line courier">The position event describes the location of the wl_output within
+the global compositor space.
+
+The logical_position event is sent after creating an xdg_output
+(see xdg_output_manager.get_xdg_output) and whenever the location
+of the output changes within the global compositor space.
+  </div>
+            </li>
+            
+            <li class="mt2">
+
+              <div class="f4 lh-title" id="e:zxdg_output_v1:logical_size">
+                logical_size
+              </div>
+              <div class="f5 lh-copy mv1 courier">
+                size of the output in the global compositor space
+              </div>
+              <div class="f6 lh-copy ws-pre-line courier">The logical_size event describes the size of the output in the
+global compositor space.
+
+For example, a surface without any buffer scale, transformation
+nor rotation set, with the size matching the logical_size will
+have the same size as the corresponding output when displayed.
+
+Most regular Wayland clients should not pay attention to the
+logical size and would rather rely on xdg_shell interfaces.
+
+Some clients such as Xwayland, however, need this to configure
+their surfaces in the global compositor space as the compositor
+may apply a different scale from what is advertised by the output
+scaling property (to achieve fractional scaling, for example).
+
+For example, for a wl_output mode 3840×2160 and a scale factor 2:
+
+- A compositor not scaling the surface buffers will advertise a
+  logical size of 3840×2160,
+
+- A compositor automatically scaling the surface buffers will
+  advertise a logical size of 1920×1080,
+
+- A compositor using a fractional scale of 1.5 will advertise a
+  logical size to 2560×1620.
+
+For example, for a wl_output mode 1920×1080 and a 90 degree rotation,
+the compositor will advertise a logical size of 1080x1920.
+
+The logical_size event is sent after creating an xdg_output
+(see xdg_output_manager.get_xdg_output) and whenever the logical
+size of the output changes, either as a result of a change in the
+applied scale or because of a change in the corresponding output
+mode(see wl_output.mode) or transform (see wl_output.transform).
+  </div>
+            </li>
+            
+            <li class="mt2">
+
+              <div class="f4 lh-title" id="e:zxdg_output_v1:done">
+                done
+              </div>
+              <div class="f5 lh-copy mv1 courier">
+                all information about the output have been sent
+              </div>
+              <div class="f6 lh-copy ws-pre-line courier">This event is sent after all other properties of an xdg_output
+have been sent.
+
+This allows changes to the xdg_output properties to be seen as
+atomic, even if they happen via multiple events.
+  </div>
+            </li>
+            
+            <li class="mt2">
+
+              <div class="f4 lh-title" id="e:zxdg_output_v1:name">
+                name
+              </div>
+              <div class="f5 lh-copy mv1 courier">
+                name of this output
+              </div>
+              <div class="f6 lh-copy ws-pre-line courier">Many compositors will assign names to their outputs, show them to the
+user, allow them to be configured by name, etc. The client may wish to
+know this name as well to offer the user similar behaviors.
+
+The naming convention is compositor defined, but limited to
+alphanumeric characters and dashes (-). Each name is unique among all
+wl_output globals, but if a wl_output global is destroyed the same name
+may be reused later. The names will also remain consistent across
+sessions with the same hardware and software configuration.
+
+Examples of names include &#x27;HDMI-A-1&#x27;, &#x27;WL-1&#x27;, &#x27;X11-1&#x27;, etc. However, do
+not assume that the name is a reflection of an underlying DRM
+connector, X11 connection, etc.
+
+The name event is sent after creating an xdg_output (see
+xdg_output_manager.get_xdg_output). This event is only sent once per
+xdg_output, and the name does not change over the lifetime of the
+wl_output global.
+  </div>
+            </li>
+            
+            <li class="mt2">
+
+              <div class="f4 lh-title" id="e:zxdg_output_v1:description">
+                description
+              </div>
+              <div class="f5 lh-copy mv1 courier">
+                human-readable description of this output
+              </div>
+              <div class="f6 lh-copy ws-pre-line courier">Many compositors can produce human-readable descriptions of their
+outputs.  The client may wish to know this description as well, to
+communicate the user for various purposes.
+
+The description is a UTF-8 string with no convention defined for its
+contents. Examples might include &#x27;Foocorp 11&quot; Display&#x27; or &#x27;Virtual X11
+output via :1&#x27;.
+
+The description event is sent after creating an xdg_output (see
+xdg_output_manager.get_xdg_output). This event is only sent once per
+xdg_output, and the description does not change over the lifetime of
+the wl_output global. The description is optional, and may not be sent
+at all.
+  </div>
+            </li>
+            
+          </ul>
+
+        
+
       </li>
       
     </ul>

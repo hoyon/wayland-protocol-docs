@@ -28,40 +28,86 @@
   
     <li>
       <a href="#i:zwp_linux_dmabuf_v1" class="link blue underline-hover lh-copy">zwp_linux_dmabuf_v1</a>
-      <ul class="list">
-        
-        <li>
-          <a href="#r:zwp_linux_dmabuf_v1:destroy" class="link blue underline-hover lh-copy">destroy</a>
-        </li>
-        
-        <li>
-          <a href="#r:zwp_linux_dmabuf_v1:create_params" class="link blue underline-hover lh-copy">create_params</a>
-        </li>
-        
-      </ul>
+
+      
+        <div>
+          <a href="#rh:zwp_linux_dmabuf_v1" class="link blue underline-hover lh-copy pl3">Requests</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#r:zwp_linux_dmabuf_v1:destroy" class="link blue underline-hover lh-copy">destroy</a>
+          </li>
+          
+          <li>
+            <a href="#r:zwp_linux_dmabuf_v1:create_params" class="link blue underline-hover lh-copy">create_params</a>
+          </li>
+          
+        </ul>
+      
+
+      
+        <div>
+          <a href="#eh:zwp_linux_dmabuf_v1" class="link blue underline-hover lh-copy pl3">Events</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#e:zwp_linux_dmabuf_v1:format" class="link blue underline-hover lh-copy">format</a>
+          </li>
+          
+          <li>
+            <a href="#e:zwp_linux_dmabuf_v1:modifier" class="link blue underline-hover lh-copy">modifier</a>
+          </li>
+          
+        </ul>
+      
     </li>
   
     <li>
       <a href="#i:zwp_linux_buffer_params_v1" class="link blue underline-hover lh-copy">zwp_linux_buffer_params_v1</a>
-      <ul class="list">
-        
-        <li>
-          <a href="#r:zwp_linux_buffer_params_v1:destroy" class="link blue underline-hover lh-copy">destroy</a>
-        </li>
-        
-        <li>
-          <a href="#r:zwp_linux_buffer_params_v1:add" class="link blue underline-hover lh-copy">add</a>
-        </li>
-        
-        <li>
-          <a href="#r:zwp_linux_buffer_params_v1:create" class="link blue underline-hover lh-copy">create</a>
-        </li>
-        
-        <li>
-          <a href="#r:zwp_linux_buffer_params_v1:create_immed" class="link blue underline-hover lh-copy">create_immed</a>
-        </li>
-        
-      </ul>
+
+      
+        <div>
+          <a href="#rh:zwp_linux_buffer_params_v1" class="link blue underline-hover lh-copy pl3">Requests</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#r:zwp_linux_buffer_params_v1:destroy" class="link blue underline-hover lh-copy">destroy</a>
+          </li>
+          
+          <li>
+            <a href="#r:zwp_linux_buffer_params_v1:add" class="link blue underline-hover lh-copy">add</a>
+          </li>
+          
+          <li>
+            <a href="#r:zwp_linux_buffer_params_v1:create" class="link blue underline-hover lh-copy">create</a>
+          </li>
+          
+          <li>
+            <a href="#r:zwp_linux_buffer_params_v1:create_immed" class="link blue underline-hover lh-copy">create_immed</a>
+          </li>
+          
+        </ul>
+      
+
+      
+        <div>
+          <a href="#eh:zwp_linux_buffer_params_v1" class="link blue underline-hover lh-copy pl3">Events</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#e:zwp_linux_buffer_params_v1:created" class="link blue underline-hover lh-copy">created</a>
+          </li>
+          
+          <li>
+            <a href="#e:zwp_linux_buffer_params_v1:failed" class="link blue underline-hover lh-copy">failed</a>
+          </li>
+          
+        </ul>
+      
     </li>
   
   </ul>
@@ -134,16 +180,19 @@ Once the protocol is to be declared stable, the &#x27;z&#x27; prefix and the
 version number in the protocol and interface names are removed and the
 interface version number is reset.
 </div>
-        <ul class="list pl0">
-          
-          <li class="mt2">
-            <div class="f4 lh-title" id="r:zwp_linux_dmabuf_v1:destroy">
-              destroy
-            </div>
-            <div class="f5 lh-copy mv1 courier">
-              unbind the factory
-            </div>
+
+        
+          <h3 class=" f5 lh-title" id="rh:zwp_linux_dmabuf_v1">Requests</h3>
+          <ul class="list pl0">
             
+            <li class="mt2">
+              <div class="f4 lh-title" id="r:zwp_linux_dmabuf_v1:destroy">
+                destroy
+              </div>
+              <div class="f5 lh-copy mv1 courier">
+                unbind the factory
+              </div>
+              
 <div class="f6 lh-copy courier">
   <span>void </span><span class="dark-blue">zwp_linux_dmabuf_v1_destroy</span>(
     
@@ -151,19 +200,19 @@ interface version number is reset.
     
   )
 </div>
-            <div class="f6 lh-copy ws-pre-line courier">Objects created through this interface, especially wl_buffers, will
+              <div class="f6 lh-copy ws-pre-line courier">Objects created through this interface, especially wl_buffers, will
 remain valid.
 </div>
-          </li>
-          
-          <li class="mt2">
-            <div class="f4 lh-title" id="r:zwp_linux_dmabuf_v1:create_params">
-              create_params
-            </div>
-            <div class="f5 lh-copy mv1 courier">
-              create a temporary object for buffer parameters
-            </div>
+            </li>
             
+            <li class="mt2">
+              <div class="f4 lh-title" id="r:zwp_linux_dmabuf_v1:create_params">
+                create_params
+              </div>
+              <div class="f5 lh-copy mv1 courier">
+                create a temporary object for buffer parameters
+              </div>
+              
 <div class="f6 lh-copy courier">
   <span>struct zwp_linux_buffer_params_v1* </span><span class="dark-blue">zwp_linux_dmabuf_v1_create_params</span>(
     
@@ -171,14 +220,74 @@ remain valid.
     
   )
 </div>
-            <div class="f6 lh-copy ws-pre-line courier">This temporary object is used to collect multiple dmabuf handles into
+              <div class="f6 lh-copy ws-pre-line courier">This temporary object is used to collect multiple dmabuf handles into
 a single batch to create a wl_buffer. It can only be used once and
 should be destroyed after a &#x27;created&#x27; or &#x27;failed&#x27; event has been
 received.
 </div>
-          </li>
-          
-        </ul>
+            </li>
+            
+          </ul>
+        
+
+        
+          <h3 class=" f5 lh-title" id="eh:zwp_linux_dmabuf_v1">Events</h3>
+          <ul class="list pl0">
+            
+            <li class="mt2">
+
+              <div class="f4 lh-title" id="e:zwp_linux_dmabuf_v1:format">
+                format
+              </div>
+              <div class="f5 lh-copy mv1 courier">
+                supported buffer format
+              </div>
+              <div class="f6 lh-copy ws-pre-line courier">This event advertises one buffer format that the server supports.
+All the supported formats are advertised once when the client
+binds to this interface. A roundtrip after binding guarantees
+that the client has received all supported formats.
+
+For the definition of the format codes, see the
+zwp_linux_buffer_params_v1::create request.
+
+Warning: the &#x27;format&#x27; event is likely to be deprecated and replaced
+with the &#x27;modifier&#x27; event introduced in zwp_linux_dmabuf_v1
+version 3, described below. Please refrain from using the information
+received from this event.
+</div>
+            </li>
+            
+            <li class="mt2">
+
+              <div class="f4 lh-title" id="e:zwp_linux_dmabuf_v1:modifier">
+                modifier
+              </div>
+              <div class="f5 lh-copy mv1 courier">
+                supported buffer format modifier
+              </div>
+              <div class="f6 lh-copy ws-pre-line courier">This event advertises the formats that the server supports, along with
+the modifiers supported for each format. All the supported modifiers
+for all the supported formats are advertised once when the client
+binds to this interface. A roundtrip after binding guarantees that
+the client has received all supported format-modifier pairs.
+
+For legacy support, DRM_FORMAT_MOD_INVALID (that is, modifier_hi ==
+0x00ffffff and modifier_lo == 0xffffffff) is allowed in this event.
+It indicates that the server can support the format with an implicit
+modifier. When a plane has DRM_FORMAT_MOD_INVALID as its modifier, it
+is as if no explicit modifier is specified. The effective modifier
+will be derived from the dmabuf.
+
+For the definition of the format and modifier codes, see the
+zwp_linux_buffer_params_v1::create and zwp_linux_buffer_params_v1::add
+requests.
+</div>
+            </li>
+            
+          </ul>
+
+        
+
       </li>
       
       <li class="mt2">
@@ -200,16 +309,19 @@ from zero to the number of planes used by the drm_fourcc format code.
 All planes required by the format must be given exactly once, but can
 be given in any order. Each plane index can be set only once.
 </div>
-        <ul class="list pl0">
-          
-          <li class="mt2">
-            <div class="f4 lh-title" id="r:zwp_linux_buffer_params_v1:destroy">
-              destroy
-            </div>
-            <div class="f5 lh-copy mv1 courier">
-              delete this object, used or not
-            </div>
+
+        
+          <h3 class=" f5 lh-title" id="rh:zwp_linux_buffer_params_v1">Requests</h3>
+          <ul class="list pl0">
             
+            <li class="mt2">
+              <div class="f4 lh-title" id="r:zwp_linux_buffer_params_v1:destroy">
+                destroy
+              </div>
+              <div class="f5 lh-copy mv1 courier">
+                delete this object, used or not
+              </div>
+              
 <div class="f6 lh-copy courier">
   <span>void </span><span class="dark-blue">zwp_linux_buffer_params_v1_destroy</span>(
     
@@ -217,19 +329,19 @@ be given in any order. Each plane index can be set only once.
     
   )
 </div>
-            <div class="f6 lh-copy ws-pre-line courier">Cleans up the temporary data sent to the server for dmabuf-based
+              <div class="f6 lh-copy ws-pre-line courier">Cleans up the temporary data sent to the server for dmabuf-based
 wl_buffer creation.
 </div>
-          </li>
-          
-          <li class="mt2">
-            <div class="f4 lh-title" id="r:zwp_linux_buffer_params_v1:add">
-              add
-            </div>
-            <div class="f5 lh-copy mv1 courier">
-              add a dmabuf to the temporary set
-            </div>
+            </li>
             
+            <li class="mt2">
+              <div class="f4 lh-title" id="r:zwp_linux_buffer_params_v1:add">
+                add
+              </div>
+              <div class="f5 lh-copy mv1 courier">
+                add a dmabuf to the temporary set
+              </div>
+              
 <div class="f6 lh-copy courier">
   <span>void </span><span class="dark-blue">zwp_linux_buffer_params_v1_add</span>(
     
@@ -249,7 +361,7 @@ wl_buffer creation.
     
   )
 </div>
-            <div class="f6 lh-copy ws-pre-line courier">This request adds one dmabuf to the set in this
+              <div class="f6 lh-copy ws-pre-line courier">This request adds one dmabuf to the set in this
 zwp_linux_buffer_params_v1.
 
 The 64-bit unsigned value combined from modifier_hi and modifier_lo
@@ -268,16 +380,16 @@ This request raises the PLANE_IDX error if plane_idx is too large.
 The error PLANE_SET is raised if attempting to set a plane that
 was already set.
 </div>
-          </li>
-          
-          <li class="mt2">
-            <div class="f4 lh-title" id="r:zwp_linux_buffer_params_v1:create">
-              create
-            </div>
-            <div class="f5 lh-copy mv1 courier">
-              create a wl_buffer from the given dmabufs
-            </div>
+            </li>
             
+            <li class="mt2">
+              <div class="f4 lh-title" id="r:zwp_linux_buffer_params_v1:create">
+                create
+              </div>
+              <div class="f5 lh-copy mv1 courier">
+                create a wl_buffer from the given dmabufs
+              </div>
+              
 <div class="f6 lh-copy courier">
   <span>void </span><span class="dark-blue">zwp_linux_buffer_params_v1_create</span>(
     
@@ -293,7 +405,7 @@ was already set.
     
   )
 </div>
-            <div class="f6 lh-copy ws-pre-line courier">This asks for creation of a wl_buffer from the added dmabuf
+              <div class="f6 lh-copy ws-pre-line courier">This asks for creation of a wl_buffer from the added dmabuf
 buffers. The wl_buffer is not created immediately but returned via
 the &#x27;created&#x27; event if the dmabuf sharing succeeds. The sharing
 may fail at runtime for reasons a client cannot predict, in
@@ -353,17 +465,17 @@ object after issuing &#x27;create&#x27; raises ALREADY_USED protocol error.
 It is not mandatory to issue &#x27;create&#x27;. If a client wants to
 cancel the buffer creation, it can just destroy this object.
 </div>
-          </li>
-          
-          <li class="mt2">
-            <div class="f4 lh-title" id="r:zwp_linux_buffer_params_v1:create_immed">
-              create_immed
-            </div>
-            <div class="f5 lh-copy mv1 courier">
-              immediately create a wl_buffer from the given
-dmabufs
-            </div>
+            </li>
             
+            <li class="mt2">
+              <div class="f4 lh-title" id="r:zwp_linux_buffer_params_v1:create_immed">
+                create_immed
+              </div>
+              <div class="f5 lh-copy mv1 courier">
+                immediately create a wl_buffer from the given
+dmabufs
+              </div>
+              
 <div class="f6 lh-copy courier">
   <span>struct wl_buffer* </span><span class="dark-blue">zwp_linux_buffer_params_v1_create_immed</span>(
     
@@ -379,7 +491,7 @@ dmabufs
     
   )
 </div>
-            <div class="f6 lh-copy ws-pre-line courier">This asks for immediate creation of a wl_buffer by importing the
+              <div class="f6 lh-copy ws-pre-line courier">This asks for immediate creation of a wl_buffer by importing the
 added dmabufs.
 
 In case of import success, no event is sent from the server, and the
@@ -403,9 +515,52 @@ by the implementation:
 This takes the same arguments as a &#x27;create&#x27; request, and obeys the
 same restrictions.
 </div>
-          </li>
-          
-        </ul>
+            </li>
+            
+          </ul>
+        
+
+        
+          <h3 class=" f5 lh-title" id="eh:zwp_linux_buffer_params_v1">Events</h3>
+          <ul class="list pl0">
+            
+            <li class="mt2">
+
+              <div class="f4 lh-title" id="e:zwp_linux_buffer_params_v1:created">
+                created
+              </div>
+              <div class="f5 lh-copy mv1 courier">
+                buffer creation succeeded
+              </div>
+              <div class="f6 lh-copy ws-pre-line courier">This event indicates that the attempted buffer creation was
+successful. It provides the new wl_buffer referencing the dmabuf(s).
+
+Upon receiving this event, the client should destroy the
+zlinux_dmabuf_params object.
+</div>
+            </li>
+            
+            <li class="mt2">
+
+              <div class="f4 lh-title" id="e:zwp_linux_buffer_params_v1:failed">
+                failed
+              </div>
+              <div class="f5 lh-copy mv1 courier">
+                buffer creation failed
+              </div>
+              <div class="f6 lh-copy ws-pre-line courier">This event indicates that the attempted buffer creation has
+failed. It usually means that one of the dmabuf constraints
+has not been fulfilled.
+
+Upon receiving this event, the client should destroy the
+zlinux_buffer_params object.
+</div>
+            </li>
+            
+          </ul>
+
+        
+
       </li>
       
     </ul>

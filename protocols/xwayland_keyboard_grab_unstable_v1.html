@@ -28,28 +28,44 @@
   
     <li>
       <a href="#i:zwp_xwayland_keyboard_grab_manager_v1" class="link blue underline-hover lh-copy">zwp_xwayland_keyboard_grab_manager_v1</a>
-      <ul class="list">
-        
-        <li>
-          <a href="#r:zwp_xwayland_keyboard_grab_manager_v1:destroy" class="link blue underline-hover lh-copy">destroy</a>
-        </li>
-        
-        <li>
-          <a href="#r:zwp_xwayland_keyboard_grab_manager_v1:grab_keyboard" class="link blue underline-hover lh-copy">grab_keyboard</a>
-        </li>
-        
-      </ul>
+
+      
+        <div>
+          <a href="#rh:zwp_xwayland_keyboard_grab_manager_v1" class="link blue underline-hover lh-copy pl3">Requests</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#r:zwp_xwayland_keyboard_grab_manager_v1:destroy" class="link blue underline-hover lh-copy">destroy</a>
+          </li>
+          
+          <li>
+            <a href="#r:zwp_xwayland_keyboard_grab_manager_v1:grab_keyboard" class="link blue underline-hover lh-copy">grab_keyboard</a>
+          </li>
+          
+        </ul>
+      
+
+      
     </li>
   
     <li>
       <a href="#i:zwp_xwayland_keyboard_grab_v1" class="link blue underline-hover lh-copy">zwp_xwayland_keyboard_grab_v1</a>
-      <ul class="list">
-        
-        <li>
-          <a href="#r:zwp_xwayland_keyboard_grab_v1:destroy" class="link blue underline-hover lh-copy">destroy</a>
-        </li>
-        
-      </ul>
+
+      
+        <div>
+          <a href="#rh:zwp_xwayland_keyboard_grab_v1" class="link blue underline-hover lh-copy pl3">Requests</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#r:zwp_xwayland_keyboard_grab_v1:destroy" class="link blue underline-hover lh-copy">destroy</a>
+          </li>
+          
+        </ul>
+      
+
+      
     </li>
   
   </ul>
@@ -65,16 +81,19 @@
         </div>
         <div class="f6 lh-copy ws-pre-line courier">A global interface used for grabbing the keyboard.
 </div>
-        <ul class="list pl0">
-          
-          <li class="mt2">
-            <div class="f4 lh-title" id="r:zwp_xwayland_keyboard_grab_manager_v1:destroy">
-              destroy
-            </div>
-            <div class="f5 lh-copy mv1 courier">
-              destroy the keyboard grab manager
-            </div>
+
+        
+          <h3 class=" f5 lh-title" id="rh:zwp_xwayland_keyboard_grab_manager_v1">Requests</h3>
+          <ul class="list pl0">
             
+            <li class="mt2">
+              <div class="f4 lh-title" id="r:zwp_xwayland_keyboard_grab_manager_v1:destroy">
+                destroy
+              </div>
+              <div class="f5 lh-copy mv1 courier">
+                destroy the keyboard grab manager
+              </div>
+              
 <div class="f6 lh-copy courier">
   <span>void </span><span class="dark-blue">zwp_xwayland_keyboard_grab_manager_v1_destroy</span>(
     
@@ -82,18 +101,18 @@
     
   )
 </div>
-            <div class="f6 lh-copy ws-pre-line courier">Destroy the keyboard grab manager.
+              <div class="f6 lh-copy ws-pre-line courier">Destroy the keyboard grab manager.
   </div>
-          </li>
-          
-          <li class="mt2">
-            <div class="f4 lh-title" id="r:zwp_xwayland_keyboard_grab_manager_v1:grab_keyboard">
-              grab_keyboard
-            </div>
-            <div class="f5 lh-copy mv1 courier">
-              grab the keyboard to a surface
-            </div>
+            </li>
             
+            <li class="mt2">
+              <div class="f4 lh-title" id="r:zwp_xwayland_keyboard_grab_manager_v1:grab_keyboard">
+                grab_keyboard
+              </div>
+              <div class="f5 lh-copy mv1 courier">
+                grab the keyboard to a surface
+              </div>
+              
 <div class="f6 lh-copy courier">
   <span>struct zwp_xwayland_keyboard_grab_v1* </span><span class="dark-blue">zwp_xwayland_keyboard_grab_manager_v1_grab_keyboard</span>(
     
@@ -105,7 +124,7 @@
     
   )
 </div>
-            <div class="f6 lh-copy ws-pre-line courier">The grab_keyboard request asks for a grab of the keyboard, forcing
+              <div class="f6 lh-copy ws-pre-line courier">The grab_keyboard request asks for a grab of the keyboard, forcing
 the keyboard focus for the given seat upon the given surface.
 
 The protocol provides no guarantee that the grab is ever satisfied,
@@ -125,9 +144,13 @@ The protocol:
   a compositor may change and reroute keyboard events while the grab
   is nominally active.
   </div>
-          </li>
-          
-        </ul>
+            </li>
+            
+          </ul>
+        
+
+        
+
       </li>
       
       <li class="mt2">
@@ -136,16 +159,19 @@ The protocol:
         </div>
         <div class="f6 lh-copy ws-pre-line courier">A global interface used for grabbing the keyboard.
 </div>
-        <ul class="list pl0">
-          
-          <li class="mt2">
-            <div class="f4 lh-title" id="r:zwp_xwayland_keyboard_grab_v1:destroy">
-              destroy
-            </div>
-            <div class="f5 lh-copy mv1 courier">
-              destroy the grabbed keyboard object
-            </div>
+
+        
+          <h3 class=" f5 lh-title" id="rh:zwp_xwayland_keyboard_grab_v1">Requests</h3>
+          <ul class="list pl0">
             
+            <li class="mt2">
+              <div class="f4 lh-title" id="r:zwp_xwayland_keyboard_grab_v1:destroy">
+                destroy
+              </div>
+              <div class="f5 lh-copy mv1 courier">
+                destroy the grabbed keyboard object
+              </div>
+              
 <div class="f6 lh-copy courier">
   <span>void </span><span class="dark-blue">zwp_xwayland_keyboard_grab_v1_destroy</span>(
     
@@ -153,12 +179,16 @@ The protocol:
     
   )
 </div>
-            <div class="f6 lh-copy ws-pre-line courier">Destroy the grabbed keyboard object. If applicable, the compositor
+              <div class="f6 lh-copy ws-pre-line courier">Destroy the grabbed keyboard object. If applicable, the compositor
 will ungrab the keyboard.
   </div>
-          </li>
-          
-        </ul>
+            </li>
+            
+          </ul>
+        
+
+        
+
       </li>
       
     </ul>

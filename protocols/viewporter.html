@@ -28,36 +28,52 @@
   
     <li>
       <a href="#i:wp_viewporter" class="link blue underline-hover lh-copy">wp_viewporter</a>
-      <ul class="list">
-        
-        <li>
-          <a href="#r:wp_viewporter:destroy" class="link blue underline-hover lh-copy">destroy</a>
-        </li>
-        
-        <li>
-          <a href="#r:wp_viewporter:get_viewport" class="link blue underline-hover lh-copy">get_viewport</a>
-        </li>
-        
-      </ul>
+
+      
+        <div>
+          <a href="#rh:wp_viewporter" class="link blue underline-hover lh-copy pl3">Requests</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#r:wp_viewporter:destroy" class="link blue underline-hover lh-copy">destroy</a>
+          </li>
+          
+          <li>
+            <a href="#r:wp_viewporter:get_viewport" class="link blue underline-hover lh-copy">get_viewport</a>
+          </li>
+          
+        </ul>
+      
+
+      
     </li>
   
     <li>
       <a href="#i:wp_viewport" class="link blue underline-hover lh-copy">wp_viewport</a>
-      <ul class="list">
-        
-        <li>
-          <a href="#r:wp_viewport:destroy" class="link blue underline-hover lh-copy">destroy</a>
-        </li>
-        
-        <li>
-          <a href="#r:wp_viewport:set_source" class="link blue underline-hover lh-copy">set_source</a>
-        </li>
-        
-        <li>
-          <a href="#r:wp_viewport:set_destination" class="link blue underline-hover lh-copy">set_destination</a>
-        </li>
-        
-      </ul>
+
+      
+        <div>
+          <a href="#rh:wp_viewport" class="link blue underline-hover lh-copy pl3">Requests</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#r:wp_viewport:destroy" class="link blue underline-hover lh-copy">destroy</a>
+          </li>
+          
+          <li>
+            <a href="#r:wp_viewport:set_source" class="link blue underline-hover lh-copy">set_source</a>
+          </li>
+          
+          <li>
+            <a href="#r:wp_viewport:set_destination" class="link blue underline-hover lh-copy">set_destination</a>
+          </li>
+          
+        </ul>
+      
+
+      
     </li>
   
   </ul>
@@ -78,16 +94,19 @@ cropping and scaling the surface contents, effectively
 disconnecting the direct relationship between the buffer and the
 surface size.
 </div>
-        <ul class="list pl0">
-          
-          <li class="mt2">
-            <div class="f4 lh-title" id="r:wp_viewporter:destroy">
-              destroy
-            </div>
-            <div class="f5 lh-copy mv1 courier">
-              unbind from the cropping and scaling interface
-            </div>
+
+        
+          <h3 class=" f5 lh-title" id="rh:wp_viewporter">Requests</h3>
+          <ul class="list pl0">
             
+            <li class="mt2">
+              <div class="f4 lh-title" id="r:wp_viewporter:destroy">
+                destroy
+              </div>
+              <div class="f5 lh-copy mv1 courier">
+                unbind from the cropping and scaling interface
+              </div>
+              
 <div class="f6 lh-copy courier">
   <span>void </span><span class="dark-blue">wp_viewporter_destroy</span>(
     
@@ -95,20 +114,20 @@ surface size.
     
   )
 </div>
-            <div class="f6 lh-copy ws-pre-line courier">Informs the server that the client will not be using this
+              <div class="f6 lh-copy ws-pre-line courier">Informs the server that the client will not be using this
 protocol object anymore. This does not affect any other objects,
 wp_viewport objects included.
   </div>
-          </li>
-          
-          <li class="mt2">
-            <div class="f4 lh-title" id="r:wp_viewporter:get_viewport">
-              get_viewport
-            </div>
-            <div class="f5 lh-copy mv1 courier">
-              extend surface interface for crop and scale
-            </div>
+            </li>
             
+            <li class="mt2">
+              <div class="f4 lh-title" id="r:wp_viewporter:get_viewport">
+                get_viewport
+              </div>
+              <div class="f5 lh-copy mv1 courier">
+                extend surface interface for crop and scale
+              </div>
+              
 <div class="f6 lh-copy courier">
   <span>struct wp_viewport* </span><span class="dark-blue">wp_viewporter_get_viewport</span>(
     
@@ -118,14 +137,18 @@ wp_viewport objects included.
     
   )
 </div>
-            <div class="f6 lh-copy ws-pre-line courier">Instantiate an interface extension for the given wl_surface to
+              <div class="f6 lh-copy ws-pre-line courier">Instantiate an interface extension for the given wl_surface to
 crop and scale its content. If the given wl_surface already has
 a wp_viewport object associated, the viewport_exists
 protocol error is raised.
   </div>
-          </li>
-          
-        </ul>
+            </li>
+            
+          </ul>
+        
+
+        
+
       </li>
       
       <li class="mt2">
@@ -194,16 +217,19 @@ If the wp_viewport object is destroyed, the crop and scale
 state is removed from the wl_surface. The change will be applied
 on the next wl_surface.commit.
 </div>
-        <ul class="list pl0">
-          
-          <li class="mt2">
-            <div class="f4 lh-title" id="r:wp_viewport:destroy">
-              destroy
-            </div>
-            <div class="f5 lh-copy mv1 courier">
-              remove scaling and cropping from the surface
-            </div>
+
+        
+          <h3 class=" f5 lh-title" id="rh:wp_viewport">Requests</h3>
+          <ul class="list pl0">
             
+            <li class="mt2">
+              <div class="f4 lh-title" id="r:wp_viewport:destroy">
+                destroy
+              </div>
+              <div class="f5 lh-copy mv1 courier">
+                remove scaling and cropping from the surface
+              </div>
+              
 <div class="f6 lh-copy courier">
   <span>void </span><span class="dark-blue">wp_viewport_destroy</span>(
     
@@ -211,19 +237,19 @@ on the next wl_surface.commit.
     
   )
 </div>
-            <div class="f6 lh-copy ws-pre-line courier">The associated wl_surface&#x27;s crop and scale state is removed.
+              <div class="f6 lh-copy ws-pre-line courier">The associated wl_surface&#x27;s crop and scale state is removed.
 The change is applied on the next wl_surface.commit.
   </div>
-          </li>
-          
-          <li class="mt2">
-            <div class="f4 lh-title" id="r:wp_viewport:set_source">
-              set_source
-            </div>
-            <div class="f5 lh-copy mv1 courier">
-              set the source rectangle for cropping
-            </div>
+            </li>
             
+            <li class="mt2">
+              <div class="f4 lh-title" id="r:wp_viewport:set_source">
+                set_source
+              </div>
+              <div class="f5 lh-copy mv1 courier">
+                set the source rectangle for cropping
+              </div>
+              
 <div class="f6 lh-copy courier">
   <span>void </span><span class="dark-blue">wp_viewport_set_source</span>(
     
@@ -239,7 +265,7 @@ The change is applied on the next wl_surface.commit.
     
   )
 </div>
-            <div class="f6 lh-copy ws-pre-line courier">Set the source rectangle of the associated wl_surface. See
+              <div class="f6 lh-copy ws-pre-line courier">Set the source rectangle of the associated wl_surface. See
 wp_viewport for the description, and relation to the wl_buffer
 size.
 
@@ -251,16 +277,16 @@ error.
 The crop and scale state is double-buffered state, and will be
 applied on the next wl_surface.commit.
   </div>
-          </li>
-          
-          <li class="mt2">
-            <div class="f4 lh-title" id="r:wp_viewport:set_destination">
-              set_destination
-            </div>
-            <div class="f5 lh-copy mv1 courier">
-              set the surface size for scaling
-            </div>
+            </li>
             
+            <li class="mt2">
+              <div class="f4 lh-title" id="r:wp_viewport:set_destination">
+                set_destination
+              </div>
+              <div class="f5 lh-copy mv1 courier">
+                set the surface size for scaling
+              </div>
+              
 <div class="f6 lh-copy courier">
   <span>void </span><span class="dark-blue">wp_viewport_set_destination</span>(
     
@@ -272,7 +298,7 @@ applied on the next wl_surface.commit.
     
   )
 </div>
-            <div class="f6 lh-copy ws-pre-line courier">Set the destination size of the associated wl_surface. See
+              <div class="f6 lh-copy ws-pre-line courier">Set the destination size of the associated wl_surface. See
 wp_viewport for the description, and relation to the wl_buffer
 size.
 
@@ -284,9 +310,13 @@ error.
 The crop and scale state is double-buffered state, and will be
 applied on the next wl_surface.commit.
   </div>
-          </li>
-          
-        </ul>
+            </li>
+            
+          </ul>
+        
+
+        
+
       </li>
       
     </ul>

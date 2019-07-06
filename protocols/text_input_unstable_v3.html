@@ -28,56 +28,103 @@
   
     <li>
       <a href="#i:zwp_text_input_v3" class="link blue underline-hover lh-copy">zwp_text_input_v3</a>
-      <ul class="list">
-        
-        <li>
-          <a href="#r:zwp_text_input_v3:destroy" class="link blue underline-hover lh-copy">destroy</a>
-        </li>
-        
-        <li>
-          <a href="#r:zwp_text_input_v3:enable" class="link blue underline-hover lh-copy">enable</a>
-        </li>
-        
-        <li>
-          <a href="#r:zwp_text_input_v3:disable" class="link blue underline-hover lh-copy">disable</a>
-        </li>
-        
-        <li>
-          <a href="#r:zwp_text_input_v3:set_surrounding_text" class="link blue underline-hover lh-copy">set_surrounding_text</a>
-        </li>
-        
-        <li>
-          <a href="#r:zwp_text_input_v3:set_text_change_cause" class="link blue underline-hover lh-copy">set_text_change_cause</a>
-        </li>
-        
-        <li>
-          <a href="#r:zwp_text_input_v3:set_content_type" class="link blue underline-hover lh-copy">set_content_type</a>
-        </li>
-        
-        <li>
-          <a href="#r:zwp_text_input_v3:set_cursor_rectangle" class="link blue underline-hover lh-copy">set_cursor_rectangle</a>
-        </li>
-        
-        <li>
-          <a href="#r:zwp_text_input_v3:commit" class="link blue underline-hover lh-copy">commit</a>
-        </li>
-        
-      </ul>
+
+      
+        <div>
+          <a href="#rh:zwp_text_input_v3" class="link blue underline-hover lh-copy pl3">Requests</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#r:zwp_text_input_v3:destroy" class="link blue underline-hover lh-copy">destroy</a>
+          </li>
+          
+          <li>
+            <a href="#r:zwp_text_input_v3:enable" class="link blue underline-hover lh-copy">enable</a>
+          </li>
+          
+          <li>
+            <a href="#r:zwp_text_input_v3:disable" class="link blue underline-hover lh-copy">disable</a>
+          </li>
+          
+          <li>
+            <a href="#r:zwp_text_input_v3:set_surrounding_text" class="link blue underline-hover lh-copy">set_surrounding_text</a>
+          </li>
+          
+          <li>
+            <a href="#r:zwp_text_input_v3:set_text_change_cause" class="link blue underline-hover lh-copy">set_text_change_cause</a>
+          </li>
+          
+          <li>
+            <a href="#r:zwp_text_input_v3:set_content_type" class="link blue underline-hover lh-copy">set_content_type</a>
+          </li>
+          
+          <li>
+            <a href="#r:zwp_text_input_v3:set_cursor_rectangle" class="link blue underline-hover lh-copy">set_cursor_rectangle</a>
+          </li>
+          
+          <li>
+            <a href="#r:zwp_text_input_v3:commit" class="link blue underline-hover lh-copy">commit</a>
+          </li>
+          
+        </ul>
+      
+
+      
+        <div>
+          <a href="#eh:zwp_text_input_v3" class="link blue underline-hover lh-copy pl3">Events</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#e:zwp_text_input_v3:enter" class="link blue underline-hover lh-copy">enter</a>
+          </li>
+          
+          <li>
+            <a href="#e:zwp_text_input_v3:leave" class="link blue underline-hover lh-copy">leave</a>
+          </li>
+          
+          <li>
+            <a href="#e:zwp_text_input_v3:preedit_string" class="link blue underline-hover lh-copy">preedit_string</a>
+          </li>
+          
+          <li>
+            <a href="#e:zwp_text_input_v3:commit_string" class="link blue underline-hover lh-copy">commit_string</a>
+          </li>
+          
+          <li>
+            <a href="#e:zwp_text_input_v3:delete_surrounding_text" class="link blue underline-hover lh-copy">delete_surrounding_text</a>
+          </li>
+          
+          <li>
+            <a href="#e:zwp_text_input_v3:done" class="link blue underline-hover lh-copy">done</a>
+          </li>
+          
+        </ul>
+      
     </li>
   
     <li>
       <a href="#i:zwp_text_input_manager_v3" class="link blue underline-hover lh-copy">zwp_text_input_manager_v3</a>
-      <ul class="list">
-        
-        <li>
-          <a href="#r:zwp_text_input_manager_v3:destroy" class="link blue underline-hover lh-copy">destroy</a>
-        </li>
-        
-        <li>
-          <a href="#r:zwp_text_input_manager_v3:get_text_input" class="link blue underline-hover lh-copy">get_text_input</a>
-        </li>
-        
-      </ul>
+
+      
+        <div>
+          <a href="#rh:zwp_text_input_manager_v3" class="link blue underline-hover lh-copy pl3">Requests</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#r:zwp_text_input_manager_v3:destroy" class="link blue underline-hover lh-copy">destroy</a>
+          </li>
+          
+          <li>
+            <a href="#r:zwp_text_input_manager_v3:get_text_input" class="link blue underline-hover lh-copy">get_text_input</a>
+          </li>
+          
+        </ul>
+      
+
+      
     </li>
   
   </ul>
@@ -118,16 +165,19 @@ set_content_type and set_cursor_rectangle) and a commit request. After an
 enter event or disable request all state information is invalidated and
 needs to be resent by the client.
 </div>
-        <ul class="list pl0">
-          
-          <li class="mt2">
-            <div class="f4 lh-title" id="r:zwp_text_input_v3:destroy">
-              destroy
-            </div>
-            <div class="f5 lh-copy mv1 courier">
-              Destroy the wp_text_input
-            </div>
+
+        
+          <h3 class=" f5 lh-title" id="rh:zwp_text_input_v3">Requests</h3>
+          <ul class="list pl0">
             
+            <li class="mt2">
+              <div class="f4 lh-title" id="r:zwp_text_input_v3:destroy">
+                destroy
+              </div>
+              <div class="f5 lh-copy mv1 courier">
+                Destroy the wp_text_input
+              </div>
+              
 <div class="f6 lh-copy courier">
   <span>void </span><span class="dark-blue">zwp_text_input_v3_destroy</span>(
     
@@ -135,19 +185,19 @@ needs to be resent by the client.
     
   )
 </div>
-            <div class="f6 lh-copy ws-pre-line courier">Destroy the wp_text_input object. Also disables all surfaces enabled
+              <div class="f6 lh-copy ws-pre-line courier">Destroy the wp_text_input object. Also disables all surfaces enabled
 through this wp_text_input object.
 </div>
-          </li>
-          
-          <li class="mt2">
-            <div class="f4 lh-title" id="r:zwp_text_input_v3:enable">
-              enable
-            </div>
-            <div class="f5 lh-copy mv1 courier">
-              Request text input to be enabled
-            </div>
+            </li>
             
+            <li class="mt2">
+              <div class="f4 lh-title" id="r:zwp_text_input_v3:enable">
+                enable
+              </div>
+              <div class="f5 lh-copy mv1 courier">
+                Request text input to be enabled
+              </div>
+              
 <div class="f6 lh-copy courier">
   <span>void </span><span class="dark-blue">zwp_text_input_v3_enable</span>(
     
@@ -155,7 +205,7 @@ through this wp_text_input object.
     
   )
 </div>
-            <div class="f6 lh-copy ws-pre-line courier">Requests text input on the surface previously obtained from the enter
+              <div class="f6 lh-copy ws-pre-line courier">Requests text input on the surface previously obtained from the enter
 event.
 
 This request must be issued every time the active text input changes
@@ -179,16 +229,16 @@ next committed enable or disable request.
 The changes must be applied by the compositor after issuing a
 zwp_text_input_v3.commit request.
 </div>
-          </li>
-          
-          <li class="mt2">
-            <div class="f4 lh-title" id="r:zwp_text_input_v3:disable">
-              disable
-            </div>
-            <div class="f5 lh-copy mv1 courier">
-              Disable text input on a surface
-            </div>
+            </li>
             
+            <li class="mt2">
+              <div class="f4 lh-title" id="r:zwp_text_input_v3:disable">
+                disable
+              </div>
+              <div class="f5 lh-copy mv1 courier">
+                Disable text input on a surface
+              </div>
+              
 <div class="f6 lh-copy courier">
   <span>void </span><span class="dark-blue">zwp_text_input_v3_disable</span>(
     
@@ -196,22 +246,22 @@ zwp_text_input_v3.commit request.
     
   )
 </div>
-            <div class="f6 lh-copy ws-pre-line courier">Explicitly disable text input on the current surface (typically when
+              <div class="f6 lh-copy ws-pre-line courier">Explicitly disable text input on the current surface (typically when
 there is no focus on any text entry inside the surface).
 
 State set with this request is double-buffered. It will get applied on
 the next zwp_text_input_v3.commit request.
 </div>
-          </li>
-          
-          <li class="mt2">
-            <div class="f4 lh-title" id="r:zwp_text_input_v3:set_surrounding_text">
-              set_surrounding_text
-            </div>
-            <div class="f5 lh-copy mv1 courier">
-              sets the surrounding text
-            </div>
+            </li>
             
+            <li class="mt2">
+              <div class="f4 lh-title" id="r:zwp_text_input_v3:set_surrounding_text">
+                set_surrounding_text
+              </div>
+              <div class="f5 lh-copy mv1 courier">
+                sets the surrounding text
+              </div>
+              
 <div class="f6 lh-copy courier">
   <span>void </span><span class="dark-blue">zwp_text_input_v3_set_surrounding_text</span>(
     
@@ -225,7 +275,7 @@ the next zwp_text_input_v3.commit request.
     
   )
 </div>
-            <div class="f6 lh-copy ws-pre-line courier">Sets the surrounding plain text around the input, excluding the preedit
+              <div class="f6 lh-copy ws-pre-line courier">Sets the surrounding plain text around the input, excluding the preedit
 text.
 
 The client should notify the compositor of any changes in any of the
@@ -257,16 +307,16 @@ The initial state for affected fields is empty, meaning that the text
 input does not support sending surrounding text. If the empty values
 get applied, subsequent attempts to change them may have no effect.
 </div>
-          </li>
-          
-          <li class="mt2">
-            <div class="f4 lh-title" id="r:zwp_text_input_v3:set_text_change_cause">
-              set_text_change_cause
-            </div>
-            <div class="f5 lh-copy mv1 courier">
-              indicates the cause of surrounding text change
-            </div>
+            </li>
             
+            <li class="mt2">
+              <div class="f4 lh-title" id="r:zwp_text_input_v3:set_text_change_cause">
+                set_text_change_cause
+              </div>
+              <div class="f5 lh-copy mv1 courier">
+                indicates the cause of surrounding text change
+              </div>
+              
 <div class="f6 lh-copy courier">
   <span>void </span><span class="dark-blue">zwp_text_input_v3_set_text_change_cause</span>(
     
@@ -276,7 +326,7 @@ get applied, subsequent attempts to change them may have no effect.
     
   )
 </div>
-            <div class="f6 lh-copy ws-pre-line courier">Tells the compositor why the text surrounding the cursor changed.
+              <div class="f6 lh-copy ws-pre-line courier">Tells the compositor why the text surrounding the cursor changed.
 
 Whenever the client detects an external change in text, cursor, or
 anchor posision, it must issue this request to the compositor. This
@@ -291,16 +341,16 @@ and reset to initial at the next zwp_text_input_v3.commit request.
 
 The initial value of cause is input_method.
 </div>
-          </li>
-          
-          <li class="mt2">
-            <div class="f4 lh-title" id="r:zwp_text_input_v3:set_content_type">
-              set_content_type
-            </div>
-            <div class="f5 lh-copy mv1 courier">
-              set content purpose and hint
-            </div>
+            </li>
             
+            <li class="mt2">
+              <div class="f4 lh-title" id="r:zwp_text_input_v3:set_content_type">
+                set_content_type
+              </div>
+              <div class="f5 lh-copy mv1 courier">
+                set content purpose and hint
+              </div>
+              
 <div class="f6 lh-copy courier">
   <span>void </span><span class="dark-blue">zwp_text_input_v3_set_content_type</span>(
     
@@ -312,7 +362,7 @@ The initial value of cause is input_method.
     
   )
 </div>
-            <div class="f6 lh-copy ws-pre-line courier">Sets the content purpose and content hint. While the purpose is the
+              <div class="f6 lh-copy ws-pre-line courier">Sets the content purpose and content hint. While the purpose is the
 basic purpose of an input field, the hint flags allow to modify some of
 the behavior.
 
@@ -324,16 +374,16 @@ remain valid until the next committed enable or disable request.
 The initial value for hint is none, and the initial value for purpose
 is normal.
 </div>
-          </li>
-          
-          <li class="mt2">
-            <div class="f4 lh-title" id="r:zwp_text_input_v3:set_cursor_rectangle">
-              set_cursor_rectangle
-            </div>
-            <div class="f5 lh-copy mv1 courier">
-              set cursor position
-            </div>
+            </li>
             
+            <li class="mt2">
+              <div class="f4 lh-title" id="r:zwp_text_input_v3:set_cursor_rectangle">
+                set_cursor_rectangle
+              </div>
+              <div class="f5 lh-copy mv1 courier">
+                set cursor position
+              </div>
+              
 <div class="f6 lh-copy courier">
   <span>void </span><span class="dark-blue">zwp_text_input_v3_set_cursor_rectangle</span>(
     
@@ -349,7 +399,7 @@ is normal.
     
   )
 </div>
-            <div class="f6 lh-copy ws-pre-line courier">Marks an area around the cursor as a x, y, width, height rectangle in
+              <div class="f6 lh-copy ws-pre-line courier">Marks an area around the cursor as a x, y, width, height rectangle in
 surface local coordinates.
 
 Allows the compositor to put a window with word suggestions near the
@@ -367,16 +417,16 @@ the text input does not support describing the cursor area. If the
 empty values get applied, subsequent attempts to change them may have
 no effect.
 </div>
-          </li>
-          
-          <li class="mt2">
-            <div class="f4 lh-title" id="r:zwp_text_input_v3:commit">
-              commit
-            </div>
-            <div class="f5 lh-copy mv1 courier">
-              commit state
-            </div>
+            </li>
             
+            <li class="mt2">
+              <div class="f4 lh-title" id="r:zwp_text_input_v3:commit">
+                commit
+              </div>
+              <div class="f5 lh-copy mv1 courier">
+                commit state
+              </div>
+              
 <div class="f6 lh-copy courier">
   <span>void </span><span class="dark-blue">zwp_text_input_v3_commit</span>(
     
@@ -384,7 +434,7 @@ no effect.
     
   )
 </div>
-            <div class="f6 lh-copy ws-pre-line courier">Atomically applies state changes recently sent to the compositor.
+              <div class="f6 lh-copy ws-pre-line courier">Atomically applies state changes recently sent to the compositor.
 
 The commit request establishes and updates the state of the client, and
 must be issued after any changes to apply them.
@@ -408,9 +458,161 @@ The compositor must count the number of commit requests coming from
 each zwp_text_input_v3 object and use the count as the serial in done
 events.
 </div>
-          </li>
-          
-        </ul>
+            </li>
+            
+          </ul>
+        
+
+        
+          <h3 class=" f5 lh-title" id="eh:zwp_text_input_v3">Events</h3>
+          <ul class="list pl0">
+            
+            <li class="mt2">
+
+              <div class="f4 lh-title" id="e:zwp_text_input_v3:enter">
+                enter
+              </div>
+              <div class="f5 lh-copy mv1 courier">
+                enter event
+              </div>
+              <div class="f6 lh-copy ws-pre-line courier">Notification that this seat&#x27;s text-input focus is on a certain surface.
+
+When the seat has the keyboard capability the text-input focus follows
+the keyboard focus. This event sets the current surface for the
+text-input object.
+</div>
+            </li>
+            
+            <li class="mt2">
+
+              <div class="f4 lh-title" id="e:zwp_text_input_v3:leave">
+                leave
+              </div>
+              <div class="f5 lh-copy mv1 courier">
+                leave event
+              </div>
+              <div class="f6 lh-copy ws-pre-line courier">Notification that this seat&#x27;s text-input focus is no longer on a
+certain surface. The client should reset any preedit string previously
+set.
+
+The leave notification clears the current surface. It is sent before
+the enter notification for the new focus.
+
+When the seat has the keyboard capability the text-input focus follows
+the keyboard focus.
+</div>
+            </li>
+            
+            <li class="mt2">
+
+              <div class="f4 lh-title" id="e:zwp_text_input_v3:preedit_string">
+                preedit_string
+              </div>
+              <div class="f5 lh-copy mv1 courier">
+                pre-edit
+              </div>
+              <div class="f6 lh-copy ws-pre-line courier">Notify when a new composing text (pre-edit) should be set at the
+current cursor position. Any previously set composing text must be
+removed. Any previously existing selected text must be removed.
+
+The argument text contains the pre-edit string buffer.
+
+The parameters cursor_begin and cursor_end are counted in bytes
+relative to the beginning of the submitted text buffer. Cursor should
+be hidden when both are equal to -1.
+
+They could be represented by the client as a line if both values are
+the same, or as a text highlight otherwise.
+
+Values set with this event are double-buffered. They must be applied
+and reset to initial on the next zwp_text_input_v3.done event.
+
+The initial value of text is an empty string, and cursor_begin,
+cursor_end and cursor_hidden are all 0.
+</div>
+            </li>
+            
+            <li class="mt2">
+
+              <div class="f4 lh-title" id="e:zwp_text_input_v3:commit_string">
+                commit_string
+              </div>
+              <div class="f5 lh-copy mv1 courier">
+                text commit
+              </div>
+              <div class="f6 lh-copy ws-pre-line courier">Notify when text should be inserted into the editor widget. The text to
+commit could be either just a single character after a key press or the
+result of some composing (pre-edit).
+
+Values set with this event are double-buffered. They must be applied
+and reset to initial on the next zwp_text_input_v3.done event.
+
+The initial value of text is an empty string.
+</div>
+            </li>
+            
+            <li class="mt2">
+
+              <div class="f4 lh-title" id="e:zwp_text_input_v3:delete_surrounding_text">
+                delete_surrounding_text
+              </div>
+              <div class="f5 lh-copy mv1 courier">
+                delete surrounding text
+              </div>
+              <div class="f6 lh-copy ws-pre-line courier">Notify when the text around the current cursor position should be
+deleted.
+
+Before_length and after_length are the number of bytes before and after
+the current cursor index (excluding the selection) to delete.
+
+If a preedit text is present, in effect before_length is counted from
+the beginning of it, and after_length from its end (see done event
+sequence).
+
+Values set with this event are double-buffered. They must be applied
+and reset to initial on the next zwp_text_input_v3.done event.
+
+The initial values of both before_length and after_length are 0.
+</div>
+            </li>
+            
+            <li class="mt2">
+
+              <div class="f4 lh-title" id="e:zwp_text_input_v3:done">
+                done
+              </div>
+              <div class="f5 lh-copy mv1 courier">
+                apply changes
+              </div>
+              <div class="f6 lh-copy ws-pre-line courier">Instruct the application to apply changes to state requested by the
+preedit_string, commit_string and delete_surrounding_text events. The
+state relating to these events is double-buffered, and each one
+modifies the pending state. This event replaces the current state with
+the pending state.
+
+The application must proceed by evaluating the changes in the following
+order:
+
+1. Replace existing preedit string with the cursor.
+2. Delete requested surrounding text.
+3. Insert commit string with the cursor at its end.
+4. Calculate surrounding text to send.
+5. Insert new preedit text in cursor position.
+6. Place cursor inside preedit text.
+
+The serial number reflects the last state of the zwp_text_input_v3
+object known to the compositor. The value of the serial argument must
+be equal to the number of commit requests already issued on that object.
+When the client receives a done event with a serial different than the
+number of past commit requests, it must proceed as normal, except it
+should not change the current state of the zwp_text_input_v3 object.
+</div>
+            </li>
+            
+          </ul>
+
+        
+
       </li>
       
       <li class="mt2">
@@ -419,16 +621,19 @@ events.
         </div>
         <div class="f6 lh-copy ws-pre-line courier">A factory for text-input objects. This object is a global singleton.
 </div>
-        <ul class="list pl0">
-          
-          <li class="mt2">
-            <div class="f4 lh-title" id="r:zwp_text_input_manager_v3:destroy">
-              destroy
-            </div>
-            <div class="f5 lh-copy mv1 courier">
-              Destroy the wp_text_input_manager
-            </div>
+
+        
+          <h3 class=" f5 lh-title" id="rh:zwp_text_input_manager_v3">Requests</h3>
+          <ul class="list pl0">
             
+            <li class="mt2">
+              <div class="f4 lh-title" id="r:zwp_text_input_manager_v3:destroy">
+                destroy
+              </div>
+              <div class="f5 lh-copy mv1 courier">
+                Destroy the wp_text_input_manager
+              </div>
+              
 <div class="f6 lh-copy courier">
   <span>void </span><span class="dark-blue">zwp_text_input_manager_v3_destroy</span>(
     
@@ -436,18 +641,18 @@ events.
     
   )
 </div>
-            <div class="f6 lh-copy ws-pre-line courier">Destroy the wp_text_input_manager object.
+              <div class="f6 lh-copy ws-pre-line courier">Destroy the wp_text_input_manager object.
 </div>
-          </li>
-          
-          <li class="mt2">
-            <div class="f4 lh-title" id="r:zwp_text_input_manager_v3:get_text_input">
-              get_text_input
-            </div>
-            <div class="f5 lh-copy mv1 courier">
-              create a new text input object
-            </div>
+            </li>
             
+            <li class="mt2">
+              <div class="f4 lh-title" id="r:zwp_text_input_manager_v3:get_text_input">
+                get_text_input
+              </div>
+              <div class="f5 lh-copy mv1 courier">
+                create a new text input object
+              </div>
+              
 <div class="f6 lh-copy courier">
   <span>struct zwp_text_input_v3* </span><span class="dark-blue">zwp_text_input_manager_v3_get_text_input</span>(
     
@@ -457,11 +662,15 @@ events.
     
   )
 </div>
-            <div class="f6 lh-copy ws-pre-line courier">Creates a new text-input object for a given seat.
+              <div class="f6 lh-copy ws-pre-line courier">Creates a new text-input object for a given seat.
 </div>
-          </li>
-          
-        </ul>
+            </li>
+            
+          </ul>
+        
+
+        
+
       </li>
       
     </ul>

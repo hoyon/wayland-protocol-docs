@@ -28,28 +28,67 @@
   
     <li>
       <a href="#i:zwp_fullscreen_shell_v1" class="link blue underline-hover lh-copy">zwp_fullscreen_shell_v1</a>
-      <ul class="list">
-        
-        <li>
-          <a href="#r:zwp_fullscreen_shell_v1:release" class="link blue underline-hover lh-copy">release</a>
-        </li>
-        
-        <li>
-          <a href="#r:zwp_fullscreen_shell_v1:present_surface" class="link blue underline-hover lh-copy">present_surface</a>
-        </li>
-        
-        <li>
-          <a href="#r:zwp_fullscreen_shell_v1:present_surface_for_mode" class="link blue underline-hover lh-copy">present_surface_for_mode</a>
-        </li>
-        
-      </ul>
+
+      
+        <div>
+          <a href="#rh:zwp_fullscreen_shell_v1" class="link blue underline-hover lh-copy pl3">Requests</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#r:zwp_fullscreen_shell_v1:release" class="link blue underline-hover lh-copy">release</a>
+          </li>
+          
+          <li>
+            <a href="#r:zwp_fullscreen_shell_v1:present_surface" class="link blue underline-hover lh-copy">present_surface</a>
+          </li>
+          
+          <li>
+            <a href="#r:zwp_fullscreen_shell_v1:present_surface_for_mode" class="link blue underline-hover lh-copy">present_surface_for_mode</a>
+          </li>
+          
+        </ul>
+      
+
+      
+        <div>
+          <a href="#eh:zwp_fullscreen_shell_v1" class="link blue underline-hover lh-copy pl3">Events</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#e:zwp_fullscreen_shell_v1:capability" class="link blue underline-hover lh-copy">capability</a>
+          </li>
+          
+        </ul>
+      
     </li>
   
     <li>
       <a href="#i:zwp_fullscreen_shell_mode_feedback_v1" class="link blue underline-hover lh-copy">zwp_fullscreen_shell_mode_feedback_v1</a>
-      <ul class="list">
-        
-      </ul>
+
+      
+
+      
+        <div>
+          <a href="#eh:zwp_fullscreen_shell_mode_feedback_v1" class="link blue underline-hover lh-copy pl3">Events</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#e:zwp_fullscreen_shell_mode_feedback_v1:mode_successful" class="link blue underline-hover lh-copy">mode_successful</a>
+          </li>
+          
+          <li>
+            <a href="#e:zwp_fullscreen_shell_mode_feedback_v1:mode_failed" class="link blue underline-hover lh-copy">mode_failed</a>
+          </li>
+          
+          <li>
+            <a href="#e:zwp_fullscreen_shell_mode_feedback_v1:present_cancelled" class="link blue underline-hover lh-copy">present_cancelled</a>
+          </li>
+          
+        </ul>
+      
     </li>
   
   </ul>
@@ -97,16 +136,19 @@ Once the protocol is to be declared stable, the &#x27;z&#x27; prefix and the
 version number in the protocol and interface names are removed and the
 interface version number is reset.
 </div>
-        <ul class="list pl0">
-          
-          <li class="mt2">
-            <div class="f4 lh-title" id="r:zwp_fullscreen_shell_v1:release">
-              release
-            </div>
-            <div class="f5 lh-copy mv1 courier">
-              release the wl_fullscreen_shell interface
-            </div>
+
+        
+          <h3 class=" f5 lh-title" id="rh:zwp_fullscreen_shell_v1">Requests</h3>
+          <ul class="list pl0">
             
+            <li class="mt2">
+              <div class="f4 lh-title" id="r:zwp_fullscreen_shell_v1:release">
+                release
+              </div>
+              <div class="f5 lh-copy mv1 courier">
+                release the wl_fullscreen_shell interface
+              </div>
+              
 <div class="f6 lh-copy courier">
   <span>void </span><span class="dark-blue">zwp_fullscreen_shell_v1_release</span>(
     
@@ -114,22 +156,22 @@ interface version number is reset.
     
   )
 </div>
-            <div class="f6 lh-copy ws-pre-line courier">Release the binding from the wl_fullscreen_shell interface.
+              <div class="f6 lh-copy ws-pre-line courier">Release the binding from the wl_fullscreen_shell interface.
 
 This destroys the server-side object and frees this binding.  If
 the client binds to wl_fullscreen_shell multiple times, it may wish
 to free some of those bindings.
   </div>
-          </li>
-          
-          <li class="mt2">
-            <div class="f4 lh-title" id="r:zwp_fullscreen_shell_v1:present_surface">
-              present_surface
-            </div>
-            <div class="f5 lh-copy mv1 courier">
-              present surface for display
-            </div>
+            </li>
             
+            <li class="mt2">
+              <div class="f4 lh-title" id="r:zwp_fullscreen_shell_v1:present_surface">
+                present_surface
+              </div>
+              <div class="f5 lh-copy mv1 courier">
+                present surface for display
+              </div>
+              
 <div class="f6 lh-copy courier">
   <span>void </span><span class="dark-blue">zwp_fullscreen_shell_v1_present_surface</span>(
     
@@ -143,7 +185,7 @@ to free some of those bindings.
     
   )
 </div>
-            <div class="f6 lh-copy ws-pre-line courier">Present a surface on the given output.
+              <div class="f6 lh-copy ws-pre-line courier">Present a surface on the given output.
 
 If the output is null, the compositor will present the surface on
 whatever display (or displays) it thinks best.  In particular, this
@@ -161,16 +203,16 @@ operation on the surface.  This will override any kind of output
 scaling, so the buffer_scale property of the surface is effectively
 ignored.
   </div>
-          </li>
-          
-          <li class="mt2">
-            <div class="f4 lh-title" id="r:zwp_fullscreen_shell_v1:present_surface_for_mode">
-              present_surface_for_mode
-            </div>
-            <div class="f5 lh-copy mv1 courier">
-              present surface for display at a particular mode
-            </div>
+            </li>
             
+            <li class="mt2">
+              <div class="f4 lh-title" id="r:zwp_fullscreen_shell_v1:present_surface_for_mode">
+                present_surface_for_mode
+              </div>
+              <div class="f5 lh-copy mv1 courier">
+                present surface for display at a particular mode
+              </div>
+              
 <div class="f6 lh-copy courier">
   <span>struct zwp_fullscreen_shell_mode_feedback_v1* </span><span class="dark-blue">zwp_fullscreen_shell_v1_present_surface_for_mode</span>(
     
@@ -184,7 +226,7 @@ ignored.
     
   )
 </div>
-            <div class="f6 lh-copy ws-pre-line courier">Presents a surface on the given output for a particular mode.
+              <div class="f6 lh-copy ws-pre-line courier">Presents a surface on the given output for a particular mode.
 
 If the current size of the output differs from that of the surface,
 the compositor will attempt to change the size of the output to
@@ -222,9 +264,38 @@ then the compositor may choose a mode that matches either the buffer
 size or the surface size.  In either case, the surface will fill the
 output.
   </div>
-          </li>
-          
-        </ul>
+            </li>
+            
+          </ul>
+        
+
+        
+          <h3 class=" f5 lh-title" id="eh:zwp_fullscreen_shell_v1">Events</h3>
+          <ul class="list pl0">
+            
+            <li class="mt2">
+
+              <div class="f4 lh-title" id="e:zwp_fullscreen_shell_v1:capability">
+                capability
+              </div>
+              <div class="f5 lh-copy mv1 courier">
+                advertises a capability of the compositor
+              </div>
+              <div class="f6 lh-copy ws-pre-line courier">Advertises a single capability of the compositor.
+
+When the wl_fullscreen_shell interface is bound, this event is emitted
+once for each capability advertised.  Valid capabilities are given by
+the wl_fullscreen_shell.capability enum.  If clients want to take
+advantage of any of these capabilities, they should use a
+wl_display.sync request immediately after binding to ensure that they
+receive all the capability events.
+  </div>
+            </li>
+            
+          </ul>
+
+        
+
       </li>
       
       <li class="mt2">
@@ -232,9 +303,68 @@ output.
           zwp_fullscreen_shell_mode_feedback_v1
         </div>
         <div class="f6 lh-copy ws-pre-line courier"></div>
-        <ul class="list pl0">
-          
-        </ul>
+
+        
+
+        
+          <h3 class=" f5 lh-title" id="eh:zwp_fullscreen_shell_mode_feedback_v1">Events</h3>
+          <ul class="list pl0">
+            
+            <li class="mt2">
+
+              <div class="f4 lh-title" id="e:zwp_fullscreen_shell_mode_feedback_v1:mode_successful">
+                mode_successful
+              </div>
+              <div class="f5 lh-copy mv1 courier">
+                mode switch succeeded
+              </div>
+              <div class="f6 lh-copy ws-pre-line courier">This event indicates that the attempted mode switch operation was
+successful.  A surface of the size requested in the mode switch
+will fill the output without scaling.
+
+Upon receiving this event, the client should destroy the
+wl_fullscreen_shell_mode_feedback object.
+  </div>
+            </li>
+            
+            <li class="mt2">
+
+              <div class="f4 lh-title" id="e:zwp_fullscreen_shell_mode_feedback_v1:mode_failed">
+                mode_failed
+              </div>
+              <div class="f5 lh-copy mv1 courier">
+                mode switch failed
+              </div>
+              <div class="f6 lh-copy ws-pre-line courier">This event indicates that the attempted mode switch operation
+failed.  This may be because the requested output mode is not
+possible or it may mean that the compositor does not want to allow it.
+
+Upon receiving this event, the client should destroy the
+wl_fullscreen_shell_mode_feedback object.
+  </div>
+            </li>
+            
+            <li class="mt2">
+
+              <div class="f4 lh-title" id="e:zwp_fullscreen_shell_mode_feedback_v1:present_cancelled">
+                present_cancelled
+              </div>
+              <div class="f5 lh-copy mv1 courier">
+                mode switch cancelled
+              </div>
+              <div class="f6 lh-copy ws-pre-line courier">This event indicates that the attempted mode switch operation was
+cancelled.  Most likely this is because the client requested a
+second mode switch before the first one completed.
+
+Upon receiving this event, the client should destroy the
+wl_fullscreen_shell_mode_feedback object.
+  </div>
+            </li>
+            
+          </ul>
+
+        
+
       </li>
       
     </ul>
