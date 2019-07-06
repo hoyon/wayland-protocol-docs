@@ -5,13 +5,32 @@
   {% for interface in protocol.interfaces %}
     <li>
       <a href="#{{ interface|interface_id }}" class="link blue underline-hover lh-copy">{{interface.name}}</a>
-      <ul class="list">
-        {% for request in interface.requests %}
-        <li>
-          <a href="#{{ request|request_id(interface) }}" class="link blue underline-hover lh-copy">{{request.name}}</a>
-        </li>
-        {% endfor %}
-      </ul>
+
+      {% if interface.requests.len() != 0 %}
+        <div>
+          <a href="#{{ interface|interface_requests_id }}" class="link blue underline-hover lh-copy pl3">Requests</a>
+        </div>
+        <ul class="list pl4">
+          {% for request in interface.requests %}
+          <li>
+            <a href="#{{ request|request_id(interface) }}" class="link blue underline-hover lh-copy">{{request.name}}</a>
+          </li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+
+      {% if interface.events.len() != 0 %}
+        <div>
+          <a href="#{{ interface|interface_events_id }}" class="link blue underline-hover lh-copy pl3">Events</a>
+        </div>
+        <ul class="list pl4">
+          {% for event in interface.events %}
+          <li>
+            <a href="#{{ event|event_id(interface) }}" class="link blue underline-hover lh-copy">{{event.name}}</a>
+          </li>
+          {% endfor %}
+        </ul>
+      {% endif %}
     </li>
   {% endfor %}
   </ul>

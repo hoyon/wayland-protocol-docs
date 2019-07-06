@@ -16,20 +16,44 @@
           {{ interface.name }}
         </div>
         <div class="f6 lh-copy ws-pre-line courier">{{ interface|desc_full }}</div>
-        <ul class="list pl0">
-          {% for request in interface.requests %}
-          <li class="mt2">
-            <div class="f4 lh-title" id="{{ request|request_id(interface) }}">
-              {{ request.name }}
-            </div>
-            <div class="f5 lh-copy mv1 courier">
-              {{ request|desc_summary }}
-            </div>
-            {{ request|format_request(interface.name)|safe}}
-            <div class="f6 lh-copy ws-pre-line courier">{{ request|desc_full }}</div>
-          </li>
-          {% endfor %}
-        </ul>
+
+        {% if interface.requests.len() != 0 %}
+          <h3 class=" f5 lh-title" id="{{ interface|interface_requests_id }}">Requests</h3>
+          <ul class="list pl0">
+            {% for request in interface.requests %}
+            <li class="mt2">
+              <div class="f4 lh-title" id="{{ request|request_id(interface) }}">
+                {{ request.name }}
+              </div>
+              <div class="f5 lh-copy mv1 courier">
+                {{ request|desc_summary }}
+              </div>
+              {{ request|format_request(interface.name)|safe}}
+              <div class="f6 lh-copy ws-pre-line courier">{{ request|desc_full }}</div>
+            </li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+
+        {% if interface.events.len() != 0 %}
+          <h3 class=" f5 lh-title" id="{{ interface|interface_events_id }}">Events</h3>
+          <ul class="list pl0">
+            {% for event in interface.events %}
+            <li class="mt2">
+
+              <div class="f4 lh-title" id="{{ event|event_id(interface) }}">
+                {{ event.name }}
+              </div>
+              <div class="f5 lh-copy mv1 courier">
+                {{ event|desc_summary }}
+              </div>
+              <div class="f6 lh-copy ws-pre-line courier">{{ event|desc_full }}</div>
+            </li>
+            {% endfor %}
+          </ul>
+
+        {% endif %}
+
       </li>
       {% endfor %}
     </ul>

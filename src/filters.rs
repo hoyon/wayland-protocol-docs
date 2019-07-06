@@ -1,5 +1,5 @@
 use askama::Result;
-use protocol::{Describable, Interface, Request};
+use protocol::{Describable, Event, Interface, Request};
 use format;
 
 pub fn unwrap(option: &Option<String>) -> Result<&str> {
@@ -33,4 +33,16 @@ pub fn interface_id(interface: &Interface) -> Result<String> {
 
 pub fn request_id(request: &Request, interface: &Interface) -> Result<String> {
     Ok(format!("r:{}:{}", interface.name, request.name))
+}
+
+pub fn event_id(event: &Event, interface: &Interface) -> Result<String> {
+    Ok(format!("e:{}:{}", interface.name, event.name))
+}
+
+pub fn interface_requests_id(interface: &Interface) -> Result<String> {
+    Ok(format!("rh:{}", interface.name))
+}
+
+pub fn interface_events_id(interface: &Interface) -> Result<String> {
+    Ok(format!("eh:{}", interface.name))
 }
