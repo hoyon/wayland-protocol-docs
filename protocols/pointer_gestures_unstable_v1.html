@@ -43,6 +43,10 @@
             <a href="#r:zwp_pointer_gestures_v1:get_pinch_gesture" class="link blue underline-hover lh-copy">get_pinch_gesture</a>
           </li>
           
+          <li>
+            <a href="#r:zwp_pointer_gestures_v1:release" class="link blue underline-hover lh-copy">release</a>
+          </li>
+          
         </ul>
       
 
@@ -198,6 +202,26 @@ wl_pointer_gesture_swipe interface for details.
 </div>
               <div class="f6 lh-copy ws-pre-line courier">Create a pinch gesture object. See the
 wl_pointer_gesture_pinch interface for details.
+  </div>
+            </li>
+            
+            <li class="mt2">
+              <div class="f4 lh-title" id="r:zwp_pointer_gestures_v1:release">
+                release
+              </div>
+              <div class="f5 lh-copy mv1 courier">
+                destroy the pointer gesture object
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">zwp_pointer_gestures_v1_release</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwp_pointer_gestures_v1*</span> zwp_pointer_gestures_v1</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier">Destroy the pointer gesture object. Swipe and pinch objects created via this
+gesture object remain valid.
   </div>
             </li>
             

@@ -1039,10 +1039,10 @@ of the error, for (debugging) convenience.
                 acknowledge object ID deletion
               </div>
               <div class="f6 lh-copy ws-pre-line courier">This event is used internally by the object ID management
-logic.  When a client deletes an object, the server will send
-this event to acknowledge that it has seen the delete request.
-When the client receives this event, it will know that it can
-safely reuse the object ID.
+logic. When a client deletes an object that it had created,
+the server will send this event to acknowledge that it has
+seen the delete request. When the client receives this event,
+it will know that it can safely reuse the object ID.
   </div>
             </li>
             
@@ -2787,8 +2787,10 @@ to the client owning the popup surface.
         <div class="f2 lh-copy" id="i:wl_surface">
           wl_surface
         </div>
-        <div class="f6 lh-copy ws-pre-line courier">A surface is a rectangular area that is displayed on the screen.
-It has a location, size and pixel contents.
+        <div class="f6 lh-copy ws-pre-line courier">A surface is a rectangular area that may be displayed on zero
+or more outputs, and shown any number of times at the compositor&#x27;s
+discretion. They can present wl_buffers, receive user input, and
+define a local coordinate system.
 
 The size of a surface (and relative positions on it) is described
 in surface-local coordinates, which may differ from the buffer
@@ -2903,6 +2905,12 @@ the client may reuse the wl_buffer. A wl_buffer that has been
 attached and then replaced by another attach instead of committed
 will not receive a release event, and is not used by the
 compositor.
+
+If a pending wl_buffer has been committed to more than one wl_surface,
+the delivery of wl_buffer.release events becomes undefined. A well
+behaved client should not rely on wl_buffer.release events in this
+case. Alternatively, a client could create multiple wl_buffer objects
+from the same backing storage or use wp_linux_buffer_release.
 
 Destroying the wl_buffer after wl_buffer.release does not change
 the surface contents. However, if the client destroys the
