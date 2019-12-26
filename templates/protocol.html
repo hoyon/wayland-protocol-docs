@@ -11,7 +11,7 @@
     <h1 class="f1 lh-title">{{ protocol.name }}</h1>
     <ul class="list pl0">
       {% for interface in protocol.interfaces %}
-      <li class="mt2">
+      <li class="mt4">
         <div class="f2 lh-copy" id="{{ interface|interface_id }}">
           {{ interface.name }}
         </div>
@@ -21,12 +21,14 @@
           <h3 class=" f5 lh-title" id="{{ interface|interface_requests_id }}">Requests</h3>
           <ul class="list pl0">
             {% for request in interface.requests %}
-            <li class="mt2">
-              <div class="f4 lh-title" id="{{ request|request_id(interface) }}">
-                {{ request.name }}
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                {{ request|desc_summary }}
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="{{ request|request_id(interface) }}">
+                <div class="f4">
+                  {{ request.name }}
+                </div>
+                <div class="f5 ml2">
+                  {{ request|desc_summary }}
+                </div>
               </div>
               {{ request|format_request(interface.name)|safe}}
               <div class="f6 lh-copy ws-pre-line courier">{{ request|desc_full }}</div>
@@ -39,14 +41,16 @@
           <h3 class=" f5 lh-title" id="{{ interface|interface_events_id }}">Events</h3>
           <ul class="list pl0">
             {% for event in interface.events %}
-            <li class="mt2">
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="{{ event|event_id(interface) }}">
+                <div class="f4">
+                  {{ event.name }}
+                </div>
+                <div class="f5 ml2">
+                  {{ event|desc_summary }}
+                </div>
+              </div>
 
-              <div class="f4 lh-title" id="{{ event|event_id(interface) }}">
-                {{ event.name }}
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                {{ event|desc_summary }}
-              </div>
               <div class="f6 lh-copy ws-pre-line courier">{{ event|desc_full }}</div>
             </li>
             {% endfor %}
