@@ -1755,7 +1755,7 @@ code, .code { font-family: Consolas, monaco, monospace; }
 .measure-narrow { max-width: 20em; }
 /* Book paragraph style - paragraphs are indented with no vertical spacing. */
 .indent { text-indent: 1em; margin-top: 0; margin-bottom: 0; }
-.small-caps { -webkit-font-feature-settings: "c2sc"; font-feature-settings: "c2sc"; font-variant: small-caps; }
+.small-caps { font-feature-settings: "c2sc"; font-variant: small-caps; }
 /* Combine this class with a width to truncate text (or just leave as is to truncate at width of containing element. */
 .truncate { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 /*
@@ -2438,7 +2438,7 @@ code, .code { font-family: Consolas, monaco, monospace; }
  .measure-wide-ns { max-width: 34em; }
  .measure-narrow-ns { max-width: 20em; }
  .indent-ns { text-indent: 1em; margin-top: 0; margin-bottom: 0; }
- .small-caps-ns { -webkit-font-feature-settings: "c2sc"; font-feature-settings: "c2sc"; font-variant: small-caps; }
+ .small-caps-ns { font-feature-settings: "c2sc"; font-variant: small-caps; }
  .truncate-ns { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
  .center-ns { margin-right: auto; margin-left: auto; }
  .mr-auto-ns { margin-right: auto; }
@@ -2861,7 +2861,7 @@ code, .code { font-family: Consolas, monaco, monospace; }
  .measure-wide-m { max-width: 34em; }
  .measure-narrow-m { max-width: 20em; }
  .indent-m { text-indent: 1em; margin-top: 0; margin-bottom: 0; }
- .small-caps-m { -webkit-font-feature-settings: "c2sc"; font-feature-settings: "c2sc"; font-variant: small-caps; }
+ .small-caps-m { font-feature-settings: "c2sc"; font-variant: small-caps; }
  .truncate-m { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
  .center-m { margin-right: auto; margin-left: auto; }
  .mr-auto-m { margin-right: auto; }
@@ -3284,7 +3284,7 @@ code, .code { font-family: Consolas, monaco, monospace; }
  .measure-wide-l { max-width: 34em; }
  .measure-narrow-l { max-width: 20em; }
  .indent-l { text-indent: 1em; margin-top: 0; margin-bottom: 0; }
- .small-caps-l { -webkit-font-feature-settings: "c2sc"; font-feature-settings: "c2sc"; font-variant: small-caps; }
+ .small-caps-l { font-feature-settings: "c2sc"; font-variant: small-caps; }
  .truncate-l { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
  .center-l { margin-right: auto; margin-left: auto; }
  .mr-auto-l { margin-right: auto; }
