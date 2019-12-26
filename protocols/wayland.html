@@ -937,7 +937,7 @@
     <h1 class="f1 lh-title">wayland</h1>
     <ul class="list pl0">
       
-      <li class="mt2">
+      <li class="mt4">
         <div class="f2 lh-copy" id="i:wl_display">
           wl_display
         </div>
@@ -949,12 +949,14 @@ is used for internal Wayland protocol features.
           <h3 class=" f5 lh-title" id="rh:wl_display">Requests</h3>
           <ul class="list pl0">
             
-            <li class="mt2">
-              <div class="f4 lh-title" id="r:wl_display:sync">
-                sync
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                asynchronous roundtrip
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:wl_display:sync">
+                <div class="f4">
+                  sync
+                </div>
+                <div class="f5 ml2">
+                  asynchronous roundtrip
+                </div>
               </div>
               
 <div class="f6 lh-copy courier">
@@ -978,12 +980,14 @@ The callback_data passed in the callback is the event serial.
   </div>
             </li>
             
-            <li class="mt2">
-              <div class="f4 lh-title" id="r:wl_display:get_registry">
-                get_registry
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                get global registry object
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:wl_display:get_registry">
+                <div class="f4">
+                  get_registry
+                </div>
+                <div class="f5 ml2">
+                  get global registry object
+                </div>
               </div>
               
 <div class="f6 lh-copy courier">
@@ -1012,14 +1016,16 @@ possible to avoid wasting memory.
           <h3 class=" f5 lh-title" id="eh:wl_display">Events</h3>
           <ul class="list pl0">
             
-            <li class="mt2">
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:wl_display:error">
+                <div class="f4">
+                  error
+                </div>
+                <div class="f5 ml2">
+                  fatal error event
+                </div>
+              </div>
 
-              <div class="f4 lh-title" id="e:wl_display:error">
-                error
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                fatal error event
-              </div>
               <div class="f6 lh-copy ws-pre-line courier">The error event is sent out when a fatal (non-recoverable)
 error has occurred.  The object_id argument is the object
 where the error occurred, most often in response to a request
@@ -1030,14 +1036,16 @@ of the error, for (debugging) convenience.
   </div>
             </li>
             
-            <li class="mt2">
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:wl_display:delete_id">
+                <div class="f4">
+                  delete_id
+                </div>
+                <div class="f5 ml2">
+                  acknowledge object ID deletion
+                </div>
+              </div>
 
-              <div class="f4 lh-title" id="e:wl_display:delete_id">
-                delete_id
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                acknowledge object ID deletion
-              </div>
               <div class="f6 lh-copy ws-pre-line courier">This event is used internally by the object ID management
 logic. When a client deletes an object that it had created,
 the server will send this event to acknowledge that it has
@@ -1052,7 +1060,7 @@ it will know that it can safely reuse the object ID.
 
       </li>
       
-      <li class="mt2">
+      <li class="mt4">
         <div class="f2 lh-copy" id="i:wl_registry">
           wl_registry
         </div>
@@ -1082,12 +1090,14 @@ the object.
           <h3 class=" f5 lh-title" id="rh:wl_registry">Requests</h3>
           <ul class="list pl0">
             
-            <li class="mt2">
-              <div class="f4 lh-title" id="r:wl_registry:bind">
-                bind
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                bind an object to the display
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:wl_registry:bind">
+                <div class="f4">
+                  bind
+                </div>
+                <div class="f5 ml2">
+                  bind an object to the display
+                </div>
               </div>
               
 <div class="f6 lh-copy courier">
@@ -1111,14 +1121,16 @@ specified name as the identifier.
           <h3 class=" f5 lh-title" id="eh:wl_registry">Events</h3>
           <ul class="list pl0">
             
-            <li class="mt2">
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:wl_registry:global">
+                <div class="f4">
+                  global
+                </div>
+                <div class="f5 ml2">
+                  announce global object
+                </div>
+              </div>
 
-              <div class="f4 lh-title" id="e:wl_registry:global">
-                global
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                announce global object
-              </div>
               <div class="f6 lh-copy ws-pre-line courier">Notify the client of global objects.
 
 The event notifies the client that a global object with
@@ -1127,14 +1139,16 @@ given version of the given interface.
   </div>
             </li>
             
-            <li class="mt2">
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:wl_registry:global_remove">
+                <div class="f4">
+                  global_remove
+                </div>
+                <div class="f5 ml2">
+                  announce removal of global object
+                </div>
+              </div>
 
-              <div class="f4 lh-title" id="e:wl_registry:global_remove">
-                global_remove
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                announce removal of global object
-              </div>
               <div class="f6 lh-copy ws-pre-line courier">Notify the client of removed global objects.
 
 This event notifies the client that the global identified
@@ -1154,7 +1168,7 @@ the global going away and a client sending a request to it.
 
       </li>
       
-      <li class="mt2">
+      <li class="mt4">
         <div class="f2 lh-copy" id="i:wl_callback">
           wl_callback
         </div>
@@ -1168,14 +1182,16 @@ the related request is done.
           <h3 class=" f5 lh-title" id="eh:wl_callback">Events</h3>
           <ul class="list pl0">
             
-            <li class="mt2">
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:wl_callback:done">
+                <div class="f4">
+                  done
+                </div>
+                <div class="f5 ml2">
+                  done event
+                </div>
+              </div>
 
-              <div class="f4 lh-title" id="e:wl_callback:done">
-                done
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                done event
-              </div>
               <div class="f6 lh-copy ws-pre-line courier">Notify the client when the related request is done.
   </div>
             </li>
@@ -1186,7 +1202,7 @@ the related request is done.
 
       </li>
       
-      <li class="mt2">
+      <li class="mt4">
         <div class="f2 lh-copy" id="i:wl_compositor">
           wl_compositor
         </div>
@@ -1199,12 +1215,14 @@ surfaces into one displayable output.
           <h3 class=" f5 lh-title" id="rh:wl_compositor">Requests</h3>
           <ul class="list pl0">
             
-            <li class="mt2">
-              <div class="f4 lh-title" id="r:wl_compositor:create_surface">
-                create_surface
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                create new surface
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:wl_compositor:create_surface">
+                <div class="f4">
+                  create_surface
+                </div>
+                <div class="f5 ml2">
+                  create new surface
+                </div>
               </div>
               
 <div class="f6 lh-copy courier">
@@ -1218,12 +1236,14 @@ surfaces into one displayable output.
   </div>
             </li>
             
-            <li class="mt2">
-              <div class="f4 lh-title" id="r:wl_compositor:create_region">
-                create_region
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                create new region
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:wl_compositor:create_region">
+                <div class="f4">
+                  create_region
+                </div>
+                <div class="f5 ml2">
+                  create new region
+                </div>
               </div>
               
 <div class="f6 lh-copy courier">
@@ -1244,7 +1264,7 @@ surfaces into one displayable output.
 
       </li>
       
-      <li class="mt2">
+      <li class="mt4">
         <div class="f2 lh-copy" id="i:wl_shm_pool">
           wl_shm_pool
         </div>
@@ -1261,12 +1281,14 @@ a surface or for many small buffers.
           <h3 class=" f5 lh-title" id="rh:wl_shm_pool">Requests</h3>
           <ul class="list pl0">
             
-            <li class="mt2">
-              <div class="f4 lh-title" id="r:wl_shm_pool:create_buffer">
-                create_buffer
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                create a buffer from the pool
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:wl_shm_pool:create_buffer">
+                <div class="f4">
+                  create_buffer
+                </div>
+                <div class="f5 ml2">
+                  create a buffer from the pool
+                </div>
               </div>
               
 <div class="f6 lh-copy courier">
@@ -1300,12 +1322,14 @@ a buffer from it.
   </div>
             </li>
             
-            <li class="mt2">
-              <div class="f4 lh-title" id="r:wl_shm_pool:destroy">
-                destroy
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                destroy the pool
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:wl_shm_pool:destroy">
+                <div class="f4">
+                  destroy
+                </div>
+                <div class="f5 ml2">
+                  destroy the pool
+                </div>
               </div>
               
 <div class="f6 lh-copy courier">
@@ -1323,12 +1347,14 @@ are gone.
   </div>
             </li>
             
-            <li class="mt2">
-              <div class="f4 lh-title" id="r:wl_shm_pool:resize">
-                resize
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                change the size of the pool mapping
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:wl_shm_pool:resize">
+                <div class="f4">
+                  resize
+                </div>
+                <div class="f5 ml2">
+                  change the size of the pool mapping
+                </div>
               </div>
               
 <div class="f6 lh-copy courier">
@@ -1354,7 +1380,7 @@ used to make the pool bigger.
 
       </li>
       
-      <li class="mt2">
+      <li class="mt4">
         <div class="f2 lh-copy" id="i:wl_shm">
           wl_shm
         </div>
@@ -1373,12 +1399,14 @@ that can be used for buffers.
           <h3 class=" f5 lh-title" id="rh:wl_shm">Requests</h3>
           <ul class="list pl0">
             
-            <li class="mt2">
-              <div class="f4 lh-title" id="r:wl_shm:create_pool">
-                create_pool
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                create a shm pool
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:wl_shm:create_pool">
+                <div class="f4">
+                  create_pool
+                </div>
+                <div class="f5 ml2">
+                  create a shm pool
+                </div>
               </div>
               
 <div class="f6 lh-copy courier">
@@ -1407,14 +1435,16 @@ descriptor, to use as backing memory for the pool.
           <h3 class=" f5 lh-title" id="eh:wl_shm">Events</h3>
           <ul class="list pl0">
             
-            <li class="mt2">
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:wl_shm:format">
+                <div class="f4">
+                  format
+                </div>
+                <div class="f5 ml2">
+                  pixel format description
+                </div>
+              </div>
 
-              <div class="f4 lh-title" id="e:wl_shm:format">
-                format
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                pixel format description
-              </div>
               <div class="f6 lh-copy ws-pre-line courier">Informs the client about a valid pixel format that
 can be used for buffers. Known formats include
 argb8888 and xrgb8888.
@@ -1427,7 +1457,7 @@ argb8888 and xrgb8888.
 
       </li>
       
-      <li class="mt2">
+      <li class="mt4">
         <div class="f2 lh-copy" id="i:wl_buffer">
           wl_buffer
         </div>
@@ -1442,12 +1472,14 @@ updates the contents is defined by the buffer factory interface.
           <h3 class=" f5 lh-title" id="rh:wl_buffer">Requests</h3>
           <ul class="list pl0">
             
-            <li class="mt2">
-              <div class="f4 lh-title" id="r:wl_buffer:destroy">
-                destroy
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                destroy a buffer
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:wl_buffer:destroy">
+                <div class="f4">
+                  destroy
+                </div>
+                <div class="f5 ml2">
+                  destroy a buffer
+                </div>
               </div>
               
 <div class="f6 lh-copy courier">
@@ -1471,14 +1503,16 @@ For possible side-effects to a surface, see wl_surface.attach.
           <h3 class=" f5 lh-title" id="eh:wl_buffer">Events</h3>
           <ul class="list pl0">
             
-            <li class="mt2">
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:wl_buffer:release">
+                <div class="f4">
+                  release
+                </div>
+                <div class="f5 ml2">
+                  compositor releases buffer
+                </div>
+              </div>
 
-              <div class="f4 lh-title" id="e:wl_buffer:release">
-                release
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                compositor releases buffer
-              </div>
               <div class="f6 lh-copy ws-pre-line courier">Sent when this wl_buffer is no longer used by the compositor.
 The client is now free to reuse or destroy this buffer and its
 backing storage.
@@ -1500,7 +1534,7 @@ optimization for GL(ES) compositors with wl_shm clients.
 
       </li>
       
-      <li class="mt2">
+      <li class="mt4">
         <div class="f2 lh-copy" id="i:wl_data_offer">
           wl_data_offer
         </div>
@@ -1516,12 +1550,14 @@ data directly from the source client.
           <h3 class=" f5 lh-title" id="rh:wl_data_offer">Requests</h3>
           <ul class="list pl0">
             
-            <li class="mt2">
-              <div class="f4 lh-title" id="r:wl_data_offer:accept">
-                accept
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                accept one of the offered mime types
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:wl_data_offer:accept">
+                <div class="f4">
+                  accept
+                </div>
+                <div class="f5 ml2">
+                  accept one of the offered mime types
+                </div>
               </div>
               
 <div class="f6 lh-copy courier">
@@ -1552,12 +1588,14 @@ conjunction with wl_data_source.action for feedback.
   </div>
             </li>
             
-            <li class="mt2">
-              <div class="f4 lh-title" id="r:wl_data_offer:receive">
-                receive
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                request that the data is transferred
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:wl_data_offer:receive">
+                <div class="f4">
+                  receive
+                </div>
+                <div class="f5 ml2">
+                  request that the data is transferred
+                </div>
               </div>
               
 <div class="f6 lh-copy courier">
@@ -1589,12 +1627,14 @@ determine acceptance.
   </div>
             </li>
             
-            <li class="mt2">
-              <div class="f4 lh-title" id="r:wl_data_offer:destroy">
-                destroy
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                destroy data offer
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:wl_data_offer:destroy">
+                <div class="f4">
+                  destroy
+                </div>
+                <div class="f5 ml2">
+                  destroy data offer
+                </div>
               </div>
               
 <div class="f6 lh-copy courier">
@@ -1608,12 +1648,14 @@ determine acceptance.
   </div>
             </li>
             
-            <li class="mt2">
-              <div class="f4 lh-title" id="r:wl_data_offer:finish">
-                finish
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                the offer will no longer be used
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:wl_data_offer:finish">
+                <div class="f4">
+                  finish
+                </div>
+                <div class="f5 ml2">
+                  the offer will no longer be used
+                </div>
               </div>
               
 <div class="f6 lh-copy courier">
@@ -1640,12 +1682,14 @@ operation, the invalid_finish protocol error is raised.
   </div>
             </li>
             
-            <li class="mt2">
-              <div class="f4 lh-title" id="r:wl_data_offer:set_actions">
-                set_actions
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                set the available&#x2f;preferred drag-and-drop actions
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:wl_data_offer:set_actions">
+                <div class="f4">
+                  set_actions
+                </div>
+                <div class="f5 ml2">
+                  set the available&#x2f;preferred drag-and-drop actions
+                </div>
               </div>
               
 <div class="f6 lh-copy courier">
@@ -1700,41 +1744,47 @@ will be raised otherwise.
           <h3 class=" f5 lh-title" id="eh:wl_data_offer">Events</h3>
           <ul class="list pl0">
             
-            <li class="mt2">
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:wl_data_offer:offer">
+                <div class="f4">
+                  offer
+                </div>
+                <div class="f5 ml2">
+                  advertise offered mime type
+                </div>
+              </div>
 
-              <div class="f4 lh-title" id="e:wl_data_offer:offer">
-                offer
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                advertise offered mime type
-              </div>
               <div class="f6 lh-copy ws-pre-line courier">Sent immediately after creating the wl_data_offer object.  One
 event per offered mime type.
   </div>
             </li>
             
-            <li class="mt2">
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:wl_data_offer:source_actions">
+                <div class="f4">
+                  source_actions
+                </div>
+                <div class="f5 ml2">
+                  notify the source-side available actions
+                </div>
+              </div>
 
-              <div class="f4 lh-title" id="e:wl_data_offer:source_actions">
-                source_actions
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                notify the source-side available actions
-              </div>
               <div class="f6 lh-copy ws-pre-line courier">This event indicates the actions offered by the data source. It
 will be sent right after wl_data_device.enter, or anytime the source
 side changes its offered actions through wl_data_source.set_actions.
   </div>
             </li>
             
-            <li class="mt2">
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:wl_data_offer:action">
+                <div class="f4">
+                  action
+                </div>
+                <div class="f5 ml2">
+                  notify the selected action
+                </div>
+              </div>
 
-              <div class="f4 lh-title" id="e:wl_data_offer:action">
-                action
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                notify the selected action
-              </div>
               <div class="f6 lh-copy ws-pre-line courier">This event indicates the action selected by the compositor after
 matching the source&#x2f;destination side actions. Only one action (or
 none) will be offered here.
@@ -1779,7 +1829,7 @@ must happen before the call to wl_data_offer.finish.
 
       </li>
       
-      <li class="mt2">
+      <li class="mt4">
         <div class="f2 lh-copy" id="i:wl_data_source">
           wl_data_source
         </div>
@@ -1793,12 +1843,14 @@ to requests to transfer the data.
           <h3 class=" f5 lh-title" id="rh:wl_data_source">Requests</h3>
           <ul class="list pl0">
             
-            <li class="mt2">
-              <div class="f4 lh-title" id="r:wl_data_source:offer">
-                offer
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                add an offered mime type
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:wl_data_source:offer">
+                <div class="f4">
+                  offer
+                </div>
+                <div class="f5 ml2">
+                  add an offered mime type
+                </div>
               </div>
               
 <div class="f6 lh-copy courier">
@@ -1816,12 +1868,14 @@ multiple types.
   </div>
             </li>
             
-            <li class="mt2">
-              <div class="f4 lh-title" id="r:wl_data_source:destroy">
-                destroy
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                destroy the data source
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:wl_data_source:destroy">
+                <div class="f4">
+                  destroy
+                </div>
+                <div class="f5 ml2">
+                  destroy the data source
+                </div>
               </div>
               
 <div class="f6 lh-copy courier">
@@ -1835,12 +1889,14 @@ multiple types.
   </div>
             </li>
             
-            <li class="mt2">
-              <div class="f4 lh-title" id="r:wl_data_source:set_actions">
-                set_actions
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                set the available drag-and-drop actions
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:wl_data_source:set_actions">
+                <div class="f4">
+                  set_actions
+                </div>
+                <div class="f5 ml2">
+                  set the available drag-and-drop actions
+                </div>
               </div>
               
 <div class="f6 lh-copy courier">
@@ -1875,14 +1931,16 @@ for drag-and-drop will raise a protocol error.
           <h3 class=" f5 lh-title" id="eh:wl_data_source">Events</h3>
           <ul class="list pl0">
             
-            <li class="mt2">
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:wl_data_source:target">
+                <div class="f4">
+                  target
+                </div>
+                <div class="f5 ml2">
+                  a target accepts an offered mime type
+                </div>
+              </div>
 
-              <div class="f4 lh-title" id="e:wl_data_source:target">
-                target
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                a target accepts an offered mime type
-              </div>
               <div class="f6 lh-copy ws-pre-line courier">Sent when a target accepts pointer_focus or motion events.  If
 a target does not accept any of the offered types, type is NULL.
 
@@ -1890,28 +1948,32 @@ Used for feedback during drag-and-drop.
   </div>
             </li>
             
-            <li class="mt2">
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:wl_data_source:send">
+                <div class="f4">
+                  send
+                </div>
+                <div class="f5 ml2">
+                  send the data
+                </div>
+              </div>
 
-              <div class="f4 lh-title" id="e:wl_data_source:send">
-                send
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                send the data
-              </div>
               <div class="f6 lh-copy ws-pre-line courier">Request for data from the client.  Send the data as the
 specified mime type over the passed file descriptor, then
 close it.
   </div>
             </li>
             
-            <li class="mt2">
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:wl_data_source:cancelled">
+                <div class="f4">
+                  cancelled
+                </div>
+                <div class="f5 ml2">
+                  selection was cancelled
+                </div>
+              </div>
 
-              <div class="f4 lh-title" id="e:wl_data_source:cancelled">
-                cancelled
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                selection was cancelled
-              </div>
               <div class="f6 lh-copy ws-pre-line courier">This data source is no longer valid. There are several reasons why
 this could happen:
 
@@ -1935,14 +1997,16 @@ source.
   </div>
             </li>
             
-            <li class="mt2">
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:wl_data_source:dnd_drop_performed">
+                <div class="f4">
+                  dnd_drop_performed
+                </div>
+                <div class="f5 ml2">
+                  the drag-and-drop operation physically finished
+                </div>
+              </div>
 
-              <div class="f4 lh-title" id="e:wl_data_source:dnd_drop_performed">
-                dnd_drop_performed
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                the drag-and-drop operation physically finished
-              </div>
               <div class="f6 lh-copy ws-pre-line courier">The user performed the drop action. This event does not indicate
 acceptance, wl_data_source.cancelled may still be emitted afterwards
 if the drop destination does not accept any mime type.
@@ -1955,14 +2019,16 @@ not be destroyed here.
   </div>
             </li>
             
-            <li class="mt2">
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:wl_data_source:dnd_finished">
+                <div class="f4">
+                  dnd_finished
+                </div>
+                <div class="f5 ml2">
+                  the drag-and-drop operation concluded
+                </div>
+              </div>
 
-              <div class="f4 lh-title" id="e:wl_data_source:dnd_finished">
-                dnd_finished
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                the drag-and-drop operation concluded
-              </div>
               <div class="f6 lh-copy ws-pre-line courier">The drop destination finished interoperating with this data
 source, so the client is now free to destroy this data source and
 free all associated data.
@@ -1972,14 +2038,16 @@ source can now delete the transferred data.
   </div>
             </li>
             
-            <li class="mt2">
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:wl_data_source:action">
+                <div class="f4">
+                  action
+                </div>
+                <div class="f5 ml2">
+                  notify the selected action
+                </div>
+              </div>
 
-              <div class="f4 lh-title" id="e:wl_data_source:action">
-                action
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                notify the selected action
-              </div>
               <div class="f6 lh-copy ws-pre-line courier">This event indicates the action selected by the compositor after
 matching the source&#x2f;destination side actions. Only one action (or
 none) will be offered here.
@@ -2014,7 +2082,7 @@ they reflect the current action.
 
       </li>
       
-      <li class="mt2">
+      <li class="mt4">
         <div class="f2 lh-copy" id="i:wl_data_device">
           wl_data_device
         </div>
@@ -2029,12 +2097,14 @@ mechanisms such as copy-and-paste and drag-and-drop.
           <h3 class=" f5 lh-title" id="rh:wl_data_device">Requests</h3>
           <ul class="list pl0">
             
-            <li class="mt2">
-              <div class="f4 lh-title" id="r:wl_data_device:start_drag">
-                start_drag
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                start drag-and-drop operation
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:wl_data_device:start_drag">
+                <div class="f4">
+                  start_drag
+                </div>
+                <div class="f5 ml2">
+                  start drag-and-drop operation
+                </div>
               </div>
               
 <div class="f6 lh-copy courier">
@@ -2082,12 +2152,14 @@ undefined, and the wl_surface is unmapped.
   </div>
             </li>
             
-            <li class="mt2">
-              <div class="f4 lh-title" id="r:wl_data_device:set_selection">
-                set_selection
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                copy data to the selection
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:wl_data_device:set_selection">
+                <div class="f4">
+                  set_selection
+                </div>
+                <div class="f5 ml2">
+                  copy data to the selection
+                </div>
               </div>
               
 <div class="f6 lh-copy courier">
@@ -2108,12 +2180,14 @@ To unset the selection, set the source to NULL.
   </div>
             </li>
             
-            <li class="mt2">
-              <div class="f4 lh-title" id="r:wl_data_device:release">
-                release
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                destroy data device
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:wl_data_device:release">
+                <div class="f4">
+                  release
+                </div>
+                <div class="f5 ml2">
+                  destroy data device
+                </div>
               </div>
               
 <div class="f6 lh-copy courier">
@@ -2134,14 +2208,16 @@ To unset the selection, set the source to NULL.
           <h3 class=" f5 lh-title" id="eh:wl_data_device">Events</h3>
           <ul class="list pl0">
             
-            <li class="mt2">
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:wl_data_device:data_offer">
+                <div class="f4">
+                  data_offer
+                </div>
+                <div class="f5 ml2">
+                  introduce a new wl_data_offer
+                </div>
+              </div>
 
-              <div class="f4 lh-title" id="e:wl_data_device:data_offer">
-                data_offer
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                introduce a new wl_data_offer
-              </div>
               <div class="f6 lh-copy ws-pre-line courier">The data_offer event introduces a new wl_data_offer object,
 which will subsequently be used in either the
 data_device.enter event (for drag-and-drop) or the
@@ -2152,14 +2228,16 @@ mime types it offers.
   </div>
             </li>
             
-            <li class="mt2">
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:wl_data_device:enter">
+                <div class="f4">
+                  enter
+                </div>
+                <div class="f5 ml2">
+                  initiate drag-and-drop session
+                </div>
+              </div>
 
-              <div class="f4 lh-title" id="e:wl_data_device:enter">
-                enter
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                initiate drag-and-drop session
-              </div>
               <div class="f6 lh-copy ws-pre-line courier">This event is sent when an active drag-and-drop pointer enters
 a surface owned by the client.  The position of the pointer at
 enter time is provided by the x and y arguments, in surface-local
@@ -2167,28 +2245,32 @@ coordinates.
   </div>
             </li>
             
-            <li class="mt2">
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:wl_data_device:leave">
+                <div class="f4">
+                  leave
+                </div>
+                <div class="f5 ml2">
+                  end drag-and-drop session
+                </div>
+              </div>
 
-              <div class="f4 lh-title" id="e:wl_data_device:leave">
-                leave
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                end drag-and-drop session
-              </div>
               <div class="f6 lh-copy ws-pre-line courier">This event is sent when the drag-and-drop pointer leaves the
 surface and the session ends.  The client must destroy the
 wl_data_offer introduced at enter time at this point.
   </div>
             </li>
             
-            <li class="mt2">
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:wl_data_device:motion">
+                <div class="f4">
+                  motion
+                </div>
+                <div class="f5 ml2">
+                  drag-and-drop session motion
+                </div>
+              </div>
 
-              <div class="f4 lh-title" id="e:wl_data_device:motion">
-                motion
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                drag-and-drop session motion
-              </div>
               <div class="f6 lh-copy ws-pre-line courier">This event is sent when the drag-and-drop pointer moves within
 the currently focused surface. The new position of the pointer
 is provided by the x and y arguments, in surface-local
@@ -2196,14 +2278,16 @@ coordinates.
   </div>
             </li>
             
-            <li class="mt2">
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:wl_data_device:drop">
+                <div class="f4">
+                  drop
+                </div>
+                <div class="f5 ml2">
+                  end drag-and-drop session successfully
+                </div>
+              </div>
 
-              <div class="f4 lh-title" id="e:wl_data_device:drop">
-                drop
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                end drag-and-drop session successfully
-              </div>
               <div class="f6 lh-copy ws-pre-line courier">The event is sent when a drag-and-drop operation is ended
 because the implicit grab is removed.
 
@@ -2220,14 +2304,16 @@ to cancel the operation.
   </div>
             </li>
             
-            <li class="mt2">
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:wl_data_device:selection">
+                <div class="f4">
+                  selection
+                </div>
+                <div class="f5 ml2">
+                  advertise new selection
+                </div>
+              </div>
 
-              <div class="f4 lh-title" id="e:wl_data_device:selection">
-                selection
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                advertise new selection
-              </div>
               <div class="f6 lh-copy ws-pre-line courier">The selection event is sent out to notify the client of a new
 wl_data_offer for the selection for this device.  The
 data_device.data_offer and the data_offer.offer events are
@@ -2248,7 +2334,7 @@ this event.
 
       </li>
       
-      <li class="mt2">
+      <li class="mt4">
         <div class="f2 lh-copy" id="i:wl_data_device_manager">
           wl_data_device_manager
         </div>
@@ -2268,12 +2354,14 @@ wl_data_offer.accept and wl_data_offer.finish for details.
           <h3 class=" f5 lh-title" id="rh:wl_data_device_manager">Requests</h3>
           <ul class="list pl0">
             
-            <li class="mt2">
-              <div class="f4 lh-title" id="r:wl_data_device_manager:create_data_source">
-                create_data_source
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                create a new data source
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:wl_data_device_manager:create_data_source">
+                <div class="f4">
+                  create_data_source
+                </div>
+                <div class="f5 ml2">
+                  create a new data source
+                </div>
               </div>
               
 <div class="f6 lh-copy courier">
@@ -2287,12 +2375,14 @@ wl_data_offer.accept and wl_data_offer.finish for details.
   </div>
             </li>
             
-            <li class="mt2">
-              <div class="f4 lh-title" id="r:wl_data_device_manager:get_data_device">
-                get_data_device
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                create a new data device
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:wl_data_device_manager:get_data_device">
+                <div class="f4">
+                  get_data_device
+                </div>
+                <div class="f5 ml2">
+                  create a new data device
+                </div>
               </div>
               
 <div class="f6 lh-copy courier">
@@ -2315,7 +2405,7 @@ wl_data_offer.accept and wl_data_offer.finish for details.
 
       </li>
       
-      <li class="mt2">
+      <li class="mt4">
         <div class="f2 lh-copy" id="i:wl_shell">
           wl_shell
         </div>
@@ -2333,12 +2423,14 @@ For desktop-style user interfaces, use xdg_shell.
           <h3 class=" f5 lh-title" id="rh:wl_shell">Requests</h3>
           <ul class="list pl0">
             
-            <li class="mt2">
-              <div class="f4 lh-title" id="r:wl_shell:get_shell_surface">
-                get_shell_surface
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                create a shell surface from a surface
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:wl_shell:get_shell_surface">
+                <div class="f4">
+                  get_shell_surface
+                </div>
+                <div class="f5 ml2">
+                  create a shell surface from a surface
+                </div>
               </div>
               
 <div class="f6 lh-copy courier">
@@ -2365,7 +2457,7 @@ Only one shell surface can be associated with a given surface.
 
       </li>
       
-      <li class="mt2">
+      <li class="mt4">
         <div class="f2 lh-copy" id="i:wl_shell_surface">
           wl_shell_surface
         </div>
@@ -2386,12 +2478,14 @@ the wl_surface object.
           <h3 class=" f5 lh-title" id="rh:wl_shell_surface">Requests</h3>
           <ul class="list pl0">
             
-            <li class="mt2">
-              <div class="f4 lh-title" id="r:wl_shell_surface:pong">
-                pong
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                respond to a ping event
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:wl_shell_surface:pong">
+                <div class="f4">
+                  pong
+                </div>
+                <div class="f5 ml2">
+                  respond to a ping event
+                </div>
               </div>
               
 <div class="f6 lh-copy courier">
@@ -2408,12 +2502,14 @@ the client may be deemed unresponsive.
   </div>
             </li>
             
-            <li class="mt2">
-              <div class="f4 lh-title" id="r:wl_shell_surface:move">
-                move
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                start an interactive move
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:wl_shell_surface:move">
+                <div class="f4">
+                  move
+                </div>
+                <div class="f5 ml2">
+                  start an interactive move
+                </div>
               </div>
               
 <div class="f6 lh-copy courier">
@@ -2435,12 +2531,14 @@ the surface (e.g. fullscreen or maximized).
   </div>
             </li>
             
-            <li class="mt2">
-              <div class="f4 lh-title" id="r:wl_shell_surface:resize">
-                resize
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                start an interactive resize
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:wl_shell_surface:resize">
+                <div class="f4">
+                  resize
+                </div>
+                <div class="f5 ml2">
+                  start an interactive resize
+                </div>
               </div>
               
 <div class="f6 lh-copy courier">
@@ -2464,12 +2562,14 @@ the surface (e.g. fullscreen or maximized).
   </div>
             </li>
             
-            <li class="mt2">
-              <div class="f4 lh-title" id="r:wl_shell_surface:set_toplevel">
-                set_toplevel
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                make the surface a toplevel surface
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:wl_shell_surface:set_toplevel">
+                <div class="f4">
+                  set_toplevel
+                </div>
+                <div class="f5 ml2">
+                  make the surface a toplevel surface
+                </div>
               </div>
               
 <div class="f6 lh-copy courier">
@@ -2485,12 +2585,14 @@ A toplevel surface is not fullscreen, maximized or transient.
   </div>
             </li>
             
-            <li class="mt2">
-              <div class="f4 lh-title" id="r:wl_shell_surface:set_transient">
-                set_transient
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                make the surface a transient surface
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:wl_shell_surface:set_transient">
+                <div class="f4">
+                  set_transient
+                </div>
+                <div class="f5 ml2">
+                  make the surface a transient surface
+                </div>
               </div>
               
 <div class="f6 lh-copy courier">
@@ -2518,12 +2620,14 @@ The flags argument controls details of the transient behaviour.
   </div>
             </li>
             
-            <li class="mt2">
-              <div class="f4 lh-title" id="r:wl_shell_surface:set_fullscreen">
-                set_fullscreen
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                make the surface a fullscreen surface
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:wl_shell_surface:set_fullscreen">
+                <div class="f4">
+                  set_fullscreen
+                </div>
+                <div class="f5 ml2">
+                  make the surface a fullscreen surface
+                </div>
               </div>
               
 <div class="f6 lh-copy courier">
@@ -2575,12 +2679,14 @@ be made fullscreen.
   </div>
             </li>
             
-            <li class="mt2">
-              <div class="f4 lh-title" id="r:wl_shell_surface:set_popup">
-                set_popup
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                make the surface a popup surface
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:wl_shell_surface:set_popup">
+                <div class="f4">
+                  set_popup
+                </div>
+                <div class="f5 ml2">
+                  make the surface a popup surface
+                </div>
               </div>
               
 <div class="f6 lh-copy courier">
@@ -2624,12 +2730,14 @@ parent surface, in surface-local coordinates.
   </div>
             </li>
             
-            <li class="mt2">
-              <div class="f4 lh-title" id="r:wl_shell_surface:set_maximized">
-                set_maximized
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                make the surface a maximized surface
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:wl_shell_surface:set_maximized">
+                <div class="f4">
+                  set_maximized
+                </div>
+                <div class="f5 ml2">
+                  make the surface a maximized surface
+                </div>
               </div>
               
 <div class="f6 lh-copy courier">
@@ -2662,12 +2770,14 @@ The details depend on the compositor implementation.
   </div>
             </li>
             
-            <li class="mt2">
-              <div class="f4 lh-title" id="r:wl_shell_surface:set_title">
-                set_title
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                set surface title
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:wl_shell_surface:set_title">
+                <div class="f4">
+                  set_title
+                </div>
+                <div class="f5 ml2">
+                  set surface title
+                </div>
               </div>
               
 <div class="f6 lh-copy courier">
@@ -2689,12 +2799,14 @@ The string must be encoded in UTF-8.
   </div>
             </li>
             
-            <li class="mt2">
-              <div class="f4 lh-title" id="r:wl_shell_surface:set_class">
-                set_class
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                set surface class
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:wl_shell_surface:set_class">
+                <div class="f4">
+                  set_class
+                </div>
+                <div class="f5 ml2">
+                  set surface class
+                </div>
               </div>
               
 <div class="f6 lh-copy courier">
@@ -2722,27 +2834,31 @@ the application&#x27;s .desktop file as the class.
           <h3 class=" f5 lh-title" id="eh:wl_shell_surface">Events</h3>
           <ul class="list pl0">
             
-            <li class="mt2">
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:wl_shell_surface:ping">
+                <div class="f4">
+                  ping
+                </div>
+                <div class="f5 ml2">
+                  ping client
+                </div>
+              </div>
 
-              <div class="f4 lh-title" id="e:wl_shell_surface:ping">
-                ping
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                ping client
-              </div>
               <div class="f6 lh-copy ws-pre-line courier">Ping a client to check if it is receiving events and sending
 requests. A client is expected to reply with a pong request.
   </div>
             </li>
             
-            <li class="mt2">
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:wl_shell_surface:configure">
+                <div class="f4">
+                  configure
+                </div>
+                <div class="f5 ml2">
+                  suggest resize
+                </div>
+              </div>
 
-              <div class="f4 lh-title" id="e:wl_shell_surface:configure">
-                configure
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                suggest resize
-              </div>
               <div class="f6 lh-copy ws-pre-line courier">The configure event asks the client to resize its surface.
 
 The size is a hint, in the sense that the client is free to
@@ -2763,14 +2879,16 @@ in surface-local coordinates.
   </div>
             </li>
             
-            <li class="mt2">
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:wl_shell_surface:popup_done">
+                <div class="f4">
+                  popup_done
+                </div>
+                <div class="f5 ml2">
+                  popup interaction is done
+                </div>
+              </div>
 
-              <div class="f4 lh-title" id="e:wl_shell_surface:popup_done">
-                popup_done
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                popup interaction is done
-              </div>
               <div class="f6 lh-copy ws-pre-line courier">The popup_done event is sent out when a popup grab is broken,
 that is, when the user clicks a surface that doesn&#x27;t belong
 to the client owning the popup surface.
@@ -2783,7 +2901,7 @@ to the client owning the popup surface.
 
       </li>
       
-      <li class="mt2">
+      <li class="mt4">
         <div class="f2 lh-copy" id="i:wl_surface">
           wl_surface
         </div>
@@ -2834,12 +2952,14 @@ switching is not allowed).
           <h3 class=" f5 lh-title" id="rh:wl_surface">Requests</h3>
           <ul class="list pl0">
             
-            <li class="mt2">
-              <div class="f4 lh-title" id="r:wl_surface:destroy">
-                destroy
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                delete surface
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:wl_surface:destroy">
+                <div class="f4">
+                  destroy
+                </div>
+                <div class="f5 ml2">
+                  delete surface
+                </div>
               </div>
               
 <div class="f6 lh-copy courier">
@@ -2853,12 +2973,14 @@ switching is not allowed).
   </div>
             </li>
             
-            <li class="mt2">
-              <div class="f4 lh-title" id="r:wl_surface:attach">
-                attach
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                set the surface contents
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:wl_surface:attach">
+                <div class="f4">
+                  attach
+                </div>
+                <div class="f5 ml2">
+                  set the surface contents
+                </div>
               </div>
               
 <div class="f6 lh-copy courier">
@@ -2922,12 +3044,14 @@ following wl_surface.commit will remove the surface content.
   </div>
             </li>
             
-            <li class="mt2">
-              <div class="f4 lh-title" id="r:wl_surface:damage">
-                damage
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                mark part of the surface damaged
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:wl_surface:damage">
+                <div class="f4">
+                  damage
+                </div>
+                <div class="f5 ml2">
+                  mark part of the surface damaged
+                </div>
               </div>
               
 <div class="f6 lh-copy courier">
@@ -2969,12 +3093,14 @@ instead of surface coordinates.
   </div>
             </li>
             
-            <li class="mt2">
-              <div class="f4 lh-title" id="r:wl_surface:frame">
-                frame
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                request a frame throttling hint
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:wl_surface:frame">
+                <div class="f4">
+                  frame
+                </div>
+                <div class="f5 ml2">
+                  request a frame throttling hint
+                </div>
               </div>
               
 <div class="f6 lh-copy courier">
@@ -3019,12 +3145,14 @@ milliseconds, with an undefined base.
   </div>
             </li>
             
-            <li class="mt2">
-              <div class="f4 lh-title" id="r:wl_surface:set_opaque_region">
-                set_opaque_region
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                set opaque region
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:wl_surface:set_opaque_region">
+                <div class="f4">
+                  set_opaque_region
+                </div>
+                <div class="f5 ml2">
+                  set opaque region
+                </div>
               </div>
               
 <div class="f6 lh-copy courier">
@@ -3063,12 +3191,14 @@ region to be set to empty.
   </div>
             </li>
             
-            <li class="mt2">
-              <div class="f4 lh-title" id="r:wl_surface:set_input_region">
-                set_input_region
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                set input region
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:wl_surface:set_input_region">
+                <div class="f4">
+                  set_input_region
+                </div>
+                <div class="f5 ml2">
+                  set input region
+                </div>
               </div>
               
 <div class="f6 lh-copy courier">
@@ -3105,12 +3235,14 @@ to infinite.
   </div>
             </li>
             
-            <li class="mt2">
-              <div class="f4 lh-title" id="r:wl_surface:commit">
-                commit
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                commit pending surface state
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:wl_surface:commit">
+                <div class="f4">
+                  commit
+                </div>
+                <div class="f5 ml2">
+                  commit pending surface state
+                </div>
               </div>
               
 <div class="f6 lh-copy courier">
@@ -3140,12 +3272,14 @@ Other interfaces may add further double-buffered surface state.
   </div>
             </li>
             
-            <li class="mt2">
-              <div class="f4 lh-title" id="r:wl_surface:set_buffer_transform">
-                set_buffer_transform
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                sets the buffer transformation
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:wl_surface:set_buffer_transform">
+                <div class="f4">
+                  set_buffer_transform
+                </div>
+                <div class="f5 ml2">
+                  sets the buffer transformation
+                </div>
               </div>
               
 <div class="f6 lh-copy courier">
@@ -3189,12 +3323,14 @@ is raised.
   </div>
             </li>
             
-            <li class="mt2">
-              <div class="f4 lh-title" id="r:wl_surface:set_buffer_scale">
-                set_buffer_scale
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                sets the buffer scaling factor
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:wl_surface:set_buffer_scale">
+                <div class="f4">
+                  set_buffer_scale
+                </div>
+                <div class="f5 ml2">
+                  sets the buffer scaling factor
+                </div>
               </div>
               
 <div class="f6 lh-copy courier">
@@ -3232,12 +3368,14 @@ raised.
   </div>
             </li>
             
-            <li class="mt2">
-              <div class="f4 lh-title" id="r:wl_surface:damage_buffer">
-                damage_buffer
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                mark part of the surface damaged using buffer coordinates
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:wl_surface:damage_buffer">
+                <div class="f4">
+                  damage_buffer
+                </div>
+                <div class="f5 ml2">
+                  mark part of the surface damaged using buffer coordinates
+                </div>
               </div>
               
 <div class="f6 lh-copy courier">
@@ -3297,14 +3435,16 @@ after receiving the wl_surface.commit.
           <h3 class=" f5 lh-title" id="eh:wl_surface">Events</h3>
           <ul class="list pl0">
             
-            <li class="mt2">
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:wl_surface:enter">
+                <div class="f4">
+                  enter
+                </div>
+                <div class="f5 ml2">
+                  surface enters an output
+                </div>
+              </div>
 
-              <div class="f4 lh-title" id="e:wl_surface:enter">
-                enter
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                surface enters an output
-              </div>
               <div class="f6 lh-copy ws-pre-line courier">This is emitted whenever a surface&#x27;s creation, movement, or resizing
 results in some part of it being within the scanout region of an
 output.
@@ -3313,14 +3453,16 @@ Note that a surface may be overlapping with zero or more outputs.
   </div>
             </li>
             
-            <li class="mt2">
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:wl_surface:leave">
+                <div class="f4">
+                  leave
+                </div>
+                <div class="f5 ml2">
+                  surface leaves an output
+                </div>
+              </div>
 
-              <div class="f4 lh-title" id="e:wl_surface:leave">
-                leave
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                surface leaves an output
-              </div>
               <div class="f6 lh-copy ws-pre-line courier">This is emitted whenever a surface&#x27;s creation, movement, or resizing
 results in it no longer having any part of it within the scanout region
 of an output.
@@ -3333,7 +3475,7 @@ of an output.
 
       </li>
       
-      <li class="mt2">
+      <li class="mt4">
         <div class="f2 lh-copy" id="i:wl_seat">
           wl_seat
         </div>
@@ -3347,12 +3489,14 @@ maintains a keyboard focus and a pointer focus.
           <h3 class=" f5 lh-title" id="rh:wl_seat">Requests</h3>
           <ul class="list pl0">
             
-            <li class="mt2">
-              <div class="f4 lh-title" id="r:wl_seat:get_pointer">
-                get_pointer
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                return pointer object
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:wl_seat:get_pointer">
+                <div class="f4">
+                  get_pointer
+                </div>
+                <div class="f5 ml2">
+                  return pointer object
+                </div>
               </div>
               
 <div class="f6 lh-copy courier">
@@ -3372,12 +3516,14 @@ never had the pointer capability.
   </div>
             </li>
             
-            <li class="mt2">
-              <div class="f4 lh-title" id="r:wl_seat:get_keyboard">
-                get_keyboard
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                return keyboard object
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:wl_seat:get_keyboard">
+                <div class="f4">
+                  get_keyboard
+                </div>
+                <div class="f5 ml2">
+                  return keyboard object
+                </div>
               </div>
               
 <div class="f6 lh-copy courier">
@@ -3397,12 +3543,14 @@ never had the keyboard capability.
   </div>
             </li>
             
-            <li class="mt2">
-              <div class="f4 lh-title" id="r:wl_seat:get_touch">
-                get_touch
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                return touch object
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:wl_seat:get_touch">
+                <div class="f4">
+                  get_touch
+                </div>
+                <div class="f5 ml2">
+                  return touch object
+                </div>
               </div>
               
 <div class="f6 lh-copy courier">
@@ -3422,12 +3570,14 @@ never had the touch capability.
   </div>
             </li>
             
-            <li class="mt2">
-              <div class="f4 lh-title" id="r:wl_seat:release">
-                release
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                release the seat object
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:wl_seat:release">
+                <div class="f4">
+                  release
+                </div>
+                <div class="f5 ml2">
+                  release the seat object
+                </div>
               </div>
               
 <div class="f6 lh-copy courier">
@@ -3449,14 +3599,16 @@ use the seat object anymore.
           <h3 class=" f5 lh-title" id="eh:wl_seat">Events</h3>
           <ul class="list pl0">
             
-            <li class="mt2">
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:wl_seat:capabilities">
+                <div class="f4">
+                  capabilities
+                </div>
+                <div class="f5 ml2">
+                  seat capabilities changed
+                </div>
+              </div>
 
-              <div class="f4 lh-title" id="e:wl_seat:capabilities">
-                capabilities
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                seat capabilities changed
-              </div>
               <div class="f6 lh-copy ws-pre-line courier">This is emitted whenever a seat gains or loses the pointer,
 keyboard or touch capabilities.  The argument is a capability
 enum containing the complete set of capabilities this seat has.
@@ -3484,14 +3636,16 @@ keyboard and touch capabilities, respectively.
   </div>
             </li>
             
-            <li class="mt2">
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:wl_seat:name">
+                <div class="f4">
+                  name
+                </div>
+                <div class="f5 ml2">
+                  unique identifier for this seat
+                </div>
+              </div>
 
-              <div class="f4 lh-title" id="e:wl_seat:name">
-                name
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                unique identifier for this seat
-              </div>
               <div class="f6 lh-copy ws-pre-line courier">In a multiseat configuration this can be used by the client to help
 identify which physical devices the seat represents. Based on
 the seat configuration used by the compositor.
@@ -3504,7 +3658,7 @@ the seat configuration used by the compositor.
 
       </li>
       
-      <li class="mt2">
+      <li class="mt4">
         <div class="f2 lh-copy" id="i:wl_pointer">
           wl_pointer
         </div>
@@ -3522,12 +3676,14 @@ and scrolling.
           <h3 class=" f5 lh-title" id="rh:wl_pointer">Requests</h3>
           <ul class="list pl0">
             
-            <li class="mt2">
-              <div class="f4 lh-title" id="r:wl_pointer:set_cursor">
-                set_cursor
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                set the pointer surface
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:wl_pointer:set_cursor">
+                <div class="f4">
+                  set_cursor
+                </div>
+                <div class="f5 ml2">
+                  set the pointer surface
+                </div>
               </div>
               
 <div class="f6 lh-copy courier">
@@ -3579,12 +3735,14 @@ undefined, and the wl_surface is unmapped.
   </div>
             </li>
             
-            <li class="mt2">
-              <div class="f4 lh-title" id="r:wl_pointer:release">
-                release
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                release the pointer object
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:wl_pointer:release">
+                <div class="f4">
+                  release
+                </div>
+                <div class="f5 ml2">
+                  release the pointer object
+                </div>
               </div>
               
 <div class="f6 lh-copy courier">
@@ -3609,14 +3767,16 @@ wl_pointer_destroy() after using this request.
           <h3 class=" f5 lh-title" id="eh:wl_pointer">Events</h3>
           <ul class="list pl0">
             
-            <li class="mt2">
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:wl_pointer:enter">
+                <div class="f4">
+                  enter
+                </div>
+                <div class="f5 ml2">
+                  enter event
+                </div>
+              </div>
 
-              <div class="f4 lh-title" id="e:wl_pointer:enter">
-                enter
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                enter event
-              </div>
               <div class="f6 lh-copy ws-pre-line courier">Notification that this seat&#x27;s pointer is focused on a certain
 surface.
 
@@ -3626,14 +3786,16 @@ an appropriate pointer image with the set_cursor request.
   </div>
             </li>
             
-            <li class="mt2">
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:wl_pointer:leave">
+                <div class="f4">
+                  leave
+                </div>
+                <div class="f5 ml2">
+                  leave event
+                </div>
+              </div>
 
-              <div class="f4 lh-title" id="e:wl_pointer:leave">
-                leave
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                leave event
-              </div>
               <div class="f6 lh-copy ws-pre-line courier">Notification that this seat&#x27;s pointer is no longer focused on
 a certain surface.
 
@@ -3642,28 +3804,32 @@ for the new focus.
   </div>
             </li>
             
-            <li class="mt2">
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:wl_pointer:motion">
+                <div class="f4">
+                  motion
+                </div>
+                <div class="f5 ml2">
+                  pointer motion event
+                </div>
+              </div>
 
-              <div class="f4 lh-title" id="e:wl_pointer:motion">
-                motion
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                pointer motion event
-              </div>
               <div class="f6 lh-copy ws-pre-line courier">Notification of pointer location change. The arguments
 surface_x and surface_y are the location relative to the
 focused surface.
   </div>
             </li>
             
-            <li class="mt2">
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:wl_pointer:button">
+                <div class="f4">
+                  button
+                </div>
+                <div class="f5 ml2">
+                  pointer button event
+                </div>
+              </div>
 
-              <div class="f4 lh-title" id="e:wl_pointer:button">
-                button
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                pointer button event
-              </div>
               <div class="f6 lh-copy ws-pre-line courier">Mouse button click and release notifications.
 
 The location of the click is given by the last motion or
@@ -3681,14 +3847,16 @@ protocol.
   </div>
             </li>
             
-            <li class="mt2">
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:wl_pointer:axis">
+                <div class="f4">
+                  axis
+                </div>
+                <div class="f5 ml2">
+                  axis event
+                </div>
+              </div>
 
-              <div class="f4 lh-title" id="e:wl_pointer:axis">
-                axis
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                axis event
-              </div>
               <div class="f6 lh-copy ws-pre-line courier">Scroll and other axis notifications.
 
 For scroll events (vertical and horizontal scroll axes), the
@@ -3708,14 +3876,16 @@ scroll distance.
   </div>
             </li>
             
-            <li class="mt2">
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:wl_pointer:frame">
+                <div class="f4">
+                  frame
+                </div>
+                <div class="f5 ml2">
+                  end of a pointer event sequence
+                </div>
+              </div>
 
-              <div class="f4 lh-title" id="e:wl_pointer:frame">
-                frame
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                end of a pointer event sequence
-              </div>
               <div class="f6 lh-copy ws-pre-line courier">Indicates the end of a set of events that logically belong together.
 A client is expected to accumulate the data in all events within the
 frame before proceeding.
@@ -3753,14 +3923,16 @@ groups.
   </div>
             </li>
             
-            <li class="mt2">
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:wl_pointer:axis_source">
+                <div class="f4">
+                  axis_source
+                </div>
+                <div class="f5 ml2">
+                  axis source event
+                </div>
+              </div>
 
-              <div class="f4 lh-title" id="e:wl_pointer:axis_source">
-                axis_source
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                axis source event
-              </div>
               <div class="f6 lh-copy ws-pre-line courier">Source information for scroll and other axes.
 
 This event does not occur on its own. It is sent before a
@@ -3789,14 +3961,16 @@ not guaranteed.
   </div>
             </li>
             
-            <li class="mt2">
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:wl_pointer:axis_stop">
+                <div class="f4">
+                  axis_stop
+                </div>
+                <div class="f5 ml2">
+                  axis stop event
+                </div>
+              </div>
 
-              <div class="f4 lh-title" id="e:wl_pointer:axis_stop">
-                axis_stop
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                axis stop event
-              </div>
               <div class="f6 lh-copy ws-pre-line courier">Stop notification for scroll and other axes.
 
 For some wl_pointer.axis_source types, a wl_pointer.axis_stop event
@@ -3814,14 +3988,16 @@ preceding wl_pointer.axis event.
   </div>
             </li>
             
-            <li class="mt2">
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:wl_pointer:axis_discrete">
+                <div class="f4">
+                  axis_discrete
+                </div>
+                <div class="f5 ml2">
+                  axis click event
+                </div>
+              </div>
 
-              <div class="f4 lh-title" id="e:wl_pointer:axis_discrete">
-                axis_discrete
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                axis click event
-              </div>
               <div class="f6 lh-copy ws-pre-line courier">Discrete step information for scroll and other axes.
 
 This event carries the axis value of the wl_pointer.axis event in
@@ -3857,7 +4033,7 @@ not guaranteed.
 
       </li>
       
-      <li class="mt2">
+      <li class="mt4">
         <div class="f2 lh-copy" id="i:wl_keyboard">
           wl_keyboard
         </div>
@@ -3869,12 +4045,14 @@ associated with a seat.
           <h3 class=" f5 lh-title" id="rh:wl_keyboard">Requests</h3>
           <ul class="list pl0">
             
-            <li class="mt2">
-              <div class="f4 lh-title" id="r:wl_keyboard:release">
-                release
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                release the keyboard object
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:wl_keyboard:release">
+                <div class="f4">
+                  release
+                </div>
+                <div class="f5 ml2">
+                  release the keyboard object
+                </div>
               </div>
               
 <div class="f6 lh-copy courier">
@@ -3894,14 +4072,16 @@ associated with a seat.
           <h3 class=" f5 lh-title" id="eh:wl_keyboard">Events</h3>
           <ul class="list pl0">
             
-            <li class="mt2">
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:wl_keyboard:keymap">
+                <div class="f4">
+                  keymap
+                </div>
+                <div class="f5 ml2">
+                  keyboard mapping
+                </div>
+              </div>
 
-              <div class="f4 lh-title" id="e:wl_keyboard:keymap">
-                keymap
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                keyboard mapping
-              </div>
               <div class="f6 lh-copy ws-pre-line courier">This event provides a file descriptor to the client which can be
 memory-mapped to provide a keyboard mapping description.
 
@@ -3910,27 +4090,31 @@ the recipient, as MAP_SHARED may fail.
   </div>
             </li>
             
-            <li class="mt2">
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:wl_keyboard:enter">
+                <div class="f4">
+                  enter
+                </div>
+                <div class="f5 ml2">
+                  enter event
+                </div>
+              </div>
 
-              <div class="f4 lh-title" id="e:wl_keyboard:enter">
-                enter
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                enter event
-              </div>
               <div class="f6 lh-copy ws-pre-line courier">Notification that this seat&#x27;s keyboard focus is on a certain
 surface.
   </div>
             </li>
             
-            <li class="mt2">
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:wl_keyboard:leave">
+                <div class="f4">
+                  leave
+                </div>
+                <div class="f5 ml2">
+                  leave event
+                </div>
+              </div>
 
-              <div class="f4 lh-title" id="e:wl_keyboard:leave">
-                leave
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                leave event
-              </div>
               <div class="f6 lh-copy ws-pre-line courier">Notification that this seat&#x27;s keyboard focus is no longer on
 a certain surface.
 
@@ -3939,41 +4123,47 @@ for the new focus.
   </div>
             </li>
             
-            <li class="mt2">
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:wl_keyboard:key">
+                <div class="f4">
+                  key
+                </div>
+                <div class="f5 ml2">
+                  key event
+                </div>
+              </div>
 
-              <div class="f4 lh-title" id="e:wl_keyboard:key">
-                key
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                key event
-              </div>
               <div class="f6 lh-copy ws-pre-line courier">A key was pressed or released.
 The time argument is a timestamp with millisecond
 granularity, with an undefined base.
   </div>
             </li>
             
-            <li class="mt2">
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:wl_keyboard:modifiers">
+                <div class="f4">
+                  modifiers
+                </div>
+                <div class="f5 ml2">
+                  modifier and group state
+                </div>
+              </div>
 
-              <div class="f4 lh-title" id="e:wl_keyboard:modifiers">
-                modifiers
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                modifier and group state
-              </div>
               <div class="f6 lh-copy ws-pre-line courier">Notifies clients that the modifier and&#x2f;or group state has
 changed, and it should update its local state.
   </div>
             </li>
             
-            <li class="mt2">
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:wl_keyboard:repeat_info">
+                <div class="f4">
+                  repeat_info
+                </div>
+                <div class="f5 ml2">
+                  repeat rate and delay
+                </div>
+              </div>
 
-              <div class="f4 lh-title" id="e:wl_keyboard:repeat_info">
-                repeat_info
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                repeat rate and delay
-              </div>
               <div class="f6 lh-copy ws-pre-line courier">Informs the client about the keyboard&#x27;s repeat rate and delay.
 
 This event is sent as soon as the wl_keyboard object has been created,
@@ -3995,7 +4185,7 @@ of wl_keyboard.
 
       </li>
       
-      <li class="mt2">
+      <li class="mt4">
         <div class="f2 lh-copy" id="i:wl_touch">
           wl_touch
         </div>
@@ -4013,12 +4203,14 @@ contact point can be identified by the ID of the sequence.
           <h3 class=" f5 lh-title" id="rh:wl_touch">Requests</h3>
           <ul class="list pl0">
             
-            <li class="mt2">
-              <div class="f4 lh-title" id="r:wl_touch:release">
-                release
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                release the touch object
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:wl_touch:release">
+                <div class="f4">
+                  release
+                </div>
+                <div class="f5 ml2">
+                  release the touch object
+                </div>
               </div>
               
 <div class="f6 lh-copy courier">
@@ -4038,14 +4230,16 @@ contact point can be identified by the ID of the sequence.
           <h3 class=" f5 lh-title" id="eh:wl_touch">Events</h3>
           <ul class="list pl0">
             
-            <li class="mt2">
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:wl_touch:down">
+                <div class="f4">
+                  down
+                </div>
+                <div class="f5 ml2">
+                  touch down event and beginning of a touch sequence
+                </div>
+              </div>
 
-              <div class="f4 lh-title" id="e:wl_touch:down">
-                down
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                touch down event and beginning of a touch sequence
-              </div>
               <div class="f6 lh-copy ws-pre-line courier">A new touch point has appeared on the surface. This touch point is
 assigned a unique ID. Future events from this touch point reference
 this ID. The ID ceases to be valid after a touch up event and may be
@@ -4053,40 +4247,46 @@ reused in the future.
   </div>
             </li>
             
-            <li class="mt2">
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:wl_touch:up">
+                <div class="f4">
+                  up
+                </div>
+                <div class="f5 ml2">
+                  end of a touch event sequence
+                </div>
+              </div>
 
-              <div class="f4 lh-title" id="e:wl_touch:up">
-                up
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                end of a touch event sequence
-              </div>
               <div class="f6 lh-copy ws-pre-line courier">The touch point has disappeared. No further events will be sent for
 this touch point and the touch point&#x27;s ID is released and may be
 reused in a future touch down event.
   </div>
             </li>
             
-            <li class="mt2">
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:wl_touch:motion">
+                <div class="f4">
+                  motion
+                </div>
+                <div class="f5 ml2">
+                  update of touch point coordinates
+                </div>
+              </div>
 
-              <div class="f4 lh-title" id="e:wl_touch:motion">
-                motion
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                update of touch point coordinates
-              </div>
               <div class="f6 lh-copy ws-pre-line courier">A touch point has changed coordinates.
   </div>
             </li>
             
-            <li class="mt2">
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:wl_touch:frame">
+                <div class="f4">
+                  frame
+                </div>
+                <div class="f5 ml2">
+                  end of touch frame event
+                </div>
+              </div>
 
-              <div class="f4 lh-title" id="e:wl_touch:frame">
-                frame
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                end of touch frame event
-              </div>
               <div class="f6 lh-copy ws-pre-line courier">Indicates the end of a set of events that logically belong together.
 A client is expected to accumulate the data in all events within the
 frame before proceeding.
@@ -4098,14 +4298,16 @@ previously known state.
   </div>
             </li>
             
-            <li class="mt2">
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:wl_touch:cancel">
+                <div class="f4">
+                  cancel
+                </div>
+                <div class="f5 ml2">
+                  touch session cancelled
+                </div>
+              </div>
 
-              <div class="f4 lh-title" id="e:wl_touch:cancel">
-                cancel
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                touch session cancelled
-              </div>
               <div class="f6 lh-copy ws-pre-line courier">Sent if the compositor decides the touch stream is a global
 gesture. No further events are sent to the clients from that
 particular gesture. Touch cancellation applies to all touch points
@@ -4115,14 +4317,16 @@ this surface may reuse the touch point ID.
   </div>
             </li>
             
-            <li class="mt2">
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:wl_touch:shape">
+                <div class="f4">
+                  shape
+                </div>
+                <div class="f5 ml2">
+                  update shape of touch point
+                </div>
+              </div>
 
-              <div class="f4 lh-title" id="e:wl_touch:shape">
-                shape
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                update shape of touch point
-              </div>
               <div class="f6 lh-copy ws-pre-line courier">Sent when a touchpoint has changed its shape.
 
 This event does not occur on its own. It is sent before a
@@ -4151,14 +4355,16 @@ shape if it did not receive this event.
   </div>
             </li>
             
-            <li class="mt2">
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:wl_touch:orientation">
+                <div class="f4">
+                  orientation
+                </div>
+                <div class="f5 ml2">
+                  update orientation of touch point
+                </div>
+              </div>
 
-              <div class="f4 lh-title" id="e:wl_touch:orientation">
-                orientation
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                update orientation of touch point
-              </div>
               <div class="f6 lh-copy ws-pre-line courier">Sent when a touchpoint has changed its orientation.
 
 This event does not occur on its own. It is sent before a
@@ -4191,7 +4397,7 @@ orientation reports.
 
       </li>
       
-      <li class="mt2">
+      <li class="mt4">
         <div class="f2 lh-copy" id="i:wl_output">
           wl_output
         </div>
@@ -4207,12 +4413,14 @@ as global during start up, or when a monitor is hotplugged.
           <h3 class=" f5 lh-title" id="rh:wl_output">Requests</h3>
           <ul class="list pl0">
             
-            <li class="mt2">
-              <div class="f4 lh-title" id="r:wl_output:release">
-                release
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                release the output object
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:wl_output:release">
+                <div class="f4">
+                  release
+                </div>
+                <div class="f5 ml2">
+                  release the output object
+                </div>
               </div>
               
 <div class="f6 lh-copy courier">
@@ -4234,14 +4442,16 @@ use the output object anymore.
           <h3 class=" f5 lh-title" id="eh:wl_output">Events</h3>
           <ul class="list pl0">
             
-            <li class="mt2">
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:wl_output:geometry">
+                <div class="f4">
+                  geometry
+                </div>
+                <div class="f5 ml2">
+                  properties of the output
+                </div>
+              </div>
 
-              <div class="f4 lh-title" id="e:wl_output:geometry">
-                geometry
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                properties of the output
-              </div>
               <div class="f6 lh-copy ws-pre-line courier">The geometry event describes geometric properties of the output.
 The event is sent when binding to the output object and whenever
 any of the properties change.
@@ -4258,14 +4468,16 @@ clients should use xdg_output.name and xdg_output.description.
   </div>
             </li>
             
-            <li class="mt2">
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:wl_output:mode">
+                <div class="f4">
+                  mode
+                </div>
+                <div class="f5 ml2">
+                  advertise available modes for the output
+                </div>
+              </div>
 
-              <div class="f4 lh-title" id="e:wl_output:mode">
-                mode
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                advertise available modes for the output
-              </div>
               <div class="f6 lh-copy ws-pre-line courier">The mode event describes an available mode for the output.
 
 The event is sent when binding to the output object and there
@@ -4295,14 +4507,16 @@ refresh rate or the size.
   </div>
             </li>
             
-            <li class="mt2">
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:wl_output:done">
+                <div class="f4">
+                  done
+                </div>
+                <div class="f5 ml2">
+                  sent all information about output
+                </div>
+              </div>
 
-              <div class="f4 lh-title" id="e:wl_output:done">
-                done
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                sent all information about output
-              </div>
               <div class="f6 lh-copy ws-pre-line courier">This event is sent after all other properties have been
 sent after binding to the output object and after any
 other property changes done after that. This allows
@@ -4311,14 +4525,16 @@ atomic, even if they happen via multiple events.
   </div>
             </li>
             
-            <li class="mt2">
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:wl_output:scale">
+                <div class="f4">
+                  scale
+                </div>
+                <div class="f5 ml2">
+                  output scaling properties
+                </div>
+              </div>
 
-              <div class="f4 lh-title" id="e:wl_output:scale">
-                scale
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                output scaling properties
-              </div>
               <div class="f6 lh-copy ws-pre-line courier">This event contains scaling geometry information
 that is not in the geometry event. It may be sent after
 binding the output object or if the output scale changes
@@ -4346,7 +4562,7 @@ a higher detail image.
 
       </li>
       
-      <li class="mt2">
+      <li class="mt4">
         <div class="f2 lh-copy" id="i:wl_region">
           wl_region
         </div>
@@ -4360,12 +4576,14 @@ regions of a surface.
           <h3 class=" f5 lh-title" id="rh:wl_region">Requests</h3>
           <ul class="list pl0">
             
-            <li class="mt2">
-              <div class="f4 lh-title" id="r:wl_region:destroy">
-                destroy
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                destroy region
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:wl_region:destroy">
+                <div class="f4">
+                  destroy
+                </div>
+                <div class="f5 ml2">
+                  destroy region
+                </div>
               </div>
               
 <div class="f6 lh-copy courier">
@@ -4379,12 +4597,14 @@ regions of a surface.
   </div>
             </li>
             
-            <li class="mt2">
-              <div class="f4 lh-title" id="r:wl_region:add">
-                add
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                add rectangle to region
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:wl_region:add">
+                <div class="f4">
+                  add
+                </div>
+                <div class="f5 ml2">
+                  add rectangle to region
+                </div>
               </div>
               
 <div class="f6 lh-copy courier">
@@ -4406,12 +4626,14 @@ regions of a surface.
   </div>
             </li>
             
-            <li class="mt2">
-              <div class="f4 lh-title" id="r:wl_region:subtract">
-                subtract
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                subtract rectangle from region
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:wl_region:subtract">
+                <div class="f4">
+                  subtract
+                </div>
+                <div class="f5 ml2">
+                  subtract rectangle from region
+                </div>
               </div>
               
 <div class="f6 lh-copy courier">
@@ -4440,7 +4662,7 @@ regions of a surface.
 
       </li>
       
-      <li class="mt2">
+      <li class="mt4">
         <div class="f2 lh-copy" id="i:wl_subcompositor">
           wl_subcompositor
         </div>
@@ -4469,12 +4691,14 @@ processing to dedicated overlay hardware when possible.
           <h3 class=" f5 lh-title" id="rh:wl_subcompositor">Requests</h3>
           <ul class="list pl0">
             
-            <li class="mt2">
-              <div class="f4 lh-title" id="r:wl_subcompositor:destroy">
-                destroy
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                unbind from the subcompositor interface
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:wl_subcompositor:destroy">
+                <div class="f4">
+                  destroy
+                </div>
+                <div class="f5 ml2">
+                  unbind from the subcompositor interface
+                </div>
               </div>
               
 <div class="f6 lh-copy courier">
@@ -4490,12 +4714,14 @@ objects, wl_subsurface objects included.
   </div>
             </li>
             
-            <li class="mt2">
-              <div class="f4 lh-title" id="r:wl_subcompositor:get_subsurface">
-                get_subsurface
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                give a surface the role sub-surface
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:wl_subcompositor:get_subsurface">
+                <div class="f4">
+                  get_subsurface
+                </div>
+                <div class="f5 ml2">
+                  give a surface the role sub-surface
+                </div>
               </div>
               
 <div class="f6 lh-copy courier">
@@ -4534,7 +4760,7 @@ the sub-surface, see the documentation on wl_subsurface interface.
 
       </li>
       
-      <li class="mt2">
+      <li class="mt4">
         <div class="f2 lh-copy" id="i:wl_subsurface">
           wl_subsurface
         </div>
@@ -4593,12 +4819,14 @@ unmapped.
           <h3 class=" f5 lh-title" id="rh:wl_subsurface">Requests</h3>
           <ul class="list pl0">
             
-            <li class="mt2">
-              <div class="f4 lh-title" id="r:wl_subsurface:destroy">
-                destroy
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                remove sub-surface interface
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:wl_subsurface:destroy">
+                <div class="f4">
+                  destroy
+                </div>
+                <div class="f5 ml2">
+                  remove sub-surface interface
+                </div>
               </div>
               
 <div class="f6 lh-copy courier">
@@ -4616,12 +4844,14 @@ a sub-surface. The wl_surface is unmapped immediately.
   </div>
             </li>
             
-            <li class="mt2">
-              <div class="f4 lh-title" id="r:wl_subsurface:set_position">
-                set_position
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                reposition the sub-surface
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:wl_subsurface:set_position">
+                <div class="f4">
+                  set_position
+                </div>
+                <div class="f5 ml2">
+                  reposition the sub-surface
+                </div>
               </div>
               
 <div class="f6 lh-copy courier">
@@ -4654,12 +4884,14 @@ The initial position is 0, 0.
   </div>
             </li>
             
-            <li class="mt2">
-              <div class="f4 lh-title" id="r:wl_subsurface:place_above">
-                place_above
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                restack the sub-surface
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:wl_subsurface:place_above">
+                <div class="f4">
+                  place_above
+                </div>
+                <div class="f5 ml2">
+                  restack the sub-surface
+                </div>
               </div>
               
 <div class="f6 lh-copy courier">
@@ -4689,12 +4921,14 @@ of its siblings and parent.
   </div>
             </li>
             
-            <li class="mt2">
-              <div class="f4 lh-title" id="r:wl_subsurface:place_below">
-                place_below
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                restack the sub-surface
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:wl_subsurface:place_below">
+                <div class="f4">
+                  place_below
+                </div>
+                <div class="f5 ml2">
+                  restack the sub-surface
+                </div>
               </div>
               
 <div class="f6 lh-copy courier">
@@ -4711,12 +4945,14 @@ See wl_subsurface.place_above.
   </div>
             </li>
             
-            <li class="mt2">
-              <div class="f4 lh-title" id="r:wl_subsurface:set_sync">
-                set_sync
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                set sub-surface to synchronized mode
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:wl_subsurface:set_sync">
+                <div class="f4">
+                  set_sync
+                </div>
+                <div class="f5 ml2">
+                  set sub-surface to synchronized mode
+                </div>
               </div>
               
 <div class="f6 lh-copy courier">
@@ -4742,12 +4978,14 @@ See wl_subsurface for the recursive effect of this mode.
   </div>
             </li>
             
-            <li class="mt2">
-              <div class="f4 lh-title" id="r:wl_subsurface:set_desync">
-                set_desync
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                set sub-surface to desynchronized mode
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:wl_subsurface:set_desync">
+                <div class="f4">
+                  set_desync
+                </div>
+                <div class="f5 ml2">
+                  set sub-surface to desynchronized mode
+                </div>
               </div>
               
 <div class="f6 lh-copy courier">

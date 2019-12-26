@@ -94,7 +94,7 @@
     <h1 class="f1 lh-title">input_timestamps_unstable_v1</h1>
     <ul class="list pl0">
       
-      <li class="mt2">
+      <li class="mt4">
         <div class="f2 lh-copy" id="i:zwp_input_timestamps_manager_v1">
           zwp_input_timestamps_manager_v1
         </div>
@@ -106,12 +106,14 @@ for input events.
           <h3 class=" f5 lh-title" id="rh:zwp_input_timestamps_manager_v1">Requests</h3>
           <ul class="list pl0">
             
-            <li class="mt2">
-              <div class="f4 lh-title" id="r:zwp_input_timestamps_manager_v1:destroy">
-                destroy
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                destroy the input timestamps manager object
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:zwp_input_timestamps_manager_v1:destroy">
+                <div class="f4">
+                  destroy
+                </div>
+                <div class="f5 ml2">
+                  destroy the input timestamps manager object
+                </div>
               </div>
               
 <div class="f6 lh-copy courier">
@@ -127,12 +129,14 @@ affected.
 </div>
             </li>
             
-            <li class="mt2">
-              <div class="f4 lh-title" id="r:zwp_input_timestamps_manager_v1:get_keyboard_timestamps">
-                get_keyboard_timestamps
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                subscribe to high-resolution keyboard timestamp events
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:zwp_input_timestamps_manager_v1:get_keyboard_timestamps">
+                <div class="f4">
+                  get_keyboard_timestamps
+                </div>
+                <div class="f5 ml2">
+                  subscribe to high-resolution keyboard timestamp events
+                </div>
               </div>
               
 <div class="f6 lh-copy courier">
@@ -155,12 +159,14 @@ by calling zwp_input_timestamps_v1.destroy.
 </div>
             </li>
             
-            <li class="mt2">
-              <div class="f4 lh-title" id="r:zwp_input_timestamps_manager_v1:get_pointer_timestamps">
-                get_pointer_timestamps
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                subscribe to high-resolution pointer timestamp events
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:zwp_input_timestamps_manager_v1:get_pointer_timestamps">
+                <div class="f4">
+                  get_pointer_timestamps
+                </div>
+                <div class="f5 ml2">
+                  subscribe to high-resolution pointer timestamp events
+                </div>
               </div>
               
 <div class="f6 lh-copy courier">
@@ -183,12 +189,14 @@ by calling zwp_input_timestamps_v1.destroy.
 </div>
             </li>
             
-            <li class="mt2">
-              <div class="f4 lh-title" id="r:zwp_input_timestamps_manager_v1:get_touch_timestamps">
-                get_touch_timestamps
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                subscribe to high-resolution touch timestamp events
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:zwp_input_timestamps_manager_v1:get_touch_timestamps">
+                <div class="f4">
+                  get_touch_timestamps
+                </div>
+                <div class="f5 ml2">
+                  subscribe to high-resolution touch timestamp events
+                </div>
               </div>
               
 <div class="f6 lh-copy courier">
@@ -218,7 +226,7 @@ by calling zwp_input_timestamps_v1.destroy.
 
       </li>
       
-      <li class="mt2">
+      <li class="mt4">
         <div class="f2 lh-copy" id="i:zwp_input_timestamps_v1">
           zwp_input_timestamps_v1
         </div>
@@ -231,12 +239,14 @@ zwp_input_timestamps_manager_v1 request used to create this object.
           <h3 class=" f5 lh-title" id="rh:zwp_input_timestamps_v1">Requests</h3>
           <ul class="list pl0">
             
-            <li class="mt2">
-              <div class="f4 lh-title" id="r:zwp_input_timestamps_v1:destroy">
-                destroy
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                destroy the input timestamps object
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:zwp_input_timestamps_v1:destroy">
+                <div class="f4">
+                  destroy
+                </div>
+                <div class="f5 ml2">
+                  destroy the input timestamps object
+                </div>
               </div>
               
 <div class="f6 lh-copy courier">
@@ -259,14 +269,16 @@ timestamp events will be emitted.
           <h3 class=" f5 lh-title" id="eh:zwp_input_timestamps_v1">Events</h3>
           <ul class="list pl0">
             
-            <li class="mt2">
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:zwp_input_timestamps_v1:timestamp">
+                <div class="f4">
+                  timestamp
+                </div>
+                <div class="f5 ml2">
+                  high-resolution timestamp event
+                </div>
+              </div>
 
-              <div class="f4 lh-title" id="e:zwp_input_timestamps_v1:timestamp">
-                timestamp
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                high-resolution timestamp event
-              </div>
               <div class="f6 lh-copy ws-pre-line courier">The timestamp event is associated with the first subsequent input event
 carrying a timestamp which belongs to the set of input events this
 object is subscribed to.

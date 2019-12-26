@@ -106,7 +106,7 @@
     <h1 class="f1 lh-title">zwp_linux_explicit_synchronization_unstable_v1</h1>
     <ul class="list pl0">
       
-      <li class="mt2">
+      <li class="mt4">
         <div class="f2 lh-copy" id="i:zwp_linux_explicit_synchronization_v1">
           zwp_linux_explicit_synchronization_v1
         </div>
@@ -132,12 +132,14 @@ interface version number is reset.
           <h3 class=" f5 lh-title" id="rh:zwp_linux_explicit_synchronization_v1">Requests</h3>
           <ul class="list pl0">
             
-            <li class="mt2">
-              <div class="f4 lh-title" id="r:zwp_linux_explicit_synchronization_v1:destroy">
-                destroy
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                destroy explicit synchronization factory object
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:zwp_linux_explicit_synchronization_v1:destroy">
+                <div class="f4">
+                  destroy
+                </div>
+                <div class="f5 ml2">
+                  destroy explicit synchronization factory object
+                </div>
               </div>
               
 <div class="f6 lh-copy courier">
@@ -153,12 +155,14 @@ factory, shall not be affected by this request.
 </div>
             </li>
             
-            <li class="mt2">
-              <div class="f4 lh-title" id="r:zwp_linux_explicit_synchronization_v1:get_synchronization">
-                get_synchronization
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                extend surface interface for explicit synchronization
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:zwp_linux_explicit_synchronization_v1:get_synchronization">
+                <div class="f4">
+                  get_synchronization
+                </div>
+                <div class="f5 ml2">
+                  extend surface interface for explicit synchronization
+                </div>
               </div>
               
 <div class="f6 lh-copy courier">
@@ -191,7 +195,7 @@ to avoid raising a synchronization_exists protocol error.
 
       </li>
       
-      <li class="mt2">
+      <li class="mt4">
         <div class="f2 lh-copy" id="i:zwp_linux_surface_synchronization_v1">
           zwp_linux_surface_synchronization_v1
         </div>
@@ -231,12 +235,14 @@ additional buffer types.
           <h3 class=" f5 lh-title" id="rh:zwp_linux_surface_synchronization_v1">Requests</h3>
           <ul class="list pl0">
             
-            <li class="mt2">
-              <div class="f4 lh-title" id="r:zwp_linux_surface_synchronization_v1:destroy">
-                destroy
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                destroy synchronization object
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:zwp_linux_surface_synchronization_v1:destroy">
+                <div class="f4">
+                  destroy
+                </div>
+                <div class="f5 ml2">
+                  destroy synchronization object
+                </div>
               </div>
               
 <div class="f6 lh-copy courier">
@@ -257,12 +263,14 @@ affected by this request.
 </div>
             </li>
             
-            <li class="mt2">
-              <div class="f4 lh-title" id="r:zwp_linux_surface_synchronization_v1:set_acquire_fence">
-                set_acquire_fence
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                set the acquire fence
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:zwp_linux_surface_synchronization_v1:set_acquire_fence">
+                <div class="f4">
+                  set_acquire_fence
+                </div>
+                <div class="f5 ml2">
+                  set the acquire fence
+                </div>
               </div>
               
 <div class="f6 lh-copy courier">
@@ -300,12 +308,14 @@ error is raised.
 </div>
             </li>
             
-            <li class="mt2">
-              <div class="f4 lh-title" id="r:zwp_linux_surface_synchronization_v1:get_release">
-                get_release
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                release fence for last-attached buffer
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:zwp_linux_surface_synchronization_v1:get_release">
+                <div class="f4">
+                  get_release
+                </div>
+                <div class="f5 ml2">
+                  release fence for last-attached buffer
+                </div>
               </div>
               
 <div class="f6 lh-copy courier">
@@ -342,7 +352,7 @@ error is raised.
 
       </li>
       
-      <li class="mt2">
+      <li class="mt4">
         <div class="f2 lh-copy" id="i:zwp_linux_buffer_release_v1">
           zwp_linux_buffer_release_v1
         </div>
@@ -371,14 +381,16 @@ Once a buffer release object has delivered a &#x27;fenced_release&#x27; or an
           <h3 class=" f5 lh-title" id="eh:zwp_linux_buffer_release_v1">Events</h3>
           <ul class="list pl0">
             
-            <li class="mt2">
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:zwp_linux_buffer_release_v1:fenced_release">
+                <div class="f4">
+                  fenced_release
+                </div>
+                <div class="f5 ml2">
+                  release buffer with fence
+                </div>
+              </div>
 
-              <div class="f4 lh-title" id="e:zwp_linux_buffer_release_v1:fenced_release">
-                fenced_release
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                release buffer with fence
-              </div>
               <div class="f6 lh-copy ws-pre-line courier">Sent when the compositor has finalised its usage of the associated
 buffer for the relevant commit, providing a dma_fence which will be
 signaled when all operations by the compositor on that buffer for that
@@ -393,14 +405,16 @@ This event destroys the zwp_linux_buffer_release_v1 object.
 </div>
             </li>
             
-            <li class="mt2">
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:zwp_linux_buffer_release_v1:immediate_release">
+                <div class="f4">
+                  immediate_release
+                </div>
+                <div class="f5 ml2">
+                  release buffer immediately
+                </div>
+              </div>
 
-              <div class="f4 lh-title" id="e:zwp_linux_buffer_release_v1:immediate_release">
-                immediate_release
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                release buffer immediately
-              </div>
               <div class="f6 lh-copy ws-pre-line courier">Sent when the compositor has finalised its usage of the associated
 buffer for the relevant commit, and either performed no operations
 using it, or has a guarantee that all its operations on that buffer for

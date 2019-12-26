@@ -1,0 +1,703 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>wlr_data_control_unstable_v1</title>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="&#x2f;wayland-protocol-docs/main.css"></link>
+     
+  </head>
+  <body class="bg-near-white black-70 sans-serif pa2 ph6-l">
+
+    <a href="&#x2f;wayland-protocol-docs/" class="f4 link near-black dim lh-title">
+      Home
+    </a>
+
+    
+
+    <div id="content">
+      
+  <div class="fl w-25 ph2">
+    
+
+<div>
+  <ul class="list pl0">
+  
+    <li>
+      <a href="#i:zwlr_data_control_manager_v1" class="link blue underline-hover lh-copy">zwlr_data_control_manager_v1</a>
+
+      
+        <div>
+          <a href="#rh:zwlr_data_control_manager_v1" class="link blue underline-hover lh-copy pl3">Requests</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#r:zwlr_data_control_manager_v1:create_data_source" class="link blue underline-hover lh-copy">create_data_source</a>
+          </li>
+          
+          <li>
+            <a href="#r:zwlr_data_control_manager_v1:get_data_device" class="link blue underline-hover lh-copy">get_data_device</a>
+          </li>
+          
+          <li>
+            <a href="#r:zwlr_data_control_manager_v1:destroy" class="link blue underline-hover lh-copy">destroy</a>
+          </li>
+          
+        </ul>
+      
+
+      
+    </li>
+  
+    <li>
+      <a href="#i:zwlr_data_control_device_v1" class="link blue underline-hover lh-copy">zwlr_data_control_device_v1</a>
+
+      
+        <div>
+          <a href="#rh:zwlr_data_control_device_v1" class="link blue underline-hover lh-copy pl3">Requests</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#r:zwlr_data_control_device_v1:set_selection" class="link blue underline-hover lh-copy">set_selection</a>
+          </li>
+          
+          <li>
+            <a href="#r:zwlr_data_control_device_v1:destroy" class="link blue underline-hover lh-copy">destroy</a>
+          </li>
+          
+          <li>
+            <a href="#r:zwlr_data_control_device_v1:set_primary_selection" class="link blue underline-hover lh-copy">set_primary_selection</a>
+          </li>
+          
+        </ul>
+      
+
+      
+        <div>
+          <a href="#eh:zwlr_data_control_device_v1" class="link blue underline-hover lh-copy pl3">Events</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#e:zwlr_data_control_device_v1:data_offer" class="link blue underline-hover lh-copy">data_offer</a>
+          </li>
+          
+          <li>
+            <a href="#e:zwlr_data_control_device_v1:selection" class="link blue underline-hover lh-copy">selection</a>
+          </li>
+          
+          <li>
+            <a href="#e:zwlr_data_control_device_v1:finished" class="link blue underline-hover lh-copy">finished</a>
+          </li>
+          
+          <li>
+            <a href="#e:zwlr_data_control_device_v1:primary_selection" class="link blue underline-hover lh-copy">primary_selection</a>
+          </li>
+          
+        </ul>
+      
+    </li>
+  
+    <li>
+      <a href="#i:zwlr_data_control_source_v1" class="link blue underline-hover lh-copy">zwlr_data_control_source_v1</a>
+
+      
+        <div>
+          <a href="#rh:zwlr_data_control_source_v1" class="link blue underline-hover lh-copy pl3">Requests</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#r:zwlr_data_control_source_v1:offer" class="link blue underline-hover lh-copy">offer</a>
+          </li>
+          
+          <li>
+            <a href="#r:zwlr_data_control_source_v1:destroy" class="link blue underline-hover lh-copy">destroy</a>
+          </li>
+          
+        </ul>
+      
+
+      
+        <div>
+          <a href="#eh:zwlr_data_control_source_v1" class="link blue underline-hover lh-copy pl3">Events</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#e:zwlr_data_control_source_v1:send" class="link blue underline-hover lh-copy">send</a>
+          </li>
+          
+          <li>
+            <a href="#e:zwlr_data_control_source_v1:cancelled" class="link blue underline-hover lh-copy">cancelled</a>
+          </li>
+          
+        </ul>
+      
+    </li>
+  
+    <li>
+      <a href="#i:zwlr_data_control_offer_v1" class="link blue underline-hover lh-copy">zwlr_data_control_offer_v1</a>
+
+      
+        <div>
+          <a href="#rh:zwlr_data_control_offer_v1" class="link blue underline-hover lh-copy pl3">Requests</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#r:zwlr_data_control_offer_v1:receive" class="link blue underline-hover lh-copy">receive</a>
+          </li>
+          
+          <li>
+            <a href="#r:zwlr_data_control_offer_v1:destroy" class="link blue underline-hover lh-copy">destroy</a>
+          </li>
+          
+        </ul>
+      
+
+      
+        <div>
+          <a href="#eh:zwlr_data_control_offer_v1" class="link blue underline-hover lh-copy pl3">Events</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#e:zwlr_data_control_offer_v1:offer" class="link blue underline-hover lh-copy">offer</a>
+          </li>
+          
+        </ul>
+      
+    </li>
+  
+  </ul>
+</div>
+  </div>
+  <div class="fl w-75 ph2">
+    <h1 class="f1 lh-title">wlr_data_control_unstable_v1</h1>
+    <ul class="list pl0">
+      
+      <li class="mt4">
+        <div class="f2 lh-copy" id="i:zwlr_data_control_manager_v1">
+          zwlr_data_control_manager_v1
+        </div>
+        <div class="f6 lh-copy ws-pre-line courier">This interface is a manager that allows creating per-seat data device
+controls.
+</div>
+
+        
+          <h3 class=" f5 lh-title" id="rh:zwlr_data_control_manager_v1">Requests</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:zwlr_data_control_manager_v1:create_data_source">
+                <div class="f4">
+                  create_data_source
+                </div>
+                <div class="f5 ml2">
+                  create a new data source
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>struct zwlr_data_control_source_v1* </span><span class="dark-blue">zwlr_data_control_manager_v1_create_data_source</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwlr_data_control_manager_v1*</span> zwlr_data_control_manager_v1</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier">Create a new data source.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:zwlr_data_control_manager_v1:get_data_device">
+                <div class="f4">
+                  get_data_device
+                </div>
+                <div class="f5 ml2">
+                  get a data device for a seat
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>struct zwlr_data_control_device_v1* </span><span class="dark-blue">zwlr_data_control_manager_v1_get_data_device</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwlr_data_control_manager_v1*</span> zwlr_data_control_manager_v1,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_seat*</span> seat</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier">Create a data device that can be used to manage a seat&#x27;s selection.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:zwlr_data_control_manager_v1:destroy">
+                <div class="f4">
+                  destroy
+                </div>
+                <div class="f5 ml2">
+                  destroy the manager
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">zwlr_data_control_manager_v1_destroy</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwlr_data_control_manager_v1*</span> zwlr_data_control_manager_v1</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier">All objects created by the manager will still remain valid, until their
+appropriate destroy request has been called.
+</div>
+            </li>
+            
+          </ul>
+        
+
+        
+
+      </li>
+      
+      <li class="mt4">
+        <div class="f2 lh-copy" id="i:zwlr_data_control_device_v1">
+          zwlr_data_control_device_v1
+        </div>
+        <div class="f6 lh-copy ws-pre-line courier">This interface allows a client to manage a seat&#x27;s selection.
+
+When the seat is destroyed, this object becomes inert.
+</div>
+
+        
+          <h3 class=" f5 lh-title" id="rh:zwlr_data_control_device_v1">Requests</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:zwlr_data_control_device_v1:set_selection">
+                <div class="f4">
+                  set_selection
+                </div>
+                <div class="f5 ml2">
+                  copy data to the selection
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">zwlr_data_control_device_v1_set_selection</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwlr_data_control_device_v1*</span> zwlr_data_control_device_v1,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwlr_data_control_source_v1*</span> source</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier">This request asks the compositor to set the selection to the data from
+the source on behalf of the client.
+
+The given source may not be used in any further set_selection or
+set_primary_selection requests. Attempting to use a previously used
+source is a protocol error.
+
+To unset the selection, set the source to NULL.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:zwlr_data_control_device_v1:destroy">
+                <div class="f4">
+                  destroy
+                </div>
+                <div class="f5 ml2">
+                  destroy this data device
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">zwlr_data_control_device_v1_destroy</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwlr_data_control_device_v1*</span> zwlr_data_control_device_v1</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier">Destroys the data device object.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:zwlr_data_control_device_v1:set_primary_selection">
+                <div class="f4">
+                  set_primary_selection
+                </div>
+                <div class="f5 ml2">
+                  copy data to the primary selection
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">zwlr_data_control_device_v1_set_primary_selection</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwlr_data_control_device_v1*</span> zwlr_data_control_device_v1,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwlr_data_control_source_v1*</span> source</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier">This request asks the compositor to set the primary selection to the
+data from the source on behalf of the client.
+
+The given source may not be used in any further set_selection or
+set_primary_selection requests. Attempting to use a previously used
+source is a protocol error.
+
+To unset the primary selection, set the source to NULL.
+
+The compositor will ignore this request if it does not support primary
+selection.
+</div>
+            </li>
+            
+          </ul>
+        
+
+        
+          <h3 class=" f5 lh-title" id="eh:zwlr_data_control_device_v1">Events</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:zwlr_data_control_device_v1:data_offer">
+                <div class="f4">
+                  data_offer
+                </div>
+                <div class="f5 ml2">
+                  introduce a new wlr_data_control_offer
+                </div>
+              </div>
+
+              <div class="f6 lh-copy ws-pre-line courier">The data_offer event introduces a new wlr_data_control_offer object,
+which will subsequently be used in either the
+wlr_data_control_device.selection event (for the regular clipboard
+selections) or the wlr_data_control_device.primary_selection event (for
+the primary clipboard selections). Immediately following the
+wlr_data_control_device.data_offer event, the new data_offer object
+will send out wlr_data_control_offer.offer events to describe the MIME
+types it offers.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:zwlr_data_control_device_v1:selection">
+                <div class="f4">
+                  selection
+                </div>
+                <div class="f5 ml2">
+                  advertise new selection
+                </div>
+              </div>
+
+              <div class="f6 lh-copy ws-pre-line courier">The selection event is sent out to notify the client of a new
+wlr_data_control_offer for the selection for this device. The
+wlr_data_control_device.data_offer and the wlr_data_control_offer.offer
+events are sent out immediately before this event to introduce the data
+offer object. The selection event is sent to a client when a new
+selection is set. The wlr_data_control_offer is valid until a new
+wlr_data_control_offer or NULL is received. The client must destroy the
+previous selection wlr_data_control_offer, if any, upon receiving this
+event.
+
+The first selection event is sent upon binding the
+wlr_data_control_device object.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:zwlr_data_control_device_v1:finished">
+                <div class="f4">
+                  finished
+                </div>
+                <div class="f5 ml2">
+                  this data control is no longer valid
+                </div>
+              </div>
+
+              <div class="f6 lh-copy ws-pre-line courier">This data control object is no longer valid and should be destroyed by
+the client.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:zwlr_data_control_device_v1:primary_selection">
+                <div class="f4">
+                  primary_selection
+                </div>
+                <div class="f5 ml2">
+                  advertise new primary selection
+                </div>
+              </div>
+
+              <div class="f6 lh-copy ws-pre-line courier">The primary_selection event is sent out to notify the client of a new
+wlr_data_control_offer for the primary selection for this device. The
+wlr_data_control_device.data_offer and the wlr_data_control_offer.offer
+events are sent out immediately before this event to introduce the data
+offer object. The primary_selection event is sent to a client when a
+new primary selection is set. The wlr_data_control_offer is valid until
+a new wlr_data_control_offer or NULL is received. The client must
+destroy the previous primary selection wlr_data_control_offer, if any,
+upon receiving this event.
+
+If the compositor supports primary selection, the first
+primary_selection event is sent upon binding the
+wlr_data_control_device object.
+</div>
+            </li>
+            
+          </ul>
+
+        
+
+      </li>
+      
+      <li class="mt4">
+        <div class="f2 lh-copy" id="i:zwlr_data_control_source_v1">
+          zwlr_data_control_source_v1
+        </div>
+        <div class="f6 lh-copy ws-pre-line courier">The wlr_data_control_source object is the source side of a
+wlr_data_control_offer. It is created by the source client in a data
+transfer and provides a way to describe the offered data and a way to
+respond to requests to transfer the data.
+</div>
+
+        
+          <h3 class=" f5 lh-title" id="rh:zwlr_data_control_source_v1">Requests</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:zwlr_data_control_source_v1:offer">
+                <div class="f4">
+                  offer
+                </div>
+                <div class="f5 ml2">
+                  add an offered MIME type
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">zwlr_data_control_source_v1_offer</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwlr_data_control_source_v1*</span> zwlr_data_control_source_v1,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">const char*</span> mime_type</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier">This request adds a MIME type to the set of MIME types advertised to
+targets. Can be called several times to offer multiple types.
+
+Calling this after wlr_data_control_device.set_selection is a protocol
+error.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:zwlr_data_control_source_v1:destroy">
+                <div class="f4">
+                  destroy
+                </div>
+                <div class="f5 ml2">
+                  destroy this source
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">zwlr_data_control_source_v1_destroy</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwlr_data_control_source_v1*</span> zwlr_data_control_source_v1</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier">Destroys the data source object.
+</div>
+            </li>
+            
+          </ul>
+        
+
+        
+          <h3 class=" f5 lh-title" id="eh:zwlr_data_control_source_v1">Events</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:zwlr_data_control_source_v1:send">
+                <div class="f4">
+                  send
+                </div>
+                <div class="f5 ml2">
+                  send the data
+                </div>
+              </div>
+
+              <div class="f6 lh-copy ws-pre-line courier">Request for data from the client. Send the data as the specified MIME
+type over the passed file descriptor, then close it.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:zwlr_data_control_source_v1:cancelled">
+                <div class="f4">
+                  cancelled
+                </div>
+                <div class="f5 ml2">
+                  selection was cancelled
+                </div>
+              </div>
+
+              <div class="f6 lh-copy ws-pre-line courier">This data source is no longer valid. The data source has been replaced
+by another data source.
+
+The client should clean up and destroy this data source.
+</div>
+            </li>
+            
+          </ul>
+
+        
+
+      </li>
+      
+      <li class="mt4">
+        <div class="f2 lh-copy" id="i:zwlr_data_control_offer_v1">
+          zwlr_data_control_offer_v1
+        </div>
+        <div class="f6 lh-copy ws-pre-line courier">A wlr_data_control_offer represents a piece of data offered for transfer
+by another client (the source client). The offer describes the different
+MIME types that the data can be converted to and provides the mechanism
+for transferring the data directly from the source client.
+</div>
+
+        
+          <h3 class=" f5 lh-title" id="rh:zwlr_data_control_offer_v1">Requests</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:zwlr_data_control_offer_v1:receive">
+                <div class="f4">
+                  receive
+                </div>
+                <div class="f5 ml2">
+                  request that the data is transferred
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">zwlr_data_control_offer_v1_receive</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwlr_data_control_offer_v1*</span> zwlr_data_control_offer_v1,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">const char*</span> mime_type,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> fd</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier">To transfer the offered data, the client issues this request and
+indicates the MIME type it wants to receive. The transfer happens
+through the passed file descriptor (typically created with the pipe
+system call). The source client writes the data in the MIME type
+representation requested and then closes the file descriptor.
+
+The receiving client reads from the read end of the pipe until EOF and
+then closes its end, at which point the transfer is complete.
+
+This request may happen multiple times for different MIME types.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:zwlr_data_control_offer_v1:destroy">
+                <div class="f4">
+                  destroy
+                </div>
+                <div class="f5 ml2">
+                  destroy this offer
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">zwlr_data_control_offer_v1_destroy</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwlr_data_control_offer_v1*</span> zwlr_data_control_offer_v1</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier">Destroys the data offer object.
+</div>
+            </li>
+            
+          </ul>
+        
+
+        
+          <h3 class=" f5 lh-title" id="eh:zwlr_data_control_offer_v1">Events</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:zwlr_data_control_offer_v1:offer">
+                <div class="f4">
+                  offer
+                </div>
+                <div class="f5 ml2">
+                  advertise offered MIME type
+                </div>
+              </div>
+
+              <div class="f6 lh-copy ws-pre-line courier">Sent immediately after creating the wlr_data_control_offer object.
+One event per offered MIME type.
+</div>
+            </li>
+            
+          </ul>
+
+        
+
+      </li>
+      
+    </ul>
+
+    <h2 class="f4 lh-title">Copyright Info</h2>
+    <div class="f7 lh-copy ws-pre-line courier">Copyright © 2018 Simon Ser
+Copyright © 2019 Ivan Molodetskikh
+
+Permission to use, copy, modify, distribute, and sell this
+software and its documentation for any purpose is hereby granted
+without fee, provided that the above copyright notice appear in
+all copies and that both that copyright notice and this permission
+notice appear in supporting documentation, and that the name of
+the copyright holders not be used in advertising or publicity
+pertaining to distribution of the software without specific,
+written prior permission.  The copyright holders make no
+representations about the suitability of this software for any
+purpose.  It is provided &quot;as is&quot; without express or implied
+warranty.
+
+THE COPYRIGHT HOLDERS DISCLAIM ALL WARRANTIES WITH REGARD TO THIS
+SOFTWARE, INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND
+FITNESS, IN NO EVENT SHALL THE COPYRIGHT HOLDERS BE LIABLE FOR ANY
+SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN
+AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION,
+ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF
+THIS SOFTWARE.
+</div>
+  </div>
+
+    </div>
+
+  </body>
+</html>

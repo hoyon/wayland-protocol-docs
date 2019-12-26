@@ -1,0 +1,676 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>wlr_foreign_toplevel_management_unstable_v1</title>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="&#x2f;wayland-protocol-docs/main.css"></link>
+     
+  </head>
+  <body class="bg-near-white black-70 sans-serif pa2 ph6-l">
+
+    <a href="&#x2f;wayland-protocol-docs/" class="f4 link near-black dim lh-title">
+      Home
+    </a>
+
+    
+
+    <div id="content">
+      
+  <div class="fl w-25 ph2">
+    
+
+<div>
+  <ul class="list pl0">
+  
+    <li>
+      <a href="#i:zwlr_foreign_toplevel_manager_v1" class="link blue underline-hover lh-copy">zwlr_foreign_toplevel_manager_v1</a>
+
+      
+        <div>
+          <a href="#rh:zwlr_foreign_toplevel_manager_v1" class="link blue underline-hover lh-copy pl3">Requests</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#r:zwlr_foreign_toplevel_manager_v1:stop" class="link blue underline-hover lh-copy">stop</a>
+          </li>
+          
+        </ul>
+      
+
+      
+        <div>
+          <a href="#eh:zwlr_foreign_toplevel_manager_v1" class="link blue underline-hover lh-copy pl3">Events</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#e:zwlr_foreign_toplevel_manager_v1:toplevel" class="link blue underline-hover lh-copy">toplevel</a>
+          </li>
+          
+          <li>
+            <a href="#e:zwlr_foreign_toplevel_manager_v1:finished" class="link blue underline-hover lh-copy">finished</a>
+          </li>
+          
+        </ul>
+      
+    </li>
+  
+    <li>
+      <a href="#i:zwlr_foreign_toplevel_handle_v1" class="link blue underline-hover lh-copy">zwlr_foreign_toplevel_handle_v1</a>
+
+      
+        <div>
+          <a href="#rh:zwlr_foreign_toplevel_handle_v1" class="link blue underline-hover lh-copy pl3">Requests</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#r:zwlr_foreign_toplevel_handle_v1:set_maximized" class="link blue underline-hover lh-copy">set_maximized</a>
+          </li>
+          
+          <li>
+            <a href="#r:zwlr_foreign_toplevel_handle_v1:unset_maximized" class="link blue underline-hover lh-copy">unset_maximized</a>
+          </li>
+          
+          <li>
+            <a href="#r:zwlr_foreign_toplevel_handle_v1:set_minimized" class="link blue underline-hover lh-copy">set_minimized</a>
+          </li>
+          
+          <li>
+            <a href="#r:zwlr_foreign_toplevel_handle_v1:unset_minimized" class="link blue underline-hover lh-copy">unset_minimized</a>
+          </li>
+          
+          <li>
+            <a href="#r:zwlr_foreign_toplevel_handle_v1:activate" class="link blue underline-hover lh-copy">activate</a>
+          </li>
+          
+          <li>
+            <a href="#r:zwlr_foreign_toplevel_handle_v1:close" class="link blue underline-hover lh-copy">close</a>
+          </li>
+          
+          <li>
+            <a href="#r:zwlr_foreign_toplevel_handle_v1:set_rectangle" class="link blue underline-hover lh-copy">set_rectangle</a>
+          </li>
+          
+          <li>
+            <a href="#r:zwlr_foreign_toplevel_handle_v1:destroy" class="link blue underline-hover lh-copy">destroy</a>
+          </li>
+          
+          <li>
+            <a href="#r:zwlr_foreign_toplevel_handle_v1:set_fullscreen" class="link blue underline-hover lh-copy">set_fullscreen</a>
+          </li>
+          
+          <li>
+            <a href="#r:zwlr_foreign_toplevel_handle_v1:unset_fullscreen" class="link blue underline-hover lh-copy">unset_fullscreen</a>
+          </li>
+          
+        </ul>
+      
+
+      
+        <div>
+          <a href="#eh:zwlr_foreign_toplevel_handle_v1" class="link blue underline-hover lh-copy pl3">Events</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#e:zwlr_foreign_toplevel_handle_v1:title" class="link blue underline-hover lh-copy">title</a>
+          </li>
+          
+          <li>
+            <a href="#e:zwlr_foreign_toplevel_handle_v1:app_id" class="link blue underline-hover lh-copy">app_id</a>
+          </li>
+          
+          <li>
+            <a href="#e:zwlr_foreign_toplevel_handle_v1:output_enter" class="link blue underline-hover lh-copy">output_enter</a>
+          </li>
+          
+          <li>
+            <a href="#e:zwlr_foreign_toplevel_handle_v1:output_leave" class="link blue underline-hover lh-copy">output_leave</a>
+          </li>
+          
+          <li>
+            <a href="#e:zwlr_foreign_toplevel_handle_v1:state" class="link blue underline-hover lh-copy">state</a>
+          </li>
+          
+          <li>
+            <a href="#e:zwlr_foreign_toplevel_handle_v1:done" class="link blue underline-hover lh-copy">done</a>
+          </li>
+          
+          <li>
+            <a href="#e:zwlr_foreign_toplevel_handle_v1:closed" class="link blue underline-hover lh-copy">closed</a>
+          </li>
+          
+        </ul>
+      
+    </li>
+  
+  </ul>
+</div>
+  </div>
+  <div class="fl w-75 ph2">
+    <h1 class="f1 lh-title">wlr_foreign_toplevel_management_unstable_v1</h1>
+    <ul class="list pl0">
+      
+      <li class="mt4">
+        <div class="f2 lh-copy" id="i:zwlr_foreign_toplevel_manager_v1">
+          zwlr_foreign_toplevel_manager_v1
+        </div>
+        <div class="f6 lh-copy ws-pre-line courier">The purpose of this protocol is to enable the creation of taskbars
+and docks by providing them with a list of opened applications and
+letting them request certain actions on them, like maximizing, etc.
+
+After a client binds the zwlr_foreign_toplevel_manager_v1, each opened
+toplevel window will be sent via the toplevel event
+</div>
+
+        
+          <h3 class=" f5 lh-title" id="rh:zwlr_foreign_toplevel_manager_v1">Requests</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:zwlr_foreign_toplevel_manager_v1:stop">
+                <div class="f4">
+                  stop
+                </div>
+                <div class="f5 ml2">
+                  stop sending events
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">zwlr_foreign_toplevel_manager_v1_stop</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwlr_foreign_toplevel_manager_v1*</span> zwlr_foreign_toplevel_manager_v1</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier">Indicates the client no longer wishes to receive events for new toplevels.
+However the compositor may emit further toplevel_created events, until
+the finished event is emitted.
+
+The client must not send any more requests after this one.
+</div>
+            </li>
+            
+          </ul>
+        
+
+        
+          <h3 class=" f5 lh-title" id="eh:zwlr_foreign_toplevel_manager_v1">Events</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:zwlr_foreign_toplevel_manager_v1:toplevel">
+                <div class="f4">
+                  toplevel
+                </div>
+                <div class="f5 ml2">
+                  a toplevel has been created
+                </div>
+              </div>
+
+              <div class="f6 lh-copy ws-pre-line courier">This event is emitted whenever a new toplevel window is created. It
+is emitted for all toplevels, regardless of the app that has created
+them.
+
+All initial details of the toplevel(title, app_id, states, etc.) will
+be sent immediately after this event via the corresponding events in
+zwlr_foreign_toplevel_handle_v1.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:zwlr_foreign_toplevel_manager_v1:finished">
+                <div class="f4">
+                  finished
+                </div>
+                <div class="f5 ml2">
+                  the compositor has finished with the toplevel manager
+                </div>
+              </div>
+
+              <div class="f6 lh-copy ws-pre-line courier">This event indicates that the compositor is done sending events to the
+zwlr_foreign_toplevel_manager_v1. The server will destroy the object
+immediately after sending this request, so it will become invalid and
+the client should free any resources associated with it.
+</div>
+            </li>
+            
+          </ul>
+
+        
+
+      </li>
+      
+      <li class="mt4">
+        <div class="f2 lh-copy" id="i:zwlr_foreign_toplevel_handle_v1">
+          zwlr_foreign_toplevel_handle_v1
+        </div>
+        <div class="f6 lh-copy ws-pre-line courier">A zwlr_foreign_toplevel_handle_v1 object represents an opened toplevel
+window. Each app may have multiple opened toplevels.
+
+Each toplevel has a list of outputs it is visible on, conveyed to the
+client with the output_enter and output_leave events.
+</div>
+
+        
+          <h3 class=" f5 lh-title" id="rh:zwlr_foreign_toplevel_handle_v1">Requests</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:zwlr_foreign_toplevel_handle_v1:set_maximized">
+                <div class="f4">
+                  set_maximized
+                </div>
+                <div class="f5 ml2">
+                  requests that the toplevel be maximized
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">zwlr_foreign_toplevel_handle_v1_set_maximized</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwlr_foreign_toplevel_handle_v1*</span> zwlr_foreign_toplevel_handle_v1</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier">Requests that the toplevel be maximized. If the maximized state actually
+changes, this will be indicated by the state event.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:zwlr_foreign_toplevel_handle_v1:unset_maximized">
+                <div class="f4">
+                  unset_maximized
+                </div>
+                <div class="f5 ml2">
+                  requests that the toplevel be unmaximized
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">zwlr_foreign_toplevel_handle_v1_unset_maximized</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwlr_foreign_toplevel_handle_v1*</span> zwlr_foreign_toplevel_handle_v1</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier">Requests that the toplevel be unmaximized. If the maximized state actually
+changes, this will be indicated by the state event.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:zwlr_foreign_toplevel_handle_v1:set_minimized">
+                <div class="f4">
+                  set_minimized
+                </div>
+                <div class="f5 ml2">
+                  requests that the toplevel be minimized
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">zwlr_foreign_toplevel_handle_v1_set_minimized</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwlr_foreign_toplevel_handle_v1*</span> zwlr_foreign_toplevel_handle_v1</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier">Requests that the toplevel be minimized. If the minimized state actually
+changes, this will be indicated by the state event.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:zwlr_foreign_toplevel_handle_v1:unset_minimized">
+                <div class="f4">
+                  unset_minimized
+                </div>
+                <div class="f5 ml2">
+                  requests that the toplevel be unminimized
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">zwlr_foreign_toplevel_handle_v1_unset_minimized</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwlr_foreign_toplevel_handle_v1*</span> zwlr_foreign_toplevel_handle_v1</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier">Requests that the toplevel be unminimized. If the minimized state actually
+changes, this will be indicated by the state event.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:zwlr_foreign_toplevel_handle_v1:activate">
+                <div class="f4">
+                  activate
+                </div>
+                <div class="f5 ml2">
+                  activate the toplevel
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">zwlr_foreign_toplevel_handle_v1_activate</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwlr_foreign_toplevel_handle_v1*</span> zwlr_foreign_toplevel_handle_v1,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_seat*</span> seat</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier">Request that this toplevel be activated on the given seat.
+There is no guarantee the toplevel will be actually activated.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:zwlr_foreign_toplevel_handle_v1:close">
+                <div class="f4">
+                  close
+                </div>
+                <div class="f5 ml2">
+                  request that the toplevel be closed
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">zwlr_foreign_toplevel_handle_v1_close</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwlr_foreign_toplevel_handle_v1*</span> zwlr_foreign_toplevel_handle_v1</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier">Send a request to the toplevel to close itself. The compositor would
+typically use a shell-specific method to carry out this request, for
+example by sending the xdg_toplevel.close event. However, this gives
+no guarantees the toplevel will actually be destroyed. If and when
+this happens, the zwlr_foreign_toplevel_handle_v1.closed event will
+be emitted.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:zwlr_foreign_toplevel_handle_v1:set_rectangle">
+                <div class="f4">
+                  set_rectangle
+                </div>
+                <div class="f5 ml2">
+                  the rectangle which represents the toplevel
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">zwlr_foreign_toplevel_handle_v1_set_rectangle</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwlr_foreign_toplevel_handle_v1*</span> zwlr_foreign_toplevel_handle_v1,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_surface*</span> surface,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> x,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> y,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> width,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> height</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier">The rectangle of the surface specified in this request corresponds to
+the place where the app using this protocol represents the given toplevel.
+It can be used by the compositor as a hint for some operations, e.g
+minimizing. The client is however not required to set this, in which
+case the compositor is free to decide some default value.
+
+If the client specifies more than one rectangle, only the last one is
+considered.
+
+The dimensions are given in surface-local coordinates.
+Setting width=height=0 removes the already-set rectangle.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:zwlr_foreign_toplevel_handle_v1:destroy">
+                <div class="f4">
+                  destroy
+                </div>
+                <div class="f5 ml2">
+                  destroy the zwlr_foreign_toplevel_handle_v1 object
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">zwlr_foreign_toplevel_handle_v1_destroy</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwlr_foreign_toplevel_handle_v1*</span> zwlr_foreign_toplevel_handle_v1</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier">Destroys the zwlr_foreign_toplevel_handle_v1 object.
+
+This request should be called either when the client does not want to
+use the toplevel anymore or after the closed event to finalize the
+destruction of the object.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:zwlr_foreign_toplevel_handle_v1:set_fullscreen">
+                <div class="f4">
+                  set_fullscreen
+                </div>
+                <div class="f5 ml2">
+                  request that the toplevel be fullscreened
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">zwlr_foreign_toplevel_handle_v1_set_fullscreen</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwlr_foreign_toplevel_handle_v1*</span> zwlr_foreign_toplevel_handle_v1,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_output*</span> output</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier">Requests that the toplevel be fullscreened on the given output. If the
+fullscreen state and&#x2f;or the outputs the toplevel is visible on actually
+change, this will be indicated by the state and output_enter&#x2f;leave
+events.
+
+The output parameter is only a hint to the compositor. Also, if output
+is NULL, the compositor should decide which output the toplevel will be
+fullscreened on, if at all.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:zwlr_foreign_toplevel_handle_v1:unset_fullscreen">
+                <div class="f4">
+                  unset_fullscreen
+                </div>
+                <div class="f5 ml2">
+                  request that the toplevel be unfullscreened
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">zwlr_foreign_toplevel_handle_v1_unset_fullscreen</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwlr_foreign_toplevel_handle_v1*</span> zwlr_foreign_toplevel_handle_v1</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier">Requests that the toplevel be unfullscreened. If the fullscreen state
+actually changes, this will be indicated by the state event.
+</div>
+            </li>
+            
+          </ul>
+        
+
+        
+          <h3 class=" f5 lh-title" id="eh:zwlr_foreign_toplevel_handle_v1">Events</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:zwlr_foreign_toplevel_handle_v1:title">
+                <div class="f4">
+                  title
+                </div>
+                <div class="f5 ml2">
+                  title change
+                </div>
+              </div>
+
+              <div class="f6 lh-copy ws-pre-line courier">This event is emitted whenever the title of the toplevel changes.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:zwlr_foreign_toplevel_handle_v1:app_id">
+                <div class="f4">
+                  app_id
+                </div>
+                <div class="f5 ml2">
+                  app-id change
+                </div>
+              </div>
+
+              <div class="f6 lh-copy ws-pre-line courier">This event is emitted whenever the app-id of the toplevel changes.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:zwlr_foreign_toplevel_handle_v1:output_enter">
+                <div class="f4">
+                  output_enter
+                </div>
+                <div class="f5 ml2">
+                  toplevel entered an output
+                </div>
+              </div>
+
+              <div class="f6 lh-copy ws-pre-line courier">This event is emitted whenever the toplevel becomes visible on
+the given output. A toplevel may be visible on multiple outputs.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:zwlr_foreign_toplevel_handle_v1:output_leave">
+                <div class="f4">
+                  output_leave
+                </div>
+                <div class="f5 ml2">
+                  toplevel left an output
+                </div>
+              </div>
+
+              <div class="f6 lh-copy ws-pre-line courier">This event is emitted whenever the toplevel stops being visible on
+the given output. It is guaranteed that an entered-output event
+with the same output has been emitted before this event.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:zwlr_foreign_toplevel_handle_v1:state">
+                <div class="f4">
+                  state
+                </div>
+                <div class="f5 ml2">
+                  the toplevel state changed
+                </div>
+              </div>
+
+              <div class="f6 lh-copy ws-pre-line courier">This event is emitted immediately after the zlw_foreign_toplevel_handle_v1
+is created and each time the toplevel state changes, either because of a
+compositor action or because of a request in this protocol.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:zwlr_foreign_toplevel_handle_v1:done">
+                <div class="f4">
+                  done
+                </div>
+                <div class="f5 ml2">
+                  all information about the toplevel has been sent
+                </div>
+              </div>
+
+              <div class="f6 lh-copy ws-pre-line courier">This event is sent after all changes in the toplevel state have been
+sent.
+
+This allows changes to the zwlr_foreign_toplevel_handle_v1 properties
+to be seen as atomic, even if they happen via multiple events.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:zwlr_foreign_toplevel_handle_v1:closed">
+                <div class="f4">
+                  closed
+                </div>
+                <div class="f5 ml2">
+                  this toplevel has been destroyed
+                </div>
+              </div>
+
+              <div class="f6 lh-copy ws-pre-line courier">This event means the toplevel has been destroyed. It is guaranteed there
+won&#x27;t be any more events for this zwlr_foreign_toplevel_handle_v1. The
+toplevel itself becomes inert so any requests will be ignored except the
+destroy request.
+</div>
+            </li>
+            
+          </ul>
+
+        
+
+      </li>
+      
+    </ul>
+
+    <h2 class="f4 lh-title">Copyright Info</h2>
+    <div class="f7 lh-copy ws-pre-line courier">Copyright © 2018 Ilia Bozhinov
+
+Permission to use, copy, modify, distribute, and sell this
+software and its documentation for any purpose is hereby granted
+without fee, provided that the above copyright notice appear in
+all copies and that both that copyright notice and this permission
+notice appear in supporting documentation, and that the name of
+the copyright holders not be used in advertising or publicity
+pertaining to distribution of the software without specific,
+written prior permission.  The copyright holders make no
+representations about the suitability of this software for any
+purpose.  It is provided &quot;as is&quot; without express or implied
+warranty.
+
+THE COPYRIGHT HOLDERS DISCLAIM ALL WARRANTIES WITH REGARD TO THIS
+SOFTWARE, INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND
+FITNESS, IN NO EVENT SHALL THE COPYRIGHT HOLDERS BE LIABLE FOR ANY
+SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN
+AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION,
+ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF
+THIS SOFTWARE.
+</div>
+  </div>
+
+    </div>
+
+  </body>
+</html>

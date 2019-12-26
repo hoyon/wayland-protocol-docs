@@ -136,7 +136,7 @@
     <h1 class="f1 lh-title">pointer_gestures_unstable_v1</h1>
     <ul class="list pl0">
       
-      <li class="mt2">
+      <li class="mt4">
         <div class="f2 lh-copy" id="i:zwp_pointer_gestures_v1">
           zwp_pointer_gestures_v1
         </div>
@@ -161,12 +161,14 @@ interface version number is reset.
           <h3 class=" f5 lh-title" id="rh:zwp_pointer_gestures_v1">Requests</h3>
           <ul class="list pl0">
             
-            <li class="mt2">
-              <div class="f4 lh-title" id="r:zwp_pointer_gestures_v1:get_swipe_gesture">
-                get_swipe_gesture
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                get swipe gesture
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:zwp_pointer_gestures_v1:get_swipe_gesture">
+                <div class="f4">
+                  get_swipe_gesture
+                </div>
+                <div class="f5 ml2">
+                  get swipe gesture
+                </div>
               </div>
               
 <div class="f6 lh-copy courier">
@@ -183,12 +185,14 @@ wl_pointer_gesture_swipe interface for details.
   </div>
             </li>
             
-            <li class="mt2">
-              <div class="f4 lh-title" id="r:zwp_pointer_gestures_v1:get_pinch_gesture">
-                get_pinch_gesture
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                get pinch gesture
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:zwp_pointer_gestures_v1:get_pinch_gesture">
+                <div class="f4">
+                  get_pinch_gesture
+                </div>
+                <div class="f5 ml2">
+                  get pinch gesture
+                </div>
               </div>
               
 <div class="f6 lh-copy courier">
@@ -205,12 +209,14 @@ wl_pointer_gesture_pinch interface for details.
   </div>
             </li>
             
-            <li class="mt2">
-              <div class="f4 lh-title" id="r:zwp_pointer_gestures_v1:release">
-                release
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                destroy the pointer gesture object
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:zwp_pointer_gestures_v1:release">
+                <div class="f4">
+                  release
+                </div>
+                <div class="f5 ml2">
+                  destroy the pointer gesture object
+                </div>
               </div>
               
 <div class="f6 lh-copy courier">
@@ -232,7 +238,7 @@ gesture object remain valid.
 
       </li>
       
-      <li class="mt2">
+      <li class="mt4">
         <div class="f2 lh-copy" id="i:zwp_pointer_gesture_swipe_v1">
           zwp_pointer_gesture_swipe_v1
         </div>
@@ -257,12 +263,14 @@ actions until the end of a gesture has been received.
           <h3 class=" f5 lh-title" id="rh:zwp_pointer_gesture_swipe_v1">Requests</h3>
           <ul class="list pl0">
             
-            <li class="mt2">
-              <div class="f4 lh-title" id="r:zwp_pointer_gesture_swipe_v1:destroy">
-                destroy
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                destroy the pointer swipe gesture object
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:zwp_pointer_gesture_swipe_v1:destroy">
+                <div class="f4">
+                  destroy
+                </div>
+                <div class="f5 ml2">
+                  destroy the pointer swipe gesture object
+                </div>
               </div>
               
 <div class="f6 lh-copy courier">
@@ -282,27 +290,31 @@ actions until the end of a gesture has been received.
           <h3 class=" f5 lh-title" id="eh:zwp_pointer_gesture_swipe_v1">Events</h3>
           <ul class="list pl0">
             
-            <li class="mt2">
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:zwp_pointer_gesture_swipe_v1:begin">
+                <div class="f4">
+                  begin
+                </div>
+                <div class="f5 ml2">
+                  multi-finger swipe begin
+                </div>
+              </div>
 
-              <div class="f4 lh-title" id="e:zwp_pointer_gesture_swipe_v1:begin">
-                begin
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                multi-finger swipe begin
-              </div>
               <div class="f6 lh-copy ws-pre-line courier">This event is sent when a multi-finger swipe gesture is detected
 on the device.
   </div>
             </li>
             
-            <li class="mt2">
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:zwp_pointer_gesture_swipe_v1:update">
+                <div class="f4">
+                  update
+                </div>
+                <div class="f5 ml2">
+                  multi-finger swipe motion
+                </div>
+              </div>
 
-              <div class="f4 lh-title" id="e:zwp_pointer_gesture_swipe_v1:update">
-                update
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                multi-finger swipe motion
-              </div>
               <div class="f6 lh-copy ws-pre-line courier">This event is sent when a multi-finger swipe gesture changes the
 position of the logical center.
 
@@ -311,14 +323,16 @@ center of the gesture compared to the previous event.
   </div>
             </li>
             
-            <li class="mt2">
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:zwp_pointer_gesture_swipe_v1:end">
+                <div class="f4">
+                  end
+                </div>
+                <div class="f5 ml2">
+                  multi-finger swipe end
+                </div>
+              </div>
 
-              <div class="f4 lh-title" id="e:zwp_pointer_gesture_swipe_v1:end">
-                end
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                multi-finger swipe end
-              </div>
               <div class="f6 lh-copy ws-pre-line courier">This event is sent when a multi-finger swipe gesture ceases to
 be valid. This may happen when one or more fingers are lifted or
 the gesture is cancelled.
@@ -335,7 +349,7 @@ implementation-dependent.
 
       </li>
       
-      <li class="mt2">
+      <li class="mt4">
         <div class="f2 lh-copy" id="i:zwp_pointer_gesture_pinch_v1">
           zwp_pointer_gesture_pinch_v1
         </div>
@@ -360,12 +374,14 @@ actions until the end of a gesture has been received.
           <h3 class=" f5 lh-title" id="rh:zwp_pointer_gesture_pinch_v1">Requests</h3>
           <ul class="list pl0">
             
-            <li class="mt2">
-              <div class="f4 lh-title" id="r:zwp_pointer_gesture_pinch_v1:destroy">
-                destroy
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                destroy the pinch gesture object
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:zwp_pointer_gesture_pinch_v1:destroy">
+                <div class="f4">
+                  destroy
+                </div>
+                <div class="f5 ml2">
+                  destroy the pinch gesture object
+                </div>
               </div>
               
 <div class="f6 lh-copy courier">
@@ -385,27 +401,31 @@ actions until the end of a gesture has been received.
           <h3 class=" f5 lh-title" id="eh:zwp_pointer_gesture_pinch_v1">Events</h3>
           <ul class="list pl0">
             
-            <li class="mt2">
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:zwp_pointer_gesture_pinch_v1:begin">
+                <div class="f4">
+                  begin
+                </div>
+                <div class="f5 ml2">
+                  multi-finger pinch begin
+                </div>
+              </div>
 
-              <div class="f4 lh-title" id="e:zwp_pointer_gesture_pinch_v1:begin">
-                begin
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                multi-finger pinch begin
-              </div>
               <div class="f6 lh-copy ws-pre-line courier">This event is sent when a multi-finger pinch gesture is detected
 on the device.
   </div>
             </li>
             
-            <li class="mt2">
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:zwp_pointer_gesture_pinch_v1:update">
+                <div class="f4">
+                  update
+                </div>
+                <div class="f5 ml2">
+                  multi-finger pinch motion
+                </div>
+              </div>
 
-              <div class="f4 lh-title" id="e:zwp_pointer_gesture_pinch_v1:update">
-                update
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                multi-finger pinch motion
-              </div>
               <div class="f6 lh-copy ws-pre-line courier">This event is sent when a multi-finger pinch gesture changes the
 position of the logical center, the rotation or the relative scale.
 
@@ -421,14 +441,16 @@ pointer_gesture_pinch.begin or pointer_gesture_pinch.update event.
   </div>
             </li>
             
-            <li class="mt2">
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:zwp_pointer_gesture_pinch_v1:end">
+                <div class="f4">
+                  end
+                </div>
+                <div class="f5 ml2">
+                  multi-finger pinch end
+                </div>
+              </div>
 
-              <div class="f4 lh-title" id="e:zwp_pointer_gesture_pinch_v1:end">
-                end
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                multi-finger pinch end
-              </div>
               <div class="f6 lh-copy ws-pre-line courier">This event is sent when a multi-finger pinch gesture ceases to
 be valid. This may happen when one or more fingers are lifted or
 the gesture is cancelled.

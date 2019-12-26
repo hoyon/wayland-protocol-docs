@@ -90,7 +90,7 @@
     <h1 class="f1 lh-title">keyboard_shortcuts_inhibit_unstable_v1</h1>
     <ul class="list pl0">
       
-      <li class="mt2">
+      <li class="mt4">
         <div class="f2 lh-copy" id="i:zwp_keyboard_shortcuts_inhibit_manager_v1">
           zwp_keyboard_shortcuts_inhibit_manager_v1
         </div>
@@ -101,12 +101,14 @@
           <h3 class=" f5 lh-title" id="rh:zwp_keyboard_shortcuts_inhibit_manager_v1">Requests</h3>
           <ul class="list pl0">
             
-            <li class="mt2">
-              <div class="f4 lh-title" id="r:zwp_keyboard_shortcuts_inhibit_manager_v1:destroy">
-                destroy
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                destroy the keyboard shortcuts inhibitor object
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:zwp_keyboard_shortcuts_inhibit_manager_v1:destroy">
+                <div class="f4">
+                  destroy
+                </div>
+                <div class="f5 ml2">
+                  destroy the keyboard shortcuts inhibitor object
+                </div>
               </div>
               
 <div class="f6 lh-copy courier">
@@ -120,12 +122,14 @@
   </div>
             </li>
             
-            <li class="mt2">
-              <div class="f4 lh-title" id="r:zwp_keyboard_shortcuts_inhibit_manager_v1:inhibit_shortcuts">
-                inhibit_shortcuts
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                create a new keyboard shortcuts inhibitor object
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:zwp_keyboard_shortcuts_inhibit_manager_v1:inhibit_shortcuts">
+                <div class="f4">
+                  inhibit_shortcuts
+                </div>
+                <div class="f5 ml2">
+                  create a new keyboard shortcuts inhibitor object
+                </div>
               </div>
               
 <div class="f6 lh-copy courier">
@@ -154,7 +158,7 @@ a protocol error &quot;already_inhibited&quot; is raised by the compositor.
 
       </li>
       
-      <li class="mt2">
+      <li class="mt4">
         <div class="f2 lh-copy" id="i:zwp_keyboard_shortcuts_inhibitor_v1">
           zwp_keyboard_shortcuts_inhibitor_v1
         </div>
@@ -197,12 +201,14 @@ event is emitted in this case.
           <h3 class=" f5 lh-title" id="rh:zwp_keyboard_shortcuts_inhibitor_v1">Requests</h3>
           <ul class="list pl0">
             
-            <li class="mt2">
-              <div class="f4 lh-title" id="r:zwp_keyboard_shortcuts_inhibitor_v1:destroy">
-                destroy
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                destroy the keyboard shortcuts inhibitor object
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:zwp_keyboard_shortcuts_inhibitor_v1:destroy">
+                <div class="f4">
+                  destroy
+                </div>
+                <div class="f5 ml2">
+                  destroy the keyboard shortcuts inhibitor object
+                </div>
               </div>
               
 <div class="f6 lh-copy courier">
@@ -223,14 +229,16 @@ event is emitted in this case.
           <h3 class=" f5 lh-title" id="eh:zwp_keyboard_shortcuts_inhibitor_v1">Events</h3>
           <ul class="list pl0">
             
-            <li class="mt2">
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:zwp_keyboard_shortcuts_inhibitor_v1:active">
+                <div class="f4">
+                  active
+                </div>
+                <div class="f5 ml2">
+                  shortcuts are inhibited
+                </div>
+              </div>
 
-              <div class="f4 lh-title" id="e:zwp_keyboard_shortcuts_inhibitor_v1:active">
-                active
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                shortcuts are inhibited
-              </div>
               <div class="f6 lh-copy ws-pre-line courier">This event indicates that the shortcut inhibitor is active.
 
 The compositor sends this event every time compositor shortcuts
@@ -245,14 +253,16 @@ offered by the compositor.
   </div>
             </li>
             
-            <li class="mt2">
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:zwp_keyboard_shortcuts_inhibitor_v1:inactive">
+                <div class="f4">
+                  inactive
+                </div>
+                <div class="f5 ml2">
+                  shortcuts are restored
+                </div>
+              </div>
 
-              <div class="f4 lh-title" id="e:zwp_keyboard_shortcuts_inhibitor_v1:inactive">
-                inactive
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                shortcuts are restored
-              </div>
               <div class="f6 lh-copy ws-pre-line courier">This event indicates that the shortcuts inhibitor is inactive,
 normal shortcuts processing is restored by the compositor.
    </div>

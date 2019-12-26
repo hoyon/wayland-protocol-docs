@@ -117,7 +117,7 @@
     <h1 class="f1 lh-title">linux_dmabuf_unstable_v1</h1>
     <ul class="list pl0">
       
-      <li class="mt2">
+      <li class="mt4">
         <div class="f2 lh-copy" id="i:zwp_linux_dmabuf_v1">
           zwp_linux_dmabuf_v1
         </div>
@@ -185,12 +185,14 @@ interface version number is reset.
           <h3 class=" f5 lh-title" id="rh:zwp_linux_dmabuf_v1">Requests</h3>
           <ul class="list pl0">
             
-            <li class="mt2">
-              <div class="f4 lh-title" id="r:zwp_linux_dmabuf_v1:destroy">
-                destroy
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                unbind the factory
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:zwp_linux_dmabuf_v1:destroy">
+                <div class="f4">
+                  destroy
+                </div>
+                <div class="f5 ml2">
+                  unbind the factory
+                </div>
               </div>
               
 <div class="f6 lh-copy courier">
@@ -205,12 +207,14 @@ remain valid.
 </div>
             </li>
             
-            <li class="mt2">
-              <div class="f4 lh-title" id="r:zwp_linux_dmabuf_v1:create_params">
-                create_params
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                create a temporary object for buffer parameters
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:zwp_linux_dmabuf_v1:create_params">
+                <div class="f4">
+                  create_params
+                </div>
+                <div class="f5 ml2">
+                  create a temporary object for buffer parameters
+                </div>
               </div>
               
 <div class="f6 lh-copy courier">
@@ -234,14 +238,16 @@ received.
           <h3 class=" f5 lh-title" id="eh:zwp_linux_dmabuf_v1">Events</h3>
           <ul class="list pl0">
             
-            <li class="mt2">
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:zwp_linux_dmabuf_v1:format">
+                <div class="f4">
+                  format
+                </div>
+                <div class="f5 ml2">
+                  supported buffer format
+                </div>
+              </div>
 
-              <div class="f4 lh-title" id="e:zwp_linux_dmabuf_v1:format">
-                format
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                supported buffer format
-              </div>
               <div class="f6 lh-copy ws-pre-line courier">This event advertises one buffer format that the server supports.
 All the supported formats are advertised once when the client
 binds to this interface. A roundtrip after binding guarantees
@@ -257,14 +263,16 @@ received from this event.
 </div>
             </li>
             
-            <li class="mt2">
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:zwp_linux_dmabuf_v1:modifier">
+                <div class="f4">
+                  modifier
+                </div>
+                <div class="f5 ml2">
+                  supported buffer format modifier
+                </div>
+              </div>
 
-              <div class="f4 lh-title" id="e:zwp_linux_dmabuf_v1:modifier">
-                modifier
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                supported buffer format modifier
-              </div>
               <div class="f6 lh-copy ws-pre-line courier">This event advertises the formats that the server supports, along with
 the modifiers supported for each format. All the supported modifiers
 for all the supported formats are advertised once when the client
@@ -290,7 +298,7 @@ requests.
 
       </li>
       
-      <li class="mt2">
+      <li class="mt4">
         <div class="f2 lh-copy" id="i:zwp_linux_buffer_params_v1">
           zwp_linux_buffer_params_v1
         </div>
@@ -314,12 +322,14 @@ be given in any order. Each plane index can be set only once.
           <h3 class=" f5 lh-title" id="rh:zwp_linux_buffer_params_v1">Requests</h3>
           <ul class="list pl0">
             
-            <li class="mt2">
-              <div class="f4 lh-title" id="r:zwp_linux_buffer_params_v1:destroy">
-                destroy
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                delete this object, used or not
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:zwp_linux_buffer_params_v1:destroy">
+                <div class="f4">
+                  destroy
+                </div>
+                <div class="f5 ml2">
+                  delete this object, used or not
+                </div>
               </div>
               
 <div class="f6 lh-copy courier">
@@ -334,12 +344,14 @@ wl_buffer creation.
 </div>
             </li>
             
-            <li class="mt2">
-              <div class="f4 lh-title" id="r:zwp_linux_buffer_params_v1:add">
-                add
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                add a dmabuf to the temporary set
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:zwp_linux_buffer_params_v1:add">
+                <div class="f4">
+                  add
+                </div>
+                <div class="f5 ml2">
+                  add a dmabuf to the temporary set
+                </div>
               </div>
               
 <div class="f6 lh-copy courier">
@@ -382,12 +394,14 @@ was already set.
 </div>
             </li>
             
-            <li class="mt2">
-              <div class="f4 lh-title" id="r:zwp_linux_buffer_params_v1:create">
-                create
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                create a wl_buffer from the given dmabufs
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:zwp_linux_buffer_params_v1:create">
+                <div class="f4">
+                  create
+                </div>
+                <div class="f5 ml2">
+                  create a wl_buffer from the given dmabufs
+                </div>
               </div>
               
 <div class="f6 lh-copy courier">
@@ -467,13 +481,15 @@ cancel the buffer creation, it can just destroy this object.
 </div>
             </li>
             
-            <li class="mt2">
-              <div class="f4 lh-title" id="r:zwp_linux_buffer_params_v1:create_immed">
-                create_immed
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                immediately create a wl_buffer from the given
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:zwp_linux_buffer_params_v1:create_immed">
+                <div class="f4">
+                  create_immed
+                </div>
+                <div class="f5 ml2">
+                  immediately create a wl_buffer from the given
 dmabufs
+                </div>
               </div>
               
 <div class="f6 lh-copy courier">
@@ -524,14 +540,16 @@ same restrictions.
           <h3 class=" f5 lh-title" id="eh:zwp_linux_buffer_params_v1">Events</h3>
           <ul class="list pl0">
             
-            <li class="mt2">
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:zwp_linux_buffer_params_v1:created">
+                <div class="f4">
+                  created
+                </div>
+                <div class="f5 ml2">
+                  buffer creation succeeded
+                </div>
+              </div>
 
-              <div class="f4 lh-title" id="e:zwp_linux_buffer_params_v1:created">
-                created
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                buffer creation succeeded
-              </div>
               <div class="f6 lh-copy ws-pre-line courier">This event indicates that the attempted buffer creation was
 successful. It provides the new wl_buffer referencing the dmabuf(s).
 
@@ -540,14 +558,16 @@ zlinux_dmabuf_params object.
 </div>
             </li>
             
-            <li class="mt2">
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:zwp_linux_buffer_params_v1:failed">
+                <div class="f4">
+                  failed
+                </div>
+                <div class="f5 ml2">
+                  buffer creation failed
+                </div>
+              </div>
 
-              <div class="f4 lh-title" id="e:zwp_linux_buffer_params_v1:failed">
-                failed
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                buffer creation failed
-              </div>
               <div class="f6 lh-copy ws-pre-line courier">This event indicates that the attempted buffer creation has
 failed. It usually means that one of the dmabuf constraints
 has not been fulfilled.

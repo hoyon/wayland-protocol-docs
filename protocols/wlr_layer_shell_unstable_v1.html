@@ -1,0 +1,597 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>wlr_layer_shell_unstable_v1</title>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="&#x2f;wayland-protocol-docs/main.css"></link>
+     
+  </head>
+  <body class="bg-near-white black-70 sans-serif pa2 ph6-l">
+
+    <a href="&#x2f;wayland-protocol-docs/" class="f4 link near-black dim lh-title">
+      Home
+    </a>
+
+    
+
+    <div id="content">
+      
+  <div class="fl w-25 ph2">
+    
+
+<div>
+  <ul class="list pl0">
+  
+    <li>
+      <a href="#i:zwlr_layer_shell_v1" class="link blue underline-hover lh-copy">zwlr_layer_shell_v1</a>
+
+      
+        <div>
+          <a href="#rh:zwlr_layer_shell_v1" class="link blue underline-hover lh-copy pl3">Requests</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#r:zwlr_layer_shell_v1:get_layer_surface" class="link blue underline-hover lh-copy">get_layer_surface</a>
+          </li>
+          
+        </ul>
+      
+
+      
+    </li>
+  
+    <li>
+      <a href="#i:zwlr_layer_surface_v1" class="link blue underline-hover lh-copy">zwlr_layer_surface_v1</a>
+
+      
+        <div>
+          <a href="#rh:zwlr_layer_surface_v1" class="link blue underline-hover lh-copy pl3">Requests</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#r:zwlr_layer_surface_v1:set_size" class="link blue underline-hover lh-copy">set_size</a>
+          </li>
+          
+          <li>
+            <a href="#r:zwlr_layer_surface_v1:set_anchor" class="link blue underline-hover lh-copy">set_anchor</a>
+          </li>
+          
+          <li>
+            <a href="#r:zwlr_layer_surface_v1:set_exclusive_zone" class="link blue underline-hover lh-copy">set_exclusive_zone</a>
+          </li>
+          
+          <li>
+            <a href="#r:zwlr_layer_surface_v1:set_margin" class="link blue underline-hover lh-copy">set_margin</a>
+          </li>
+          
+          <li>
+            <a href="#r:zwlr_layer_surface_v1:set_keyboard_interactivity" class="link blue underline-hover lh-copy">set_keyboard_interactivity</a>
+          </li>
+          
+          <li>
+            <a href="#r:zwlr_layer_surface_v1:get_popup" class="link blue underline-hover lh-copy">get_popup</a>
+          </li>
+          
+          <li>
+            <a href="#r:zwlr_layer_surface_v1:ack_configure" class="link blue underline-hover lh-copy">ack_configure</a>
+          </li>
+          
+          <li>
+            <a href="#r:zwlr_layer_surface_v1:destroy" class="link blue underline-hover lh-copy">destroy</a>
+          </li>
+          
+          <li>
+            <a href="#r:zwlr_layer_surface_v1:set_layer" class="link blue underline-hover lh-copy">set_layer</a>
+          </li>
+          
+        </ul>
+      
+
+      
+        <div>
+          <a href="#eh:zwlr_layer_surface_v1" class="link blue underline-hover lh-copy pl3">Events</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#e:zwlr_layer_surface_v1:configure" class="link blue underline-hover lh-copy">configure</a>
+          </li>
+          
+          <li>
+            <a href="#e:zwlr_layer_surface_v1:closed" class="link blue underline-hover lh-copy">closed</a>
+          </li>
+          
+        </ul>
+      
+    </li>
+  
+  </ul>
+</div>
+  </div>
+  <div class="fl w-75 ph2">
+    <h1 class="f1 lh-title">wlr_layer_shell_unstable_v1</h1>
+    <ul class="list pl0">
+      
+      <li class="mt4">
+        <div class="f2 lh-copy" id="i:zwlr_layer_shell_v1">
+          zwlr_layer_shell_v1
+        </div>
+        <div class="f6 lh-copy ws-pre-line courier">Clients can use this interface to assign the surface_layer role to
+wl_surfaces. Such surfaces are assigned to a &quot;layer&quot; of the output and
+rendered with a defined z-depth respective to each other. They may also be
+anchored to the edges and corners of a screen and specify input handling
+semantics. This interface should be suitable for the implementation of
+many desktop shell components, and a broad number of other applications
+that interact with the desktop.
+</div>
+
+        
+          <h3 class=" f5 lh-title" id="rh:zwlr_layer_shell_v1">Requests</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:zwlr_layer_shell_v1:get_layer_surface">
+                <div class="f4">
+                  get_layer_surface
+                </div>
+                <div class="f5 ml2">
+                  create a layer_surface from a surface
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>struct zwlr_layer_surface_v1* </span><span class="dark-blue">zwlr_layer_shell_v1_get_layer_surface</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwlr_layer_shell_v1*</span> zwlr_layer_shell_v1,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_surface*</span> surface,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_output*</span> output,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> layer,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">const char*</span> namespace</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier">Create a layer surface for an existing surface. This assigns the role of
+layer_surface, or raises a protocol error if another role is already
+assigned.
+
+Creating a layer surface from a wl_surface which has a buffer attached
+or committed is a client error, and any attempts by a client to attach
+or manipulate a buffer prior to the first layer_surface.configure call
+must also be treated as errors.
+
+You may pass NULL for output to allow the compositor to decide which
+output to use. Generally this will be the one that the user most
+recently interacted with.
+
+Clients can specify a namespace that defines the purpose of the layer
+surface.
+</div>
+            </li>
+            
+          </ul>
+        
+
+        
+
+      </li>
+      
+      <li class="mt4">
+        <div class="f2 lh-copy" id="i:zwlr_layer_surface_v1">
+          zwlr_layer_surface_v1
+        </div>
+        <div class="f6 lh-copy ws-pre-line courier">An interface that may be implemented by a wl_surface, for surfaces that
+are designed to be rendered as a layer of a stacked desktop-like
+environment.
+
+Layer surface state (layer, size, anchor, exclusive zone,
+margin, interactivity) is double-buffered, and will be applied at the
+time wl_surface.commit of the corresponding wl_surface is called.
+</div>
+
+        
+          <h3 class=" f5 lh-title" id="rh:zwlr_layer_surface_v1">Requests</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:zwlr_layer_surface_v1:set_size">
+                <div class="f4">
+                  set_size
+                </div>
+                <div class="f5 ml2">
+                  sets the size of the surface
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">zwlr_layer_surface_v1_set_size</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwlr_layer_surface_v1*</span> zwlr_layer_surface_v1,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> width,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> height</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier">Sets the size of the surface in surface-local coordinates. The
+compositor will display the surface centered with respect to its
+anchors.
+
+If you pass 0 for either value, the compositor will assign it and
+inform you of the assignment in the configure event. You must set your
+anchor to opposite edges in the dimensions you omit; not doing so is a
+protocol error. Both values are 0 by default.
+
+Size is double-buffered, see wl_surface.commit.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:zwlr_layer_surface_v1:set_anchor">
+                <div class="f4">
+                  set_anchor
+                </div>
+                <div class="f5 ml2">
+                  configures the anchor point of the surface
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">zwlr_layer_surface_v1_set_anchor</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwlr_layer_surface_v1*</span> zwlr_layer_surface_v1,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> anchor</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier">Requests that the compositor anchor the surface to the specified edges
+and corners. If two orthogonal edges are specified (e.g. &#x27;top&#x27; and
+&#x27;left&#x27;), then the anchor point will be the intersection of the edges
+(e.g. the top left corner of the output); otherwise the anchor point
+will be centered on that edge, or in the center if none is specified.
+
+Anchor is double-buffered, see wl_surface.commit.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:zwlr_layer_surface_v1:set_exclusive_zone">
+                <div class="f4">
+                  set_exclusive_zone
+                </div>
+                <div class="f5 ml2">
+                  configures the exclusive geometry of this surface
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">zwlr_layer_surface_v1_set_exclusive_zone</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwlr_layer_surface_v1*</span> zwlr_layer_surface_v1,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> zone</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier">Requests that the compositor avoids occluding an area with other
+surfaces. The compositor&#x27;s use of this information is
+implementation-dependent - do not assume that this region will not
+actually be occluded.
+
+A positive value is only meaningful if the surface is anchored to one
+edge or an edge and both perpendicular edges. If the surface is not
+anchored, anchored to only two perpendicular edges (a corner), anchored
+to only two parallel edges or anchored to all edges, a positive value
+will be treated the same as zero.
+
+A positive zone is the distance from the edge in surface-local
+coordinates to consider exclusive.
+
+Surfaces that do not wish to have an exclusive zone may instead specify
+how they should interact with surfaces that do. If set to zero, the
+surface indicates that it would like to be moved to avoid occluding
+surfaces with a positive exclusive zone. If set to -1, the surface
+indicates that it would not like to be moved to accommodate for other
+surfaces, and the compositor should extend it all the way to the edges
+it is anchored to.
+
+For example, a panel might set its exclusive zone to 10, so that
+maximized shell surfaces are not shown on top of it. A notification
+might set its exclusive zone to 0, so that it is moved to avoid
+occluding the panel, but shell surfaces are shown underneath it. A
+wallpaper or lock screen might set their exclusive zone to -1, so that
+they stretch below or over the panel.
+
+The default value is 0.
+
+Exclusive zone is double-buffered, see wl_surface.commit.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:zwlr_layer_surface_v1:set_margin">
+                <div class="f4">
+                  set_margin
+                </div>
+                <div class="f5 ml2">
+                  sets a margin from the anchor point
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">zwlr_layer_surface_v1_set_margin</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwlr_layer_surface_v1*</span> zwlr_layer_surface_v1,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> top,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> right,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> bottom,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> left</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier">Requests that the surface be placed some distance away from the anchor
+point on the output, in surface-local coordinates. Setting this value
+for edges you are not anchored to has no effect.
+
+The exclusive zone includes the margin.
+
+Margin is double-buffered, see wl_surface.commit.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:zwlr_layer_surface_v1:set_keyboard_interactivity">
+                <div class="f4">
+                  set_keyboard_interactivity
+                </div>
+                <div class="f5 ml2">
+                  requests keyboard events
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">zwlr_layer_surface_v1_set_keyboard_interactivity</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwlr_layer_surface_v1*</span> zwlr_layer_surface_v1,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> keyboard_interactivity</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier">Set to 1 to request that the seat send keyboard events to this layer
+surface. For layers below the shell surface layer, the seat will use
+normal focus semantics. For layers above the shell surface layers, the
+seat will always give exclusive keyboard focus to the top-most layer
+which has keyboard interactivity set to true.
+
+Layer surfaces receive pointer, touch, and tablet events normally. If
+you do not want to receive them, set the input region on your surface
+to an empty region.
+
+Events is double-buffered, see wl_surface.commit.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:zwlr_layer_surface_v1:get_popup">
+                <div class="f4">
+                  get_popup
+                </div>
+                <div class="f5 ml2">
+                  assign this layer_surface as an xdg_popup parent
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">zwlr_layer_surface_v1_get_popup</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwlr_layer_surface_v1*</span> zwlr_layer_surface_v1,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct xdg_popup*</span> popup</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier">This assigns an xdg_popup&#x27;s parent to this layer_surface.  This popup
+should have been created via xdg_surface::get_popup with the parent set
+to NULL, and this request must be invoked before committing the popup&#x27;s
+initial state.
+
+See the documentation of xdg_popup for more details about what an
+xdg_popup is and how it is used.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:zwlr_layer_surface_v1:ack_configure">
+                <div class="f4">
+                  ack_configure
+                </div>
+                <div class="f5 ml2">
+                  ack a configure event
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">zwlr_layer_surface_v1_ack_configure</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwlr_layer_surface_v1*</span> zwlr_layer_surface_v1,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> serial</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier">When a configure event is received, if a client commits the
+surface in response to the configure event, then the client
+must make an ack_configure request sometime before the commit
+request, passing along the serial of the configure event.
+
+If the client receives multiple configure events before it
+can respond to one, it only has to ack the last configure event.
+
+A client is not required to commit immediately after sending
+an ack_configure request - it may even ack_configure several times
+before its next surface commit.
+
+A client may send multiple ack_configure requests before committing, but
+only the last request sent before a commit indicates which configure
+event the client really is responding to.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:zwlr_layer_surface_v1:destroy">
+                <div class="f4">
+                  destroy
+                </div>
+                <div class="f5 ml2">
+                  destroy the layer_surface
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">zwlr_layer_surface_v1_destroy</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwlr_layer_surface_v1*</span> zwlr_layer_surface_v1</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier">This request destroys the layer surface.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:zwlr_layer_surface_v1:set_layer">
+                <div class="f4">
+                  set_layer
+                </div>
+                <div class="f5 ml2">
+                  change the layer of the surface
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">zwlr_layer_surface_v1_set_layer</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwlr_layer_surface_v1*</span> zwlr_layer_surface_v1,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> layer</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier">Change the layer that the surface is rendered on.
+
+Layer is double-buffered, see wl_surface.commit.
+</div>
+            </li>
+            
+          </ul>
+        
+
+        
+          <h3 class=" f5 lh-title" id="eh:zwlr_layer_surface_v1">Events</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:zwlr_layer_surface_v1:configure">
+                <div class="f4">
+                  configure
+                </div>
+                <div class="f5 ml2">
+                  suggest a surface change
+                </div>
+              </div>
+
+              <div class="f6 lh-copy ws-pre-line courier">The configure event asks the client to resize its surface.
+
+Clients should arrange their surface for the new states, and then send
+an ack_configure request with the serial sent in this configure event at
+some point before committing the new surface.
+
+The client is free to dismiss all but the last configure event it
+received.
+
+The width and height arguments specify the size of the window in
+surface-local coordinates.
+
+The size is a hint, in the sense that the client is free to ignore it if
+it doesn&#x27;t resize, pick a smaller size (to satisfy aspect ratio or
+resize in steps of NxM pixels). If the client picks a smaller size and
+is anchored to two opposite anchors (e.g. &#x27;top&#x27; and &#x27;bottom&#x27;), the
+surface will be centered on this axis.
+
+If the width or height arguments are zero, it means the client should
+decide its own window dimension.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:zwlr_layer_surface_v1:closed">
+                <div class="f4">
+                  closed
+                </div>
+                <div class="f5 ml2">
+                  surface should be closed
+                </div>
+              </div>
+
+              <div class="f6 lh-copy ws-pre-line courier">The closed event is sent by the compositor when the surface will no
+longer be shown. The output may have been destroyed or the user may
+have asked for it to be removed. Further changes to the surface will be
+ignored. The client should destroy the resource after receiving this
+event, and create a new surface if they so choose.
+</div>
+            </li>
+            
+          </ul>
+
+        
+
+      </li>
+      
+    </ul>
+
+    <h2 class="f4 lh-title">Copyright Info</h2>
+    <div class="f7 lh-copy ws-pre-line courier">Copyright © 2017 Drew DeVault
+
+Permission to use, copy, modify, distribute, and sell this
+software and its documentation for any purpose is hereby granted
+without fee, provided that the above copyright notice appear in
+all copies and that both that copyright notice and this permission
+notice appear in supporting documentation, and that the name of
+the copyright holders not be used in advertising or publicity
+pertaining to distribution of the software without specific,
+written prior permission.  The copyright holders make no
+representations about the suitability of this software for any
+purpose.  It is provided &quot;as is&quot; without express or implied
+warranty.
+
+THE COPYRIGHT HOLDERS DISCLAIM ALL WARRANTIES WITH REGARD TO THIS
+SOFTWARE, INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND
+FITNESS, IN NO EVENT SHALL THE COPYRIGHT HOLDERS BE LIABLE FOR ANY
+SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN
+AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION,
+ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF
+THIS SOFTWARE.
+</div>
+  </div>
+
+    </div>
+
+  </body>
+</html>

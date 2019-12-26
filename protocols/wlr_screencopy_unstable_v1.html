@@ -1,0 +1,453 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>wlr_screencopy_unstable_v1</title>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="&#x2f;wayland-protocol-docs/main.css"></link>
+     
+  </head>
+  <body class="bg-near-white black-70 sans-serif pa2 ph6-l">
+
+    <a href="&#x2f;wayland-protocol-docs/" class="f4 link near-black dim lh-title">
+      Home
+    </a>
+
+    
+
+    <div id="content">
+      
+  <div class="fl w-25 ph2">
+    
+
+<div>
+  <ul class="list pl0">
+  
+    <li>
+      <a href="#i:zwlr_screencopy_manager_v1" class="link blue underline-hover lh-copy">zwlr_screencopy_manager_v1</a>
+
+      
+        <div>
+          <a href="#rh:zwlr_screencopy_manager_v1" class="link blue underline-hover lh-copy pl3">Requests</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#r:zwlr_screencopy_manager_v1:capture_output" class="link blue underline-hover lh-copy">capture_output</a>
+          </li>
+          
+          <li>
+            <a href="#r:zwlr_screencopy_manager_v1:capture_output_region" class="link blue underline-hover lh-copy">capture_output_region</a>
+          </li>
+          
+          <li>
+            <a href="#r:zwlr_screencopy_manager_v1:destroy" class="link blue underline-hover lh-copy">destroy</a>
+          </li>
+          
+        </ul>
+      
+
+      
+    </li>
+  
+    <li>
+      <a href="#i:zwlr_screencopy_frame_v1" class="link blue underline-hover lh-copy">zwlr_screencopy_frame_v1</a>
+
+      
+        <div>
+          <a href="#rh:zwlr_screencopy_frame_v1" class="link blue underline-hover lh-copy pl3">Requests</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#r:zwlr_screencopy_frame_v1:copy" class="link blue underline-hover lh-copy">copy</a>
+          </li>
+          
+          <li>
+            <a href="#r:zwlr_screencopy_frame_v1:destroy" class="link blue underline-hover lh-copy">destroy</a>
+          </li>
+          
+          <li>
+            <a href="#r:zwlr_screencopy_frame_v1:copy_with_damage" class="link blue underline-hover lh-copy">copy_with_damage</a>
+          </li>
+          
+        </ul>
+      
+
+      
+        <div>
+          <a href="#eh:zwlr_screencopy_frame_v1" class="link blue underline-hover lh-copy pl3">Events</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#e:zwlr_screencopy_frame_v1:buffer" class="link blue underline-hover lh-copy">buffer</a>
+          </li>
+          
+          <li>
+            <a href="#e:zwlr_screencopy_frame_v1:flags" class="link blue underline-hover lh-copy">flags</a>
+          </li>
+          
+          <li>
+            <a href="#e:zwlr_screencopy_frame_v1:ready" class="link blue underline-hover lh-copy">ready</a>
+          </li>
+          
+          <li>
+            <a href="#e:zwlr_screencopy_frame_v1:failed" class="link blue underline-hover lh-copy">failed</a>
+          </li>
+          
+          <li>
+            <a href="#e:zwlr_screencopy_frame_v1:damage" class="link blue underline-hover lh-copy">damage</a>
+          </li>
+          
+        </ul>
+      
+    </li>
+  
+  </ul>
+</div>
+  </div>
+  <div class="fl w-75 ph2">
+    <h1 class="f1 lh-title">wlr_screencopy_unstable_v1</h1>
+    <ul class="list pl0">
+      
+      <li class="mt4">
+        <div class="f2 lh-copy" id="i:zwlr_screencopy_manager_v1">
+          zwlr_screencopy_manager_v1
+        </div>
+        <div class="f6 lh-copy ws-pre-line courier">This object is a manager which offers requests to start capturing from a
+source.
+</div>
+
+        
+          <h3 class=" f5 lh-title" id="rh:zwlr_screencopy_manager_v1">Requests</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:zwlr_screencopy_manager_v1:capture_output">
+                <div class="f4">
+                  capture_output
+                </div>
+                <div class="f5 ml2">
+                  capture an output
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>struct zwlr_screencopy_frame_v1* </span><span class="dark-blue">zwlr_screencopy_manager_v1_capture_output</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwlr_screencopy_manager_v1*</span> zwlr_screencopy_manager_v1,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> overlay_cursor,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_output*</span> output</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier">Capture the next frame of an entire output.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:zwlr_screencopy_manager_v1:capture_output_region">
+                <div class="f4">
+                  capture_output_region
+                </div>
+                <div class="f5 ml2">
+                  capture an output&#x27;s region
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>struct zwlr_screencopy_frame_v1* </span><span class="dark-blue">zwlr_screencopy_manager_v1_capture_output_region</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwlr_screencopy_manager_v1*</span> zwlr_screencopy_manager_v1,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> overlay_cursor,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_output*</span> output,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> x,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> y,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> width,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> height</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier">Capture the next frame of an output&#x27;s region.
+
+The region is given in output logical coordinates, see
+xdg_output.logical_size. The region will be clipped to the output&#x27;s
+extents.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:zwlr_screencopy_manager_v1:destroy">
+                <div class="f4">
+                  destroy
+                </div>
+                <div class="f5 ml2">
+                  destroy the manager
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">zwlr_screencopy_manager_v1_destroy</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwlr_screencopy_manager_v1*</span> zwlr_screencopy_manager_v1</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier">All objects created by the manager will still remain valid, until their
+appropriate destroy request has been called.
+</div>
+            </li>
+            
+          </ul>
+        
+
+        
+
+      </li>
+      
+      <li class="mt4">
+        <div class="f2 lh-copy" id="i:zwlr_screencopy_frame_v1">
+          zwlr_screencopy_frame_v1
+        </div>
+        <div class="f6 lh-copy ws-pre-line courier">This object represents a single frame.
+
+When created, a &quot;buffer&quot; event will be sent. The client will then be able
+to send a &quot;copy&quot; request. If the capture is successful, the compositor
+will send a &quot;flags&quot; followed by a &quot;ready&quot; event.
+
+If the capture failed, the &quot;failed&quot; event is sent. This can happen anytime
+before the &quot;ready&quot; event.
+
+Once either a &quot;ready&quot; or a &quot;failed&quot; event is received, the client should
+destroy the frame.
+</div>
+
+        
+          <h3 class=" f5 lh-title" id="rh:zwlr_screencopy_frame_v1">Requests</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:zwlr_screencopy_frame_v1:copy">
+                <div class="f4">
+                  copy
+                </div>
+                <div class="f5 ml2">
+                  copy the frame
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">zwlr_screencopy_frame_v1_copy</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwlr_screencopy_frame_v1*</span> zwlr_screencopy_frame_v1,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_buffer*</span> buffer</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier">Copy the frame to the supplied buffer. The buffer must have a the
+correct size, see zwlr_screencopy_frame_v1.buffer. The buffer needs to
+have a supported format.
+
+If the frame is successfully copied, a &quot;flags&quot; and a &quot;ready&quot; events are
+sent. Otherwise, a &quot;failed&quot; event is sent.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:zwlr_screencopy_frame_v1:destroy">
+                <div class="f4">
+                  destroy
+                </div>
+                <div class="f5 ml2">
+                  delete this object, used or not
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">zwlr_screencopy_frame_v1_destroy</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwlr_screencopy_frame_v1*</span> zwlr_screencopy_frame_v1</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier">Destroys the frame. This request can be sent at any time by the client.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:zwlr_screencopy_frame_v1:copy_with_damage">
+                <div class="f4">
+                  copy_with_damage
+                </div>
+                <div class="f5 ml2">
+                  copy the frame when it&#x27;s damaged
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">zwlr_screencopy_frame_v1_copy_with_damage</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwlr_screencopy_frame_v1*</span> zwlr_screencopy_frame_v1,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_buffer*</span> buffer</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier">Same as copy, except it waits until there is damage to copy.
+</div>
+            </li>
+            
+          </ul>
+        
+
+        
+          <h3 class=" f5 lh-title" id="eh:zwlr_screencopy_frame_v1">Events</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:zwlr_screencopy_frame_v1:buffer">
+                <div class="f4">
+                  buffer
+                </div>
+                <div class="f5 ml2">
+                  buffer information
+                </div>
+              </div>
+
+              <div class="f6 lh-copy ws-pre-line courier">Provides information about the frame&#x27;s buffer. This event is sent once
+as soon as the frame is created.
+
+The client should then create a buffer with the provided attributes, and
+send a &quot;copy&quot; request.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:zwlr_screencopy_frame_v1:flags">
+                <div class="f4">
+                  flags
+                </div>
+                <div class="f5 ml2">
+                  frame flags
+                </div>
+              </div>
+
+              <div class="f6 lh-copy ws-pre-line courier">Provides flags about the frame. This event is sent once before the
+&quot;ready&quot; event.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:zwlr_screencopy_frame_v1:ready">
+                <div class="f4">
+                  ready
+                </div>
+                <div class="f5 ml2">
+                  indicates frame is available for reading
+                </div>
+              </div>
+
+              <div class="f6 lh-copy ws-pre-line courier">Called as soon as the frame is copied, indicating it is available
+for reading. This event includes the time at which presentation happened
+at.
+
+The timestamp is expressed as tv_sec_hi, tv_sec_lo, tv_nsec triples,
+each component being an unsigned 32-bit value. Whole seconds are in
+tv_sec which is a 64-bit value combined from tv_sec_hi and tv_sec_lo,
+and the additional fractional part in tv_nsec as nanoseconds. Hence,
+for valid timestamps tv_nsec must be in [0, 999999999]. The seconds part
+may have an arbitrary offset at start.
+
+After receiving this event, the client should destroy the object.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:zwlr_screencopy_frame_v1:failed">
+                <div class="f4">
+                  failed
+                </div>
+                <div class="f5 ml2">
+                  frame copy failed
+                </div>
+              </div>
+
+              <div class="f6 lh-copy ws-pre-line courier">This event indicates that the attempted frame copy has failed.
+
+After receiving this event, the client should destroy the object.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:zwlr_screencopy_frame_v1:damage">
+                <div class="f4">
+                  damage
+                </div>
+                <div class="f5 ml2">
+                  carries the coordinates of the damaged region
+                </div>
+              </div>
+
+              <div class="f6 lh-copy ws-pre-line courier">This event is sent right before the ready event when copy_with_damage is
+requested. It may be generated multiple times for each copy_with_damage
+request.
+
+The arguments describe a box around an area that has changed since the
+last copy request that was derived from the current screencopy manager
+instance.
+
+The union of all regions received between the call to copy_with_damage
+and a ready event is the total damage since the prior ready event.
+</div>
+            </li>
+            
+          </ul>
+
+        
+
+      </li>
+      
+    </ul>
+
+    <h2 class="f4 lh-title">Copyright Info</h2>
+    <div class="f7 lh-copy ws-pre-line courier">Copyright © 2018 Simon Ser
+Copyright © 2019 Andri Yngvason
+
+Permission is hereby granted, free of charge, to any person obtaining a
+copy of this software and associated documentation files (the &quot;Software&quot;),
+to deal in the Software without restriction, including without limitation
+the rights to use, copy, modify, merge, publish, distribute, sublicense,
+and&#x2f;or sell copies of the Software, and to permit persons to whom the
+Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice (including the next
+paragraph) shall be included in all copies or substantial portions of the
+Software.
+
+THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL
+THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+DEALINGS IN THE SOFTWARE.
+</div>
+  </div>
+
+    </div>
+
+  </body>
+</html>

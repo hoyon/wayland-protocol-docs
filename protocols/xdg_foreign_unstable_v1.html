@@ -143,7 +143,7 @@
     <h1 class="f1 lh-title">xdg_foreign_unstable_v1</h1>
     <ul class="list pl0">
       
-      <li class="mt2">
+      <li class="mt4">
         <div class="f2 lh-copy" id="i:zxdg_exporter_v1">
           zxdg_exporter_v1
         </div>
@@ -155,12 +155,14 @@ using xdg_importer.
           <h3 class=" f5 lh-title" id="rh:zxdg_exporter_v1">Requests</h3>
           <ul class="list pl0">
             
-            <li class="mt2">
-              <div class="f4 lh-title" id="r:zxdg_exporter_v1:destroy">
-                destroy
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                destroy the xdg_exporter object
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:zxdg_exporter_v1:destroy">
+                <div class="f4">
+                  destroy
+                </div>
+                <div class="f5 ml2">
+                  destroy the xdg_exporter object
+                </div>
               </div>
               
 <div class="f6 lh-copy courier">
@@ -175,12 +177,14 @@ used.
   </div>
             </li>
             
-            <li class="mt2">
-              <div class="f4 lh-title" id="r:zxdg_exporter_v1:export">
-                export
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                export a surface
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:zxdg_exporter_v1:export">
+                <div class="f4">
+                  export
+                </div>
+                <div class="f5 ml2">
+                  export a surface
+                </div>
               </div>
               
 <div class="f6 lh-copy courier">
@@ -210,7 +214,7 @@ surfaces may be exported.
 
       </li>
       
-      <li class="mt2">
+      <li class="mt4">
         <div class="f2 lh-copy" id="i:zxdg_importer_v1">
           zxdg_importer_v1
         </div>
@@ -223,12 +227,14 @@ another client.
           <h3 class=" f5 lh-title" id="rh:zxdg_importer_v1">Requests</h3>
           <ul class="list pl0">
             
-            <li class="mt2">
-              <div class="f4 lh-title" id="r:zxdg_importer_v1:destroy">
-                destroy
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                destroy the xdg_importer object
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:zxdg_importer_v1:destroy">
+                <div class="f4">
+                  destroy
+                </div>
+                <div class="f5 ml2">
+                  destroy the xdg_importer object
+                </div>
               </div>
               
 <div class="f6 lh-copy courier">
@@ -243,12 +249,14 @@ used.
   </div>
             </li>
             
-            <li class="mt2">
-              <div class="f4 lh-title" id="r:zxdg_importer_v1:import">
-                import
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                import a surface
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:zxdg_importer_v1:import">
+                <div class="f4">
+                  import
+                </div>
+                <div class="f5 ml2">
+                  import a surface
+                </div>
               </div>
               
 <div class="f6 lh-copy courier">
@@ -275,7 +283,7 @@ manipulate its relationship using it. See xdg_imported for details.
 
       </li>
       
-      <li class="mt2">
+      <li class="mt4">
         <div class="f2 lh-copy" id="i:zxdg_exported_v1">
           zxdg_exported_v1
         </div>
@@ -289,12 +297,14 @@ importer may have established using xdg_imported.
           <h3 class=" f5 lh-title" id="rh:zxdg_exported_v1">Requests</h3>
           <ul class="list pl0">
             
-            <li class="mt2">
-              <div class="f4 lh-title" id="r:zxdg_exported_v1:destroy">
-                destroy
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                unexport the exported surface
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:zxdg_exported_v1:destroy">
+                <div class="f4">
+                  destroy
+                </div>
+                <div class="f5 ml2">
+                  unexport the exported surface
+                </div>
               </div>
               
 <div class="f6 lh-copy courier">
@@ -317,14 +327,16 @@ given the handle sent via xdg_exported.handle.
           <h3 class=" f5 lh-title" id="eh:zxdg_exported_v1">Events</h3>
           <ul class="list pl0">
             
-            <li class="mt2">
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:zxdg_exported_v1:handle">
+                <div class="f4">
+                  handle
+                </div>
+                <div class="f5 ml2">
+                  the exported surface handle
+                </div>
+              </div>
 
-              <div class="f4 lh-title" id="e:zxdg_exported_v1:handle">
-                handle
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                the exported surface handle
-              </div>
               <div class="f6 lh-copy ws-pre-line courier">The handle event contains the unique handle of this exported surface
 reference. It may be shared with any client, which then can use it to
 import the surface by calling xdg_importer.import. A handle may be
@@ -338,7 +350,7 @@ used to import the surface multiple times.
 
       </li>
       
-      <li class="mt2">
+      <li class="mt4">
         <div class="f2 lh-copy" id="i:zxdg_imported_v1">
           zxdg_imported_v1
         </div>
@@ -351,12 +363,14 @@ relationships between its own surfaces and the imported surface.
           <h3 class=" f5 lh-title" id="rh:zxdg_imported_v1">Requests</h3>
           <ul class="list pl0">
             
-            <li class="mt2">
-              <div class="f4 lh-title" id="r:zxdg_imported_v1:destroy">
-                destroy
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                destroy the xdg_imported object
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:zxdg_imported_v1:destroy">
+                <div class="f4">
+                  destroy
+                </div>
+                <div class="f5 ml2">
+                  destroy the xdg_imported object
+                </div>
               </div>
               
 <div class="f6 lh-copy courier">
@@ -372,12 +386,14 @@ be invalidated.
   </div>
             </li>
             
-            <li class="mt2">
-              <div class="f4 lh-title" id="r:zxdg_imported_v1:set_parent_of">
-                set_parent_of
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                set as the parent of some surface
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:zxdg_imported_v1:set_parent_of">
+                <div class="f4">
+                  set_parent_of
+                </div>
+                <div class="f5 ml2">
+                  set as the parent of some surface
+                </div>
               </div>
               
 <div class="f6 lh-copy courier">
@@ -403,14 +419,16 @@ semantics as xdg_surface.set_parent.
           <h3 class=" f5 lh-title" id="eh:zxdg_imported_v1">Events</h3>
           <ul class="list pl0">
             
-            <li class="mt2">
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:zxdg_imported_v1:destroyed">
+                <div class="f4">
+                  destroyed
+                </div>
+                <div class="f5 ml2">
+                  the imported surface handle has been destroyed
+                </div>
+              </div>
 
-              <div class="f4 lh-title" id="e:zxdg_imported_v1:destroyed">
-                destroyed
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                the imported surface handle has been destroyed
-              </div>
               <div class="f6 lh-copy ws-pre-line courier">The imported surface handle has been destroyed and any relationship set
 up has been invalidated. This may happen for various reasons, for
 example if the exported surface or the exported surface handle has been

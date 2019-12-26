@@ -170,7 +170,7 @@
     <h1 class="f1 lh-title">wp_primary_selection_unstable_v1</h1>
     <ul class="list pl0">
       
-      <li class="mt2">
+      <li class="mt4">
         <div class="f2 lh-copy" id="i:zwp_primary_selection_device_manager_v1">
           zwp_primary_selection_device_manager_v1
         </div>
@@ -184,12 +184,14 @@ wp_primary_selection_device objects.
           <h3 class=" f5 lh-title" id="rh:zwp_primary_selection_device_manager_v1">Requests</h3>
           <ul class="list pl0">
             
-            <li class="mt2">
-              <div class="f4 lh-title" id="r:zwp_primary_selection_device_manager_v1:create_source">
-                create_source
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                create a new primary selection source
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:zwp_primary_selection_device_manager_v1:create_source">
+                <div class="f4">
+                  create_source
+                </div>
+                <div class="f5 ml2">
+                  create a new primary selection source
+                </div>
               </div>
               
 <div class="f6 lh-copy courier">
@@ -203,12 +205,14 @@ wp_primary_selection_device objects.
 </div>
             </li>
             
-            <li class="mt2">
-              <div class="f4 lh-title" id="r:zwp_primary_selection_device_manager_v1:get_device">
-                get_device
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                create a new primary selection device
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:zwp_primary_selection_device_manager_v1:get_device">
+                <div class="f4">
+                  get_device
+                </div>
+                <div class="f5 ml2">
+                  create a new primary selection device
+                </div>
               </div>
               
 <div class="f6 lh-copy courier">
@@ -224,12 +228,14 @@ wp_primary_selection_device objects.
 </div>
             </li>
             
-            <li class="mt2">
-              <div class="f4 lh-title" id="r:zwp_primary_selection_device_manager_v1:destroy">
-                destroy
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                destroy the primary selection device manager
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:zwp_primary_selection_device_manager_v1:destroy">
+                <div class="f4">
+                  destroy
+                </div>
+                <div class="f5 ml2">
+                  destroy the primary selection device manager
+                </div>
               </div>
               
 <div class="f6 lh-copy courier">
@@ -250,7 +256,7 @@ wp_primary_selection_device objects.
 
       </li>
       
-      <li class="mt2">
+      <li class="mt4">
         <div class="f2 lh-copy" id="i:zwp_primary_selection_device_v1">
           zwp_primary_selection_device_v1
         </div>
@@ -260,12 +266,14 @@ wp_primary_selection_device objects.
           <h3 class=" f5 lh-title" id="rh:zwp_primary_selection_device_v1">Requests</h3>
           <ul class="list pl0">
             
-            <li class="mt2">
-              <div class="f4 lh-title" id="r:zwp_primary_selection_device_v1:set_selection">
-                set_selection
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                set the primary selection
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:zwp_primary_selection_device_v1:set_selection">
+                <div class="f4">
+                  set_selection
+                </div>
+                <div class="f5 ml2">
+                  set the primary selection
+                </div>
               </div>
               
 <div class="f6 lh-copy courier">
@@ -286,12 +294,14 @@ To unset the selection, set the source to NULL.
 </div>
             </li>
             
-            <li class="mt2">
-              <div class="f4 lh-title" id="r:zwp_primary_selection_device_v1:destroy">
-                destroy
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                destroy the primary selection device
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:zwp_primary_selection_device_v1:destroy">
+                <div class="f4">
+                  destroy
+                </div>
+                <div class="f5 ml2">
+                  destroy the primary selection device
+                </div>
               </div>
               
 <div class="f6 lh-copy courier">
@@ -312,14 +322,16 @@ To unset the selection, set the source to NULL.
           <h3 class=" f5 lh-title" id="eh:zwp_primary_selection_device_v1">Events</h3>
           <ul class="list pl0">
             
-            <li class="mt2">
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:zwp_primary_selection_device_v1:data_offer">
+                <div class="f4">
+                  data_offer
+                </div>
+                <div class="f5 ml2">
+                  introduce a new wp_primary_selection_offer
+                </div>
+              </div>
 
-              <div class="f4 lh-title" id="e:zwp_primary_selection_device_v1:data_offer">
-                data_offer
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                introduce a new wp_primary_selection_offer
-              </div>
               <div class="f6 lh-copy ws-pre-line courier">Introduces a new wp_primary_selection_offer object that may be used
 to receive the current primary selection. Immediately following this
 event, the new wp_primary_selection_offer object will send
@@ -328,14 +340,16 @@ types.
 </div>
             </li>
             
-            <li class="mt2">
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:zwp_primary_selection_device_v1:selection">
+                <div class="f4">
+                  selection
+                </div>
+                <div class="f5 ml2">
+                  advertise a new primary selection
+                </div>
+              </div>
 
-              <div class="f4 lh-title" id="e:zwp_primary_selection_device_v1:selection">
-                selection
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                advertise a new primary selection
-              </div>
               <div class="f6 lh-copy ws-pre-line courier">The wp_primary_selection_device.selection event is sent to notify the
 client of a new primary selection. This event is sent after the
 wp_primary_selection.data_offer event introducing this object, and after
@@ -354,7 +368,7 @@ previous selection data_offer, if any, upon receiving this event.
 
       </li>
       
-      <li class="mt2">
+      <li class="mt4">
         <div class="f2 lh-copy" id="i:zwp_primary_selection_offer_v1">
           zwp_primary_selection_offer_v1
         </div>
@@ -369,12 +383,14 @@ directly to the client.
           <h3 class=" f5 lh-title" id="rh:zwp_primary_selection_offer_v1">Requests</h3>
           <ul class="list pl0">
             
-            <li class="mt2">
-              <div class="f4 lh-title" id="r:zwp_primary_selection_offer_v1:receive">
-                receive
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                request that the data is transferred
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:zwp_primary_selection_offer_v1:receive">
+                <div class="f4">
+                  receive
+                </div>
+                <div class="f5 ml2">
+                  request that the data is transferred
+                </div>
               </div>
               
 <div class="f6 lh-copy courier">
@@ -400,12 +416,14 @@ closes its end, at which point the transfer is complete.
 </div>
             </li>
             
-            <li class="mt2">
-              <div class="f4 lh-title" id="r:zwp_primary_selection_offer_v1:destroy">
-                destroy
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                destroy the primary selection offer
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:zwp_primary_selection_offer_v1:destroy">
+                <div class="f4">
+                  destroy
+                </div>
+                <div class="f5 ml2">
+                  destroy the primary selection offer
+                </div>
               </div>
               
 <div class="f6 lh-copy courier">
@@ -426,14 +444,16 @@ closes its end, at which point the transfer is complete.
           <h3 class=" f5 lh-title" id="eh:zwp_primary_selection_offer_v1">Events</h3>
           <ul class="list pl0">
             
-            <li class="mt2">
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:zwp_primary_selection_offer_v1:offer">
+                <div class="f4">
+                  offer
+                </div>
+                <div class="f5 ml2">
+                  advertise offered mime type
+                </div>
+              </div>
 
-              <div class="f4 lh-title" id="e:zwp_primary_selection_offer_v1:offer">
-                offer
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                advertise offered mime type
-              </div>
               <div class="f6 lh-copy ws-pre-line courier">Sent immediately after creating announcing the
 wp_primary_selection_offer through
 wp_primary_selection_device.data_offer. One event is sent per offered
@@ -447,7 +467,7 @@ mime type.
 
       </li>
       
-      <li class="mt2">
+      <li class="mt4">
         <div class="f2 lh-copy" id="i:zwp_primary_selection_source_v1">
           zwp_primary_selection_source_v1
         </div>
@@ -460,12 +480,14 @@ requested contents of the primary selection clipboard.
           <h3 class=" f5 lh-title" id="rh:zwp_primary_selection_source_v1">Requests</h3>
           <ul class="list pl0">
             
-            <li class="mt2">
-              <div class="f4 lh-title" id="r:zwp_primary_selection_source_v1:offer">
-                offer
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                add an offered mime type
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:zwp_primary_selection_source_v1:offer">
+                <div class="f4">
+                  offer
+                </div>
+                <div class="f5 ml2">
+                  add an offered mime type
+                </div>
               </div>
               
 <div class="f6 lh-copy courier">
@@ -482,12 +504,14 @@ targets. Can be called several times to offer multiple types.
 </div>
             </li>
             
-            <li class="mt2">
-              <div class="f4 lh-title" id="r:zwp_primary_selection_source_v1:destroy">
-                destroy
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                destroy the primary selection source
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:zwp_primary_selection_source_v1:destroy">
+                <div class="f4">
+                  destroy
+                </div>
+                <div class="f5 ml2">
+                  destroy the primary selection source
+                </div>
               </div>
               
 <div class="f6 lh-copy courier">
@@ -508,28 +532,32 @@ targets. Can be called several times to offer multiple types.
           <h3 class=" f5 lh-title" id="eh:zwp_primary_selection_source_v1">Events</h3>
           <ul class="list pl0">
             
-            <li class="mt2">
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:zwp_primary_selection_source_v1:send">
+                <div class="f4">
+                  send
+                </div>
+                <div class="f5 ml2">
+                  send the primary selection contents
+                </div>
+              </div>
 
-              <div class="f4 lh-title" id="e:zwp_primary_selection_source_v1:send">
-                send
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                send the primary selection contents
-              </div>
               <div class="f6 lh-copy ws-pre-line courier">Request for the current primary selection contents from the client.
 Send the specified mime type over the passed file descriptor, then
 close it.
 </div>
             </li>
             
-            <li class="mt2">
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:zwp_primary_selection_source_v1:cancelled">
+                <div class="f4">
+                  cancelled
+                </div>
+                <div class="f5 ml2">
+                  request for primary selection contents was canceled
+                </div>
+              </div>
 
-              <div class="f4 lh-title" id="e:zwp_primary_selection_source_v1:cancelled">
-                cancelled
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                request for primary selection contents was canceled
-              </div>
               <div class="f6 lh-copy ws-pre-line courier">This primary selection source is no longer valid. The client should
 clean up and destroy this primary selection source.
 </div>

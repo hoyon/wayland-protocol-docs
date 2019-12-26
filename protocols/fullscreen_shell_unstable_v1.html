@@ -98,7 +98,7 @@
     <h1 class="f1 lh-title">fullscreen_shell_unstable_v1</h1>
     <ul class="list pl0">
       
-      <li class="mt2">
+      <li class="mt4">
         <div class="f2 lh-copy" id="i:zwp_fullscreen_shell_v1">
           zwp_fullscreen_shell_v1
         </div>
@@ -141,12 +141,14 @@ interface version number is reset.
           <h3 class=" f5 lh-title" id="rh:zwp_fullscreen_shell_v1">Requests</h3>
           <ul class="list pl0">
             
-            <li class="mt2">
-              <div class="f4 lh-title" id="r:zwp_fullscreen_shell_v1:release">
-                release
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                release the wl_fullscreen_shell interface
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:zwp_fullscreen_shell_v1:release">
+                <div class="f4">
+                  release
+                </div>
+                <div class="f5 ml2">
+                  release the wl_fullscreen_shell interface
+                </div>
               </div>
               
 <div class="f6 lh-copy courier">
@@ -164,12 +166,14 @@ to free some of those bindings.
   </div>
             </li>
             
-            <li class="mt2">
-              <div class="f4 lh-title" id="r:zwp_fullscreen_shell_v1:present_surface">
-                present_surface
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                present surface for display
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:zwp_fullscreen_shell_v1:present_surface">
+                <div class="f4">
+                  present_surface
+                </div>
+                <div class="f5 ml2">
+                  present surface for display
+                </div>
               </div>
               
 <div class="f6 lh-copy courier">
@@ -205,12 +209,14 @@ ignored.
   </div>
             </li>
             
-            <li class="mt2">
-              <div class="f4 lh-title" id="r:zwp_fullscreen_shell_v1:present_surface_for_mode">
-                present_surface_for_mode
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                present surface for display at a particular mode
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:zwp_fullscreen_shell_v1:present_surface_for_mode">
+                <div class="f4">
+                  present_surface_for_mode
+                </div>
+                <div class="f5 ml2">
+                  present surface for display at a particular mode
+                </div>
               </div>
               
 <div class="f6 lh-copy courier">
@@ -273,14 +279,16 @@ output.
           <h3 class=" f5 lh-title" id="eh:zwp_fullscreen_shell_v1">Events</h3>
           <ul class="list pl0">
             
-            <li class="mt2">
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:zwp_fullscreen_shell_v1:capability">
+                <div class="f4">
+                  capability
+                </div>
+                <div class="f5 ml2">
+                  advertises a capability of the compositor
+                </div>
+              </div>
 
-              <div class="f4 lh-title" id="e:zwp_fullscreen_shell_v1:capability">
-                capability
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                advertises a capability of the compositor
-              </div>
               <div class="f6 lh-copy ws-pre-line courier">Advertises a single capability of the compositor.
 
 When the wl_fullscreen_shell interface is bound, this event is emitted
@@ -298,7 +306,7 @@ receive all the capability events.
 
       </li>
       
-      <li class="mt2">
+      <li class="mt4">
         <div class="f2 lh-copy" id="i:zwp_fullscreen_shell_mode_feedback_v1">
           zwp_fullscreen_shell_mode_feedback_v1
         </div>
@@ -310,14 +318,16 @@ receive all the capability events.
           <h3 class=" f5 lh-title" id="eh:zwp_fullscreen_shell_mode_feedback_v1">Events</h3>
           <ul class="list pl0">
             
-            <li class="mt2">
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:zwp_fullscreen_shell_mode_feedback_v1:mode_successful">
+                <div class="f4">
+                  mode_successful
+                </div>
+                <div class="f5 ml2">
+                  mode switch succeeded
+                </div>
+              </div>
 
-              <div class="f4 lh-title" id="e:zwp_fullscreen_shell_mode_feedback_v1:mode_successful">
-                mode_successful
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                mode switch succeeded
-              </div>
               <div class="f6 lh-copy ws-pre-line courier">This event indicates that the attempted mode switch operation was
 successful.  A surface of the size requested in the mode switch
 will fill the output without scaling.
@@ -327,14 +337,16 @@ wl_fullscreen_shell_mode_feedback object.
   </div>
             </li>
             
-            <li class="mt2">
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:zwp_fullscreen_shell_mode_feedback_v1:mode_failed">
+                <div class="f4">
+                  mode_failed
+                </div>
+                <div class="f5 ml2">
+                  mode switch failed
+                </div>
+              </div>
 
-              <div class="f4 lh-title" id="e:zwp_fullscreen_shell_mode_feedback_v1:mode_failed">
-                mode_failed
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                mode switch failed
-              </div>
               <div class="f6 lh-copy ws-pre-line courier">This event indicates that the attempted mode switch operation
 failed.  This may be because the requested output mode is not
 possible or it may mean that the compositor does not want to allow it.
@@ -344,14 +356,16 @@ wl_fullscreen_shell_mode_feedback object.
   </div>
             </li>
             
-            <li class="mt2">
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:zwp_fullscreen_shell_mode_feedback_v1:present_cancelled">
+                <div class="f4">
+                  present_cancelled
+                </div>
+                <div class="f5 ml2">
+                  mode switch cancelled
+                </div>
+              </div>
 
-              <div class="f4 lh-title" id="e:zwp_fullscreen_shell_mode_feedback_v1:present_cancelled">
-                present_cancelled
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                mode switch cancelled
-              </div>
               <div class="f6 lh-copy ws-pre-line courier">This event indicates that the attempted mode switch operation was
 cancelled.  Most likely this is because the client requested a
 second mode switch before the first one completed.

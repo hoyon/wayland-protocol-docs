@@ -195,7 +195,7 @@
     <h1 class="f1 lh-title">xdg_shell_unstable_v5</h1>
     <ul class="list pl0">
       
-      <li class="mt2">
+      <li class="mt4">
         <div class="f2 lh-copy" id="i:xdg_shell">
           xdg_shell
         </div>
@@ -209,12 +209,14 @@ desktop environments.
           <h3 class=" f5 lh-title" id="rh:xdg_shell">Requests</h3>
           <ul class="list pl0">
             
-            <li class="mt2">
-              <div class="f4 lh-title" id="r:xdg_shell:destroy">
-                destroy
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                destroy xdg_shell
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:xdg_shell:destroy">
+                <div class="f4">
+                  destroy
+                </div>
+                <div class="f5 ml2">
+                  destroy xdg_shell
+                </div>
               </div>
               
 <div class="f6 lh-copy courier">
@@ -232,12 +234,14 @@ and will result in a protocol error.
 </div>
             </li>
             
-            <li class="mt2">
-              <div class="f4 lh-title" id="r:xdg_shell:use_unstable_version">
-                use_unstable_version
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                enable use of this unstable version
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:xdg_shell:use_unstable_version">
+                <div class="f4">
+                  use_unstable_version
+                </div>
+                <div class="f5 ml2">
+                  enable use of this unstable version
+                </div>
               </div>
               
 <div class="f6 lh-copy courier">
@@ -257,12 +261,14 @@ the xdg-shell protocol is stable.
   </div>
             </li>
             
-            <li class="mt2">
-              <div class="f4 lh-title" id="r:xdg_shell:get_xdg_surface">
-                get_xdg_surface
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                create a shell surface from a surface
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:xdg_shell:get_xdg_surface">
+                <div class="f4">
+                  get_xdg_surface
+                </div>
+                <div class="f5 ml2">
+                  create a shell surface from a surface
+                </div>
               </div>
               
 <div class="f6 lh-copy courier">
@@ -285,12 +291,14 @@ xdg_surface is and how it is used.
   </div>
             </li>
             
-            <li class="mt2">
-              <div class="f4 lh-title" id="r:xdg_shell:get_xdg_popup">
-                get_xdg_popup
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                create a popup for a surface
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:xdg_shell:get_xdg_popup">
+                <div class="f4">
+                  get_xdg_popup
+                </div>
+                <div class="f5 ml2">
+                  create a popup for a surface
+                </div>
               </div>
               
 <div class="f6 lh-copy courier">
@@ -326,12 +334,14 @@ xdg_popup is and how it is used.
   </div>
             </li>
             
-            <li class="mt2">
-              <div class="f4 lh-title" id="r:xdg_shell:pong">
-                pong
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                respond to a ping event
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:xdg_shell:pong">
+                <div class="f4">
+                  pong
+                </div>
+                <div class="f5 ml2">
+                  respond to a ping event
+                </div>
               </div>
               
 <div class="f6 lh-copy courier">
@@ -355,14 +365,16 @@ the client may be deemed unresponsive.
           <h3 class=" f5 lh-title" id="eh:xdg_shell">Events</h3>
           <ul class="list pl0">
             
-            <li class="mt2">
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:xdg_shell:ping">
+                <div class="f4">
+                  ping
+                </div>
+                <div class="f5 ml2">
+                  check if the client is alive
+                </div>
+              </div>
 
-              <div class="f4 lh-title" id="e:xdg_shell:ping">
-                ping
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                check if the client is alive
-              </div>
               <div class="f6 lh-copy ws-pre-line courier">The ping event asks the client if it&#x27;s still alive. Pass the
 serial specified in the event back to the compositor by sending
 a &quot;pong&quot; request back with the specified serial.
@@ -383,7 +395,7 @@ always respond to any xdg_shell object it created.
 
       </li>
       
-      <li class="mt2">
+      <li class="mt4">
         <div class="f2 lh-copy" id="i:xdg_surface">
           xdg_surface
         </div>
@@ -412,12 +424,14 @@ committed both an xdg_surface state and a buffer.
           <h3 class=" f5 lh-title" id="rh:xdg_surface">Requests</h3>
           <ul class="list pl0">
             
-            <li class="mt2">
-              <div class="f4 lh-title" id="r:xdg_surface:destroy">
-                destroy
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                Destroy the xdg_surface
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:xdg_surface:destroy">
+                <div class="f4">
+                  destroy
+                </div>
+                <div class="f5 ml2">
+                  Destroy the xdg_surface
+                </div>
               </div>
               
 <div class="f6 lh-copy courier">
@@ -433,12 +447,14 @@ maximization, fullscreen, and so on, will be lost.
   </div>
             </li>
             
-            <li class="mt2">
-              <div class="f4 lh-title" id="r:xdg_surface:set_parent">
-                set_parent
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                set the parent of this surface
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:xdg_surface:set_parent">
+                <div class="f4">
+                  set_parent
+                </div>
+                <div class="f5 ml2">
+                  set the parent of this surface
+                </div>
               </div>
               
 <div class="f6 lh-copy courier">
@@ -460,12 +476,14 @@ is raised.
   </div>
             </li>
             
-            <li class="mt2">
-              <div class="f4 lh-title" id="r:xdg_surface:set_title">
-                set_title
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                set surface title
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:xdg_surface:set_title">
+                <div class="f4">
+                  set_title
+                </div>
+                <div class="f5 ml2">
+                  set surface title
+                </div>
               </div>
               
 <div class="f6 lh-copy courier">
@@ -487,12 +505,14 @@ The string must be encoded in UTF-8.
   </div>
             </li>
             
-            <li class="mt2">
-              <div class="f4 lh-title" id="r:xdg_surface:set_app_id">
-                set_app_id
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                set application ID
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:xdg_surface:set_app_id">
+                <div class="f4">
+                  set_app_id
+                </div>
+                <div class="f5 ml2">
+                  set application ID
+                </div>
               </div>
               
 <div class="f6 lh-copy courier">
@@ -527,12 +547,14 @@ names and .desktop files.
   </div>
             </li>
             
-            <li class="mt2">
-              <div class="f4 lh-title" id="r:xdg_surface:show_window_menu">
-                show_window_menu
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                show the window menu
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:xdg_surface:show_window_menu">
+                <div class="f4">
+                  show_window_menu
+                </div>
+                <div class="f5 ml2">
+                  show the window menu
+                </div>
               </div>
               
 <div class="f6 lh-copy courier">
@@ -564,12 +586,14 @@ like a button press, key press, or touch down event.
 </div>
             </li>
             
-            <li class="mt2">
-              <div class="f4 lh-title" id="r:xdg_surface:move">
-                move
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                start an interactive move
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:xdg_surface:move">
+                <div class="f4">
+                  move
+                </div>
+                <div class="f5 ml2">
+                  start an interactive move
+                </div>
               </div>
               
 <div class="f6 lh-copy courier">
@@ -602,12 +626,14 @@ that the device focus will return when the move is completed.
   </div>
             </li>
             
-            <li class="mt2">
-              <div class="f4 lh-title" id="r:xdg_surface:resize">
-                resize
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                start an interactive resize
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:xdg_surface:resize">
+                <div class="f4">
+                  resize
+                </div>
+                <div class="f5 ml2">
+                  start an interactive resize
+                </div>
               </div>
               
 <div class="f6 lh-copy courier">
@@ -656,12 +682,14 @@ appropriate cursor image.
   </div>
             </li>
             
-            <li class="mt2">
-              <div class="f4 lh-title" id="r:xdg_surface:ack_configure">
-                ack_configure
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                ack a configure event
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:xdg_surface:ack_configure">
+                <div class="f4">
+                  ack_configure
+                </div>
+                <div class="f5 ml2">
+                  ack a configure event
+                </div>
               </div>
               
 <div class="f6 lh-copy courier">
@@ -695,12 +723,14 @@ configure event the client is responding to.
 </div>
             </li>
             
-            <li class="mt2">
-              <div class="f4 lh-title" id="r:xdg_surface:set_window_geometry">
-                set_window_geometry
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                set the new window geometry
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:xdg_surface:set_window_geometry">
+                <div class="f4">
+                  set_window_geometry
+                </div>
+                <div class="f5 ml2">
+                  set the new window geometry
+                </div>
               </div>
               
 <div class="f6 lh-copy courier">
@@ -746,12 +776,14 @@ The width and height must be greater than zero.
 </div>
             </li>
             
-            <li class="mt2">
-              <div class="f4 lh-title" id="r:xdg_surface:set_maximized">
-                set_maximized
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                maximize the window
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:xdg_surface:set_maximized">
+                <div class="f4">
+                  set_maximized
+                </div>
+                <div class="f5 ml2">
+                  maximize the window
+                </div>
               </div>
               
 <div class="f6 lh-copy courier">
@@ -780,12 +812,14 @@ a configure event with the &quot;maximized&quot; state.
 </div>
             </li>
             
-            <li class="mt2">
-              <div class="f4 lh-title" id="r:xdg_surface:unset_maximized">
-                unset_maximized
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                unmaximize the window
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:xdg_surface:unset_maximized">
+                <div class="f4">
+                  unset_maximized
+                </div>
+                <div class="f5 ml2">
+                  unmaximize the window
+                </div>
               </div>
               
 <div class="f6 lh-copy courier">
@@ -815,12 +849,14 @@ emit a configure event without the &quot;maximized&quot; state.
 </div>
             </li>
             
-            <li class="mt2">
-              <div class="f4 lh-title" id="r:xdg_surface:set_fullscreen">
-                set_fullscreen
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                set the window as fullscreen on a monitor
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:xdg_surface:set_fullscreen">
+                <div class="f4">
+                  set_fullscreen
+                </div>
+                <div class="f5 ml2">
+                  set the window as fullscreen on a monitor
+                </div>
               </div>
               
 <div class="f6 lh-copy courier">
@@ -844,12 +880,14 @@ If this value is NULL, it&#x27;s up to the compositor to choose which
   </div>
             </li>
             
-            <li class="mt2">
-              <div class="f4 lh-title" id="r:xdg_surface:unset_fullscreen">
-                unset_fullscreen
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:xdg_surface:unset_fullscreen">
+                <div class="f4">
+                  unset_fullscreen
+                </div>
+                <div class="f5 ml2">
+                  
+                </div>
               </div>
               
 <div class="f6 lh-copy courier">
@@ -862,12 +900,14 @@ If this value is NULL, it&#x27;s up to the compositor to choose which
               <div class="f6 lh-copy ws-pre-line courier"></div>
             </li>
             
-            <li class="mt2">
-              <div class="f4 lh-title" id="r:xdg_surface:set_minimized">
-                set_minimized
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                set the window as minimized
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:xdg_surface:set_minimized">
+                <div class="f4">
+                  set_minimized
+                </div>
+                <div class="f5 ml2">
+                  set the window as minimized
+                </div>
               </div>
               
 <div class="f6 lh-copy courier">
@@ -895,14 +935,16 @@ similar compositor features.
           <h3 class=" f5 lh-title" id="eh:xdg_surface">Events</h3>
           <ul class="list pl0">
             
-            <li class="mt2">
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:xdg_surface:configure">
+                <div class="f4">
+                  configure
+                </div>
+                <div class="f5 ml2">
+                  suggest a surface change
+                </div>
+              </div>
 
-              <div class="f4 lh-title" id="e:xdg_surface:configure">
-                configure
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                suggest a surface change
-              </div>
               <div class="f6 lh-copy ws-pre-line courier">The configure event asks the client to resize its surface or to
 change its state.
 
@@ -930,14 +972,16 @@ If the client receives multiple configure events before it
   </div>
             </li>
             
-            <li class="mt2">
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:xdg_surface:close">
+                <div class="f4">
+                  close
+                </div>
+                <div class="f5 ml2">
+                  surface wants to be closed
+                </div>
+              </div>
 
-              <div class="f4 lh-title" id="e:xdg_surface:close">
-                close
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                surface wants to be closed
-              </div>
               <div class="f6 lh-copy ws-pre-line courier">The close event is sent by the compositor when the user
 wants the surface to be closed. This should be equivalent to
 the user clicking the close button in client-side decorations,
@@ -955,7 +999,7 @@ a dialog to ask the user to save their data...
 
       </li>
       
-      <li class="mt2">
+      <li class="mt4">
         <div class="f2 lh-copy" id="i:xdg_popup">
           xdg_popup
         </div>
@@ -1016,12 +1060,14 @@ committed both the xdg_popup state and a buffer.
           <h3 class=" f5 lh-title" id="rh:xdg_popup">Requests</h3>
           <ul class="list pl0">
             
-            <li class="mt2">
-              <div class="f4 lh-title" id="r:xdg_popup:destroy">
-                destroy
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                remove xdg_popup interface
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:xdg_popup:destroy">
+                <div class="f4">
+                  destroy
+                </div>
+                <div class="f5 ml2">
+                  remove xdg_popup interface
+                </div>
               </div>
               
 <div class="f6 lh-copy courier">
@@ -1046,14 +1092,16 @@ will be sent.
           <h3 class=" f5 lh-title" id="eh:xdg_popup">Events</h3>
           <ul class="list pl0">
             
-            <li class="mt2">
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:xdg_popup:popup_done">
+                <div class="f4">
+                  popup_done
+                </div>
+                <div class="f5 ml2">
+                  popup interaction is done
+                </div>
+              </div>
 
-              <div class="f4 lh-title" id="e:xdg_popup:popup_done">
-                popup_done
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                popup interaction is done
-              </div>
               <div class="f6 lh-copy ws-pre-line courier">The popup_done event is sent out when a popup is dismissed by the
 compositor. The client should destroy the xdg_popup object at this
 point.

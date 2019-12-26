@@ -450,7 +450,7 @@
     <h1 class="f1 lh-title">tablet_unstable_v2</h1>
     <ul class="list pl0">
       
-      <li class="mt2">
+      <li class="mt4">
         <div class="f2 lh-copy" id="i:zwp_tablet_manager_v2">
           zwp_tablet_manager_v2
         </div>
@@ -463,12 +463,14 @@ actual tablets, use wp_tablet_manager.get_tablet_seat.
           <h3 class=" f5 lh-title" id="rh:zwp_tablet_manager_v2">Requests</h3>
           <ul class="list pl0">
             
-            <li class="mt2">
-              <div class="f4 lh-title" id="r:zwp_tablet_manager_v2:get_tablet_seat">
-                get_tablet_seat
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                get the tablet seat
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:zwp_tablet_manager_v2:get_tablet_seat">
+                <div class="f4">
+                  get_tablet_seat
+                </div>
+                <div class="f5 ml2">
+                  get the tablet seat
+                </div>
               </div>
               
 <div class="f6 lh-copy courier">
@@ -485,12 +487,14 @@ provides access to all graphics tablets in this seat.
   </div>
             </li>
             
-            <li class="mt2">
-              <div class="f4 lh-title" id="r:zwp_tablet_manager_v2:destroy">
-                destroy
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                release the memory for the tablet manager object
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:zwp_tablet_manager_v2:destroy">
+                <div class="f4">
+                  destroy
+                </div>
+                <div class="f5 ml2">
+                  release the memory for the tablet manager object
+                </div>
               </div>
               
 <div class="f6 lh-copy courier">
@@ -512,7 +516,7 @@ object are unaffected and should be destroyed separately.
 
       </li>
       
-      <li class="mt2">
+      <li class="mt4">
         <div class="f2 lh-copy" id="i:zwp_tablet_seat_v2">
           zwp_tablet_seat_v2
         </div>
@@ -525,12 +529,14 @@ wp_tablet_seat.tablet_added and wp_tablet_seat.tool_added events.
           <h3 class=" f5 lh-title" id="rh:zwp_tablet_seat_v2">Requests</h3>
           <ul class="list pl0">
             
-            <li class="mt2">
-              <div class="f4 lh-title" id="r:zwp_tablet_seat_v2:destroy">
-                destroy
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                release the memory for the tablet seat object
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:zwp_tablet_seat_v2:destroy">
+                <div class="f4">
+                  destroy
+                </div>
+                <div class="f5 ml2">
+                  release the memory for the tablet seat object
+                </div>
               </div>
               
 <div class="f6 lh-copy courier">
@@ -552,14 +558,16 @@ object are unaffected and should be destroyed separately.
           <h3 class=" f5 lh-title" id="eh:zwp_tablet_seat_v2">Events</h3>
           <ul class="list pl0">
             
-            <li class="mt2">
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:zwp_tablet_seat_v2:tablet_added">
+                <div class="f4">
+                  tablet_added
+                </div>
+                <div class="f5 ml2">
+                  new device notification
+                </div>
+              </div>
 
-              <div class="f4 lh-title" id="e:zwp_tablet_seat_v2:tablet_added">
-                tablet_added
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                new device notification
-              </div>
               <div class="f6 lh-copy ws-pre-line courier">This event is sent whenever a new tablet becomes available on this
 seat. This event only provides the object id of the tablet, any
 static information about the tablet (device name, vid&#x2f;pid, etc.) is
@@ -567,14 +575,16 @@ sent through the wp_tablet interface.
   </div>
             </li>
             
-            <li class="mt2">
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:zwp_tablet_seat_v2:tool_added">
+                <div class="f4">
+                  tool_added
+                </div>
+                <div class="f5 ml2">
+                  a new tool has been used with a tablet
+                </div>
+              </div>
 
-              <div class="f4 lh-title" id="e:zwp_tablet_seat_v2:tool_added">
-                tool_added
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                a new tool has been used with a tablet
-              </div>
               <div class="f6 lh-copy ws-pre-line courier">This event is sent whenever a tool that has not previously been used
 with a tablet comes into use. This event only provides the object id
 of the tool; any static information about the tool (capabilities,
@@ -582,14 +592,16 @@ type, etc.) is sent through the wp_tablet_tool interface.
   </div>
             </li>
             
-            <li class="mt2">
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:zwp_tablet_seat_v2:pad_added">
+                <div class="f4">
+                  pad_added
+                </div>
+                <div class="f5 ml2">
+                  new pad notification
+                </div>
+              </div>
 
-              <div class="f4 lh-title" id="e:zwp_tablet_seat_v2:pad_added">
-                pad_added
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                new pad notification
-              </div>
               <div class="f6 lh-copy ws-pre-line courier">This event is sent whenever a new pad is known to the system. Typically,
 pads are physically attached to tablets and a pad_added event is
 sent immediately after the wp_tablet_seat.tablet_added.
@@ -609,7 +621,7 @@ interface.
 
       </li>
       
-      <li class="mt2">
+      <li class="mt4">
         <div class="f2 lh-copy" id="i:zwp_tablet_tool_v2">
           zwp_tablet_tool_v2
         </div>
@@ -639,12 +651,14 @@ considered part of the same hardware state change.
           <h3 class=" f5 lh-title" id="rh:zwp_tablet_tool_v2">Requests</h3>
           <ul class="list pl0">
             
-            <li class="mt2">
-              <div class="f4 lh-title" id="r:zwp_tablet_tool_v2:set_cursor">
-                set_cursor
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                set the tablet tool&#x27;s surface
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:zwp_tablet_tool_v2:set_cursor">
+                <div class="f4">
+                  set_cursor
+                </div>
+                <div class="f5 ml2">
+                  set the tablet tool&#x27;s surface
+                </div>
               </div>
               
 <div class="f6 lh-copy courier">
@@ -695,12 +709,14 @@ protocol error is raised.
   </div>
             </li>
             
-            <li class="mt2">
-              <div class="f4 lh-title" id="r:zwp_tablet_tool_v2:destroy">
-                destroy
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                destroy the tool object
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:zwp_tablet_tool_v2:destroy">
+                <div class="f4">
+                  destroy
+                </div>
+                <div class="f5 ml2">
+                  destroy the tool object
+                </div>
               </div>
               
 <div class="f6 lh-copy courier">
@@ -721,14 +737,16 @@ protocol error is raised.
           <h3 class=" f5 lh-title" id="eh:zwp_tablet_tool_v2">Events</h3>
           <ul class="list pl0">
             
-            <li class="mt2">
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:zwp_tablet_tool_v2:type">
+                <div class="f4">
+                  type
+                </div>
+                <div class="f5 ml2">
+                  tool type
+                </div>
+              </div>
 
-              <div class="f4 lh-title" id="e:zwp_tablet_tool_v2:type">
-                type
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                tool type
-              </div>
               <div class="f6 lh-copy ws-pre-line courier">The tool type is the high-level type of the tool and usually decides
 the interaction expected from this tool.
 
@@ -737,14 +755,16 @@ wp_tablet_tool.done event.
   </div>
             </li>
             
-            <li class="mt2">
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:zwp_tablet_tool_v2:hardware_serial">
+                <div class="f4">
+                  hardware_serial
+                </div>
+                <div class="f5 ml2">
+                  unique hardware serial number of the tool
+                </div>
+              </div>
 
-              <div class="f4 lh-title" id="e:zwp_tablet_tool_v2:hardware_serial">
-                hardware_serial
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                unique hardware serial number of the tool
-              </div>
               <div class="f6 lh-copy ws-pre-line courier">If the physical tool can be identified by a unique 64-bit serial
 number, this event notifies the client of this serial number.
 
@@ -763,14 +783,16 @@ wp_tablet_tool.done event.
   </div>
             </li>
             
-            <li class="mt2">
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:zwp_tablet_tool_v2:hardware_id_wacom">
+                <div class="f4">
+                  hardware_id_wacom
+                </div>
+                <div class="f5 ml2">
+                  hardware id notification in Wacom&#x27;s format
+                </div>
+              </div>
 
-              <div class="f4 lh-title" id="e:zwp_tablet_tool_v2:hardware_id_wacom">
-                hardware_id_wacom
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                hardware id notification in Wacom&#x27;s format
-              </div>
               <div class="f6 lh-copy ws-pre-line courier">This event notifies the client of a hardware id available on this tool.
 
 The hardware id is a device-specific 64-bit id that provides extra
@@ -784,14 +806,16 @@ wp_tablet_tool.done event.
   </div>
             </li>
             
-            <li class="mt2">
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:zwp_tablet_tool_v2:capability">
+                <div class="f4">
+                  capability
+                </div>
+                <div class="f5 ml2">
+                  tool capability notification
+                </div>
+              </div>
 
-              <div class="f4 lh-title" id="e:zwp_tablet_tool_v2:capability">
-                capability
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                tool capability notification
-              </div>
               <div class="f6 lh-copy ws-pre-line courier">This event notifies the client of any capabilities of this tool,
 beyond the main set of x&#x2f;y axes and tip up&#x2f;down detection.
 
@@ -802,28 +826,32 @@ wp_tablet_tool.done event.
   </div>
             </li>
             
-            <li class="mt2">
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:zwp_tablet_tool_v2:done">
+                <div class="f4">
+                  done
+                </div>
+                <div class="f5 ml2">
+                  tool description events sequence complete
+                </div>
+              </div>
 
-              <div class="f4 lh-title" id="e:zwp_tablet_tool_v2:done">
-                done
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                tool description events sequence complete
-              </div>
               <div class="f6 lh-copy ws-pre-line courier">This event signals the end of the initial burst of descriptive
 events. A client may consider the static description of the tool to
 be complete and finalize initialization of the tool.
   </div>
             </li>
             
-            <li class="mt2">
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:zwp_tablet_tool_v2:removed">
+                <div class="f4">
+                  removed
+                </div>
+                <div class="f5 ml2">
+                  tool removed
+                </div>
+              </div>
 
-              <div class="f4 lh-title" id="e:zwp_tablet_tool_v2:removed">
-                removed
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                tool removed
-              </div>
               <div class="f6 lh-copy ws-pre-line courier">This event is sent when the tool is removed from the system and will
 send no further events. Should the physical tool come back into
 proximity later, a new wp_tablet_tool object will be created.
@@ -841,14 +869,16 @@ the object.
   </div>
             </li>
             
-            <li class="mt2">
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:zwp_tablet_tool_v2:proximity_in">
+                <div class="f4">
+                  proximity_in
+                </div>
+                <div class="f5 ml2">
+                  proximity in event
+                </div>
+              </div>
 
-              <div class="f4 lh-title" id="e:zwp_tablet_tool_v2:proximity_in">
-                proximity_in
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                proximity in event
-              </div>
               <div class="f6 lh-copy ws-pre-line courier">Notification that this tool is focused on a certain surface.
 
 This event can be received when the tool has moved from one surface to
@@ -861,14 +891,16 @@ within the same frame as the proximity_in event.
   </div>
             </li>
             
-            <li class="mt2">
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:zwp_tablet_tool_v2:proximity_out">
+                <div class="f4">
+                  proximity_out
+                </div>
+                <div class="f5 ml2">
+                  proximity out event
+                </div>
+              </div>
 
-              <div class="f4 lh-title" id="e:zwp_tablet_tool_v2:proximity_out">
-                proximity_out
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                proximity out event
-              </div>
               <div class="f6 lh-copy ws-pre-line courier">Notification that this tool has either left proximity, or is no
 longer focused on a certain surface.
 
@@ -884,14 +916,16 @@ proximity of the tablet.
   </div>
             </li>
             
-            <li class="mt2">
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:zwp_tablet_tool_v2:down">
+                <div class="f4">
+                  down
+                </div>
+                <div class="f5 ml2">
+                  tablet tool is making contact
+                </div>
+              </div>
 
-              <div class="f4 lh-title" id="e:zwp_tablet_tool_v2:down">
-                down
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                tablet tool is making contact
-              </div>
               <div class="f6 lh-copy ws-pre-line courier">Sent whenever the tablet tool comes in contact with the surface of the
 tablet.
 
@@ -907,14 +941,16 @@ exceeded.
   </div>
             </li>
             
-            <li class="mt2">
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:zwp_tablet_tool_v2:up">
+                <div class="f4">
+                  up
+                </div>
+                <div class="f5 ml2">
+                  tablet tool is no longer making contact
+                </div>
+              </div>
 
-              <div class="f4 lh-title" id="e:zwp_tablet_tool_v2:up">
-                up
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                tablet tool is no longer making contact
-              </div>
               <div class="f6 lh-copy ws-pre-line courier">Sent whenever the tablet tool stops making contact with the surface of
 the tablet, or when the tablet tool moves out of the input region
 and the compositor grab (if any) is dismissed.
@@ -934,26 +970,30 @@ threshold.
   </div>
             </li>
             
-            <li class="mt2">
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:zwp_tablet_tool_v2:motion">
+                <div class="f4">
+                  motion
+                </div>
+                <div class="f5 ml2">
+                  motion event
+                </div>
+              </div>
 
-              <div class="f4 lh-title" id="e:zwp_tablet_tool_v2:motion">
-                motion
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                motion event
-              </div>
               <div class="f6 lh-copy ws-pre-line courier">Sent whenever a tablet tool moves.
   </div>
             </li>
             
-            <li class="mt2">
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:zwp_tablet_tool_v2:pressure">
+                <div class="f4">
+                  pressure
+                </div>
+                <div class="f5 ml2">
+                  pressure change event
+                </div>
+              </div>
 
-              <div class="f4 lh-title" id="e:zwp_tablet_tool_v2:pressure">
-                pressure
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                pressure change event
-              </div>
               <div class="f6 lh-copy ws-pre-line courier">Sent whenever the pressure axis on a tool changes. The value of this
 event is normalized to a value between 0 and 65535.
 
@@ -962,14 +1002,16 @@ contact. See the down and up events for more details.
   </div>
             </li>
             
-            <li class="mt2">
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:zwp_tablet_tool_v2:distance">
+                <div class="f4">
+                  distance
+                </div>
+                <div class="f5 ml2">
+                  distance change event
+                </div>
+              </div>
 
-              <div class="f4 lh-title" id="e:zwp_tablet_tool_v2:distance">
-                distance
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                distance change event
-              </div>
               <div class="f6 lh-copy ws-pre-line courier">Sent whenever the distance axis on a tool changes. The value of this
 event is normalized to a value between 0 and 65535.
 
@@ -978,14 +1020,16 @@ contact. See the down and up events for more details.
   </div>
             </li>
             
-            <li class="mt2">
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:zwp_tablet_tool_v2:tilt">
+                <div class="f4">
+                  tilt
+                </div>
+                <div class="f5 ml2">
+                  tilt change event
+                </div>
+              </div>
 
-              <div class="f4 lh-title" id="e:zwp_tablet_tool_v2:tilt">
-                tilt
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                tilt change event
-              </div>
               <div class="f6 lh-copy ws-pre-line courier">Sent whenever one or both of the tilt axes on a tool change. Each tilt
 value is in degrees, relative to the z-axis of the tablet.
 The angle is positive when the top of a tool tilts along the
@@ -993,28 +1037,32 @@ positive x or y axis.
   </div>
             </li>
             
-            <li class="mt2">
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:zwp_tablet_tool_v2:rotation">
+                <div class="f4">
+                  rotation
+                </div>
+                <div class="f5 ml2">
+                  z-rotation change event
+                </div>
+              </div>
 
-              <div class="f4 lh-title" id="e:zwp_tablet_tool_v2:rotation">
-                rotation
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                z-rotation change event
-              </div>
               <div class="f6 lh-copy ws-pre-line courier">Sent whenever the z-rotation axis on the tool changes. The
 rotation value is in degrees clockwise from the tool&#x27;s
 logical neutral position.
   </div>
             </li>
             
-            <li class="mt2">
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:zwp_tablet_tool_v2:slider">
+                <div class="f4">
+                  slider
+                </div>
+                <div class="f5 ml2">
+                  Slider position change event
+                </div>
+              </div>
 
-              <div class="f4 lh-title" id="e:zwp_tablet_tool_v2:slider">
-                slider
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                Slider position change event
-              </div>
               <div class="f6 lh-copy ws-pre-line courier">Sent whenever the slider position on the tool changes. The
 value is normalized between -65535 and 65535, with 0 as the logical
 neutral position of the slider.
@@ -1023,14 +1071,16 @@ The slider is available on e.g. the Wacom Airbrush tool.
   </div>
             </li>
             
-            <li class="mt2">
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:zwp_tablet_tool_v2:wheel">
+                <div class="f4">
+                  wheel
+                </div>
+                <div class="f5 ml2">
+                  Wheel delta event
+                </div>
+              </div>
 
-              <div class="f4 lh-title" id="e:zwp_tablet_tool_v2:wheel">
-                wheel
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                Wheel delta event
-              </div>
               <div class="f6 lh-copy ws-pre-line courier">Sent whenever the wheel on the tool emits an event. This event
 contains two values for the same axis change. The degrees value is
 in the same orientation as the wl_pointer.vertical_scroll axis. The
@@ -1046,14 +1096,16 @@ have different degrees values.
   </div>
             </li>
             
-            <li class="mt2">
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:zwp_tablet_tool_v2:button">
+                <div class="f4">
+                  button
+                </div>
+                <div class="f5 ml2">
+                  button event
+                </div>
+              </div>
 
-              <div class="f4 lh-title" id="e:zwp_tablet_tool_v2:button">
-                button
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                button event
-              </div>
               <div class="f6 lh-copy ws-pre-line courier">Sent whenever a button on the tool is pressed or released.
 
 If a button is held down when the tool moves in or out of proximity,
@@ -1063,14 +1115,16 @@ details.
   </div>
             </li>
             
-            <li class="mt2">
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:zwp_tablet_tool_v2:frame">
+                <div class="f4">
+                  frame
+                </div>
+                <div class="f5 ml2">
+                  frame event
+                </div>
+              </div>
 
-              <div class="f4 lh-title" id="e:zwp_tablet_tool_v2:frame">
-                frame
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                frame event
-              </div>
               <div class="f6 lh-copy ws-pre-line courier">Marks the end of a series of axis and&#x2f;or button updates from the
 tablet. The Wayland protocol requires axis updates to be sent
 sequentially, however all events within a frame should be considered
@@ -1084,7 +1138,7 @@ one hardware event.
 
       </li>
       
-      <li class="mt2">
+      <li class="mt4">
         <div class="f2 lh-copy" id="i:zwp_tablet_v2">
           zwp_tablet_v2
         </div>
@@ -1102,12 +1156,14 @@ terminated by a wp_tablet.done event.
           <h3 class=" f5 lh-title" id="rh:zwp_tablet_v2">Requests</h3>
           <ul class="list pl0">
             
-            <li class="mt2">
-              <div class="f4 lh-title" id="r:zwp_tablet_v2:destroy">
-                destroy
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                destroy the tablet object
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:zwp_tablet_v2:destroy">
+                <div class="f4">
+                  destroy
+                </div>
+                <div class="f5 ml2">
+                  destroy the tablet object
+                </div>
               </div>
               
 <div class="f6 lh-copy courier">
@@ -1128,40 +1184,46 @@ terminated by a wp_tablet.done event.
           <h3 class=" f5 lh-title" id="eh:zwp_tablet_v2">Events</h3>
           <ul class="list pl0">
             
-            <li class="mt2">
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:zwp_tablet_v2:name">
+                <div class="f4">
+                  name
+                </div>
+                <div class="f5 ml2">
+                  tablet device name
+                </div>
+              </div>
 
-              <div class="f4 lh-title" id="e:zwp_tablet_v2:name">
-                name
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                tablet device name
-              </div>
               <div class="f6 lh-copy ws-pre-line courier">This event is sent in the initial burst of events before the
 wp_tablet.done event.
   </div>
             </li>
             
-            <li class="mt2">
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:zwp_tablet_v2:id">
+                <div class="f4">
+                  id
+                </div>
+                <div class="f5 ml2">
+                  tablet device USB vendor&#x2f;product id
+                </div>
+              </div>
 
-              <div class="f4 lh-title" id="e:zwp_tablet_v2:id">
-                id
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                tablet device USB vendor&#x2f;product id
-              </div>
               <div class="f6 lh-copy ws-pre-line courier">This event is sent in the initial burst of events before the
 wp_tablet.done event.
   </div>
             </li>
             
-            <li class="mt2">
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:zwp_tablet_v2:path">
+                <div class="f4">
+                  path
+                </div>
+                <div class="f5 ml2">
+                  path to the device
+                </div>
+              </div>
 
-              <div class="f4 lh-title" id="e:zwp_tablet_v2:path">
-                path
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                path to the device
-              </div>
               <div class="f6 lh-copy ws-pre-line courier">A system-specific device path that indicates which device is behind
 this wp_tablet. This information may be used to gather additional
 information about the device, e.g. through libwacom.
@@ -1179,14 +1241,16 @@ wp_tablet.done event.
   </div>
             </li>
             
-            <li class="mt2">
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:zwp_tablet_v2:done">
+                <div class="f4">
+                  done
+                </div>
+                <div class="f5 ml2">
+                  tablet description events sequence complete
+                </div>
+              </div>
 
-              <div class="f4 lh-title" id="e:zwp_tablet_v2:done">
-                done
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                tablet description events sequence complete
-              </div>
               <div class="f6 lh-copy ws-pre-line courier">This event is sent immediately to signal the end of the initial
 burst of descriptive events. A client may consider the static
 description of the tablet to be complete and finalize initialization
@@ -1194,14 +1258,16 @@ of the tablet.
   </div>
             </li>
             
-            <li class="mt2">
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:zwp_tablet_v2:removed">
+                <div class="f4">
+                  removed
+                </div>
+                <div class="f5 ml2">
+                  tablet removed event
+                </div>
+              </div>
 
-              <div class="f4 lh-title" id="e:zwp_tablet_v2:removed">
-                removed
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                tablet removed event
-              </div>
               <div class="f6 lh-copy ws-pre-line courier">Sent when the tablet has been removed from the system. When a tablet
 is removed, some tools may be removed.
 
@@ -1216,7 +1282,7 @@ the object.
 
       </li>
       
-      <li class="mt2">
+      <li class="mt4">
         <div class="f2 lh-copy" id="i:zwp_tablet_pad_ring_v2">
           zwp_tablet_pad_ring_v2
         </div>
@@ -1231,12 +1297,14 @@ event.
           <h3 class=" f5 lh-title" id="rh:zwp_tablet_pad_ring_v2">Requests</h3>
           <ul class="list pl0">
             
-            <li class="mt2">
-              <div class="f4 lh-title" id="r:zwp_tablet_pad_ring_v2:set_feedback">
-                set_feedback
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                set compositor feedback
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:zwp_tablet_pad_ring_v2:set_feedback">
+                <div class="f4">
+                  set_feedback
+                </div>
+                <div class="f5 ml2">
+                  set compositor feedback
+                </div>
               </div>
               
 <div class="f6 lh-copy courier">
@@ -1272,12 +1340,14 @@ ignored.
   </div>
             </li>
             
-            <li class="mt2">
-              <div class="f4 lh-title" id="r:zwp_tablet_pad_ring_v2:destroy">
-                destroy
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                destroy the ring object
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:zwp_tablet_pad_ring_v2:destroy">
+                <div class="f4">
+                  destroy
+                </div>
+                <div class="f5 ml2">
+                  destroy the ring object
+                </div>
               </div>
               
 <div class="f6 lh-copy courier">
@@ -1298,14 +1368,16 @@ ignored.
           <h3 class=" f5 lh-title" id="eh:zwp_tablet_pad_ring_v2">Events</h3>
           <ul class="list pl0">
             
-            <li class="mt2">
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:zwp_tablet_pad_ring_v2:source">
+                <div class="f4">
+                  source
+                </div>
+                <div class="f5 ml2">
+                  ring event source
+                </div>
+              </div>
 
-              <div class="f4 lh-title" id="e:zwp_tablet_pad_ring_v2:source">
-                source
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                ring event source
-              </div>
               <div class="f6 lh-copy ws-pre-line courier">Source information for ring events.
 
 This event does not occur on its own. It is sent before a
@@ -1321,14 +1393,16 @@ no event is sent.
   </div>
             </li>
             
-            <li class="mt2">
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:zwp_tablet_pad_ring_v2:angle">
+                <div class="f4">
+                  angle
+                </div>
+                <div class="f5 ml2">
+                  angle changed
+                </div>
+              </div>
 
-              <div class="f4 lh-title" id="e:zwp_tablet_pad_ring_v2:angle">
-                angle
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                angle changed
-              </div>
               <div class="f6 lh-copy ws-pre-line courier">Sent whenever the angle on a ring changes.
 
 The angle is provided in degrees clockwise from the logical
@@ -1336,14 +1410,16 @@ north of the ring in the pad&#x27;s current rotation.
   </div>
             </li>
             
-            <li class="mt2">
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:zwp_tablet_pad_ring_v2:stop">
+                <div class="f4">
+                  stop
+                </div>
+                <div class="f5 ml2">
+                  interaction stopped
+                </div>
+              </div>
 
-              <div class="f4 lh-title" id="e:zwp_tablet_pad_ring_v2:stop">
-                stop
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                interaction stopped
-              </div>
               <div class="f6 lh-copy ws-pre-line courier">Stop notification for ring events.
 
 For some wp_tablet_pad_ring.source types, a wp_tablet_pad_ring.stop
@@ -1357,14 +1433,16 @@ event should be considered as the start of a new interaction.
   </div>
             </li>
             
-            <li class="mt2">
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:zwp_tablet_pad_ring_v2:frame">
+                <div class="f4">
+                  frame
+                </div>
+                <div class="f5 ml2">
+                  end of a ring event sequence
+                </div>
+              </div>
 
-              <div class="f4 lh-title" id="e:zwp_tablet_pad_ring_v2:frame">
-                frame
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                end of a ring event sequence
-              </div>
               <div class="f6 lh-copy ws-pre-line courier">Indicates the end of a set of ring events that logically belong
 together. A client is expected to accumulate the data in all events
 within the frame before proceeding.
@@ -1387,7 +1465,7 @@ angle, frame, etc.
 
       </li>
       
-      <li class="mt2">
+      <li class="mt4">
         <div class="f2 lh-copy" id="i:zwp_tablet_pad_strip_v2">
           zwp_tablet_pad_strip_v2
         </div>
@@ -1402,12 +1480,14 @@ event.
           <h3 class=" f5 lh-title" id="rh:zwp_tablet_pad_strip_v2">Requests</h3>
           <ul class="list pl0">
             
-            <li class="mt2">
-              <div class="f4 lh-title" id="r:zwp_tablet_pad_strip_v2:set_feedback">
-                set_feedback
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                set compositor feedback
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:zwp_tablet_pad_strip_v2:set_feedback">
+                <div class="f4">
+                  set_feedback
+                </div>
+                <div class="f5 ml2">
+                  set compositor feedback
+                </div>
               </div>
               
 <div class="f6 lh-copy courier">
@@ -1443,12 +1523,14 @@ ignored.
   </div>
             </li>
             
-            <li class="mt2">
-              <div class="f4 lh-title" id="r:zwp_tablet_pad_strip_v2:destroy">
-                destroy
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                destroy the strip object
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:zwp_tablet_pad_strip_v2:destroy">
+                <div class="f4">
+                  destroy
+                </div>
+                <div class="f5 ml2">
+                  destroy the strip object
+                </div>
               </div>
               
 <div class="f6 lh-copy courier">
@@ -1469,14 +1551,16 @@ ignored.
           <h3 class=" f5 lh-title" id="eh:zwp_tablet_pad_strip_v2">Events</h3>
           <ul class="list pl0">
             
-            <li class="mt2">
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:zwp_tablet_pad_strip_v2:source">
+                <div class="f4">
+                  source
+                </div>
+                <div class="f5 ml2">
+                  strip event source
+                </div>
+              </div>
 
-              <div class="f4 lh-title" id="e:zwp_tablet_pad_strip_v2:source">
-                source
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                strip event source
-              </div>
               <div class="f6 lh-copy ws-pre-line courier">Source information for strip events.
 
 This event does not occur on its own. It is sent before a
@@ -1492,14 +1576,16 @@ no event is sent.
   </div>
             </li>
             
-            <li class="mt2">
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:zwp_tablet_pad_strip_v2:position">
+                <div class="f4">
+                  position
+                </div>
+                <div class="f5 ml2">
+                  position changed
+                </div>
+              </div>
 
-              <div class="f4 lh-title" id="e:zwp_tablet_pad_strip_v2:position">
-                position
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                position changed
-              </div>
               <div class="f6 lh-copy ws-pre-line courier">Sent whenever the position on a strip changes.
 
 The position is normalized to a range of [0, 65535], the 0-value
@@ -1508,14 +1594,16 @@ the pad&#x27;s current rotation.
   </div>
             </li>
             
-            <li class="mt2">
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:zwp_tablet_pad_strip_v2:stop">
+                <div class="f4">
+                  stop
+                </div>
+                <div class="f5 ml2">
+                  interaction stopped
+                </div>
+              </div>
 
-              <div class="f4 lh-title" id="e:zwp_tablet_pad_strip_v2:stop">
-                stop
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                interaction stopped
-              </div>
               <div class="f6 lh-copy ws-pre-line courier">Stop notification for strip events.
 
 For some wp_tablet_pad_strip.source types, a wp_tablet_pad_strip.stop
@@ -1529,14 +1617,16 @@ event should be considered as the start of a new interaction.
   </div>
             </li>
             
-            <li class="mt2">
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:zwp_tablet_pad_strip_v2:frame">
+                <div class="f4">
+                  frame
+                </div>
+                <div class="f5 ml2">
+                  end of a strip event sequence
+                </div>
+              </div>
 
-              <div class="f4 lh-title" id="e:zwp_tablet_pad_strip_v2:frame">
-                frame
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                end of a strip event sequence
-              </div>
               <div class="f6 lh-copy ws-pre-line courier">Indicates the end of a set of events that represent one logical
 hardware strip event. A client is expected to accumulate the data
 in all events within the frame before proceeding.
@@ -1560,7 +1650,7 @@ position, frame, etc.
 
       </li>
       
-      <li class="mt2">
+      <li class="mt4">
         <div class="f2 lh-copy" id="i:zwp_tablet_pad_group_v2">
           zwp_tablet_pad_group_v2
         </div>
@@ -1591,12 +1681,14 @@ compositor. See the wp_tablet_pad_group.mode_switch event for more details.
           <h3 class=" f5 lh-title" id="rh:zwp_tablet_pad_group_v2">Requests</h3>
           <ul class="list pl0">
             
-            <li class="mt2">
-              <div class="f4 lh-title" id="r:zwp_tablet_pad_group_v2:destroy">
-                destroy
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                destroy the pad object
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:zwp_tablet_pad_group_v2:destroy">
+                <div class="f4">
+                  destroy
+                </div>
+                <div class="f5 ml2">
+                  destroy the pad object
+                </div>
               </div>
               
 <div class="f6 lh-copy courier">
@@ -1618,14 +1710,16 @@ are unaffected and should be destroyed separately.
           <h3 class=" f5 lh-title" id="eh:zwp_tablet_pad_group_v2">Events</h3>
           <ul class="list pl0">
             
-            <li class="mt2">
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:zwp_tablet_pad_group_v2:buttons">
+                <div class="f4">
+                  buttons
+                </div>
+                <div class="f5 ml2">
+                  buttons announced
+                </div>
+              </div>
 
-              <div class="f4 lh-title" id="e:zwp_tablet_pad_group_v2:buttons">
-                buttons
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                buttons announced
-              </div>
               <div class="f6 lh-copy ws-pre-line courier">Sent on wp_tablet_pad_group initialization to announce the available
 buttons in the group. Button indices start at 0, a button may only be
 in one group at a time.
@@ -1641,14 +1735,16 @@ will be sent with an empty array.
   </div>
             </li>
             
-            <li class="mt2">
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:zwp_tablet_pad_group_v2:ring">
+                <div class="f4">
+                  ring
+                </div>
+                <div class="f5 ml2">
+                  ring announced
+                </div>
+              </div>
 
-              <div class="f4 lh-title" id="e:zwp_tablet_pad_group_v2:ring">
-                ring
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                ring announced
-              </div>
               <div class="f6 lh-copy ws-pre-line courier">Sent on wp_tablet_pad_group initialization to announce available rings.
 One event is sent for each ring available on this pad group.
 
@@ -1657,14 +1753,16 @@ wp_tablet_pad_group.done event.
   </div>
             </li>
             
-            <li class="mt2">
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:zwp_tablet_pad_group_v2:strip">
+                <div class="f4">
+                  strip
+                </div>
+                <div class="f5 ml2">
+                  strip announced
+                </div>
+              </div>
 
-              <div class="f4 lh-title" id="e:zwp_tablet_pad_group_v2:strip">
-                strip
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                strip announced
-              </div>
               <div class="f6 lh-copy ws-pre-line courier">Sent on wp_tablet_pad initialization to announce available strips.
 One event is sent for each strip available on this pad group.
 
@@ -1673,14 +1771,16 @@ wp_tablet_pad_group.done event.
   </div>
             </li>
             
-            <li class="mt2">
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:zwp_tablet_pad_group_v2:modes">
+                <div class="f4">
+                  modes
+                </div>
+                <div class="f5 ml2">
+                  mode-switch ability announced
+                </div>
+              </div>
 
-              <div class="f4 lh-title" id="e:zwp_tablet_pad_group_v2:modes">
-                modes
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                mode-switch ability announced
-              </div>
               <div class="f6 lh-copy ws-pre-line courier">Sent on wp_tablet_pad_group initialization to announce that the pad
 group may switch between modes. A client may use a mode to store a
 specific configuration for buttons, rings and strips and use the
@@ -1696,14 +1796,16 @@ more than one mode is available.
   </div>
             </li>
             
-            <li class="mt2">
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:zwp_tablet_pad_group_v2:done">
+                <div class="f4">
+                  done
+                </div>
+                <div class="f5 ml2">
+                  tablet group description events sequence complete
+                </div>
+              </div>
 
-              <div class="f4 lh-title" id="e:zwp_tablet_pad_group_v2:done">
-                done
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                tablet group description events sequence complete
-              </div>
               <div class="f6 lh-copy ws-pre-line courier">This event is sent immediately to signal the end of the initial
 burst of descriptive events. A client may consider the static
 description of the tablet to be complete and finalize initialization
@@ -1711,14 +1813,16 @@ of the tablet group.
   </div>
             </li>
             
-            <li class="mt2">
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:zwp_tablet_pad_group_v2:mode_switch">
+                <div class="f4">
+                  mode_switch
+                </div>
+                <div class="f5 ml2">
+                  mode switch event
+                </div>
+              </div>
 
-              <div class="f4 lh-title" id="e:zwp_tablet_pad_group_v2:mode_switch">
-                mode_switch
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                mode switch event
-              </div>
               <div class="f6 lh-copy ws-pre-line courier">Notification that the mode was switched.
 
 A mode applies to all buttons, rings and strips in a group
@@ -1755,7 +1859,7 @@ for each changed ring or strip.
 
       </li>
       
-      <li class="mt2">
+      <li class="mt4">
         <div class="f2 lh-copy" id="i:zwp_tablet_pad_v2">
           zwp_tablet_pad_v2
         </div>
@@ -1787,12 +1891,14 @@ although different groups may have different active modes.
           <h3 class=" f5 lh-title" id="rh:zwp_tablet_pad_v2">Requests</h3>
           <ul class="list pl0">
             
-            <li class="mt2">
-              <div class="f4 lh-title" id="r:zwp_tablet_pad_v2:set_feedback">
-                set_feedback
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                set compositor feedback
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:zwp_tablet_pad_v2:set_feedback">
+                <div class="f4">
+                  set_feedback
+                </div>
+                <div class="f5 ml2">
+                  set compositor feedback
+                </div>
               </div>
               
 <div class="f6 lh-copy courier">
@@ -1835,12 +1941,14 @@ be ignored.
   </div>
             </li>
             
-            <li class="mt2">
-              <div class="f4 lh-title" id="r:zwp_tablet_pad_v2:destroy">
-                destroy
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                destroy the pad object
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:zwp_tablet_pad_v2:destroy">
+                <div class="f4">
+                  destroy
+                </div>
+                <div class="f5 ml2">
+                  destroy the pad object
+                </div>
               </div>
               
 <div class="f6 lh-copy courier">
@@ -1862,14 +1970,16 @@ are unaffected and should be destroyed separately.
           <h3 class=" f5 lh-title" id="eh:zwp_tablet_pad_v2">Events</h3>
           <ul class="list pl0">
             
-            <li class="mt2">
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:zwp_tablet_pad_v2:group">
+                <div class="f4">
+                  group
+                </div>
+                <div class="f5 ml2">
+                  group announced
+                </div>
+              </div>
 
-              <div class="f4 lh-title" id="e:zwp_tablet_pad_v2:group">
-                group
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                group announced
-              </div>
               <div class="f6 lh-copy ws-pre-line courier">Sent on wp_tablet_pad initialization to announce available groups.
 One event is sent for each pad group available.
 
@@ -1878,14 +1988,16 @@ wp_tablet_pad.done event. At least one group will be announced.
   </div>
             </li>
             
-            <li class="mt2">
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:zwp_tablet_pad_v2:path">
+                <div class="f4">
+                  path
+                </div>
+                <div class="f5 ml2">
+                  path to the device
+                </div>
+              </div>
 
-              <div class="f4 lh-title" id="e:zwp_tablet_pad_v2:path">
-                path
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                path to the device
-              </div>
               <div class="f6 lh-copy ws-pre-line courier">A system-specific device path that indicates which device is behind
 this wp_tablet_pad. This information may be used to gather additional
 information about the device, e.g. through libwacom.
@@ -1899,14 +2011,16 @@ wp_tablet_pad.done event.
   </div>
             </li>
             
-            <li class="mt2">
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:zwp_tablet_pad_v2:buttons">
+                <div class="f4">
+                  buttons
+                </div>
+                <div class="f5 ml2">
+                  buttons announced
+                </div>
+              </div>
 
-              <div class="f4 lh-title" id="e:zwp_tablet_pad_v2:buttons">
-                buttons
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                buttons announced
-              </div>
               <div class="f6 lh-copy ws-pre-line courier">Sent on wp_tablet_pad initialization to announce the available
 buttons.
 
@@ -1916,65 +2030,75 @@ button is available.
   </div>
             </li>
             
-            <li class="mt2">
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:zwp_tablet_pad_v2:done">
+                <div class="f4">
+                  done
+                </div>
+                <div class="f5 ml2">
+                  pad description event sequence complete
+                </div>
+              </div>
 
-              <div class="f4 lh-title" id="e:zwp_tablet_pad_v2:done">
-                done
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                pad description event sequence complete
-              </div>
               <div class="f6 lh-copy ws-pre-line courier">This event signals the end of the initial burst of descriptive
 events. A client may consider the static description of the pad to
 be complete and finalize initialization of the pad.
   </div>
             </li>
             
-            <li class="mt2">
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:zwp_tablet_pad_v2:button">
+                <div class="f4">
+                  button
+                </div>
+                <div class="f5 ml2">
+                  physical button state
+                </div>
+              </div>
 
-              <div class="f4 lh-title" id="e:zwp_tablet_pad_v2:button">
-                button
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                physical button state
-              </div>
               <div class="f6 lh-copy ws-pre-line courier">Sent whenever the physical state of a button changes.
   </div>
             </li>
             
-            <li class="mt2">
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:zwp_tablet_pad_v2:enter">
+                <div class="f4">
+                  enter
+                </div>
+                <div class="f5 ml2">
+                  enter event
+                </div>
+              </div>
 
-              <div class="f4 lh-title" id="e:zwp_tablet_pad_v2:enter">
-                enter
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                enter event
-              </div>
               <div class="f6 lh-copy ws-pre-line courier">Notification that this pad is focused on the specified surface.
   </div>
             </li>
             
-            <li class="mt2">
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:zwp_tablet_pad_v2:leave">
+                <div class="f4">
+                  leave
+                </div>
+                <div class="f5 ml2">
+                  enter event
+                </div>
+              </div>
 
-              <div class="f4 lh-title" id="e:zwp_tablet_pad_v2:leave">
-                leave
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                enter event
-              </div>
               <div class="f6 lh-copy ws-pre-line courier">Notification that this pad is no longer focused on the specified
 surface.
   </div>
             </li>
             
-            <li class="mt2">
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:zwp_tablet_pad_v2:removed">
+                <div class="f4">
+                  removed
+                </div>
+                <div class="f5 ml2">
+                  pad removed event
+                </div>
+              </div>
 
-              <div class="f4 lh-title" id="e:zwp_tablet_pad_v2:removed">
-                removed
-              </div>
-              <div class="f5 lh-copy mv1 courier">
-                pad removed event
-              </div>
               <div class="f6 lh-copy ws-pre-line courier">Sent when the pad has been removed from the system. When a tablet
 is removed its pad(s) will be removed too.
 
