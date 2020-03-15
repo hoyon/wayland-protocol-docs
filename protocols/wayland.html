@@ -1714,7 +1714,7 @@ or wl_data_device.motion events.
 
 This request determines the final result of the drag-and-drop
 operation. If the end result is that no action is accepted,
-the drag source will receive wl_drag_source.cancelled.
+the drag source will receive wl_data_source.cancelled.
 
 The dnd_actions argument must contain only values expressed in the
 wl_data_device_manager.dnd_actions enum, and the preferred_action
@@ -3000,8 +3000,9 @@ switching is not allowed).
 
 The new size of the surface is calculated based on the buffer
 size transformed by the inverse buffer_transform and the
-inverse buffer_scale. This means that the supplied buffer
-must be an integer multiple of the buffer_scale.
+inverse buffer_scale. This means that at commit time the supplied
+buffer size must be an integer multiple of the buffer_scale. If
+that&#x27;s not the case, an invalid_size error is sent.
 
 The x and y arguments specify the location of the new pending
 buffer&#x27;s upper left corner, relative to the current buffer&#x27;s upper

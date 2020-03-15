@@ -105,6 +105,18 @@
             <a href="#r:xdg_positioner:set_offset" class="link blue underline-hover lh-copy">set_offset</a>
           </li>
           
+          <li>
+            <a href="#r:xdg_positioner:set_reactive" class="link blue underline-hover lh-copy">set_reactive</a>
+          </li>
+          
+          <li>
+            <a href="#r:xdg_positioner:set_parent_size" class="link blue underline-hover lh-copy">set_parent_size</a>
+          </li>
+          
+          <li>
+            <a href="#r:xdg_positioner:set_parent_configure" class="link blue underline-hover lh-copy">set_parent_configure</a>
+          </li>
+          
         </ul>
       
 
@@ -260,6 +272,10 @@
             <a href="#r:xdg_popup:grab" class="link blue underline-hover lh-copy">grab</a>
           </li>
           
+          <li>
+            <a href="#r:xdg_popup:reposition" class="link blue underline-hover lh-copy">reposition</a>
+          </li>
+          
         </ul>
       
 
@@ -275,6 +291,10 @@
           
           <li>
             <a href="#e:xdg_popup:popup_done" class="link blue underline-hover lh-copy">popup_done</a>
+          </li>
+          
+          <li>
+            <a href="#e:xdg_popup:repositioned" class="link blue underline-hover lh-copy">repositioned</a>
           </li>
           
         </ul>
@@ -685,6 +705,89 @@ set_constraint_adjustment.
 An example use case is placing a popup menu on top of a user interface
 element, while aligning the user interface element of the parent surface
 with some user interface element placed somewhere in the popup surface.
+  </div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:xdg_positioner:set_reactive">
+                <div class="f4">
+                  set_reactive
+                </div>
+                <div class="f5 ml2">
+                  continuously reconstrain the surface
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">xdg_positioner_set_reactive</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct xdg_positioner*</span> xdg_positioner</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier">When set reactive, the surface is reconstrained if the conditions used
+for constraining changed, e.g. the parent window moved.
+
+If the conditions changed and the popup was reconstrained, an
+xdg_popup.configure event is sent with updated geometry, followed by an
+xdg_surface.configure event.
+  </div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:xdg_positioner:set_parent_size">
+                <div class="f4">
+                  set_parent_size
+                </div>
+                <div class="f5 ml2">
+                  
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">xdg_positioner_set_parent_size</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct xdg_positioner*</span> xdg_positioner,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> parent_width,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> parent_height</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier">Set the parent window geometry the compositor should use when
+positioning the popup. The compositor may use this information to
+determine the future state the popup should be constrained using. If
+this doesn&#x27;t match the dimension of the parent the popup is eventually
+positioned against, the behavior is undefined.
+
+The arguments are given in the surface-local coordinate space.
+  </div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:xdg_positioner:set_parent_configure">
+                <div class="f4">
+                  set_parent_configure
+                </div>
+                <div class="f5 ml2">
+                  set parent configure this is a response to
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">xdg_positioner_set_parent_configure</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct xdg_positioner*</span> xdg_positioner,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> serial</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier">Set the serial of a xdg_surface.configure event this positioner will be
+used in response to. The compositor may use this information together
+with set_parent_size to determine what future state the popup should be
+constrained using.
   </div>
             </li>
             
@@ -1653,12 +1756,6 @@ xdg_popup surfaces associated with the same xdg_toplevel.
 The parent of an xdg_popup must be mapped (see the xdg_surface
 description) before the xdg_popup itself.
 
-The x and y arguments passed when creating the popup object specify
-where the top left of the popup should be placed, relative to the
-local surface coordinates of the parent surface. See
-xdg_surface.get_popup. An xdg_popup must intersect with or be at least
-partially adjacent to its parent surface.
-
 The client must call wl_surface.commit on the corresponding wl_surface
 for the xdg_popup state to take effect.
 </div>
@@ -1757,6 +1854,53 @@ will always have keyboard focus.
   </div>
             </li>
             
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:xdg_popup:reposition">
+                <div class="f4">
+                  reposition
+                </div>
+                <div class="f5 ml2">
+                  recalculate the popup&#x27;s location
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">xdg_popup_reposition</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct xdg_popup*</span> xdg_popup,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct xdg_positioner*</span> positioner,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> token</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier">Reposition an already-mapped popup. The popup will be placed given the
+details in the passed xdg_positioner object, and a
+xdg_popup.repositioned followed by xdg_popup.configure and
+xdg_surface.configure will be emitted in response. Any parameters set
+by the previous positioner will be discarded.
+
+The passed token will be sent in the corresponding
+xdg_popup.repositioned event. The new popup position will not take
+effect until the corresponding configure event is acknowledged by the
+client. See xdg_popup.repositioned for details. The token itself is
+opaque, and has no other special meaning.
+
+If multiple reposition requests are sent, the compositor may skip all
+but the last one.
+
+If the popup is repositioned in response to a configure event for its
+parent, the client should send an xdg_positioner.set_parent_configure
+and possibly a xdg_positioner.set_parent_size request to allow the
+compositor to properly constrain the popup.
+
+If the popup is repositioned together with a parent that is being
+resized, but not in response to a configure event, the client should
+send a xdg_positioner.set_parent_size request.
+  </div>
+            </li>
+            
           </ul>
         
 
@@ -1781,6 +1925,11 @@ See xdg_surface.configure for details.
 The x and y arguments represent the position the popup was placed at
 given the xdg_positioner rule, relative to the upper left corner of the
 window geometry of the parent surface.
+
+For version 2 or older, the configure event for an xdg_popup is only
+ever sent once for the initial configuration. Starting with version 3,
+it may be sent again if the popup is setup with an xdg_positioner with
+set_reactive requested, or in response to xdg_popup.reposition requests.
   </div>
             </li>
             
@@ -1797,6 +1946,34 @@ window geometry of the parent surface.
               <div class="f6 lh-copy ws-pre-line courier">The popup_done event is sent out when a popup is dismissed by the
 compositor. The client should destroy the xdg_popup object at this
 point.
+  </div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:xdg_popup:repositioned">
+                <div class="f4">
+                  repositioned
+                </div>
+                <div class="f5 ml2">
+                  signal the completion of a repositioned request
+                </div>
+              </div>
+
+              <div class="f6 lh-copy ws-pre-line courier">The repositioned event is sent as part of a popup configuration
+sequence, together with xdg_popup.configure and lastly
+xdg_surface.configure to notify the completion of a reposition request.
+
+The repositioned event is to notify about the completion of a
+xdg_popup.reposition request. The token argument is the token passed
+in the xdg_popup.reposition request.
+
+Immediately after this event is emitted, xdg_popup.configure and
+xdg_surface.configure will be sent with the updated size and position,
+as well as a new configure serial.
+
+The client should optionally update the content of the popup, but must
+acknowledge the new popup configuration for the new position to take
+effect. See xdg_surface.ack_configure for details.
   </div>
             </li>
             

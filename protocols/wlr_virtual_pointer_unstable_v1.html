@@ -1,0 +1,490 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>wlr_virtual_pointer_unstable_v1</title>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="&#x2f;wayland-protocol-docs/main.css"></link>
+     
+  </head>
+  <body class="bg-near-white black-70 sans-serif pa2 ph6-l">
+
+    <a href="&#x2f;wayland-protocol-docs/" class="f4 link near-black dim lh-title">
+      Home
+    </a>
+
+    
+
+    <div id="content">
+      
+  <div class="fl w-25 ph2">
+    
+
+<div>
+  <ul class="list pl0">
+  
+    <li>
+      <a href="#i:zwlr_virtual_pointer_v1" class="link blue underline-hover lh-copy">zwlr_virtual_pointer_v1</a>
+
+      
+        <div>
+          <a href="#rh:zwlr_virtual_pointer_v1" class="link blue underline-hover lh-copy pl3">Requests</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#r:zwlr_virtual_pointer_v1:motion" class="link blue underline-hover lh-copy">motion</a>
+          </li>
+          
+          <li>
+            <a href="#r:zwlr_virtual_pointer_v1:motion_absolute" class="link blue underline-hover lh-copy">motion_absolute</a>
+          </li>
+          
+          <li>
+            <a href="#r:zwlr_virtual_pointer_v1:button" class="link blue underline-hover lh-copy">button</a>
+          </li>
+          
+          <li>
+            <a href="#r:zwlr_virtual_pointer_v1:axis" class="link blue underline-hover lh-copy">axis</a>
+          </li>
+          
+          <li>
+            <a href="#r:zwlr_virtual_pointer_v1:frame" class="link blue underline-hover lh-copy">frame</a>
+          </li>
+          
+          <li>
+            <a href="#r:zwlr_virtual_pointer_v1:axis_source" class="link blue underline-hover lh-copy">axis_source</a>
+          </li>
+          
+          <li>
+            <a href="#r:zwlr_virtual_pointer_v1:axis_stop" class="link blue underline-hover lh-copy">axis_stop</a>
+          </li>
+          
+          <li>
+            <a href="#r:zwlr_virtual_pointer_v1:axis_discrete" class="link blue underline-hover lh-copy">axis_discrete</a>
+          </li>
+          
+          <li>
+            <a href="#r:zwlr_virtual_pointer_v1:destroy" class="link blue underline-hover lh-copy">destroy</a>
+          </li>
+          
+        </ul>
+      
+
+      
+    </li>
+  
+    <li>
+      <a href="#i:zwlr_virtual_pointer_manager_v1" class="link blue underline-hover lh-copy">zwlr_virtual_pointer_manager_v1</a>
+
+      
+        <div>
+          <a href="#rh:zwlr_virtual_pointer_manager_v1" class="link blue underline-hover lh-copy pl3">Requests</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#r:zwlr_virtual_pointer_manager_v1:create_virtual_pointer" class="link blue underline-hover lh-copy">create_virtual_pointer</a>
+          </li>
+          
+          <li>
+            <a href="#r:zwlr_virtual_pointer_manager_v1:destroy" class="link blue underline-hover lh-copy">destroy</a>
+          </li>
+          
+          <li>
+            <a href="#r:zwlr_virtual_pointer_manager_v1:create_virtual_pointer_with_output" class="link blue underline-hover lh-copy">create_virtual_pointer_with_output</a>
+          </li>
+          
+        </ul>
+      
+
+      
+    </li>
+  
+  </ul>
+</div>
+  </div>
+  <div class="fl w-75 ph2">
+    <h1 class="f1 lh-title">wlr_virtual_pointer_unstable_v1</h1>
+    <ul class="list pl0">
+      
+      <li class="mt4">
+        <div class="f2 lh-copy" id="i:zwlr_virtual_pointer_v1">
+          zwlr_virtual_pointer_v1
+        </div>
+        <div class="f6 lh-copy ws-pre-line courier">This protocol allows clients to emulate a physical pointer device. The
+requests are mostly mirror opposites of those specified in wl_pointer.
+</div>
+
+        
+          <h3 class=" f5 lh-title" id="rh:zwlr_virtual_pointer_v1">Requests</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:zwlr_virtual_pointer_v1:motion">
+                <div class="f4">
+                  motion
+                </div>
+                <div class="f5 ml2">
+                  pointer relative motion event
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">zwlr_virtual_pointer_v1_motion</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwlr_virtual_pointer_v1*</span> zwlr_virtual_pointer_v1,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> time,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">wl_fixed_t</span> dx,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">wl_fixed_t</span> dy</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier">The pointer has moved by a relative amount to the previous request.
+
+Values are in the global compositor space.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:zwlr_virtual_pointer_v1:motion_absolute">
+                <div class="f4">
+                  motion_absolute
+                </div>
+                <div class="f5 ml2">
+                  pointer absolute motion event
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">zwlr_virtual_pointer_v1_motion_absolute</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwlr_virtual_pointer_v1*</span> zwlr_virtual_pointer_v1,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> time,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> x,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> y,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> x_extent,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> y_extent</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier">The pointer has moved in an absolute coordinate frame.
+
+Value of x can range from 0 to x_extent, value of y can range from 0
+to y_extent.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:zwlr_virtual_pointer_v1:button">
+                <div class="f4">
+                  button
+                </div>
+                <div class="f5 ml2">
+                  button event
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">zwlr_virtual_pointer_v1_button</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwlr_virtual_pointer_v1*</span> zwlr_virtual_pointer_v1,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> time,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> button,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> state</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier">A button was pressed or released.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:zwlr_virtual_pointer_v1:axis">
+                <div class="f4">
+                  axis
+                </div>
+                <div class="f5 ml2">
+                  axis event
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">zwlr_virtual_pointer_v1_axis</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwlr_virtual_pointer_v1*</span> zwlr_virtual_pointer_v1,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> time,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> axis,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">wl_fixed_t</span> value</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier">Scroll and other axis requests.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:zwlr_virtual_pointer_v1:frame">
+                <div class="f4">
+                  frame
+                </div>
+                <div class="f5 ml2">
+                  end of a pointer event sequence
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">zwlr_virtual_pointer_v1_frame</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwlr_virtual_pointer_v1*</span> zwlr_virtual_pointer_v1</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier">Indicates the set of events that logically belong together.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:zwlr_virtual_pointer_v1:axis_source">
+                <div class="f4">
+                  axis_source
+                </div>
+                <div class="f5 ml2">
+                  axis source event
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">zwlr_virtual_pointer_v1_axis_source</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwlr_virtual_pointer_v1*</span> zwlr_virtual_pointer_v1,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> axis_source</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier">Source information for scroll and other axis.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:zwlr_virtual_pointer_v1:axis_stop">
+                <div class="f4">
+                  axis_stop
+                </div>
+                <div class="f5 ml2">
+                  axis stop event
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">zwlr_virtual_pointer_v1_axis_stop</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwlr_virtual_pointer_v1*</span> zwlr_virtual_pointer_v1,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> time,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> axis</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier">Stop notification for scroll and other axes.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:zwlr_virtual_pointer_v1:axis_discrete">
+                <div class="f4">
+                  axis_discrete
+                </div>
+                <div class="f5 ml2">
+                  axis click event
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">zwlr_virtual_pointer_v1_axis_discrete</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwlr_virtual_pointer_v1*</span> zwlr_virtual_pointer_v1,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> time,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> axis,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">wl_fixed_t</span> value,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> discrete</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier">Discrete step information for scroll and other axes.
+
+This event allows the client to extend data normally sent using the axis
+event with discrete value.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:zwlr_virtual_pointer_v1:destroy">
+                <div class="f4">
+                  destroy
+                </div>
+                <div class="f5 ml2">
+                  destroy the virtual pointer object
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">zwlr_virtual_pointer_v1_destroy</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwlr_virtual_pointer_v1*</span> zwlr_virtual_pointer_v1</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier"></div>
+            </li>
+            
+          </ul>
+        
+
+        
+
+      </li>
+      
+      <li class="mt4">
+        <div class="f2 lh-copy" id="i:zwlr_virtual_pointer_manager_v1">
+          zwlr_virtual_pointer_manager_v1
+        </div>
+        <div class="f6 lh-copy ws-pre-line courier">This object allows clients to create individual virtual pointer objects.
+</div>
+
+        
+          <h3 class=" f5 lh-title" id="rh:zwlr_virtual_pointer_manager_v1">Requests</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:zwlr_virtual_pointer_manager_v1:create_virtual_pointer">
+                <div class="f4">
+                  create_virtual_pointer
+                </div>
+                <div class="f5 ml2">
+                  Create a new virtual pointer
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>struct zwlr_virtual_pointer_v1* </span><span class="dark-blue">zwlr_virtual_pointer_manager_v1_create_virtual_pointer</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwlr_virtual_pointer_manager_v1*</span> zwlr_virtual_pointer_manager_v1,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_seat*</span> seat</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier">Creates a new virtual pointer. The optional seat is a suggestion to the
+compositor.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:zwlr_virtual_pointer_manager_v1:destroy">
+                <div class="f4">
+                  destroy
+                </div>
+                <div class="f5 ml2">
+                  destroy the virtual pointer manager
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">zwlr_virtual_pointer_manager_v1_destroy</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwlr_virtual_pointer_manager_v1*</span> zwlr_virtual_pointer_manager_v1</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier"></div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:zwlr_virtual_pointer_manager_v1:create_virtual_pointer_with_output">
+                <div class="f4">
+                  create_virtual_pointer_with_output
+                </div>
+                <div class="f5 ml2">
+                  Create a new virtual pointer
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>struct zwlr_virtual_pointer_v1* </span><span class="dark-blue">zwlr_virtual_pointer_manager_v1_create_virtual_pointer_with_output</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwlr_virtual_pointer_manager_v1*</span> zwlr_virtual_pointer_manager_v1,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_seat*</span> seat,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_output*</span> output</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier">Creates a new virtual pointer. The seat and the output arguments are
+optional. If the seat argument is set, the compositor should assign the
+input device to the requested seat. If the output argument is set, the
+compositor should map the input device to the requested output.
+</div>
+            </li>
+            
+          </ul>
+        
+
+        
+
+      </li>
+      
+    </ul>
+
+    <h2 class="f4 lh-title">Copyright Info</h2>
+    <div class="f7 lh-copy ws-pre-line courier">Copyright © 2019 Josef Gajdusek
+
+Permission is hereby granted, free of charge, to any person obtaining a
+copy of this software and associated documentation files (the &quot;Software&quot;),
+to deal in the Software without restriction, including without limitation
+the rights to use, copy, modify, merge, publish, distribute, sublicense,
+and&#x2f;or sell copies of the Software, and to permit persons to whom the
+Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice (including the next
+paragraph) shall be included in all copies or substantial portions of the
+Software.
+
+THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL
+THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+DEALINGS IN THE SOFTWARE.
+</div>
+  </div>
+
+    </div>
+
+  </body>
+</html>
