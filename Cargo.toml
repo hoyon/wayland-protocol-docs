@@ -5,10 +5,10 @@ authors = ["Ho-Yon Mak <hoyon.mak@gmail.com>"]
 
 [dependencies]
 wayland-protocol-docs-derive = { path = "wayland-protocol-docs-derive" }
-askama = "0.8"
-xmltree = "0.9"
+askama = "0.9"
+xmltree = "0.10"
 unindent = "0.1.5"
 glob = "0.3"
 
 [build-dependencies]
-askama = "0.8"
+askama = "0.9"

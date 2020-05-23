@@ -1,6 +1,6 @@
 use std::fs::File;
-use xmltree::Element;
 use unindent;
+use xmltree::Element;
 
 pub struct Protocol {
     pub name: String,
@@ -17,7 +17,7 @@ impl Protocol {
         let interfaces = element_map(&protocol, "interface", |i| Interface::from_element(&i));
         let copyright = protocol
             .get_child("copyright")
-            .map(|e| e.text.as_ref().unwrap().to_string())
+            .map(|e| e.get_text().unwrap().to_string())
             .map(unindent);
         Protocol {
             name,
@@ -177,7 +177,7 @@ pub struct Description {
 impl Description {
     pub fn from_parent(parent: &Element) -> Option<Description> {
         parent.get_child("description").map(|element| Description {
-            full: element.text.as_ref().map(|s| unindent(s.to_string())),
+            full: element.get_text().map(|s| unindent(s.to_string())),
             summary: unindent(element.attributes["summary"].to_string()),
         })
     }
@@ -185,13 +185,13 @@ impl Description {
 
 fn element_map<T, F>(element: &Element, name: &str, f: F) -> Vec<T>
 where
-    F: FnMut(Element) -> T,
+    F: FnMut(&Element) -> T,
 {
     element
         .children
-        .clone()
-        .into_iter()
-        .filter(|x| x.name == name)
+        .iter()
+        .filter_map(|node| node.as_element())
+        .filter(|e| e.name == name)
         .map(f)
         .collect()
 }

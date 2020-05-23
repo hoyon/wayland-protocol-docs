@@ -7,6 +7,6 @@ authors = ["Ho-Yon Mak <hoyon.mak@gmail.com>"]
 proc-macro = true
 
 [dependencies]
-syn = "0.15.4"
-quote = "0.6.8"
-proc-macro2 = "0.4.19"
+syn = "1.0.23"
+quote = "1.0.6"
+proc-macro2 = "1.0.15"
