@@ -1,19 +1,19 @@
 #[macro_use]
 extern crate wayland_protocol_docs_derive;
 extern crate askama;
-extern crate xmltree;
-extern crate unindent;
 extern crate glob;
+extern crate unindent;
+extern crate xmltree;
 
 use askama::Template;
-use std::fs::File;
-use std::fs;
-use std::io::prelude::*;
-use std::env;
 use glob::glob;
+use std::env;
+use std::fs;
+use std::fs::File;
+use std::io::prelude::*;
 
 mod protocol;
-use protocol::Protocol;
+use crate::protocol::Protocol;
 mod filters;
 mod format;
 
@@ -33,7 +33,7 @@ struct IndexTemplate<'a> {
 
 struct ProtocolDetails {
     pub url: String,
-    pub name: String
+    pub name: String,
 }
 
 fn main() -> std::io::Result<()> {
@@ -55,16 +55,25 @@ fn main() -> std::io::Result<()> {
 
     for protocol in protocols {
         {
-            let template = ProtocolTemplate{protocol: &protocol, base_url: &base_url};
+            let template = ProtocolTemplate {
+                protocol: &protocol,
+                base_url: &base_url,
+            };
             let filename = format!("site/protocols/{}.html", protocol.name);
             render_to_file(&template, &filename)?;
         }
 
         let url = format!("{}/protocols/{}.html", base_url, protocol.name);
-        details.push(ProtocolDetails{url: url, name: protocol.name});
+        details.push(ProtocolDetails {
+            url: url,
+            name: protocol.name,
+        });
     }
 
-    let index_template = IndexTemplate{protocols: details, base_url: &base_url};
+    let index_template = IndexTemplate {
+        protocols: details,
+        base_url: &base_url,
+    };
     render_to_file(&index_template, "site/index.html")?;
 
     Ok(())

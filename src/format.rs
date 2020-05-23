@@ -1,6 +1,6 @@
 use askama::Template;
 
-use protocol::{Arg, Request};
+use crate::protocol::{Arg, Request};
 
 #[derive(Template)]
 #[template(path = "request.html")]
@@ -40,7 +40,10 @@ pub fn format_request(request: &Request, protocol_name: &str) -> String {
 fn format_return(request: &Request) -> String {
     let id = request.args.iter().find(|&x| x.arg_type == "new_id");
     match id {
-        Some(Arg{interface: Some(iface), ..}) => format!("struct {}* ", iface),
+        Some(Arg {
+            interface: Some(iface),
+            ..
+        }) => format!("struct {}* ", iface),
         Some(_) => "void* ".to_string(),
         None => "void ".to_string(),
     }

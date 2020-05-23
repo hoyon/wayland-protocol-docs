@@ -1,6 +1,6 @@
+use crate::format;
+use crate::protocol::{Describable, Event, Interface, Request};
 use askama::Result;
-use protocol::{Describable, Event, Interface, Request};
-use format;
 
 pub fn unwrap(option: &Option<String>) -> Result<&str> {
     match option {

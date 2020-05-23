@@ -18,7 +18,7 @@ impl Protocol {
         let copyright = protocol
             .get_child("copyright")
             .map(|e| e.get_text().unwrap().to_string())
-            .map(unindent);
+            .map(unindent_string);
         Protocol {
             name,
             interfaces,
@@ -177,8 +177,8 @@ pub struct Description {
 impl Description {
     pub fn from_parent(parent: &Element) -> Option<Description> {
         parent.get_child("description").map(|element| Description {
-            full: element.get_text().map(|s| unindent(s.to_string())),
-            summary: unindent(element.attributes["summary"].to_string()),
+            full: element.get_text().map(|s| unindent_string(s.to_string())),
+            summary: unindent_string(element.attributes["summary"].to_string()),
         })
     }
 }
@@ -204,7 +204,7 @@ fn get_optional_attribute(element: &Element, attribute: &str) -> Option<String> 
     element.attributes.get(attribute).map(|s| s.to_string())
 }
 
-fn unindent(s: String) -> String {
+fn unindent_string(s: String) -> String {
     let replaced = s.replace("\t", "    ");
     unindent::unindent(&replaced)
 }
