@@ -3530,7 +3530,8 @@ for this seat.
 This request only takes effect if the seat has the pointer
 capability, or has had the pointer capability in the past.
 It is a protocol violation to issue this request on a seat that has
-never had the pointer capability.
+never had the pointer capability. The missing_capability error will
+be sent in this case.
   </div>
             </li>
             
@@ -3557,7 +3558,8 @@ for this seat.
 This request only takes effect if the seat has the keyboard
 capability, or has had the keyboard capability in the past.
 It is a protocol violation to issue this request on a seat that has
-never had the keyboard capability.
+never had the keyboard capability. The missing_capability error will
+be sent in this case.
   </div>
             </li>
             
@@ -3584,7 +3586,8 @@ for this seat.
 This request only takes effect if the seat has the touch
 capability, or has had the touch capability in the past.
 It is a protocol violation to issue this request on a seat that has
-never had the touch capability.
+never had the touch capability. The missing_capability error will
+be sent in this case.
   </div>
             </li>
             
