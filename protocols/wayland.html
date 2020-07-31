@@ -4123,6 +4123,9 @@ the recipient, as MAP_SHARED may fail.
 
               <div class="f6 lh-copy ws-pre-line courier">Notification that this seat&#x27;s keyboard focus is on a certain
 surface.
+
+The compositor must send the wl_keyboard.modifiers event after this
+event.
   </div>
             </li>
             
@@ -4141,6 +4144,9 @@ a certain surface.
 
 The leave notification is sent before the enter notification
 for the new focus.
+
+After this event client must assume that all keys, including modifiers,
+are lifted and also it must stop key repeating if there&#x27;s some going on.
   </div>
             </li>
             
@@ -4157,6 +4163,12 @@ for the new focus.
               <div class="f6 lh-copy ws-pre-line courier">A key was pressed or released.
 The time argument is a timestamp with millisecond
 granularity, with an undefined base.
+
+The key is a platform-specific key code that can be interpreted
+by feeding it to the keyboard mapping (see the keymap event).
+
+If this event produces a change in modifiers, then the resulting
+wl_keyboard.modifiers event must be sent after this event.
   </div>
             </li>
             

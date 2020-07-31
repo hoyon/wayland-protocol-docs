@@ -204,7 +204,7 @@ be created and xdg_exported.handle will be sent immediately. See the
 corresponding interface and event for details.
 
 A surface may be exported multiple times, and each exported handle may
-be used to create a xdg_imported multiple times. Only xdg_surface
+be used to create an xdg_imported multiple times. Only xdg_surface
 surfaces may be exported.
   </div>
             </li>
@@ -293,7 +293,7 @@ manipulate its relationship using it. See xdg_imported for details.
         <div class="f2 lh-copy" id="i:zxdg_exported_v1">
           zxdg_exported_v1
         </div>
-        <div class="f6 lh-copy ws-pre-line courier">A xdg_exported object represents an exported reference to a surface. The
+        <div class="f6 lh-copy ws-pre-line courier">An xdg_exported object represents an exported reference to a surface. The
 exported surface may be referenced as long as the xdg_exported object not
 destroyed. Destroying the xdg_exported invalidates any relationship the
 importer may have established using xdg_imported.
@@ -360,7 +360,7 @@ used to import the surface multiple times.
         <div class="f2 lh-copy" id="i:zxdg_imported_v1">
           zxdg_imported_v1
         </div>
-        <div class="f6 lh-copy ws-pre-line courier">A xdg_imported object represents an imported reference to surface exported
+        <div class="f6 lh-copy ws-pre-line courier">An xdg_imported object represents an imported reference to surface exported
 by some client. A client can use this interface to manipulate
 relationships between its own surfaces and the imported surface.
 </div>

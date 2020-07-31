@@ -39,6 +39,10 @@
             <a href="#r:zwlr_layer_shell_v1:get_layer_surface" class="link blue underline-hover lh-copy">get_layer_surface</a>
           </li>
           
+          <li>
+            <a href="#r:zwlr_layer_shell_v1:destroy" class="link blue underline-hover lh-copy">destroy</a>
+          </li>
+          
         </ul>
       
 
@@ -176,6 +180,29 @@ recently interacted with.
 
 Clients can specify a namespace that defines the purpose of the layer
 surface.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="r:zwlr_layer_shell_v1:destroy">
+                <div class="f4">
+                  destroy
+                </div>
+                <div class="f5 ml2">
+                  destroy the layer_shell object
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">zwlr_layer_shell_v1_destroy</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwlr_layer_shell_v1*</span> zwlr_layer_shell_v1</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier">This request indicates that the client will not use the layer_shell
+object any more. Objects that have been created through this instance
+are not affected.
 </div>
             </li>
             

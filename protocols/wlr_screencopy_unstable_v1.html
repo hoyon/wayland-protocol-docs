@@ -104,6 +104,14 @@
             <a href="#e:zwlr_screencopy_frame_v1:damage" class="link blue underline-hover lh-copy">damage</a>
           </li>
           
+          <li>
+            <a href="#e:zwlr_screencopy_frame_v1:linux_dmabuf" class="link blue underline-hover lh-copy">linux_dmabuf</a>
+          </li>
+          
+          <li>
+            <a href="#e:zwlr_screencopy_frame_v1:buffer_done" class="link blue underline-hover lh-copy">buffer_done</a>
+          </li>
+          
         </ul>
       
     </li>
@@ -226,9 +234,14 @@ appropriate destroy request has been called.
         </div>
         <div class="f6 lh-copy ws-pre-line courier">This object represents a single frame.
 
-When created, a &quot;buffer&quot; event will be sent. The client will then be able
-to send a &quot;copy&quot; request. If the capture is successful, the compositor
-will send a &quot;flags&quot; followed by a &quot;ready&quot; event.
+When created, a series of buffer events will be sent, each representing a
+supported buffer type. The &quot;buffer_done&quot; event is sent afterwards to
+indicate that all supported buffer types have been enumerated. The client
+will then be able to send a &quot;copy&quot; request. If the capture is successful,
+the compositor will send a &quot;flags&quot; followed by a &quot;ready&quot; event.
+
+For objects version 2 or lower, wl_shm buffers are always supported, ie.
+the &quot;buffer&quot; event is guaranteed to be sent.
 
 If the capture failed, the &quot;failed&quot; event is sent. This can happen anytime
 before the &quot;ready&quot; event.
@@ -261,8 +274,9 @@ destroy the frame.
   )
 </div>
               <div class="f6 lh-copy ws-pre-line courier">Copy the frame to the supplied buffer. The buffer must have a the
-correct size, see zwlr_screencopy_frame_v1.buffer. The buffer needs to
-have a supported format.
+correct size, see zwlr_screencopy_frame_v1.buffer and
+zwlr_screencopy_frame_v1.linux_dmabuf. The buffer needs to have a
+supported format.
 
 If the frame is successfully copied, a &quot;flags&quot; and a &quot;ready&quot; events are
 sent. Otherwise, a &quot;failed&quot; event is sent.
@@ -326,15 +340,13 @@ sent. Otherwise, a &quot;failed&quot; event is sent.
                   buffer
                 </div>
                 <div class="f5 ml2">
-                  buffer information
+                  wl_shm buffer information
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">Provides information about the frame&#x27;s buffer. This event is sent once
-as soon as the frame is created.
-
-The client should then create a buffer with the provided attributes, and
-send a &quot;copy&quot; request.
+              <div class="f6 lh-copy ws-pre-line courier">Provides information about wl_shm buffer parameters that need to be
+used for this frame. This event is sent once after the frame is created
+if wl_shm buffers are supported.
 </div>
             </li>
             
@@ -414,6 +426,39 @@ instance.
 
 The union of all regions received between the call to copy_with_damage
 and a ready event is the total damage since the prior ready event.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:zwlr_screencopy_frame_v1:linux_dmabuf">
+                <div class="f4">
+                  linux_dmabuf
+                </div>
+                <div class="f5 ml2">
+                  linux-dmabuf buffer information
+                </div>
+              </div>
+
+              <div class="f6 lh-copy ws-pre-line courier">Provides information about linux-dmabuf buffer parameters that need to
+be used for this frame. This event is sent once after the frame is
+created if linux-dmabuf buffers are supported.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:zwlr_screencopy_frame_v1:buffer_done">
+                <div class="f4">
+                  buffer_done
+                </div>
+                <div class="f5 ml2">
+                  all buffer types reported
+                </div>
+              </div>
+
+              <div class="f6 lh-copy ws-pre-line courier">This event is sent once after all buffer events have been sent.
+
+The client should proceed to create a buffer of one of the supported
+types, and send a &quot;copy&quot; request.
 </div>
             </li>
             

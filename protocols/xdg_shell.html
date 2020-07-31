@@ -785,7 +785,7 @@ The arguments are given in the surface-local coordinate space.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Set the serial of a xdg_surface.configure event this positioner will be
+              <div class="f6 lh-copy ws-pre-line courier">Set the serial of an xdg_surface.configure event this positioner will be
 used in response to. The compositor may use this information together
 with set_parent_size to determine what future state the popup should be
 constrained using.
@@ -1904,12 +1904,12 @@ but the last one.
 
 If the popup is repositioned in response to a configure event for its
 parent, the client should send an xdg_positioner.set_parent_configure
-and possibly a xdg_positioner.set_parent_size request to allow the
+and possibly an xdg_positioner.set_parent_size request to allow the
 compositor to properly constrain the popup.
 
 If the popup is repositioned together with a parent that is being
 resized, but not in response to a configure event, the client should
-send a xdg_positioner.set_parent_size request.
+send an xdg_positioner.set_parent_size request.
   </div>
             </li>
             
