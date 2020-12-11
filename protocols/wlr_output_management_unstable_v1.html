@@ -120,6 +120,18 @@
             <a href="#e:zwlr_output_head_v1:finished" class="link blue underline-hover lh-copy">finished</a>
           </li>
           
+          <li>
+            <a href="#e:zwlr_output_head_v1:make" class="link blue underline-hover lh-copy">make</a>
+          </li>
+          
+          <li>
+            <a href="#e:zwlr_output_head_v1:model" class="link blue underline-hover lh-copy">model</a>
+          </li>
+          
+          <li>
+            <a href="#e:zwlr_output_head_v1:serial_number" class="link blue underline-hover lh-copy">serial_number</a>
+          </li>
+          
         </ul>
       
     </li>
@@ -615,6 +627,97 @@ space. It is only sent if the output is enabled.
               <div class="f6 lh-copy ws-pre-line courier">The compositor will destroy the object immediately after sending this
 event, so it will become invalid and the client should release any
 resources associated with it.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:zwlr_output_head_v1:make">
+                <div class="f4">
+                  make
+                </div>
+                <div class="f5 ml2">
+                  head manufacturer
+                </div>
+              </div>
+
+              <div class="f6 lh-copy ws-pre-line courier">This event describes the manufacturer of the head.
+
+This must report the same make as the wl_output interface does in its
+geometry event.
+
+Together with the model and serial_number events the purpose is to
+allow clients to recognize heads from previous sessions and for example
+load head-specific configurations back.
+
+It is not guaranteed this event will be ever sent. A reason for that
+can be that the compositor does not have information about the make of
+the head or the definition of a make is not sensible in the current
+setup, for example in a virtual session. Clients can still try to
+identify the head by available information from other events but should
+be aware that there is an increased risk of false positives.
+
+It is not recommended to display the make string in UI to users. For
+that the string provided by the description event should be preferred.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:zwlr_output_head_v1:model">
+                <div class="f4">
+                  model
+                </div>
+                <div class="f5 ml2">
+                  head model
+                </div>
+              </div>
+
+              <div class="f6 lh-copy ws-pre-line courier">This event describes the model of the head.
+
+This must report the same model as the wl_output interface does in its
+geometry event.
+
+Together with the make and serial_number events the purpose is to
+allow clients to recognize heads from previous sessions and for example
+load head-specific configurations back.
+
+It is not guaranteed this event will be ever sent. A reason for that
+can be that the compositor does not have information about the model of
+the head or the definition of a model is not sensible in the current
+setup, for example in a virtual session. Clients can still try to
+identify the head by available information from other events but should
+be aware that there is an increased risk of false positives.
+
+It is not recommended to display the model string in UI to users. For
+that the string provided by the description event should be preferred.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:zwlr_output_head_v1:serial_number">
+                <div class="f4">
+                  serial_number
+                </div>
+                <div class="f5 ml2">
+                  head serial number
+                </div>
+              </div>
+
+              <div class="f6 lh-copy ws-pre-line courier">This event describes the serial number of the head.
+
+Together with the make and model events the purpose is to allow clients
+to recognize heads from previous sessions and for example load head-
+specific configurations back.
+
+It is not guaranteed this event will be ever sent. A reason for that
+can be that the compositor does not have information about the serial
+number of the head or the definition of a serial number is not sensible
+in the current setup. Clients can still try to identify the head by
+available information from other events but should be aware that there
+is an increased risk of false positives.
+
+It is not recommended to display the serial_number string in UI to
+users. For that the string provided by the description event should be
+preferred.
 </div>
             </li>
             

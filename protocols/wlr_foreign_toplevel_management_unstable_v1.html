@@ -146,6 +146,10 @@
             <a href="#e:zwlr_foreign_toplevel_handle_v1:closed" class="link blue underline-hover lh-copy">closed</a>
           </li>
           
+          <li>
+            <a href="#e:zwlr_foreign_toplevel_handle_v1:parent" class="link blue underline-hover lh-copy">parent</a>
+          </li>
+          
         </ul>
       
     </li>
@@ -633,6 +637,22 @@ to be seen as atomic, even if they happen via multiple events.
 won&#x27;t be any more events for this zwlr_foreign_toplevel_handle_v1. The
 toplevel itself becomes inert so any requests will be ignored except the
 destroy request.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-center lh-title mb2" id="e:zwlr_foreign_toplevel_handle_v1:parent">
+                <div class="f4">
+                  parent
+                </div>
+                <div class="f5 ml2">
+                  parent change
+                </div>
+              </div>
+
+              <div class="f6 lh-copy ws-pre-line courier">This event is emitted whenever the parent of the toplevel changes.
+
+No event is emitted when the parent handle is destroyed by the client.
 </div>
             </li>
             
