@@ -6,10 +6,10 @@ edition = "2018"
 
 [dependencies]
 wayland-protocol-docs-derive = { path = "wayland-protocol-docs-derive" }
-askama = "0.9"
+askama = "0.10.5"
 xmltree = "0.10"
 unindent = "0.1.5"
 glob = "0.3"
 
 [build-dependencies]
-askama = "0.9"
+askama = "0.10.5"

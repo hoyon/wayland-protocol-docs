@@ -1,5 +1,4 @@
 use std::fs::File;
-use unindent;
 use xmltree::Element;
 
 pub struct Protocol {

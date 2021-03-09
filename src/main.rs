@@ -37,15 +37,10 @@ struct ProtocolDetails {
 }
 
 fn main() -> std::io::Result<()> {
-    let base_url = env::var("BASE_URL").unwrap_or("".to_owned());
-    let protocol_files = glob("./data/**/*.xml")
+    let base_url = env::var("BASE_URL").unwrap_or_else(|_| "".to_owned());
+    let protocols = glob("./data/**/*.xml")
         .unwrap()
         .filter_map(Result::ok)
-        .collect::<Vec<_>>();
-
-    let protocols = protocol_files
-        .clone()
-        .into_iter()
         .map(|p| p.to_str().unwrap().to_string())
         .map(|s| Protocol::from_file(&s));
 
@@ -65,7 +60,7 @@ fn main() -> std::io::Result<()> {
 
         let url = format!("{}/protocols/{}.html", base_url, protocol.name);
         details.push(ProtocolDetails {
-            url: url,
+            url,
             name: protocol.name,
         });
     }
