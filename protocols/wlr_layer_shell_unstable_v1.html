@@ -417,17 +417,18 @@ Margin is double-buffered, see wl_surface.commit.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Set to 1 to request that the seat send keyboard events to this layer
-surface. For layers below the shell surface layer, the seat will use
-normal focus semantics. For layers above the shell surface layers, the
-seat will always give exclusive keyboard focus to the top-most layer
-which has keyboard interactivity set to true.
+              <div class="f6 lh-copy ws-pre-line courier">Set how keyboard events are delivered to this surface. By default,
+layer shell surfaces do not receive keyboard events; this request can
+be used to change this.
+
+This setting is inherited by child surfaces set by the get_popup
+request.
 
 Layer surfaces receive pointer, touch, and tablet events normally. If
 you do not want to receive them, set the input region on your surface
 to an empty region.
 
-Events is double-buffered, see wl_surface.commit.
+Keyboard interactivity is double-buffered, see wl_surface.commit.
 </div>
             </li>
             
