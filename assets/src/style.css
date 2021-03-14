@@ -18,3 +18,12 @@
 .ws-pre-wrap {
   white-space: pre-wrap;
 }
+
+.child:focus {
+  opacity: 1;
+  transition: none;
+}
+
+.hash-link-entry {
+  top: 2px;
+}

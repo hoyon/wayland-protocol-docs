@@ -2,7 +2,7 @@
   "private": true,
   "scripts": {
     "watch": "webpack --watch --mode development",
-    "serve": "live-server --port=8080 --no-browser ../site",
+    "serve": "live-server --port=8080 --host=0.0.0.0 --no-browser ../site",
     "build": "webpack --mode production"
   },
   "devDependencies": {

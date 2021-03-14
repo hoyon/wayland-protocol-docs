@@ -10,17 +10,22 @@
     <link rel="stylesheet" href="{{base_url}}/main.css"></link>
     {% block head %} {% endblock %}
   </head>
-  <body class="bg-near-white black-70 sans-serif pa2 ph6-l">
-
-    <a href="{{base_url}}/" class="f4 link near-black dim lh-title">
-      Home
-    </a>
+  <body class="bg-near-white black-70 flex sans-serif ph4-l">
 
     {#% include "breadcrumbs.html" %#}
 
-    <div id="content">
-      {% block content %}{% endblock %}
+    <div id="sidebar" class="w-25 mw5 br b--white bw3">
+      <div class="fixed overflow-x-scroll h-100 w-25 mw5">
+        <a href="{{base_url}}/" class="f4 link near-black dim lh-title">
+          Home
+        </a>
+        {% block sidebar %}{% endblock %}
+      </div>
     </div>
+
+    <main id="content" class="mh4">
+      {% block content %}{% endblock %}
+    </main>
 
   </body>
 </html>
