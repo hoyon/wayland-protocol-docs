@@ -207,6 +207,10 @@ The &quot;zoom&quot;, &quot;zoom_crop&quot;, and &quot;stretch&quot; methods imp
 operation on the surface.  This will override any kind of output
 scaling, so the buffer_scale property of the surface is effectively
 ignored.
+
+This request gives the surface the role of a fullscreen shell surface.
+If the surface already has another role, it raises a role protocol
+error.
   </div>
             </li>
             
@@ -270,6 +274,10 @@ If the value of wl_output.scale differs from wl_surface.buffer_scale,
 then the compositor may choose a mode that matches either the buffer
 size or the surface size.  In either case, the surface will fill the
 output.
+
+This request gives the surface the role of a fullscreen shell surface.
+If the surface already has another role, it raises a role protocol
+error.
   </div>
             </li>
             

@@ -150,6 +150,12 @@ The underlying graphics stack must ensure the following:
   at any time use those fds to import the dmabuf into any kernel
   sub-system that might accept it.
 
+However, when the underlying graphics stack fails to deliver the
+promise, because of e.g. a device hot-unplug which raises internal
+errors, after the wl_buffer has been successfully created the
+compositor must not raise protocol errors to the client when dmabuf
+import later fails.
+
 To create a wl_buffer from one or more dmabufs, a client creates a
 zwp_linux_dmabuf_params_v1 object with a zwp_linux_dmabuf_v1.create_params
 request. All planes required by the intended format are added with
@@ -285,6 +291,9 @@ It indicates that the server can support the format with an implicit
 modifier. When a plane has DRM_FORMAT_MOD_INVALID as its modifier, it
 is as if no explicit modifier is specified. The effective modifier
 will be derived from the dmabuf.
+
+A compositor that sends valid modifiers and DRM_FORMAT_MOD_INVALID for
+a given format supports both explicit modifiers and implicit modifiers.
 
 For the definition of the format and modifier codes, see the
 zwp_linux_buffer_params_v1::create and zwp_linux_buffer_params_v1::add

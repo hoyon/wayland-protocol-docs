@@ -205,7 +205,8 @@ corresponding interface and event for details.
 
 A surface may be exported multiple times, and each exported handle may
 be used to create an xdg_imported multiple times. Only xdg_toplevel
-equivalent surfaces may be exported.
+    equivalent surfaces may be exported, otherwise an invalid_surface
+    protocol error is sent.
   </div>
             </li>
             
@@ -412,10 +413,11 @@ be invalidated.
   )
 </div>
               <div class="f6 lh-copy ws-pre-line courier">Set the imported surface as the parent of some surface of the client.
-The passed surface must be an xdg_toplevel equivalent. Calling this
-function sets up a surface to surface relation with the same stacking
-and positioning semantics as xdg_toplevel.set_parent.
-  </div>
+The passed surface must be an xdg_toplevel equivalent, otherwise an
+invalid_surface protocol error is sent. Calling this function sets up
+a surface to surface relation with the same stacking and positioning
+semantics as xdg_toplevel.set_parent.
+</div>
             </li>
             
           </ul>
