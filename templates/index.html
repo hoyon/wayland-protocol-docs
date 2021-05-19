@@ -6,10 +6,13 @@
 {% block content %}
   <h1 class="f1 lh-title">Wayland protocol docs</h1>
   <ul class="list pl0 lh-copy">
-    {% for protocol in protocols %}
-      <li>
-        <a href="{{ protocol.url }}" class="link blue underline-hover lh-copy">{{ protocol.name }}</a>
-      </li>
+    {% for group in grouped_protocols %}
+      <h2>{{group.0}}</h2> 
+      {% for protocol in group.1 %}
+        <li>
+          <a href="{{ protocol.url }}" class="link blue underline-hover lh-copy">{{ protocol.name }}</a>
+        </li>
+      {% endfor %}
     {% endfor %}
   </ul>
 {% endblock %}

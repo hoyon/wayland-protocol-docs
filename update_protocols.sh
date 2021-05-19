@@ -15,18 +15,19 @@ DIR=`mktemp -d`
 
 pushd $DIR
 git clone git://anongit.freedesktop.org/wayland/wayland-protocols
-cp -r wayland-protocols/stable wayland-protocols/unstable -t $CURRENT_DIR/wayland-protocols
+find wayland-protocols -name "*.xml" | xargs cp -t $CURRENT_DIR/wayland-protocols
 
 git clone https://github.com/swaywm/wlr-protocols.git
-cp -r wlr-protocols/unstable -t $CURRENT_DIR/wlroots
+cp -r wlr-protocols/unstable/* -t $CURRENT_DIR/wlroots
 
 git clone https://github.com/KDE/plasma-wayland-protocols.git
-cp -r plasma-wayland-protocols/src/protocols -t $CURRENT_DIR/kde
+cp -r plasma-wayland-protocols/src/protocols/* -t $CURRENT_DIR/kde
 
 popd
 
-pushd other
+mkdir -p other
 
+pushd other
 wget https://raw.githubusercontent.com/swaywm/wlroots/master/protocol/input-method-unstable-v2.xml 
 wget https://raw.githubusercontent.com/swaywm/wlroots/master/protocol/virtual-keyboard-unstable-v1.xml
 popd

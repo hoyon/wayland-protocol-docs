@@ -10,6 +10,7 @@ askama = "0.10.5"
 xmltree = "0.10"
 unindent = "0.1.5"
 glob = "0.3"
+itertools = "0.10.0"
 
 [build-dependencies]
 askama = "0.10.5"

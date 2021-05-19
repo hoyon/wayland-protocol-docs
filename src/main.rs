@@ -1,16 +1,14 @@
 #[macro_use]
 extern crate wayland_protocol_docs_derive;
-extern crate askama;
-extern crate glob;
-extern crate unindent;
-extern crate xmltree;
 
 use askama::Template;
 use glob::glob;
+use itertools::Itertools;
 use std::env;
 use std::fs;
 use std::fs::File;
 use std::io::prelude::*;
+use std::collections::HashMap;
 
 mod protocol;
 use crate::protocol::Protocol;
@@ -27,21 +25,21 @@ struct ProtocolTemplate<'a, 'b> {
 #[derive(Template)]
 #[template(path = "index.html")]
 struct IndexTemplate<'a> {
-    protocols: Vec<ProtocolDetails>,
+    grouped_protocols: HashMap<String, Vec<ProtocolDetails>>,
     base_url: &'a str,
 }
 
 struct ProtocolDetails {
     pub url: String,
     pub name: String,
+    pub category: String,
 }
 
 fn main() -> std::io::Result<()> {
     let base_url = env::var("BASE_URL").unwrap_or_else(|_| "".to_owned());
-    let protocols = glob("./data/**/*.xml")
+    let protocols= glob("./data/**/*.xml")
         .unwrap()
         .filter_map(Result::ok)
-        .map(|p| p.to_str().unwrap().to_string())
         .map(|s| Protocol::from_file(&s));
 
     let mut details = vec![];
@@ -62,11 +60,17 @@ fn main() -> std::io::Result<()> {
         details.push(ProtocolDetails {
             url,
             name: protocol.name,
+            category: protocol.category,
         });
     }
 
+    let mut grouped_protocols = HashMap::new();
+    for (key, group) in &details.into_iter().group_by(|p| p.category.clone()) {
+        grouped_protocols.insert(key, group.collect());
+    }
+
     let index_template = IndexTemplate {
-        protocols: details,
+        grouped_protocols,
         base_url: &base_url,
     };
     render_to_file(&index_template, "site/index.html")?;

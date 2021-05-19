@@ -1,15 +1,17 @@
 use std::fs::File;
+use std::path::Path;
 use xmltree::Element;
 
 pub struct Protocol {
     pub name: String,
     pub interfaces: Vec<Interface>,
     pub copyright: Option<String>,
+    pub category: String,
 }
 
 impl Protocol {
-    pub fn from_file(filename: &str) -> Self {
-        let file = File::open(filename).unwrap();
+    pub fn from_file(path: &Path) -> Self {
+        let file = File::open(path.to_str().unwrap().to_string()).unwrap();
         let protocol = Element::parse(file).unwrap();
 
         let name = protocol.attributes["name"].to_string();
@@ -18,10 +20,14 @@ impl Protocol {
             .get_child("copyright")
             .map(|e| e.get_text().unwrap().to_string())
             .map(unindent_string);
+
+        let category = path.parent().unwrap().file_name().unwrap().to_str().unwrap().to_string();
+
         Protocol {
             name,
             interfaces,
             copyright,
+            category,
         }
     }
 }
