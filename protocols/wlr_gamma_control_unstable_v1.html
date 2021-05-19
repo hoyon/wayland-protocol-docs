@@ -10,17 +10,17 @@
     <link rel="stylesheet" href="&#x2f;wayland-protocol-docs/main.css"></link>
      
   </head>
-  <body class="bg-near-white black-70 sans-serif pa2 ph6-l">
-
-    <a href="&#x2f;wayland-protocol-docs/" class="f4 link near-black dim lh-title">
-      Home
-    </a>
+  <body class="bg-near-white black-70 flex sans-serif ph4-l">
 
     
 
-    <div id="content">
-      
-  <div class="fl w-25 ph2">
+    <div id="sidebar" class="w-20 br b--white bw3">
+      <div class="fixed h-100">
+        <a href="&#x2f;wayland-protocol-docs/" class="f4 link near-black dim lh-title">
+          Home
+        </a>
+        
+  <div class="ph2">
     
 
 <div>
@@ -91,14 +91,21 @@
   </ul>
 </div>
   </div>
-  <div class="fl w-75 ph2">
+
+      </div>
+    </div>
+
+    <main id="content" class="mh4">
+      
+  <div class="ph2">
     <h1 class="f1 lh-title">wlr_gamma_control_unstable_v1</h1>
     <ul class="list pl0">
       
       <li class="mt4">
-        <div class="f2 lh-copy" id="i:zwlr_gamma_control_manager_v1">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:zwlr_gamma_control_manager_v1">
+          <a href="#i:zwlr_gamma_control_manager_v1" class="link dim black-70 child pr2 absolute left--2">#</a>
           zwlr_gamma_control_manager_v1
-        </div>
+        </h2>
         <div class="f6 lh-copy ws-pre-line courier">This interface is a manager that allows creating per-output gamma
 controls.
 </div>
@@ -108,7 +115,8 @@ controls.
           <ul class="list pl0">
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:zwlr_gamma_control_manager_v1:get_gamma_control">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zwlr_gamma_control_manager_v1:get_gamma_control">
+                <a href="#r:zwlr_gamma_control_manager_v1:get_gamma_control" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   get_gamma_control
                 </div>
@@ -132,7 +140,8 @@ provided output.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:zwlr_gamma_control_manager_v1:destroy">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zwlr_gamma_control_manager_v1:destroy">
+                <a href="#r:zwlr_gamma_control_manager_v1:destroy" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   destroy
                 </div>
@@ -163,9 +172,10 @@ appropriate destroy request has been called.
       </li>
       
       <li class="mt4">
-        <div class="f2 lh-copy" id="i:zwlr_gamma_control_v1">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:zwlr_gamma_control_v1">
+          <a href="#i:zwlr_gamma_control_v1" class="link dim black-70 child pr2 absolute left--2">#</a>
           zwlr_gamma_control_v1
-        </div>
+        </h2>
         <div class="f6 lh-copy ws-pre-line courier">This interface allows a client to adjust gamma tables for a particular
 output.
 
@@ -183,7 +193,8 @@ object is destroyed, the gamma table is restored to its original value.
           <ul class="list pl0">
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:zwlr_gamma_control_v1:set_gamma">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zwlr_gamma_control_v1:set_gamma">
+                <a href="#r:zwlr_gamma_control_v1:set_gamma" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   set_gamma
                 </div>
@@ -212,7 +223,8 @@ gamma size.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:zwlr_gamma_control_v1:destroy">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zwlr_gamma_control_v1:destroy">
+                <a href="#r:zwlr_gamma_control_v1:destroy" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   destroy
                 </div>
@@ -241,7 +253,8 @@ restores the original gamma tables.
           <ul class="list pl0">
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:zwlr_gamma_control_v1:gamma_size">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:zwlr_gamma_control_v1:gamma_size">
+                <a href="#e:zwlr_gamma_control_v1:gamma_size" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   gamma_size
                 </div>
@@ -257,7 +270,8 @@ This event is sent immediately when the gamma control object is created.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:zwlr_gamma_control_v1:failed">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:zwlr_gamma_control_v1:failed">
+                <a href="#e:zwlr_gamma_control_v1:failed" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   failed
                 </div>
@@ -312,7 +326,7 @@ THIS SOFTWARE.
 </div>
   </div>
 
-    </div>
+    </main>
 
   </body>
 </html>

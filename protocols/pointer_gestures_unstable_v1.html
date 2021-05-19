@@ -10,17 +10,17 @@
     <link rel="stylesheet" href="&#x2f;wayland-protocol-docs/main.css"></link>
      
   </head>
-  <body class="bg-near-white black-70 sans-serif pa2 ph6-l">
-
-    <a href="&#x2f;wayland-protocol-docs/" class="f4 link near-black dim lh-title">
-      Home
-    </a>
+  <body class="bg-near-white black-70 flex sans-serif ph4-l">
 
     
 
-    <div id="content">
-      
-  <div class="fl w-25 ph2">
+    <div id="sidebar" class="w-20 br b--white bw3">
+      <div class="fixed h-100">
+        <a href="&#x2f;wayland-protocol-docs/" class="f4 link near-black dim lh-title">
+          Home
+        </a>
+        
+  <div class="ph2">
     
 
 <div>
@@ -133,14 +133,21 @@
   </ul>
 </div>
   </div>
-  <div class="fl w-75 ph2">
+
+      </div>
+    </div>
+
+    <main id="content" class="mh4">
+      
+  <div class="ph2">
     <h1 class="f1 lh-title">pointer_gestures_unstable_v1</h1>
     <ul class="list pl0">
       
       <li class="mt4">
-        <div class="f2 lh-copy" id="i:zwp_pointer_gestures_v1">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:zwp_pointer_gestures_v1">
+          <a href="#i:zwp_pointer_gestures_v1" class="link dim black-70 child pr2 absolute left--2">#</a>
           zwp_pointer_gestures_v1
-        </div>
+        </h2>
         <div class="f6 lh-copy ws-pre-line courier">A global interface to provide semantic touchpad gestures for a given
 pointer.
 
@@ -163,7 +170,8 @@ interface version number is reset.
           <ul class="list pl0">
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:zwp_pointer_gestures_v1:get_swipe_gesture">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zwp_pointer_gestures_v1:get_swipe_gesture">
+                <a href="#r:zwp_pointer_gestures_v1:get_swipe_gesture" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   get_swipe_gesture
                 </div>
@@ -187,7 +195,8 @@ wl_pointer_gesture_swipe interface for details.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:zwp_pointer_gestures_v1:get_pinch_gesture">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zwp_pointer_gestures_v1:get_pinch_gesture">
+                <a href="#r:zwp_pointer_gestures_v1:get_pinch_gesture" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   get_pinch_gesture
                 </div>
@@ -211,7 +220,8 @@ wl_pointer_gesture_pinch interface for details.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:zwp_pointer_gestures_v1:release">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zwp_pointer_gestures_v1:release">
+                <a href="#r:zwp_pointer_gestures_v1:release" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   release
                 </div>
@@ -242,9 +252,10 @@ gesture object remain valid.
       </li>
       
       <li class="mt4">
-        <div class="f2 lh-copy" id="i:zwp_pointer_gesture_swipe_v1">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:zwp_pointer_gesture_swipe_v1">
+          <a href="#i:zwp_pointer_gesture_swipe_v1" class="link dim black-70 child pr2 absolute left--2">#</a>
           zwp_pointer_gesture_swipe_v1
-        </div>
+        </h2>
         <div class="f6 lh-copy ws-pre-line courier">A swipe gesture object notifies a client about a multi-finger swipe
 gesture detected on an indirect input device such as a touchpad.
 The gesture is usually initiated by multiple fingers moving in the
@@ -267,7 +278,8 @@ actions until the end of a gesture has been received.
           <ul class="list pl0">
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:zwp_pointer_gesture_swipe_v1:destroy">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zwp_pointer_gesture_swipe_v1:destroy">
+                <a href="#r:zwp_pointer_gesture_swipe_v1:destroy" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   destroy
                 </div>
@@ -294,7 +306,8 @@ actions until the end of a gesture has been received.
           <ul class="list pl0">
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:zwp_pointer_gesture_swipe_v1:begin">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:zwp_pointer_gesture_swipe_v1:begin">
+                <a href="#e:zwp_pointer_gesture_swipe_v1:begin" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   begin
                 </div>
@@ -309,7 +322,8 @@ on the device.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:zwp_pointer_gesture_swipe_v1:update">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:zwp_pointer_gesture_swipe_v1:update">
+                <a href="#e:zwp_pointer_gesture_swipe_v1:update" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   update
                 </div>
@@ -327,7 +341,8 @@ center of the gesture compared to the previous event.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:zwp_pointer_gesture_swipe_v1:end">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:zwp_pointer_gesture_swipe_v1:end">
+                <a href="#e:zwp_pointer_gesture_swipe_v1:end" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   end
                 </div>
@@ -353,9 +368,10 @@ implementation-dependent.
       </li>
       
       <li class="mt4">
-        <div class="f2 lh-copy" id="i:zwp_pointer_gesture_pinch_v1">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:zwp_pointer_gesture_pinch_v1">
+          <a href="#i:zwp_pointer_gesture_pinch_v1" class="link dim black-70 child pr2 absolute left--2">#</a>
           zwp_pointer_gesture_pinch_v1
-        </div>
+        </h2>
         <div class="f6 lh-copy ws-pre-line courier">A pinch gesture object notifies a client about a multi-finger pinch
 gesture detected on an indirect input device such as a touchpad.
 The gesture is usually initiated by multiple fingers moving towards
@@ -378,7 +394,8 @@ actions until the end of a gesture has been received.
           <ul class="list pl0">
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:zwp_pointer_gesture_pinch_v1:destroy">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zwp_pointer_gesture_pinch_v1:destroy">
+                <a href="#r:zwp_pointer_gesture_pinch_v1:destroy" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   destroy
                 </div>
@@ -405,7 +422,8 @@ actions until the end of a gesture has been received.
           <ul class="list pl0">
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:zwp_pointer_gesture_pinch_v1:begin">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:zwp_pointer_gesture_pinch_v1:begin">
+                <a href="#e:zwp_pointer_gesture_pinch_v1:begin" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   begin
                 </div>
@@ -420,7 +438,8 @@ on the device.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:zwp_pointer_gesture_pinch_v1:update">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:zwp_pointer_gesture_pinch_v1:update">
+                <a href="#e:zwp_pointer_gesture_pinch_v1:update" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   update
                 </div>
@@ -445,7 +464,8 @@ pointer_gesture_pinch.begin or pointer_gesture_pinch.update event.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:zwp_pointer_gesture_pinch_v1:end">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:zwp_pointer_gesture_pinch_v1:end">
+                <a href="#e:zwp_pointer_gesture_pinch_v1:end" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   end
                 </div>
@@ -476,7 +496,7 @@ implementation-dependent.
     <div class="f7 lh-copy ws-pre-line courier"></div>
   </div>
 
-    </div>
+    </main>
 
   </body>
 </html>

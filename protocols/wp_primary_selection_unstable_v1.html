@@ -10,17 +10,17 @@
     <link rel="stylesheet" href="&#x2f;wayland-protocol-docs/main.css"></link>
      
   </head>
-  <body class="bg-near-white black-70 sans-serif pa2 ph6-l">
-
-    <a href="&#x2f;wayland-protocol-docs/" class="f4 link near-black dim lh-title">
-      Home
-    </a>
+  <body class="bg-near-white black-70 flex sans-serif ph4-l">
 
     
 
-    <div id="content">
-      
-  <div class="fl w-25 ph2">
+    <div id="sidebar" class="w-20 br b--white bw3">
+      <div class="fixed h-100">
+        <a href="&#x2f;wayland-protocol-docs/" class="f4 link near-black dim lh-title">
+          Home
+        </a>
+        
+  <div class="ph2">
     
 
 <div>
@@ -167,14 +167,21 @@
   </ul>
 </div>
   </div>
-  <div class="fl w-75 ph2">
+
+      </div>
+    </div>
+
+    <main id="content" class="mh4">
+      
+  <div class="ph2">
     <h1 class="f1 lh-title">wp_primary_selection_unstable_v1</h1>
     <ul class="list pl0">
       
       <li class="mt4">
-        <div class="f2 lh-copy" id="i:zwp_primary_selection_device_manager_v1">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:zwp_primary_selection_device_manager_v1">
+          <a href="#i:zwp_primary_selection_device_manager_v1" class="link dim black-70 child pr2 absolute left--2">#</a>
           zwp_primary_selection_device_manager_v1
-        </div>
+        </h2>
         <div class="f6 lh-copy ws-pre-line courier">The primary selection device manager is a singleton global object that
 provides access to the primary selection. It allows to create
 wp_primary_selection_source objects, as well as retrieving the per-seat
@@ -186,7 +193,8 @@ wp_primary_selection_device objects.
           <ul class="list pl0">
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:zwp_primary_selection_device_manager_v1:create_source">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zwp_primary_selection_device_manager_v1:create_source">
+                <a href="#r:zwp_primary_selection_device_manager_v1:create_source" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   create_source
                 </div>
@@ -207,7 +215,8 @@ wp_primary_selection_device objects.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:zwp_primary_selection_device_manager_v1:get_device">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zwp_primary_selection_device_manager_v1:get_device">
+                <a href="#r:zwp_primary_selection_device_manager_v1:get_device" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   get_device
                 </div>
@@ -230,7 +239,8 @@ wp_primary_selection_device objects.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:zwp_primary_selection_device_manager_v1:destroy">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zwp_primary_selection_device_manager_v1:destroy">
+                <a href="#r:zwp_primary_selection_device_manager_v1:destroy" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   destroy
                 </div>
@@ -260,9 +270,10 @@ wp_primary_selection_device objects.
       </li>
       
       <li class="mt4">
-        <div class="f2 lh-copy" id="i:zwp_primary_selection_device_v1">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:zwp_primary_selection_device_v1">
+          <a href="#i:zwp_primary_selection_device_v1" class="link dim black-70 child pr2 absolute left--2">#</a>
           zwp_primary_selection_device_v1
-        </div>
+        </h2>
         <div class="f6 lh-copy ws-pre-line courier"></div>
 
         
@@ -270,7 +281,8 @@ wp_primary_selection_device objects.
           <ul class="list pl0">
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:zwp_primary_selection_device_v1:set_selection">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zwp_primary_selection_device_v1:set_selection">
+                <a href="#r:zwp_primary_selection_device_v1:set_selection" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   set_selection
                 </div>
@@ -298,7 +310,8 @@ To unset the selection, set the source to NULL.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:zwp_primary_selection_device_v1:destroy">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zwp_primary_selection_device_v1:destroy">
+                <a href="#r:zwp_primary_selection_device_v1:destroy" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   destroy
                 </div>
@@ -326,7 +339,8 @@ To unset the selection, set the source to NULL.
           <ul class="list pl0">
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:zwp_primary_selection_device_v1:data_offer">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:zwp_primary_selection_device_v1:data_offer">
+                <a href="#e:zwp_primary_selection_device_v1:data_offer" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   data_offer
                 </div>
@@ -344,7 +358,8 @@ types.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:zwp_primary_selection_device_v1:selection">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:zwp_primary_selection_device_v1:selection">
+                <a href="#e:zwp_primary_selection_device_v1:selection" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   selection
                 </div>
@@ -372,9 +387,10 @@ previous selection data_offer, if any, upon receiving this event.
       </li>
       
       <li class="mt4">
-        <div class="f2 lh-copy" id="i:zwp_primary_selection_offer_v1">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:zwp_primary_selection_offer_v1">
+          <a href="#i:zwp_primary_selection_offer_v1" class="link dim black-70 child pr2 absolute left--2">#</a>
           zwp_primary_selection_offer_v1
-        </div>
+        </h2>
         <div class="f6 lh-copy ws-pre-line courier">A wp_primary_selection_offer represents an offer to transfer the contents
 of the primary selection clipboard to the client. Similar to
 wl_data_offer, the offer also describes the mime types that the data can
@@ -387,7 +403,8 @@ directly to the client.
           <ul class="list pl0">
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:zwp_primary_selection_offer_v1:receive">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zwp_primary_selection_offer_v1:receive">
+                <a href="#r:zwp_primary_selection_offer_v1:receive" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   receive
                 </div>
@@ -420,7 +437,8 @@ closes its end, at which point the transfer is complete.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:zwp_primary_selection_offer_v1:destroy">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zwp_primary_selection_offer_v1:destroy">
+                <a href="#r:zwp_primary_selection_offer_v1:destroy" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   destroy
                 </div>
@@ -448,7 +466,8 @@ closes its end, at which point the transfer is complete.
           <ul class="list pl0">
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:zwp_primary_selection_offer_v1:offer">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:zwp_primary_selection_offer_v1:offer">
+                <a href="#e:zwp_primary_selection_offer_v1:offer" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   offer
                 </div>
@@ -471,9 +490,10 @@ mime type.
       </li>
       
       <li class="mt4">
-        <div class="f2 lh-copy" id="i:zwp_primary_selection_source_v1">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:zwp_primary_selection_source_v1">
+          <a href="#i:zwp_primary_selection_source_v1" class="link dim black-70 child pr2 absolute left--2">#</a>
           zwp_primary_selection_source_v1
-        </div>
+        </h2>
         <div class="f6 lh-copy ws-pre-line courier">The source side of a wp_primary_selection_offer, it provides a way to
 describe the offered data and respond to requests to transfer the
 requested contents of the primary selection clipboard.
@@ -484,7 +504,8 @@ requested contents of the primary selection clipboard.
           <ul class="list pl0">
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:zwp_primary_selection_source_v1:offer">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zwp_primary_selection_source_v1:offer">
+                <a href="#r:zwp_primary_selection_source_v1:offer" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   offer
                 </div>
@@ -508,7 +529,8 @@ targets. Can be called several times to offer multiple types.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:zwp_primary_selection_source_v1:destroy">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zwp_primary_selection_source_v1:destroy">
+                <a href="#r:zwp_primary_selection_source_v1:destroy" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   destroy
                 </div>
@@ -536,7 +558,8 @@ targets. Can be called several times to offer multiple types.
           <ul class="list pl0">
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:zwp_primary_selection_source_v1:send">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:zwp_primary_selection_source_v1:send">
+                <a href="#e:zwp_primary_selection_source_v1:send" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   send
                 </div>
@@ -552,7 +575,8 @@ close it.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:zwp_primary_selection_source_v1:cancelled">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:zwp_primary_selection_source_v1:cancelled">
+                <a href="#e:zwp_primary_selection_source_v1:cancelled" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   cancelled
                 </div>
@@ -598,7 +622,7 @@ DEALINGS IN THE SOFTWARE.
 </div>
   </div>
 
-    </div>
+    </main>
 
   </body>
 </html>

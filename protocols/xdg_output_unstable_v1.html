@@ -10,17 +10,17 @@
     <link rel="stylesheet" href="&#x2f;wayland-protocol-docs/main.css"></link>
      
   </head>
-  <body class="bg-near-white black-70 sans-serif pa2 ph6-l">
-
-    <a href="&#x2f;wayland-protocol-docs/" class="f4 link near-black dim lh-title">
-      Home
-    </a>
+  <body class="bg-near-white black-70 flex sans-serif ph4-l">
 
     
 
-    <div id="content">
-      
-  <div class="fl w-25 ph2">
+    <div id="sidebar" class="w-20 br b--white bw3">
+      <div class="fixed h-100">
+        <a href="&#x2f;wayland-protocol-docs/" class="f4 link near-black dim lh-title">
+          Home
+        </a>
+        
+  <div class="ph2">
     
 
 <div>
@@ -99,14 +99,21 @@
   </ul>
 </div>
   </div>
-  <div class="fl w-75 ph2">
+
+      </div>
+    </div>
+
+    <main id="content" class="mh4">
+      
+  <div class="ph2">
     <h1 class="f1 lh-title">xdg_output_unstable_v1</h1>
     <ul class="list pl0">
       
       <li class="mt4">
-        <div class="f2 lh-copy" id="i:zxdg_output_manager_v1">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:zxdg_output_manager_v1">
+          <a href="#i:zxdg_output_manager_v1" class="link dim black-70 child pr2 absolute left--2">#</a>
           zxdg_output_manager_v1
-        </div>
+        </h2>
         <div class="f6 lh-copy ws-pre-line courier">A global factory interface for xdg_output objects.
 </div>
 
@@ -115,7 +122,8 @@
           <ul class="list pl0">
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:zxdg_output_manager_v1:destroy">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zxdg_output_manager_v1:destroy">
+                <a href="#r:zxdg_output_manager_v1:destroy" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   destroy
                 </div>
@@ -139,7 +147,8 @@ Any objects already created through this instance are not affected.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:zxdg_output_manager_v1:get_xdg_output">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zxdg_output_manager_v1:get_xdg_output">
+                <a href="#r:zxdg_output_manager_v1:get_xdg_output" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   get_xdg_output
                 </div>
@@ -171,9 +180,10 @@ Any objects already created through this instance are not affected.
       </li>
       
       <li class="mt4">
-        <div class="f2 lh-copy" id="i:zxdg_output_v1">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:zxdg_output_v1">
+          <a href="#i:zxdg_output_v1" class="link dim black-70 child pr2 absolute left--2">#</a>
           zxdg_output_v1
-        </div>
+        </h2>
         <div class="f6 lh-copy ws-pre-line courier">An xdg_output describes part of the compositor geometry.
 
 This typically corresponds to a monitor that displays part of the
@@ -190,7 +200,8 @@ properties to be seen as atomic, even if they happen via multiple events.
           <ul class="list pl0">
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:zxdg_output_v1:destroy">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zxdg_output_v1:destroy">
+                <a href="#r:zxdg_output_v1:destroy" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   destroy
                 </div>
@@ -219,7 +230,8 @@ going to use the xdg_output object anymore.
           <ul class="list pl0">
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:zxdg_output_v1:logical_position">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:zxdg_output_v1:logical_position">
+                <a href="#e:zxdg_output_v1:logical_position" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   logical_position
                 </div>
@@ -238,7 +250,8 @@ of the output changes within the global compositor space.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:zxdg_output_v1:logical_size">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:zxdg_output_v1:logical_size">
+                <a href="#e:zxdg_output_v1:logical_size" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   logical_size
                 </div>
@@ -285,7 +298,8 @@ mode(see wl_output.mode) or transform (see wl_output.transform).
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:zxdg_output_v1:done">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:zxdg_output_v1:done">
+                <a href="#e:zxdg_output_v1:done" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   done
                 </div>
@@ -307,7 +321,8 @@ instead.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:zxdg_output_v1:name">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:zxdg_output_v1:name">
+                <a href="#e:zxdg_output_v1:name" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   name
                 </div>
@@ -338,7 +353,8 @@ wl_output global.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:zxdg_output_v1:description">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:zxdg_output_v1:description">
+                <a href="#e:zxdg_output_v1:description" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   description
                 </div>
@@ -397,7 +413,7 @@ DEALINGS IN THE SOFTWARE.
 </div>
   </div>
 
-    </div>
+    </main>
 
   </body>
 </html>

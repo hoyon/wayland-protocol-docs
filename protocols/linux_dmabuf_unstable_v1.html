@@ -10,17 +10,17 @@
     <link rel="stylesheet" href="&#x2f;wayland-protocol-docs/main.css"></link>
      
   </head>
-  <body class="bg-near-white black-70 sans-serif pa2 ph6-l">
-
-    <a href="&#x2f;wayland-protocol-docs/" class="f4 link near-black dim lh-title">
-      Home
-    </a>
+  <body class="bg-near-white black-70 flex sans-serif ph4-l">
 
     
 
-    <div id="content">
-      
-  <div class="fl w-25 ph2">
+    <div id="sidebar" class="w-20 br b--white bw3">
+      <div class="fixed h-100">
+        <a href="&#x2f;wayland-protocol-docs/" class="f4 link near-black dim lh-title">
+          Home
+        </a>
+        
+  <div class="ph2">
     
 
 <div>
@@ -113,14 +113,21 @@
   </ul>
 </div>
   </div>
-  <div class="fl w-75 ph2">
+
+      </div>
+    </div>
+
+    <main id="content" class="mh4">
+      
+  <div class="ph2">
     <h1 class="f1 lh-title">linux_dmabuf_unstable_v1</h1>
     <ul class="list pl0">
       
       <li class="mt4">
-        <div class="f2 lh-copy" id="i:zwp_linux_dmabuf_v1">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:zwp_linux_dmabuf_v1">
+          <a href="#i:zwp_linux_dmabuf_v1" class="link dim black-70 child pr2 absolute left--2">#</a>
           zwp_linux_dmabuf_v1
-        </div>
+        </h2>
         <div class="f6 lh-copy ws-pre-line courier">Following the interfaces from:
 https:&#x2f;&#x2f;www.khronos.org&#x2f;registry&#x2f;egl&#x2f;extensions&#x2f;EXT&#x2f;EGL_EXT_image_dma_buf_import.txt
 https:&#x2f;&#x2f;www.khronos.org&#x2f;registry&#x2f;EGL&#x2f;extensions&#x2f;EXT&#x2f;EGL_EXT_image_dma_buf_import_modifiers.txt
@@ -192,7 +199,8 @@ interface version number is reset.
           <ul class="list pl0">
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:zwp_linux_dmabuf_v1:destroy">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zwp_linux_dmabuf_v1:destroy">
+                <a href="#r:zwp_linux_dmabuf_v1:destroy" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   destroy
                 </div>
@@ -214,7 +222,8 @@ remain valid.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:zwp_linux_dmabuf_v1:create_params">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zwp_linux_dmabuf_v1:create_params">
+                <a href="#r:zwp_linux_dmabuf_v1:create_params" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   create_params
                 </div>
@@ -245,7 +254,8 @@ received.
           <ul class="list pl0">
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:zwp_linux_dmabuf_v1:format">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:zwp_linux_dmabuf_v1:format">
+                <a href="#e:zwp_linux_dmabuf_v1:format" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   format
                 </div>
@@ -270,7 +280,8 @@ received from this event.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:zwp_linux_dmabuf_v1:modifier">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:zwp_linux_dmabuf_v1:modifier">
+                <a href="#e:zwp_linux_dmabuf_v1:modifier" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   modifier
                 </div>
@@ -308,9 +319,10 @@ requests.
       </li>
       
       <li class="mt4">
-        <div class="f2 lh-copy" id="i:zwp_linux_buffer_params_v1">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:zwp_linux_buffer_params_v1">
+          <a href="#i:zwp_linux_buffer_params_v1" class="link dim black-70 child pr2 absolute left--2">#</a>
           zwp_linux_buffer_params_v1
-        </div>
+        </h2>
         <div class="f6 lh-copy ws-pre-line courier">This temporary object is a collection of dmabufs and other
 parameters that together form a single logical buffer. The temporary
 object may eventually create one wl_buffer unless cancelled by
@@ -332,7 +344,8 @@ be given in any order. Each plane index can be set only once.
           <ul class="list pl0">
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:zwp_linux_buffer_params_v1:destroy">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zwp_linux_buffer_params_v1:destroy">
+                <a href="#r:zwp_linux_buffer_params_v1:destroy" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   destroy
                 </div>
@@ -354,7 +367,8 @@ wl_buffer creation.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:zwp_linux_buffer_params_v1:add">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zwp_linux_buffer_params_v1:add">
+                <a href="#r:zwp_linux_buffer_params_v1:add" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   add
                 </div>
@@ -404,7 +418,8 @@ was already set.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:zwp_linux_buffer_params_v1:create">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zwp_linux_buffer_params_v1:create">
+                <a href="#r:zwp_linux_buffer_params_v1:create" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   create
                 </div>
@@ -491,7 +506,8 @@ cancel the buffer creation, it can just destroy this object.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:zwp_linux_buffer_params_v1:create_immed">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zwp_linux_buffer_params_v1:create_immed">
+                <a href="#r:zwp_linux_buffer_params_v1:create_immed" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   create_immed
                 </div>
@@ -550,7 +566,8 @@ same restrictions.
           <ul class="list pl0">
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:zwp_linux_buffer_params_v1:created">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:zwp_linux_buffer_params_v1:created">
+                <a href="#e:zwp_linux_buffer_params_v1:created" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   created
                 </div>
@@ -568,7 +585,8 @@ zlinux_dmabuf_params object.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:zwp_linux_buffer_params_v1:failed">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:zwp_linux_buffer_params_v1:failed">
+                <a href="#e:zwp_linux_buffer_params_v1:failed" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   failed
                 </div>
@@ -618,7 +636,7 @@ DEALINGS IN THE SOFTWARE.
 </div>
   </div>
 
-    </div>
+    </main>
 
   </body>
 </html>

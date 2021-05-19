@@ -1,0 +1,324 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>virtual_keyboard_unstable_v1</title>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="&#x2f;wayland-protocol-docs/main.css"></link>
+     
+  </head>
+  <body class="bg-near-white black-70 flex sans-serif ph4-l">
+
+    
+
+    <div id="sidebar" class="w-20 br b--white bw3">
+      <div class="fixed h-100">
+        <a href="&#x2f;wayland-protocol-docs/" class="f4 link near-black dim lh-title">
+          Home
+        </a>
+        
+  <div class="ph2">
+    
+
+<div>
+  <ul class="list pl0">
+  
+    <li>
+      <a href="#i:zwp_virtual_keyboard_v1" class="link blue underline-hover lh-copy">zwp_virtual_keyboard_v1</a>
+
+      
+        <div>
+          <a href="#rh:zwp_virtual_keyboard_v1" class="link blue underline-hover lh-copy pl3">Requests</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#r:zwp_virtual_keyboard_v1:keymap" class="link blue underline-hover lh-copy">keymap</a>
+          </li>
+          
+          <li>
+            <a href="#r:zwp_virtual_keyboard_v1:key" class="link blue underline-hover lh-copy">key</a>
+          </li>
+          
+          <li>
+            <a href="#r:zwp_virtual_keyboard_v1:modifiers" class="link blue underline-hover lh-copy">modifiers</a>
+          </li>
+          
+          <li>
+            <a href="#r:zwp_virtual_keyboard_v1:destroy" class="link blue underline-hover lh-copy">destroy</a>
+          </li>
+          
+        </ul>
+      
+
+      
+      
+    </li>
+  
+    <li>
+      <a href="#i:zwp_virtual_keyboard_manager_v1" class="link blue underline-hover lh-copy">zwp_virtual_keyboard_manager_v1</a>
+
+      
+        <div>
+          <a href="#rh:zwp_virtual_keyboard_manager_v1" class="link blue underline-hover lh-copy pl3">Requests</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#r:zwp_virtual_keyboard_manager_v1:create_virtual_keyboard" class="link blue underline-hover lh-copy">create_virtual_keyboard</a>
+          </li>
+          
+        </ul>
+      
+
+      
+      
+    </li>
+  
+  </ul>
+</div>
+  </div>
+
+      </div>
+    </div>
+
+    <main id="content" class="mh4">
+      
+  <div class="ph2">
+    <h1 class="f1 lh-title">virtual_keyboard_unstable_v1</h1>
+    <ul class="list pl0">
+      
+      <li class="mt4">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:zwp_virtual_keyboard_v1">
+          <a href="#i:zwp_virtual_keyboard_v1" class="link dim black-70 child pr2 absolute left--2">#</a>
+          zwp_virtual_keyboard_v1
+        </h2>
+        <div class="f6 lh-copy ws-pre-line courier">The virtual keyboard provides an application with requests which emulate
+the behaviour of a physical keyboard.
+
+This interface can be used by clients on its own to provide raw input
+events, or it can accompany the input method protocol.
+</div>
+
+        
+          <h3 class=" f5 lh-title" id="rh:zwp_virtual_keyboard_v1">Requests</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zwp_virtual_keyboard_v1:keymap">
+                <a href="#r:zwp_virtual_keyboard_v1:keymap" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  keymap
+                </div>
+                <div class="f5 ml2">
+                  keyboard mapping
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">zwp_virtual_keyboard_v1_keymap</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwp_virtual_keyboard_v1*</span> zwp_virtual_keyboard_v1,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> format,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> fd,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> size</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier">Provide a file descriptor to the compositor which can be
+memory-mapped to provide a keyboard mapping description.
+
+Format carries a value from the keymap_format enumeration.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zwp_virtual_keyboard_v1:key">
+                <a href="#r:zwp_virtual_keyboard_v1:key" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  key
+                </div>
+                <div class="f5 ml2">
+                  key event
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">zwp_virtual_keyboard_v1_key</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwp_virtual_keyboard_v1*</span> zwp_virtual_keyboard_v1,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> time,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> key,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> state</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier">A key was pressed or released.
+The time argument is a timestamp with millisecond granularity, with an
+undefined base. All requests regarding a single object must share the
+same clock.
+
+Keymap must be set before issuing this request.
+
+State carries a value from the key_state enumeration.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zwp_virtual_keyboard_v1:modifiers">
+                <a href="#r:zwp_virtual_keyboard_v1:modifiers" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  modifiers
+                </div>
+                <div class="f5 ml2">
+                  modifier and group state
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">zwp_virtual_keyboard_v1_modifiers</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwp_virtual_keyboard_v1*</span> zwp_virtual_keyboard_v1,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> mods_depressed,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> mods_latched,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> mods_locked,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> group</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier">Notifies the compositor that the modifier and&#x2f;or group state has
+changed, and it should update state.
+
+The client should use wl_keyboard.modifiers event to synchronize its
+internal state with seat state.
+
+Keymap must be set before issuing this request.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zwp_virtual_keyboard_v1:destroy">
+                <a href="#r:zwp_virtual_keyboard_v1:destroy" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  destroy
+                </div>
+                <div class="f5 ml2">
+                  destroy the virtual keyboard keyboard object
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">zwp_virtual_keyboard_v1_destroy</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwp_virtual_keyboard_v1*</span> zwp_virtual_keyboard_v1</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier"></div>
+            </li>
+            
+          </ul>
+        
+
+        
+
+        
+
+      </li>
+      
+      <li class="mt4">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:zwp_virtual_keyboard_manager_v1">
+          <a href="#i:zwp_virtual_keyboard_manager_v1" class="link dim black-70 child pr2 absolute left--2">#</a>
+          zwp_virtual_keyboard_manager_v1
+        </h2>
+        <div class="f6 lh-copy ws-pre-line courier">A virtual keyboard manager allows an application to provide keyboard
+input events as if they came from a physical keyboard.
+</div>
+
+        
+          <h3 class=" f5 lh-title" id="rh:zwp_virtual_keyboard_manager_v1">Requests</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zwp_virtual_keyboard_manager_v1:create_virtual_keyboard">
+                <a href="#r:zwp_virtual_keyboard_manager_v1:create_virtual_keyboard" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  create_virtual_keyboard
+                </div>
+                <div class="f5 ml2">
+                  Create a new virtual keyboard
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>struct zwp_virtual_keyboard_v1* </span><span class="dark-blue">zwp_virtual_keyboard_manager_v1_create_virtual_keyboard</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwp_virtual_keyboard_manager_v1*</span> zwp_virtual_keyboard_manager_v1,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_seat*</span> seat</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier">Creates a new virtual keyboard associated to a seat.
+
+If the compositor enables a keyboard to perform arbitrary actions, it
+should present an error when an untrusted client requests a new
+keyboard.
+</div>
+            </li>
+            
+          </ul>
+        
+
+        
+
+        
+
+      </li>
+      
+    </ul>
+
+    <h2 class="f4 lh-title">Copyright Info</h2>
+    <div class="f7 lh-copy ws-pre-line courier">Copyright © 2008-2011  Kristian Høgsberg
+Copyright © 2010-2013  Intel Corporation
+Copyright © 2012-2013  Collabora, Ltd.
+Copyright © 2018       Purism SPC
+
+Permission is hereby granted, free of charge, to any person obtaining a
+copy of this software and associated documentation files (the &quot;Software&quot;),
+to deal in the Software without restriction, including without limitation
+the rights to use, copy, modify, merge, publish, distribute, sublicense,
+and&#x2f;or sell copies of the Software, and to permit persons to whom the
+Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice (including the next
+paragraph) shall be included in all copies or substantial portions of the
+Software.
+
+THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL
+THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+DEALINGS IN THE SOFTWARE.
+</div>
+  </div>
+
+    </main>
+
+  </body>
+</html>

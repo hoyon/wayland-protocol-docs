@@ -10,17 +10,17 @@
     <link rel="stylesheet" href="&#x2f;wayland-protocol-docs/main.css"></link>
      
   </head>
-  <body class="bg-near-white black-70 sans-serif pa2 ph6-l">
-
-    <a href="&#x2f;wayland-protocol-docs/" class="f4 link near-black dim lh-title">
-      Home
-    </a>
+  <body class="bg-near-white black-70 flex sans-serif ph4-l">
 
     
 
-    <div id="content">
-      
-  <div class="fl w-25 ph2">
+    <div id="sidebar" class="w-20 br b--white bw3">
+      <div class="fixed h-100">
+        <a href="&#x2f;wayland-protocol-docs/" class="f4 link near-black dim lh-title">
+          Home
+        </a>
+        
+  <div class="ph2">
     
 
 <div>
@@ -73,14 +73,21 @@
   </ul>
 </div>
   </div>
-  <div class="fl w-75 ph2">
+
+      </div>
+    </div>
+
+    <main id="content" class="mh4">
+      
+  <div class="ph2">
     <h1 class="f1 lh-title">idle_inhibit_unstable_v1</h1>
     <ul class="list pl0">
       
       <li class="mt4">
-        <div class="f2 lh-copy" id="i:zwp_idle_inhibit_manager_v1">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:zwp_idle_inhibit_manager_v1">
+          <a href="#i:zwp_idle_inhibit_manager_v1" class="link dim black-70 child pr2 absolute left--2">#</a>
           zwp_idle_inhibit_manager_v1
-        </div>
+        </h2>
         <div class="f6 lh-copy ws-pre-line courier">This interface permits inhibiting the idle behavior such as screen
 blanking, locking, and screensaving.  The client binds the idle manager
 globally, then creates idle-inhibitor objects for each surface.
@@ -100,7 +107,8 @@ interface version number is reset.
           <ul class="list pl0">
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:zwp_idle_inhibit_manager_v1:destroy">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zwp_idle_inhibit_manager_v1:destroy">
+                <a href="#r:zwp_idle_inhibit_manager_v1:destroy" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   destroy
                 </div>
@@ -121,7 +129,8 @@ interface version number is reset.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:zwp_idle_inhibit_manager_v1:create_inhibitor">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zwp_idle_inhibit_manager_v1:create_inhibitor">
+                <a href="#r:zwp_idle_inhibit_manager_v1:create_inhibitor" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   create_inhibitor
                 </div>
@@ -153,9 +162,10 @@ interface version number is reset.
       </li>
       
       <li class="mt4">
-        <div class="f2 lh-copy" id="i:zwp_idle_inhibitor_v1">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:zwp_idle_inhibitor_v1">
+          <a href="#i:zwp_idle_inhibitor_v1" class="link dim black-70 child pr2 absolute left--2">#</a>
           zwp_idle_inhibitor_v1
-        </div>
+        </h2>
         <div class="f6 lh-copy ws-pre-line courier">An idle inhibitor prevents the output that the associated surface is
 visible on from being set to a state where it is not visually usable due
 to lack of user interaction (e.g. blanked, dimmed, locked, set to power
@@ -175,7 +185,8 @@ de-idles and re-idles the inhibitor will take effect.
           <ul class="list pl0">
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:zwp_idle_inhibitor_v1:destroy">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zwp_idle_inhibitor_v1:destroy">
+                <a href="#r:zwp_idle_inhibitor_v1:destroy" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   destroy
                 </div>
@@ -230,7 +241,7 @@ DEALINGS IN THE SOFTWARE.
 </div>
   </div>
 
-    </div>
+    </main>
 
   </body>
 </html>

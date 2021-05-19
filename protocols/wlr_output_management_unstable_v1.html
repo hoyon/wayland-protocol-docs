@@ -10,17 +10,17 @@
     <link rel="stylesheet" href="&#x2f;wayland-protocol-docs/main.css"></link>
      
   </head>
-  <body class="bg-near-white black-70 sans-serif pa2 ph6-l">
-
-    <a href="&#x2f;wayland-protocol-docs/" class="f4 link near-black dim lh-title">
-      Home
-    </a>
+  <body class="bg-near-white black-70 flex sans-serif ph4-l">
 
     
 
-    <div id="content">
-      
-  <div class="fl w-25 ph2">
+    <div id="sidebar" class="w-20 br b--white bw3">
+      <div class="fixed h-100">
+        <a href="&#x2f;wayland-protocol-docs/" class="f4 link near-black dim lh-title">
+          Home
+        </a>
+        
+  <div class="ph2">
     
 
 <div>
@@ -261,14 +261,21 @@
   </ul>
 </div>
   </div>
-  <div class="fl w-75 ph2">
+
+      </div>
+    </div>
+
+    <main id="content" class="mh4">
+      
+  <div class="ph2">
     <h1 class="f1 lh-title">wlr_output_management_unstable_v1</h1>
     <ul class="list pl0">
       
       <li class="mt4">
-        <div class="f2 lh-copy" id="i:zwlr_output_manager_v1">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:zwlr_output_manager_v1">
+          <a href="#i:zwlr_output_manager_v1" class="link dim black-70 child pr2 absolute left--2">#</a>
           zwlr_output_manager_v1
-        </div>
+        </h2>
         <div class="f6 lh-copy ws-pre-line courier">This interface is a manager that allows reading and writing the current
 output device configuration.
 
@@ -303,7 +310,8 @@ protocols such as xdg-output should be used.
           <ul class="list pl0">
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:zwlr_output_manager_v1:create_configuration">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zwlr_output_manager_v1:create_configuration">
+                <a href="#r:zwlr_output_manager_v1:create_configuration" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   create_configuration
                 </div>
@@ -327,7 +335,8 @@ properties.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:zwlr_output_manager_v1:stop">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zwlr_output_manager_v1:stop">
+                <a href="#r:zwlr_output_manager_v1:stop" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   stop
                 </div>
@@ -359,7 +368,8 @@ The client must not send any more requests after this one.
           <ul class="list pl0">
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:zwlr_output_manager_v1:head">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:zwlr_output_manager_v1:head">
+                <a href="#e:zwlr_output_manager_v1:head" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   head
                 </div>
@@ -375,7 +385,8 @@ bound.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:zwlr_output_manager_v1:done">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:zwlr_output_manager_v1:done">
+                <a href="#e:zwlr_output_manager_v1:done" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   done
                 </div>
@@ -399,7 +410,8 @@ A serial is sent to be used in a future create_configuration request.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:zwlr_output_manager_v1:finished">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:zwlr_output_manager_v1:finished">
+                <a href="#e:zwlr_output_manager_v1:finished" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   finished
                 </div>
@@ -422,9 +434,10 @@ resources associated with it.
       </li>
       
       <li class="mt4">
-        <div class="f2 lh-copy" id="i:zwlr_output_head_v1">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:zwlr_output_head_v1">
+          <a href="#i:zwlr_output_head_v1" class="link dim black-70 child pr2 absolute left--2">#</a>
           zwlr_output_head_v1
-        </div>
+        </h2>
         <div class="f6 lh-copy ws-pre-line courier">A head is an output device. The difference between a wl_output object and
 a head is that heads are advertised even if they are turned off. A head
 object only advertises properties and cannot be used directly to change
@@ -448,7 +461,8 @@ in which properties are sent.
           <ul class="list pl0">
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:zwlr_output_head_v1:name">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:zwlr_output_head_v1:name">
+                <a href="#e:zwlr_output_head_v1:name" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   name
                 </div>
@@ -479,7 +493,8 @@ the lifetime of the wlr_output_head object.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:zwlr_output_head_v1:description">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:zwlr_output_head_v1:description">
+                <a href="#e:zwlr_output_head_v1:description" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   description
                 </div>
@@ -506,7 +521,8 @@ change over the lifetime of the wlr_output_head object.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:zwlr_output_head_v1:physical_size">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:zwlr_output_head_v1:physical_size">
+                <a href="#e:zwlr_output_head_v1:physical_size" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   physical_size
                 </div>
@@ -522,7 +538,8 @@ virtual device).
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:zwlr_output_head_v1:mode">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:zwlr_output_head_v1:mode">
+                <a href="#e:zwlr_output_head_v1:mode" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   mode
                 </div>
@@ -537,7 +554,8 @@ supported mode.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:zwlr_output_head_v1:enabled">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:zwlr_output_head_v1:enabled">
+                <a href="#e:zwlr_output_head_v1:enabled" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   enabled
                 </div>
@@ -555,7 +573,8 @@ transform and scale) are irrelevant.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:zwlr_output_head_v1:current_mode">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:zwlr_output_head_v1:current_mode">
+                <a href="#e:zwlr_output_head_v1:current_mode" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   current_mode
                 </div>
@@ -570,7 +589,8 @@ sent if the output is enabled.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:zwlr_output_head_v1:position">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:zwlr_output_head_v1:position">
+                <a href="#e:zwlr_output_head_v1:position" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   position
                 </div>
@@ -585,7 +605,8 @@ space. It is only sent if the output is enabled.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:zwlr_output_head_v1:transform">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:zwlr_output_head_v1:transform">
+                <a href="#e:zwlr_output_head_v1:transform" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   transform
                 </div>
@@ -600,7 +621,8 @@ It is only sent if the output is enabled.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:zwlr_output_head_v1:scale">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:zwlr_output_head_v1:scale">
+                <a href="#e:zwlr_output_head_v1:scale" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   scale
                 </div>
@@ -615,7 +637,8 @@ space. It is only sent if the output is enabled.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:zwlr_output_head_v1:finished">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:zwlr_output_head_v1:finished">
+                <a href="#e:zwlr_output_head_v1:finished" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   finished
                 </div>
@@ -631,7 +654,8 @@ resources associated with it.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:zwlr_output_head_v1:make">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:zwlr_output_head_v1:make">
+                <a href="#e:zwlr_output_head_v1:make" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   make
                 </div>
@@ -662,7 +686,8 @@ that the string provided by the description event should be preferred.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:zwlr_output_head_v1:model">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:zwlr_output_head_v1:model">
+                <a href="#e:zwlr_output_head_v1:model" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   model
                 </div>
@@ -693,7 +718,8 @@ that the string provided by the description event should be preferred.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:zwlr_output_head_v1:serial_number">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:zwlr_output_head_v1:serial_number">
+                <a href="#e:zwlr_output_head_v1:serial_number" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   serial_number
                 </div>
@@ -728,9 +754,10 @@ preferred.
       </li>
       
       <li class="mt4">
-        <div class="f2 lh-copy" id="i:zwlr_output_mode_v1">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:zwlr_output_mode_v1">
+          <a href="#i:zwlr_output_mode_v1" class="link dim black-70 child pr2 absolute left--2">#</a>
           zwlr_output_mode_v1
-        </div>
+        </h2>
         <div class="f6 lh-copy ws-pre-line courier">This object describes an output mode.
 
 Some heads don&#x27;t support output modes, in which case modes won&#x27;t be
@@ -749,7 +776,8 @@ in which properties are sent.
           <ul class="list pl0">
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:zwlr_output_mode_v1:size">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:zwlr_output_mode_v1:size">
+                <a href="#e:zwlr_output_mode_v1:size" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   size
                 </div>
@@ -766,7 +794,8 @@ may be scaled or transformed.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:zwlr_output_mode_v1:refresh">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:zwlr_output_mode_v1:refresh">
+                <a href="#e:zwlr_output_mode_v1:refresh" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   refresh
                 </div>
@@ -781,7 +810,8 @@ sent if the mode has a fixed refresh rate.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:zwlr_output_mode_v1:preferred">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:zwlr_output_mode_v1:preferred">
+                <a href="#e:zwlr_output_mode_v1:preferred" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   preferred
                 </div>
@@ -795,7 +825,8 @@ sent if the mode has a fixed refresh rate.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:zwlr_output_mode_v1:finished">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:zwlr_output_mode_v1:finished">
+                <a href="#e:zwlr_output_mode_v1:finished" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   finished
                 </div>
@@ -817,9 +848,10 @@ resources associated with it.
       </li>
       
       <li class="mt4">
-        <div class="f2 lh-copy" id="i:zwlr_output_configuration_v1">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:zwlr_output_configuration_v1">
+          <a href="#i:zwlr_output_configuration_v1" class="link dim black-70 child pr2 absolute left--2">#</a>
           zwlr_output_configuration_v1
-        </div>
+        </h2>
         <div class="f6 lh-copy ws-pre-line courier">This object is used by the client to describe a full output configuration.
 
 First, the client needs to setup the output configuration. Each head can
@@ -837,7 +869,8 @@ should destroy the configuration object.
           <ul class="list pl0">
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:zwlr_output_configuration_v1:enable_head">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zwlr_output_configuration_v1:enable_head">
+                <a href="#r:zwlr_output_configuration_v1:enable_head" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   enable_head
                 </div>
@@ -861,7 +894,8 @@ be used to change the head&#x27;s properties.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:zwlr_output_configuration_v1:disable_head">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zwlr_output_configuration_v1:disable_head">
+                <a href="#r:zwlr_output_configuration_v1:disable_head" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   disable_head
                 </div>
@@ -884,7 +918,8 @@ be used to change the head&#x27;s properties.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:zwlr_output_configuration_v1:apply">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zwlr_output_configuration_v1:apply">
+                <a href="#r:zwlr_output_configuration_v1:apply" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   apply
                 </div>
@@ -914,7 +949,8 @@ destructor is a protocol error.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:zwlr_output_configuration_v1:test">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zwlr_output_configuration_v1:test">
+                <a href="#r:zwlr_output_configuration_v1:test" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   test
                 </div>
@@ -943,7 +979,8 @@ destructor is a protocol error.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:zwlr_output_configuration_v1:destroy">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zwlr_output_configuration_v1:destroy">
+                <a href="#r:zwlr_output_configuration_v1:destroy" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   destroy
                 </div>
@@ -976,7 +1013,8 @@ via this object.
           <ul class="list pl0">
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:zwlr_output_configuration_v1:succeeded">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:zwlr_output_configuration_v1:succeeded">
+                <a href="#e:zwlr_output_configuration_v1:succeeded" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   succeeded
                 </div>
@@ -996,7 +1034,8 @@ will be sent followed by a wlr_output_manager.done event.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:zwlr_output_configuration_v1:failed">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:zwlr_output_configuration_v1:failed">
+                <a href="#e:zwlr_output_configuration_v1:failed" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   failed
                 </div>
@@ -1014,7 +1053,8 @@ Upon receiving this event, the client should destroy this object.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:zwlr_output_configuration_v1:cancelled">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:zwlr_output_configuration_v1:cancelled">
+                <a href="#e:zwlr_output_configuration_v1:cancelled" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   cancelled
                 </div>
@@ -1041,9 +1081,10 @@ Upon receiving this event, the client should destroy this object.
       </li>
       
       <li class="mt4">
-        <div class="f2 lh-copy" id="i:zwlr_output_configuration_head_v1">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:zwlr_output_configuration_head_v1">
+          <a href="#i:zwlr_output_configuration_head_v1" class="link dim black-70 child pr2 absolute left--2">#</a>
           zwlr_output_configuration_head_v1
-        </div>
+        </h2>
         <div class="f6 lh-copy ws-pre-line courier">This object is used by the client to update a single head&#x27;s configuration.
 
 It is a protocol error to set the same property twice.
@@ -1054,7 +1095,8 @@ It is a protocol error to set the same property twice.
           <ul class="list pl0">
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:zwlr_output_configuration_head_v1:set_mode">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zwlr_output_configuration_head_v1:set_mode">
+                <a href="#r:zwlr_output_configuration_head_v1:set_mode" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   set_mode
                 </div>
@@ -1077,7 +1119,8 @@ It is a protocol error to set the same property twice.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:zwlr_output_configuration_head_v1:set_custom_mode">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zwlr_output_configuration_head_v1:set_custom_mode">
+                <a href="#r:zwlr_output_configuration_head_v1:set_custom_mode" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   set_custom_mode
                 </div>
@@ -1108,7 +1151,8 @@ It is a protocol error to set both a mode and a custom mode.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:zwlr_output_configuration_head_v1:set_position">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zwlr_output_configuration_head_v1:set_position">
+                <a href="#r:zwlr_output_configuration_head_v1:set_position" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   set_position
                 </div>
@@ -1133,7 +1177,8 @@ It is a protocol error to set both a mode and a custom mode.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:zwlr_output_configuration_head_v1:set_transform">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zwlr_output_configuration_head_v1:set_transform">
+                <a href="#r:zwlr_output_configuration_head_v1:set_transform" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   set_transform
                 </div>
@@ -1156,7 +1201,8 @@ It is a protocol error to set both a mode and a custom mode.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:zwlr_output_configuration_head_v1:set_scale">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zwlr_output_configuration_head_v1:set_scale">
+                <a href="#r:zwlr_output_configuration_head_v1:set_scale" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   set_scale
                 </div>
@@ -1215,7 +1261,7 @@ THIS SOFTWARE.
 </div>
   </div>
 
-    </div>
+    </main>
 
   </body>
 </html>

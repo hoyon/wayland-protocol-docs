@@ -10,17 +10,17 @@
     <link rel="stylesheet" href="&#x2f;wayland-protocol-docs/main.css"></link>
      
   </head>
-  <body class="bg-near-white black-70 sans-serif pa2 ph6-l">
-
-    <a href="&#x2f;wayland-protocol-docs/" class="f4 link near-black dim lh-title">
-      Home
-    </a>
+  <body class="bg-near-white black-70 flex sans-serif ph4-l">
 
     
 
-    <div id="content">
-      
-  <div class="fl w-25 ph2">
+    <div id="sidebar" class="w-20 br b--white bw3">
+      <div class="fixed h-100">
+        <a href="&#x2f;wayland-protocol-docs/" class="f4 link near-black dim lh-title">
+          Home
+        </a>
+        
+  <div class="ph2">
     
 
 <div>
@@ -95,14 +95,21 @@
   </ul>
 </div>
   </div>
-  <div class="fl w-75 ph2">
+
+      </div>
+    </div>
+
+    <main id="content" class="mh4">
+      
+  <div class="ph2">
     <h1 class="f1 lh-title">fullscreen_shell_unstable_v1</h1>
     <ul class="list pl0">
       
       <li class="mt4">
-        <div class="f2 lh-copy" id="i:zwp_fullscreen_shell_v1">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:zwp_fullscreen_shell_v1">
+          <a href="#i:zwp_fullscreen_shell_v1" class="link dim black-70 child pr2 absolute left--2">#</a>
           zwp_fullscreen_shell_v1
-        </div>
+        </h2>
         <div class="f6 lh-copy ws-pre-line courier">Displays a single surface per output.
 
 This interface provides a mechanism for a single client to display
@@ -143,7 +150,8 @@ interface version number is reset.
           <ul class="list pl0">
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:zwp_fullscreen_shell_v1:release">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zwp_fullscreen_shell_v1:release">
+                <a href="#r:zwp_fullscreen_shell_v1:release" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   release
                 </div>
@@ -168,7 +176,8 @@ to free some of those bindings.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:zwp_fullscreen_shell_v1:present_surface">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zwp_fullscreen_shell_v1:present_surface">
+                <a href="#r:zwp_fullscreen_shell_v1:present_surface" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   present_surface
                 </div>
@@ -215,7 +224,8 @@ error.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:zwp_fullscreen_shell_v1:present_surface_for_mode">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zwp_fullscreen_shell_v1:present_surface_for_mode">
+                <a href="#r:zwp_fullscreen_shell_v1:present_surface_for_mode" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   present_surface_for_mode
                 </div>
@@ -289,7 +299,8 @@ error.
           <ul class="list pl0">
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:zwp_fullscreen_shell_v1:capability">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:zwp_fullscreen_shell_v1:capability">
+                <a href="#e:zwp_fullscreen_shell_v1:capability" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   capability
                 </div>
@@ -316,9 +327,10 @@ receive all the capability events.
       </li>
       
       <li class="mt4">
-        <div class="f2 lh-copy" id="i:zwp_fullscreen_shell_mode_feedback_v1">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:zwp_fullscreen_shell_mode_feedback_v1">
+          <a href="#i:zwp_fullscreen_shell_mode_feedback_v1" class="link dim black-70 child pr2 absolute left--2">#</a>
           zwp_fullscreen_shell_mode_feedback_v1
-        </div>
+        </h2>
         <div class="f6 lh-copy ws-pre-line courier"></div>
 
         
@@ -329,7 +341,8 @@ receive all the capability events.
           <ul class="list pl0">
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:zwp_fullscreen_shell_mode_feedback_v1:mode_successful">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:zwp_fullscreen_shell_mode_feedback_v1:mode_successful">
+                <a href="#e:zwp_fullscreen_shell_mode_feedback_v1:mode_successful" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   mode_successful
                 </div>
@@ -348,7 +361,8 @@ wl_fullscreen_shell_mode_feedback object.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:zwp_fullscreen_shell_mode_feedback_v1:mode_failed">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:zwp_fullscreen_shell_mode_feedback_v1:mode_failed">
+                <a href="#e:zwp_fullscreen_shell_mode_feedback_v1:mode_failed" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   mode_failed
                 </div>
@@ -367,7 +381,8 @@ wl_fullscreen_shell_mode_feedback object.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:zwp_fullscreen_shell_mode_feedback_v1:present_cancelled">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:zwp_fullscreen_shell_mode_feedback_v1:present_cancelled">
+                <a href="#e:zwp_fullscreen_shell_mode_feedback_v1:present_cancelled" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   present_cancelled
                 </div>
@@ -419,7 +434,7 @@ DEALINGS IN THE SOFTWARE.
 </div>
   </div>
 
-    </div>
+    </main>
 
   </body>
 </html>

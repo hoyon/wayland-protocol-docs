@@ -10,17 +10,17 @@
     <link rel="stylesheet" href="&#x2f;wayland-protocol-docs/main.css"></link>
      
   </head>
-  <body class="bg-near-white black-70 sans-serif pa2 ph6-l">
-
-    <a href="&#x2f;wayland-protocol-docs/" class="f4 link near-black dim lh-title">
-      Home
-    </a>
+  <body class="bg-near-white black-70 flex sans-serif ph4-l">
 
     
 
-    <div id="content">
-      
-  <div class="fl w-25 ph2">
+    <div id="sidebar" class="w-20 br b--white bw3">
+      <div class="fixed h-100">
+        <a href="&#x2f;wayland-protocol-docs/" class="f4 link near-black dim lh-title">
+          Home
+        </a>
+        
+  <div class="ph2">
     
 
 <div>
@@ -95,14 +95,21 @@
   </ul>
 </div>
   </div>
-  <div class="fl w-75 ph2">
+
+      </div>
+    </div>
+
+    <main id="content" class="mh4">
+      
+  <div class="ph2">
     <h1 class="f1 lh-title">wlr_export_dmabuf_unstable_v1</h1>
     <ul class="list pl0">
       
       <li class="mt4">
-        <div class="f2 lh-copy" id="i:zwlr_export_dmabuf_manager_v1">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:zwlr_export_dmabuf_manager_v1">
+          <a href="#i:zwlr_export_dmabuf_manager_v1" class="link dim black-70 child pr2 absolute left--2">#</a>
           zwlr_export_dmabuf_manager_v1
-        </div>
+        </h2>
         <div class="f6 lh-copy ws-pre-line courier">This object is a manager with which to start capturing from sources.
 </div>
 
@@ -111,7 +118,8 @@
           <ul class="list pl0">
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:zwlr_export_dmabuf_manager_v1:capture_output">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zwlr_export_dmabuf_manager_v1:capture_output">
+                <a href="#r:zwlr_export_dmabuf_manager_v1:capture_output" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   capture_output
                 </div>
@@ -136,7 +144,8 @@
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:zwlr_export_dmabuf_manager_v1:destroy">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zwlr_export_dmabuf_manager_v1:destroy">
+                <a href="#r:zwlr_export_dmabuf_manager_v1:destroy" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   destroy
                 </div>
@@ -167,9 +176,10 @@ appropriate destroy request has been called.
       </li>
       
       <li class="mt4">
-        <div class="f2 lh-copy" id="i:zwlr_export_dmabuf_frame_v1">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:zwlr_export_dmabuf_frame_v1">
+          <a href="#i:zwlr_export_dmabuf_frame_v1" class="link dim black-70 child pr2 absolute left--2">#</a>
           zwlr_export_dmabuf_frame_v1
-        </div>
+        </h2>
         <div class="f6 lh-copy ws-pre-line courier">This object represents a single DMA-BUF frame.
 
 If the capture is successful, the compositor will first send a &quot;frame&quot;
@@ -191,7 +201,8 @@ All frames are read-only and may not be written into or altered.
           <ul class="list pl0">
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:zwlr_export_dmabuf_frame_v1:destroy">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zwlr_export_dmabuf_frame_v1:destroy">
+                <a href="#r:zwlr_export_dmabuf_frame_v1:destroy" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   destroy
                 </div>
@@ -223,7 +234,8 @@ to close any FDs it has been given.
           <ul class="list pl0">
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:zwlr_export_dmabuf_frame_v1:frame">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:zwlr_export_dmabuf_frame_v1:frame">
+                <a href="#e:zwlr_export_dmabuf_frame_v1:frame" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   frame
                 </div>
@@ -242,7 +254,8 @@ This event is followed by a number of &quot;object&quot; as specified by the
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:zwlr_export_dmabuf_frame_v1:object">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:zwlr_export_dmabuf_frame_v1:object">
+                <a href="#e:zwlr_export_dmabuf_frame_v1:object" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   object
                 </div>
@@ -260,7 +273,8 @@ descriptor as soon as they&#x27;re done with it and even if the frame fails.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:zwlr_export_dmabuf_frame_v1:ready">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:zwlr_export_dmabuf_frame_v1:ready">
+                <a href="#e:zwlr_export_dmabuf_frame_v1:ready" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   ready
                 </div>
@@ -285,7 +299,8 @@ After receiving this event, the client should destroy this object.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:zwlr_export_dmabuf_frame_v1:cancel">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:zwlr_export_dmabuf_frame_v1:cancel">
+                <a href="#e:zwlr_export_dmabuf_frame_v1:cancel" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   cancel
                 </div>
@@ -338,7 +353,7 @@ DEALINGS IN THE SOFTWARE.
 </div>
   </div>
 
-    </div>
+    </main>
 
   </body>
 </html>

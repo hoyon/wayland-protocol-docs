@@ -10,17 +10,17 @@
     <link rel="stylesheet" href="&#x2f;wayland-protocol-docs/main.css"></link>
      
   </head>
-  <body class="bg-near-white black-70 sans-serif pa2 ph6-l">
-
-    <a href="&#x2f;wayland-protocol-docs/" class="f4 link near-black dim lh-title">
-      Home
-    </a>
+  <body class="bg-near-white black-70 flex sans-serif ph4-l">
 
     
 
-    <div id="content">
-      
-  <div class="fl w-25 ph2">
+    <div id="sidebar" class="w-20 br b--white bw3">
+      <div class="fixed h-100">
+        <a href="&#x2f;wayland-protocol-docs/" class="f4 link near-black dim lh-title">
+          Home
+        </a>
+        
+  <div class="ph2">
     
 
 <div>
@@ -83,14 +83,21 @@
   </ul>
 </div>
   </div>
-  <div class="fl w-75 ph2">
+
+      </div>
+    </div>
+
+    <main id="content" class="mh4">
+      
+  <div class="ph2">
     <h1 class="f1 lh-title">relative_pointer_unstable_v1</h1>
     <ul class="list pl0">
       
       <li class="mt4">
-        <div class="f2 lh-copy" id="i:zwp_relative_pointer_manager_v1">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:zwp_relative_pointer_manager_v1">
+          <a href="#i:zwp_relative_pointer_manager_v1" class="link dim black-70 child pr2 absolute left--2">#</a>
           zwp_relative_pointer_manager_v1
-        </div>
+        </h2>
         <div class="f6 lh-copy ws-pre-line courier">A global interface used for getting the relative pointer object for a
 given pointer.
 </div>
@@ -100,7 +107,8 @@ given pointer.
           <ul class="list pl0">
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:zwp_relative_pointer_manager_v1:destroy">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zwp_relative_pointer_manager_v1:destroy">
+                <a href="#r:zwp_relative_pointer_manager_v1:destroy" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   destroy
                 </div>
@@ -122,7 +130,8 @@ relative pointer manager object.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:zwp_relative_pointer_manager_v1:get_relative_pointer">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zwp_relative_pointer_manager_v1:get_relative_pointer">
+                <a href="#r:zwp_relative_pointer_manager_v1:get_relative_pointer" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   get_relative_pointer
                 </div>
@@ -155,9 +164,10 @@ wp_relative_pointer interface for more details.
       </li>
       
       <li class="mt4">
-        <div class="f2 lh-copy" id="i:zwp_relative_pointer_v1">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:zwp_relative_pointer_v1">
+          <a href="#i:zwp_relative_pointer_v1" class="link dim black-70 child pr2 absolute left--2">#</a>
           zwp_relative_pointer_v1
-        </div>
+        </h2>
         <div class="f6 lh-copy ws-pre-line courier">A wp_relative_pointer object is an extension to the wl_pointer interface
 used for emitting relative pointer events. It shares the same focus as
 wl_pointer objects of the same seat and will only emit events when it has
@@ -169,7 +179,8 @@ focus.
           <ul class="list pl0">
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:zwp_relative_pointer_v1:destroy">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zwp_relative_pointer_v1:destroy">
+                <a href="#r:zwp_relative_pointer_v1:destroy" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   destroy
                 </div>
@@ -196,7 +207,8 @@ focus.
           <ul class="list pl0">
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:zwp_relative_pointer_v1:relative_motion">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:zwp_relative_pointer_v1:relative_motion">
+                <a href="#e:zwp_relative_pointer_v1:relative_motion" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   relative_motion
                 </div>
@@ -271,7 +283,7 @@ DEALINGS IN THE SOFTWARE.
 </div>
   </div>
 
-    </div>
+    </main>
 
   </body>
 </html>

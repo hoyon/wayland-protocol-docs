@@ -1,0 +1,1025 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>input_method_unstable_v2</title>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="&#x2f;wayland-protocol-docs/main.css"></link>
+     
+  </head>
+  <body class="bg-near-white black-70 flex sans-serif ph4-l">
+
+    
+
+    <div id="sidebar" class="w-20 br b--white bw3">
+      <div class="fixed h-100">
+        <a href="&#x2f;wayland-protocol-docs/" class="f4 link near-black dim lh-title">
+          Home
+        </a>
+        
+  <div class="ph2">
+    
+
+<div>
+  <ul class="list pl0">
+  
+    <li>
+      <a href="#i:zwp_input_method_v2" class="link blue underline-hover lh-copy">zwp_input_method_v2</a>
+
+      
+        <div>
+          <a href="#rh:zwp_input_method_v2" class="link blue underline-hover lh-copy pl3">Requests</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#r:zwp_input_method_v2:commit_string" class="link blue underline-hover lh-copy">commit_string</a>
+          </li>
+          
+          <li>
+            <a href="#r:zwp_input_method_v2:set_preedit_string" class="link blue underline-hover lh-copy">set_preedit_string</a>
+          </li>
+          
+          <li>
+            <a href="#r:zwp_input_method_v2:delete_surrounding_text" class="link blue underline-hover lh-copy">delete_surrounding_text</a>
+          </li>
+          
+          <li>
+            <a href="#r:zwp_input_method_v2:commit" class="link blue underline-hover lh-copy">commit</a>
+          </li>
+          
+          <li>
+            <a href="#r:zwp_input_method_v2:get_input_popup_surface" class="link blue underline-hover lh-copy">get_input_popup_surface</a>
+          </li>
+          
+          <li>
+            <a href="#r:zwp_input_method_v2:grab_keyboard" class="link blue underline-hover lh-copy">grab_keyboard</a>
+          </li>
+          
+          <li>
+            <a href="#r:zwp_input_method_v2:destroy" class="link blue underline-hover lh-copy">destroy</a>
+          </li>
+          
+        </ul>
+      
+
+      
+        <div>
+          <a href="#eh:zwp_input_method_v2" class="link blue underline-hover lh-copy pl3">Events</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#e:zwp_input_method_v2:activate" class="link blue underline-hover lh-copy">activate</a>
+          </li>
+          
+          <li>
+            <a href="#e:zwp_input_method_v2:deactivate" class="link blue underline-hover lh-copy">deactivate</a>
+          </li>
+          
+          <li>
+            <a href="#e:zwp_input_method_v2:surrounding_text" class="link blue underline-hover lh-copy">surrounding_text</a>
+          </li>
+          
+          <li>
+            <a href="#e:zwp_input_method_v2:text_change_cause" class="link blue underline-hover lh-copy">text_change_cause</a>
+          </li>
+          
+          <li>
+            <a href="#e:zwp_input_method_v2:content_type" class="link blue underline-hover lh-copy">content_type</a>
+          </li>
+          
+          <li>
+            <a href="#e:zwp_input_method_v2:done" class="link blue underline-hover lh-copy">done</a>
+          </li>
+          
+          <li>
+            <a href="#e:zwp_input_method_v2:unavailable" class="link blue underline-hover lh-copy">unavailable</a>
+          </li>
+          
+        </ul>
+      
+    </li>
+  
+    <li>
+      <a href="#i:zwp_input_popup_surface_v2" class="link blue underline-hover lh-copy">zwp_input_popup_surface_v2</a>
+
+      
+        <div>
+          <a href="#rh:zwp_input_popup_surface_v2" class="link blue underline-hover lh-copy pl3">Requests</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#r:zwp_input_popup_surface_v2:destroy" class="link blue underline-hover lh-copy">destroy</a>
+          </li>
+          
+        </ul>
+      
+
+      
+        <div>
+          <a href="#eh:zwp_input_popup_surface_v2" class="link blue underline-hover lh-copy pl3">Events</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#e:zwp_input_popup_surface_v2:text_input_rectangle" class="link blue underline-hover lh-copy">text_input_rectangle</a>
+          </li>
+          
+        </ul>
+      
+    </li>
+  
+    <li>
+      <a href="#i:zwp_input_method_keyboard_grab_v2" class="link blue underline-hover lh-copy">zwp_input_method_keyboard_grab_v2</a>
+
+      
+        <div>
+          <a href="#rh:zwp_input_method_keyboard_grab_v2" class="link blue underline-hover lh-copy pl3">Requests</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#r:zwp_input_method_keyboard_grab_v2:release" class="link blue underline-hover lh-copy">release</a>
+          </li>
+          
+        </ul>
+      
+
+      
+        <div>
+          <a href="#eh:zwp_input_method_keyboard_grab_v2" class="link blue underline-hover lh-copy pl3">Events</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#e:zwp_input_method_keyboard_grab_v2:keymap" class="link blue underline-hover lh-copy">keymap</a>
+          </li>
+          
+          <li>
+            <a href="#e:zwp_input_method_keyboard_grab_v2:key" class="link blue underline-hover lh-copy">key</a>
+          </li>
+          
+          <li>
+            <a href="#e:zwp_input_method_keyboard_grab_v2:modifiers" class="link blue underline-hover lh-copy">modifiers</a>
+          </li>
+          
+          <li>
+            <a href="#e:zwp_input_method_keyboard_grab_v2:repeat_info" class="link blue underline-hover lh-copy">repeat_info</a>
+          </li>
+          
+        </ul>
+      
+    </li>
+  
+    <li>
+      <a href="#i:zwp_input_method_manager_v2" class="link blue underline-hover lh-copy">zwp_input_method_manager_v2</a>
+
+      
+        <div>
+          <a href="#rh:zwp_input_method_manager_v2" class="link blue underline-hover lh-copy pl3">Requests</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#r:zwp_input_method_manager_v2:get_input_method" class="link blue underline-hover lh-copy">get_input_method</a>
+          </li>
+          
+          <li>
+            <a href="#r:zwp_input_method_manager_v2:destroy" class="link blue underline-hover lh-copy">destroy</a>
+          </li>
+          
+        </ul>
+      
+
+      
+      
+    </li>
+  
+  </ul>
+</div>
+  </div>
+
+      </div>
+    </div>
+
+    <main id="content" class="mh4">
+      
+  <div class="ph2">
+    <h1 class="f1 lh-title">input_method_unstable_v2</h1>
+    <ul class="list pl0">
+      
+      <li class="mt4">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:zwp_input_method_v2">
+          <a href="#i:zwp_input_method_v2" class="link dim black-70 child pr2 absolute left--2">#</a>
+          zwp_input_method_v2
+        </h2>
+        <div class="f6 lh-copy ws-pre-line courier">An input method object allows for clients to compose text.
+
+The objects connects the client to a text input in an application, and
+lets the client to serve as an input method for a seat.
+
+The zwp_input_method_v2 object can occupy two distinct states: active and
+inactive. In the active state, the object is associated to and
+communicates with a text input. In the inactive state, there is no
+associated text input, and the only communication is with the compositor.
+Initially, the input method is in the inactive state.
+
+Requests issued in the inactive state must be accepted by the compositor.
+Because of the serial mechanism, and the state reset on activate event,
+they will not have any effect on the state of the next text input.
+
+There must be no more than one input method object per seat.
+</div>
+
+        
+          <h3 class=" f5 lh-title" id="rh:zwp_input_method_v2">Requests</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zwp_input_method_v2:commit_string">
+                <a href="#r:zwp_input_method_v2:commit_string" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  commit_string
+                </div>
+                <div class="f5 ml2">
+                  commit string
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">zwp_input_method_v2_commit_string</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwp_input_method_v2*</span> zwp_input_method_v2,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">const char*</span> text</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier">Send the commit string text for insertion to the application.
+
+Inserts a string at current cursor position (see commit event
+sequence). The string to commit could be either just a single character
+after a key press or the result of some composing.
+
+The argument text is a buffer containing the string to insert. There is
+a maximum length of wayland messages, so text can not be longer than
+4000 bytes.
+
+Values set with this event are double-buffered. They must be applied
+and reset to initial on the next zwp_text_input_v3.commit request.
+
+The initial value of text is an empty string.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zwp_input_method_v2:set_preedit_string">
+                <a href="#r:zwp_input_method_v2:set_preedit_string" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  set_preedit_string
+                </div>
+                <div class="f5 ml2">
+                  pre-edit string
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">zwp_input_method_v2_set_preedit_string</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwp_input_method_v2*</span> zwp_input_method_v2,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">const char*</span> text,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> cursor_begin,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> cursor_end</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier">Send the pre-edit string text to the application text input.
+
+Place a new composing text (pre-edit) at the current cursor position.
+Any previously set composing text must be removed. Any previously
+existing selected text must be removed. The cursor is moved to a new
+position within the preedit string.
+
+The argument text is a buffer containing the preedit string. There is
+a maximum length of wayland messages, so text can not be longer than
+4000 bytes.
+
+The arguments cursor_begin and cursor_end are counted in bytes relative
+to the beginning of the submitted string buffer. Cursor should be
+hidden by the text input when both are equal to -1.
+
+cursor_begin indicates the beginning of the cursor. cursor_end
+indicates the end of the cursor. It may be equal or different than
+cursor_begin.
+
+Values set with this event are double-buffered. They must be applied on
+the next zwp_input_method_v2.commit event.
+
+The initial value of text is an empty string. The initial value of
+cursor_begin, and cursor_end are both 0.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zwp_input_method_v2:delete_surrounding_text">
+                <a href="#r:zwp_input_method_v2:delete_surrounding_text" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  delete_surrounding_text
+                </div>
+                <div class="f5 ml2">
+                  delete text
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">zwp_input_method_v2_delete_surrounding_text</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwp_input_method_v2*</span> zwp_input_method_v2,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> before_length,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> after_length</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier">Remove the surrounding text.
+
+before_length and after_length are the number of bytes before and after
+the current cursor index (excluding the preedit text) to delete.
+
+If any preedit text is present, it is replaced with the cursor for the
+purpose of this event. In effect before_length is counted from the
+beginning of preedit text, and after_length from its end (see commit
+event sequence).
+
+Values set with this event are double-buffered. They must be applied
+and reset to initial on the next zwp_input_method_v2.commit request.
+
+The initial values of both before_length and after_length are 0.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zwp_input_method_v2:commit">
+                <a href="#r:zwp_input_method_v2:commit" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  commit
+                </div>
+                <div class="f5 ml2">
+                  apply state
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">zwp_input_method_v2_commit</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwp_input_method_v2*</span> zwp_input_method_v2,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> serial</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier">Apply state changes from commit_string, set_preedit_string and
+delete_surrounding_text requests.
+
+The state relating to these events is double-buffered, and each one
+modifies the pending state. This request replaces the current state
+with the pending state.
+
+The connected text input is expected to proceed by evaluating the
+changes in the following order:
+
+1. Replace existing preedit string with the cursor.
+2. Delete requested surrounding text.
+3. Insert commit string with the cursor at its end.
+4. Calculate surrounding text to send.
+5. Insert new preedit text in cursor position.
+6. Place cursor inside preedit text.
+
+The serial number reflects the last state of the zwp_input_method_v2
+object known to the client. The value of the serial argument must be
+equal to the number of done events already issued by that object. When
+the compositor receives a commit request with a serial different than
+the number of past done events, it must proceed as normal, except it
+should not change the current state of the zwp_input_method_v2 object.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zwp_input_method_v2:get_input_popup_surface">
+                <a href="#r:zwp_input_method_v2:get_input_popup_surface" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  get_input_popup_surface
+                </div>
+                <div class="f5 ml2">
+                  create popup surface
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>struct zwp_input_popup_surface_v2* </span><span class="dark-blue">zwp_input_method_v2_get_input_popup_surface</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwp_input_method_v2*</span> zwp_input_method_v2,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_surface*</span> surface</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier">Creates a new zwp_input_popup_surface_v2 object wrapping a given
+surface.
+
+The surface gets assigned the &quot;input_popup&quot; role. If the surface
+already has an assigned role, the compositor must issue a protocol
+error.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zwp_input_method_v2:grab_keyboard">
+                <a href="#r:zwp_input_method_v2:grab_keyboard" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  grab_keyboard
+                </div>
+                <div class="f5 ml2">
+                  grab hardware keyboard
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>struct zwp_input_method_keyboard_grab_v2* </span><span class="dark-blue">zwp_input_method_v2_grab_keyboard</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwp_input_method_v2*</span> zwp_input_method_v2</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier">Allow an input method to receive hardware keyboard input and process
+key events to generate text events (with pre-edit) over the wire. This
+allows input methods which compose multiple key events for inputting
+text like it is done for CJK languages.
+
+The compositor should send all keyboard events on the seat to the grab
+holder via the returned wl_keyboard object. Nevertheless, the
+compositor may decide not to forward any particular event. The
+compositor must not further process any event after it has been
+forwarded to the grab holder.
+
+Releasing the resulting wl_keyboard object releases the grab.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zwp_input_method_v2:destroy">
+                <a href="#r:zwp_input_method_v2:destroy" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  destroy
+                </div>
+                <div class="f5 ml2">
+                  destroy the text input
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">zwp_input_method_v2_destroy</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwp_input_method_v2*</span> zwp_input_method_v2</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier">Destroys the zwp_text_input_v2 object and any associated child
+objects, i.e. zwp_input_popup_surface_v2 and
+zwp_input_method_keyboard_grab_v2.
+</div>
+            </li>
+            
+          </ul>
+        
+
+        
+          <h3 class=" f5 lh-title" id="eh:zwp_input_method_v2">Events</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:zwp_input_method_v2:activate">
+                <a href="#e:zwp_input_method_v2:activate" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  activate
+                </div>
+                <div class="f5 ml2">
+                  input method has been requested
+                </div>
+              </div>
+
+              <div class="f6 lh-copy ws-pre-line courier">Notification that a text input focused on this seat requested the input
+method to be activated.
+
+This event serves the purpose of providing the compositor with an
+active input method.
+
+This event resets all state associated with previous enable, disable,
+surrounding_text, text_change_cause, and content_type events, as well
+as the state associated with set_preedit_string, commit_string, and
+delete_surrounding_text requests. In addition, it marks the
+zwp_input_method_v2 object as active, and makes any existing
+zwp_input_popup_surface_v2 objects visible.
+
+The surrounding_text, and content_type events must follow before the
+next done event if the text input supports the respective
+functionality.
+
+State set with this event is double-buffered. It will get applied on
+the next zwp_input_method_v2.done event, and stay valid until changed.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:zwp_input_method_v2:deactivate">
+                <a href="#e:zwp_input_method_v2:deactivate" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  deactivate
+                </div>
+                <div class="f5 ml2">
+                  deactivate event
+                </div>
+              </div>
+
+              <div class="f6 lh-copy ws-pre-line courier">Notification that no focused text input currently needs an active 
+input method on this seat.
+
+This event marks the zwp_input_method_v2 object as inactive. The
+compositor must make all existing zwp_input_popup_surface_v2 objects
+invisible until the next activate event.
+
+State set with this event is double-buffered. It will get applied on
+the next zwp_input_method_v2.done event, and stay valid until changed.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:zwp_input_method_v2:surrounding_text">
+                <a href="#e:zwp_input_method_v2:surrounding_text" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  surrounding_text
+                </div>
+                <div class="f5 ml2">
+                  surrounding text event
+                </div>
+              </div>
+
+              <div class="f6 lh-copy ws-pre-line courier">Updates the surrounding plain text around the cursor, excluding the
+preedit text.
+
+If any preedit text is present, it is replaced with the cursor for the
+purpose of this event.
+
+The argument text is a buffer containing the preedit string, and must
+include the cursor position, and the complete selection. It should
+contain additional characters before and after these. There is a
+maximum length of wayland messages, so text can not be longer than 4000
+bytes.
+
+cursor is the byte offset of the cursor within the text buffer.
+
+anchor is the byte offset of the selection anchor within the text
+buffer. If there is no selected text, anchor must be the same as
+cursor.
+
+If this event does not arrive before the first done event, the input
+method may assume that the text input does not support this
+functionality and ignore following surrounding_text events.
+
+Values set with this event are double-buffered. They will get applied
+and set to initial values on the next zwp_input_method_v2.done
+event.
+
+The initial state for affected fields is empty, meaning that the text
+input does not support sending surrounding text. If the empty values
+get applied, subsequent attempts to change them may have no effect.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:zwp_input_method_v2:text_change_cause">
+                <a href="#e:zwp_input_method_v2:text_change_cause" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  text_change_cause
+                </div>
+                <div class="f5 ml2">
+                  indicates the cause of surrounding text change
+                </div>
+              </div>
+
+              <div class="f6 lh-copy ws-pre-line courier">Tells the input method why the text surrounding the cursor changed.
+
+Whenever the client detects an external change in text, cursor, or
+anchor position, it must issue this request to the compositor. This
+request is intended to give the input method a chance to update the
+preedit text in an appropriate way, e.g. by removing it when the user
+starts typing with a keyboard.
+
+cause describes the source of the change.
+
+The value set with this event is double-buffered. It will get applied
+and set to its initial value on the next zwp_input_method_v2.done
+event.
+
+The initial value of cause is input_method.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:zwp_input_method_v2:content_type">
+                <a href="#e:zwp_input_method_v2:content_type" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  content_type
+                </div>
+                <div class="f5 ml2">
+                  content purpose and hint
+                </div>
+              </div>
+
+              <div class="f6 lh-copy ws-pre-line courier">Indicates the content type and hint for the current
+zwp_input_method_v2 instance.
+
+Values set with this event are double-buffered. They will get applied
+on the next zwp_input_method_v2.done event.
+
+The initial value for hint is none, and the initial value for purpose
+is normal.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:zwp_input_method_v2:done">
+                <a href="#e:zwp_input_method_v2:done" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  done
+                </div>
+                <div class="f5 ml2">
+                  apply state
+                </div>
+              </div>
+
+              <div class="f6 lh-copy ws-pre-line courier">Atomically applies state changes recently sent to the client.
+
+The done event establishes and updates the state of the client, and
+must be issued after any changes to apply them.
+
+Text input state (content purpose, content hint, surrounding text, and
+change cause) is conceptually double-buffered within an input method
+context.
+
+Events modify the pending state, as opposed to the current state in use
+by the input method. A done event atomically applies all pending state,
+replacing the current state. After done, the new pending state is as
+documented for each related request.
+
+Events must be applied in the order of arrival.
+
+Neither current nor pending state are modified unless noted otherwise.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:zwp_input_method_v2:unavailable">
+                <a href="#e:zwp_input_method_v2:unavailable" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  unavailable
+                </div>
+                <div class="f5 ml2">
+                  input method unavailable
+                </div>
+              </div>
+
+              <div class="f6 lh-copy ws-pre-line courier">The input method ceased to be available.
+
+The compositor must issue this event as the only event on the object if
+there was another input_method object associated with the same seat at
+the time of its creation.
+
+The compositor must issue this request when the object is no longer
+useable, e.g. due to seat removal.
+
+The input method context becomes inert and should be destroyed after
+deactivation is handled. Any further requests and events except for the
+destroy request must be ignored.
+</div>
+            </li>
+            
+          </ul>
+
+        
+
+      </li>
+      
+      <li class="mt4">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:zwp_input_popup_surface_v2">
+          <a href="#i:zwp_input_popup_surface_v2" class="link dim black-70 child pr2 absolute left--2">#</a>
+          zwp_input_popup_surface_v2
+        </h2>
+        <div class="f6 lh-copy ws-pre-line courier">This interface marks a surface as a popup for interacting with an input
+method.
+
+The compositor should place it near the active text input area. It must
+be visible if and only if the input method is in the active state.
+
+The client must not destroy the underlying wl_surface while the
+zwp_input_popup_surface_v2 object exists.
+</div>
+
+        
+          <h3 class=" f5 lh-title" id="rh:zwp_input_popup_surface_v2">Requests</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zwp_input_popup_surface_v2:destroy">
+                <a href="#r:zwp_input_popup_surface_v2:destroy" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  destroy
+                </div>
+                <div class="f5 ml2">
+                  
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">zwp_input_popup_surface_v2_destroy</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwp_input_popup_surface_v2*</span> zwp_input_popup_surface_v2</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier"></div>
+            </li>
+            
+          </ul>
+        
+
+        
+          <h3 class=" f5 lh-title" id="eh:zwp_input_popup_surface_v2">Events</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:zwp_input_popup_surface_v2:text_input_rectangle">
+                <a href="#e:zwp_input_popup_surface_v2:text_input_rectangle" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  text_input_rectangle
+                </div>
+                <div class="f5 ml2">
+                  set text input area position
+                </div>
+              </div>
+
+              <div class="f6 lh-copy ws-pre-line courier">Notify about the position of the area of the text input expressed as a
+rectangle in surface local coordinates.
+
+This is a hint to the input method telling it the relative position of
+the text being entered.
+</div>
+            </li>
+            
+          </ul>
+
+        
+
+      </li>
+      
+      <li class="mt4">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:zwp_input_method_keyboard_grab_v2">
+          <a href="#i:zwp_input_method_keyboard_grab_v2" class="link dim black-70 child pr2 absolute left--2">#</a>
+          zwp_input_method_keyboard_grab_v2
+        </h2>
+        <div class="f6 lh-copy ws-pre-line courier">The zwp_input_method_keyboard_grab_v2 interface represents an exclusive
+grab of the wl_keyboard interface associated with the seat.
+</div>
+
+        
+          <h3 class=" f5 lh-title" id="rh:zwp_input_method_keyboard_grab_v2">Requests</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zwp_input_method_keyboard_grab_v2:release">
+                <a href="#r:zwp_input_method_keyboard_grab_v2:release" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  release
+                </div>
+                <div class="f5 ml2">
+                  release the grab object
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">zwp_input_method_keyboard_grab_v2_release</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwp_input_method_keyboard_grab_v2*</span> zwp_input_method_keyboard_grab_v2</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier"></div>
+            </li>
+            
+          </ul>
+        
+
+        
+          <h3 class=" f5 lh-title" id="eh:zwp_input_method_keyboard_grab_v2">Events</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:zwp_input_method_keyboard_grab_v2:keymap">
+                <a href="#e:zwp_input_method_keyboard_grab_v2:keymap" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  keymap
+                </div>
+                <div class="f5 ml2">
+                  keyboard mapping
+                </div>
+              </div>
+
+              <div class="f6 lh-copy ws-pre-line courier">This event provides a file descriptor to the client which can be
+memory-mapped to provide a keyboard mapping description.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:zwp_input_method_keyboard_grab_v2:key">
+                <a href="#e:zwp_input_method_keyboard_grab_v2:key" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  key
+                </div>
+                <div class="f5 ml2">
+                  key event
+                </div>
+              </div>
+
+              <div class="f6 lh-copy ws-pre-line courier">A key was pressed or released.
+The time argument is a timestamp with millisecond granularity, with an
+undefined base.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:zwp_input_method_keyboard_grab_v2:modifiers">
+                <a href="#e:zwp_input_method_keyboard_grab_v2:modifiers" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  modifiers
+                </div>
+                <div class="f5 ml2">
+                  modifier and group state
+                </div>
+              </div>
+
+              <div class="f6 lh-copy ws-pre-line courier">Notifies clients that the modifier and&#x2f;or group state has changed, and
+it should update its local state.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:zwp_input_method_keyboard_grab_v2:repeat_info">
+                <a href="#e:zwp_input_method_keyboard_grab_v2:repeat_info" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  repeat_info
+                </div>
+                <div class="f5 ml2">
+                  repeat rate and delay
+                </div>
+              </div>
+
+              <div class="f6 lh-copy ws-pre-line courier">Informs the client about the keyboard&#x27;s repeat rate and delay.
+
+This event is sent as soon as the zwp_input_method_keyboard_grab_v2
+object has been created, and is guaranteed to be received by the
+client before any key press event.
+
+Negative values for either rate or delay are illegal. A rate of zero
+will disable any repeating (regardless of the value of delay).
+
+This event can be sent later on as well with a new value if necessary,
+so clients should continue listening for the event past the creation
+of zwp_input_method_keyboard_grab_v2.
+</div>
+            </li>
+            
+          </ul>
+
+        
+
+      </li>
+      
+      <li class="mt4">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:zwp_input_method_manager_v2">
+          <a href="#i:zwp_input_method_manager_v2" class="link dim black-70 child pr2 absolute left--2">#</a>
+          zwp_input_method_manager_v2
+        </h2>
+        <div class="f6 lh-copy ws-pre-line courier">The input method manager allows the client to become the input method on
+a chosen seat.
+
+No more than one input method must be associated with any seat at any
+given time.
+</div>
+
+        
+          <h3 class=" f5 lh-title" id="rh:zwp_input_method_manager_v2">Requests</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zwp_input_method_manager_v2:get_input_method">
+                <a href="#r:zwp_input_method_manager_v2:get_input_method" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  get_input_method
+                </div>
+                <div class="f5 ml2">
+                  request an input method object
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>struct zwp_input_method_v2* </span><span class="dark-blue">zwp_input_method_manager_v2_get_input_method</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwp_input_method_manager_v2*</span> zwp_input_method_manager_v2,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_seat*</span> seat</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier">Request a new input zwp_input_method_v2 object associated with a given
+seat.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zwp_input_method_manager_v2:destroy">
+                <a href="#r:zwp_input_method_manager_v2:destroy" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  destroy
+                </div>
+                <div class="f5 ml2">
+                  destroy the input method manager
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">zwp_input_method_manager_v2_destroy</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwp_input_method_manager_v2*</span> zwp_input_method_manager_v2</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier">Destroys the zwp_input_method_manager_v2 object.
+
+The zwp_input_method_v2 objects originating from it remain valid.
+</div>
+            </li>
+            
+          </ul>
+        
+
+        
+
+        
+
+      </li>
+      
+    </ul>
+
+    <h2 class="f4 lh-title">Copyright Info</h2>
+    <div class="f7 lh-copy ws-pre-line courier">Copyright © 2008-2011 Kristian Høgsberg
+Copyright © 2010-2011 Intel Corporation
+Copyright © 2012-2013 Collabora, Ltd.
+Copyright © 2012, 2013 Intel Corporation
+Copyright © 2015, 2016 Jan Arne Petersen
+Copyright © 2017, 2018 Red Hat, Inc.
+Copyright © 2018       Purism SPC
+
+Permission is hereby granted, free of charge, to any person obtaining a
+copy of this software and associated documentation files (the &quot;Software&quot;),
+to deal in the Software without restriction, including without limitation
+the rights to use, copy, modify, merge, publish, distribute, sublicense,
+and&#x2f;or sell copies of the Software, and to permit persons to whom the
+Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice (including the next
+paragraph) shall be included in all copies or substantial portions of the
+Software.
+
+THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL
+THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+DEALINGS IN THE SOFTWARE.
+</div>
+  </div>
+
+    </main>
+
+  </body>
+</html>

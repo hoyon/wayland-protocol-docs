@@ -10,17 +10,17 @@
     <link rel="stylesheet" href="&#x2f;wayland-protocol-docs/main.css"></link>
      
   </head>
-  <body class="bg-near-white black-70 sans-serif pa2 ph6-l">
-
-    <a href="&#x2f;wayland-protocol-docs/" class="f4 link near-black dim lh-title">
-      Home
-    </a>
+  <body class="bg-near-white black-70 flex sans-serif ph4-l">
 
     
 
-    <div id="content">
-      
-  <div class="fl w-25 ph2">
+    <div id="sidebar" class="w-20 br b--white bw3">
+      <div class="fixed h-100">
+        <a href="&#x2f;wayland-protocol-docs/" class="f4 link near-black dim lh-title">
+          Home
+        </a>
+        
+  <div class="ph2">
     
 
 <div>
@@ -941,14 +941,21 @@
   </ul>
 </div>
   </div>
-  <div class="fl w-75 ph2">
+
+      </div>
+    </div>
+
+    <main id="content" class="mh4">
+      
+  <div class="ph2">
     <h1 class="f1 lh-title">wayland</h1>
     <ul class="list pl0">
       
       <li class="mt4">
-        <div class="f2 lh-copy" id="i:wl_display">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:wl_display">
+          <a href="#i:wl_display" class="link dim black-70 child pr2 absolute left--2">#</a>
           wl_display
-        </div>
+        </h2>
         <div class="f6 lh-copy ws-pre-line courier">The core global object.  This is a special singleton object.  It
 is used for internal Wayland protocol features.
 </div>
@@ -958,7 +965,8 @@ is used for internal Wayland protocol features.
           <ul class="list pl0">
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:wl_display:sync">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:wl_display:sync">
+                <a href="#r:wl_display:sync" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   sync
                 </div>
@@ -989,7 +997,8 @@ The callback_data passed in the callback is the event serial.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:wl_display:get_registry">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:wl_display:get_registry">
+                <a href="#r:wl_display:get_registry" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   get_registry
                 </div>
@@ -1025,7 +1034,8 @@ possible to avoid wasting memory.
           <ul class="list pl0">
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:wl_display:error">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:wl_display:error">
+                <a href="#e:wl_display:error" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   error
                 </div>
@@ -1045,7 +1055,8 @@ of the error, for (debugging) convenience.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:wl_display:delete_id">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:wl_display:delete_id">
+                <a href="#e:wl_display:delete_id" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   delete_id
                 </div>
@@ -1069,9 +1080,10 @@ it will know that it can safely reuse the object ID.
       </li>
       
       <li class="mt4">
-        <div class="f2 lh-copy" id="i:wl_registry">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:wl_registry">
+          <a href="#i:wl_registry" class="link dim black-70 child pr2 absolute left--2">#</a>
           wl_registry
-        </div>
+        </h2>
         <div class="f6 lh-copy ws-pre-line courier">The singleton global registry object.  The server has a number of
 global objects that are available to all clients.  These objects
 typically represent an actual object in the server (for example,
@@ -1099,7 +1111,8 @@ the object.
           <ul class="list pl0">
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:wl_registry:bind">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:wl_registry:bind">
+                <a href="#r:wl_registry:bind" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   bind
                 </div>
@@ -1130,7 +1143,8 @@ specified name as the identifier.
           <ul class="list pl0">
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:wl_registry:global">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:wl_registry:global">
+                <a href="#e:wl_registry:global" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   global
                 </div>
@@ -1148,7 +1162,8 @@ given version of the given interface.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:wl_registry:global_remove">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:wl_registry:global_remove">
+                <a href="#e:wl_registry:global_remove" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   global_remove
                 </div>
@@ -1177,9 +1192,10 @@ the global going away and a client sending a request to it.
       </li>
       
       <li class="mt4">
-        <div class="f2 lh-copy" id="i:wl_callback">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:wl_callback">
+          <a href="#i:wl_callback" class="link dim black-70 child pr2 absolute left--2">#</a>
           wl_callback
-        </div>
+        </h2>
         <div class="f6 lh-copy ws-pre-line courier">Clients can handle the &#x27;done&#x27; event to get notified when
 the related request is done.
 </div>
@@ -1192,7 +1208,8 @@ the related request is done.
           <ul class="list pl0">
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:wl_callback:done">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:wl_callback:done">
+                <a href="#e:wl_callback:done" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   done
                 </div>
@@ -1212,9 +1229,10 @@ the related request is done.
       </li>
       
       <li class="mt4">
-        <div class="f2 lh-copy" id="i:wl_compositor">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:wl_compositor">
+          <a href="#i:wl_compositor" class="link dim black-70 child pr2 absolute left--2">#</a>
           wl_compositor
-        </div>
+        </h2>
         <div class="f6 lh-copy ws-pre-line courier">A compositor.  This object is a singleton global.  The
 compositor is in charge of combining the contents of multiple
 surfaces into one displayable output.
@@ -1225,7 +1243,8 @@ surfaces into one displayable output.
           <ul class="list pl0">
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:wl_compositor:create_surface">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:wl_compositor:create_surface">
+                <a href="#r:wl_compositor:create_surface" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   create_surface
                 </div>
@@ -1246,7 +1265,8 @@ surfaces into one displayable output.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:wl_compositor:create_region">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:wl_compositor:create_region">
+                <a href="#r:wl_compositor:create_region" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   create_region
                 </div>
@@ -1276,9 +1296,10 @@ surfaces into one displayable output.
       </li>
       
       <li class="mt4">
-        <div class="f2 lh-copy" id="i:wl_shm_pool">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:wl_shm_pool">
+          <a href="#i:wl_shm_pool" class="link dim black-70 child pr2 absolute left--2">#</a>
           wl_shm_pool
-        </div>
+        </h2>
         <div class="f6 lh-copy ws-pre-line courier">The wl_shm_pool object encapsulates a piece of memory shared
 between the compositor and client.  Through the wl_shm_pool
 object, the client can allocate shared memory wl_buffer objects.
@@ -1293,7 +1314,8 @@ a surface or for many small buffers.
           <ul class="list pl0">
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:wl_shm_pool:create_buffer">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:wl_shm_pool:create_buffer">
+                <a href="#r:wl_shm_pool:create_buffer" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   create_buffer
                 </div>
@@ -1334,7 +1356,8 @@ a buffer from it.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:wl_shm_pool:destroy">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:wl_shm_pool:destroy">
+                <a href="#r:wl_shm_pool:destroy" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   destroy
                 </div>
@@ -1359,7 +1382,8 @@ are gone.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:wl_shm_pool:resize">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:wl_shm_pool:resize">
+                <a href="#r:wl_shm_pool:resize" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   resize
                 </div>
@@ -1394,9 +1418,10 @@ used to make the pool bigger.
       </li>
       
       <li class="mt4">
-        <div class="f2 lh-copy" id="i:wl_shm">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:wl_shm">
+          <a href="#i:wl_shm" class="link dim black-70 child pr2 absolute left--2">#</a>
           wl_shm
-        </div>
+        </h2>
         <div class="f6 lh-copy ws-pre-line courier">A singleton global object that provides support for shared
 memory.
 
@@ -1413,7 +1438,8 @@ that can be used for buffers.
           <ul class="list pl0">
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:wl_shm:create_pool">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:wl_shm:create_pool">
+                <a href="#r:wl_shm:create_pool" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   create_pool
                 </div>
@@ -1449,7 +1475,8 @@ descriptor, to use as backing memory for the pool.
           <ul class="list pl0">
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:wl_shm:format">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:wl_shm:format">
+                <a href="#e:wl_shm:format" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   format
                 </div>
@@ -1471,9 +1498,10 @@ argb8888 and xrgb8888.
       </li>
       
       <li class="mt4">
-        <div class="f2 lh-copy" id="i:wl_buffer">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:wl_buffer">
+          <a href="#i:wl_buffer" class="link dim black-70 child pr2 absolute left--2">#</a>
           wl_buffer
-        </div>
+        </h2>
         <div class="f6 lh-copy ws-pre-line courier">A buffer provides the content for a wl_surface. Buffers are
 created through factory interfaces such as wl_drm, wl_shm or
 similar. It has a width and a height and can be attached to a
@@ -1486,7 +1514,8 @@ updates the contents is defined by the buffer factory interface.
           <ul class="list pl0">
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:wl_buffer:destroy">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:wl_buffer:destroy">
+                <a href="#r:wl_buffer:destroy" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   destroy
                 </div>
@@ -1517,7 +1546,8 @@ For possible side-effects to a surface, see wl_surface.attach.
           <ul class="list pl0">
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:wl_buffer:release">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:wl_buffer:release">
+                <a href="#e:wl_buffer:release" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   release
                 </div>
@@ -1548,9 +1578,10 @@ optimization for GL(ES) compositors with wl_shm clients.
       </li>
       
       <li class="mt4">
-        <div class="f2 lh-copy" id="i:wl_data_offer">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:wl_data_offer">
+          <a href="#i:wl_data_offer" class="link dim black-70 child pr2 absolute left--2">#</a>
           wl_data_offer
-        </div>
+        </h2>
         <div class="f6 lh-copy ws-pre-line courier">A wl_data_offer represents a piece of data offered for transfer
 by another client (the source client).  It is used by the
 copy-and-paste and drag-and-drop mechanisms.  The offer
@@ -1564,7 +1595,8 @@ data directly from the source client.
           <ul class="list pl0">
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:wl_data_offer:accept">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:wl_data_offer:accept">
+                <a href="#r:wl_data_offer:accept" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   accept
                 </div>
@@ -1602,7 +1634,8 @@ conjunction with wl_data_source.action for feedback.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:wl_data_offer:receive">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:wl_data_offer:receive">
+                <a href="#r:wl_data_offer:receive" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   receive
                 </div>
@@ -1641,7 +1674,8 @@ determine acceptance.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:wl_data_offer:destroy">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:wl_data_offer:destroy">
+                <a href="#r:wl_data_offer:destroy" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   destroy
                 </div>
@@ -1662,7 +1696,8 @@ determine acceptance.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:wl_data_offer:finish">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:wl_data_offer:finish">
+                <a href="#r:wl_data_offer:finish" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   finish
                 </div>
@@ -1696,7 +1731,8 @@ operation, the invalid_finish protocol error is raised.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:wl_data_offer:set_actions">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:wl_data_offer:set_actions">
+                <a href="#r:wl_data_offer:set_actions" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   set_actions
                 </div>
@@ -1758,7 +1794,8 @@ will be raised otherwise.
           <ul class="list pl0">
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:wl_data_offer:offer">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:wl_data_offer:offer">
+                <a href="#e:wl_data_offer:offer" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   offer
                 </div>
@@ -1773,7 +1810,8 @@ event per offered mime type.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:wl_data_offer:source_actions">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:wl_data_offer:source_actions">
+                <a href="#e:wl_data_offer:source_actions" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   source_actions
                 </div>
@@ -1789,7 +1827,8 @@ side changes its offered actions through wl_data_source.set_actions.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:wl_data_offer:action">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:wl_data_offer:action">
+                <a href="#e:wl_data_offer:action" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   action
                 </div>
@@ -1843,9 +1882,10 @@ must happen before the call to wl_data_offer.finish.
       </li>
       
       <li class="mt4">
-        <div class="f2 lh-copy" id="i:wl_data_source">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:wl_data_source">
+          <a href="#i:wl_data_source" class="link dim black-70 child pr2 absolute left--2">#</a>
           wl_data_source
-        </div>
+        </h2>
         <div class="f6 lh-copy ws-pre-line courier">The wl_data_source object is the source side of a wl_data_offer.
 It is created by the source client in a data transfer and
 provides a way to describe the offered data and a way to respond
@@ -1857,7 +1897,8 @@ to requests to transfer the data.
           <ul class="list pl0">
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:wl_data_source:offer">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:wl_data_source:offer">
+                <a href="#r:wl_data_source:offer" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   offer
                 </div>
@@ -1882,7 +1923,8 @@ multiple types.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:wl_data_source:destroy">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:wl_data_source:destroy">
+                <a href="#r:wl_data_source:destroy" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   destroy
                 </div>
@@ -1903,7 +1945,8 @@ multiple types.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:wl_data_source:set_actions">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:wl_data_source:set_actions">
+                <a href="#r:wl_data_source:set_actions" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   set_actions
                 </div>
@@ -1945,7 +1988,8 @@ for drag-and-drop will raise a protocol error.
           <ul class="list pl0">
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:wl_data_source:target">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:wl_data_source:target">
+                <a href="#e:wl_data_source:target" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   target
                 </div>
@@ -1962,7 +2006,8 @@ Used for feedback during drag-and-drop.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:wl_data_source:send">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:wl_data_source:send">
+                <a href="#e:wl_data_source:send" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   send
                 </div>
@@ -1978,7 +2023,8 @@ close it.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:wl_data_source:cancelled">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:wl_data_source:cancelled">
+                <a href="#e:wl_data_source:cancelled" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   cancelled
                 </div>
@@ -2011,7 +2057,8 @@ source.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:wl_data_source:dnd_drop_performed">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:wl_data_source:dnd_drop_performed">
+                <a href="#e:wl_data_source:dnd_drop_performed" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   dnd_drop_performed
                 </div>
@@ -2033,7 +2080,8 @@ not be destroyed here.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:wl_data_source:dnd_finished">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:wl_data_source:dnd_finished">
+                <a href="#e:wl_data_source:dnd_finished" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   dnd_finished
                 </div>
@@ -2052,7 +2100,8 @@ source can now delete the transferred data.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:wl_data_source:action">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:wl_data_source:action">
+                <a href="#e:wl_data_source:action" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   action
                 </div>
@@ -2096,9 +2145,10 @@ they reflect the current action.
       </li>
       
       <li class="mt4">
-        <div class="f2 lh-copy" id="i:wl_data_device">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:wl_data_device">
+          <a href="#i:wl_data_device" class="link dim black-70 child pr2 absolute left--2">#</a>
           wl_data_device
-        </div>
+        </h2>
         <div class="f6 lh-copy ws-pre-line courier">There is one wl_data_device per seat which can be obtained
 from the global wl_data_device_manager singleton.
 
@@ -2111,7 +2161,8 @@ mechanisms such as copy-and-paste and drag-and-drop.
           <ul class="list pl0">
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:wl_data_device:start_drag">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:wl_data_device:start_drag">
+                <a href="#r:wl_data_device:start_drag" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   start_drag
                 </div>
@@ -2167,7 +2218,8 @@ undefined, and the wl_surface is unmapped.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:wl_data_device:set_selection">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:wl_data_device:set_selection">
+                <a href="#r:wl_data_device:set_selection" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   set_selection
                 </div>
@@ -2195,7 +2247,8 @@ To unset the selection, set the source to NULL.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:wl_data_device:release">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:wl_data_device:release">
+                <a href="#r:wl_data_device:release" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   release
                 </div>
@@ -2223,7 +2276,8 @@ To unset the selection, set the source to NULL.
           <ul class="list pl0">
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:wl_data_device:data_offer">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:wl_data_device:data_offer">
+                <a href="#e:wl_data_device:data_offer" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   data_offer
                 </div>
@@ -2243,7 +2297,8 @@ mime types it offers.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:wl_data_device:enter">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:wl_data_device:enter">
+                <a href="#e:wl_data_device:enter" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   enter
                 </div>
@@ -2260,7 +2315,8 @@ coordinates.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:wl_data_device:leave">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:wl_data_device:leave">
+                <a href="#e:wl_data_device:leave" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   leave
                 </div>
@@ -2276,7 +2332,8 @@ wl_data_offer introduced at enter time at this point.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:wl_data_device:motion">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:wl_data_device:motion">
+                <a href="#e:wl_data_device:motion" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   motion
                 </div>
@@ -2293,7 +2350,8 @@ coordinates.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:wl_data_device:drop">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:wl_data_device:drop">
+                <a href="#e:wl_data_device:drop" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   drop
                 </div>
@@ -2319,7 +2377,8 @@ to cancel the operation.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:wl_data_device:selection">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:wl_data_device:selection">
+                <a href="#e:wl_data_device:selection" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   selection
                 </div>
@@ -2349,9 +2408,10 @@ this event.
       </li>
       
       <li class="mt4">
-        <div class="f2 lh-copy" id="i:wl_data_device_manager">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:wl_data_device_manager">
+          <a href="#i:wl_data_device_manager" class="link dim black-70 child pr2 absolute left--2">#</a>
           wl_data_device_manager
-        </div>
+        </h2>
         <div class="f6 lh-copy ws-pre-line courier">The wl_data_device_manager is a singleton global object that
 provides access to inter-client data transfer mechanisms such as
 copy-and-paste and drag-and-drop.  These mechanisms are tied to
@@ -2369,7 +2429,8 @@ wl_data_offer.accept and wl_data_offer.finish for details.
           <ul class="list pl0">
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:wl_data_device_manager:create_data_source">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:wl_data_device_manager:create_data_source">
+                <a href="#r:wl_data_device_manager:create_data_source" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   create_data_source
                 </div>
@@ -2390,7 +2451,8 @@ wl_data_offer.accept and wl_data_offer.finish for details.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:wl_data_device_manager:get_data_device">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:wl_data_device_manager:get_data_device">
+                <a href="#r:wl_data_device_manager:get_data_device" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   get_data_device
                 </div>
@@ -2422,9 +2484,10 @@ wl_data_offer.accept and wl_data_offer.finish for details.
       </li>
       
       <li class="mt4">
-        <div class="f2 lh-copy" id="i:wl_shell">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:wl_shell">
+          <a href="#i:wl_shell" class="link dim black-70 child pr2 absolute left--2">#</a>
           wl_shell
-        </div>
+        </h2>
         <div class="f6 lh-copy ws-pre-line courier">This interface is implemented by servers that provide
 desktop-style user interfaces.
 
@@ -2440,7 +2503,8 @@ For desktop-style user interfaces, use xdg_shell.
           <ul class="list pl0">
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:wl_shell:get_shell_surface">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:wl_shell:get_shell_surface">
+                <a href="#r:wl_shell:get_shell_surface" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   get_shell_surface
                 </div>
@@ -2476,9 +2540,10 @@ Only one shell surface can be associated with a given surface.
       </li>
       
       <li class="mt4">
-        <div class="f2 lh-copy" id="i:wl_shell_surface">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:wl_shell_surface">
+          <a href="#i:wl_shell_surface" class="link dim black-70 child pr2 absolute left--2">#</a>
           wl_shell_surface
-        </div>
+        </h2>
         <div class="f6 lh-copy ws-pre-line courier">An interface that may be implemented by a wl_surface, for
 implementations that provide a desktop-style user interface.
 
@@ -2497,7 +2562,8 @@ the wl_surface object.
           <ul class="list pl0">
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:wl_shell_surface:pong">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:wl_shell_surface:pong">
+                <a href="#r:wl_shell_surface:pong" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   pong
                 </div>
@@ -2521,7 +2587,8 @@ the client may be deemed unresponsive.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:wl_shell_surface:move">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:wl_shell_surface:move">
+                <a href="#r:wl_shell_surface:move" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   move
                 </div>
@@ -2550,7 +2617,8 @@ the surface (e.g. fullscreen or maximized).
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:wl_shell_surface:resize">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:wl_shell_surface:resize">
+                <a href="#r:wl_shell_surface:resize" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   resize
                 </div>
@@ -2581,7 +2649,8 @@ the surface (e.g. fullscreen or maximized).
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:wl_shell_surface:set_toplevel">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:wl_shell_surface:set_toplevel">
+                <a href="#r:wl_shell_surface:set_toplevel" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   set_toplevel
                 </div>
@@ -2604,7 +2673,8 @@ A toplevel surface is not fullscreen, maximized or transient.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:wl_shell_surface:set_transient">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:wl_shell_surface:set_transient">
+                <a href="#r:wl_shell_surface:set_transient" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   set_transient
                 </div>
@@ -2639,7 +2709,8 @@ The flags argument controls details of the transient behaviour.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:wl_shell_surface:set_fullscreen">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:wl_shell_surface:set_fullscreen">
+                <a href="#r:wl_shell_surface:set_fullscreen" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   set_fullscreen
                 </div>
@@ -2698,7 +2769,8 @@ be made fullscreen.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:wl_shell_surface:set_popup">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:wl_shell_surface:set_popup">
+                <a href="#r:wl_shell_surface:set_popup" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   set_popup
                 </div>
@@ -2749,7 +2821,8 @@ parent surface, in surface-local coordinates.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:wl_shell_surface:set_maximized">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:wl_shell_surface:set_maximized">
+                <a href="#r:wl_shell_surface:set_maximized" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   set_maximized
                 </div>
@@ -2789,7 +2862,8 @@ The details depend on the compositor implementation.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:wl_shell_surface:set_title">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:wl_shell_surface:set_title">
+                <a href="#r:wl_shell_surface:set_title" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   set_title
                 </div>
@@ -2818,7 +2892,8 @@ The string must be encoded in UTF-8.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:wl_shell_surface:set_class">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:wl_shell_surface:set_class">
+                <a href="#r:wl_shell_surface:set_class" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   set_class
                 </div>
@@ -2853,7 +2928,8 @@ the application&#x27;s .desktop file as the class.
           <ul class="list pl0">
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:wl_shell_surface:ping">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:wl_shell_surface:ping">
+                <a href="#e:wl_shell_surface:ping" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   ping
                 </div>
@@ -2868,7 +2944,8 @@ requests. A client is expected to reply with a pong request.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:wl_shell_surface:configure">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:wl_shell_surface:configure">
+                <a href="#e:wl_shell_surface:configure" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   configure
                 </div>
@@ -2898,7 +2975,8 @@ in surface-local coordinates.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:wl_shell_surface:popup_done">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:wl_shell_surface:popup_done">
+                <a href="#e:wl_shell_surface:popup_done" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   popup_done
                 </div>
@@ -2920,9 +2998,10 @@ to the client owning the popup surface.
       </li>
       
       <li class="mt4">
-        <div class="f2 lh-copy" id="i:wl_surface">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:wl_surface">
+          <a href="#i:wl_surface" class="link dim black-70 child pr2 absolute left--2">#</a>
           wl_surface
-        </div>
+        </h2>
         <div class="f6 lh-copy ws-pre-line courier">A surface is a rectangular area that may be displayed on zero
 or more outputs, and shown any number of times at the compositor&#x27;s
 discretion. They can present wl_buffers, receive user input, and
@@ -2971,7 +3050,8 @@ switching is not allowed).
           <ul class="list pl0">
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:wl_surface:destroy">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:wl_surface:destroy">
+                <a href="#r:wl_surface:destroy" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   destroy
                 </div>
@@ -2992,7 +3072,8 @@ switching is not allowed).
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:wl_surface:attach">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:wl_surface:attach">
+                <a href="#r:wl_surface:attach" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   attach
                 </div>
@@ -3064,7 +3145,8 @@ following wl_surface.commit will remove the surface content.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:wl_surface:damage">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:wl_surface:damage">
+                <a href="#r:wl_surface:damage" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   damage
                 </div>
@@ -3113,7 +3195,8 @@ instead of surface coordinates.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:wl_surface:frame">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:wl_surface:frame">
+                <a href="#r:wl_surface:frame" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   frame
                 </div>
@@ -3165,7 +3248,8 @@ milliseconds, with an undefined base.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:wl_surface:set_opaque_region">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:wl_surface:set_opaque_region">
+                <a href="#r:wl_surface:set_opaque_region" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   set_opaque_region
                 </div>
@@ -3211,7 +3295,8 @@ region to be set to empty.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:wl_surface:set_input_region">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:wl_surface:set_input_region">
+                <a href="#r:wl_surface:set_input_region" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   set_input_region
                 </div>
@@ -3255,7 +3340,8 @@ to infinite.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:wl_surface:commit">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:wl_surface:commit">
+                <a href="#r:wl_surface:commit" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   commit
                 </div>
@@ -3292,7 +3378,8 @@ Other interfaces may add further double-buffered surface state.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:wl_surface:set_buffer_transform">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:wl_surface:set_buffer_transform">
+                <a href="#r:wl_surface:set_buffer_transform" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   set_buffer_transform
                 </div>
@@ -3343,7 +3430,8 @@ is raised.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:wl_surface:set_buffer_scale">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:wl_surface:set_buffer_scale">
+                <a href="#r:wl_surface:set_buffer_scale" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   set_buffer_scale
                 </div>
@@ -3388,7 +3476,8 @@ raised.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:wl_surface:damage_buffer">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:wl_surface:damage_buffer">
+                <a href="#r:wl_surface:damage_buffer" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   damage_buffer
                 </div>
@@ -3455,7 +3544,8 @@ after receiving the wl_surface.commit.
           <ul class="list pl0">
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:wl_surface:enter">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:wl_surface:enter">
+                <a href="#e:wl_surface:enter" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   enter
                 </div>
@@ -3473,7 +3563,8 @@ Note that a surface may be overlapping with zero or more outputs.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:wl_surface:leave">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:wl_surface:leave">
+                <a href="#e:wl_surface:leave" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   leave
                 </div>
@@ -3501,9 +3592,10 @@ used instead.
       </li>
       
       <li class="mt4">
-        <div class="f2 lh-copy" id="i:wl_seat">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:wl_seat">
+          <a href="#i:wl_seat" class="link dim black-70 child pr2 absolute left--2">#</a>
           wl_seat
-        </div>
+        </h2>
         <div class="f6 lh-copy ws-pre-line courier">A seat is a group of keyboards, pointer and touch devices. This
 object is published as a global during start up, or when such a
 device is hot plugged.  A seat typically has a pointer and
@@ -3515,7 +3607,8 @@ maintains a keyboard focus and a pointer focus.
           <ul class="list pl0">
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:wl_seat:get_pointer">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:wl_seat:get_pointer">
+                <a href="#r:wl_seat:get_pointer" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   get_pointer
                 </div>
@@ -3543,7 +3636,8 @@ be sent in this case.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:wl_seat:get_keyboard">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:wl_seat:get_keyboard">
+                <a href="#r:wl_seat:get_keyboard" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   get_keyboard
                 </div>
@@ -3571,7 +3665,8 @@ be sent in this case.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:wl_seat:get_touch">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:wl_seat:get_touch">
+                <a href="#r:wl_seat:get_touch" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   get_touch
                 </div>
@@ -3599,7 +3694,8 @@ be sent in this case.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:wl_seat:release">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:wl_seat:release">
+                <a href="#r:wl_seat:release" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   release
                 </div>
@@ -3628,7 +3724,8 @@ use the seat object anymore.
           <ul class="list pl0">
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:wl_seat:capabilities">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:wl_seat:capabilities">
+                <a href="#e:wl_seat:capabilities" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   capabilities
                 </div>
@@ -3665,7 +3762,8 @@ keyboard and touch capabilities, respectively.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:wl_seat:name">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:wl_seat:name">
+                <a href="#e:wl_seat:name" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   name
                 </div>
@@ -3687,9 +3785,10 @@ the seat configuration used by the compositor.
       </li>
       
       <li class="mt4">
-        <div class="f2 lh-copy" id="i:wl_pointer">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:wl_pointer">
+          <a href="#i:wl_pointer" class="link dim black-70 child pr2 absolute left--2">#</a>
           wl_pointer
-        </div>
+        </h2>
         <div class="f6 lh-copy ws-pre-line courier">The wl_pointer interface represents one or more input devices,
 such as mice, which control the pointer location and pointer_focus
 of a seat.
@@ -3705,7 +3804,8 @@ and scrolling.
           <ul class="list pl0">
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:wl_pointer:set_cursor">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:wl_pointer:set_cursor">
+                <a href="#r:wl_pointer:set_cursor" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   set_cursor
                 </div>
@@ -3764,7 +3864,8 @@ undefined, and the wl_surface is unmapped.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:wl_pointer:release">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:wl_pointer:release">
+                <a href="#r:wl_pointer:release" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   release
                 </div>
@@ -3796,7 +3897,8 @@ wl_pointer_destroy() after using this request.
           <ul class="list pl0">
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:wl_pointer:enter">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:wl_pointer:enter">
+                <a href="#e:wl_pointer:enter" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   enter
                 </div>
@@ -3815,7 +3917,8 @@ an appropriate pointer image with the set_cursor request.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:wl_pointer:leave">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:wl_pointer:leave">
+                <a href="#e:wl_pointer:leave" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   leave
                 </div>
@@ -3833,7 +3936,8 @@ for the new focus.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:wl_pointer:motion">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:wl_pointer:motion">
+                <a href="#e:wl_pointer:motion" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   motion
                 </div>
@@ -3849,7 +3953,8 @@ focused surface.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:wl_pointer:button">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:wl_pointer:button">
+                <a href="#e:wl_pointer:button" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   button
                 </div>
@@ -3876,7 +3981,8 @@ protocol.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:wl_pointer:axis">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:wl_pointer:axis">
+                <a href="#e:wl_pointer:axis" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   axis
                 </div>
@@ -3905,7 +4011,8 @@ scroll distance.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:wl_pointer:frame">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:wl_pointer:frame">
+                <a href="#e:wl_pointer:frame" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   frame
                 </div>
@@ -3952,7 +4059,8 @@ groups.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:wl_pointer:axis_source">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:wl_pointer:axis_source">
+                <a href="#e:wl_pointer:axis_source" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   axis_source
                 </div>
@@ -3990,7 +4098,8 @@ not guaranteed.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:wl_pointer:axis_stop">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:wl_pointer:axis_stop">
+                <a href="#e:wl_pointer:axis_stop" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   axis_stop
                 </div>
@@ -4017,7 +4126,8 @@ preceding wl_pointer.axis event.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:wl_pointer:axis_discrete">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:wl_pointer:axis_discrete">
+                <a href="#e:wl_pointer:axis_discrete" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   axis_discrete
                 </div>
@@ -4062,9 +4172,10 @@ not guaranteed.
       </li>
       
       <li class="mt4">
-        <div class="f2 lh-copy" id="i:wl_keyboard">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:wl_keyboard">
+          <a href="#i:wl_keyboard" class="link dim black-70 child pr2 absolute left--2">#</a>
           wl_keyboard
-        </div>
+        </h2>
         <div class="f6 lh-copy ws-pre-line courier">The wl_keyboard interface represents one or more keyboards
 associated with a seat.
 </div>
@@ -4074,7 +4185,8 @@ associated with a seat.
           <ul class="list pl0">
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:wl_keyboard:release">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:wl_keyboard:release">
+                <a href="#r:wl_keyboard:release" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   release
                 </div>
@@ -4101,7 +4213,8 @@ associated with a seat.
           <ul class="list pl0">
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:wl_keyboard:keymap">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:wl_keyboard:keymap">
+                <a href="#e:wl_keyboard:keymap" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   keymap
                 </div>
@@ -4119,7 +4232,8 @@ the recipient, as MAP_SHARED may fail.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:wl_keyboard:enter">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:wl_keyboard:enter">
+                <a href="#e:wl_keyboard:enter" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   enter
                 </div>
@@ -4137,7 +4251,8 @@ event.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:wl_keyboard:leave">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:wl_keyboard:leave">
+                <a href="#e:wl_keyboard:leave" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   leave
                 </div>
@@ -4158,7 +4273,8 @@ are lifted and also it must stop key repeating if there&#x27;s some going on.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:wl_keyboard:key">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:wl_keyboard:key">
+                <a href="#e:wl_keyboard:key" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   key
                 </div>
@@ -4180,7 +4296,8 @@ wl_keyboard.modifiers event must be sent after this event.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:wl_keyboard:modifiers">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:wl_keyboard:modifiers">
+                <a href="#e:wl_keyboard:modifiers" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   modifiers
                 </div>
@@ -4195,7 +4312,8 @@ changed, and it should update its local state.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:wl_keyboard:repeat_info">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:wl_keyboard:repeat_info">
+                <a href="#e:wl_keyboard:repeat_info" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   repeat_info
                 </div>
@@ -4226,9 +4344,10 @@ of wl_keyboard.
       </li>
       
       <li class="mt4">
-        <div class="f2 lh-copy" id="i:wl_touch">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:wl_touch">
+          <a href="#i:wl_touch" class="link dim black-70 child pr2 absolute left--2">#</a>
           wl_touch
-        </div>
+        </h2>
         <div class="f6 lh-copy ws-pre-line courier">The wl_touch interface represents a touchscreen
 associated with a seat.
 
@@ -4244,7 +4363,8 @@ contact point can be identified by the ID of the sequence.
           <ul class="list pl0">
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:wl_touch:release">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:wl_touch:release">
+                <a href="#r:wl_touch:release" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   release
                 </div>
@@ -4271,7 +4391,8 @@ contact point can be identified by the ID of the sequence.
           <ul class="list pl0">
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:wl_touch:down">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:wl_touch:down">
+                <a href="#e:wl_touch:down" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   down
                 </div>
@@ -4288,7 +4409,8 @@ reused in the future.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:wl_touch:up">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:wl_touch:up">
+                <a href="#e:wl_touch:up" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   up
                 </div>
@@ -4304,7 +4426,8 @@ reused in a future touch down event.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:wl_touch:motion">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:wl_touch:motion">
+                <a href="#e:wl_touch:motion" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   motion
                 </div>
@@ -4318,7 +4441,8 @@ reused in a future touch down event.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:wl_touch:frame">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:wl_touch:frame">
+                <a href="#e:wl_touch:frame" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   frame
                 </div>
@@ -4339,7 +4463,8 @@ previously known state.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:wl_touch:cancel">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:wl_touch:cancel">
+                <a href="#e:wl_touch:cancel" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   cancel
                 </div>
@@ -4358,7 +4483,8 @@ this surface may reuse the touch point ID.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:wl_touch:shape">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:wl_touch:shape">
+                <a href="#e:wl_touch:shape" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   shape
                 </div>
@@ -4396,7 +4522,8 @@ shape if it did not receive this event.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:wl_touch:orientation">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:wl_touch:orientation">
+                <a href="#e:wl_touch:orientation" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   orientation
                 </div>
@@ -4438,9 +4565,10 @@ orientation reports.
       </li>
       
       <li class="mt4">
-        <div class="f2 lh-copy" id="i:wl_output">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:wl_output">
+          <a href="#i:wl_output" class="link dim black-70 child pr2 absolute left--2">#</a>
           wl_output
-        </div>
+        </h2>
         <div class="f6 lh-copy ws-pre-line courier">An output describes part of the compositor geometry.  The
 compositor works in the &#x27;compositor coordinate system&#x27; and an
 output corresponds to a rectangular area in that space that is
@@ -4454,7 +4582,8 @@ as global during start up, or when a monitor is hotplugged.
           <ul class="list pl0">
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:wl_output:release">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:wl_output:release">
+                <a href="#r:wl_output:release" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   release
                 </div>
@@ -4483,7 +4612,8 @@ use the output object anymore.
           <ul class="list pl0">
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:wl_output:geometry">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:wl_output:geometry">
+                <a href="#e:wl_output:geometry" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   geometry
                 </div>
@@ -4509,7 +4639,8 @@ clients should use xdg_output.name and xdg_output.description.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:wl_output:mode">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:wl_output:mode">
+                <a href="#e:wl_output:mode" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   mode
                 </div>
@@ -4552,7 +4683,8 @@ refresh rate or the size.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:wl_output:done">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:wl_output:done">
+                <a href="#e:wl_output:done" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   done
                 </div>
@@ -4570,7 +4702,8 @@ atomic, even if they happen via multiple events.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:wl_output:scale">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:wl_output:scale">
+                <a href="#e:wl_output:scale" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   scale
                 </div>
@@ -4607,9 +4740,10 @@ a higher detail image.
       </li>
       
       <li class="mt4">
-        <div class="f2 lh-copy" id="i:wl_region">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:wl_region">
+          <a href="#i:wl_region" class="link dim black-70 child pr2 absolute left--2">#</a>
           wl_region
-        </div>
+        </h2>
         <div class="f6 lh-copy ws-pre-line courier">A region object describes an area.
 
 Region objects are used to describe the opaque and input
@@ -4621,7 +4755,8 @@ regions of a surface.
           <ul class="list pl0">
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:wl_region:destroy">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:wl_region:destroy">
+                <a href="#r:wl_region:destroy" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   destroy
                 </div>
@@ -4642,7 +4777,8 @@ regions of a surface.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:wl_region:add">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:wl_region:add">
+                <a href="#r:wl_region:add" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   add
                 </div>
@@ -4671,7 +4807,8 @@ regions of a surface.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:wl_region:subtract">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:wl_region:subtract">
+                <a href="#r:wl_region:subtract" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   subtract
                 </div>
@@ -4709,9 +4846,10 @@ regions of a surface.
       </li>
       
       <li class="mt4">
-        <div class="f2 lh-copy" id="i:wl_subcompositor">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:wl_subcompositor">
+          <a href="#i:wl_subcompositor" class="link dim black-70 child pr2 absolute left--2">#</a>
           wl_subcompositor
-        </div>
+        </h2>
         <div class="f6 lh-copy ws-pre-line courier">The global interface exposing sub-surface compositing capabilities.
 A wl_surface, that has sub-surfaces associated, is called the
 parent surface. Sub-surfaces can be arbitrarily nested and create
@@ -4738,7 +4876,8 @@ processing to dedicated overlay hardware when possible.
           <ul class="list pl0">
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:wl_subcompositor:destroy">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:wl_subcompositor:destroy">
+                <a href="#r:wl_subcompositor:destroy" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   destroy
                 </div>
@@ -4761,7 +4900,8 @@ objects, wl_subsurface objects included.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:wl_subcompositor:get_subsurface">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:wl_subcompositor:get_subsurface">
+                <a href="#r:wl_subcompositor:get_subsurface" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   get_subsurface
                 </div>
@@ -4809,9 +4949,10 @@ the sub-surface, see the documentation on wl_subsurface interface.
       </li>
       
       <li class="mt4">
-        <div class="f2 lh-copy" id="i:wl_subsurface">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:wl_subsurface">
+          <a href="#i:wl_subsurface" class="link dim black-70 child pr2 absolute left--2">#</a>
           wl_subsurface
-        </div>
+        </h2>
         <div class="f6 lh-copy ws-pre-line courier">An additional interface to a wl_surface object, which has been
 made a sub-surface. A sub-surface has one parent surface. A
 sub-surface&#x27;s size and position are not limited to that of the parent.
@@ -4868,7 +5009,8 @@ unmapped.
           <ul class="list pl0">
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:wl_subsurface:destroy">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:wl_subsurface:destroy">
+                <a href="#r:wl_subsurface:destroy" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   destroy
                 </div>
@@ -4893,7 +5035,8 @@ a sub-surface. The wl_surface is unmapped immediately.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:wl_subsurface:set_position">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:wl_subsurface:set_position">
+                <a href="#r:wl_subsurface:set_position" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   set_position
                 </div>
@@ -4933,7 +5076,8 @@ The initial position is 0, 0.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:wl_subsurface:place_above">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:wl_subsurface:place_above">
+                <a href="#r:wl_subsurface:place_above" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   place_above
                 </div>
@@ -4970,7 +5114,8 @@ of its siblings and parent.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:wl_subsurface:place_below">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:wl_subsurface:place_below">
+                <a href="#r:wl_subsurface:place_below" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   place_below
                 </div>
@@ -4994,7 +5139,8 @@ See wl_subsurface.place_above.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:wl_subsurface:set_sync">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:wl_subsurface:set_sync">
+                <a href="#r:wl_subsurface:set_sync" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   set_sync
                 </div>
@@ -5027,7 +5173,8 @@ See wl_subsurface for the recursive effect of this mode.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:wl_subsurface:set_desync">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:wl_subsurface:set_desync">
+                <a href="#r:wl_subsurface:set_desync" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   set_desync
                 </div>
@@ -5104,7 +5251,7 @@ SOFTWARE.
 </div>
   </div>
 
-    </div>
+    </main>
 
   </body>
 </html>

@@ -10,17 +10,17 @@
     <link rel="stylesheet" href="&#x2f;wayland-protocol-docs/main.css"></link>
      
   </head>
-  <body class="bg-near-white black-70 sans-serif pa2 ph6-l">
-
-    <a href="&#x2f;wayland-protocol-docs/" class="f4 link near-black dim lh-title">
-      Home
-    </a>
+  <body class="bg-near-white black-70 flex sans-serif ph4-l">
 
     
 
-    <div id="content">
-      
-  <div class="fl w-25 ph2">
+    <div id="sidebar" class="w-20 br b--white bw3">
+      <div class="fixed h-100">
+        <a href="&#x2f;wayland-protocol-docs/" class="f4 link near-black dim lh-title">
+          Home
+        </a>
+        
+  <div class="ph2">
     
 
 <div>
@@ -91,14 +91,21 @@
   </ul>
 </div>
   </div>
-  <div class="fl w-75 ph2">
+
+      </div>
+    </div>
+
+    <main id="content" class="mh4">
+      
+  <div class="ph2">
     <h1 class="f1 lh-title">xdg_decoration_unstable_v1</h1>
     <ul class="list pl0">
       
       <li class="mt4">
-        <div class="f2 lh-copy" id="i:zxdg_decoration_manager_v1">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:zxdg_decoration_manager_v1">
+          <a href="#i:zxdg_decoration_manager_v1" class="link dim black-70 child pr2 absolute left--2">#</a>
           zxdg_decoration_manager_v1
-        </div>
+        </h2>
         <div class="f6 lh-copy ws-pre-line courier">This interface allows a compositor to announce support for server-side
 decorations.
 
@@ -128,7 +135,8 @@ interface version number is reset.
           <ul class="list pl0">
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:zxdg_decoration_manager_v1:destroy">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zxdg_decoration_manager_v1:destroy">
+                <a href="#r:zxdg_decoration_manager_v1:destroy" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   destroy
                 </div>
@@ -150,7 +158,8 @@ with the manager.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:zxdg_decoration_manager_v1:get_toplevel_decoration">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zxdg_decoration_manager_v1:get_toplevel_decoration">
+                <a href="#r:zxdg_decoration_manager_v1:get_toplevel_decoration" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   get_toplevel_decoration
                 </div>
@@ -188,9 +197,10 @@ errors.
       </li>
       
       <li class="mt4">
-        <div class="f2 lh-copy" id="i:zxdg_toplevel_decoration_v1">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:zxdg_toplevel_decoration_v1">
+          <a href="#i:zxdg_toplevel_decoration_v1" class="link dim black-70 child pr2 absolute left--2">#</a>
           zxdg_toplevel_decoration_v1
-        </div>
+        </h2>
         <div class="f6 lh-copy ws-pre-line courier">The decoration object allows the compositor to toggle server-side window
 decorations for a toplevel surface. The client can request to switch to
 another mode.
@@ -204,7 +214,8 @@ xdg_toplevel.
           <ul class="list pl0">
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:zxdg_toplevel_decoration_v1:destroy">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zxdg_toplevel_decoration_v1:destroy">
+                <a href="#r:zxdg_toplevel_decoration_v1:destroy" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   destroy
                 </div>
@@ -226,7 +237,8 @@ commit.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:zxdg_toplevel_decoration_v1:set_mode">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zxdg_toplevel_decoration_v1:set_mode">
+                <a href="#r:zxdg_toplevel_decoration_v1:set_mode" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   set_mode
                 </div>
@@ -266,7 +278,8 @@ same decoration mode.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:zxdg_toplevel_decoration_v1:unset_mode">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zxdg_toplevel_decoration_v1:unset_mode">
+                <a href="#r:zxdg_toplevel_decoration_v1:unset_mode" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   unset_mode
                 </div>
@@ -297,7 +310,8 @@ This request has the same semantics as set_mode.
           <ul class="list pl0">
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:zxdg_toplevel_decoration_v1:configure">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:zxdg_toplevel_decoration_v1:configure">
+                <a href="#e:zxdg_toplevel_decoration_v1:configure" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   configure
                 </div>
@@ -348,7 +362,7 @@ DEALINGS IN THE SOFTWARE.
 </div>
   </div>
 
-    </div>
+    </main>
 
   </body>
 </html>

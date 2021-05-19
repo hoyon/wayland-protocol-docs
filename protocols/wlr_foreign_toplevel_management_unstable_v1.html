@@ -10,17 +10,17 @@
     <link rel="stylesheet" href="&#x2f;wayland-protocol-docs/main.css"></link>
      
   </head>
-  <body class="bg-near-white black-70 sans-serif pa2 ph6-l">
-
-    <a href="&#x2f;wayland-protocol-docs/" class="f4 link near-black dim lh-title">
-      Home
-    </a>
+  <body class="bg-near-white black-70 flex sans-serif ph4-l">
 
     
 
-    <div id="content">
-      
-  <div class="fl w-25 ph2">
+    <div id="sidebar" class="w-20 br b--white bw3">
+      <div class="fixed h-100">
+        <a href="&#x2f;wayland-protocol-docs/" class="f4 link near-black dim lh-title">
+          Home
+        </a>
+        
+  <div class="ph2">
     
 
 <div>
@@ -157,14 +157,21 @@
   </ul>
 </div>
   </div>
-  <div class="fl w-75 ph2">
+
+      </div>
+    </div>
+
+    <main id="content" class="mh4">
+      
+  <div class="ph2">
     <h1 class="f1 lh-title">wlr_foreign_toplevel_management_unstable_v1</h1>
     <ul class="list pl0">
       
       <li class="mt4">
-        <div class="f2 lh-copy" id="i:zwlr_foreign_toplevel_manager_v1">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:zwlr_foreign_toplevel_manager_v1">
+          <a href="#i:zwlr_foreign_toplevel_manager_v1" class="link dim black-70 child pr2 absolute left--2">#</a>
           zwlr_foreign_toplevel_manager_v1
-        </div>
+        </h2>
         <div class="f6 lh-copy ws-pre-line courier">The purpose of this protocol is to enable the creation of taskbars
 and docks by providing them with a list of opened applications and
 letting them request certain actions on them, like maximizing, etc.
@@ -178,7 +185,8 @@ toplevel window will be sent via the toplevel event
           <ul class="list pl0">
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:zwlr_foreign_toplevel_manager_v1:stop">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zwlr_foreign_toplevel_manager_v1:stop">
+                <a href="#r:zwlr_foreign_toplevel_manager_v1:stop" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   stop
                 </div>
@@ -210,7 +218,8 @@ The client must not send any more requests after this one.
           <ul class="list pl0">
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:zwlr_foreign_toplevel_manager_v1:toplevel">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:zwlr_foreign_toplevel_manager_v1:toplevel">
+                <a href="#e:zwlr_foreign_toplevel_manager_v1:toplevel" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   toplevel
                 </div>
@@ -230,7 +239,8 @@ zwlr_foreign_toplevel_handle_v1.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:zwlr_foreign_toplevel_manager_v1:finished">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:zwlr_foreign_toplevel_manager_v1:finished">
+                <a href="#e:zwlr_foreign_toplevel_manager_v1:finished" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   finished
                 </div>
@@ -253,9 +263,10 @@ the client should free any resources associated with it.
       </li>
       
       <li class="mt4">
-        <div class="f2 lh-copy" id="i:zwlr_foreign_toplevel_handle_v1">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:zwlr_foreign_toplevel_handle_v1">
+          <a href="#i:zwlr_foreign_toplevel_handle_v1" class="link dim black-70 child pr2 absolute left--2">#</a>
           zwlr_foreign_toplevel_handle_v1
-        </div>
+        </h2>
         <div class="f6 lh-copy ws-pre-line courier">A zwlr_foreign_toplevel_handle_v1 object represents an opened toplevel
 window. Each app may have multiple opened toplevels.
 
@@ -268,7 +279,8 @@ client with the output_enter and output_leave events.
           <ul class="list pl0">
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:zwlr_foreign_toplevel_handle_v1:set_maximized">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zwlr_foreign_toplevel_handle_v1:set_maximized">
+                <a href="#r:zwlr_foreign_toplevel_handle_v1:set_maximized" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   set_maximized
                 </div>
@@ -290,7 +302,8 @@ changes, this will be indicated by the state event.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:zwlr_foreign_toplevel_handle_v1:unset_maximized">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zwlr_foreign_toplevel_handle_v1:unset_maximized">
+                <a href="#r:zwlr_foreign_toplevel_handle_v1:unset_maximized" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   unset_maximized
                 </div>
@@ -312,7 +325,8 @@ changes, this will be indicated by the state event.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:zwlr_foreign_toplevel_handle_v1:set_minimized">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zwlr_foreign_toplevel_handle_v1:set_minimized">
+                <a href="#r:zwlr_foreign_toplevel_handle_v1:set_minimized" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   set_minimized
                 </div>
@@ -334,7 +348,8 @@ changes, this will be indicated by the state event.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:zwlr_foreign_toplevel_handle_v1:unset_minimized">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zwlr_foreign_toplevel_handle_v1:unset_minimized">
+                <a href="#r:zwlr_foreign_toplevel_handle_v1:unset_minimized" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   unset_minimized
                 </div>
@@ -356,7 +371,8 @@ changes, this will be indicated by the state event.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:zwlr_foreign_toplevel_handle_v1:activate">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zwlr_foreign_toplevel_handle_v1:activate">
+                <a href="#r:zwlr_foreign_toplevel_handle_v1:activate" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   activate
                 </div>
@@ -380,7 +396,8 @@ There is no guarantee the toplevel will be actually activated.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:zwlr_foreign_toplevel_handle_v1:close">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zwlr_foreign_toplevel_handle_v1:close">
+                <a href="#r:zwlr_foreign_toplevel_handle_v1:close" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   close
                 </div>
@@ -406,7 +423,8 @@ be emitted.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:zwlr_foreign_toplevel_handle_v1:set_rectangle">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zwlr_foreign_toplevel_handle_v1:set_rectangle">
+                <a href="#r:zwlr_foreign_toplevel_handle_v1:set_rectangle" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   set_rectangle
                 </div>
@@ -447,7 +465,8 @@ Setting width=height=0 removes the already-set rectangle.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:zwlr_foreign_toplevel_handle_v1:destroy">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zwlr_foreign_toplevel_handle_v1:destroy">
+                <a href="#r:zwlr_foreign_toplevel_handle_v1:destroy" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   destroy
                 </div>
@@ -472,7 +491,8 @@ destruction of the object.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:zwlr_foreign_toplevel_handle_v1:set_fullscreen">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zwlr_foreign_toplevel_handle_v1:set_fullscreen">
+                <a href="#r:zwlr_foreign_toplevel_handle_v1:set_fullscreen" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   set_fullscreen
                 </div>
@@ -502,7 +522,8 @@ fullscreened on, if at all.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:zwlr_foreign_toplevel_handle_v1:unset_fullscreen">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zwlr_foreign_toplevel_handle_v1:unset_fullscreen">
+                <a href="#r:zwlr_foreign_toplevel_handle_v1:unset_fullscreen" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   unset_fullscreen
                 </div>
@@ -531,7 +552,8 @@ actually changes, this will be indicated by the state event.
           <ul class="list pl0">
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:zwlr_foreign_toplevel_handle_v1:title">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:zwlr_foreign_toplevel_handle_v1:title">
+                <a href="#e:zwlr_foreign_toplevel_handle_v1:title" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   title
                 </div>
@@ -545,7 +567,8 @@ actually changes, this will be indicated by the state event.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:zwlr_foreign_toplevel_handle_v1:app_id">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:zwlr_foreign_toplevel_handle_v1:app_id">
+                <a href="#e:zwlr_foreign_toplevel_handle_v1:app_id" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   app_id
                 </div>
@@ -559,7 +582,8 @@ actually changes, this will be indicated by the state event.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:zwlr_foreign_toplevel_handle_v1:output_enter">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:zwlr_foreign_toplevel_handle_v1:output_enter">
+                <a href="#e:zwlr_foreign_toplevel_handle_v1:output_enter" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   output_enter
                 </div>
@@ -574,7 +598,8 @@ the given output. A toplevel may be visible on multiple outputs.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:zwlr_foreign_toplevel_handle_v1:output_leave">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:zwlr_foreign_toplevel_handle_v1:output_leave">
+                <a href="#e:zwlr_foreign_toplevel_handle_v1:output_leave" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   output_leave
                 </div>
@@ -590,7 +615,8 @@ with the same output has been emitted before this event.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:zwlr_foreign_toplevel_handle_v1:state">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:zwlr_foreign_toplevel_handle_v1:state">
+                <a href="#e:zwlr_foreign_toplevel_handle_v1:state" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   state
                 </div>
@@ -606,7 +632,8 @@ compositor action or because of a request in this protocol.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:zwlr_foreign_toplevel_handle_v1:done">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:zwlr_foreign_toplevel_handle_v1:done">
+                <a href="#e:zwlr_foreign_toplevel_handle_v1:done" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   done
                 </div>
@@ -624,7 +651,8 @@ to be seen as atomic, even if they happen via multiple events.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:zwlr_foreign_toplevel_handle_v1:closed">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:zwlr_foreign_toplevel_handle_v1:closed">
+                <a href="#e:zwlr_foreign_toplevel_handle_v1:closed" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   closed
                 </div>
@@ -641,7 +669,8 @@ destroy request.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:zwlr_foreign_toplevel_handle_v1:parent">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:zwlr_foreign_toplevel_handle_v1:parent">
+                <a href="#e:zwlr_foreign_toplevel_handle_v1:parent" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   parent
                 </div>
@@ -690,7 +719,7 @@ THIS SOFTWARE.
 </div>
   </div>
 
-    </div>
+    </main>
 
   </body>
 </html>

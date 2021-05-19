@@ -10,17 +10,17 @@
     <link rel="stylesheet" href="&#x2f;wayland-protocol-docs/main.css"></link>
      
   </head>
-  <body class="bg-near-white black-70 sans-serif pa2 ph6-l">
-
-    <a href="&#x2f;wayland-protocol-docs/" class="f4 link near-black dim lh-title">
-      Home
-    </a>
+  <body class="bg-near-white black-70 flex sans-serif ph4-l">
 
     
 
-    <div id="content">
-      
-  <div class="fl w-25 ph2">
+    <div id="sidebar" class="w-20 br b--white bw3">
+      <div class="fixed h-100">
+        <a href="&#x2f;wayland-protocol-docs/" class="f4 link near-black dim lh-title">
+          Home
+        </a>
+        
+  <div class="ph2">
     
 
 <div>
@@ -91,14 +91,21 @@
   </ul>
 </div>
   </div>
-  <div class="fl w-75 ph2">
+
+      </div>
+    </div>
+
+    <main id="content" class="mh4">
+      
+  <div class="ph2">
     <h1 class="f1 lh-title">input_timestamps_unstable_v1</h1>
     <ul class="list pl0">
       
       <li class="mt4">
-        <div class="f2 lh-copy" id="i:zwp_input_timestamps_manager_v1">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:zwp_input_timestamps_manager_v1">
+          <a href="#i:zwp_input_timestamps_manager_v1" class="link dim black-70 child pr2 absolute left--2">#</a>
           zwp_input_timestamps_manager_v1
-        </div>
+        </h2>
         <div class="f6 lh-copy ws-pre-line courier">A global interface used for requesting high-resolution timestamps
 for input events.
 </div>
@@ -108,7 +115,8 @@ for input events.
           <ul class="list pl0">
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:zwp_input_timestamps_manager_v1:destroy">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zwp_input_timestamps_manager_v1:destroy">
+                <a href="#r:zwp_input_timestamps_manager_v1:destroy" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   destroy
                 </div>
@@ -131,7 +139,8 @@ affected.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:zwp_input_timestamps_manager_v1:get_keyboard_timestamps">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zwp_input_timestamps_manager_v1:get_keyboard_timestamps">
+                <a href="#r:zwp_input_timestamps_manager_v1:get_keyboard_timestamps" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   get_keyboard_timestamps
                 </div>
@@ -161,7 +170,8 @@ by calling zwp_input_timestamps_v1.destroy.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:zwp_input_timestamps_manager_v1:get_pointer_timestamps">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zwp_input_timestamps_manager_v1:get_pointer_timestamps">
+                <a href="#r:zwp_input_timestamps_manager_v1:get_pointer_timestamps" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   get_pointer_timestamps
                 </div>
@@ -191,7 +201,8 @@ by calling zwp_input_timestamps_v1.destroy.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:zwp_input_timestamps_manager_v1:get_touch_timestamps">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zwp_input_timestamps_manager_v1:get_touch_timestamps">
+                <a href="#r:zwp_input_timestamps_manager_v1:get_touch_timestamps" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   get_touch_timestamps
                 </div>
@@ -230,9 +241,10 @@ by calling zwp_input_timestamps_v1.destroy.
       </li>
       
       <li class="mt4">
-        <div class="f2 lh-copy" id="i:zwp_input_timestamps_v1">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:zwp_input_timestamps_v1">
+          <a href="#i:zwp_input_timestamps_v1" class="link dim black-70 child pr2 absolute left--2">#</a>
           zwp_input_timestamps_v1
-        </div>
+        </h2>
         <div class="f6 lh-copy ws-pre-line courier">Provides high-resolution timestamp events for a set of subscribed input
 events. The set of subscribed input events is determined by the
 zwp_input_timestamps_manager_v1 request used to create this object.
@@ -243,7 +255,8 @@ zwp_input_timestamps_manager_v1 request used to create this object.
           <ul class="list pl0">
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:zwp_input_timestamps_v1:destroy">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zwp_input_timestamps_v1:destroy">
+                <a href="#r:zwp_input_timestamps_v1:destroy" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   destroy
                 </div>
@@ -273,7 +286,8 @@ timestamp events will be emitted.
           <ul class="list pl0">
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:zwp_input_timestamps_v1:timestamp">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:zwp_input_timestamps_v1:timestamp">
+                <a href="#e:zwp_input_timestamps_v1:timestamp" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   timestamp
                 </div>
@@ -331,7 +345,7 @@ DEALINGS IN THE SOFTWARE.
 </div>
   </div>
 
-    </div>
+    </main>
 
   </body>
 </html>

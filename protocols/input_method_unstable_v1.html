@@ -10,17 +10,17 @@
     <link rel="stylesheet" href="&#x2f;wayland-protocol-docs/main.css"></link>
      
   </head>
-  <body class="bg-near-white black-70 sans-serif pa2 ph6-l">
-
-    <a href="&#x2f;wayland-protocol-docs/" class="f4 link near-black dim lh-title">
-      Home
-    </a>
+  <body class="bg-near-white black-70 flex sans-serif ph4-l">
 
     
 
-    <div id="content">
-      
-  <div class="fl w-25 ph2">
+    <div id="sidebar" class="w-20 br b--white bw3">
+      <div class="fixed h-100">
+        <a href="&#x2f;wayland-protocol-docs/" class="f4 link near-black dim lh-title">
+          Home
+        </a>
+        
+  <div class="ph2">
     
 
 <div>
@@ -199,14 +199,21 @@
   </ul>
 </div>
   </div>
-  <div class="fl w-75 ph2">
+
+      </div>
+    </div>
+
+    <main id="content" class="mh4">
+      
+  <div class="ph2">
     <h1 class="f1 lh-title">input_method_unstable_v1</h1>
     <ul class="list pl0">
       
       <li class="mt4">
-        <div class="f2 lh-copy" id="i:zwp_input_method_context_v1">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:zwp_input_method_context_v1">
+          <a href="#i:zwp_input_method_context_v1" class="link dim black-70 child pr2 absolute left--2">#</a>
           zwp_input_method_context_v1
-        </div>
+        </h2>
         <div class="f6 lh-copy ws-pre-line courier">Corresponds to a text input on the input method side. An input method context
 is created on text input activation on the input method side. It allows
 receiving information about the text input from the application via events.
@@ -237,7 +244,8 @@ interface version number is reset.
           <ul class="list pl0">
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:zwp_input_method_context_v1:destroy">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zwp_input_method_context_v1:destroy">
+                <a href="#r:zwp_input_method_context_v1:destroy" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   destroy
                 </div>
@@ -257,7 +265,8 @@ interface version number is reset.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:zwp_input_method_context_v1:commit_string">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zwp_input_method_context_v1:commit_string">
+                <a href="#r:zwp_input_method_context_v1:commit_string" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   commit_string
                 </div>
@@ -290,7 +299,8 @@ Any previously set composing text will be removed.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:zwp_input_method_context_v1:preedit_string">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zwp_input_method_context_v1:preedit_string">
+                <a href="#r:zwp_input_method_context_v1:preedit_string" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   preedit_string
                 </div>
@@ -323,7 +333,8 @@ processed by the text_input.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:zwp_input_method_context_v1:preedit_styling">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zwp_input_method_context_v1:preedit_styling">
+                <a href="#r:zwp_input_method_context_v1:preedit_styling" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   preedit_styling
                 </div>
@@ -355,7 +366,8 @@ This request should be sent before sending a preedit_string request.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:zwp_input_method_context_v1:preedit_cursor">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zwp_input_method_context_v1:preedit_cursor">
+                <a href="#r:zwp_input_method_context_v1:preedit_cursor" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   preedit_cursor
                 </div>
@@ -383,7 +395,8 @@ This request should be sent before sending a preedit_string request.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:zwp_input_method_context_v1:delete_surrounding_text">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zwp_input_method_context_v1:delete_surrounding_text">
+                <a href="#r:zwp_input_method_context_v1:delete_surrounding_text" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   delete_surrounding_text
                 </div>
@@ -411,7 +424,8 @@ a commit_string request.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:zwp_input_method_context_v1:cursor_position">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zwp_input_method_context_v1:cursor_position">
+                <a href="#r:zwp_input_method_context_v1:cursor_position" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   cursor_position
                 </div>
@@ -445,7 +459,8 @@ a commit_string request.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:zwp_input_method_context_v1:modifiers_map">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zwp_input_method_context_v1:modifiers_map">
+                <a href="#r:zwp_input_method_context_v1:modifiers_map" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   modifiers_map
                 </div>
@@ -467,7 +482,8 @@ a commit_string request.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:zwp_input_method_context_v1:keysym">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zwp_input_method_context_v1:keysym">
+                <a href="#r:zwp_input_method_context_v1:keysym" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   keysym
                 </div>
@@ -501,7 +517,8 @@ event convention. Sym is an XKB keysym, state is a wl_keyboard key_state.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:zwp_input_method_context_v1:grab_keyboard">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zwp_input_method_context_v1:grab_keyboard">
+                <a href="#r:zwp_input_method_context_v1:grab_keyboard" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   grab_keyboard
                 </div>
@@ -525,7 +542,8 @@ text like it is done for CJK languages.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:zwp_input_method_context_v1:key">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zwp_input_method_context_v1:key">
+                <a href="#r:zwp_input_method_context_v1:key" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   key
                 </div>
@@ -559,7 +577,8 @@ For generating custom key events use the keysym request instead.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:zwp_input_method_context_v1:modifiers">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zwp_input_method_context_v1:modifiers">
+                <a href="#r:zwp_input_method_context_v1:modifiers" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   modifiers
                 </div>
@@ -593,7 +612,8 @@ from the wl_keyboard::modifiers event.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:zwp_input_method_context_v1:language">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zwp_input_method_context_v1:language">
+                <a href="#r:zwp_input_method_context_v1:language" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   language
                 </div>
@@ -617,7 +637,8 @@ from the wl_keyboard::modifiers event.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:zwp_input_method_context_v1:text_direction">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zwp_input_method_context_v1:text_direction">
+                <a href="#r:zwp_input_method_context_v1:text_direction" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   text_direction
                 </div>
@@ -648,7 +669,8 @@ from the wl_keyboard::modifiers event.
           <ul class="list pl0">
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:zwp_input_method_context_v1:surrounding_text">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:zwp_input_method_context_v1:surrounding_text">
+                <a href="#e:zwp_input_method_context_v1:surrounding_text" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   surrounding_text
                 </div>
@@ -666,7 +688,8 @@ there is no selected text then anchor is the same as cursor.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:zwp_input_method_context_v1:reset">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:zwp_input_method_context_v1:reset">
+                <a href="#e:zwp_input_method_context_v1:reset" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   reset
                 </div>
@@ -679,7 +702,8 @@ there is no selected text then anchor is the same as cursor.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:zwp_input_method_context_v1:content_type">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:zwp_input_method_context_v1:content_type">
+                <a href="#e:zwp_input_method_context_v1:content_type" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   content_type
                 </div>
@@ -692,7 +716,8 @@ there is no selected text then anchor is the same as cursor.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:zwp_input_method_context_v1:invoke_action">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:zwp_input_method_context_v1:invoke_action">
+                <a href="#e:zwp_input_method_context_v1:invoke_action" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   invoke_action
                 </div>
@@ -705,7 +730,8 @@ there is no selected text then anchor is the same as cursor.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:zwp_input_method_context_v1:commit_state">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:zwp_input_method_context_v1:commit_state">
+                <a href="#e:zwp_input_method_context_v1:commit_state" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   commit_state
                 </div>
@@ -718,7 +744,8 @@ there is no selected text then anchor is the same as cursor.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:zwp_input_method_context_v1:preferred_language">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:zwp_input_method_context_v1:preferred_language">
+                <a href="#e:zwp_input_method_context_v1:preferred_language" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   preferred_language
                 </div>
@@ -737,9 +764,10 @@ there is no selected text then anchor is the same as cursor.
       </li>
       
       <li class="mt4">
-        <div class="f2 lh-copy" id="i:zwp_input_method_v1">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:zwp_input_method_v1">
+          <a href="#i:zwp_input_method_v1" class="link dim black-70 child pr2 absolute left--2">#</a>
           zwp_input_method_v1
-        </div>
+        </h2>
         <div class="f6 lh-copy ws-pre-line courier">An input method object is responsible for composing text in response to
 input from hardware or virtual keyboards. There is one input method
 object per seat. On activate there is a new input method context object
@@ -754,7 +782,8 @@ created which allows the input method to communicate with the text input.
           <ul class="list pl0">
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:zwp_input_method_v1:activate">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:zwp_input_method_v1:activate">
+                <a href="#e:zwp_input_method_v1:activate" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   activate
                 </div>
@@ -769,7 +798,8 @@ which allows communication with the text input.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:zwp_input_method_v1:deactivate">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:zwp_input_method_v1:deactivate">
+                <a href="#e:zwp_input_method_v1:deactivate" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   deactivate
                 </div>
@@ -791,9 +821,10 @@ handled.
       </li>
       
       <li class="mt4">
-        <div class="f2 lh-copy" id="i:zwp_input_panel_v1">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:zwp_input_panel_v1">
+          <a href="#i:zwp_input_panel_v1" class="link dim black-70 child pr2 absolute left--2">#</a>
           zwp_input_panel_v1
-        </div>
+        </h2>
         <div class="f6 lh-copy ws-pre-line courier">Only one client can bind this interface at a time.
 </div>
 
@@ -802,7 +833,8 @@ handled.
           <ul class="list pl0">
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:zwp_input_panel_v1:get_input_panel_surface">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zwp_input_panel_v1:get_input_panel_surface">
+                <a href="#r:zwp_input_panel_v1:get_input_panel_surface" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   get_input_panel_surface
                 </div>
@@ -833,9 +865,10 @@ handled.
       </li>
       
       <li class="mt4">
-        <div class="f2 lh-copy" id="i:zwp_input_panel_surface_v1">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:zwp_input_panel_surface_v1">
+          <a href="#i:zwp_input_panel_surface_v1" class="link dim black-70 child pr2 absolute left--2">#</a>
           zwp_input_panel_surface_v1
-        </div>
+        </h2>
         <div class="f6 lh-copy ws-pre-line courier"></div>
 
         
@@ -843,7 +876,8 @@ handled.
           <ul class="list pl0">
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:zwp_input_panel_surface_v1:set_toplevel">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zwp_input_panel_surface_v1:set_toplevel">
+                <a href="#r:zwp_input_panel_surface_v1:set_toplevel" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   set_toplevel
                 </div>
@@ -870,7 +904,8 @@ A keyboard surface is only shown when a text input is active.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:zwp_input_panel_surface_v1:set_overlay_panel">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zwp_input_panel_surface_v1:set_overlay_panel">
+                <a href="#r:zwp_input_panel_surface_v1:set_overlay_panel" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   set_overlay_panel
                 </div>
@@ -928,7 +963,7 @@ DEALINGS IN THE SOFTWARE.
 </div>
   </div>
 
-    </div>
+    </main>
 
   </body>
 </html>

@@ -10,17 +10,17 @@
     <link rel="stylesheet" href="&#x2f;wayland-protocol-docs/main.css"></link>
      
   </head>
-  <body class="bg-near-white black-70 sans-serif pa2 ph6-l">
-
-    <a href="&#x2f;wayland-protocol-docs/" class="f4 link near-black dim lh-title">
-      Home
-    </a>
+  <body class="bg-near-white black-70 flex sans-serif ph4-l">
 
     
 
-    <div id="content">
-      
-  <div class="fl w-25 ph2">
+    <div id="sidebar" class="w-20 br b--white bw3">
+      <div class="fixed h-100">
+        <a href="&#x2f;wayland-protocol-docs/" class="f4 link near-black dim lh-title">
+          Home
+        </a>
+        
+  <div class="ph2">
     
 
 <div>
@@ -285,14 +285,21 @@
   </ul>
 </div>
   </div>
-  <div class="fl w-75 ph2">
+
+      </div>
+    </div>
+
+    <main id="content" class="mh4">
+      
+  <div class="ph2">
     <h1 class="f1 lh-title">xdg_shell_unstable_v6</h1>
     <ul class="list pl0">
       
       <li class="mt4">
-        <div class="f2 lh-copy" id="i:zxdg_shell_v6">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:zxdg_shell_v6">
+          <a href="#i:zxdg_shell_v6" class="link dim black-70 child pr2 absolute left--2">#</a>
           zxdg_shell_v6
-        </div>
+        </h2>
         <div class="f6 lh-copy ws-pre-line courier">xdg_shell allows clients to turn a wl_surface into a &quot;real window&quot;
 which can be dragged, resized, stacked, and moved around by the
 user. Everything about this interface is suited towards traditional
@@ -304,7 +311,8 @@ desktop environments.
           <ul class="list pl0">
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:zxdg_shell_v6:destroy">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zxdg_shell_v6:destroy">
+                <a href="#r:zxdg_shell_v6:destroy" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   destroy
                 </div>
@@ -329,7 +337,8 @@ and will result in a protocol error.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:zxdg_shell_v6:create_positioner">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zxdg_shell_v6:create_positioner">
+                <a href="#r:zxdg_shell_v6:create_positioner" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   create_positioner
                 </div>
@@ -352,7 +361,8 @@ and xdg_surface.get_popup for details.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:zxdg_shell_v6:get_xdg_surface">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zxdg_shell_v6:get_xdg_surface">
+                <a href="#r:zxdg_shell_v6:get_xdg_surface" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   get_xdg_surface
                 </div>
@@ -385,7 +395,8 @@ xdg_surface is and how it is used.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:zxdg_shell_v6:pong">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zxdg_shell_v6:pong">
+                <a href="#r:zxdg_shell_v6:pong" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   pong
                 </div>
@@ -416,7 +427,8 @@ the client may be deemed unresponsive. See xdg_shell.ping.
           <ul class="list pl0">
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:zxdg_shell_v6:ping">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:zxdg_shell_v6:ping">
+                <a href="#e:zxdg_shell_v6:ping" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   ping
                 </div>
@@ -446,9 +458,10 @@ always respond to any xdg_shell object it created.
       </li>
       
       <li class="mt4">
-        <div class="f2 lh-copy" id="i:zxdg_positioner_v6">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:zxdg_positioner_v6">
+          <a href="#i:zxdg_positioner_v6" class="link dim black-70 child pr2 absolute left--2">#</a>
           zxdg_positioner_v6
-        </div>
+        </h2>
         <div class="f6 lh-copy ws-pre-line courier">The xdg_positioner provides a collection of rules for the placement of a
 child surface relative to a parent surface. Rules can be defined to ensure
 the child surface remains within the visible area&#x27;s borders, and to
@@ -475,7 +488,8 @@ positioning a surface raises an error.
           <ul class="list pl0">
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:zxdg_positioner_v6:destroy">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zxdg_positioner_v6:destroy">
+                <a href="#r:zxdg_positioner_v6:destroy" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   destroy
                 </div>
@@ -496,7 +510,8 @@ positioning a surface raises an error.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:zxdg_positioner_v6:set_size">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zxdg_positioner_v6:set_size">
+                <a href="#r:zxdg_positioner_v6:set_size" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   set_size
                 </div>
@@ -525,7 +540,8 @@ If a zero or negative size is set the invalid_input error is raised.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:zxdg_positioner_v6:set_anchor_rect">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zxdg_positioner_v6:set_anchor_rect">
+                <a href="#r:zxdg_positioner_v6:set_anchor_rect" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   set_anchor_rect
                 </div>
@@ -563,7 +579,8 @@ If a zero or negative size is set the invalid_input error is raised.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:zxdg_positioner_v6:set_anchor">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zxdg_positioner_v6:set_anchor">
+                <a href="#r:zxdg_positioner_v6:set_anchor" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   set_anchor
                 </div>
@@ -595,7 +612,8 @@ the invalid_input error is raised.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:zxdg_positioner_v6:set_gravity">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zxdg_positioner_v6:set_gravity">
+                <a href="#r:zxdg_positioner_v6:set_gravity" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   set_gravity
                 </div>
@@ -626,7 +644,8 @@ invalid_input error is raised.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:zxdg_positioner_v6:set_constraint_adjustment">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zxdg_positioner_v6:set_constraint_adjustment">
+                <a href="#r:zxdg_positioner_v6:set_constraint_adjustment" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   set_constraint_adjustment
                 </div>
@@ -661,7 +680,8 @@ The default adjustment is none.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:zxdg_positioner_v6:set_offset">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zxdg_positioner_v6:set_offset">
+                <a href="#r:zxdg_positioner_v6:set_offset" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   set_offset
                 </div>
@@ -705,9 +725,10 @@ with some user interface element placed somewhere in the popup surface.
       </li>
       
       <li class="mt4">
-        <div class="f2 lh-copy" id="i:zxdg_surface_v6">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:zxdg_surface_v6">
+          <a href="#i:zxdg_surface_v6" class="link dim black-70 child pr2 absolute left--2">#</a>
           zxdg_surface_v6
-        </div>
+        </h2>
         <div class="f6 lh-copy ws-pre-line courier">An interface that may be implemented by a wl_surface, for
 implementations that provide a desktop-style user interface.
 
@@ -745,7 +766,8 @@ buffer to the surface.
           <ul class="list pl0">
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:zxdg_surface_v6:destroy">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zxdg_surface_v6:destroy">
+                <a href="#r:zxdg_surface_v6:destroy" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   destroy
                 </div>
@@ -767,7 +789,8 @@ after its role object has been destroyed.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:zxdg_surface_v6:get_toplevel">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zxdg_surface_v6:get_toplevel">
+                <a href="#r:zxdg_surface_v6:get_toplevel" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   get_toplevel
                 </div>
@@ -792,7 +815,8 @@ xdg_toplevel is and how it is used.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:zxdg_surface_v6:get_popup">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zxdg_surface_v6:get_popup">
+                <a href="#r:zxdg_surface_v6:get_popup" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   get_popup
                 </div>
@@ -821,7 +845,8 @@ xdg_popup is and how it is used.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:zxdg_surface_v6:set_window_geometry">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zxdg_surface_v6:set_window_geometry">
+                <a href="#r:zxdg_surface_v6:set_window_geometry" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   set_window_geometry
                 </div>
@@ -873,7 +898,8 @@ subsurfaces.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:zxdg_surface_v6:ack_configure">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zxdg_surface_v6:ack_configure">
+                <a href="#r:zxdg_surface_v6:ack_configure" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   ack_configure
                 </div>
@@ -921,7 +947,8 @@ event the client really is responding to.
           <ul class="list pl0">
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:zxdg_surface_v6:configure">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:zxdg_surface_v6:configure">
+                <a href="#e:zxdg_surface_v6:configure" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   configure
                 </div>
@@ -956,9 +983,10 @@ to one, it is free to discard all but the last event it received.
       </li>
       
       <li class="mt4">
-        <div class="f2 lh-copy" id="i:zxdg_toplevel_v6">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:zxdg_toplevel_v6">
+          <a href="#i:zxdg_toplevel_v6" class="link dim black-70 child pr2 absolute left--2">#</a>
           zxdg_toplevel_v6
-        </div>
+        </h2>
         <div class="f6 lh-copy ws-pre-line courier">This interface defines an xdg_surface role which allows a surface to,
 among other things, set window-like properties such as maximize,
 fullscreen, and minimize, set application-specific metadata like title and
@@ -971,7 +999,8 @@ resize and move.
           <ul class="list pl0">
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:zxdg_toplevel_v6:destroy">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zxdg_toplevel_v6:destroy">
+                <a href="#r:zxdg_toplevel_v6:destroy" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   destroy
                 </div>
@@ -994,7 +1023,8 @@ maximization, fullscreen, and so on, will be lost.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:zxdg_toplevel_v6:set_parent">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zxdg_toplevel_v6:set_parent">
+                <a href="#r:zxdg_toplevel_v6:set_parent" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   set_parent
                 </div>
@@ -1023,7 +1053,8 @@ is raised.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:zxdg_toplevel_v6:set_title">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zxdg_toplevel_v6:set_title">
+                <a href="#r:zxdg_toplevel_v6:set_title" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   set_title
                 </div>
@@ -1052,7 +1083,8 @@ The string must be encoded in UTF-8.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:zxdg_toplevel_v6:set_app_id">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zxdg_toplevel_v6:set_app_id">
+                <a href="#r:zxdg_toplevel_v6:set_app_id" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   set_app_id
                 </div>
@@ -1094,7 +1126,8 @@ names and .desktop files.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:zxdg_toplevel_v6:show_window_menu">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zxdg_toplevel_v6:show_window_menu">
+                <a href="#r:zxdg_toplevel_v6:show_window_menu" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   show_window_menu
                 </div>
@@ -1133,7 +1166,8 @@ like a button press, key press, or touch down event.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:zxdg_toplevel_v6:move">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zxdg_toplevel_v6:move">
+                <a href="#r:zxdg_toplevel_v6:move" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   move
                 </div>
@@ -1173,7 +1207,8 @@ that the device focus will return when the move is completed.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:zxdg_toplevel_v6:resize">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zxdg_toplevel_v6:resize">
+                <a href="#r:zxdg_toplevel_v6:resize" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   resize
                 </div>
@@ -1229,7 +1264,8 @@ appropriate cursor image.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:zxdg_toplevel_v6:set_max_size">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zxdg_toplevel_v6:set_max_size">
+                <a href="#r:zxdg_toplevel_v6:set_max_size" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   set_max_size
                 </div>
@@ -1287,7 +1323,8 @@ protocol error.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:zxdg_toplevel_v6:set_min_size">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zxdg_toplevel_v6:set_min_size">
+                <a href="#r:zxdg_toplevel_v6:set_min_size" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   set_min_size
                 </div>
@@ -1345,7 +1382,8 @@ protocol error.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:zxdg_toplevel_v6:set_maximized">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zxdg_toplevel_v6:set_maximized">
+                <a href="#r:zxdg_toplevel_v6:set_maximized" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   set_maximized
                 </div>
@@ -1381,7 +1419,8 @@ a configure event with the &quot;maximized&quot; state.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:zxdg_toplevel_v6:unset_maximized">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zxdg_toplevel_v6:unset_maximized">
+                <a href="#r:zxdg_toplevel_v6:unset_maximized" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   unset_maximized
                 </div>
@@ -1418,7 +1457,8 @@ emit a configure event without the &quot;maximized&quot; state.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:zxdg_toplevel_v6:set_fullscreen">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zxdg_toplevel_v6:set_fullscreen">
+                <a href="#r:zxdg_toplevel_v6:set_fullscreen" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   set_fullscreen
                 </div>
@@ -1449,7 +1489,8 @@ black borders filling the rest of the output.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:zxdg_toplevel_v6:unset_fullscreen">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zxdg_toplevel_v6:unset_fullscreen">
+                <a href="#r:zxdg_toplevel_v6:unset_fullscreen" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   unset_fullscreen
                 </div>
@@ -1469,7 +1510,8 @@ black borders filling the rest of the output.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:zxdg_toplevel_v6:set_minimized">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zxdg_toplevel_v6:set_minimized">
+                <a href="#r:zxdg_toplevel_v6:set_minimized" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   set_minimized
                 </div>
@@ -1504,7 +1546,8 @@ similar compositor features.
           <ul class="list pl0">
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:zxdg_toplevel_v6:configure">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:zxdg_toplevel_v6:configure">
+                <a href="#e:zxdg_toplevel_v6:configure" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   configure
                 </div>
@@ -1536,7 +1579,8 @@ xdg_surface.configure and xdg_surface.ack_configure for details.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:zxdg_toplevel_v6:close">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:zxdg_toplevel_v6:close">
+                <a href="#e:zxdg_toplevel_v6:close" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   close
                 </div>
@@ -1563,9 +1607,10 @@ a dialog to ask the user to save their data, etc.
       </li>
       
       <li class="mt4">
-        <div class="f2 lh-copy" id="i:zxdg_popup_v6">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:zxdg_popup_v6">
+          <a href="#i:zxdg_popup_v6" class="link dim black-70 child pr2 absolute left--2">#</a>
           zxdg_popup_v6
-        </div>
+        </h2>
         <div class="f6 lh-copy ws-pre-line courier">A popup surface is a short-lived, temporary surface. It can be used to
 implement for example menus, popovers, tooltips and other similar user
 interface concepts.
@@ -1606,7 +1651,8 @@ for the xdg_popup state to take effect.
           <ul class="list pl0">
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:zxdg_popup_v6:destroy">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zxdg_popup_v6:destroy">
+                <a href="#r:zxdg_popup_v6:destroy" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   destroy
                 </div>
@@ -1631,7 +1677,8 @@ will be sent.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:zxdg_popup_v6:grab">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zxdg_popup_v6:grab">
+                <a href="#r:zxdg_popup_v6:grab" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   grab
                 </div>
@@ -1703,7 +1750,8 @@ will always have keyboard focus.
           <ul class="list pl0">
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:zxdg_popup_v6:configure">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:zxdg_popup_v6:configure">
+                <a href="#e:zxdg_popup_v6:configure" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   configure
                 </div>
@@ -1723,7 +1771,8 @@ window geometry of the parent surface.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:zxdg_popup_v6:popup_done">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:zxdg_popup_v6:popup_done">
+                <a href="#e:zxdg_popup_v6:popup_done" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   popup_done
                 </div>
@@ -1773,7 +1822,7 @@ DEALINGS IN THE SOFTWARE.
 </div>
   </div>
 
-    </div>
+    </main>
 
   </body>
 </html>

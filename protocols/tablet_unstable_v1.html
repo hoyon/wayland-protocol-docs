@@ -10,17 +10,17 @@
     <link rel="stylesheet" href="&#x2f;wayland-protocol-docs/main.css"></link>
      
   </head>
-  <body class="bg-near-white black-70 sans-serif pa2 ph6-l">
-
-    <a href="&#x2f;wayland-protocol-docs/" class="f4 link near-black dim lh-title">
-      Home
-    </a>
+  <body class="bg-near-white black-70 flex sans-serif ph4-l">
 
     
 
-    <div id="content">
-      
-  <div class="fl w-25 ph2">
+    <div id="sidebar" class="w-20 br b--white bw3">
+      <div class="fixed h-100">
+        <a href="&#x2f;wayland-protocol-docs/" class="f4 link near-black dim lh-title">
+          Home
+        </a>
+        
+  <div class="ph2">
     
 
 <div>
@@ -239,14 +239,21 @@
   </ul>
 </div>
   </div>
-  <div class="fl w-75 ph2">
+
+      </div>
+    </div>
+
+    <main id="content" class="mh4">
+      
+  <div class="ph2">
     <h1 class="f1 lh-title">tablet_unstable_v1</h1>
     <ul class="list pl0">
       
       <li class="mt4">
-        <div class="f2 lh-copy" id="i:zwp_tablet_manager_v1">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:zwp_tablet_manager_v1">
+          <a href="#i:zwp_tablet_manager_v1" class="link dim black-70 child pr2 absolute left--2">#</a>
           zwp_tablet_manager_v1
-        </div>
+        </h2>
         <div class="f6 lh-copy ws-pre-line courier">An object that provides access to the graphics tablets available on this
 system. All tablets are associated with a seat, to get access to the
 actual tablets, use wp_tablet_manager.get_tablet_seat.
@@ -257,7 +264,8 @@ actual tablets, use wp_tablet_manager.get_tablet_seat.
           <ul class="list pl0">
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:zwp_tablet_manager_v1:get_tablet_seat">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zwp_tablet_manager_v1:get_tablet_seat">
+                <a href="#r:zwp_tablet_manager_v1:get_tablet_seat" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   get_tablet_seat
                 </div>
@@ -281,7 +289,8 @@ provides access to all graphics tablets in this seat.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:zwp_tablet_manager_v1:destroy">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zwp_tablet_manager_v1:destroy">
+                <a href="#r:zwp_tablet_manager_v1:destroy" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   destroy
                 </div>
@@ -312,9 +321,10 @@ object are unaffected and should be destroyed separately.
       </li>
       
       <li class="mt4">
-        <div class="f2 lh-copy" id="i:zwp_tablet_seat_v1">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:zwp_tablet_seat_v1">
+          <a href="#i:zwp_tablet_seat_v1" class="link dim black-70 child pr2 absolute left--2">#</a>
           zwp_tablet_seat_v1
-        </div>
+        </h2>
         <div class="f6 lh-copy ws-pre-line courier">An object that provides access to the graphics tablets available on this
 seat. After binding to this interface, the compositor sends a set of
 wp_tablet_seat.tablet_added and wp_tablet_seat.tool_added events.
@@ -325,7 +335,8 @@ wp_tablet_seat.tablet_added and wp_tablet_seat.tool_added events.
           <ul class="list pl0">
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:zwp_tablet_seat_v1:destroy">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zwp_tablet_seat_v1:destroy">
+                <a href="#r:zwp_tablet_seat_v1:destroy" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   destroy
                 </div>
@@ -354,7 +365,8 @@ object are unaffected and should be destroyed separately.
           <ul class="list pl0">
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:zwp_tablet_seat_v1:tablet_added">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:zwp_tablet_seat_v1:tablet_added">
+                <a href="#e:zwp_tablet_seat_v1:tablet_added" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   tablet_added
                 </div>
@@ -371,7 +383,8 @@ sent through the wp_tablet interface.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:zwp_tablet_seat_v1:tool_added">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:zwp_tablet_seat_v1:tool_added">
+                <a href="#e:zwp_tablet_seat_v1:tool_added" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   tool_added
                 </div>
@@ -394,9 +407,10 @@ type, etc.) is sent through the wp_tablet_tool interface.
       </li>
       
       <li class="mt4">
-        <div class="f2 lh-copy" id="i:zwp_tablet_tool_v1">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:zwp_tablet_tool_v1">
+          <a href="#i:zwp_tablet_tool_v1" class="link dim black-70 child pr2 absolute left--2">#</a>
           zwp_tablet_tool_v1
-        </div>
+        </h2>
         <div class="f6 lh-copy ws-pre-line courier">An object that represents a physical tool that has been, or is
 currently in use with a tablet in this seat. Each wp_tablet_tool
 object stays valid until the client destroys it; the compositor
@@ -424,7 +438,8 @@ considered part of the same hardware state change.
           <ul class="list pl0">
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:zwp_tablet_tool_v1:set_cursor">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zwp_tablet_tool_v1:set_cursor">
+                <a href="#r:zwp_tablet_tool_v1:set_cursor" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   set_cursor
                 </div>
@@ -484,7 +499,8 @@ seats.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:zwp_tablet_tool_v1:destroy">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zwp_tablet_tool_v1:destroy">
+                <a href="#r:zwp_tablet_tool_v1:destroy" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   destroy
                 </div>
@@ -512,7 +528,8 @@ seats.
           <ul class="list pl0">
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:zwp_tablet_tool_v1:type">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:zwp_tablet_tool_v1:type">
+                <a href="#e:zwp_tablet_tool_v1:type" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   type
                 </div>
@@ -530,7 +547,8 @@ wp_tablet_tool.done event.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:zwp_tablet_tool_v1:hardware_serial">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:zwp_tablet_tool_v1:hardware_serial">
+                <a href="#e:zwp_tablet_tool_v1:hardware_serial" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   hardware_serial
                 </div>
@@ -558,7 +576,8 @@ wp_tablet_tool.done event.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:zwp_tablet_tool_v1:hardware_id_wacom">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:zwp_tablet_tool_v1:hardware_id_wacom">
+                <a href="#e:zwp_tablet_tool_v1:hardware_id_wacom" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   hardware_id_wacom
                 </div>
@@ -581,7 +600,8 @@ wp_tablet_tool.done event.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:zwp_tablet_tool_v1:capability">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:zwp_tablet_tool_v1:capability">
+                <a href="#e:zwp_tablet_tool_v1:capability" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   capability
                 </div>
@@ -601,7 +621,8 @@ wp_tablet_tool.done event.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:zwp_tablet_tool_v1:done">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:zwp_tablet_tool_v1:done">
+                <a href="#e:zwp_tablet_tool_v1:done" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   done
                 </div>
@@ -617,7 +638,8 @@ be complete and finalize initialization of the tool.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:zwp_tablet_tool_v1:removed">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:zwp_tablet_tool_v1:removed">
+                <a href="#e:zwp_tablet_tool_v1:removed" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   removed
                 </div>
@@ -644,7 +666,8 @@ the object.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:zwp_tablet_tool_v1:proximity_in">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:zwp_tablet_tool_v1:proximity_in">
+                <a href="#e:zwp_tablet_tool_v1:proximity_in" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   proximity_in
                 </div>
@@ -666,7 +689,8 @@ within the same frame as the proximity_in event.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:zwp_tablet_tool_v1:proximity_out">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:zwp_tablet_tool_v1:proximity_out">
+                <a href="#e:zwp_tablet_tool_v1:proximity_out" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   proximity_out
                 </div>
@@ -691,7 +715,8 @@ proximity of the tablet.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:zwp_tablet_tool_v1:down">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:zwp_tablet_tool_v1:down">
+                <a href="#e:zwp_tablet_tool_v1:down" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   down
                 </div>
@@ -716,7 +741,8 @@ exceeded.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:zwp_tablet_tool_v1:up">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:zwp_tablet_tool_v1:up">
+                <a href="#e:zwp_tablet_tool_v1:up" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   up
                 </div>
@@ -745,7 +771,8 @@ threshold.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:zwp_tablet_tool_v1:motion">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:zwp_tablet_tool_v1:motion">
+                <a href="#e:zwp_tablet_tool_v1:motion" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   motion
                 </div>
@@ -759,7 +786,8 @@ threshold.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:zwp_tablet_tool_v1:pressure">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:zwp_tablet_tool_v1:pressure">
+                <a href="#e:zwp_tablet_tool_v1:pressure" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   pressure
                 </div>
@@ -777,7 +805,8 @@ contact. See the down and up events for more details.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:zwp_tablet_tool_v1:distance">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:zwp_tablet_tool_v1:distance">
+                <a href="#e:zwp_tablet_tool_v1:distance" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   distance
                 </div>
@@ -795,7 +824,8 @@ contact. See the down and up events for more details.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:zwp_tablet_tool_v1:tilt">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:zwp_tablet_tool_v1:tilt">
+                <a href="#e:zwp_tablet_tool_v1:tilt" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   tilt
                 </div>
@@ -812,7 +842,8 @@ positive x or y axis.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:zwp_tablet_tool_v1:rotation">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:zwp_tablet_tool_v1:rotation">
+                <a href="#e:zwp_tablet_tool_v1:rotation" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   rotation
                 </div>
@@ -828,7 +859,8 @@ logical neutral position.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:zwp_tablet_tool_v1:slider">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:zwp_tablet_tool_v1:slider">
+                <a href="#e:zwp_tablet_tool_v1:slider" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   slider
                 </div>
@@ -846,7 +878,8 @@ The slider is available on e.g. the Wacom Airbrush tool.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:zwp_tablet_tool_v1:wheel">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:zwp_tablet_tool_v1:wheel">
+                <a href="#e:zwp_tablet_tool_v1:wheel" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   wheel
                 </div>
@@ -871,7 +904,8 @@ have different degrees values.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:zwp_tablet_tool_v1:button">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:zwp_tablet_tool_v1:button">
+                <a href="#e:zwp_tablet_tool_v1:button" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   button
                 </div>
@@ -890,7 +924,8 @@ details.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:zwp_tablet_tool_v1:frame">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:zwp_tablet_tool_v1:frame">
+                <a href="#e:zwp_tablet_tool_v1:frame" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   frame
                 </div>
@@ -913,9 +948,10 @@ one hardware event.
       </li>
       
       <li class="mt4">
-        <div class="f2 lh-copy" id="i:zwp_tablet_v1">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:zwp_tablet_v1">
+          <a href="#i:zwp_tablet_v1" class="link dim black-70 child pr2 absolute left--2">#</a>
           zwp_tablet_v1
-        </div>
+        </h2>
         <div class="f6 lh-copy ws-pre-line courier">The wp_tablet interface represents one graphics tablet device. The
 tablet interface itself does not generate events; all events are
 generated by wp_tablet_tool objects when in proximity above a tablet.
@@ -931,7 +967,8 @@ terminated by a wp_tablet.done event.
           <ul class="list pl0">
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:zwp_tablet_v1:destroy">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zwp_tablet_v1:destroy">
+                <a href="#r:zwp_tablet_v1:destroy" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   destroy
                 </div>
@@ -959,7 +996,8 @@ terminated by a wp_tablet.done event.
           <ul class="list pl0">
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:zwp_tablet_v1:name">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:zwp_tablet_v1:name">
+                <a href="#e:zwp_tablet_v1:name" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   name
                 </div>
@@ -974,7 +1012,8 @@ wp_tablet.done event.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:zwp_tablet_v1:id">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:zwp_tablet_v1:id">
+                <a href="#e:zwp_tablet_v1:id" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   id
                 </div>
@@ -989,7 +1028,8 @@ wp_tablet.done event.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:zwp_tablet_v1:path">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:zwp_tablet_v1:path">
+                <a href="#e:zwp_tablet_v1:path" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   path
                 </div>
@@ -1016,7 +1056,8 @@ wp_tablet.done event.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:zwp_tablet_v1:done">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:zwp_tablet_v1:done">
+                <a href="#e:zwp_tablet_v1:done" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   done
                 </div>
@@ -1033,7 +1074,8 @@ of the tablet.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:zwp_tablet_v1:removed">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:zwp_tablet_v1:removed">
+                <a href="#e:zwp_tablet_v1:removed" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   removed
                 </div>
@@ -1085,7 +1127,7 @@ SOFTWARE.
 </div>
   </div>
 
-    </div>
+    </main>
 
   </body>
 </html>

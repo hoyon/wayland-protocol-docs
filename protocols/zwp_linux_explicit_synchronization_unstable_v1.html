@@ -10,17 +10,17 @@
     <link rel="stylesheet" href="&#x2f;wayland-protocol-docs/main.css"></link>
      
   </head>
-  <body class="bg-near-white black-70 sans-serif pa2 ph6-l">
-
-    <a href="&#x2f;wayland-protocol-docs/" class="f4 link near-black dim lh-title">
-      Home
-    </a>
+  <body class="bg-near-white black-70 flex sans-serif ph4-l">
 
     
 
-    <div id="content">
-      
-  <div class="fl w-25 ph2">
+    <div id="sidebar" class="w-20 br b--white bw3">
+      <div class="fixed h-100">
+        <a href="&#x2f;wayland-protocol-docs/" class="f4 link near-black dim lh-title">
+          Home
+        </a>
+        
+  <div class="ph2">
     
 
 <div>
@@ -105,14 +105,21 @@
   </ul>
 </div>
   </div>
-  <div class="fl w-75 ph2">
+
+      </div>
+    </div>
+
+    <main id="content" class="mh4">
+      
+  <div class="ph2">
     <h1 class="f1 lh-title">zwp_linux_explicit_synchronization_unstable_v1</h1>
     <ul class="list pl0">
       
       <li class="mt4">
-        <div class="f2 lh-copy" id="i:zwp_linux_explicit_synchronization_v1">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:zwp_linux_explicit_synchronization_v1">
+          <a href="#i:zwp_linux_explicit_synchronization_v1" class="link dim black-70 child pr2 absolute left--2">#</a>
           zwp_linux_explicit_synchronization_v1
-        </div>
+        </h2>
         <div class="f6 lh-copy ws-pre-line courier">This global is a factory interface, allowing clients to request
 explicit synchronization for buffers on a per-surface basis.
 
@@ -136,7 +143,8 @@ interface version number is reset.
           <ul class="list pl0">
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:zwp_linux_explicit_synchronization_v1:destroy">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zwp_linux_explicit_synchronization_v1:destroy">
+                <a href="#r:zwp_linux_explicit_synchronization_v1:destroy" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   destroy
                 </div>
@@ -159,7 +167,8 @@ factory, shall not be affected by this request.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:zwp_linux_explicit_synchronization_v1:get_synchronization">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zwp_linux_explicit_synchronization_v1:get_synchronization">
+                <a href="#r:zwp_linux_explicit_synchronization_v1:get_synchronization" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   get_synchronization
                 </div>
@@ -201,9 +210,10 @@ to avoid raising a synchronization_exists protocol error.
       </li>
       
       <li class="mt4">
-        <div class="f2 lh-copy" id="i:zwp_linux_surface_synchronization_v1">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:zwp_linux_surface_synchronization_v1">
+          <a href="#i:zwp_linux_surface_synchronization_v1" class="link dim black-70 child pr2 absolute left--2">#</a>
           zwp_linux_surface_synchronization_v1
-        </div>
+        </h2>
         <div class="f6 lh-copy ws-pre-line courier">This object implements per-surface explicit synchronization.
 
 Synchronization refers to co-ordination of pipelined operations performed
@@ -241,7 +251,8 @@ additional buffer types.
           <ul class="list pl0">
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:zwp_linux_surface_synchronization_v1:destroy">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zwp_linux_surface_synchronization_v1:destroy">
+                <a href="#r:zwp_linux_surface_synchronization_v1:destroy" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   destroy
                 </div>
@@ -269,7 +280,8 @@ affected by this request.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:zwp_linux_surface_synchronization_v1:set_acquire_fence">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zwp_linux_surface_synchronization_v1:set_acquire_fence">
+                <a href="#r:zwp_linux_surface_synchronization_v1:set_acquire_fence" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   set_acquire_fence
                 </div>
@@ -314,7 +326,8 @@ error is raised.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="r:zwp_linux_surface_synchronization_v1:get_release">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zwp_linux_surface_synchronization_v1:get_release">
+                <a href="#r:zwp_linux_surface_synchronization_v1:get_release" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   get_release
                 </div>
@@ -360,9 +373,10 @@ error is raised.
       </li>
       
       <li class="mt4">
-        <div class="f2 lh-copy" id="i:zwp_linux_buffer_release_v1">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:zwp_linux_buffer_release_v1">
+          <a href="#i:zwp_linux_buffer_release_v1" class="link dim black-70 child pr2 absolute left--2">#</a>
           zwp_linux_buffer_release_v1
-        </div>
+        </h2>
         <div class="f6 lh-copy ws-pre-line courier">This object is instantiated in response to a
 zwp_linux_surface_synchronization_v1.get_release request.
 
@@ -390,7 +404,8 @@ Once a buffer release object has delivered a &#x27;fenced_release&#x27; or an
           <ul class="list pl0">
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:zwp_linux_buffer_release_v1:fenced_release">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:zwp_linux_buffer_release_v1:fenced_release">
+                <a href="#e:zwp_linux_buffer_release_v1:fenced_release" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   fenced_release
                 </div>
@@ -414,7 +429,8 @@ This event destroys the zwp_linux_buffer_release_v1 object.
             </li>
             
             <li class="mt3">
-              <div class="flex items-center lh-title mb2" id="e:zwp_linux_buffer_release_v1:immediate_release">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:zwp_linux_buffer_release_v1:immediate_release">
+                <a href="#e:zwp_linux_buffer_release_v1:immediate_release" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
                   immediate_release
                 </div>
@@ -471,7 +487,7 @@ DEALINGS IN THE SOFTWARE.
 </div>
   </div>
 
-    </div>
+    </main>
 
   </body>
 </html>
