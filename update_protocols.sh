@@ -19,5 +19,13 @@ cp -r wayland-protocols/stable wayland-protocols/unstable -t $CURRENT_DIR/waylan
 git clone https://github.com/swaywm/wlr-protocols.git
 cp -r wlr-protocols/unstable -t $CURRENT_DIR/wlroots
 
+
 popd
+
+pushd other
+
+wget https://raw.githubusercontent.com/swaywm/wlroots/master/protocol/input-method-unstable-v2.xml 
+wget https://raw.githubusercontent.com/swaywm/wlroots/master/protocol/virtual-keyboard-unstable-v1.xml
+popd
+
 touch ../src/main.rs
