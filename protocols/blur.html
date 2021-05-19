@@ -1,0 +1,258 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>blur</title>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="&#x2f;wayland-protocol-docs/main.css"></link>
+     
+  </head>
+  <body class="bg-near-white black-70 flex sans-serif ph4-l">
+
+    
+
+    <div id="sidebar" class="w-20 br b--white bw3">
+      <div class="fixed h-100">
+        <a href="&#x2f;wayland-protocol-docs/" class="f4 link near-black dim lh-title">
+          Home
+        </a>
+        
+  <div class="ph2">
+    
+
+<div>
+  <ul class="list pl0">
+  
+    <li>
+      <a href="#i:org_kde_kwin_blur_manager" class="link blue underline-hover lh-copy">org_kde_kwin_blur_manager</a>
+
+      
+        <div>
+          <a href="#rh:org_kde_kwin_blur_manager" class="link blue underline-hover lh-copy pl3">Requests</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#r:org_kde_kwin_blur_manager:create" class="link blue underline-hover lh-copy">create</a>
+          </li>
+          
+          <li>
+            <a href="#r:org_kde_kwin_blur_manager:unset" class="link blue underline-hover lh-copy">unset</a>
+          </li>
+          
+        </ul>
+      
+
+      
+      
+    </li>
+  
+    <li>
+      <a href="#i:org_kde_kwin_blur" class="link blue underline-hover lh-copy">org_kde_kwin_blur</a>
+
+      
+        <div>
+          <a href="#rh:org_kde_kwin_blur" class="link blue underline-hover lh-copy pl3">Requests</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#r:org_kde_kwin_blur:commit" class="link blue underline-hover lh-copy">commit</a>
+          </li>
+          
+          <li>
+            <a href="#r:org_kde_kwin_blur:set_region" class="link blue underline-hover lh-copy">set_region</a>
+          </li>
+          
+          <li>
+            <a href="#r:org_kde_kwin_blur:release" class="link blue underline-hover lh-copy">release</a>
+          </li>
+          
+        </ul>
+      
+
+      
+      
+    </li>
+  
+  </ul>
+</div>
+  </div>
+
+      </div>
+    </div>
+
+    <main id="content" class="mh4">
+      
+  <div class="ph2">
+    <h1 class="f1 lh-title">blur</h1>
+    <ul class="list pl0">
+      
+      <li class="mt4">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:org_kde_kwin_blur_manager">
+          <a href="#i:org_kde_kwin_blur_manager" class="link dim black-70 child pr2 absolute left--2">#</a>
+          org_kde_kwin_blur_manager
+        </h2>
+        <div class="f6 lh-copy ws-pre-line courier"></div>
+
+        
+          <h3 class=" f5 lh-title" id="rh:org_kde_kwin_blur_manager">Requests</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:org_kde_kwin_blur_manager:create">
+                <a href="#r:org_kde_kwin_blur_manager:create" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  create
+                </div>
+                <div class="f5 ml2">
+                  
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>struct org_kde_kwin_blur* </span><span class="dark-blue">org_kde_kwin_blur_manager_create</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct org_kde_kwin_blur_manager*</span> org_kde_kwin_blur_manager,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_surface*</span> surface</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier"></div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:org_kde_kwin_blur_manager:unset">
+                <a href="#r:org_kde_kwin_blur_manager:unset" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  unset
+                </div>
+                <div class="f5 ml2">
+                  
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">org_kde_kwin_blur_manager_unset</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct org_kde_kwin_blur_manager*</span> org_kde_kwin_blur_manager,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_surface*</span> surface</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier"></div>
+            </li>
+            
+          </ul>
+        
+
+        
+
+        
+
+      </li>
+      
+      <li class="mt4">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:org_kde_kwin_blur">
+          <a href="#i:org_kde_kwin_blur" class="link dim black-70 child pr2 absolute left--2">#</a>
+          org_kde_kwin_blur
+        </h2>
+        <div class="f6 lh-copy ws-pre-line courier"></div>
+
+        
+          <h3 class=" f5 lh-title" id="rh:org_kde_kwin_blur">Requests</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:org_kde_kwin_blur:commit">
+                <a href="#r:org_kde_kwin_blur:commit" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  commit
+                </div>
+                <div class="f5 ml2">
+                  
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">org_kde_kwin_blur_commit</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct org_kde_kwin_blur*</span> org_kde_kwin_blur</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier"></div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:org_kde_kwin_blur:set_region">
+                <a href="#r:org_kde_kwin_blur:set_region" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  set_region
+                </div>
+                <div class="f5 ml2">
+                  
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">org_kde_kwin_blur_set_region</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct org_kde_kwin_blur*</span> org_kde_kwin_blur,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_region*</span> region</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier"></div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:org_kde_kwin_blur:release">
+                <a href="#r:org_kde_kwin_blur:release" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  release
+                </div>
+                <div class="f5 ml2">
+                  release the blur object
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">org_kde_kwin_blur_release</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct org_kde_kwin_blur*</span> org_kde_kwin_blur</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier"></div>
+            </li>
+            
+          </ul>
+        
+
+        
+
+        
+
+      </li>
+      
+    </ul>
+
+    <h2 class="f4 lh-title">Copyright Info</h2>
+    <div class="f7 lh-copy ws-pre-line courier">SPDX-FileCopyrightText: 2015 Martin Gräßlin
+SPDX-FileCopyrightText: 2015 Marco Martin
+
+SPDX-License-Identifier: LGPL-2.1-or-later
+</div>
+  </div>
+
+    </main>
+
+  </body>
+</html>

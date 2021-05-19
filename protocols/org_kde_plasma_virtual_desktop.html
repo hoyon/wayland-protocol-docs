@@ -1,0 +1,454 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>org_kde_plasma_virtual_desktop</title>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="&#x2f;wayland-protocol-docs/main.css"></link>
+     
+  </head>
+  <body class="bg-near-white black-70 flex sans-serif ph4-l">
+
+    
+
+    <div id="sidebar" class="w-20 br b--white bw3">
+      <div class="fixed h-100">
+        <a href="&#x2f;wayland-protocol-docs/" class="f4 link near-black dim lh-title">
+          Home
+        </a>
+        
+  <div class="ph2">
+    
+
+<div>
+  <ul class="list pl0">
+  
+    <li>
+      <a href="#i:org_kde_plasma_virtual_desktop_management" class="link blue underline-hover lh-copy">org_kde_plasma_virtual_desktop_management</a>
+
+      
+        <div>
+          <a href="#rh:org_kde_plasma_virtual_desktop_management" class="link blue underline-hover lh-copy pl3">Requests</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#r:org_kde_plasma_virtual_desktop_management:get_virtual_desktop" class="link blue underline-hover lh-copy">get_virtual_desktop</a>
+          </li>
+          
+          <li>
+            <a href="#r:org_kde_plasma_virtual_desktop_management:request_create_virtual_desktop" class="link blue underline-hover lh-copy">request_create_virtual_desktop</a>
+          </li>
+          
+          <li>
+            <a href="#r:org_kde_plasma_virtual_desktop_management:request_remove_virtual_desktop" class="link blue underline-hover lh-copy">request_remove_virtual_desktop</a>
+          </li>
+          
+        </ul>
+      
+
+      
+        <div>
+          <a href="#eh:org_kde_plasma_virtual_desktop_management" class="link blue underline-hover lh-copy pl3">Events</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#e:org_kde_plasma_virtual_desktop_management:desktop_created" class="link blue underline-hover lh-copy">desktop_created</a>
+          </li>
+          
+          <li>
+            <a href="#e:org_kde_plasma_virtual_desktop_management:desktop_removed" class="link blue underline-hover lh-copy">desktop_removed</a>
+          </li>
+          
+          <li>
+            <a href="#e:org_kde_plasma_virtual_desktop_management:done" class="link blue underline-hover lh-copy">done</a>
+          </li>
+          
+          <li>
+            <a href="#e:org_kde_plasma_virtual_desktop_management:rows" class="link blue underline-hover lh-copy">rows</a>
+          </li>
+          
+        </ul>
+      
+    </li>
+  
+    <li>
+      <a href="#i:org_kde_plasma_virtual_desktop" class="link blue underline-hover lh-copy">org_kde_plasma_virtual_desktop</a>
+
+      
+        <div>
+          <a href="#rh:org_kde_plasma_virtual_desktop" class="link blue underline-hover lh-copy pl3">Requests</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#r:org_kde_plasma_virtual_desktop:request_activate" class="link blue underline-hover lh-copy">request_activate</a>
+          </li>
+          
+        </ul>
+      
+
+      
+        <div>
+          <a href="#eh:org_kde_plasma_virtual_desktop" class="link blue underline-hover lh-copy pl3">Events</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#e:org_kde_plasma_virtual_desktop:desktop_id" class="link blue underline-hover lh-copy">desktop_id</a>
+          </li>
+          
+          <li>
+            <a href="#e:org_kde_plasma_virtual_desktop:name" class="link blue underline-hover lh-copy">name</a>
+          </li>
+          
+          <li>
+            <a href="#e:org_kde_plasma_virtual_desktop:activated" class="link blue underline-hover lh-copy">activated</a>
+          </li>
+          
+          <li>
+            <a href="#e:org_kde_plasma_virtual_desktop:deactivated" class="link blue underline-hover lh-copy">deactivated</a>
+          </li>
+          
+          <li>
+            <a href="#e:org_kde_plasma_virtual_desktop:done" class="link blue underline-hover lh-copy">done</a>
+          </li>
+          
+          <li>
+            <a href="#e:org_kde_plasma_virtual_desktop:removed" class="link blue underline-hover lh-copy">removed</a>
+          </li>
+          
+        </ul>
+      
+    </li>
+  
+  </ul>
+</div>
+  </div>
+
+      </div>
+    </div>
+
+    <main id="content" class="mh4">
+      
+  <div class="ph2">
+    <h1 class="f1 lh-title">org_kde_plasma_virtual_desktop</h1>
+    <ul class="list pl0">
+      
+      <li class="mt4">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:org_kde_plasma_virtual_desktop_management">
+          <a href="#i:org_kde_plasma_virtual_desktop_management" class="link dim black-70 child pr2 absolute left--2">#</a>
+          org_kde_plasma_virtual_desktop_management
+        </h2>
+        <div class="f6 lh-copy ws-pre-line courier"></div>
+
+        
+          <h3 class=" f5 lh-title" id="rh:org_kde_plasma_virtual_desktop_management">Requests</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:org_kde_plasma_virtual_desktop_management:get_virtual_desktop">
+                <a href="#r:org_kde_plasma_virtual_desktop_management:get_virtual_desktop" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  get_virtual_desktop
+                </div>
+                <div class="f5 ml2">
+                  get the org_kde_plasma_virtual_desktop interface for a desktop
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>struct org_kde_plasma_virtual_desktop* </span><span class="dark-blue">org_kde_plasma_virtual_desktop_management_get_virtual_desktop</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct org_kde_plasma_virtual_desktop_management*</span> org_kde_plasma_virtual_desktop_management,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">const char*</span> desktop_id</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier">Given the id of a particular virtual desktop, get the corresponding org_kde_plasma_virtual_desktop which represents only the desktop with that id;
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:org_kde_plasma_virtual_desktop_management:request_create_virtual_desktop">
+                <a href="#r:org_kde_plasma_virtual_desktop_management:request_create_virtual_desktop" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  request_create_virtual_desktop
+                </div>
+                <div class="f5 ml2">
+                  ask for the creation of a new desktop at a specified position
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">org_kde_plasma_virtual_desktop_management_request_create_virtual_desktop</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct org_kde_plasma_virtual_desktop_management*</span> org_kde_plasma_virtual_desktop_management,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">const char*</span> name,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> position</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier">Ask the server to create a new virtual desktop, and position it at a specified position. If the position is zero or less, it will be positioned at the beginning, if the cosition is the count or more, it will be positioned at the end.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:org_kde_plasma_virtual_desktop_management:request_remove_virtual_desktop">
+                <a href="#r:org_kde_plasma_virtual_desktop_management:request_remove_virtual_desktop" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  request_remove_virtual_desktop
+                </div>
+                <div class="f5 ml2">
+                  ask for a desktop removal identified by id
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">org_kde_plasma_virtual_desktop_management_request_remove_virtual_desktop</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct org_kde_plasma_virtual_desktop_management*</span> org_kde_plasma_virtual_desktop_management,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">const char*</span> desktop_id</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier">Ask the server to get rid of a virtual desktop, the server may or may not acconsent to the request.
+</div>
+            </li>
+            
+          </ul>
+        
+
+        
+          <h3 class=" f5 lh-title" id="eh:org_kde_plasma_virtual_desktop_management">Events</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:org_kde_plasma_virtual_desktop_management:desktop_created">
+                <a href="#e:org_kde_plasma_virtual_desktop_management:desktop_created" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  desktop_created
+                </div>
+                <div class="f5 ml2">
+                  Emitted when a new desktop has been created
+                </div>
+              </div>
+
+              <div class="f6 lh-copy ws-pre-line courier"></div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:org_kde_plasma_virtual_desktop_management:desktop_removed">
+                <a href="#e:org_kde_plasma_virtual_desktop_management:desktop_removed" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  desktop_removed
+                </div>
+                <div class="f5 ml2">
+                  Emitted when a desktop has been removed
+                </div>
+              </div>
+
+              <div class="f6 lh-copy ws-pre-line courier"></div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:org_kde_plasma_virtual_desktop_management:done">
+                <a href="#e:org_kde_plasma_virtual_desktop_management:done" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  done
+                </div>
+                <div class="f5 ml2">
+                  sent all information about desktops
+                </div>
+              </div>
+
+              <div class="f6 lh-copy ws-pre-line courier">This event is sent after all other properties has been
+sent after binding to the desktop manager object and after any
+other property changes done after that. This allows
+changes to the org_kde_plasma_virtual_desktop_management properties to be seen as
+atomic, even if they happen via multiple events.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:org_kde_plasma_virtual_desktop_management:rows">
+                <a href="#e:org_kde_plasma_virtual_desktop_management:rows" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  rows
+                </div>
+                <div class="f5 ml2">
+                  
+                </div>
+              </div>
+
+              <div class="f6 lh-copy ws-pre-line courier"></div>
+            </li>
+            
+          </ul>
+
+        
+
+      </li>
+      
+      <li class="mt4">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:org_kde_plasma_virtual_desktop">
+          <a href="#i:org_kde_plasma_virtual_desktop" class="link dim black-70 child pr2 absolute left--2">#</a>
+          org_kde_plasma_virtual_desktop
+        </h2>
+        <div class="f6 lh-copy ws-pre-line courier"></div>
+
+        
+          <h3 class=" f5 lh-title" id="rh:org_kde_plasma_virtual_desktop">Requests</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:org_kde_plasma_virtual_desktop:request_activate">
+                <a href="#r:org_kde_plasma_virtual_desktop:request_activate" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  request_activate
+                </div>
+                <div class="f5 ml2">
+                  Requests this desktop to be activated
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">org_kde_plasma_virtual_desktop_request_activate</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct org_kde_plasma_virtual_desktop*</span> org_kde_plasma_virtual_desktop</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier">Request the server to set the status of this desktop to active: The server is free to consent or deny the request. This will be the new &quot;current&quot; virtual desktop of the system.
+</div>
+            </li>
+            
+          </ul>
+        
+
+        
+          <h3 class=" f5 lh-title" id="eh:org_kde_plasma_virtual_desktop">Events</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:org_kde_plasma_virtual_desktop:desktop_id">
+                <a href="#e:org_kde_plasma_virtual_desktop:desktop_id" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  desktop_id
+                </div>
+                <div class="f5 ml2">
+                  The desktop got an id
+                </div>
+              </div>
+
+              <div class="f6 lh-copy ws-pre-line courier">The format of the id is decided by the compositor implementation. A desktop id univocally identifies a virtual desktop and must be guaranteed to never exist two desktops with the same id. The format of the string id is up to the server implementation.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:org_kde_plasma_virtual_desktop:name">
+                <a href="#e:org_kde_plasma_virtual_desktop:name" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  name
+                </div>
+                <div class="f5 ml2">
+                  
+                </div>
+              </div>
+
+              <div class="f6 lh-copy ws-pre-line courier"></div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:org_kde_plasma_virtual_desktop:activated">
+                <a href="#e:org_kde_plasma_virtual_desktop:activated" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  activated
+                </div>
+                <div class="f5 ml2">
+                  The desktop has been activated
+                </div>
+              </div>
+
+              <div class="f6 lh-copy ws-pre-line courier">The desktop will be the new &quot;current&quot; desktop of the system. The server may support either one virtual desktop active at a time, or other combinations such as one virtual desktop active per screen.
+Windows associated to this virtual desktop will be shown.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:org_kde_plasma_virtual_desktop:deactivated">
+                <a href="#e:org_kde_plasma_virtual_desktop:deactivated" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  deactivated
+                </div>
+                <div class="f5 ml2">
+                  This desktop is no longer active
+                </div>
+              </div>
+
+              <div class="f6 lh-copy ws-pre-line courier">Windows that were associated only to this desktop will be hidden.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:org_kde_plasma_virtual_desktop:done">
+                <a href="#e:org_kde_plasma_virtual_desktop:done" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  done
+                </div>
+                <div class="f5 ml2">
+                  sent all information about desktops
+                </div>
+              </div>
+
+              <div class="f6 lh-copy ws-pre-line courier">This event is sent after all other properties has been
+sent after binding to the desktop object and after any
+other property changes done after that. This allows
+changes to the org_kde_plasma_virtual_desktop properties to be seen as
+atomic, even if they happen via multiple events.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:org_kde_plasma_virtual_desktop:removed">
+                <a href="#e:org_kde_plasma_virtual_desktop:removed" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  removed
+                </div>
+                <div class="f5 ml2">
+                  This desktop has been removed
+                </div>
+              </div>
+
+              <div class="f6 lh-copy ws-pre-line courier">This virtual desktop has just been removed by the server:
+All windows will lose the association to this desktop.
+</div>
+            </li>
+            
+          </ul>
+
+        
+
+      </li>
+      
+    </ul>
+
+    <h2 class="f4 lh-title">Copyright Info</h2>
+    <div class="f7 lh-copy ws-pre-line courier">SPDX-FileCopyrightText: 2018 Marco Martin
+
+SPDX-License-Identifier: LGPL-2.1-or-later
+</div>
+  </div>
+
+    </main>
+
+  </body>
+</html>

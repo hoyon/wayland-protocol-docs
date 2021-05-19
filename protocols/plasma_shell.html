@@ -1,0 +1,611 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>plasma_shell</title>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="&#x2f;wayland-protocol-docs/main.css"></link>
+     
+  </head>
+  <body class="bg-near-white black-70 flex sans-serif ph4-l">
+
+    
+
+    <div id="sidebar" class="w-20 br b--white bw3">
+      <div class="fixed h-100">
+        <a href="&#x2f;wayland-protocol-docs/" class="f4 link near-black dim lh-title">
+          Home
+        </a>
+        
+  <div class="ph2">
+    
+
+<div>
+  <ul class="list pl0">
+  
+    <li>
+      <a href="#i:org_kde_plasma_shell" class="link blue underline-hover lh-copy">org_kde_plasma_shell</a>
+
+      
+        <div>
+          <a href="#rh:org_kde_plasma_shell" class="link blue underline-hover lh-copy pl3">Requests</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#r:org_kde_plasma_shell:get_surface" class="link blue underline-hover lh-copy">get_surface</a>
+          </li>
+          
+        </ul>
+      
+
+      
+      
+    </li>
+  
+    <li>
+      <a href="#i:org_kde_plasma_surface" class="link blue underline-hover lh-copy">org_kde_plasma_surface</a>
+
+      
+        <div>
+          <a href="#rh:org_kde_plasma_surface" class="link blue underline-hover lh-copy pl3">Requests</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#r:org_kde_plasma_surface:destroy" class="link blue underline-hover lh-copy">destroy</a>
+          </li>
+          
+          <li>
+            <a href="#r:org_kde_plasma_surface:set_output" class="link blue underline-hover lh-copy">set_output</a>
+          </li>
+          
+          <li>
+            <a href="#r:org_kde_plasma_surface:set_position" class="link blue underline-hover lh-copy">set_position</a>
+          </li>
+          
+          <li>
+            <a href="#r:org_kde_plasma_surface:set_role" class="link blue underline-hover lh-copy">set_role</a>
+          </li>
+          
+          <li>
+            <a href="#r:org_kde_plasma_surface:set_panel_behavior" class="link blue underline-hover lh-copy">set_panel_behavior</a>
+          </li>
+          
+          <li>
+            <a href="#r:org_kde_plasma_surface:set_skip_taskbar" class="link blue underline-hover lh-copy">set_skip_taskbar</a>
+          </li>
+          
+          <li>
+            <a href="#r:org_kde_plasma_surface:panel_auto_hide_hide" class="link blue underline-hover lh-copy">panel_auto_hide_hide</a>
+          </li>
+          
+          <li>
+            <a href="#r:org_kde_plasma_surface:panel_auto_hide_show" class="link blue underline-hover lh-copy">panel_auto_hide_show</a>
+          </li>
+          
+          <li>
+            <a href="#r:org_kde_plasma_surface:set_panel_takes_focus" class="link blue underline-hover lh-copy">set_panel_takes_focus</a>
+          </li>
+          
+          <li>
+            <a href="#r:org_kde_plasma_surface:set_skip_switcher" class="link blue underline-hover lh-copy">set_skip_switcher</a>
+          </li>
+          
+        </ul>
+      
+
+      
+        <div>
+          <a href="#eh:org_kde_plasma_surface" class="link blue underline-hover lh-copy pl3">Events</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#e:org_kde_plasma_surface:auto_hidden_panel_hidden" class="link blue underline-hover lh-copy">auto_hidden_panel_hidden</a>
+          </li>
+          
+          <li>
+            <a href="#e:org_kde_plasma_surface:auto_hidden_panel_shown" class="link blue underline-hover lh-copy">auto_hidden_panel_shown</a>
+          </li>
+          
+        </ul>
+      
+    </li>
+  
+  </ul>
+</div>
+  </div>
+
+      </div>
+    </div>
+
+    <main id="content" class="mh4">
+      
+  <div class="ph2">
+    <h1 class="f1 lh-title">plasma_shell</h1>
+    <ul class="list pl0">
+      
+      <li class="mt4">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:org_kde_plasma_shell">
+          <a href="#i:org_kde_plasma_shell" class="link dim black-70 child pr2 absolute left--2">#</a>
+          org_kde_plasma_shell
+        </h2>
+        <div class="f6 lh-copy ws-pre-line courier">This interface is used by KF5 powered Wayland shells to communicate with
+the compositor and can only be bound one time.
+</div>
+
+        
+          <h3 class=" f5 lh-title" id="rh:org_kde_plasma_shell">Requests</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:org_kde_plasma_shell:get_surface">
+                <a href="#r:org_kde_plasma_shell:get_surface" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  get_surface
+                </div>
+                <div class="f5 ml2">
+                  create a shell surface from a surface
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>struct org_kde_plasma_surface* </span><span class="dark-blue">org_kde_plasma_shell_get_surface</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct org_kde_plasma_shell*</span> org_kde_plasma_shell,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_surface*</span> surface</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier">Create a shell surface for an existing surface.
+
+Only one shell surface can be associated with a given
+surface.
+  </div>
+            </li>
+            
+          </ul>
+        
+
+        
+
+        
+
+      </li>
+      
+      <li class="mt4">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:org_kde_plasma_surface">
+          <a href="#i:org_kde_plasma_surface" class="link dim black-70 child pr2 absolute left--2">#</a>
+          org_kde_plasma_surface
+        </h2>
+        <div class="f6 lh-copy ws-pre-line courier">An interface that may be implemented by a wl_surface, for
+implementations that provide the shell user interface.
+
+It provides requests to set surface roles, assign an output
+or set the position in output coordinates.
+
+On the server side the object is automatically destroyed when
+the related wl_surface is destroyed.  On client side,
+org_kde_plasma_surface.destroy() must be called before
+destroying the wl_surface object.
+</div>
+
+        
+          <h3 class=" f5 lh-title" id="rh:org_kde_plasma_surface">Requests</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:org_kde_plasma_surface:destroy">
+                <a href="#r:org_kde_plasma_surface:destroy" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  destroy
+                </div>
+                <div class="f5 ml2">
+                  remove org_kde_plasma_surface interface
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">org_kde_plasma_surface_destroy</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct org_kde_plasma_surface*</span> org_kde_plasma_surface</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier">The org_kde_plasma_surface interface is removed from the
+wl_surface object that was turned into a shell surface with the
+org_kde_plasma_shell.get_surface request.
+The shell surface role is lost and wl_surface is unmapped.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:org_kde_plasma_surface:set_output">
+                <a href="#r:org_kde_plasma_surface:set_output" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  set_output
+                </div>
+                <div class="f5 ml2">
+                  assign an output to this shell surface
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">org_kde_plasma_surface_set_output</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct org_kde_plasma_surface*</span> org_kde_plasma_surface,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_output*</span> output</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier">Assign an output to this shell surface.
+The compositor will use this information to set the position
+when org_kde_plasma_surface.set_position request is
+called.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:org_kde_plasma_surface:set_position">
+                <a href="#r:org_kde_plasma_surface:set_position" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  set_position
+                </div>
+                <div class="f5 ml2">
+                  change the shell surface position
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">org_kde_plasma_surface_set_position</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct org_kde_plasma_surface*</span> org_kde_plasma_surface,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> x,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> y</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier">Move the surface to new coordinates.
+
+Coordinates are global, for example 50,50 for a 1920,0+1920x1080 output
+is 1970,50 in global coordinates space.
+
+Use org_kde_plasma_surface.set_output to assign an output
+to this surface.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:org_kde_plasma_surface:set_role">
+                <a href="#r:org_kde_plasma_surface:set_role" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  set_role
+                </div>
+                <div class="f5 ml2">
+                  assign a role to this surface
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">org_kde_plasma_surface_set_role</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct org_kde_plasma_surface*</span> org_kde_plasma_surface,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> role</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier">Assign a role to a shell surface.
+
+The compositor handles surfaces depending on their role.
+See the explanation below.
+
+This request fails if the surface already has a role, this means
+the surface role may be assigned only once.
+
+== Surfaces with splash role ==
+
+Splash surfaces are placed above every other surface during the
+shell startup phase.
+
+The surfaces are placed according to the output coordinates.
+No size is imposed to those surfaces, the shell has to resize
+them according to output size.
+
+These surfaces are meant to hide the desktop during the startup
+phase so that the user will always see a ready to work desktop.
+
+A shell might not create splash surfaces if the compositor reveals
+the desktop in an alternative fashion, for example with a fade
+in effect.
+
+That depends on how much time the desktop usually need to prepare
+the workspace or specific design decisions.
+This specification doesn&#x27;t impose any particular design.
+
+When the startup phase is finished, the shell will send the
+org_kde_plasma.desktop_ready request to the compositor.
+
+== Surfaces with desktop role ==
+
+Desktop surfaces are placed below all other surfaces and are used
+to show the actual desktop view with icons, search results or
+controls the user will interact with. What to show depends on the
+shell implementation.
+
+The surfaces are placed according to the output coordinates.
+No size is imposed to those surfaces, the shell has to resize
+them according to output size.
+
+Only one surface per output can have the desktop role.
+
+== Surfaces with dashboard role ==
+
+Dashboard surfaces are placed above desktop surfaces and are used to
+show additional widgets and controls.
+
+The surfaces are placed according to the output coordinates.
+No size is imposed to those surfaces, the shell has to resize
+them according to output size.
+
+Only one surface per output can have the dashboard role.
+
+== Surfaces with config role ==
+
+A configuration surface is shown when the user wants to configure
+panel or desktop views.
+
+Only one surface per output can have the config role.
+
+TODO: This should grab the input like popup menus, right?
+
+== Surfaces with overlay role ==
+
+Overlays are special surfaces that shows for a limited amount
+of time.  Such surfaces are useful to display things like volume,
+brightness and status changes.
+
+Compositors may decide to show those surfaces in a layer above
+all surfaces, even full screen ones if so is desired.
+
+== Surfaces with notification role ==
+
+Notification surfaces display informative content for a limited
+amount of time.  The compositor may decide to show them in a corner
+depending on the configuration.
+
+These surfaces are shown in a layer above all other surfaces except
+for full screen ones.
+
+== Surfaces with lock role ==
+
+The lock surface is shown by the compositor when the session is
+locked, users interact with it to unlock the session.
+
+Compositors should move lock surfaces to 0,0 in output
+coordinates space and hide all other surfaces for security sake.
+For the same reason it is recommended that clients make the
+lock surface as big as the screen.
+
+Only one surface per output can have the lock role.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:org_kde_plasma_surface:set_panel_behavior">
+                <a href="#r:org_kde_plasma_surface:set_panel_behavior" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  set_panel_behavior
+                </div>
+                <div class="f5 ml2">
+                  set or unset the panel 
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">org_kde_plasma_surface_set_panel_behavior</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct org_kde_plasma_surface*</span> org_kde_plasma_surface,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> flag</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier">Set flags bitmask as described by the flag enum.
+Pass 0 to unset any flag, the surface will adjust its behavior to
+the default.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:org_kde_plasma_surface:set_skip_taskbar">
+                <a href="#r:org_kde_plasma_surface:set_skip_taskbar" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  set_skip_taskbar
+                </div>
+                <div class="f5 ml2">
+                  make the window skip the taskbar
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">org_kde_plasma_surface_set_skip_taskbar</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct org_kde_plasma_surface*</span> org_kde_plasma_surface,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> skip</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier">Setting this bit to the window, will make it say it prefers to not be listed in the taskbar. Taskbar implementations may or may not follow this hint.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:org_kde_plasma_surface:panel_auto_hide_hide">
+                <a href="#r:org_kde_plasma_surface:panel_auto_hide_hide" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  panel_auto_hide_hide
+                </div>
+                <div class="f5 ml2">
+                  Hide the auto-hiding panel
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">org_kde_plasma_surface_panel_auto_hide_hide</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct org_kde_plasma_surface*</span> org_kde_plasma_surface</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier">A panel surface with panel_behavior auto_hide can perform this request to hide the panel
+on a screen edge without unmapping it. The compositor informs the client about the panel
+being hidden with the event auto_hidden_panel_hidden.
+
+The compositor will restore the visibility state of the
+surface when the pointer touches the screen edge the panel borders. Once the compositor restores
+the visibility the event auto_hidden_panel_shown will be sent. This event will also be sent
+if the compositor is unable to hide the panel.
+
+The client can also request to show the panel again with the request panel_auto_hide_show.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:org_kde_plasma_surface:panel_auto_hide_show">
+                <a href="#r:org_kde_plasma_surface:panel_auto_hide_show" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  panel_auto_hide_show
+                </div>
+                <div class="f5 ml2">
+                  Show the auto-hiding panel
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">org_kde_plasma_surface_panel_auto_hide_show</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct org_kde_plasma_surface*</span> org_kde_plasma_surface</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier">A panel surface with panel_behavior auto_hide can perform this request to show the panel
+again which got hidden with panel_auto_hide_hide.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:org_kde_plasma_surface:set_panel_takes_focus">
+                <a href="#r:org_kde_plasma_surface:set_panel_takes_focus" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  set_panel_takes_focus
+                </div>
+                <div class="f5 ml2">
+                  Whether a panel takes focus
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">org_kde_plasma_surface_set_panel_takes_focus</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct org_kde_plasma_surface*</span> org_kde_plasma_surface,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> takes_focus</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier">By default various org_kde_plasma_surface roles do not take focus and cannot be
+activated. With this request the compositor can be instructed to pass focus also to this
+org_kde_plasma_surface.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:org_kde_plasma_surface:set_skip_switcher">
+                <a href="#r:org_kde_plasma_surface:set_skip_switcher" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  set_skip_switcher
+                </div>
+                <div class="f5 ml2">
+                  make the window not appear in a switcher
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">org_kde_plasma_surface_set_skip_switcher</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct org_kde_plasma_surface*</span> org_kde_plasma_surface,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> skip</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier">Setting this bit will indicate that the window prefers not to be listed in a switcher.
+</div>
+            </li>
+            
+          </ul>
+        
+
+        
+          <h3 class=" f5 lh-title" id="eh:org_kde_plasma_surface">Events</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:org_kde_plasma_surface:auto_hidden_panel_hidden">
+                <a href="#e:org_kde_plasma_surface:auto_hidden_panel_hidden" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  auto_hidden_panel_hidden
+                </div>
+                <div class="f5 ml2">
+                  Auto-hiding panel is hidden
+                </div>
+              </div>
+
+              <div class="f6 lh-copy ws-pre-line courier">An auto-hiding panel got hidden by the compositor.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:org_kde_plasma_surface:auto_hidden_panel_shown">
+                <a href="#e:org_kde_plasma_surface:auto_hidden_panel_shown" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  auto_hidden_panel_shown
+                </div>
+                <div class="f5 ml2">
+                  Auto-hiding panel is shown
+                </div>
+              </div>
+
+              <div class="f6 lh-copy ws-pre-line courier">An auto-hiding panel got shown by the compositor.
+</div>
+            </li>
+            
+          </ul>
+
+        
+
+      </li>
+      
+    </ul>
+
+    <h2 class="f4 lh-title">Copyright Info</h2>
+    <div class="f7 lh-copy ws-pre-line courier">SPDX-FileCopyrightText: 2013-2014 Pier Luigi Fiorini
+
+SPDX-License-Identifier: LGPL-2.1-or-later
+</div>
+  </div>
+
+    </main>
+
+  </body>
+</html>

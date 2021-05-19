@@ -1,0 +1,1066 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>plasma_window_management</title>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="&#x2f;wayland-protocol-docs/main.css"></link>
+     
+  </head>
+  <body class="bg-near-white black-70 flex sans-serif ph4-l">
+
+    
+
+    <div id="sidebar" class="w-20 br b--white bw3">
+      <div class="fixed h-100">
+        <a href="&#x2f;wayland-protocol-docs/" class="f4 link near-black dim lh-title">
+          Home
+        </a>
+        
+  <div class="ph2">
+    
+
+<div>
+  <ul class="list pl0">
+  
+    <li>
+      <a href="#i:org_kde_plasma_window_management" class="link blue underline-hover lh-copy">org_kde_plasma_window_management</a>
+
+      
+        <div>
+          <a href="#rh:org_kde_plasma_window_management" class="link blue underline-hover lh-copy pl3">Requests</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#r:org_kde_plasma_window_management:show_desktop" class="link blue underline-hover lh-copy">show_desktop</a>
+          </li>
+          
+          <li>
+            <a href="#r:org_kde_plasma_window_management:get_window" class="link blue underline-hover lh-copy">get_window</a>
+          </li>
+          
+          <li>
+            <a href="#r:org_kde_plasma_window_management:get_window_by_uuid" class="link blue underline-hover lh-copy">get_window_by_uuid</a>
+          </li>
+          
+        </ul>
+      
+
+      
+        <div>
+          <a href="#eh:org_kde_plasma_window_management" class="link blue underline-hover lh-copy pl3">Events</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#e:org_kde_plasma_window_management:show_desktop_changed" class="link blue underline-hover lh-copy">show_desktop_changed</a>
+          </li>
+          
+          <li>
+            <a href="#e:org_kde_plasma_window_management:window" class="link blue underline-hover lh-copy">window</a>
+          </li>
+          
+          <li>
+            <a href="#e:org_kde_plasma_window_management:stacking_order_changed" class="link blue underline-hover lh-copy">stacking_order_changed</a>
+          </li>
+          
+          <li>
+            <a href="#e:org_kde_plasma_window_management:stacking_order_uuid_changed" class="link blue underline-hover lh-copy">stacking_order_uuid_changed</a>
+          </li>
+          
+          <li>
+            <a href="#e:org_kde_plasma_window_management:window_with_uuid" class="link blue underline-hover lh-copy">window_with_uuid</a>
+          </li>
+          
+        </ul>
+      
+    </li>
+  
+    <li>
+      <a href="#i:org_kde_plasma_window" class="link blue underline-hover lh-copy">org_kde_plasma_window</a>
+
+      
+        <div>
+          <a href="#rh:org_kde_plasma_window" class="link blue underline-hover lh-copy pl3">Requests</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#r:org_kde_plasma_window:set_state" class="link blue underline-hover lh-copy">set_state</a>
+          </li>
+          
+          <li>
+            <a href="#r:org_kde_plasma_window:set_virtual_desktop" class="link blue underline-hover lh-copy">set_virtual_desktop</a>
+          </li>
+          
+          <li>
+            <a href="#r:org_kde_plasma_window:set_minimized_geometry" class="link blue underline-hover lh-copy">set_minimized_geometry</a>
+          </li>
+          
+          <li>
+            <a href="#r:org_kde_plasma_window:unset_minimized_geometry" class="link blue underline-hover lh-copy">unset_minimized_geometry</a>
+          </li>
+          
+          <li>
+            <a href="#r:org_kde_plasma_window:close" class="link blue underline-hover lh-copy">close</a>
+          </li>
+          
+          <li>
+            <a href="#r:org_kde_plasma_window:request_move" class="link blue underline-hover lh-copy">request_move</a>
+          </li>
+          
+          <li>
+            <a href="#r:org_kde_plasma_window:request_resize" class="link blue underline-hover lh-copy">request_resize</a>
+          </li>
+          
+          <li>
+            <a href="#r:org_kde_plasma_window:destroy" class="link blue underline-hover lh-copy">destroy</a>
+          </li>
+          
+          <li>
+            <a href="#r:org_kde_plasma_window:get_icon" class="link blue underline-hover lh-copy">get_icon</a>
+          </li>
+          
+          <li>
+            <a href="#r:org_kde_plasma_window:request_enter_virtual_desktop" class="link blue underline-hover lh-copy">request_enter_virtual_desktop</a>
+          </li>
+          
+          <li>
+            <a href="#r:org_kde_plasma_window:request_enter_new_virtual_desktop" class="link blue underline-hover lh-copy">request_enter_new_virtual_desktop</a>
+          </li>
+          
+          <li>
+            <a href="#r:org_kde_plasma_window:request_leave_virtual_desktop" class="link blue underline-hover lh-copy">request_leave_virtual_desktop</a>
+          </li>
+          
+          <li>
+            <a href="#r:org_kde_plasma_window:request_enter_activity" class="link blue underline-hover lh-copy">request_enter_activity</a>
+          </li>
+          
+          <li>
+            <a href="#r:org_kde_plasma_window:request_leave_activity" class="link blue underline-hover lh-copy">request_leave_activity</a>
+          </li>
+          
+        </ul>
+      
+
+      
+        <div>
+          <a href="#eh:org_kde_plasma_window" class="link blue underline-hover lh-copy pl3">Events</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#e:org_kde_plasma_window:title_changed" class="link blue underline-hover lh-copy">title_changed</a>
+          </li>
+          
+          <li>
+            <a href="#e:org_kde_plasma_window:app_id_changed" class="link blue underline-hover lh-copy">app_id_changed</a>
+          </li>
+          
+          <li>
+            <a href="#e:org_kde_plasma_window:state_changed" class="link blue underline-hover lh-copy">state_changed</a>
+          </li>
+          
+          <li>
+            <a href="#e:org_kde_plasma_window:virtual_desktop_changed" class="link blue underline-hover lh-copy">virtual_desktop_changed</a>
+          </li>
+          
+          <li>
+            <a href="#e:org_kde_plasma_window:themed_icon_name_changed" class="link blue underline-hover lh-copy">themed_icon_name_changed</a>
+          </li>
+          
+          <li>
+            <a href="#e:org_kde_plasma_window:unmapped" class="link blue underline-hover lh-copy">unmapped</a>
+          </li>
+          
+          <li>
+            <a href="#e:org_kde_plasma_window:initial_state" class="link blue underline-hover lh-copy">initial_state</a>
+          </li>
+          
+          <li>
+            <a href="#e:org_kde_plasma_window:parent_window" class="link blue underline-hover lh-copy">parent_window</a>
+          </li>
+          
+          <li>
+            <a href="#e:org_kde_plasma_window:geometry" class="link blue underline-hover lh-copy">geometry</a>
+          </li>
+          
+          <li>
+            <a href="#e:org_kde_plasma_window:icon_changed" class="link blue underline-hover lh-copy">icon_changed</a>
+          </li>
+          
+          <li>
+            <a href="#e:org_kde_plasma_window:pid_changed" class="link blue underline-hover lh-copy">pid_changed</a>
+          </li>
+          
+          <li>
+            <a href="#e:org_kde_plasma_window:virtual_desktop_entered" class="link blue underline-hover lh-copy">virtual_desktop_entered</a>
+          </li>
+          
+          <li>
+            <a href="#e:org_kde_plasma_window:virtual_desktop_left" class="link blue underline-hover lh-copy">virtual_desktop_left</a>
+          </li>
+          
+          <li>
+            <a href="#e:org_kde_plasma_window:application_menu" class="link blue underline-hover lh-copy">application_menu</a>
+          </li>
+          
+          <li>
+            <a href="#e:org_kde_plasma_window:activity_entered" class="link blue underline-hover lh-copy">activity_entered</a>
+          </li>
+          
+          <li>
+            <a href="#e:org_kde_plasma_window:activity_left" class="link blue underline-hover lh-copy">activity_left</a>
+          </li>
+          
+        </ul>
+      
+    </li>
+  
+  </ul>
+</div>
+  </div>
+
+      </div>
+    </div>
+
+    <main id="content" class="mh4">
+      
+  <div class="ph2">
+    <h1 class="f1 lh-title">plasma_window_management</h1>
+    <ul class="list pl0">
+      
+      <li class="mt4">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:org_kde_plasma_window_management">
+          <a href="#i:org_kde_plasma_window_management" class="link dim black-70 child pr2 absolute left--2">#</a>
+          org_kde_plasma_window_management
+        </h2>
+        <div class="f6 lh-copy ws-pre-line courier">This interface manages application windows.
+It provides requests to show and hide the desktop and emits
+an event every time a window is created so that the client can
+use it to manage the window.
+
+Only one client can bind this interface at a time.
+</div>
+
+        
+          <h3 class=" f5 lh-title" id="rh:org_kde_plasma_window_management">Requests</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:org_kde_plasma_window_management:show_desktop">
+                <a href="#r:org_kde_plasma_window_management:show_desktop" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  show_desktop
+                </div>
+                <div class="f5 ml2">
+                  show&#x2f;hide the desktop
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">org_kde_plasma_window_management_show_desktop</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct org_kde_plasma_window_management*</span> org_kde_plasma_window_management,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> state</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier">Tell the compositor to show&#x2f;hide the desktop.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:org_kde_plasma_window_management:get_window">
+                <a href="#r:org_kde_plasma_window_management:get_window" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  get_window
+                </div>
+                <div class="f5 ml2">
+                  deprecated
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>struct org_kde_plasma_window* </span><span class="dark-blue">org_kde_plasma_window_management_get_window</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct org_kde_plasma_window_management*</span> org_kde_plasma_window_management,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> internal_window_id</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier">Deprecated: use get_window_by_uuid</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:org_kde_plasma_window_management:get_window_by_uuid">
+                <a href="#r:org_kde_plasma_window_management:get_window_by_uuid" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  get_window_by_uuid
+                </div>
+                <div class="f5 ml2">
+                  
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>struct org_kde_plasma_window* </span><span class="dark-blue">org_kde_plasma_window_management_get_window_by_uuid</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct org_kde_plasma_window_management*</span> org_kde_plasma_window_management,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">const char*</span> internal_window_uuid</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier"></div>
+            </li>
+            
+          </ul>
+        
+
+        
+          <h3 class=" f5 lh-title" id="eh:org_kde_plasma_window_management">Events</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:org_kde_plasma_window_management:show_desktop_changed">
+                <a href="#e:org_kde_plasma_window_management:show_desktop_changed" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  show_desktop_changed
+                </div>
+                <div class="f5 ml2">
+                  notify the client when the show desktop mode is entered&#x2f;left
+                </div>
+              </div>
+
+              <div class="f6 lh-copy ws-pre-line courier">This event will be sent whenever the show desktop mode changes. E.g. when it is entered
+or left.
+
+On binding the interface the current state is sent.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:org_kde_plasma_window_management:window">
+                <a href="#e:org_kde_plasma_window_management:window" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  window
+                </div>
+                <div class="f5 ml2">
+                  notify the client that a window was mapped
+                </div>
+              </div>
+
+              <div class="f6 lh-copy ws-pre-line courier">This event will be sent immediately after a window is mapped.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:org_kde_plasma_window_management:stacking_order_changed">
+                <a href="#e:org_kde_plasma_window_management:stacking_order_changed" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  stacking_order_changed
+                </div>
+                <div class="f5 ml2">
+                  notify the client when stacking order changed
+                </div>
+              </div>
+
+              <div class="f6 lh-copy ws-pre-line courier">This event will be sent when stacking order changed and on bind
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:org_kde_plasma_window_management:stacking_order_uuid_changed">
+                <a href="#e:org_kde_plasma_window_management:stacking_order_uuid_changed" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  stacking_order_uuid_changed
+                </div>
+                <div class="f5 ml2">
+                  notify the client when stacking order changed
+                </div>
+              </div>
+
+              <div class="f6 lh-copy ws-pre-line courier">This event will be sent when stacking order changed and on bind
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:org_kde_plasma_window_management:window_with_uuid">
+                <a href="#e:org_kde_plasma_window_management:window_with_uuid" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  window_with_uuid
+                </div>
+                <div class="f5 ml2">
+                  notify the client that a window was mapped
+                </div>
+              </div>
+
+              <div class="f6 lh-copy ws-pre-line courier">This event will be sent immediately after a window is mapped.
+</div>
+            </li>
+            
+          </ul>
+
+        
+
+      </li>
+      
+      <li class="mt4">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:org_kde_plasma_window">
+          <a href="#i:org_kde_plasma_window" class="link dim black-70 child pr2 absolute left--2">#</a>
+          org_kde_plasma_window
+        </h2>
+        <div class="f6 lh-copy ws-pre-line courier">Manages and control an application window.
+
+Only one client can bind this interface at a time.
+</div>
+
+        
+          <h3 class=" f5 lh-title" id="rh:org_kde_plasma_window">Requests</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:org_kde_plasma_window:set_state">
+                <a href="#r:org_kde_plasma_window:set_state" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  set_state
+                </div>
+                <div class="f5 ml2">
+                  set window state
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">org_kde_plasma_window_set_state</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct org_kde_plasma_window*</span> org_kde_plasma_window,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> flags,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> state</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier">Set window state.
+
+Values for state argument are described by org_kde_plasma_window_management.state
+and can be used together in a bitfield. The flags bitfield describes which flags are
+supposed to be set, the state bitfield the value for the set flags
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:org_kde_plasma_window:set_virtual_desktop">
+                <a href="#r:org_kde_plasma_window:set_virtual_desktop" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  set_virtual_desktop
+                </div>
+                <div class="f5 ml2">
+                  map window on a virtual desktop
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">org_kde_plasma_window_set_virtual_desktop</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct org_kde_plasma_window*</span> org_kde_plasma_window,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> number</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier">  Deprecated: use enter_virtual_desktop
+Maps the window to a different virtual desktop.
+
+To show the window on all virtual desktops, call the
+org_kde_plasma_window.set_state request and specify a on_all_desktops
+state in the bitfield.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:org_kde_plasma_window:set_minimized_geometry">
+                <a href="#r:org_kde_plasma_window:set_minimized_geometry" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  set_minimized_geometry
+                </div>
+                <div class="f5 ml2">
+                  set the geometry for a taskbar entry
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">org_kde_plasma_window_set_minimized_geometry</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct org_kde_plasma_window*</span> org_kde_plasma_window,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_surface*</span> panel,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> x,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> y,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> width,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> height</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier">Sets the geometry of the taskbar entry for this window.
+The geometry is relative to a panel in particular.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:org_kde_plasma_window:unset_minimized_geometry">
+                <a href="#r:org_kde_plasma_window:unset_minimized_geometry" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  unset_minimized_geometry
+                </div>
+                <div class="f5 ml2">
+                  set the geometry for a taskbar entry
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">org_kde_plasma_window_unset_minimized_geometry</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct org_kde_plasma_window*</span> org_kde_plasma_window,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_surface*</span> panel</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier">Remove the task geometry information for a particular panel.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:org_kde_plasma_window:close">
+                <a href="#r:org_kde_plasma_window:close" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  close
+                </div>
+                <div class="f5 ml2">
+                  close window
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">org_kde_plasma_window_close</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct org_kde_plasma_window*</span> org_kde_plasma_window</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier">Close this window.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:org_kde_plasma_window:request_move">
+                <a href="#r:org_kde_plasma_window:request_move" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  request_move
+                </div>
+                <div class="f5 ml2">
+                  request move
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">org_kde_plasma_window_request_move</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct org_kde_plasma_window*</span> org_kde_plasma_window</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier">Request an interactive move for this window.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:org_kde_plasma_window:request_resize">
+                <a href="#r:org_kde_plasma_window:request_resize" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  request_resize
+                </div>
+                <div class="f5 ml2">
+                  request resize
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">org_kde_plasma_window_request_resize</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct org_kde_plasma_window*</span> org_kde_plasma_window</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier">Request an interactive resize for this window.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:org_kde_plasma_window:destroy">
+                <a href="#r:org_kde_plasma_window:destroy" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  destroy
+                </div>
+                <div class="f5 ml2">
+                  remove resource for the org_kde_plasma_window
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">org_kde_plasma_window_destroy</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct org_kde_plasma_window*</span> org_kde_plasma_window</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier">Removes the resource bound for this org_kde_plasma_window.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:org_kde_plasma_window:get_icon">
+                <a href="#r:org_kde_plasma_window:get_icon" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  get_icon
+                </div>
+                <div class="f5 ml2">
+                  Requests to get the window icon
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">org_kde_plasma_window_get_icon</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct org_kde_plasma_window*</span> org_kde_plasma_window,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> fd</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier">The compositor will write the window icon into the provided file descriptor.
+The data is a serialized QIcon with QDataStream.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:org_kde_plasma_window:request_enter_virtual_desktop">
+                <a href="#r:org_kde_plasma_window:request_enter_virtual_desktop" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  request_enter_virtual_desktop
+                </div>
+                <div class="f5 ml2">
+                  map window on a virtual desktop
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">org_kde_plasma_window_request_enter_virtual_desktop</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct org_kde_plasma_window*</span> org_kde_plasma_window,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">const char*</span> id</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier">Make the window enter a virtual desktop. A window can enter more
+than one virtual desktop. if the id is empty or invalid, no action will be performed.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:org_kde_plasma_window:request_enter_new_virtual_desktop">
+                <a href="#r:org_kde_plasma_window:request_enter_new_virtual_desktop" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  request_enter_new_virtual_desktop
+                </div>
+                <div class="f5 ml2">
+                  map window on a virtual desktop
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">org_kde_plasma_window_request_enter_new_virtual_desktop</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct org_kde_plasma_window*</span> org_kde_plasma_window</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier">RFC: do this with an empty id to request_enter_virtual_desktop?
+Make the window enter a new virtual desktop. If the server consents the request,
+it will create a new virtual desktop and assign the window to it.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:org_kde_plasma_window:request_leave_virtual_desktop">
+                <a href="#r:org_kde_plasma_window:request_leave_virtual_desktop" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  request_leave_virtual_desktop
+                </div>
+                <div class="f5 ml2">
+                  remove a window from a virtual desktop
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">org_kde_plasma_window_request_leave_virtual_desktop</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct org_kde_plasma_window*</span> org_kde_plasma_window,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">const char*</span> id</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier">Make the window exit a virtual desktop. If it exits all desktops it will be considered on all of them.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:org_kde_plasma_window:request_enter_activity">
+                <a href="#r:org_kde_plasma_window:request_enter_activity" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  request_enter_activity
+                </div>
+                <div class="f5 ml2">
+                  map window on an activity
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">org_kde_plasma_window_request_enter_activity</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct org_kde_plasma_window*</span> org_kde_plasma_window,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">const char*</span> id</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier">Make the window enter an activity. A window can enter more activity. If the id is empty or invalid, no action will be performed.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:org_kde_plasma_window:request_leave_activity">
+                <a href="#r:org_kde_plasma_window:request_leave_activity" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  request_leave_activity
+                </div>
+                <div class="f5 ml2">
+                  remove a window from an activity
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">org_kde_plasma_window_request_leave_activity</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct org_kde_plasma_window*</span> org_kde_plasma_window,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">const char*</span> id</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier">Make the window exit a an activity. If it exits all activities it will be considered on all of them.
+</div>
+            </li>
+            
+          </ul>
+        
+
+        
+          <h3 class=" f5 lh-title" id="eh:org_kde_plasma_window">Events</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:org_kde_plasma_window:title_changed">
+                <a href="#e:org_kde_plasma_window:title_changed" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  title_changed
+                </div>
+                <div class="f5 ml2">
+                  window title has been changed
+                </div>
+              </div>
+
+              <div class="f6 lh-copy ws-pre-line courier">This event will be sent as soon as the window title is changed.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:org_kde_plasma_window:app_id_changed">
+                <a href="#e:org_kde_plasma_window:app_id_changed" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  app_id_changed
+                </div>
+                <div class="f5 ml2">
+                  application identifier has been changed
+                </div>
+              </div>
+
+              <div class="f6 lh-copy ws-pre-line courier">This event will be sent as soon as the application
+identifier is changed.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:org_kde_plasma_window:state_changed">
+                <a href="#e:org_kde_plasma_window:state_changed" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  state_changed
+                </div>
+                <div class="f5 ml2">
+                  window state has been changed
+                </div>
+              </div>
+
+              <div class="f6 lh-copy ws-pre-line courier">This event will be sent as soon as the window state changes.
+
+Values for state argument are described by org_kde_plasma_window_management.state.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:org_kde_plasma_window:virtual_desktop_changed">
+                <a href="#e:org_kde_plasma_window:virtual_desktop_changed" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  virtual_desktop_changed
+                </div>
+                <div class="f5 ml2">
+                  window was moved to another workspace
+                </div>
+              </div>
+
+              <div class="f6 lh-copy ws-pre-line courier">  DEPRECATED: use virtual_desktop_entered and virtual_desktop_left instead
+This event will be sent when a window is moved to another
+virtual desktop.
+
+It is not sent if it becomes visible on all virtual desktops though.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:org_kde_plasma_window:themed_icon_name_changed">
+                <a href="#e:org_kde_plasma_window:themed_icon_name_changed" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  themed_icon_name_changed
+                </div>
+                <div class="f5 ml2">
+                  window&#x27;s icon name changed
+                </div>
+              </div>
+
+              <div class="f6 lh-copy ws-pre-line courier">This event will be sent whenever the themed icon name changes. May be null.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:org_kde_plasma_window:unmapped">
+                <a href="#e:org_kde_plasma_window:unmapped" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  unmapped
+                </div>
+                <div class="f5 ml2">
+                  window&#x27;s surface was unmapped
+                </div>
+              </div>
+
+              <div class="f6 lh-copy ws-pre-line courier">This event will be sent immediately after the window is closed
+and its surface is unmapped.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:org_kde_plasma_window:initial_state">
+                <a href="#e:org_kde_plasma_window:initial_state" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  initial_state
+                </div>
+                <div class="f5 ml2">
+                  All initial known state is submitted
+                </div>
+              </div>
+
+              <div class="f6 lh-copy ws-pre-line courier">This event will be sent immediately after all initial state been sent to the client.
+If the Plasma window is already unmapped, the unmapped event will be sent before the
+initial_state event.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:org_kde_plasma_window:parent_window">
+                <a href="#e:org_kde_plasma_window:parent_window" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  parent_window
+                </div>
+                <div class="f5 ml2">
+                  The parent window changed
+                </div>
+              </div>
+
+              <div class="f6 lh-copy ws-pre-line courier">This event will be sent whenever the parent window of this org_kde_plasma_window changes.
+The passed parent is another org_kde_plasma_window and this org_kde_plasma_window is a
+transient window to the parent window. If the parent argument is null, this
+org_kde_plasma_window does not have a parent window.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:org_kde_plasma_window:geometry">
+                <a href="#e:org_kde_plasma_window:geometry" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  geometry
+                </div>
+                <div class="f5 ml2">
+                  The geometry of this window in absolute coordinates
+                </div>
+              </div>
+
+              <div class="f6 lh-copy ws-pre-line courier">This event will be sent whenever the window geometry of this org_kde_plasma_window changes.
+The coordinates are in absolute coordinates of the windowing system.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:org_kde_plasma_window:icon_changed">
+                <a href="#e:org_kde_plasma_window:icon_changed" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  icon_changed
+                </div>
+                <div class="f5 ml2">
+                  The icon of the window changed
+                </div>
+              </div>
+
+              <div class="f6 lh-copy ws-pre-line courier">This event will be sent whenever the icon of the window changes, but there is no themed
+icon name. Common examples are Xwayland windows which have a pixmap based icon.
+
+The client can request the icon using get_icon.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:org_kde_plasma_window:pid_changed">
+                <a href="#e:org_kde_plasma_window:pid_changed" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  pid_changed
+                </div>
+                <div class="f5 ml2">
+                  process id of application owning the window has changed
+                </div>
+              </div>
+
+              <div class="f6 lh-copy ws-pre-line courier">This event will be sent when the compositor has set the process id this window belongs to.
+This should be set once before the initial_state is sent.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:org_kde_plasma_window:virtual_desktop_entered">
+                <a href="#e:org_kde_plasma_window:virtual_desktop_entered" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  virtual_desktop_entered
+                </div>
+                <div class="f5 ml2">
+                  the window entered a new virtual desktop
+                </div>
+              </div>
+
+              <div class="f6 lh-copy ws-pre-line courier">This event will be sent when the window has entered a new virtual desktop. The window can be on more than one desktop, or none: then is considered on all of them.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:org_kde_plasma_window:virtual_desktop_left">
+                <a href="#e:org_kde_plasma_window:virtual_desktop_left" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  virtual_desktop_left
+                </div>
+                <div class="f5 ml2">
+                  the window left a virtual desktop
+                </div>
+              </div>
+
+              <div class="f6 lh-copy ws-pre-line courier">This event will be sent when the window left a virtual desktop. If the window leaves all desktops, it can be considered on all.
+If the window gets manually added on all desktops, the server has to send virtual_desktop_left for every previous desktop it was in for the window to be really considered on all desktops.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:org_kde_plasma_window:application_menu">
+                <a href="#e:org_kde_plasma_window:application_menu" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  application_menu
+                </div>
+                <div class="f5 ml2">
+                  notify the client that the current appmenu changed
+                </div>
+              </div>
+
+              <div class="f6 lh-copy ws-pre-line courier">This event will be sent after the application menu
+for the window has changed.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:org_kde_plasma_window:activity_entered">
+                <a href="#e:org_kde_plasma_window:activity_entered" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  activity_entered
+                </div>
+                <div class="f5 ml2">
+                  the window entered an activity
+                </div>
+              </div>
+
+              <div class="f6 lh-copy ws-pre-line courier">This event will be sent when the window has entered an activity. The window can be on more than one activity, or none: then is considered on all of them.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:org_kde_plasma_window:activity_left">
+                <a href="#e:org_kde_plasma_window:activity_left" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  activity_left
+                </div>
+                <div class="f5 ml2">
+                  the window left an activity
+                </div>
+              </div>
+
+              <div class="f6 lh-copy ws-pre-line courier">This event will be sent when the window left an activity. If the window leaves all activities, it will be considered on all.
+If the window gets manually added on all activities, the server has to send activity_left for every previous activity it was in for the window to be really considered on all activities.
+</div>
+            </li>
+            
+          </ul>
+
+        
+
+      </li>
+      
+    </ul>
+
+    <h2 class="f4 lh-title">Copyright Info</h2>
+    <div class="f7 lh-copy ws-pre-line courier">SPDX-FileCopyrightText: 2013-2014 Pier Luigi Fiorini
+
+SPDX-License-Identifier: LGPL-2.1-or-later
+</div>
+  </div>
+
+    </main>
+
+  </body>
+</html>

@@ -1,0 +1,596 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>outputmanagement</title>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="&#x2f;wayland-protocol-docs/main.css"></link>
+     
+  </head>
+  <body class="bg-near-white black-70 flex sans-serif ph4-l">
+
+    
+
+    <div id="sidebar" class="w-20 br b--white bw3">
+      <div class="fixed h-100">
+        <a href="&#x2f;wayland-protocol-docs/" class="f4 link near-black dim lh-title">
+          Home
+        </a>
+        
+  <div class="ph2">
+    
+
+<div>
+  <ul class="list pl0">
+  
+    <li>
+      <a href="#i:org_kde_kwin_outputmanagement" class="link blue underline-hover lh-copy">org_kde_kwin_outputmanagement</a>
+
+      
+        <div>
+          <a href="#rh:org_kde_kwin_outputmanagement" class="link blue underline-hover lh-copy pl3">Requests</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#r:org_kde_kwin_outputmanagement:create_configuration" class="link blue underline-hover lh-copy">create_configuration</a>
+          </li>
+          
+        </ul>
+      
+
+      
+      
+    </li>
+  
+    <li>
+      <a href="#i:org_kde_kwin_outputconfiguration" class="link blue underline-hover lh-copy">org_kde_kwin_outputconfiguration</a>
+
+      
+        <div>
+          <a href="#rh:org_kde_kwin_outputconfiguration" class="link blue underline-hover lh-copy pl3">Requests</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#r:org_kde_kwin_outputconfiguration:enable" class="link blue underline-hover lh-copy">enable</a>
+          </li>
+          
+          <li>
+            <a href="#r:org_kde_kwin_outputconfiguration:mode" class="link blue underline-hover lh-copy">mode</a>
+          </li>
+          
+          <li>
+            <a href="#r:org_kde_kwin_outputconfiguration:transform" class="link blue underline-hover lh-copy">transform</a>
+          </li>
+          
+          <li>
+            <a href="#r:org_kde_kwin_outputconfiguration:position" class="link blue underline-hover lh-copy">position</a>
+          </li>
+          
+          <li>
+            <a href="#r:org_kde_kwin_outputconfiguration:scale" class="link blue underline-hover lh-copy">scale</a>
+          </li>
+          
+          <li>
+            <a href="#r:org_kde_kwin_outputconfiguration:apply" class="link blue underline-hover lh-copy">apply</a>
+          </li>
+          
+          <li>
+            <a href="#r:org_kde_kwin_outputconfiguration:scalef" class="link blue underline-hover lh-copy">scalef</a>
+          </li>
+          
+          <li>
+            <a href="#r:org_kde_kwin_outputconfiguration:colorcurves" class="link blue underline-hover lh-copy">colorcurves</a>
+          </li>
+          
+          <li>
+            <a href="#r:org_kde_kwin_outputconfiguration:destroy" class="link blue underline-hover lh-copy">destroy</a>
+          </li>
+          
+          <li>
+            <a href="#r:org_kde_kwin_outputconfiguration:overscan" class="link blue underline-hover lh-copy">overscan</a>
+          </li>
+          
+          <li>
+            <a href="#r:org_kde_kwin_outputconfiguration:set_vrr_policy" class="link blue underline-hover lh-copy">set_vrr_policy</a>
+          </li>
+          
+        </ul>
+      
+
+      
+        <div>
+          <a href="#eh:org_kde_kwin_outputconfiguration" class="link blue underline-hover lh-copy pl3">Events</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#e:org_kde_kwin_outputconfiguration:applied" class="link blue underline-hover lh-copy">applied</a>
+          </li>
+          
+          <li>
+            <a href="#e:org_kde_kwin_outputconfiguration:failed" class="link blue underline-hover lh-copy">failed</a>
+          </li>
+          
+        </ul>
+      
+    </li>
+  
+  </ul>
+</div>
+  </div>
+
+      </div>
+    </div>
+
+    <main id="content" class="mh4">
+      
+  <div class="ph2">
+    <h1 class="f1 lh-title">outputmanagement</h1>
+    <ul class="list pl0">
+      
+      <li class="mt4">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:org_kde_kwin_outputmanagement">
+          <a href="#i:org_kde_kwin_outputmanagement" class="link dim black-70 child pr2 absolute left--2">#</a>
+          org_kde_kwin_outputmanagement
+        </h2>
+        <div class="f6 lh-copy ws-pre-line courier">This interface enables clients to set properties of output devices for screen
+configuration purposes via the server. To this end output devices are referenced
+by global org_kde_kwin_outputdevice objects.
+
+outputmanagement (wl_global)
+--------------------------
+request:
+* create_configuration -&gt; outputconfiguration (wl_resource)
+
+outputconfiguration (wl_resource)
+--------------------------
+requests:
+* enable(outputdevice, bool)
+* mode(outputdevice, mode_id)
+* transformation(outputdevice, flag)
+* position(outputdevice, x, y)
+* apply
+
+events:
+* applied
+* failed
+
+The server registers one outputmanagement object as a global object. In order
+to configure outputs a client requests create_configuration, which provides a
+resource referencing an outputconfiguration for one-time configuration. That
+way the server knows which requests belong together and can group them by that.
+
+On the outputconfiguration object the client calls for each output whether the
+output should be enabled, which mode should be set (by referencing the mode from
+the list of announced modes) and the output&#x27;s global position. Once all outputs
+are configured that way, the client calls apply.
+At that point and not earlier the server should try to apply the configuration.
+If this succeeds the server emits the applied signal, otherwise the failed
+signal, such that the configuring client is noticed about the success of its
+configuration request.
+
+Through this design the interface enables atomic output configuration changes if
+internally supported by the server.
+
+</div>
+
+        
+          <h3 class=" f5 lh-title" id="rh:org_kde_kwin_outputmanagement">Requests</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:org_kde_kwin_outputmanagement:create_configuration">
+                <a href="#r:org_kde_kwin_outputmanagement:create_configuration" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  create_configuration
+                </div>
+                <div class="f5 ml2">
+                  provide outputconfiguration object for configuring outputs
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>struct org_kde_kwin_outputconfiguration* </span><span class="dark-blue">org_kde_kwin_outputmanagement_create_configuration</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct org_kde_kwin_outputmanagement*</span> org_kde_kwin_outputmanagement</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier">Request an outputconfiguration object through which the client can configure
+output devices.
+</div>
+            </li>
+            
+          </ul>
+        
+
+        
+
+        
+
+      </li>
+      
+      <li class="mt4">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:org_kde_kwin_outputconfiguration">
+          <a href="#i:org_kde_kwin_outputconfiguration" class="link dim black-70 child pr2 absolute left--2">#</a>
+          org_kde_kwin_outputconfiguration
+        </h2>
+        <div class="f6 lh-copy ws-pre-line courier">outputconfiguration is a client-specific resource that can be used to ask
+the server to apply changes to available output devices.
+
+The client receives a list of output devices from the registry. When it wants
+to apply new settings, it creates a configuration object from the
+outputmanagement global, writes changes through this object&#x27;s enable, scale,
+transform and mode calls. It then asks the server to apply these settings in
+an atomic fashion, for example through Linux&#x27; DRM interface.
+
+The server signals back whether the new settings have applied successfully
+or failed to apply. outputdevice objects are updated after the changes have been
+applied to the hardware and before the server side sends the applied event.
+</div>
+
+        
+          <h3 class=" f5 lh-title" id="rh:org_kde_kwin_outputconfiguration">Requests</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:org_kde_kwin_outputconfiguration:enable">
+                <a href="#r:org_kde_kwin_outputconfiguration:enable" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  enable
+                </div>
+                <div class="f5 ml2">
+                  enable or disable an output
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">org_kde_kwin_outputconfiguration_enable</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct org_kde_kwin_outputconfiguration*</span> org_kde_kwin_outputconfiguration,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct org_kde_kwin_outputdevice*</span> outputdevice,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> enable</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier">Mark the output as enabled or disabled.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:org_kde_kwin_outputconfiguration:mode">
+                <a href="#r:org_kde_kwin_outputconfiguration:mode" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  mode
+                </div>
+                <div class="f5 ml2">
+                  switch outputdevice to mode
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">org_kde_kwin_outputconfiguration_mode</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct org_kde_kwin_outputconfiguration*</span> org_kde_kwin_outputconfiguration,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct org_kde_kwin_outputdevice*</span> outputdevice,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> mode_id</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier">Sets the mode for a given output by its mode size (width and height) and refresh rate.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:org_kde_kwin_outputconfiguration:transform">
+                <a href="#r:org_kde_kwin_outputconfiguration:transform" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  transform
+                </div>
+                <div class="f5 ml2">
+                  transform outputdevice
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">org_kde_kwin_outputconfiguration_transform</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct org_kde_kwin_outputconfiguration*</span> org_kde_kwin_outputconfiguration,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct org_kde_kwin_outputdevice*</span> outputdevice,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> transform</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier">Sets the transformation for a given output.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:org_kde_kwin_outputconfiguration:position">
+                <a href="#r:org_kde_kwin_outputconfiguration:position" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  position
+                </div>
+                <div class="f5 ml2">
+                  position output in global space
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">org_kde_kwin_outputconfiguration_position</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct org_kde_kwin_outputconfiguration*</span> org_kde_kwin_outputconfiguration,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct org_kde_kwin_outputdevice*</span> outputdevice,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> x,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> y</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier">Sets the position for this output device. (x,y) describe the top-left corner
+of the output in global space, whereby the origin (0,0) of the global space
+has to be aligned with the top-left corner of the most left and in case this
+does not define a single one the top output.
+
+There may be no gaps or overlaps between outputs, i.e. the outputs are
+stacked horizontally, vertically, or both on each other.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:org_kde_kwin_outputconfiguration:scale">
+                <a href="#r:org_kde_kwin_outputconfiguration:scale" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  scale
+                </div>
+                <div class="f5 ml2">
+                  set scaling factor of this output
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">org_kde_kwin_outputconfiguration_scale</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct org_kde_kwin_outputconfiguration*</span> org_kde_kwin_outputconfiguration,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct org_kde_kwin_outputdevice*</span> outputdevice,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> scale</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier">Sets the scaling factor for this output device.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:org_kde_kwin_outputconfiguration:apply">
+                <a href="#r:org_kde_kwin_outputconfiguration:apply" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  apply
+                </div>
+                <div class="f5 ml2">
+                  apply configuration changes to all output devices
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">org_kde_kwin_outputconfiguration_apply</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct org_kde_kwin_outputconfiguration*</span> org_kde_kwin_outputconfiguration</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier">Asks the server to apply property changes requested through this outputconfiguration
+object to all outputs on the server side.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:org_kde_kwin_outputconfiguration:scalef">
+                <a href="#r:org_kde_kwin_outputconfiguration:scalef" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  scalef
+                </div>
+                <div class="f5 ml2">
+                  set scaling factor of this output
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">org_kde_kwin_outputconfiguration_scalef</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct org_kde_kwin_outputconfiguration*</span> org_kde_kwin_outputconfiguration,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct org_kde_kwin_outputdevice*</span> outputdevice,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">wl_fixed_t</span> scale</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier">Sets the scaling factor for this output device.
+Sending both scale and scalef is undefined.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:org_kde_kwin_outputconfiguration:colorcurves">
+                <a href="#r:org_kde_kwin_outputconfiguration:colorcurves" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  colorcurves
+                </div>
+                <div class="f5 ml2">
+                  set output color curves
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">org_kde_kwin_outputconfiguration_colorcurves</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct org_kde_kwin_outputconfiguration*</span> org_kde_kwin_outputconfiguration,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct org_kde_kwin_outputdevice*</span> outputdevice,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_array*</span> red,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_array*</span> green,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_array*</span> blue</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier">Set color curves of output devices through RGB color ramps. Allows color
+correction of output device from user space.
+
+These are the raw values. A compositor might opt to adjust these values
+internally, for example to shift color temperature at night.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:org_kde_kwin_outputconfiguration:destroy">
+                <a href="#r:org_kde_kwin_outputconfiguration:destroy" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  destroy
+                </div>
+                <div class="f5 ml2">
+                  release the outputconfiguration object
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">org_kde_kwin_outputconfiguration_destroy</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct org_kde_kwin_outputconfiguration*</span> org_kde_kwin_outputconfiguration</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier"></div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:org_kde_kwin_outputconfiguration:overscan">
+                <a href="#r:org_kde_kwin_outputconfiguration:overscan" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  overscan
+                </div>
+                <div class="f5 ml2">
+                  set overscan value
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">org_kde_kwin_outputconfiguration_overscan</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct org_kde_kwin_outputconfiguration*</span> org_kde_kwin_outputconfiguration,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct org_kde_kwin_outputdevice*</span> outputdevice,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> overscan</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier">Set the overscan value of this output device with a value in percent.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:org_kde_kwin_outputconfiguration:set_vrr_policy">
+                <a href="#r:org_kde_kwin_outputconfiguration:set_vrr_policy" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  set_vrr_policy
+                </div>
+                <div class="f5 ml2">
+                  set the VRR policy
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">org_kde_kwin_outputconfiguration_set_vrr_policy</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct org_kde_kwin_outputconfiguration*</span> org_kde_kwin_outputconfiguration,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct org_kde_kwin_outputdevice*</span> outputdevice,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> policy</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier">Set what policy the compositor should employ regarding its use of
+variable refresh rate.
+</div>
+            </li>
+            
+          </ul>
+        
+
+        
+          <h3 class=" f5 lh-title" id="eh:org_kde_kwin_outputconfiguration">Events</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:org_kde_kwin_outputconfiguration:applied">
+                <a href="#e:org_kde_kwin_outputconfiguration:applied" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  applied
+                </div>
+                <div class="f5 ml2">
+                  configuration changes have been applied
+                </div>
+              </div>
+
+              <div class="f6 lh-copy ws-pre-line courier">Sent after the server has successfully applied the changes.
+.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:org_kde_kwin_outputconfiguration:failed">
+                <a href="#e:org_kde_kwin_outputconfiguration:failed" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  failed
+                </div>
+                <div class="f5 ml2">
+                  configuration changes failed to apply
+                </div>
+              </div>
+
+              <div class="f6 lh-copy ws-pre-line courier">Sent if the server rejects the changes or failed to apply them.
+</div>
+            </li>
+            
+          </ul>
+
+        
+
+      </li>
+      
+    </ul>
+
+    <h2 class="f4 lh-title">Copyright Info</h2>
+    <div class="f7 lh-copy ws-pre-line courier">SPDX-FileCopyrightText: 2008-2011 Kristian Høgsberg
+SPDX-FileCopyrightText: 2010-2011 Intel Corporation
+SPDX-FileCopyrightText: 2012-2013 Collabora, Ltd.
+SPDX-FileCopyrightText: 2015 Sebastian Kügler &lt;sebas@kde.org&gt;
+
+SPDX-License-Identifier: MIT-CMU
+</div>
+  </div>
+
+    </main>
+
+  </body>
+</html>

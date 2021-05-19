@@ -1,0 +1,422 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>fake_input</title>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="&#x2f;wayland-protocol-docs/main.css"></link>
+     
+  </head>
+  <body class="bg-near-white black-70 flex sans-serif ph4-l">
+
+    
+
+    <div id="sidebar" class="w-20 br b--white bw3">
+      <div class="fixed h-100">
+        <a href="&#x2f;wayland-protocol-docs/" class="f4 link near-black dim lh-title">
+          Home
+        </a>
+        
+  <div class="ph2">
+    
+
+<div>
+  <ul class="list pl0">
+  
+    <li>
+      <a href="#i:org_kde_kwin_fake_input" class="link blue underline-hover lh-copy">org_kde_kwin_fake_input</a>
+
+      
+        <div>
+          <a href="#rh:org_kde_kwin_fake_input" class="link blue underline-hover lh-copy pl3">Requests</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#r:org_kde_kwin_fake_input:authenticate" class="link blue underline-hover lh-copy">authenticate</a>
+          </li>
+          
+          <li>
+            <a href="#r:org_kde_kwin_fake_input:pointer_motion" class="link blue underline-hover lh-copy">pointer_motion</a>
+          </li>
+          
+          <li>
+            <a href="#r:org_kde_kwin_fake_input:button" class="link blue underline-hover lh-copy">button</a>
+          </li>
+          
+          <li>
+            <a href="#r:org_kde_kwin_fake_input:axis" class="link blue underline-hover lh-copy">axis</a>
+          </li>
+          
+          <li>
+            <a href="#r:org_kde_kwin_fake_input:touch_down" class="link blue underline-hover lh-copy">touch_down</a>
+          </li>
+          
+          <li>
+            <a href="#r:org_kde_kwin_fake_input:touch_motion" class="link blue underline-hover lh-copy">touch_motion</a>
+          </li>
+          
+          <li>
+            <a href="#r:org_kde_kwin_fake_input:touch_up" class="link blue underline-hover lh-copy">touch_up</a>
+          </li>
+          
+          <li>
+            <a href="#r:org_kde_kwin_fake_input:touch_cancel" class="link blue underline-hover lh-copy">touch_cancel</a>
+          </li>
+          
+          <li>
+            <a href="#r:org_kde_kwin_fake_input:touch_frame" class="link blue underline-hover lh-copy">touch_frame</a>
+          </li>
+          
+          <li>
+            <a href="#r:org_kde_kwin_fake_input:pointer_motion_absolute" class="link blue underline-hover lh-copy">pointer_motion_absolute</a>
+          </li>
+          
+          <li>
+            <a href="#r:org_kde_kwin_fake_input:keyboard_key" class="link blue underline-hover lh-copy">keyboard_key</a>
+          </li>
+          
+        </ul>
+      
+
+      
+      
+    </li>
+  
+  </ul>
+</div>
+  </div>
+
+      </div>
+    </div>
+
+    <main id="content" class="mh4">
+      
+  <div class="ph2">
+    <h1 class="f1 lh-title">fake_input</h1>
+    <ul class="list pl0">
+      
+      <li class="mt4">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:org_kde_kwin_fake_input">
+          <a href="#i:org_kde_kwin_fake_input" class="link dim black-70 child pr2 absolute left--2">#</a>
+          org_kde_kwin_fake_input
+        </h2>
+        <div class="f6 lh-copy ws-pre-line courier">This interface allows other processes to provide fake input events.
+Purpose is on the one hand side to provide testing facilities like XTest on X11.
+But also to support use case like kdeconnect&#x27;s mouse pad interface.
+
+A compositor should not trust the input received from this interface.
+Clients should not expect that the compositor honors the requests from this
+interface.
+</div>
+
+        
+          <h3 class=" f5 lh-title" id="rh:org_kde_kwin_fake_input">Requests</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:org_kde_kwin_fake_input:authenticate">
+                <a href="#r:org_kde_kwin_fake_input:authenticate" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  authenticate
+                </div>
+                <div class="f5 ml2">
+                  Information why the client wants to use the interface
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">org_kde_kwin_fake_input_authenticate</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct org_kde_kwin_fake_input*</span> org_kde_kwin_fake_input,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">const char*</span> application,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">const char*</span> reason</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier">A client should use this request to tell the compositor why it wants to
+use this interface. The compositor might use the information to decide
+whether it wants to grant the request. The data might also be passed to
+the user to decide whether the application should get granted access to
+this very privileged interface.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:org_kde_kwin_fake_input:pointer_motion">
+                <a href="#r:org_kde_kwin_fake_input:pointer_motion" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  pointer_motion
+                </div>
+                <div class="f5 ml2">
+                  
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">org_kde_kwin_fake_input_pointer_motion</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct org_kde_kwin_fake_input*</span> org_kde_kwin_fake_input,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">wl_fixed_t</span> delta_x,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">wl_fixed_t</span> delta_y</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier"></div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:org_kde_kwin_fake_input:button">
+                <a href="#r:org_kde_kwin_fake_input:button" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  button
+                </div>
+                <div class="f5 ml2">
+                  
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">org_kde_kwin_fake_input_button</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct org_kde_kwin_fake_input*</span> org_kde_kwin_fake_input,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> button,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> state</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier"></div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:org_kde_kwin_fake_input:axis">
+                <a href="#r:org_kde_kwin_fake_input:axis" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  axis
+                </div>
+                <div class="f5 ml2">
+                  
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">org_kde_kwin_fake_input_axis</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct org_kde_kwin_fake_input*</span> org_kde_kwin_fake_input,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> axis,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">wl_fixed_t</span> value</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier"></div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:org_kde_kwin_fake_input:touch_down">
+                <a href="#r:org_kde_kwin_fake_input:touch_down" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  touch_down
+                </div>
+                <div class="f5 ml2">
+                  touch down event
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">org_kde_kwin_fake_input_touch_down</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct org_kde_kwin_fake_input*</span> org_kde_kwin_fake_input,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> id,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">wl_fixed_t</span> x,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">wl_fixed_t</span> y</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier">A client should use this request to send touch down event at specific
+co-ordinates.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:org_kde_kwin_fake_input:touch_motion">
+                <a href="#r:org_kde_kwin_fake_input:touch_motion" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  touch_motion
+                </div>
+                <div class="f5 ml2">
+                  touch motion event
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">org_kde_kwin_fake_input_touch_motion</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct org_kde_kwin_fake_input*</span> org_kde_kwin_fake_input,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> id,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">wl_fixed_t</span> x,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">wl_fixed_t</span> y</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier">A client should use this request to send touch motion to specific position.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:org_kde_kwin_fake_input:touch_up">
+                <a href="#r:org_kde_kwin_fake_input:touch_up" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  touch_up
+                </div>
+                <div class="f5 ml2">
+                  touch up event
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">org_kde_kwin_fake_input_touch_up</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct org_kde_kwin_fake_input*</span> org_kde_kwin_fake_input,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> id</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier">A client should use this request to send touch up event.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:org_kde_kwin_fake_input:touch_cancel">
+                <a href="#r:org_kde_kwin_fake_input:touch_cancel" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  touch_cancel
+                </div>
+                <div class="f5 ml2">
+                  touch cancel event
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">org_kde_kwin_fake_input_touch_cancel</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct org_kde_kwin_fake_input*</span> org_kde_kwin_fake_input</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier">A client should use this request to cancel the current
+touch event.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:org_kde_kwin_fake_input:touch_frame">
+                <a href="#r:org_kde_kwin_fake_input:touch_frame" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  touch_frame
+                </div>
+                <div class="f5 ml2">
+                  touch frame event
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">org_kde_kwin_fake_input_touch_frame</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct org_kde_kwin_fake_input*</span> org_kde_kwin_fake_input</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier">A client should use this request to send touch frame event.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:org_kde_kwin_fake_input:pointer_motion_absolute">
+                <a href="#r:org_kde_kwin_fake_input:pointer_motion_absolute" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  pointer_motion_absolute
+                </div>
+                <div class="f5 ml2">
+                  
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">org_kde_kwin_fake_input_pointer_motion_absolute</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct org_kde_kwin_fake_input*</span> org_kde_kwin_fake_input,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">wl_fixed_t</span> x,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">wl_fixed_t</span> y</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier"></div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:org_kde_kwin_fake_input:keyboard_key">
+                <a href="#r:org_kde_kwin_fake_input:keyboard_key" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  keyboard_key
+                </div>
+                <div class="f5 ml2">
+                  
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">org_kde_kwin_fake_input_keyboard_key</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct org_kde_kwin_fake_input*</span> org_kde_kwin_fake_input,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> button,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> state</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier"></div>
+            </li>
+            
+          </ul>
+        
+
+        
+
+        
+
+      </li>
+      
+    </ul>
+
+    <h2 class="f4 lh-title">Copyright Info</h2>
+    <div class="f7 lh-copy ws-pre-line courier">SPDX-FileCopyrightText: 2015 Martin Gräßlin
+
+SPDX-License-Identifier: LGPL-2.1-or-later
+</div>
+  </div>
+
+    </main>
+
+  </body>
+</html>

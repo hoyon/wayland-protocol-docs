@@ -1,0 +1,259 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>remote_access</title>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="&#x2f;wayland-protocol-docs/main.css"></link>
+     
+  </head>
+  <body class="bg-near-white black-70 flex sans-serif ph4-l">
+
+    
+
+    <div id="sidebar" class="w-20 br b--white bw3">
+      <div class="fixed h-100">
+        <a href="&#x2f;wayland-protocol-docs/" class="f4 link near-black dim lh-title">
+          Home
+        </a>
+        
+  <div class="ph2">
+    
+
+<div>
+  <ul class="list pl0">
+  
+    <li>
+      <a href="#i:org_kde_kwin_remote_access_manager" class="link blue underline-hover lh-copy">org_kde_kwin_remote_access_manager</a>
+
+      
+        <div>
+          <a href="#rh:org_kde_kwin_remote_access_manager" class="link blue underline-hover lh-copy pl3">Requests</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#r:org_kde_kwin_remote_access_manager:get_buffer" class="link blue underline-hover lh-copy">get_buffer</a>
+          </li>
+          
+          <li>
+            <a href="#r:org_kde_kwin_remote_access_manager:release" class="link blue underline-hover lh-copy">release</a>
+          </li>
+          
+        </ul>
+      
+
+      
+        <div>
+          <a href="#eh:org_kde_kwin_remote_access_manager" class="link blue underline-hover lh-copy pl3">Events</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#e:org_kde_kwin_remote_access_manager:buffer_ready" class="link blue underline-hover lh-copy">buffer_ready</a>
+          </li>
+          
+        </ul>
+      
+    </li>
+  
+    <li>
+      <a href="#i:org_kde_kwin_remote_buffer" class="link blue underline-hover lh-copy">org_kde_kwin_remote_buffer</a>
+
+      
+        <div>
+          <a href="#rh:org_kde_kwin_remote_buffer" class="link blue underline-hover lh-copy pl3">Requests</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#r:org_kde_kwin_remote_buffer:release" class="link blue underline-hover lh-copy">release</a>
+          </li>
+          
+        </ul>
+      
+
+      
+        <div>
+          <a href="#eh:org_kde_kwin_remote_buffer" class="link blue underline-hover lh-copy pl3">Events</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#e:org_kde_kwin_remote_buffer:gbm_handle" class="link blue underline-hover lh-copy">gbm_handle</a>
+          </li>
+          
+        </ul>
+      
+    </li>
+  
+  </ul>
+</div>
+  </div>
+
+      </div>
+    </div>
+
+    <main id="content" class="mh4">
+      
+  <div class="ph2">
+    <h1 class="f1 lh-title">remote_access</h1>
+    <ul class="list pl0">
+      
+      <li class="mt4">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:org_kde_kwin_remote_access_manager">
+          <a href="#i:org_kde_kwin_remote_access_manager" class="link dim black-70 child pr2 absolute left--2">#</a>
+          org_kde_kwin_remote_access_manager
+        </h2>
+        <div class="f6 lh-copy ws-pre-line courier"></div>
+
+        
+          <h3 class=" f5 lh-title" id="rh:org_kde_kwin_remote_access_manager">Requests</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:org_kde_kwin_remote_access_manager:get_buffer">
+                <a href="#r:org_kde_kwin_remote_access_manager:get_buffer" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  get_buffer
+                </div>
+                <div class="f5 ml2">
+                  Answer on buffer_ready event, retrieves new buffer from server
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>struct org_kde_kwin_remote_buffer* </span><span class="dark-blue">org_kde_kwin_remote_access_manager_get_buffer</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct org_kde_kwin_remote_access_manager*</span> org_kde_kwin_remote_access_manager,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> internal_buffer_id</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier"></div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:org_kde_kwin_remote_access_manager:release">
+                <a href="#r:org_kde_kwin_remote_access_manager:release" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  release
+                </div>
+                <div class="f5 ml2">
+                  release org_kde_kwin_remote_access_manager interface
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">org_kde_kwin_remote_access_manager_release</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct org_kde_kwin_remote_access_manager*</span> org_kde_kwin_remote_access_manager</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier"></div>
+            </li>
+            
+          </ul>
+        
+
+        
+          <h3 class=" f5 lh-title" id="eh:org_kde_kwin_remote_access_manager">Events</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:org_kde_kwin_remote_access_manager:buffer_ready">
+                <a href="#e:org_kde_kwin_remote_access_manager:buffer_ready" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  buffer_ready
+                </div>
+                <div class="f5 ml2">
+                  Signals about buffer ready to be consumed by clients
+                </div>
+              </div>
+
+              <div class="f6 lh-copy ws-pre-line courier"></div>
+            </li>
+            
+          </ul>
+
+        
+
+      </li>
+      
+      <li class="mt4">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:org_kde_kwin_remote_buffer">
+          <a href="#i:org_kde_kwin_remote_buffer" class="link dim black-70 child pr2 absolute left--2">#</a>
+          org_kde_kwin_remote_buffer
+        </h2>
+        <div class="f6 lh-copy ws-pre-line courier"></div>
+
+        
+          <h3 class=" f5 lh-title" id="rh:org_kde_kwin_remote_buffer">Requests</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:org_kde_kwin_remote_buffer:release">
+                <a href="#r:org_kde_kwin_remote_buffer:release" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  release
+                </div>
+                <div class="f5 ml2">
+                  This request comes once client no longer needs this buffer.
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">org_kde_kwin_remote_buffer_release</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct org_kde_kwin_remote_buffer*</span> org_kde_kwin_remote_buffer</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier"></div>
+            </li>
+            
+          </ul>
+        
+
+        
+          <h3 class=" f5 lh-title" id="eh:org_kde_kwin_remote_buffer">Events</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:org_kde_kwin_remote_buffer:gbm_handle">
+                <a href="#e:org_kde_kwin_remote_buffer:gbm_handle" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  gbm_handle
+                </div>
+                <div class="f5 ml2">
+                  This is sent after binding to remote access manager
+                </div>
+              </div>
+
+              <div class="f6 lh-copy ws-pre-line courier"></div>
+            </li>
+            
+          </ul>
+
+        
+
+      </li>
+      
+    </ul>
+
+    <h2 class="f4 lh-title">Copyright Info</h2>
+    <div class="f7 lh-copy ws-pre-line courier">SPDX-FileCopyrightText: 2016 Oleg Chernovskiy
+
+SPDX-License-Identifier: LGPL-2.1-or-later
+</div>
+  </div>
+
+    </main>
+
+  </body>
+</html>

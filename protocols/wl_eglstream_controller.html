@@ -1,0 +1,154 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>wl_eglstream_controller</title>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="&#x2f;wayland-protocol-docs/main.css"></link>
+     
+  </head>
+  <body class="bg-near-white black-70 flex sans-serif ph4-l">
+
+    
+
+    <div id="sidebar" class="w-20 br b--white bw3">
+      <div class="fixed h-100">
+        <a href="&#x2f;wayland-protocol-docs/" class="f4 link near-black dim lh-title">
+          Home
+        </a>
+        
+  <div class="ph2">
+    
+
+<div>
+  <ul class="list pl0">
+  
+    <li>
+      <a href="#i:wl_eglstream_controller" class="link blue underline-hover lh-copy">wl_eglstream_controller</a>
+
+      
+        <div>
+          <a href="#rh:wl_eglstream_controller" class="link blue underline-hover lh-copy pl3">Requests</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#r:wl_eglstream_controller:attach_eglstream_consumer" class="link blue underline-hover lh-copy">attach_eglstream_consumer</a>
+          </li>
+          
+          <li>
+            <a href="#r:wl_eglstream_controller:attach_eglstream_consumer_attribs" class="link blue underline-hover lh-copy">attach_eglstream_consumer_attribs</a>
+          </li>
+          
+        </ul>
+      
+
+      
+      
+    </li>
+  
+  </ul>
+</div>
+  </div>
+
+      </div>
+    </div>
+
+    <main id="content" class="mh4">
+      
+  <div class="ph2">
+    <h1 class="f1 lh-title">wl_eglstream_controller</h1>
+    <ul class="list pl0">
+      
+      <li class="mt4">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:wl_eglstream_controller">
+          <a href="#i:wl_eglstream_controller" class="link dim black-70 child pr2 absolute left--2">#</a>
+          wl_eglstream_controller
+        </h2>
+        <div class="f6 lh-copy ws-pre-line courier"></div>
+
+        
+          <h3 class=" f5 lh-title" id="rh:wl_eglstream_controller">Requests</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:wl_eglstream_controller:attach_eglstream_consumer">
+                <a href="#r:wl_eglstream_controller:attach_eglstream_consumer" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  attach_eglstream_consumer
+                </div>
+                <div class="f5 ml2">
+                  Create server stream and attach consumer
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">wl_eglstream_controller_attach_eglstream_consumer</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_eglstream_controller*</span> wl_eglstream_controller,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_surface*</span> wl_surface,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_buffer*</span> wl_resource</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier">Creates the corresponding server side EGLStream from the given wl_buffer
+and attaches a consumer to it.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:wl_eglstream_controller:attach_eglstream_consumer_attribs">
+                <a href="#r:wl_eglstream_controller:attach_eglstream_consumer_attribs" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  attach_eglstream_consumer_attribs
+                </div>
+                <div class="f5 ml2">
+                  Create server stream and attach consumer using attributes
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">wl_eglstream_controller_attach_eglstream_consumer_attribs</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_eglstream_controller*</span> wl_eglstream_controller,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_surface*</span> wl_surface,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_buffer*</span> wl_resource,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_array*</span> attribs</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier">Creates the corresponding server side EGLStream from the given wl_buffer
+and attaches a consumer to it using the given attributes.
+</div>
+            </li>
+            
+          </ul>
+        
+
+        
+
+        
+
+      </li>
+      
+    </ul>
+
+    <h2 class="f4 lh-title">Copyright Info</h2>
+    <div class="f7 lh-copy ws-pre-line courier">SPDX-FileCopyrightText: 2017-2018, NVIDIA CORPORATION. All rights reserved.
+
+SPDX-License-Identifier: MIT
+</div>
+  </div>
+
+    </main>
+
+  </body>
+</html>

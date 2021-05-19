@@ -1,0 +1,584 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>shadow</title>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="&#x2f;wayland-protocol-docs/main.css"></link>
+     
+  </head>
+  <body class="bg-near-white black-70 flex sans-serif ph4-l">
+
+    
+
+    <div id="sidebar" class="w-20 br b--white bw3">
+      <div class="fixed h-100">
+        <a href="&#x2f;wayland-protocol-docs/" class="f4 link near-black dim lh-title">
+          Home
+        </a>
+        
+  <div class="ph2">
+    
+
+<div>
+  <ul class="list pl0">
+  
+    <li>
+      <a href="#i:org_kde_kwin_shadow_manager" class="link blue underline-hover lh-copy">org_kde_kwin_shadow_manager</a>
+
+      
+        <div>
+          <a href="#rh:org_kde_kwin_shadow_manager" class="link blue underline-hover lh-copy pl3">Requests</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#r:org_kde_kwin_shadow_manager:create" class="link blue underline-hover lh-copy">create</a>
+          </li>
+          
+          <li>
+            <a href="#r:org_kde_kwin_shadow_manager:unset" class="link blue underline-hover lh-copy">unset</a>
+          </li>
+          
+          <li>
+            <a href="#r:org_kde_kwin_shadow_manager:destroy" class="link blue underline-hover lh-copy">destroy</a>
+          </li>
+          
+        </ul>
+      
+
+      
+      
+    </li>
+  
+    <li>
+      <a href="#i:org_kde_kwin_shadow" class="link blue underline-hover lh-copy">org_kde_kwin_shadow</a>
+
+      
+        <div>
+          <a href="#rh:org_kde_kwin_shadow" class="link blue underline-hover lh-copy pl3">Requests</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#r:org_kde_kwin_shadow:commit" class="link blue underline-hover lh-copy">commit</a>
+          </li>
+          
+          <li>
+            <a href="#r:org_kde_kwin_shadow:attach_left" class="link blue underline-hover lh-copy">attach_left</a>
+          </li>
+          
+          <li>
+            <a href="#r:org_kde_kwin_shadow:attach_top_left" class="link blue underline-hover lh-copy">attach_top_left</a>
+          </li>
+          
+          <li>
+            <a href="#r:org_kde_kwin_shadow:attach_top" class="link blue underline-hover lh-copy">attach_top</a>
+          </li>
+          
+          <li>
+            <a href="#r:org_kde_kwin_shadow:attach_top_right" class="link blue underline-hover lh-copy">attach_top_right</a>
+          </li>
+          
+          <li>
+            <a href="#r:org_kde_kwin_shadow:attach_right" class="link blue underline-hover lh-copy">attach_right</a>
+          </li>
+          
+          <li>
+            <a href="#r:org_kde_kwin_shadow:attach_bottom_right" class="link blue underline-hover lh-copy">attach_bottom_right</a>
+          </li>
+          
+          <li>
+            <a href="#r:org_kde_kwin_shadow:attach_bottom" class="link blue underline-hover lh-copy">attach_bottom</a>
+          </li>
+          
+          <li>
+            <a href="#r:org_kde_kwin_shadow:attach_bottom_left" class="link blue underline-hover lh-copy">attach_bottom_left</a>
+          </li>
+          
+          <li>
+            <a href="#r:org_kde_kwin_shadow:set_left_offset" class="link blue underline-hover lh-copy">set_left_offset</a>
+          </li>
+          
+          <li>
+            <a href="#r:org_kde_kwin_shadow:set_top_offset" class="link blue underline-hover lh-copy">set_top_offset</a>
+          </li>
+          
+          <li>
+            <a href="#r:org_kde_kwin_shadow:set_right_offset" class="link blue underline-hover lh-copy">set_right_offset</a>
+          </li>
+          
+          <li>
+            <a href="#r:org_kde_kwin_shadow:set_bottom_offset" class="link blue underline-hover lh-copy">set_bottom_offset</a>
+          </li>
+          
+          <li>
+            <a href="#r:org_kde_kwin_shadow:destroy" class="link blue underline-hover lh-copy">destroy</a>
+          </li>
+          
+        </ul>
+      
+
+      
+      
+    </li>
+  
+  </ul>
+</div>
+  </div>
+
+      </div>
+    </div>
+
+    <main id="content" class="mh4">
+      
+  <div class="ph2">
+    <h1 class="f1 lh-title">shadow</h1>
+    <ul class="list pl0">
+      
+      <li class="mt4">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:org_kde_kwin_shadow_manager">
+          <a href="#i:org_kde_kwin_shadow_manager" class="link dim black-70 child pr2 absolute left--2">#</a>
+          org_kde_kwin_shadow_manager
+        </h2>
+        <div class="f6 lh-copy ws-pre-line courier"></div>
+
+        
+          <h3 class=" f5 lh-title" id="rh:org_kde_kwin_shadow_manager">Requests</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:org_kde_kwin_shadow_manager:create">
+                <a href="#r:org_kde_kwin_shadow_manager:create" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  create
+                </div>
+                <div class="f5 ml2">
+                  
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>struct org_kde_kwin_shadow* </span><span class="dark-blue">org_kde_kwin_shadow_manager_create</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct org_kde_kwin_shadow_manager*</span> org_kde_kwin_shadow_manager,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_surface*</span> surface</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier"></div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:org_kde_kwin_shadow_manager:unset">
+                <a href="#r:org_kde_kwin_shadow_manager:unset" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  unset
+                </div>
+                <div class="f5 ml2">
+                  
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">org_kde_kwin_shadow_manager_unset</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct org_kde_kwin_shadow_manager*</span> org_kde_kwin_shadow_manager,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_surface*</span> surface</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier"></div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:org_kde_kwin_shadow_manager:destroy">
+                <a href="#r:org_kde_kwin_shadow_manager:destroy" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  destroy
+                </div>
+                <div class="f5 ml2">
+                  Destroy the org_kde_kwin_shadow_manager
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">org_kde_kwin_shadow_manager_destroy</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct org_kde_kwin_shadow_manager*</span> org_kde_kwin_shadow_manager</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier">Destroy the org_kde_kwin_shadow_manager object.
+</div>
+            </li>
+            
+          </ul>
+        
+
+        
+
+        
+
+      </li>
+      
+      <li class="mt4">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:org_kde_kwin_shadow">
+          <a href="#i:org_kde_kwin_shadow" class="link dim black-70 child pr2 absolute left--2">#</a>
+          org_kde_kwin_shadow
+        </h2>
+        <div class="f6 lh-copy ws-pre-line courier"></div>
+
+        
+          <h3 class=" f5 lh-title" id="rh:org_kde_kwin_shadow">Requests</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:org_kde_kwin_shadow:commit">
+                <a href="#r:org_kde_kwin_shadow:commit" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  commit
+                </div>
+                <div class="f5 ml2">
+                  
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">org_kde_kwin_shadow_commit</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct org_kde_kwin_shadow*</span> org_kde_kwin_shadow</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier"></div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:org_kde_kwin_shadow:attach_left">
+                <a href="#r:org_kde_kwin_shadow:attach_left" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  attach_left
+                </div>
+                <div class="f5 ml2">
+                  
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">org_kde_kwin_shadow_attach_left</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct org_kde_kwin_shadow*</span> org_kde_kwin_shadow,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_buffer*</span> buffer</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier"></div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:org_kde_kwin_shadow:attach_top_left">
+                <a href="#r:org_kde_kwin_shadow:attach_top_left" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  attach_top_left
+                </div>
+                <div class="f5 ml2">
+                  
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">org_kde_kwin_shadow_attach_top_left</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct org_kde_kwin_shadow*</span> org_kde_kwin_shadow,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_buffer*</span> buffer</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier"></div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:org_kde_kwin_shadow:attach_top">
+                <a href="#r:org_kde_kwin_shadow:attach_top" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  attach_top
+                </div>
+                <div class="f5 ml2">
+                  
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">org_kde_kwin_shadow_attach_top</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct org_kde_kwin_shadow*</span> org_kde_kwin_shadow,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_buffer*</span> buffer</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier"></div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:org_kde_kwin_shadow:attach_top_right">
+                <a href="#r:org_kde_kwin_shadow:attach_top_right" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  attach_top_right
+                </div>
+                <div class="f5 ml2">
+                  
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">org_kde_kwin_shadow_attach_top_right</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct org_kde_kwin_shadow*</span> org_kde_kwin_shadow,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_buffer*</span> buffer</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier"></div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:org_kde_kwin_shadow:attach_right">
+                <a href="#r:org_kde_kwin_shadow:attach_right" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  attach_right
+                </div>
+                <div class="f5 ml2">
+                  
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">org_kde_kwin_shadow_attach_right</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct org_kde_kwin_shadow*</span> org_kde_kwin_shadow,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_buffer*</span> buffer</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier"></div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:org_kde_kwin_shadow:attach_bottom_right">
+                <a href="#r:org_kde_kwin_shadow:attach_bottom_right" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  attach_bottom_right
+                </div>
+                <div class="f5 ml2">
+                  
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">org_kde_kwin_shadow_attach_bottom_right</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct org_kde_kwin_shadow*</span> org_kde_kwin_shadow,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_buffer*</span> buffer</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier"></div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:org_kde_kwin_shadow:attach_bottom">
+                <a href="#r:org_kde_kwin_shadow:attach_bottom" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  attach_bottom
+                </div>
+                <div class="f5 ml2">
+                  
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">org_kde_kwin_shadow_attach_bottom</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct org_kde_kwin_shadow*</span> org_kde_kwin_shadow,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_buffer*</span> buffer</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier"></div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:org_kde_kwin_shadow:attach_bottom_left">
+                <a href="#r:org_kde_kwin_shadow:attach_bottom_left" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  attach_bottom_left
+                </div>
+                <div class="f5 ml2">
+                  
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">org_kde_kwin_shadow_attach_bottom_left</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct org_kde_kwin_shadow*</span> org_kde_kwin_shadow,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_buffer*</span> buffer</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier"></div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:org_kde_kwin_shadow:set_left_offset">
+                <a href="#r:org_kde_kwin_shadow:set_left_offset" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  set_left_offset
+                </div>
+                <div class="f5 ml2">
+                  
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">org_kde_kwin_shadow_set_left_offset</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct org_kde_kwin_shadow*</span> org_kde_kwin_shadow,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">wl_fixed_t</span> offset</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier"></div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:org_kde_kwin_shadow:set_top_offset">
+                <a href="#r:org_kde_kwin_shadow:set_top_offset" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  set_top_offset
+                </div>
+                <div class="f5 ml2">
+                  
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">org_kde_kwin_shadow_set_top_offset</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct org_kde_kwin_shadow*</span> org_kde_kwin_shadow,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">wl_fixed_t</span> offset</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier"></div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:org_kde_kwin_shadow:set_right_offset">
+                <a href="#r:org_kde_kwin_shadow:set_right_offset" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  set_right_offset
+                </div>
+                <div class="f5 ml2">
+                  
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">org_kde_kwin_shadow_set_right_offset</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct org_kde_kwin_shadow*</span> org_kde_kwin_shadow,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">wl_fixed_t</span> offset</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier"></div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:org_kde_kwin_shadow:set_bottom_offset">
+                <a href="#r:org_kde_kwin_shadow:set_bottom_offset" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  set_bottom_offset
+                </div>
+                <div class="f5 ml2">
+                  
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">org_kde_kwin_shadow_set_bottom_offset</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct org_kde_kwin_shadow*</span> org_kde_kwin_shadow,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">wl_fixed_t</span> offset</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier"></div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:org_kde_kwin_shadow:destroy">
+                <a href="#r:org_kde_kwin_shadow:destroy" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  destroy
+                </div>
+                <div class="f5 ml2">
+                  Destroy the org_kde_kwin_shadow
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">org_kde_kwin_shadow_destroy</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct org_kde_kwin_shadow*</span> org_kde_kwin_shadow</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier">Destroy the org_kde_kwin_shadow object. If the org_kde_kwin_shadow is
+still set on a wl_surface the shadow will be immediately removed.
+Prefer to first call the request unset on the org_kde_kwin_shadow_manager and
+commit the wl_surface to apply the change.
+</div>
+            </li>
+            
+          </ul>
+        
+
+        
+
+        
+
+      </li>
+      
+    </ul>
+
+    <h2 class="f4 lh-title">Copyright Info</h2>
+    <div class="f7 lh-copy ws-pre-line courier">SPDX-FileCopyrightText: 2015 Martin Gräßlin
+
+SPDX-License-Identifier: LGPL-2.1-or-later
+</div>
+  </div>
+
+    </main>
+
+  </body>
+</html>

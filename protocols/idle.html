@@ -1,0 +1,258 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>idle</title>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="&#x2f;wayland-protocol-docs/main.css"></link>
+     
+  </head>
+  <body class="bg-near-white black-70 flex sans-serif ph4-l">
+
+    
+
+    <div id="sidebar" class="w-20 br b--white bw3">
+      <div class="fixed h-100">
+        <a href="&#x2f;wayland-protocol-docs/" class="f4 link near-black dim lh-title">
+          Home
+        </a>
+        
+  <div class="ph2">
+    
+
+<div>
+  <ul class="list pl0">
+  
+    <li>
+      <a href="#i:org_kde_kwin_idle" class="link blue underline-hover lh-copy">org_kde_kwin_idle</a>
+
+      
+        <div>
+          <a href="#rh:org_kde_kwin_idle" class="link blue underline-hover lh-copy pl3">Requests</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#r:org_kde_kwin_idle:get_idle_timeout" class="link blue underline-hover lh-copy">get_idle_timeout</a>
+          </li>
+          
+        </ul>
+      
+
+      
+      
+    </li>
+  
+    <li>
+      <a href="#i:org_kde_kwin_idle_timeout" class="link blue underline-hover lh-copy">org_kde_kwin_idle_timeout</a>
+
+      
+        <div>
+          <a href="#rh:org_kde_kwin_idle_timeout" class="link blue underline-hover lh-copy pl3">Requests</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#r:org_kde_kwin_idle_timeout:release" class="link blue underline-hover lh-copy">release</a>
+          </li>
+          
+          <li>
+            <a href="#r:org_kde_kwin_idle_timeout:simulate_user_activity" class="link blue underline-hover lh-copy">simulate_user_activity</a>
+          </li>
+          
+        </ul>
+      
+
+      
+        <div>
+          <a href="#eh:org_kde_kwin_idle_timeout" class="link blue underline-hover lh-copy pl3">Events</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#e:org_kde_kwin_idle_timeout:idle" class="link blue underline-hover lh-copy">idle</a>
+          </li>
+          
+          <li>
+            <a href="#e:org_kde_kwin_idle_timeout:resumed" class="link blue underline-hover lh-copy">resumed</a>
+          </li>
+          
+        </ul>
+      
+    </li>
+  
+  </ul>
+</div>
+  </div>
+
+      </div>
+    </div>
+
+    <main id="content" class="mh4">
+      
+  <div class="ph2">
+    <h1 class="f1 lh-title">idle</h1>
+    <ul class="list pl0">
+      
+      <li class="mt4">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:org_kde_kwin_idle">
+          <a href="#i:org_kde_kwin_idle" class="link dim black-70 child pr2 absolute left--2">#</a>
+          org_kde_kwin_idle
+        </h2>
+        <div class="f6 lh-copy ws-pre-line courier">This interface allows to monitor user idle time on a given seat. The interface
+allows to register timers which trigger after no user activity was registered
+on the seat for a given interval. It notifies when user activity resumes.
+
+This is useful for applications wanting to perform actions when the user is not
+interacting with the system, e.g. chat applications setting the user as away, power
+management features to dim screen, etc..
+</div>
+
+        
+          <h3 class=" f5 lh-title" id="rh:org_kde_kwin_idle">Requests</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:org_kde_kwin_idle:get_idle_timeout">
+                <a href="#r:org_kde_kwin_idle:get_idle_timeout" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  get_idle_timeout
+                </div>
+                <div class="f5 ml2">
+                  
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>struct org_kde_kwin_idle_timeout* </span><span class="dark-blue">org_kde_kwin_idle_get_idle_timeout</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct org_kde_kwin_idle*</span> org_kde_kwin_idle,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_seat*</span> seat,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> timeout</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier"></div>
+            </li>
+            
+          </ul>
+        
+
+        
+
+        
+
+      </li>
+      
+      <li class="mt4">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:org_kde_kwin_idle_timeout">
+          <a href="#i:org_kde_kwin_idle_timeout" class="link dim black-70 child pr2 absolute left--2">#</a>
+          org_kde_kwin_idle_timeout
+        </h2>
+        <div class="f6 lh-copy ws-pre-line courier"></div>
+
+        
+          <h3 class=" f5 lh-title" id="rh:org_kde_kwin_idle_timeout">Requests</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:org_kde_kwin_idle_timeout:release">
+                <a href="#r:org_kde_kwin_idle_timeout:release" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  release
+                </div>
+                <div class="f5 ml2">
+                  release the timeout object
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">org_kde_kwin_idle_timeout_release</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct org_kde_kwin_idle_timeout*</span> org_kde_kwin_idle_timeout</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier"></div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:org_kde_kwin_idle_timeout:simulate_user_activity">
+                <a href="#r:org_kde_kwin_idle_timeout:simulate_user_activity" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  simulate_user_activity
+                </div>
+                <div class="f5 ml2">
+                  Simulates user activity for this timeout, behaves just like real user activity on the seat
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">org_kde_kwin_idle_timeout_simulate_user_activity</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct org_kde_kwin_idle_timeout*</span> org_kde_kwin_idle_timeout</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier"></div>
+            </li>
+            
+          </ul>
+        
+
+        
+          <h3 class=" f5 lh-title" id="eh:org_kde_kwin_idle_timeout">Events</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:org_kde_kwin_idle_timeout:idle">
+                <a href="#e:org_kde_kwin_idle_timeout:idle" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  idle
+                </div>
+                <div class="f5 ml2">
+                  Triggered when there has not been any user activity in the requested idle time interval
+                </div>
+              </div>
+
+              <div class="f6 lh-copy ws-pre-line courier"></div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:org_kde_kwin_idle_timeout:resumed">
+                <a href="#e:org_kde_kwin_idle_timeout:resumed" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  resumed
+                </div>
+                <div class="f5 ml2">
+                  Triggered on the first user activity after an idle event
+                </div>
+              </div>
+
+              <div class="f6 lh-copy ws-pre-line courier"></div>
+            </li>
+            
+          </ul>
+
+        
+
+      </li>
+      
+    </ul>
+
+    <h2 class="f4 lh-title">Copyright Info</h2>
+    <div class="f7 lh-copy ws-pre-line courier">SPDX-FileCopyrightText: 2015 Martin Gräßlin
+
+SPDX-License-Identifier: LGPL-2.1-or-later
+</div>
+  </div>
+
+    </main>
+
+  </body>
+</html>

@@ -1,0 +1,401 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>fullscreen_shell</title>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="&#x2f;wayland-protocol-docs/main.css"></link>
+     
+  </head>
+  <body class="bg-near-white black-70 flex sans-serif ph4-l">
+
+    
+
+    <div id="sidebar" class="w-20 br b--white bw3">
+      <div class="fixed h-100">
+        <a href="&#x2f;wayland-protocol-docs/" class="f4 link near-black dim lh-title">
+          Home
+        </a>
+        
+  <div class="ph2">
+    
+
+<div>
+  <ul class="list pl0">
+  
+    <li>
+      <a href="#i:_wl_fullscreen_shell" class="link blue underline-hover lh-copy">_wl_fullscreen_shell</a>
+
+      
+        <div>
+          <a href="#rh:_wl_fullscreen_shell" class="link blue underline-hover lh-copy pl3">Requests</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#r:_wl_fullscreen_shell:release" class="link blue underline-hover lh-copy">release</a>
+          </li>
+          
+          <li>
+            <a href="#r:_wl_fullscreen_shell:present_surface" class="link blue underline-hover lh-copy">present_surface</a>
+          </li>
+          
+          <li>
+            <a href="#r:_wl_fullscreen_shell:present_surface_for_mode" class="link blue underline-hover lh-copy">present_surface_for_mode</a>
+          </li>
+          
+        </ul>
+      
+
+      
+        <div>
+          <a href="#eh:_wl_fullscreen_shell" class="link blue underline-hover lh-copy pl3">Events</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#e:_wl_fullscreen_shell:capability" class="link blue underline-hover lh-copy">capability</a>
+          </li>
+          
+        </ul>
+      
+    </li>
+  
+    <li>
+      <a href="#i:_wl_fullscreen_shell_mode_feedback" class="link blue underline-hover lh-copy">_wl_fullscreen_shell_mode_feedback</a>
+
+      
+      
+
+      
+        <div>
+          <a href="#eh:_wl_fullscreen_shell_mode_feedback" class="link blue underline-hover lh-copy pl3">Events</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#e:_wl_fullscreen_shell_mode_feedback:mode_successful" class="link blue underline-hover lh-copy">mode_successful</a>
+          </li>
+          
+          <li>
+            <a href="#e:_wl_fullscreen_shell_mode_feedback:mode_failed" class="link blue underline-hover lh-copy">mode_failed</a>
+          </li>
+          
+          <li>
+            <a href="#e:_wl_fullscreen_shell_mode_feedback:present_cancelled" class="link blue underline-hover lh-copy">present_cancelled</a>
+          </li>
+          
+        </ul>
+      
+    </li>
+  
+  </ul>
+</div>
+  </div>
+
+      </div>
+    </div>
+
+    <main id="content" class="mh4">
+      
+  <div class="ph2">
+    <h1 class="f1 lh-title">fullscreen_shell</h1>
+    <ul class="list pl0">
+      
+      <li class="mt4">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:_wl_fullscreen_shell">
+          <a href="#i:_wl_fullscreen_shell" class="link dim black-70 child pr2 absolute left--2">#</a>
+          _wl_fullscreen_shell
+        </h2>
+        <div class="f6 lh-copy ws-pre-line courier">Displays a single surface per output.
+
+This interface provides a mechanism for a single client to display
+simple full-screen surfaces.  While there technically may be multiple
+clients bound to this interface, only one of those clients should be
+shown at a time.
+
+To present a surface, the client uses either the present_surface or
+present_surface_for_mode requests.  Presenting a surface takes effect
+on the next wl_surface.commit.  See the individual requests for
+details about scaling and mode switches.
+
+The client can have at most one surface per output at any time.
+Requesting a surface be presented on an output that already has a
+surface replaces the previously presented surface.  Presenting a null
+surface removes its content and effectively disables the output.
+Exactly what happens when an output is &quot;disabled&quot; is
+compositor-specific.  The same surface may be presented on multiple
+outputs simultaneously.
+
+Once a surface is presented on an output, it stays on that output
+until either the client removes it or the compositor destroys the
+output.  This way, the client can update the output&#x27;s contents by
+simply attaching a new buffer.
+</div>
+
+        
+          <h3 class=" f5 lh-title" id="rh:_wl_fullscreen_shell">Requests</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:_wl_fullscreen_shell:release">
+                <a href="#r:_wl_fullscreen_shell:release" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  release
+                </div>
+                <div class="f5 ml2">
+                  release the wl_fullscreen_shell interface
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">_wl_fullscreen_shell_release</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct _wl_fullscreen_shell*</span> _wl_fullscreen_shell</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier">Release the binding from the wl_fullscreen_shell interface
+
+This destroys the server-side object and frees this binding.  If
+the client binds to wl_fullscreen_shell multiple times, it may wish
+to free some of those bindings.
+  </div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:_wl_fullscreen_shell:present_surface">
+                <a href="#r:_wl_fullscreen_shell:present_surface" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  present_surface
+                </div>
+                <div class="f5 ml2">
+                  present surface for display
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">_wl_fullscreen_shell_present_surface</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct _wl_fullscreen_shell*</span> _wl_fullscreen_shell,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_surface*</span> surface,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> method,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_output*</span> output</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier">Present a surface on the given output.
+
+If the output is null, the compositor will present the surface on
+whatever display (or displays) it thinks best.  In particular, this
+may replace any or all surfaces currently presented so it should
+not be used in combination with placing surfaces on specific
+outputs.
+
+The method parameter is a hint to the compositor for how the surface
+is to be presented.  In particular, it tells the compostior how to
+handle a size mismatch between the presented surface and the
+output.  The compositor is free to ignore this parameter.
+
+The &quot;zoom&quot;, &quot;zoom_crop&quot;, and &quot;stretch&quot; methods imply a scaling
+operation on the surface.  This will override any kind of output
+scaling, so the buffer_scale property of the surface is effectively
+ignored.
+  </div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:_wl_fullscreen_shell:present_surface_for_mode">
+                <a href="#r:_wl_fullscreen_shell:present_surface_for_mode" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  present_surface_for_mode
+                </div>
+                <div class="f5 ml2">
+                  present surface for display at a particular mode
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>struct _wl_fullscreen_shell_mode_feedback* </span><span class="dark-blue">_wl_fullscreen_shell_present_surface_for_mode</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct _wl_fullscreen_shell*</span> _wl_fullscreen_shell,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_surface*</span> surface,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_output*</span> output,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> framerate</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier">Presents a surface on the given output for a particular mode.
+
+If the current size of the output differs from that of the surface,
+the compositor will attempt to change the size of the output to
+match the surface.  The result of the mode-switch operation will be
+returned via the provided wl_fullscreen_shell_mode_feedback object.
+
+If the current output mode matches the one requested or if the
+compositor successfully switches the mode to match the surface,
+then the mode_successful event will be sent and the output will
+contain the contents of the given surface.  If the compositor
+cannot match the output size to the surface size, the mode_failed
+will be sent and the output will contain the contents of the
+previously presented surface (if any).  If another surface is
+presented on the given output before either of these has a chance
+to happen, the present_cancelled event will be sent.
+
+Due to race conditions and other issues unknown to the client, no
+mode-switch operation is guaranteed to succeed.  However, if the
+mode is one advertised by wl_output.mode or if the compositor
+advertises the ARBITRARY_MODES capability, then the client should
+expect that the mode-switch operation will usually succeed.
+
+If the size of the presented surface changes, the resulting output
+is undefined.  The compositor may attempt to change the output mode
+to compensate.  However, there is no guarantee that a suitable mode
+will be found and the client has no way to be notified of success
+or failure.
+
+The framerate parameter specifies the desired framerate for the
+output in mHz.  The compositor is free to ignore this parameter.  A
+value of 0 indicates that the client has no preference.
+
+If the value of wl_output.scale differs from wl_surface.buffer_scale,
+then the compositor may choose a mode that matches either the buffer
+size or the surface size.  In either case, the surface will fill the
+output.
+  </div>
+            </li>
+            
+          </ul>
+        
+
+        
+          <h3 class=" f5 lh-title" id="eh:_wl_fullscreen_shell">Events</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:_wl_fullscreen_shell:capability">
+                <a href="#e:_wl_fullscreen_shell:capability" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  capability
+                </div>
+                <div class="f5 ml2">
+                  advertises a capability of the compositor
+                </div>
+              </div>
+
+              <div class="f6 lh-copy ws-pre-line courier">Advertises a single capability of the compositor.
+
+When the wl_fullscreen_shell interface is bound, this event is emitted
+once for each capability advertised.  Valid capabilities are given by
+the wl_fullscreen_shell.capability enum.  If clients want to take
+advantage of any of these capabilities, they sould use a
+wl_display.sync request immediately after binding to ensure that they
+receive all the capability events.
+  </div>
+            </li>
+            
+          </ul>
+
+        
+
+      </li>
+      
+      <li class="mt4">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:_wl_fullscreen_shell_mode_feedback">
+          <a href="#i:_wl_fullscreen_shell_mode_feedback" class="link dim black-70 child pr2 absolute left--2">#</a>
+          _wl_fullscreen_shell_mode_feedback
+        </h2>
+        <div class="f6 lh-copy ws-pre-line courier"></div>
+
+        
+        
+
+        
+          <h3 class=" f5 lh-title" id="eh:_wl_fullscreen_shell_mode_feedback">Events</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:_wl_fullscreen_shell_mode_feedback:mode_successful">
+                <a href="#e:_wl_fullscreen_shell_mode_feedback:mode_successful" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  mode_successful
+                </div>
+                <div class="f5 ml2">
+                  mode switch succeeded
+                </div>
+              </div>
+
+              <div class="f6 lh-copy ws-pre-line courier">This event indicates that the attempted mode switch operation was
+successful.  A surface of the size requested in the mode switch
+will fill the output without scaling.
+
+Upon receiving this event, the client should destroy the
+wl_fullscreen_shell_mode_feedback object.
+  </div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:_wl_fullscreen_shell_mode_feedback:mode_failed">
+                <a href="#e:_wl_fullscreen_shell_mode_feedback:mode_failed" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  mode_failed
+                </div>
+                <div class="f5 ml2">
+                  mode switch failed
+                </div>
+              </div>
+
+              <div class="f6 lh-copy ws-pre-line courier">This event indicates that the attempted mode switch operation
+failed. This may be because the requested output mode is not
+possible or it may mean that the compositor does not want to allow it.
+
+Upon receiving this event, the client should destroy the
+wl_fullscreen_shell_mode_feedback object.
+  </div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:_wl_fullscreen_shell_mode_feedback:present_cancelled">
+                <a href="#e:_wl_fullscreen_shell_mode_feedback:present_cancelled" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  present_cancelled
+                </div>
+                <div class="f5 ml2">
+                  mode switch cancelled
+                </div>
+              </div>
+
+              <div class="f6 lh-copy ws-pre-line courier">This event indicates that the attempted mode switch operation was
+cancelled.  Most likely this is because the client requested a
+second mode switch before the first one completed.
+
+Upon receiving this event, the client should destroy the
+wl_fullscreen_shell_mode_feedback object.
+  </div>
+            </li>
+            
+          </ul>
+
+        
+
+      </li>
+      
+    </ul>
+
+    <h2 class="f4 lh-title">Copyright Info</h2>
+    <div class="f7 lh-copy ws-pre-line courier"></div>
+  </div>
+
+    </main>
+
+  </body>
+</html>

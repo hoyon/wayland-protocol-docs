@@ -1,0 +1,352 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>surface_extension</title>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="&#x2f;wayland-protocol-docs/main.css"></link>
+     
+  </head>
+  <body class="bg-near-white black-70 flex sans-serif ph4-l">
+
+    
+
+    <div id="sidebar" class="w-20 br b--white bw3">
+      <div class="fixed h-100">
+        <a href="&#x2f;wayland-protocol-docs/" class="f4 link near-black dim lh-title">
+          Home
+        </a>
+        
+  <div class="ph2">
+    
+
+<div>
+  <ul class="list pl0">
+  
+    <li>
+      <a href="#i:qt_surface_extension" class="link blue underline-hover lh-copy">qt_surface_extension</a>
+
+      
+        <div>
+          <a href="#rh:qt_surface_extension" class="link blue underline-hover lh-copy pl3">Requests</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#r:qt_surface_extension:get_extended_surface" class="link blue underline-hover lh-copy">get_extended_surface</a>
+          </li>
+          
+        </ul>
+      
+
+      
+      
+    </li>
+  
+    <li>
+      <a href="#i:qt_extended_surface" class="link blue underline-hover lh-copy">qt_extended_surface</a>
+
+      
+        <div>
+          <a href="#rh:qt_extended_surface" class="link blue underline-hover lh-copy pl3">Requests</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#r:qt_extended_surface:update_generic_property" class="link blue underline-hover lh-copy">update_generic_property</a>
+          </li>
+          
+          <li>
+            <a href="#r:qt_extended_surface:set_content_orientation_mask" class="link blue underline-hover lh-copy">set_content_orientation_mask</a>
+          </li>
+          
+          <li>
+            <a href="#r:qt_extended_surface:set_window_flags" class="link blue underline-hover lh-copy">set_window_flags</a>
+          </li>
+          
+          <li>
+            <a href="#r:qt_extended_surface:raise" class="link blue underline-hover lh-copy">raise</a>
+          </li>
+          
+          <li>
+            <a href="#r:qt_extended_surface:lower" class="link blue underline-hover lh-copy">lower</a>
+          </li>
+          
+        </ul>
+      
+
+      
+        <div>
+          <a href="#eh:qt_extended_surface" class="link blue underline-hover lh-copy pl3">Events</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#e:qt_extended_surface:onscreen_visibility" class="link blue underline-hover lh-copy">onscreen_visibility</a>
+          </li>
+          
+          <li>
+            <a href="#e:qt_extended_surface:set_generic_property" class="link blue underline-hover lh-copy">set_generic_property</a>
+          </li>
+          
+          <li>
+            <a href="#e:qt_extended_surface:close" class="link blue underline-hover lh-copy">close</a>
+          </li>
+          
+        </ul>
+      
+    </li>
+  
+  </ul>
+</div>
+  </div>
+
+      </div>
+    </div>
+
+    <main id="content" class="mh4">
+      
+  <div class="ph2">
+    <h1 class="f1 lh-title">surface_extension</h1>
+    <ul class="list pl0">
+      
+      <li class="mt4">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:qt_surface_extension">
+          <a href="#i:qt_surface_extension" class="link dim black-70 child pr2 absolute left--2">#</a>
+          qt_surface_extension
+        </h2>
+        <div class="f6 lh-copy ws-pre-line courier"></div>
+
+        
+          <h3 class=" f5 lh-title" id="rh:qt_surface_extension">Requests</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:qt_surface_extension:get_extended_surface">
+                <a href="#r:qt_surface_extension:get_extended_surface" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  get_extended_surface
+                </div>
+                <div class="f5 ml2">
+                  
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>struct qt_extended_surface* </span><span class="dark-blue">qt_surface_extension_get_extended_surface</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct qt_surface_extension*</span> qt_surface_extension,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_surface*</span> surface</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier"></div>
+            </li>
+            
+          </ul>
+        
+
+        
+
+        
+
+      </li>
+      
+      <li class="mt4">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:qt_extended_surface">
+          <a href="#i:qt_extended_surface" class="link dim black-70 child pr2 absolute left--2">#</a>
+          qt_extended_surface
+        </h2>
+        <div class="f6 lh-copy ws-pre-line courier"></div>
+
+        
+          <h3 class=" f5 lh-title" id="rh:qt_extended_surface">Requests</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:qt_extended_surface:update_generic_property">
+                <a href="#r:qt_extended_surface:update_generic_property" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  update_generic_property
+                </div>
+                <div class="f5 ml2">
+                  
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">qt_extended_surface_update_generic_property</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct qt_extended_surface*</span> qt_extended_surface,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">const char*</span> name,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_array*</span> value</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier"></div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:qt_extended_surface:set_content_orientation_mask">
+                <a href="#r:qt_extended_surface:set_content_orientation_mask" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  set_content_orientation_mask
+                </div>
+                <div class="f5 ml2">
+                  
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">qt_extended_surface_set_content_orientation_mask</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct qt_extended_surface*</span> qt_extended_surface,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> orientation</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier"></div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:qt_extended_surface:set_window_flags">
+                <a href="#r:qt_extended_surface:set_window_flags" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  set_window_flags
+                </div>
+                <div class="f5 ml2">
+                  
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">qt_extended_surface_set_window_flags</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct qt_extended_surface*</span> qt_extended_surface,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> flags</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier"></div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:qt_extended_surface:raise">
+                <a href="#r:qt_extended_surface:raise" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  raise
+                </div>
+                <div class="f5 ml2">
+                  
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">qt_extended_surface_raise</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct qt_extended_surface*</span> qt_extended_surface</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier"></div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:qt_extended_surface:lower">
+                <a href="#r:qt_extended_surface:lower" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  lower
+                </div>
+                <div class="f5 ml2">
+                  
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">qt_extended_surface_lower</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct qt_extended_surface*</span> qt_extended_surface</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier"></div>
+            </li>
+            
+          </ul>
+        
+
+        
+          <h3 class=" f5 lh-title" id="eh:qt_extended_surface">Events</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:qt_extended_surface:onscreen_visibility">
+                <a href="#e:qt_extended_surface:onscreen_visibility" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  onscreen_visibility
+                </div>
+                <div class="f5 ml2">
+                  
+                </div>
+              </div>
+
+              <div class="f6 lh-copy ws-pre-line courier"></div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:qt_extended_surface:set_generic_property">
+                <a href="#e:qt_extended_surface:set_generic_property" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  set_generic_property
+                </div>
+                <div class="f5 ml2">
+                  
+                </div>
+              </div>
+
+              <div class="f6 lh-copy ws-pre-line courier"></div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:qt_extended_surface:close">
+                <a href="#e:qt_extended_surface:close" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  close
+                </div>
+                <div class="f5 ml2">
+                  
+                </div>
+              </div>
+
+              <div class="f6 lh-copy ws-pre-line courier"></div>
+            </li>
+            
+          </ul>
+
+        
+
+      </li>
+      
+    </ul>
+
+    <h2 class="f4 lh-title">Copyright Info</h2>
+    <div class="f7 lh-copy ws-pre-line courier">This file is part of the plugins of the Qt Toolkit.
+SPDX-FileCopyrightText: 2012 Digia Plc and&#x2f;or its subsidiary(-ies).
+Contact: http:&#x2f;&#x2f;www.qt-project.org&#x2f;legal
+
+SPDX-License-Identifier: BSD-3-Clause
+</div>
+  </div>
+
+    </main>
+
+  </body>
+</html>

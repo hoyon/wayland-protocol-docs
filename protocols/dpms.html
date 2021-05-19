@@ -1,0 +1,300 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>dpms</title>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="&#x2f;wayland-protocol-docs/main.css"></link>
+     
+  </head>
+  <body class="bg-near-white black-70 flex sans-serif ph4-l">
+
+    
+
+    <div id="sidebar" class="w-20 br b--white bw3">
+      <div class="fixed h-100">
+        <a href="&#x2f;wayland-protocol-docs/" class="f4 link near-black dim lh-title">
+          Home
+        </a>
+        
+  <div class="ph2">
+    
+
+<div>
+  <ul class="list pl0">
+  
+    <li>
+      <a href="#i:org_kde_kwin_dpms_manager" class="link blue underline-hover lh-copy">org_kde_kwin_dpms_manager</a>
+
+      
+        <div>
+          <a href="#rh:org_kde_kwin_dpms_manager" class="link blue underline-hover lh-copy pl3">Requests</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#r:org_kde_kwin_dpms_manager:get" class="link blue underline-hover lh-copy">get</a>
+          </li>
+          
+        </ul>
+      
+
+      
+      
+    </li>
+  
+    <li>
+      <a href="#i:org_kde_kwin_dpms" class="link blue underline-hover lh-copy">org_kde_kwin_dpms</a>
+
+      
+        <div>
+          <a href="#rh:org_kde_kwin_dpms" class="link blue underline-hover lh-copy pl3">Requests</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#r:org_kde_kwin_dpms:set" class="link blue underline-hover lh-copy">set</a>
+          </li>
+          
+          <li>
+            <a href="#r:org_kde_kwin_dpms:release" class="link blue underline-hover lh-copy">release</a>
+          </li>
+          
+        </ul>
+      
+
+      
+        <div>
+          <a href="#eh:org_kde_kwin_dpms" class="link blue underline-hover lh-copy pl3">Events</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#e:org_kde_kwin_dpms:supported" class="link blue underline-hover lh-copy">supported</a>
+          </li>
+          
+          <li>
+            <a href="#e:org_kde_kwin_dpms:mode" class="link blue underline-hover lh-copy">mode</a>
+          </li>
+          
+          <li>
+            <a href="#e:org_kde_kwin_dpms:done" class="link blue underline-hover lh-copy">done</a>
+          </li>
+          
+        </ul>
+      
+    </li>
+  
+  </ul>
+</div>
+  </div>
+
+      </div>
+    </div>
+
+    <main id="content" class="mh4">
+      
+  <div class="ph2">
+    <h1 class="f1 lh-title">dpms</h1>
+    <ul class="list pl0">
+      
+      <li class="mt4">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:org_kde_kwin_dpms_manager">
+          <a href="#i:org_kde_kwin_dpms_manager" class="link dim black-70 child pr2 absolute left--2">#</a>
+          org_kde_kwin_dpms_manager
+        </h2>
+        <div class="f6 lh-copy ws-pre-line courier">The Dpms manager allows to get a org_kde_kwin_dpms for a given wl_output.
+The org_kde_kwin_dpms provides the currently used VESA Display Power Management
+Signaling state (see https:&#x2f;&#x2f;en.wikipedia.org&#x2f;wiki&#x2f;VESA_Display_Power_Management_Signaling ).
+In addition it allows to request a state change. A compositor is not obliged to honor it
+and will normally automatically switch back to on state.
+</div>
+
+        
+          <h3 class=" f5 lh-title" id="rh:org_kde_kwin_dpms_manager">Requests</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:org_kde_kwin_dpms_manager:get">
+                <a href="#r:org_kde_kwin_dpms_manager:get" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  get
+                </div>
+                <div class="f5 ml2">
+                  Get org_kde_kwin_dpms for wl_output
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>struct org_kde_kwin_dpms* </span><span class="dark-blue">org_kde_kwin_dpms_manager_get</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct org_kde_kwin_dpms_manager*</span> org_kde_kwin_dpms_manager,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_output*</span> output</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier">Factory request to get the org_kde_kwin_dpms for a given wl_output.
+</div>
+            </li>
+            
+          </ul>
+        
+
+        
+
+        
+
+      </li>
+      
+      <li class="mt4">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:org_kde_kwin_dpms">
+          <a href="#i:org_kde_kwin_dpms" class="link dim black-70 child pr2 absolute left--2">#</a>
+          org_kde_kwin_dpms
+        </h2>
+        <div class="f6 lh-copy ws-pre-line courier">This interface provides information about the VESA DPMS state for a wl_output.
+It gets created through the request get on the org_kde_kwin_dpms_manager interface.
+
+On creating the resource the server will push whether DPSM is supported for the output,
+the currently used DPMS state and notifies the client through the done event once all
+states are pushed. Whenever a state changes the set of changes is committed with the
+done event.
+</div>
+
+        
+          <h3 class=" f5 lh-title" id="rh:org_kde_kwin_dpms">Requests</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:org_kde_kwin_dpms:set">
+                <a href="#r:org_kde_kwin_dpms:set" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  set
+                </div>
+                <div class="f5 ml2">
+                  Request DPMS state change for the wl_output
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">org_kde_kwin_dpms_set</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct org_kde_kwin_dpms*</span> org_kde_kwin_dpms,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> mode</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier">Requests that the compositor puts the wl_output into the passed mode. The compositor
+is not obliged to change the state. In addition the compositor might leave the mode
+whenever it seems suitable. E.g. the compositor might return to On state on user input.
+
+The client should not assume that the mode changed after requesting a new mode.
+Instead the client should listen for the mode event.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:org_kde_kwin_dpms:release">
+                <a href="#r:org_kde_kwin_dpms:release" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  release
+                </div>
+                <div class="f5 ml2">
+                  release the dpms object
+                </div>
+              </div>
+              
+<div class="f6 lh-copy courier">
+  <span>void </span><span class="dark-blue">org_kde_kwin_dpms_release</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct org_kde_kwin_dpms*</span> org_kde_kwin_dpms</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line courier"></div>
+            </li>
+            
+          </ul>
+        
+
+        
+          <h3 class=" f5 lh-title" id="eh:org_kde_kwin_dpms">Events</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:org_kde_kwin_dpms:supported">
+                <a href="#e:org_kde_kwin_dpms:supported" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  supported
+                </div>
+                <div class="f5 ml2">
+                  Event indicating whether DPMS is supported on the wl_output
+                </div>
+              </div>
+
+              <div class="f6 lh-copy ws-pre-line courier">This event gets pushed on binding the resource and indicates whether the wl_output
+supports DPMS. There are operation modes of a Wayland server where DPMS might not
+make sense (e.g. nested compositors).
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:org_kde_kwin_dpms:mode">
+                <a href="#e:org_kde_kwin_dpms:mode" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  mode
+                </div>
+                <div class="f5 ml2">
+                  Event indicating used DPMS mode
+                </div>
+              </div>
+
+              <div class="f6 lh-copy ws-pre-line courier">This mode gets pushed on binding the resource and provides the currently used
+DPMS mode. It also gets pushed if DPMS is not supported for the wl_output, in that
+case the value will be On.
+
+The event is also pushed whenever the state changes.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:org_kde_kwin_dpms:done">
+                <a href="#e:org_kde_kwin_dpms:done" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  done
+                </div>
+                <div class="f5 ml2">
+                  All changes are pushed
+                </div>
+              </div>
+
+              <div class="f6 lh-copy ws-pre-line courier">This event gets pushed on binding the resource once all other states are pushed.
+
+In addition it gets pushed whenever a state changes to tell the client that all
+state changes have been pushed.
+</div>
+            </li>
+            
+          </ul>
+
+        
+
+      </li>
+      
+    </ul>
+
+    <h2 class="f4 lh-title">Copyright Info</h2>
+    <div class="f7 lh-copy ws-pre-line courier">SPDX-FileCopyrightText: 2015 Martin Gräßlin
+
+SPDX-License-Identifier: LGPL-2.1-or-later
+</div>
+  </div>
+
+    </main>
+
+  </body>
+</html>

@@ -1,0 +1,458 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>org_kde_kwin_outputdevice</title>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="&#x2f;wayland-protocol-docs/main.css"></link>
+     
+  </head>
+  <body class="bg-near-white black-70 flex sans-serif ph4-l">
+
+    
+
+    <div id="sidebar" class="w-20 br b--white bw3">
+      <div class="fixed h-100">
+        <a href="&#x2f;wayland-protocol-docs/" class="f4 link near-black dim lh-title">
+          Home
+        </a>
+        
+  <div class="ph2">
+    
+
+<div>
+  <ul class="list pl0">
+  
+    <li>
+      <a href="#i:org_kde_kwin_outputdevice" class="link blue underline-hover lh-copy">org_kde_kwin_outputdevice</a>
+
+      
+      
+
+      
+        <div>
+          <a href="#eh:org_kde_kwin_outputdevice" class="link blue underline-hover lh-copy pl3">Events</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#e:org_kde_kwin_outputdevice:geometry" class="link blue underline-hover lh-copy">geometry</a>
+          </li>
+          
+          <li>
+            <a href="#e:org_kde_kwin_outputdevice:mode" class="link blue underline-hover lh-copy">mode</a>
+          </li>
+          
+          <li>
+            <a href="#e:org_kde_kwin_outputdevice:done" class="link blue underline-hover lh-copy">done</a>
+          </li>
+          
+          <li>
+            <a href="#e:org_kde_kwin_outputdevice:scale" class="link blue underline-hover lh-copy">scale</a>
+          </li>
+          
+          <li>
+            <a href="#e:org_kde_kwin_outputdevice:edid" class="link blue underline-hover lh-copy">edid</a>
+          </li>
+          
+          <li>
+            <a href="#e:org_kde_kwin_outputdevice:enabled" class="link blue underline-hover lh-copy">enabled</a>
+          </li>
+          
+          <li>
+            <a href="#e:org_kde_kwin_outputdevice:uuid" class="link blue underline-hover lh-copy">uuid</a>
+          </li>
+          
+          <li>
+            <a href="#e:org_kde_kwin_outputdevice:scalef" class="link blue underline-hover lh-copy">scalef</a>
+          </li>
+          
+          <li>
+            <a href="#e:org_kde_kwin_outputdevice:colorcurves" class="link blue underline-hover lh-copy">colorcurves</a>
+          </li>
+          
+          <li>
+            <a href="#e:org_kde_kwin_outputdevice:serial_number" class="link blue underline-hover lh-copy">serial_number</a>
+          </li>
+          
+          <li>
+            <a href="#e:org_kde_kwin_outputdevice:eisa_id" class="link blue underline-hover lh-copy">eisa_id</a>
+          </li>
+          
+          <li>
+            <a href="#e:org_kde_kwin_outputdevice:capabilities" class="link blue underline-hover lh-copy">capabilities</a>
+          </li>
+          
+          <li>
+            <a href="#e:org_kde_kwin_outputdevice:overscan" class="link blue underline-hover lh-copy">overscan</a>
+          </li>
+          
+          <li>
+            <a href="#e:org_kde_kwin_outputdevice:vrr_policy" class="link blue underline-hover lh-copy">vrr_policy</a>
+          </li>
+          
+        </ul>
+      
+    </li>
+  
+  </ul>
+</div>
+  </div>
+
+      </div>
+    </div>
+
+    <main id="content" class="mh4">
+      
+  <div class="ph2">
+    <h1 class="f1 lh-title">org_kde_kwin_outputdevice</h1>
+    <ul class="list pl0">
+      
+      <li class="mt4">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:org_kde_kwin_outputdevice">
+          <a href="#i:org_kde_kwin_outputdevice" class="link dim black-70 child pr2 absolute left--2">#</a>
+          org_kde_kwin_outputdevice
+        </h2>
+        <div class="f6 lh-copy ws-pre-line courier">An outputdevice describes a display device available to the compositor.
+outputdevice is similar to wl_output, but focuses on output
+configuration management.
+
+A client can query all global outputdevice objects to enlist all
+available display devices, even those that may currently not be
+represented by the compositor as a wl_output.
+
+The client sends configuration changes to the server through the
+outputconfiguration interface, and the server applies the configuration
+changes to the hardware and signals changes to the outputdevices
+accordingly.
+
+This object is published as global during start up for every available
+display devices, or when one later becomes available, for example by
+being hotplugged via a physical connector.
+</div>
+
+        
+        
+
+        
+          <h3 class=" f5 lh-title" id="eh:org_kde_kwin_outputdevice">Events</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:org_kde_kwin_outputdevice:geometry">
+                <a href="#e:org_kde_kwin_outputdevice:geometry" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  geometry
+                </div>
+                <div class="f5 ml2">
+                  geometric properties of the output
+                </div>
+              </div>
+
+              <div class="f6 lh-copy ws-pre-line courier">The geometry event describes geometric properties of the output.
+The event is sent when binding to the output object and whenever
+any of the properties change.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:org_kde_kwin_outputdevice:mode">
+                <a href="#e:org_kde_kwin_outputdevice:mode" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  mode
+                </div>
+                <div class="f5 ml2">
+                  advertise available output modes and current one
+                </div>
+              </div>
+
+              <div class="f6 lh-copy ws-pre-line courier">The mode event describes an available mode for the output.
+
+When the client binds to the outputdevice object, the server sends this
+event once for every available mode the outputdevice can be operated by.
+
+There will always be at least one event sent out on initial binding,
+which represents the current mode.
+
+Later on if an output changes its mode the event is sent again, whereby
+this event represents the mode that has now become current. In other
+words, the current mode is always represented by the latest event sent
+with the current flag set.
+
+The size of a mode is given in physical hardware units of the output device.
+This is not necessarily the same as the output size in the global compositor
+space. For instance, the output may be scaled, as described in
+org_kde_kwin_outputdevice.scale, or transformed, as described in
+org_kde_kwin_outputdevice.transform.
+
+The id can be used to refer to a mode when calling set_mode on an
+org_kde_kwin_outputconfiguration object.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:org_kde_kwin_outputdevice:done">
+                <a href="#e:org_kde_kwin_outputdevice:done" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  done
+                </div>
+                <div class="f5 ml2">
+                  sent all information about output
+                </div>
+              </div>
+
+              <div class="f6 lh-copy ws-pre-line courier">This event is sent after all other properties have been
+sent on binding to the output object as well as after any
+other output property change have been applied later on.
+This allows to see changes to the output properties as atomic,
+even if multiple events successively announce them.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:org_kde_kwin_outputdevice:scale">
+                <a href="#e:org_kde_kwin_outputdevice:scale" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  scale
+                </div>
+                <div class="f5 ml2">
+                  output scaling properties
+                </div>
+              </div>
+
+              <div class="f6 lh-copy ws-pre-line courier">This event contains scaling geometry information
+that is not in the geometry event. It may be sent after
+binding the output object or if the output scale changes
+later. If it is not sent, the client should assume a
+scale of 1.
+
+A scale larger than 1 means that the compositor will
+automatically scale surface buffers by this amount
+when rendering. This is used for high resolution
+displays where applications rendering at the native
+resolution would be too small to be legible.
+
+It is intended that scaling aware clients track the
+current output of a surface, and if it is on a scaled
+output it should use wl_surface.set_buffer_scale with
+the scale of the output. That way the compositor can
+avoid scaling the surface, and the client can supply
+a higher detail image.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:org_kde_kwin_outputdevice:edid">
+                <a href="#e:org_kde_kwin_outputdevice:edid" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  edid
+                </div>
+                <div class="f5 ml2">
+                  advertise EDID data for the output
+                </div>
+              </div>
+
+              <div class="f6 lh-copy ws-pre-line courier">The edid event encapsulates the EDID data for the outputdevice.
+
+The event is sent when binding to the output object. The EDID
+data may be empty, in which case this event is sent anyway.
+If the EDID information is empty, you can fall back to the name
+et al. properties of the outputdevice.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:org_kde_kwin_outputdevice:enabled">
+                <a href="#e:org_kde_kwin_outputdevice:enabled" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  enabled
+                </div>
+                <div class="f5 ml2">
+                  output is enabled or disabled
+                </div>
+              </div>
+
+              <div class="f6 lh-copy ws-pre-line courier">The enabled event notifies whether this output is currently
+enabled and used for displaying content by the server.
+The event is sent when binding to the output object and
+whenever later on an output changes its state by becoming
+enabled or disabled.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:org_kde_kwin_outputdevice:uuid">
+                <a href="#e:org_kde_kwin_outputdevice:uuid" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  uuid
+                </div>
+                <div class="f5 ml2">
+                  A unique id for this outputdevice
+                </div>
+              </div>
+
+              <div class="f6 lh-copy ws-pre-line courier">The uuid can be used to identify the output. It&#x27;s controlled by
+the server entirely. The server should make sure the uuid is
+persistent across restarts. An empty uuid is considered invalid.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:org_kde_kwin_outputdevice:scalef">
+                <a href="#e:org_kde_kwin_outputdevice:scalef" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  scalef
+                </div>
+                <div class="f5 ml2">
+                  output scaling properties
+                </div>
+              </div>
+
+              <div class="f6 lh-copy ws-pre-line courier">This event contains scaling geometry information
+that is not in the geometry event. It may be sent after
+binding the output object or if the output scale changes
+later. If it is not sent, the client should assume a
+scale of 1.
+
+A scale larger than 1 means that the compositor will
+automatically scale surface buffers by this amount
+when rendering. This is used for high resolution
+displays where applications rendering at the native
+resolution would be too small to be legible.
+
+It is intended that scaling aware clients track the
+current output of a surface, and if it is on a scaled
+output it should use wl_surface.set_buffer_scale with
+the scale of the output. That way the compositor can
+avoid scaling the surface, and the client can supply
+a higher detail image.
+
+wl_output will keep the output scale as an integer. In every situation except
+configuring the window manager you want to use that.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:org_kde_kwin_outputdevice:colorcurves">
+                <a href="#e:org_kde_kwin_outputdevice:colorcurves" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  colorcurves
+                </div>
+                <div class="f5 ml2">
+                  output color curves
+                </div>
+              </div>
+
+              <div class="f6 lh-copy ws-pre-line courier">Describes the color intensity profile of the output.
+Commonly used for gamma&#x2f;color correction.
+
+The array contains all color ramp values of the output.
+For example on 8bit screens there are 256 of them.
+
+The array elements are unsigned 16bit integers.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:org_kde_kwin_outputdevice:serial_number">
+                <a href="#e:org_kde_kwin_outputdevice:serial_number" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  serial_number
+                </div>
+                <div class="f5 ml2">
+                  Serial Number
+                </div>
+              </div>
+
+              <div class="f6 lh-copy ws-pre-line courier">Serial ID of the monitor, sent on startup before the first done event.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:org_kde_kwin_outputdevice:eisa_id">
+                <a href="#e:org_kde_kwin_outputdevice:eisa_id" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  eisa_id
+                </div>
+                <div class="f5 ml2">
+                  EISA ID
+                </div>
+              </div>
+
+              <div class="f6 lh-copy ws-pre-line courier">EISA ID of the monitor, sent on startup before the first done event.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:org_kde_kwin_outputdevice:capabilities">
+                <a href="#e:org_kde_kwin_outputdevice:capabilities" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  capabilities
+                </div>
+                <div class="f5 ml2">
+                  capability flags
+                </div>
+              </div>
+
+              <div class="f6 lh-copy ws-pre-line courier">What capabilities this device has, sent on startup before the first
+done event.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:org_kde_kwin_outputdevice:overscan">
+                <a href="#e:org_kde_kwin_outputdevice:overscan" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  overscan
+                </div>
+                <div class="f5 ml2">
+                  overscan
+                </div>
+              </div>
+
+              <div class="f6 lh-copy ws-pre-line courier">Overscan value of the monitor in percent, sent on startup before the
+first done event.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:org_kde_kwin_outputdevice:vrr_policy">
+                <a href="#e:org_kde_kwin_outputdevice:vrr_policy" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  vrr_policy
+                </div>
+                <div class="f5 ml2">
+                  Variable Refresh Rate Policy
+                </div>
+              </div>
+
+              <div class="f6 lh-copy ws-pre-line courier">What policy the compositor will employ regarding its use of variable
+refresh rate.
+</div>
+            </li>
+            
+          </ul>
+
+        
+
+      </li>
+      
+    </ul>
+
+    <h2 class="f4 lh-title">Copyright Info</h2>
+    <div class="f7 lh-copy ws-pre-line courier">SPDX-FileCopyrightText: 2008-2011 Kristian Høgsberg
+SPDX-FileCopyrightText: 2010-2011 Intel Corporation
+SPDX-FileCopyrightText: 2012-2013 Collabora, Ltd.
+SPDX-FileCopyrightText: 2015 Sebastian Kügler &lt;sebas@kde.org&gt;
+
+SPDX-License-Identifier: MIT-CMU
+</div>
+  </div>
+
+    </main>
+
+  </body>
+</html>
