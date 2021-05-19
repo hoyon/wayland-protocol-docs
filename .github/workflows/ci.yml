@@ -1,0 +1,28 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      BASE_URL: /wayland-protocol-docs
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+      - run: yarn --cwd assets install
+      - run: yarn --cwd assets run build
+      - run: cargo build
+      - run: bash update_protocols.sh
+      - run: target/debug/wayland-protocol-docs
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@4.1.3
+        with:
+          branch: gh-pages
+          folder: site
