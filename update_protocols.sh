@@ -9,6 +9,7 @@ wget https://gitlab.freedesktop.org/wayland/wayland/raw/master/protocol/wayland.
 
 mkdir -p wayland-protocols
 mkdir -p wlroots
+mkdir -p kde
 CURRENT_DIR=`pwd`
 DIR=`mktemp -d`
 
@@ -19,6 +20,8 @@ cp -r wayland-protocols/stable wayland-protocols/unstable -t $CURRENT_DIR/waylan
 git clone https://github.com/swaywm/wlr-protocols.git
 cp -r wlr-protocols/unstable -t $CURRENT_DIR/wlroots
 
+git clone https://github.com/KDE/plasma-wayland-protocols.git
+cp -r plasma-wayland-protocols/src/protocols -t $CURRENT_DIR/kde
 
 popd
 
