@@ -10,13 +10,13 @@
     <link rel="stylesheet" href="{{base_url}}/main.css"></link>
     {% block head %} {% endblock %}
   </head>
-  <body class="bg-near-white black-70 flex sans-serif ph4-l">
+  <body class="black-70 flex sans-serif ph4-l">
 
     {#% include "breadcrumbs.html" %#}
 
-    <div id="sidebar" class="w-20 br b--white bw3">
-      <div class="fixed h-100">
-        <a href="{{base_url}}/" class="f4 link near-black dim lh-title">
+    <div id="sidebar" class="w-20">
+      <div class="fixed vh-100 overflow-y-auto w-20">
+        <a href="{{base_url}}/" class="f4 link near-black dim lh-title db mt3">
           Home
         </a>
         {% block sidebar %}{% endblock %}
