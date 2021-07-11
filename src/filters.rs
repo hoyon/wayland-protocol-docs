@@ -1,5 +1,5 @@
 use crate::format;
-use crate::protocol::{Arg, Describable, Event, Interface, Request};
+use crate::protocol::{Arg, Describable, Enum, EnumEntry, Event, Interface, Request};
 use askama::Result;
 
 pub fn unwrap(option: &Option<String>) -> Result<&str> {
@@ -39,9 +39,8 @@ pub fn event_id(event: &Event, interface: &Interface) -> Result<String> {
     Ok(format!("e:{}:{}", interface.name, event.name))
 }
 
-pub fn event_arg(arg: &Arg) -> Result<String> {
-    let (arg_type, _name, _) = format::format_arg(arg);
-    Ok(arg_type)
+pub fn enum_id(enum_: &Enum, interface: &Interface) -> Result<String> {
+    Ok(format!("enum:{}:{}", interface.name, enum_.name))
 }
 
 pub fn interface_requests_id(interface: &Interface) -> Result<String> {
@@ -50,4 +49,17 @@ pub fn interface_requests_id(interface: &Interface) -> Result<String> {
 
 pub fn interface_events_id(interface: &Interface) -> Result<String> {
     Ok(format!("eh:{}", interface.name))
+}
+
+pub fn interface_enums_id(interface: &Interface) -> Result<String> {
+    Ok(format!("enumh:{}", interface.name))
+}
+
+pub fn event_arg(arg: &Arg) -> Result<String> {
+    let (arg_type, _name, _) = format::format_arg(arg);
+    Ok(arg_type)
+}
+
+pub fn enum_entry_name(enum_entry: &EnumEntry, enum_: &Enum, interface: &Interface) -> Result<String> {
+    Ok(format!("{}_{}_{}", interface.name.to_uppercase(), enum_.name.to_uppercase(), enum_entry.name.to_uppercase()))
 }

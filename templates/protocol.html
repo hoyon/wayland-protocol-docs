@@ -70,6 +70,34 @@
 
         {% endif %}
 
+        {% if interface.enums.len() != 0 %}
+          <h3 class=" f5 lh-title" id="{{ interface|interface_enums_id }}">Enums</h3>
+          <ul class="list pl0">
+            {% for enum_ in interface.enums %}
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="{{ enum_|enum_id(interface) }}">
+                <a href="#{{ enum_|enum_id(interface) }}" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  {{ enum_.name }}
+                </div>
+                <div class="f5 ml2">
+                  {{ enum_|desc_summary }}
+                </div>
+              </div>
+
+              {% for entry in enum_.entries %}
+                <div class="f6 lh-copy code">
+                  {{ entry|enum_entry_name(enum_, interface) }} {% if entry.summary.is_some() %} <span class="green">/* {{ entry.summary|unwrap }} */</span> {% endif %}
+                </div>
+              {% endfor %}
+
+              <div class="f6 lh-copy ws-pre-line code mt3">{{ enum_|desc_full }}</div>
+            </li>
+            {% endfor %}
+          </ul>
+
+        {% endif %}
+
       </li>
       {% endfor %}
     </ul>

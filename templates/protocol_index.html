@@ -31,6 +31,19 @@
           {% endfor %}
         </ul>
       {% endif %}
+
+      {% if interface.enums.len() != 0 %}
+        <div>
+          <a href="#{{ interface|interface_enums_id }}" class="link blue underline-hover lh-copy pl3">Enums</a>
+        </div>
+        <ul class="list pl4">
+          {% for enum_ in interface.enums %}
+          <li>
+            <a href="#{{ enum_|enum_id(interface) }}" class="link blue underline-hover lh-copy">{{enum_.name}}</a>
+          </li>
+          {% endfor %}
+        </ul>
+      {% endif %}
     </li>
   {% endfor %}
   </ul>
