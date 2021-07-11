@@ -1,5 +1,5 @@
 {# -*- engine:django -*- #}
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>{{ ret }}</span><span class="dark-blue">{{ name }}</span>(
     {% for arg in args %}
       <div class="ws-pre-wrap">    <span class="purple">{{ arg.0 }}</span> {{ arg.1 }}{% if args.len() != loop.index %},{% endif %}{%if arg.2.is_some() %} <span class="green">/* {{ arg.2|unwrap }} */</span>{%endif %}</div>

@@ -8,7 +8,7 @@ use std::env;
 use std::fs;
 use std::fs::File;
 use std::io::prelude::*;
-use std::collections::HashMap;
+use std::collections::BTreeMap;
 
 mod protocol;
 use crate::protocol::Protocol;
@@ -25,7 +25,7 @@ struct ProtocolTemplate<'a, 'b> {
 #[derive(Template)]
 #[template(path = "index.html")]
 struct IndexTemplate<'a> {
-    grouped_protocols: HashMap<String, Vec<ProtocolDetails>>,
+    grouped_protocols: BTreeMap<String, Vec<ProtocolDetails>>,
     base_url: &'a str,
 }
 
@@ -37,7 +37,7 @@ struct ProtocolDetails {
 
 fn main() -> std::io::Result<()> {
     let base_url = env::var("BASE_URL").unwrap_or_else(|_| "".to_owned());
-    let protocols= glob("./data/**/*.xml")
+    let protocols = glob("./data/**/*.xml")
         .unwrap()
         .filter_map(Result::ok)
         .map(|s| Protocol::from_file(&s));
@@ -64,9 +64,13 @@ fn main() -> std::io::Result<()> {
         });
     }
 
-    let mut grouped_protocols = HashMap::new();
+    let mut grouped_protocols = BTreeMap::new();
     for (key, group) in &details.into_iter().group_by(|p| p.category.clone()) {
-        grouped_protocols.insert(key, group.collect());
+        grouped_protocols.insert(key, group.collect::<Vec<_>>());
+    }
+
+    for group in &mut grouped_protocols {
+        group.1.sort_by_key(|p| p.name.clone());
     }
 
     let index_template = IndexTemplate {

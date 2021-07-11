@@ -19,7 +19,7 @@
           <a href="#{{ interface|interface_id }}" class="link dim black-70 child pr2 absolute left--2">#</a>
           {{ interface.name }}
         </h2>
-        <div class="f6 lh-copy ws-pre-line courier">{{ interface|desc_full }}</div>
+        <div class="f6 lh-copy ws-pre-line code">{{ interface|desc_full }}</div>
 
         {% if interface.requests.len() != 0 %}
           <h3 class=" f5 lh-title" id="{{ interface|interface_requests_id }}">Requests</h3>
@@ -36,7 +36,7 @@
                 </div>
               </div>
               {{ request|format_request(interface.name)|safe}}
-              <div class="f6 lh-copy ws-pre-line courier">{{ request|desc_full }}</div>
+              <div class="f6 lh-copy ws-pre-line code">{{ request|desc_full }}</div>
             </li>
             {% endfor %}
           </ul>
@@ -58,12 +58,12 @@
               </div>
 
               {% for arg in event.args %}
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">{{ arg|event_arg }}</span> {{ arg.name }} {% if arg.summary.is_some() %}<span class="green">/* {{ arg.summary|unwrap }} */</span> {% endif %}
                 </div>
               {% endfor %}
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">{{ event|desc_full }}</div>
+              <div class="f6 lh-copy ws-pre-line code mt3">{{ event|desc_full }}</div>
             </li>
             {% endfor %}
           </ul>
@@ -75,6 +75,6 @@
     </ul>
 
     <h2 class="f4 lh-title">Copyright Info</h2>
-    <div class="f7 lh-copy ws-pre-line courier">{{ protocol.copyright|unwrap }}</div>
+    <div class="f7 lh-copy ws-pre-line code">{{ protocol.copyright|unwrap }}</div>
   </div>
 {% endblock %}
