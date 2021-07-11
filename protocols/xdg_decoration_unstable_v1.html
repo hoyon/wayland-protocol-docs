@@ -10,13 +10,13 @@
     <link rel="stylesheet" href="&#x2f;wayland-protocol-docs/main.css"></link>
      
   </head>
-  <body class="bg-near-white black-70 flex sans-serif ph4-l">
+  <body class="black-70 flex sans-serif ph4-l">
 
     
 
-    <div id="sidebar" class="w-20 br b--white bw3">
-      <div class="fixed h-100">
-        <a href="&#x2f;wayland-protocol-docs/" class="f4 link near-black dim lh-title">
+    <div id="sidebar" class="w-20">
+      <div class="fixed vh-100 overflow-y-auto w-20">
+        <a href="&#x2f;wayland-protocol-docs/" class="f4 link near-black dim lh-title db mt3">
           Home
         </a>
         
@@ -252,7 +252,7 @@ commit.
     
       <div class="ws-pre-wrap">    <span class="purple">struct zxdg_toplevel_decoration_v1*</span> zxdg_toplevel_decoration_v1,</div>
     
-      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> mode</div>
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> mode <span class="green">/* the decoration mode */</span></div>
     
   )
 </div>
@@ -320,7 +320,13 @@ This request has the same semantics as set_mode.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">The configure event asks the client to change its decoration mode. The
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> mode <span class="green">/* the decoration mode */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">The configure event asks the client to change its decoration mode. The
 configured state should not be applied immediately. Clients must send an
 ack_configure in response to this event. See xdg_surface.configure and
 xdg_surface.ack_configure for details.

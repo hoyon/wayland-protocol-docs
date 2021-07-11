@@ -10,13 +10,13 @@
     <link rel="stylesheet" href="&#x2f;wayland-protocol-docs/main.css"></link>
      
   </head>
-  <body class="bg-near-white black-70 flex sans-serif ph4-l">
+  <body class="black-70 flex sans-serif ph4-l">
 
     
 
-    <div id="sidebar" class="w-20 br b--white bw3">
-      <div class="fixed h-100">
-        <a href="&#x2f;wayland-protocol-docs/" class="f4 link near-black dim lh-title">
+    <div id="sidebar" class="w-20">
+      <div class="fixed vh-100 overflow-y-auto w-20">
+        <a href="&#x2f;wayland-protocol-docs/" class="f4 link near-black dim lh-title db mt3">
           Home
         </a>
         
@@ -144,7 +144,7 @@ interface version number is reset.
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwp_idle_inhibit_manager_v1*</span> zwp_idle_inhibit_manager_v1,</div>
     
-      <div class="ws-pre-wrap">    <span class="purple">struct wl_surface*</span> surface</div>
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_surface*</span> surface <span class="green">/* the surface that inhibits the idle behavior */</span></div>
     
   )
 </div>

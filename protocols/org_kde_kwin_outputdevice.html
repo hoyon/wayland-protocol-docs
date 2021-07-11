@@ -10,13 +10,13 @@
     <link rel="stylesheet" href="&#x2f;wayland-protocol-docs/main.css"></link>
      
   </head>
-  <body class="bg-near-white black-70 flex sans-serif ph4-l">
+  <body class="black-70 flex sans-serif ph4-l">
 
     
 
-    <div id="sidebar" class="w-20 br b--white bw3">
-      <div class="fixed h-100">
-        <a href="&#x2f;wayland-protocol-docs/" class="f4 link near-black dim lh-title">
+    <div id="sidebar" class="w-20">
+      <div class="fixed vh-100 overflow-y-auto w-20">
+        <a href="&#x2f;wayland-protocol-docs/" class="f4 link near-black dim lh-title db mt3">
           Home
         </a>
         
@@ -152,7 +152,41 @@ being hotplugged via a physical connector.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">The geometry event describes geometric properties of the output.
+              
+                <div class="courier">
+                  <span class="purple">int32_t</span> x <span class="green">/* x position within the global compositor space */</span> 
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">int32_t</span> y <span class="green">/* y position within the global compositor space */</span> 
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">int32_t</span> physical_width <span class="green">/* width in millimeters of the output */</span> 
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">int32_t</span> physical_height <span class="green">/* height in millimeters of the output */</span> 
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">int32_t</span> subpixel <span class="green">/* subpixel orientation of the output */</span> 
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">const char*</span> make <span class="green">/* textual description of the manufacturer */</span> 
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">const char*</span> model <span class="green">/* textual description of the model */</span> 
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">int32_t</span> transform <span class="green">/* transform that maps framebuffer to output */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">The geometry event describes geometric properties of the output.
 The event is sent when binding to the output object and whenever
 any of the properties change.
 </div>
@@ -169,7 +203,29 @@ any of the properties change.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">The mode event describes an available mode for the output.
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> flags <span class="green">/* bitfield of mode flags */</span> 
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">int32_t</span> width <span class="green">/* width of the mode in hardware units */</span> 
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">int32_t</span> height <span class="green">/* height of the mode in hardware units */</span> 
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">int32_t</span> refresh <span class="green">/* vertical refresh rate in mHz */</span> 
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">int32_t</span> mode_id <span class="green">/* Per outputdevice unique id to identify a mode */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">The mode event describes an available mode for the output.
 
 When the client binds to the outputdevice object, the server sends this
 event once for every available mode the outputdevice can be operated by.
@@ -204,7 +260,9 @@ org_kde_kwin_outputconfiguration object.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">This event is sent after all other properties have been
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">This event is sent after all other properties have been
 sent on binding to the output object as well as after any
 other output property change have been applied later on.
 This allows to see changes to the output properties as atomic,
@@ -223,7 +281,13 @@ even if multiple events successively announce them.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">This event contains scaling geometry information
+              
+                <div class="courier">
+                  <span class="purple">int32_t</span> factor <span class="green">/* scaling factor of output */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">This event contains scaling geometry information
 that is not in the geometry event. It may be sent after
 binding the output object or if the output scale changes
 later. If it is not sent, the client should assume a
@@ -255,7 +319,13 @@ a higher detail image.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">The edid event encapsulates the EDID data for the outputdevice.
+              
+                <div class="courier">
+                  <span class="purple">const char*</span> raw <span class="green">/* base64-encoded EDID string */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">The edid event encapsulates the EDID data for the outputdevice.
 
 The event is sent when binding to the output object. The EDID
 data may be empty, in which case this event is sent anyway.
@@ -275,7 +345,13 @@ et al. properties of the outputdevice.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">The enabled event notifies whether this output is currently
+              
+                <div class="courier">
+                  <span class="purple">int32_t</span> enabled <span class="green">/* output enabled state */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">The enabled event notifies whether this output is currently
 enabled and used for displaying content by the server.
 The event is sent when binding to the output object and
 whenever later on an output changes its state by becoming
@@ -294,7 +370,13 @@ enabled or disabled.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">The uuid can be used to identify the output. It&#x27;s controlled by
+              
+                <div class="courier">
+                  <span class="purple">const char*</span> uuid <span class="green">/* output devices ID */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">The uuid can be used to identify the output. It&#x27;s controlled by
 the server entirely. The server should make sure the uuid is
 persistent across restarts. An empty uuid is considered invalid.
 </div>
@@ -311,7 +393,13 @@ persistent across restarts. An empty uuid is considered invalid.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">This event contains scaling geometry information
+              
+                <div class="courier">
+                  <span class="purple">wl_fixed_t</span> factor <span class="green">/* scaling factor of output */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">This event contains scaling geometry information
 that is not in the geometry event. It may be sent after
 binding the output object or if the output scale changes
 later. If it is not sent, the client should assume a
@@ -346,7 +434,21 @@ configuring the window manager you want to use that.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">Describes the color intensity profile of the output.
+              
+                <div class="courier">
+                  <span class="purple">struct wl_array*</span> red <span class="green">/* red color ramp */</span> 
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">struct wl_array*</span> green <span class="green">/* green color ramp */</span> 
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">struct wl_array*</span> blue <span class="green">/* blue color ramp */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">Describes the color intensity profile of the output.
 Commonly used for gamma&#x2f;color correction.
 
 The array contains all color ramp values of the output.
@@ -367,7 +469,13 @@ The array elements are unsigned 16bit integers.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">Serial ID of the monitor, sent on startup before the first done event.
+              
+                <div class="courier">
+                  <span class="purple">const char*</span> serialNumber <span class="green">/* textual representation of serial number */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">Serial ID of the monitor, sent on startup before the first done event.
 </div>
             </li>
             
@@ -382,7 +490,13 @@ The array elements are unsigned 16bit integers.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">EISA ID of the monitor, sent on startup before the first done event.
+              
+                <div class="courier">
+                  <span class="purple">const char*</span> eisaId <span class="green">/* textual representation of EISA identifier */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">EISA ID of the monitor, sent on startup before the first done event.
 </div>
             </li>
             
@@ -397,7 +511,13 @@ The array elements are unsigned 16bit integers.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">What capabilities this device has, sent on startup before the first
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> flags  
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">What capabilities this device has, sent on startup before the first
 done event.
 </div>
             </li>
@@ -413,7 +533,13 @@ done event.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">Overscan value of the monitor in percent, sent on startup before the
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> overscan <span class="green">/* amount of overscan of the monitor */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">Overscan value of the monitor in percent, sent on startup before the
 first done event.
 </div>
             </li>
@@ -429,7 +555,13 @@ first done event.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">What policy the compositor will employ regarding its use of variable
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> vrr_policy  
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">What policy the compositor will employ regarding its use of variable
 refresh rate.
 </div>
             </li>

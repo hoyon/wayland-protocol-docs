@@ -10,13 +10,13 @@
     <link rel="stylesheet" href="&#x2f;wayland-protocol-docs/main.css"></link>
      
   </head>
-  <body class="bg-near-white black-70 flex sans-serif ph4-l">
+  <body class="black-70 flex sans-serif ph4-l">
 
     
 
-    <div id="sidebar" class="w-20 br b--white bw3">
-      <div class="fixed h-100">
-        <a href="&#x2f;wayland-protocol-docs/" class="f4 link near-black dim lh-title">
+    <div id="sidebar" class="w-20">
+      <div class="fixed vh-100 overflow-y-auto w-20">
+        <a href="&#x2f;wayland-protocol-docs/" class="f4 link near-black dim lh-title db mt3">
           Home
         </a>
         
@@ -292,7 +292,13 @@ output.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">Advertises a single capability of the compositor.
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> capabilty  
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">Advertises a single capability of the compositor.
 
 When the wl_fullscreen_shell interface is bound, this event is emitted
 once for each capability advertised.  Valid capabilities are given by
@@ -334,7 +340,9 @@ receive all the capability events.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">This event indicates that the attempted mode switch operation was
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">This event indicates that the attempted mode switch operation was
 successful.  A surface of the size requested in the mode switch
 will fill the output without scaling.
 
@@ -354,7 +362,9 @@ wl_fullscreen_shell_mode_feedback object.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">This event indicates that the attempted mode switch operation
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">This event indicates that the attempted mode switch operation
 failed. This may be because the requested output mode is not
 possible or it may mean that the compositor does not want to allow it.
 
@@ -374,7 +384,9 @@ wl_fullscreen_shell_mode_feedback object.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">This event indicates that the attempted mode switch operation was
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">This event indicates that the attempted mode switch operation was
 cancelled.  Most likely this is because the client requested a
 second mode switch before the first one completed.
 

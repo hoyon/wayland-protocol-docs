@@ -10,13 +10,13 @@
     <link rel="stylesheet" href="&#x2f;wayland-protocol-docs/main.css"></link>
      
   </head>
-  <body class="bg-near-white black-70 flex sans-serif ph4-l">
+  <body class="black-70 flex sans-serif ph4-l">
 
     
 
-    <div id="sidebar" class="w-20 br b--white bw3">
-      <div class="fixed h-100">
-        <a href="&#x2f;wayland-protocol-docs/" class="f4 link near-black dim lh-title">
+    <div id="sidebar" class="w-20">
+      <div class="fixed vh-100 overflow-y-auto w-20">
+        <a href="&#x2f;wayland-protocol-docs/" class="f4 link near-black dim lh-title db mt3">
           Home
         </a>
         
@@ -172,7 +172,13 @@ to the server that it does not want a server-side deco.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">This event is emitted directly after binding the interface. It contains
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> mode <span class="green">/* The default decoration mode applied to newly created server decorations. */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">This event is emitted directly after binding the interface. It contains
 the default mode for the decoration. When a new server decoration object
 is created this new object will be in the default mode until the first
 request_mode is requested.
@@ -235,7 +241,7 @@ The server may change the default mode at any time.
     
       <div class="ws-pre-wrap">    <span class="purple">struct org_kde_kwin_server_decoration*</span> org_kde_kwin_server_decoration,</div>
     
-      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> mode</div>
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> mode <span class="green">/* The mode this surface wants to use. */</span></div>
     
   )
 </div>
@@ -260,7 +266,13 @@ The server may change the default mode at any time.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">This event is emitted directly after the decoration is created and
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> mode <span class="green">/* The decoration mode applied to the surface by the server. */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">This event is emitted directly after the decoration is created and
 represents the base decoration policy by the server. E.g. a server
 which wants all surfaces to be client-side decorated will send Client,
 a server which wants server-side decoration will send Server.

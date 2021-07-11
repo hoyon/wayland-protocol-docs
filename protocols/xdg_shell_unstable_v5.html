@@ -10,13 +10,13 @@
     <link rel="stylesheet" href="&#x2f;wayland-protocol-docs/main.css"></link>
      
   </head>
-  <body class="bg-near-white black-70 flex sans-serif ph4-l">
+  <body class="black-70 flex sans-serif ph4-l">
 
     
 
-    <div id="sidebar" class="w-20 br b--white bw3">
-      <div class="fixed h-100">
-        <a href="&#x2f;wayland-protocol-docs/" class="f4 link near-black dim lh-title">
+    <div id="sidebar" class="w-20">
+      <div class="fixed vh-100 overflow-y-auto w-20">
+        <a href="&#x2f;wayland-protocol-docs/" class="f4 link near-black dim lh-title db mt3">
           Home
         </a>
         
@@ -321,9 +321,9 @@ xdg_surface is and how it is used.
     
       <div class="ws-pre-wrap">    <span class="purple">struct wl_surface*</span> parent,</div>
     
-      <div class="ws-pre-wrap">    <span class="purple">struct wl_seat*</span> seat,</div>
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_seat*</span> seat, <span class="green">/* the wl_seat of the user event */</span></div>
     
-      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> serial,</div>
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> serial, <span class="green">/* the serial of the user event */</span></div>
     
       <div class="ws-pre-wrap">    <span class="purple">int32_t</span> x,</div>
     
@@ -361,7 +361,7 @@ xdg_popup is and how it is used.
     
       <div class="ws-pre-wrap">    <span class="purple">struct xdg_shell*</span> xdg_shell,</div>
     
-      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> serial</div>
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> serial <span class="green">/* serial of the ping event */</span></div>
     
   )
 </div>
@@ -388,7 +388,13 @@ the client may be deemed unresponsive.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">The ping event asks the client if it&#x27;s still alive. Pass the
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> serial <span class="green">/* pass this to the pong request */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">The ping event asks the client if it&#x27;s still alive. Pass the
 serial specified in the event back to the compositor by sending
 a &quot;pong&quot; request back with the specified serial.
 
@@ -581,13 +587,13 @@ names and .desktop files.
     
       <div class="ws-pre-wrap">    <span class="purple">struct xdg_surface*</span> xdg_surface,</div>
     
-      <div class="ws-pre-wrap">    <span class="purple">struct wl_seat*</span> seat,</div>
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_seat*</span> seat, <span class="green">/* the wl_seat of the user event */</span></div>
     
-      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> serial,</div>
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> serial, <span class="green">/* the serial of the user event */</span></div>
     
-      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> x,</div>
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> x, <span class="green">/* the x position to pop up the window menu at */</span></div>
     
-      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> y</div>
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> y <span class="green">/* the y position to pop up the window menu at */</span></div>
     
   )
 </div>
@@ -621,9 +627,9 @@ like a button press, key press, or touch down event.
     
       <div class="ws-pre-wrap">    <span class="purple">struct xdg_surface*</span> xdg_surface,</div>
     
-      <div class="ws-pre-wrap">    <span class="purple">struct wl_seat*</span> seat,</div>
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_seat*</span> seat, <span class="green">/* the wl_seat of the user event */</span></div>
     
-      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> serial</div>
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> serial <span class="green">/* the serial of the user event */</span></div>
     
   )
 </div>
@@ -662,11 +668,11 @@ that the device focus will return when the move is completed.
     
       <div class="ws-pre-wrap">    <span class="purple">struct xdg_surface*</span> xdg_surface,</div>
     
-      <div class="ws-pre-wrap">    <span class="purple">struct wl_seat*</span> seat,</div>
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_seat*</span> seat, <span class="green">/* the wl_seat of the user event */</span></div>
     
-      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> serial,</div>
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> serial, <span class="green">/* the serial of the user event */</span></div>
     
-      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> edges</div>
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> edges <span class="green">/* which edge or corner is being dragged */</span></div>
     
   )
 </div>
@@ -719,7 +725,7 @@ appropriate cursor image.
     
       <div class="ws-pre-wrap">    <span class="purple">struct xdg_surface*</span> xdg_surface,</div>
     
-      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> serial</div>
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> serial <span class="green">/* the serial from the configure event */</span></div>
     
   )
 </div>
@@ -974,7 +980,25 @@ similar compositor features.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">The configure event asks the client to resize its surface or to
+              
+                <div class="courier">
+                  <span class="purple">int32_t</span> width  
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">int32_t</span> height  
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">struct wl_array*</span> states  
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> serial  
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">The configure event asks the client to resize its surface or to
 change its state.
 
 The width and height arguments specify a hint to the window
@@ -1012,7 +1036,9 @@ If the client receives multiple configure events before it
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">The close event is sent by the compositor when the user
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">The close event is sent by the compositor when the user
 wants the surface to be closed. This should be equivalent to
 the user clicking the close button in client-side decorations,
 if your application has any...
@@ -1135,7 +1161,9 @@ will be sent.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">The popup_done event is sent out when a popup is dismissed by the
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">The popup_done event is sent out when a popup is dismissed by the
 compositor. The client should destroy the xdg_popup object at this
 point.
   </div>

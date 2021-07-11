@@ -10,13 +10,13 @@
     <link rel="stylesheet" href="&#x2f;wayland-protocol-docs/main.css"></link>
      
   </head>
-  <body class="bg-near-white black-70 flex sans-serif ph4-l">
+  <body class="black-70 flex sans-serif ph4-l">
 
     
 
-    <div id="sidebar" class="w-20 br b--white bw3">
-      <div class="fixed h-100">
-        <a href="&#x2f;wayland-protocol-docs/" class="f4 link near-black dim lh-title">
+    <div id="sidebar" class="w-20">
+      <div class="fixed vh-100 overflow-y-auto w-20">
+        <a href="&#x2f;wayland-protocol-docs/" class="f4 link near-black dim lh-title db mt3">
           Home
         </a>
         
@@ -431,7 +431,7 @@ xdg_surface is and how it is used.
     
       <div class="ws-pre-wrap">    <span class="purple">struct xdg_wm_base*</span> xdg_wm_base,</div>
     
-      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> serial</div>
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> serial <span class="green">/* serial of the ping event */</span></div>
     
   )
 </div>
@@ -458,7 +458,13 @@ the client may be deemed unresponsive. See xdg_wm_base.ping.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">The ping event asks the client if it&#x27;s still alive. Pass the
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> serial <span class="green">/* pass this to the pong request */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">The ping event asks the client if it&#x27;s still alive. Pass the
 serial specified in the event back to the compositor by sending
 a &quot;pong&quot; request back with the specified serial. See xdg_wm_base.pong.
 
@@ -546,9 +552,9 @@ positioning a surface raises an error.
     
       <div class="ws-pre-wrap">    <span class="purple">struct xdg_positioner*</span> xdg_positioner,</div>
     
-      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> width,</div>
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> width, <span class="green">/* width of positioned rectangle */</span></div>
     
-      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> height</div>
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> height <span class="green">/* height of positioned rectangle */</span></div>
     
   )
 </div>
@@ -576,13 +582,13 @@ If a zero or negative size is set the invalid_input error is raised.
     
       <div class="ws-pre-wrap">    <span class="purple">struct xdg_positioner*</span> xdg_positioner,</div>
     
-      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> x,</div>
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> x, <span class="green">/* x position of anchor rectangle */</span></div>
     
-      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> y,</div>
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> y, <span class="green">/* y position of anchor rectangle */</span></div>
     
-      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> width,</div>
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> width, <span class="green">/* width of anchor rectangle */</span></div>
     
-      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> height</div>
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> height <span class="green">/* height of anchor rectangle */</span></div>
     
   )
 </div>
@@ -615,7 +621,7 @@ If a negative size is set the invalid_input error is raised.
     
       <div class="ws-pre-wrap">    <span class="purple">struct xdg_positioner*</span> xdg_positioner,</div>
     
-      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> anchor</div>
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> anchor <span class="green">/* anchor */</span></div>
     
   )
 </div>
@@ -644,7 +650,7 @@ edge, or in the center of the anchor rectangle if no edge is specified.
     
       <div class="ws-pre-wrap">    <span class="purple">struct xdg_positioner*</span> xdg_positioner,</div>
     
-      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> gravity</div>
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> gravity <span class="green">/* gravity direction */</span></div>
     
   )
 </div>
@@ -673,7 +679,7 @@ gravity specified.
     
       <div class="ws-pre-wrap">    <span class="purple">struct xdg_positioner*</span> xdg_positioner,</div>
     
-      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> constraint_adjustment</div>
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> constraint_adjustment <span class="green">/* bit mask of constraint adjustments */</span></div>
     
   )
 </div>
@@ -709,9 +715,9 @@ The default adjustment is none.
     
       <div class="ws-pre-wrap">    <span class="purple">struct xdg_positioner*</span> xdg_positioner,</div>
     
-      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> x,</div>
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> x, <span class="green">/* surface position x offset */</span></div>
     
-      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> y</div>
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> y <span class="green">/* surface position y offset */</span></div>
     
   )
 </div>
@@ -772,9 +778,9 @@ xdg_surface.configure event.
     
       <div class="ws-pre-wrap">    <span class="purple">struct xdg_positioner*</span> xdg_positioner,</div>
     
-      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> parent_width,</div>
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> parent_width, <span class="green">/* future window geometry width of parent */</span></div>
     
-      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> parent_height</div>
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> parent_height <span class="green">/* future window geometry height of parent */</span></div>
     
   )
 </div>
@@ -804,7 +810,7 @@ The arguments are given in the surface-local coordinate space.
     
       <div class="ws-pre-wrap">    <span class="purple">struct xdg_positioner*</span> xdg_positioner,</div>
     
-      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> serial</div>
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> serial <span class="green">/* serial of parent configure event */</span></div>
     
   )
 </div>
@@ -1035,7 +1041,7 @@ subsurfaces.
     
       <div class="ws-pre-wrap">    <span class="purple">struct xdg_surface*</span> xdg_surface,</div>
     
-      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> serial</div>
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> serial <span class="green">/* the serial from the configure event */</span></div>
     
   )
 </div>
@@ -1079,7 +1085,13 @@ event the client really is responding to.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">The configure event marks the end of a configure sequence. A configure
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> serial <span class="green">/* serial of the configure event */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">The configure event marks the end of a configure sequence. A configure
 sequence is a set of one or more events configuring the state of the
 xdg_surface, including the final xdg_surface.configure event.
 
@@ -1286,13 +1298,13 @@ names and .desktop files.
     
       <div class="ws-pre-wrap">    <span class="purple">struct xdg_toplevel*</span> xdg_toplevel,</div>
     
-      <div class="ws-pre-wrap">    <span class="purple">struct wl_seat*</span> seat,</div>
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_seat*</span> seat, <span class="green">/* the wl_seat of the user event */</span></div>
     
-      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> serial,</div>
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> serial, <span class="green">/* the serial of the user event */</span></div>
     
-      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> x,</div>
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> x, <span class="green">/* the x position to pop up the window menu at */</span></div>
     
-      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> y</div>
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> y <span class="green">/* the y position to pop up the window menu at */</span></div>
     
   )
 </div>
@@ -1326,9 +1338,9 @@ like a button press, key press, or touch down event.
     
       <div class="ws-pre-wrap">    <span class="purple">struct xdg_toplevel*</span> xdg_toplevel,</div>
     
-      <div class="ws-pre-wrap">    <span class="purple">struct wl_seat*</span> seat,</div>
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_seat*</span> seat, <span class="green">/* the wl_seat of the user event */</span></div>
     
-      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> serial</div>
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> serial <span class="green">/* the serial of the user event */</span></div>
     
   )
 </div>
@@ -1367,11 +1379,11 @@ that the device focus will return when the move is completed.
     
       <div class="ws-pre-wrap">    <span class="purple">struct xdg_toplevel*</span> xdg_toplevel,</div>
     
-      <div class="ws-pre-wrap">    <span class="purple">struct wl_seat*</span> seat,</div>
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_seat*</span> seat, <span class="green">/* the wl_seat of the user event */</span></div>
     
-      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> serial,</div>
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> serial, <span class="green">/* the serial of the user event */</span></div>
     
-      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> edges</div>
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> edges <span class="green">/* which edge or corner is being dragged */</span></div>
     
   )
 </div>
@@ -1739,7 +1751,21 @@ similar compositor features.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">This configure event asks the client to resize its toplevel surface or
+              
+                <div class="courier">
+                  <span class="purple">int32_t</span> width  
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">int32_t</span> height  
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">struct wl_array*</span> states  
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">This configure event asks the client to resize its toplevel surface or
 to change its state. The configured state should not be applied
 immediately. See xdg_surface.configure for details.
 
@@ -1772,7 +1798,9 @@ xdg_surface.configure and xdg_surface.ack_configure for details.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">The close event is sent by the compositor when the user
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">The close event is sent by the compositor when the user
 wants the surface to be closed. This should be equivalent to
 the user clicking the close button in client-side decorations,
 if your application has any.
@@ -1866,9 +1894,9 @@ will be sent.
     
       <div class="ws-pre-wrap">    <span class="purple">struct xdg_popup*</span> xdg_popup,</div>
     
-      <div class="ws-pre-wrap">    <span class="purple">struct wl_seat*</span> seat,</div>
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_seat*</span> seat, <span class="green">/* the wl_seat of the user event */</span></div>
     
-      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> serial</div>
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> serial <span class="green">/* the serial of the user event */</span></div>
     
   )
 </div>
@@ -1934,7 +1962,7 @@ will always have keyboard focus.
     
       <div class="ws-pre-wrap">    <span class="purple">struct xdg_positioner*</span> positioner,</div>
     
-      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> token</div>
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> token <span class="green">/* reposition request token */</span></div>
     
   )
 </div>
@@ -1982,7 +2010,25 @@ send an xdg_positioner.set_parent_size request.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">This event asks the popup surface to configure itself given the
+              
+                <div class="courier">
+                  <span class="purple">int32_t</span> x <span class="green">/* x position relative to parent surface window geometry */</span> 
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">int32_t</span> y <span class="green">/* y position relative to parent surface window geometry */</span> 
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">int32_t</span> width <span class="green">/* window geometry width */</span> 
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">int32_t</span> height <span class="green">/* window geometry height */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">This event asks the popup surface to configure itself given the
 configuration. The configured state should not be applied immediately.
 See xdg_surface.configure for details.
 
@@ -2008,7 +2054,9 @@ set_reactive requested, or in response to xdg_popup.reposition requests.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">The popup_done event is sent out when a popup is dismissed by the
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">The popup_done event is sent out when a popup is dismissed by the
 compositor. The client should destroy the xdg_popup object at this
 point.
   </div>
@@ -2025,7 +2073,13 @@ point.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">The repositioned event is sent as part of a popup configuration
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> token <span class="green">/* reposition request token */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">The repositioned event is sent as part of a popup configuration
 sequence, together with xdg_popup.configure and lastly
 xdg_surface.configure to notify the completion of a reposition request.
 

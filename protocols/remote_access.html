@@ -10,13 +10,13 @@
     <link rel="stylesheet" href="&#x2f;wayland-protocol-docs/main.css"></link>
      
   </head>
-  <body class="bg-near-white black-70 flex sans-serif ph4-l">
+  <body class="black-70 flex sans-serif ph4-l">
 
     
 
-    <div id="sidebar" class="w-20 br b--white bw3">
-      <div class="fixed h-100">
-        <a href="&#x2f;wayland-protocol-docs/" class="f4 link near-black dim lh-title">
+    <div id="sidebar" class="w-20">
+      <div class="fixed vh-100 overflow-y-auto w-20">
+        <a href="&#x2f;wayland-protocol-docs/" class="f4 link near-black dim lh-title db mt3">
           Home
         </a>
         
@@ -130,7 +130,7 @@
     
       <div class="ws-pre-wrap">    <span class="purple">struct org_kde_kwin_remote_access_manager*</span> org_kde_kwin_remote_access_manager,</div>
     
-      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> internal_buffer_id</div>
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> internal_buffer_id <span class="green">/* The internal buffer id of the buffer to create */</span></div>
     
   )
 </div>
@@ -176,7 +176,17 @@
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier"></div>
+              
+                <div class="courier">
+                  <span class="purple">int32_t</span> id <span class="green">/* unique id of created buffer (you can use server-side fd number) */</span> 
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">struct wl_output*</span> output <span class="green">/* screen that this buffer belongs to */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2"></div>
             </li>
             
           </ul>
@@ -235,7 +245,29 @@
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier"></div>
+              
+                <div class="courier">
+                  <span class="purple">int32_t</span> fd  
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> width  
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> height  
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> stride  
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> format  
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2"></div>
             </li>
             
           </ul>

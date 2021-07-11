@@ -10,13 +10,13 @@
     <link rel="stylesheet" href="&#x2f;wayland-protocol-docs/main.css"></link>
      
   </head>
-  <body class="bg-near-white black-70 flex sans-serif ph4-l">
+  <body class="black-70 flex sans-serif ph4-l">
 
     
 
-    <div id="sidebar" class="w-20 br b--white bw3">
-      <div class="fixed h-100">
-        <a href="&#x2f;wayland-protocol-docs/" class="f4 link near-black dim lh-title">
+    <div id="sidebar" class="w-20">
+      <div class="fixed vh-100 overflow-y-auto w-20">
+        <a href="&#x2f;wayland-protocol-docs/" class="f4 link near-black dim lh-title db mt3">
           Home
         </a>
         
@@ -203,7 +203,7 @@ used.
     
       <div class="ws-pre-wrap">    <span class="purple">struct zxdg_exporter_v2*</span> zxdg_exporter_v2,</div>
     
-      <div class="ws-pre-wrap">    <span class="purple">struct wl_surface*</span> surface</div>
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_surface*</span> surface <span class="green">/* the surface to export */</span></div>
     
   )
 </div>
@@ -281,7 +281,7 @@ used.
     
       <div class="ws-pre-wrap">    <span class="purple">struct zxdg_importer_v2*</span> zxdg_importer_v2,</div>
     
-      <div class="ws-pre-wrap">    <span class="purple">const char*</span> handle</div>
+      <div class="ws-pre-wrap">    <span class="purple">const char*</span> handle <span class="green">/* the exported surface handle */</span></div>
     
   )
 </div>
@@ -359,7 +359,13 @@ given the handle sent via xdg_exported.handle.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">The handle event contains the unique handle of this exported surface
+              
+                <div class="courier">
+                  <span class="purple">const char*</span> handle <span class="green">/* the exported surface handle */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">The handle event contains the unique handle of this exported surface
 reference. It may be shared with any client, which then can use it to
 import the surface by calling xdg_importer.import_toplevel. A handle
 may be used to import the surface multiple times.
@@ -426,7 +432,7 @@ be invalidated.
     
       <div class="ws-pre-wrap">    <span class="purple">struct zxdg_imported_v2*</span> zxdg_imported_v2,</div>
     
-      <div class="ws-pre-wrap">    <span class="purple">struct wl_surface*</span> surface</div>
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_surface*</span> surface <span class="green">/* the child surface */</span></div>
     
   )
 </div>
@@ -456,7 +462,9 @@ semantics as xdg_toplevel.set_parent.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">The imported surface handle has been destroyed and any relationship set
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">The imported surface handle has been destroyed and any relationship set
 up has been invalidated. This may happen for various reasons, for
 example if the exported surface or the exported surface handle has been
 destroyed, if the handle used for importing was invalid.

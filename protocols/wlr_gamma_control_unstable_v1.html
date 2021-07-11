@@ -10,13 +10,13 @@
     <link rel="stylesheet" href="&#x2f;wayland-protocol-docs/main.css"></link>
      
   </head>
-  <body class="bg-near-white black-70 flex sans-serif ph4-l">
+  <body class="black-70 flex sans-serif ph4-l">
 
     
 
-    <div id="sidebar" class="w-20 br b--white bw3">
-      <div class="fixed h-100">
-        <a href="&#x2f;wayland-protocol-docs/" class="f4 link near-black dim lh-title">
+    <div id="sidebar" class="w-20">
+      <div class="fixed vh-100 overflow-y-auto w-20">
+        <a href="&#x2f;wayland-protocol-docs/" class="f4 link near-black dim lh-title db mt3">
           Home
         </a>
         
@@ -208,7 +208,7 @@ object is destroyed, the gamma table is restored to its original value.
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwlr_gamma_control_v1*</span> zwlr_gamma_control_v1,</div>
     
-      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> fd</div>
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> fd <span class="green">/* gamma table file descriptor */</span></div>
     
   )
 </div>
@@ -263,7 +263,13 @@ restores the original gamma tables.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">Advertise the size of each gamma ramp.
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> size <span class="green">/* number of elements in a ramp */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">Advertise the size of each gamma ramp.
 
 This event is sent immediately when the gamma control object is created.
 </div>
@@ -280,7 +286,9 @@ This event is sent immediately when the gamma control object is created.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">This event indicates that the gamma control is no longer valid. This
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">This event indicates that the gamma control is no longer valid. This
 can happen for a number of reasons, including:
 - The output doesn&#x27;t support gamma tables
 - Setting the gamma tables failed

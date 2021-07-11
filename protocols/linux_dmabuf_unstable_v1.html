@@ -10,13 +10,13 @@
     <link rel="stylesheet" href="&#x2f;wayland-protocol-docs/main.css"></link>
      
   </head>
-  <body class="bg-near-white black-70 flex sans-serif ph4-l">
+  <body class="black-70 flex sans-serif ph4-l">
 
     
 
-    <div id="sidebar" class="w-20 br b--white bw3">
-      <div class="fixed h-100">
-        <a href="&#x2f;wayland-protocol-docs/" class="f4 link near-black dim lh-title">
+    <div id="sidebar" class="w-20">
+      <div class="fixed vh-100 overflow-y-auto w-20">
+        <a href="&#x2f;wayland-protocol-docs/" class="f4 link near-black dim lh-title db mt3">
           Home
         </a>
         
@@ -264,7 +264,13 @@ received.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">This event advertises one buffer format that the server supports.
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> format <span class="green">/* DRM_FORMAT code */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">This event advertises one buffer format that the server supports.
 All the supported formats are advertised once when the client
 binds to this interface. A roundtrip after binding guarantees
 that the client has received all supported formats.
@@ -290,7 +296,21 @@ received from this event.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">This event advertises the formats that the server supports, along with
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> format <span class="green">/* DRM_FORMAT code */</span> 
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> modifier_hi <span class="green">/* high 32 bits of layout modifier */</span> 
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> modifier_lo <span class="green">/* low 32 bits of layout modifier */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">This event advertises the formats that the server supports, along with
 the modifiers supported for each format. All the supported modifiers
 for all the supported formats are advertised once when the client
 binds to this interface. A roundtrip after binding guarantees that
@@ -382,17 +402,17 @@ wl_buffer creation.
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwp_linux_buffer_params_v1*</span> zwp_linux_buffer_params_v1,</div>
     
-      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> fd,</div>
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> fd, <span class="green">/* dmabuf fd */</span></div>
     
-      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> plane_idx,</div>
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> plane_idx, <span class="green">/* plane index */</span></div>
     
-      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> offset,</div>
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> offset, <span class="green">/* offset in bytes */</span></div>
     
-      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> stride,</div>
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> stride, <span class="green">/* stride in bytes */</span></div>
     
-      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> modifier_hi,</div>
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> modifier_hi, <span class="green">/* high 32 bits of layout modifier */</span></div>
     
-      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> modifier_lo</div>
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> modifier_lo <span class="green">/* low 32 bits of layout modifier */</span></div>
     
   )
 </div>
@@ -433,13 +453,13 @@ was already set.
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwp_linux_buffer_params_v1*</span> zwp_linux_buffer_params_v1,</div>
     
-      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> width,</div>
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> width, <span class="green">/* base plane width in pixels */</span></div>
     
-      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> height,</div>
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> height, <span class="green">/* base plane height in pixels */</span></div>
     
-      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> format,</div>
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> format, <span class="green">/* DRM_FORMAT code */</span></div>
     
-      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> flags</div>
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> flags <span class="green">/* see enum flags */</span></div>
     
   )
 </div>
@@ -522,13 +542,13 @@ dmabufs
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwp_linux_buffer_params_v1*</span> zwp_linux_buffer_params_v1,</div>
     
-      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> width,</div>
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> width, <span class="green">/* base plane width in pixels */</span></div>
     
-      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> height,</div>
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> height, <span class="green">/* base plane height in pixels */</span></div>
     
-      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> format,</div>
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> format, <span class="green">/* DRM_FORMAT code */</span></div>
     
-      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> flags</div>
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> flags <span class="green">/* see enum flags */</span></div>
     
   )
 </div>
@@ -576,7 +596,13 @@ same restrictions.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">This event indicates that the attempted buffer creation was
+              
+                <div class="courier">
+                  <span class="purple">struct wl_buffer*</span> buffer <span class="green">/* the newly created wl_buffer */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">This event indicates that the attempted buffer creation was
 successful. It provides the new wl_buffer referencing the dmabuf(s).
 
 Upon receiving this event, the client should destroy the
@@ -595,7 +621,9 @@ zlinux_dmabuf_params object.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">This event indicates that the attempted buffer creation has
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">This event indicates that the attempted buffer creation has
 failed. It usually means that one of the dmabuf constraints
 has not been fulfilled.
 

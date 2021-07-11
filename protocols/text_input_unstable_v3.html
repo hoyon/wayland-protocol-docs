@@ -10,13 +10,13 @@
     <link rel="stylesheet" href="&#x2f;wayland-protocol-docs/main.css"></link>
      
   </head>
-  <body class="bg-near-white black-70 flex sans-serif ph4-l">
+  <body class="black-70 flex sans-serif ph4-l">
 
     
 
-    <div id="sidebar" class="w-20 br b--white bw3">
-      <div class="fixed h-100">
-        <a href="&#x2f;wayland-protocol-docs/" class="f4 link near-black dim lh-title">
+    <div id="sidebar" class="w-20">
+      <div class="fixed vh-100 overflow-y-auto w-20">
+        <a href="&#x2f;wayland-protocol-docs/" class="f4 link near-black dim lh-title db mt3">
           Home
         </a>
         
@@ -516,7 +516,13 @@ events.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">Notification that this seat&#x27;s text-input focus is on a certain surface.
+              
+                <div class="courier">
+                  <span class="purple">struct wl_surface*</span> surface  
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">Notification that this seat&#x27;s text-input focus is on a certain surface.
 
 If client has created multiple text input objects, compositor must send
 this event to all of them.
@@ -538,7 +544,13 @@ text-input object.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">Notification that this seat&#x27;s text-input focus is no longer on a
+              
+                <div class="courier">
+                  <span class="purple">struct wl_surface*</span> surface  
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">Notification that this seat&#x27;s text-input focus is no longer on a
 certain surface. The client should reset any preedit string previously
 set.
 
@@ -563,7 +575,21 @@ the keyboard focus.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">Notify when a new composing text (pre-edit) should be set at the
+              
+                <div class="courier">
+                  <span class="purple">const char*</span> text  
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">int32_t</span> cursor_begin  
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">int32_t</span> cursor_end  
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">Notify when a new composing text (pre-edit) should be set at the
 current cursor position. Any previously set composing text must be
 removed. Any previously existing selected text must be removed.
 
@@ -595,7 +621,13 @@ cursor_end and cursor_hidden are all 0.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">Notify when text should be inserted into the editor widget. The text to
+              
+                <div class="courier">
+                  <span class="purple">const char*</span> text  
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">Notify when text should be inserted into the editor widget. The text to
 commit could be either just a single character after a key press or the
 result of some composing (pre-edit).
 
@@ -617,7 +649,17 @@ The initial value of text is an empty string.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">Notify when the text around the current cursor position should be
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> before_length <span class="green">/* length of text before current cursor position */</span> 
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> after_length <span class="green">/* length of text after current cursor position */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">Notify when the text around the current cursor position should be
 deleted.
 
 Before_length and after_length are the number of bytes before and after
@@ -645,7 +687,13 @@ The initial values of both before_length and after_length are 0.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">Instruct the application to apply changes to state requested by the
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> serial  
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">Instruct the application to apply changes to state requested by the
 preedit_string, commit_string and delete_surrounding_text events. The
 state relating to these events is double-buffered, and each one
 modifies the pending state. This event replaces the current state with

@@ -10,13 +10,13 @@
     <link rel="stylesheet" href="&#x2f;wayland-protocol-docs/main.css"></link>
      
   </head>
-  <body class="bg-near-white black-70 flex sans-serif ph4-l">
+  <body class="black-70 flex sans-serif ph4-l">
 
     
 
-    <div id="sidebar" class="w-20 br b--white bw3">
-      <div class="fixed h-100">
-        <a href="&#x2f;wayland-protocol-docs/" class="f4 link near-black dim lh-title">
+    <div id="sidebar" class="w-20">
+      <div class="fixed vh-100 overflow-y-auto w-20">
+        <a href="&#x2f;wayland-protocol-docs/" class="f4 link near-black dim lh-title db mt3">
           Home
         </a>
         
@@ -166,7 +166,7 @@
     
       <div class="ws-pre-wrap">    <span class="purple">struct org_kde_plasma_virtual_desktop_management*</span> org_kde_plasma_virtual_desktop_management,</div>
     
-      <div class="ws-pre-wrap">    <span class="purple">const char*</span> desktop_id</div>
+      <div class="ws-pre-wrap">    <span class="purple">const char*</span> desktop_id <span class="green">/* Unique id of the desktop */</span></div>
     
   )
 </div>
@@ -190,9 +190,9 @@
     
       <div class="ws-pre-wrap">    <span class="purple">struct org_kde_plasma_virtual_desktop_management*</span> org_kde_plasma_virtual_desktop_management,</div>
     
-      <div class="ws-pre-wrap">    <span class="purple">const char*</span> name,</div>
+      <div class="ws-pre-wrap">    <span class="purple">const char*</span> name, <span class="green">/* The user readable name we want for the desktop */</span></div>
     
-      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> position</div>
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> position <span class="green">/* The position we want for the desktop */</span></div>
     
   )
 </div>
@@ -216,7 +216,7 @@
     
       <div class="ws-pre-wrap">    <span class="purple">struct org_kde_plasma_virtual_desktop_management*</span> org_kde_plasma_virtual_desktop_management,</div>
     
-      <div class="ws-pre-wrap">    <span class="purple">const char*</span> desktop_id</div>
+      <div class="ws-pre-wrap">    <span class="purple">const char*</span> desktop_id <span class="green">/* Unique id of the desktop */</span></div>
     
   )
 </div>
@@ -242,7 +242,17 @@
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier"></div>
+              
+                <div class="courier">
+                  <span class="purple">const char*</span> desktop_id <span class="green">/* Unique id of the desktop */</span> 
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> position <span class="green">/* Position of this desktop, to ensure the client and the server will see desktops in the same order */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2"></div>
             </li>
             
             <li class="mt3">
@@ -256,7 +266,13 @@
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier"></div>
+              
+                <div class="courier">
+                  <span class="purple">const char*</span> desktop_id <span class="green">/* Unique id of the desktop */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2"></div>
             </li>
             
             <li class="mt3">
@@ -270,7 +286,9 @@
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">This event is sent after all other properties has been
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">This event is sent after all other properties has been
 sent after binding to the desktop manager object and after any
 other property changes done after that. This allows
 changes to the org_kde_plasma_virtual_desktop_management properties to be seen as
@@ -289,7 +307,13 @@ atomic, even if they happen via multiple events.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier"></div>
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> rows <span class="green">/* Number of rows the virtual desktops are laid out into. */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2"></div>
             </li>
             
           </ul>
@@ -349,7 +373,13 @@ atomic, even if they happen via multiple events.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">The format of the id is decided by the compositor implementation. A desktop id univocally identifies a virtual desktop and must be guaranteed to never exist two desktops with the same id. The format of the string id is up to the server implementation.
+              
+                <div class="courier">
+                  <span class="purple">const char*</span> desktop_id <span class="green">/* Unique id of the desktop */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">The format of the id is decided by the compositor implementation. A desktop id univocally identifies a virtual desktop and must be guaranteed to never exist two desktops with the same id. The format of the string id is up to the server implementation.
 </div>
             </li>
             
@@ -364,7 +394,13 @@ atomic, even if they happen via multiple events.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier"></div>
+              
+                <div class="courier">
+                  <span class="purple">const char*</span> name <span class="green">/* User readable descriptive name for the desktop */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2"></div>
             </li>
             
             <li class="mt3">
@@ -378,7 +414,9 @@ atomic, even if they happen via multiple events.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">The desktop will be the new &quot;current&quot; desktop of the system. The server may support either one virtual desktop active at a time, or other combinations such as one virtual desktop active per screen.
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">The desktop will be the new &quot;current&quot; desktop of the system. The server may support either one virtual desktop active at a time, or other combinations such as one virtual desktop active per screen.
 Windows associated to this virtual desktop will be shown.
 </div>
             </li>
@@ -394,7 +432,9 @@ Windows associated to this virtual desktop will be shown.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">Windows that were associated only to this desktop will be hidden.
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">Windows that were associated only to this desktop will be hidden.
 </div>
             </li>
             
@@ -409,7 +449,9 @@ Windows associated to this virtual desktop will be shown.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">This event is sent after all other properties has been
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">This event is sent after all other properties has been
 sent after binding to the desktop object and after any
 other property changes done after that. This allows
 changes to the org_kde_plasma_virtual_desktop properties to be seen as
@@ -428,7 +470,9 @@ atomic, even if they happen via multiple events.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">This virtual desktop has just been removed by the server:
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">This virtual desktop has just been removed by the server:
 All windows will lose the association to this desktop.
 </div>
             </li>

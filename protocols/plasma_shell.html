@@ -10,13 +10,13 @@
     <link rel="stylesheet" href="&#x2f;wayland-protocol-docs/main.css"></link>
      
   </head>
-  <body class="bg-near-white black-70 flex sans-serif ph4-l">
+  <body class="black-70 flex sans-serif ph4-l">
 
     
 
-    <div id="sidebar" class="w-20 br b--white bw3">
-      <div class="fixed h-100">
-        <a href="&#x2f;wayland-protocol-docs/" class="f4 link near-black dim lh-title">
+    <div id="sidebar" class="w-20">
+      <div class="fixed vh-100 overflow-y-auto w-20">
+        <a href="&#x2f;wayland-protocol-docs/" class="f4 link near-black dim lh-title db mt3">
           Home
         </a>
         
@@ -267,9 +267,9 @@ called.
     
       <div class="ws-pre-wrap">    <span class="purple">struct org_kde_plasma_surface*</span> org_kde_plasma_surface,</div>
     
-      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> x,</div>
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> x, <span class="green">/* x coordinate in global space */</span></div>
     
-      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> y</div>
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> y <span class="green">/* y coordinate in global space */</span></div>
     
   )
 </div>
@@ -415,7 +415,7 @@ Only one surface per output can have the lock role.
     
       <div class="ws-pre-wrap">    <span class="purple">struct org_kde_plasma_surface*</span> org_kde_plasma_surface,</div>
     
-      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> flag</div>
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> flag <span class="green">/* panel_behavior enum value */</span></div>
     
   )
 </div>
@@ -441,7 +441,7 @@ the default.
     
       <div class="ws-pre-wrap">    <span class="purple">struct org_kde_plasma_surface*</span> org_kde_plasma_surface,</div>
     
-      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> skip</div>
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> skip <span class="green">/* Boolean value that sets whether to skip the taskbar */</span></div>
     
   )
 </div>
@@ -519,7 +519,7 @@ again which got hidden with panel_auto_hide_hide.
     
       <div class="ws-pre-wrap">    <span class="purple">struct org_kde_plasma_surface*</span> org_kde_plasma_surface,</div>
     
-      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> takes_focus</div>
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> takes_focus <span class="green">/* Boolean value that sets whether the panel takes focus */</span></div>
     
   )
 </div>
@@ -545,7 +545,7 @@ org_kde_plasma_surface.
     
       <div class="ws-pre-wrap">    <span class="purple">struct org_kde_plasma_surface*</span> org_kde_plasma_surface,</div>
     
-      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> skip</div>
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> skip <span class="green">/* Boolean value that sets whether to skip the window switcher. */</span></div>
     
   )
 </div>
@@ -571,7 +571,9 @@ org_kde_plasma_surface.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">An auto-hiding panel got hidden by the compositor.
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">An auto-hiding panel got hidden by the compositor.
 </div>
             </li>
             
@@ -586,7 +588,9 @@ org_kde_plasma_surface.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">An auto-hiding panel got shown by the compositor.
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">An auto-hiding panel got shown by the compositor.
 </div>
             </li>
             

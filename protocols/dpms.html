@@ -10,13 +10,13 @@
     <link rel="stylesheet" href="&#x2f;wayland-protocol-docs/main.css"></link>
      
   </head>
-  <body class="bg-near-white black-70 flex sans-serif ph4-l">
+  <body class="black-70 flex sans-serif ph4-l">
 
     
 
-    <div id="sidebar" class="w-20 br b--white bw3">
-      <div class="fixed h-100">
-        <a href="&#x2f;wayland-protocol-docs/" class="f4 link near-black dim lh-title">
+    <div id="sidebar" class="w-20">
+      <div class="fixed vh-100 overflow-y-auto w-20">
+        <a href="&#x2f;wayland-protocol-docs/" class="f4 link near-black dim lh-title db mt3">
           Home
         </a>
         
@@ -184,7 +184,7 @@ done event.
     
       <div class="ws-pre-wrap">    <span class="purple">struct org_kde_kwin_dpms*</span> org_kde_kwin_dpms,</div>
     
-      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> mode</div>
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> mode <span class="green">/* Requested mode */</span></div>
     
   )
 </div>
@@ -236,7 +236,13 @@ Instead the client should listen for the mode event.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">This event gets pushed on binding the resource and indicates whether the wl_output
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> supported <span class="green">/* Boolean value whether DPMS is supported (1) for the wl_output or not (0) */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">This event gets pushed on binding the resource and indicates whether the wl_output
 supports DPMS. There are operation modes of a Wayland server where DPMS might not
 make sense (e.g. nested compositors).
 </div>
@@ -253,7 +259,13 @@ make sense (e.g. nested compositors).
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">This mode gets pushed on binding the resource and provides the currently used
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> mode <span class="green">/* The new currently used mode */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">This mode gets pushed on binding the resource and provides the currently used
 DPMS mode. It also gets pushed if DPMS is not supported for the wl_output, in that
 case the value will be On.
 
@@ -272,7 +284,9 @@ The event is also pushed whenever the state changes.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">This event gets pushed on binding the resource once all other states are pushed.
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">This event gets pushed on binding the resource once all other states are pushed.
 
 In addition it gets pushed whenever a state changes to tell the client that all
 state changes have been pushed.

@@ -10,13 +10,13 @@
     <link rel="stylesheet" href="&#x2f;wayland-protocol-docs/main.css"></link>
      
   </head>
-  <body class="bg-near-white black-70 flex sans-serif ph4-l">
+  <body class="black-70 flex sans-serif ph4-l">
 
     
 
-    <div id="sidebar" class="w-20 br b--white bw3">
-      <div class="fixed h-100">
-        <a href="&#x2f;wayland-protocol-docs/" class="f4 link near-black dim lh-title">
+    <div id="sidebar" class="w-20">
+      <div class="fixed vh-100 overflow-y-auto w-20">
+        <a href="&#x2f;wayland-protocol-docs/" class="f4 link near-black dim lh-title db mt3">
           Home
         </a>
         
@@ -217,7 +217,33 @@ focus.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">Relative x&#x2f;y pointer motion from the pointer of the seat associated with
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> utime_hi <span class="green">/* high 32 bits of a 64 bit timestamp with microsecond granularity */</span> 
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> utime_lo <span class="green">/* low 32 bits of a 64 bit timestamp with microsecond granularity */</span> 
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">wl_fixed_t</span> dx <span class="green">/* the x component of the motion vector */</span> 
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">wl_fixed_t</span> dy <span class="green">/* the y component of the motion vector */</span> 
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">wl_fixed_t</span> dx_unaccel <span class="green">/* the x component of the unaccelerated motion vector */</span> 
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">wl_fixed_t</span> dy_unaccel <span class="green">/* the y component of the unaccelerated motion vector */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">Relative x&#x2f;y pointer motion from the pointer of the seat associated with
 this object.
 
 A relative motion is in the same dimension as regular wl_pointer motion

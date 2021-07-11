@@ -10,13 +10,13 @@
     <link rel="stylesheet" href="&#x2f;wayland-protocol-docs/main.css"></link>
      
   </head>
-  <body class="bg-near-white black-70 flex sans-serif ph4-l">
+  <body class="black-70 flex sans-serif ph4-l">
 
     
 
-    <div id="sidebar" class="w-20 br b--white bw3">
-      <div class="fixed h-100">
-        <a href="&#x2f;wayland-protocol-docs/" class="f4 link near-black dim lh-title">
+    <div id="sidebar" class="w-20">
+      <div class="fixed vh-100 overflow-y-auto w-20">
+        <a href="&#x2f;wayland-protocol-docs/" class="f4 link near-black dim lh-title db mt3">
           Home
         </a>
         
@@ -210,13 +210,13 @@ pointer constraints object.
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwp_pointer_constraints_v1*</span> zwp_pointer_constraints_v1,</div>
     
-      <div class="ws-pre-wrap">    <span class="purple">struct wl_surface*</span> surface,</div>
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_surface*</span> surface, <span class="green">/* surface to lock pointer to */</span></div>
     
-      <div class="ws-pre-wrap">    <span class="purple">struct wl_pointer*</span> pointer,</div>
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_pointer*</span> pointer, <span class="green">/* the pointer that should be locked */</span></div>
     
-      <div class="ws-pre-wrap">    <span class="purple">struct wl_region*</span> region,</div>
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_region*</span> region, <span class="green">/* region of surface */</span></div>
     
-      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> lifetime</div>
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> lifetime <span class="green">/* lock lifetime */</span></div>
     
   )
 </div>
@@ -273,13 +273,13 @@ are unaffected.
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwp_pointer_constraints_v1*</span> zwp_pointer_constraints_v1,</div>
     
-      <div class="ws-pre-wrap">    <span class="purple">struct wl_surface*</span> surface,</div>
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_surface*</span> surface, <span class="green">/* surface to lock pointer to */</span></div>
     
-      <div class="ws-pre-wrap">    <span class="purple">struct wl_pointer*</span> pointer,</div>
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_pointer*</span> pointer, <span class="green">/* the pointer that should be confined */</span></div>
     
-      <div class="ws-pre-wrap">    <span class="purple">struct wl_region*</span> region,</div>
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_region*</span> region, <span class="green">/* region of surface */</span></div>
     
-      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> lifetime</div>
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> lifetime <span class="green">/* confinement lifetime */</span></div>
     
   )
 </div>
@@ -385,9 +385,9 @@ unlock the pointer.
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwp_locked_pointer_v1*</span> zwp_locked_pointer_v1,</div>
     
-      <div class="ws-pre-wrap">    <span class="purple">wl_fixed_t</span> surface_x,</div>
+      <div class="ws-pre-wrap">    <span class="purple">wl_fixed_t</span> surface_x, <span class="green">/* surface-local x coordinate */</span></div>
     
-      <div class="ws-pre-wrap">    <span class="purple">wl_fixed_t</span> surface_y</div>
+      <div class="ws-pre-wrap">    <span class="purple">wl_fixed_t</span> surface_y <span class="green">/* surface-local y coordinate */</span></div>
     
   )
 </div>
@@ -421,7 +421,7 @@ wl_surface.commit for details.
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwp_locked_pointer_v1*</span> zwp_locked_pointer_v1,</div>
     
-      <div class="ws-pre-wrap">    <span class="purple">struct wl_region*</span> region</div>
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_region*</span> region <span class="green">/* region of surface */</span></div>
     
   )
 </div>
@@ -453,7 +453,9 @@ For details about the lock region, see wp_locked_pointer.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">Notification that the pointer lock of the seat&#x27;s pointer is activated.
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">Notification that the pointer lock of the seat&#x27;s pointer is activated.
   </div>
             </li>
             
@@ -468,7 +470,9 @@ For details about the lock region, see wp_locked_pointer.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">Notification that the pointer lock of the seat&#x27;s pointer is no longer
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">Notification that the pointer lock of the seat&#x27;s pointer is no longer
 active. If this is a oneshot pointer lock (see
 wp_pointer_constraints.lifetime) this object is now defunct and should
 be destroyed. If this is a persistent pointer lock (see
@@ -549,7 +553,7 @@ unconfine the pointer.
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwp_confined_pointer_v1*</span> zwp_confined_pointer_v1,</div>
     
-      <div class="ws-pre-wrap">    <span class="purple">struct wl_region*</span> region</div>
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_region*</span> region <span class="green">/* region of surface */</span></div>
     
   )
 </div>
@@ -590,7 +594,9 @@ For details about the confine region, see wp_confined_pointer.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">Notification that the pointer confinement of the seat&#x27;s pointer is
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">Notification that the pointer confinement of the seat&#x27;s pointer is
 activated.
   </div>
             </li>
@@ -606,7 +612,9 @@ activated.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">Notification that the pointer confinement of the seat&#x27;s pointer is no
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">Notification that the pointer confinement of the seat&#x27;s pointer is no
 longer active. If this is a oneshot pointer confinement (see
 wp_pointer_constraints.lifetime) this object is now defunct and should
 be destroyed. If this is a persistent pointer confinement (see

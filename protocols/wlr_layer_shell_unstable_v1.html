@@ -10,13 +10,13 @@
     <link rel="stylesheet" href="&#x2f;wayland-protocol-docs/main.css"></link>
      
   </head>
-  <body class="bg-near-white black-70 flex sans-serif ph4-l">
+  <body class="black-70 flex sans-serif ph4-l">
 
     
 
-    <div id="sidebar" class="w-20 br b--white bw3">
-      <div class="fixed h-100">
-        <a href="&#x2f;wayland-protocol-docs/" class="f4 link near-black dim lh-title">
+    <div id="sidebar" class="w-20">
+      <div class="fixed vh-100 overflow-y-auto w-20">
+        <a href="&#x2f;wayland-protocol-docs/" class="f4 link near-black dim lh-title db mt3">
           Home
         </a>
         
@@ -167,9 +167,9 @@ that interact with the desktop.
     
       <div class="ws-pre-wrap">    <span class="purple">struct wl_output*</span> output,</div>
     
-      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> layer,</div>
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> layer, <span class="green">/* layer to add this surface to */</span></div>
     
-      <div class="ws-pre-wrap">    <span class="purple">const char*</span> namespace</div>
+      <div class="ws-pre-wrap">    <span class="purple">const char*</span> namespace <span class="green">/* namespace for the layer surface */</span></div>
     
   )
 </div>
@@ -493,7 +493,7 @@ xdg_popup is and how it is used.
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwlr_layer_surface_v1*</span> zwlr_layer_surface_v1,</div>
     
-      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> serial</div>
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> serial <span class="green">/* the serial from the configure event */</span></div>
     
   )
 </div>
@@ -553,7 +553,7 @@ event the client really is responding to.
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwlr_layer_surface_v1*</span> zwlr_layer_surface_v1,</div>
     
-      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> layer</div>
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> layer <span class="green">/* layer to move this surface to */</span></div>
     
   )
 </div>
@@ -581,7 +581,21 @@ Layer is double-buffered, see wl_surface.commit.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">The configure event asks the client to resize its surface.
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> serial  
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> width  
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> height  
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">The configure event asks the client to resize its surface.
 
 Clients should arrange their surface for the new states, and then send
 an ack_configure request with the serial sent in this configure event at
@@ -615,7 +629,9 @@ decide its own window dimension.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">The closed event is sent by the compositor when the surface will no
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">The closed event is sent by the compositor when the surface will no
 longer be shown. The output may have been destroyed or the user may
 have asked for it to be removed. Further changes to the surface will be
 ignored. The client should destroy the resource after receiving this

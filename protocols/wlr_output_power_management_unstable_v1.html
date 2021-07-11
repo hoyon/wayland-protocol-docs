@@ -10,13 +10,13 @@
     <link rel="stylesheet" href="&#x2f;wayland-protocol-docs/main.css"></link>
      
   </head>
-  <body class="bg-near-white black-70 flex sans-serif ph4-l">
+  <body class="black-70 flex sans-serif ph4-l">
 
     
 
-    <div id="sidebar" class="w-20 br b--white bw3">
-      <div class="fixed h-100">
-        <a href="&#x2f;wayland-protocol-docs/" class="f4 link near-black dim lh-title">
+    <div id="sidebar" class="w-20">
+      <div class="fixed vh-100 overflow-y-auto w-20">
+        <a href="&#x2f;wayland-protocol-docs/" class="f4 link near-black dim lh-title db mt3">
           Home
         </a>
         
@@ -200,7 +200,7 @@ an output.
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwlr_output_power_v1*</span> zwlr_output_power_v1,</div>
     
-      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> mode</div>
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> mode <span class="green">/* the power save mode to set */</span></div>
     
   )
 </div>
@@ -250,7 +250,13 @@ mode a failed event is sent.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">Report the power management mode change of an output.
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> mode <span class="green">/* the output&#x27;s new power management mode */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">Report the power management mode change of an output.
 
 The mode event is sent after an output changed its power
 management mode. The reason can be a client using set_mode or the
@@ -271,7 +277,9 @@ so the client is informed about the current power management mode.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">This event indicates that the output power management mode control
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">This event indicates that the output power management mode control
 is no longer valid. This can happen for a number of reasons,
 including:
 - The output doesn&#x27;t support power management

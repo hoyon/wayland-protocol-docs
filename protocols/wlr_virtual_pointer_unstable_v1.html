@@ -10,13 +10,13 @@
     <link rel="stylesheet" href="&#x2f;wayland-protocol-docs/main.css"></link>
      
   </head>
-  <body class="bg-near-white black-70 flex sans-serif ph4-l">
+  <body class="black-70 flex sans-serif ph4-l">
 
     
 
-    <div id="sidebar" class="w-20 br b--white bw3">
-      <div class="fixed h-100">
-        <a href="&#x2f;wayland-protocol-docs/" class="f4 link near-black dim lh-title">
+    <div id="sidebar" class="w-20">
+      <div class="fixed vh-100 overflow-y-auto w-20">
+        <a href="&#x2f;wayland-protocol-docs/" class="f4 link near-black dim lh-title db mt3">
           Home
         </a>
         
@@ -148,11 +148,11 @@ requests are mostly mirror opposites of those specified in wl_pointer.
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwlr_virtual_pointer_v1*</span> zwlr_virtual_pointer_v1,</div>
     
-      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> time,</div>
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> time, <span class="green">/* timestamp with millisecond granularity */</span></div>
     
-      <div class="ws-pre-wrap">    <span class="purple">wl_fixed_t</span> dx,</div>
+      <div class="ws-pre-wrap">    <span class="purple">wl_fixed_t</span> dx, <span class="green">/* displacement on the x-axis */</span></div>
     
-      <div class="ws-pre-wrap">    <span class="purple">wl_fixed_t</span> dy</div>
+      <div class="ws-pre-wrap">    <span class="purple">wl_fixed_t</span> dy <span class="green">/* displacement on the y-axis */</span></div>
     
   )
 </div>
@@ -178,15 +178,15 @@ Values are in the global compositor space.
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwlr_virtual_pointer_v1*</span> zwlr_virtual_pointer_v1,</div>
     
-      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> time,</div>
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> time, <span class="green">/* timestamp with millisecond granularity */</span></div>
     
-      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> x,</div>
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> x, <span class="green">/* position on the x-axis */</span></div>
     
-      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> y,</div>
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> y, <span class="green">/* position on the y-axis */</span></div>
     
-      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> x_extent,</div>
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> x_extent, <span class="green">/* extent of the x-axis */</span></div>
     
-      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> y_extent</div>
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> y_extent <span class="green">/* extent of the y-axis */</span></div>
     
   )
 </div>
@@ -213,11 +213,11 @@ to y_extent.
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwlr_virtual_pointer_v1*</span> zwlr_virtual_pointer_v1,</div>
     
-      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> time,</div>
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> time, <span class="green">/* timestamp with millisecond granularity */</span></div>
     
-      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> button,</div>
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> button, <span class="green">/* button that produced the event */</span></div>
     
-      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> state</div>
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> state <span class="green">/* physical state of the button */</span></div>
     
   )
 </div>
@@ -241,11 +241,11 @@ to y_extent.
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwlr_virtual_pointer_v1*</span> zwlr_virtual_pointer_v1,</div>
     
-      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> time,</div>
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> time, <span class="green">/* timestamp with millisecond granularity */</span></div>
     
-      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> axis,</div>
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> axis, <span class="green">/* axis type */</span></div>
     
-      <div class="ws-pre-wrap">    <span class="purple">wl_fixed_t</span> value</div>
+      <div class="ws-pre-wrap">    <span class="purple">wl_fixed_t</span> value <span class="green">/* length of vector in touchpad coordinates */</span></div>
     
   )
 </div>
@@ -291,7 +291,7 @@ to y_extent.
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwlr_virtual_pointer_v1*</span> zwlr_virtual_pointer_v1,</div>
     
-      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> axis_source</div>
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> axis_source <span class="green">/* source of the axis event */</span></div>
     
   )
 </div>
@@ -315,9 +315,9 @@ to y_extent.
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwlr_virtual_pointer_v1*</span> zwlr_virtual_pointer_v1,</div>
     
-      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> time,</div>
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> time, <span class="green">/* timestamp with millisecond granularity */</span></div>
     
-      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> axis</div>
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> axis <span class="green">/* the axis stopped with this event */</span></div>
     
   )
 </div>
@@ -341,13 +341,13 @@ to y_extent.
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwlr_virtual_pointer_v1*</span> zwlr_virtual_pointer_v1,</div>
     
-      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> time,</div>
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> time, <span class="green">/* timestamp with millisecond granularity */</span></div>
     
-      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> axis,</div>
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> axis, <span class="green">/* axis type */</span></div>
     
-      <div class="ws-pre-wrap">    <span class="purple">wl_fixed_t</span> value,</div>
+      <div class="ws-pre-wrap">    <span class="purple">wl_fixed_t</span> value, <span class="green">/* length of vector in touchpad coordinates */</span></div>
     
-      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> discrete</div>
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> discrete <span class="green">/* number of steps */</span></div>
     
   )
 </div>

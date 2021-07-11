@@ -10,13 +10,13 @@
     <link rel="stylesheet" href="&#x2f;wayland-protocol-docs/main.css"></link>
      
   </head>
-  <body class="bg-near-white black-70 flex sans-serif ph4-l">
+  <body class="black-70 flex sans-serif ph4-l">
 
     
 
-    <div id="sidebar" class="w-20 br b--white bw3">
-      <div class="fixed h-100">
-        <a href="&#x2f;wayland-protocol-docs/" class="f4 link near-black dim lh-title">
+    <div id="sidebar" class="w-20">
+      <div class="fixed vh-100 overflow-y-auto w-20">
+        <a href="&#x2f;wayland-protocol-docs/" class="f4 link near-black dim lh-title db mt3">
           Home
         </a>
         
@@ -240,7 +240,17 @@ going to use the xdg_output object anymore.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">The position event describes the location of the wl_output within
+              
+                <div class="courier">
+                  <span class="purple">int32_t</span> x <span class="green">/* x position within the global compositor space */</span> 
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">int32_t</span> y <span class="green">/* y position within the global compositor space */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">The position event describes the location of the wl_output within
 the global compositor space.
 
 The logical_position event is sent after creating an xdg_output
@@ -260,7 +270,17 @@ of the output changes within the global compositor space.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">The logical_size event describes the size of the output in the
+              
+                <div class="courier">
+                  <span class="purple">int32_t</span> width <span class="green">/* width in global compositor space */</span> 
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">int32_t</span> height <span class="green">/* height in global compositor space */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">The logical_size event describes the size of the output in the
 global compositor space.
 
 For example, a surface without any buffer scale, transformation
@@ -308,7 +328,9 @@ mode(see wl_output.mode) or transform (see wl_output.transform).
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">This event is sent after all other properties of an xdg_output
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">This event is sent after all other properties of an xdg_output
 have been sent.
 
 This allows changes to the xdg_output properties to be seen as
@@ -331,7 +353,13 @@ instead.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">Many compositors will assign names to their outputs, show them to the
+              
+                <div class="courier">
+                  <span class="purple">const char*</span> name <span class="green">/* output name */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">Many compositors will assign names to their outputs, show them to the
 user, allow them to be configured by name, etc. The client may wish to
 know this name as well to offer the user similar behaviors.
 
@@ -363,7 +391,13 @@ wl_output global.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">Many compositors can produce human-readable descriptions of their
+              
+                <div class="courier">
+                  <span class="purple">const char*</span> description <span class="green">/* output description */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">Many compositors can produce human-readable descriptions of their
 outputs.  The client may wish to know this description as well, to
 communicate the user for various purposes.
 

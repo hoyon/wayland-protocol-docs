@@ -10,13 +10,13 @@
     <link rel="stylesheet" href="&#x2f;wayland-protocol-docs/main.css"></link>
      
   </head>
-  <body class="bg-near-white black-70 flex sans-serif ph4-l">
+  <body class="black-70 flex sans-serif ph4-l">
 
     
 
-    <div id="sidebar" class="w-20 br b--white bw3">
-      <div class="fixed h-100">
-        <a href="&#x2f;wayland-protocol-docs/" class="f4 link near-black dim lh-title">
+    <div id="sidebar" class="w-20">
+      <div class="fixed vh-100 overflow-y-auto w-20">
+        <a href="&#x2f;wayland-protocol-docs/" class="f4 link near-black dim lh-title db mt3">
           Home
         </a>
         
@@ -172,7 +172,7 @@ are not affected.
     
       <div class="ws-pre-wrap">    <span class="purple">struct wp_presentation*</span> wp_presentation,</div>
     
-      <div class="ws-pre-wrap">    <span class="purple">struct wl_surface*</span> surface</div>
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_surface*</span> surface <span class="green">/* target surface */</span></div>
     
   )
 </div>
@@ -205,7 +205,13 @@ presentation_feedback interface.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">This event tells the client in which clock domain the
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> clk_id <span class="green">/* platform clock identifier */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">This event tells the client in which clock domain the
 compositor interprets the timestamps used by the presentation
 extension. This clock is called the presentation clock.
 
@@ -279,7 +285,13 @@ or &#x27;discarded&#x27; event it is automatically destroyed.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">As presentation can be synchronized to only one output at a
+              
+                <div class="courier">
+                  <span class="purple">struct wl_output*</span> output <span class="green">/* presentation output */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">As presentation can be synchronized to only one output at a
 time, this event tells which output it was. This event is only
 sent prior to the presented event.
 
@@ -301,7 +313,37 @@ right wl_output global at all, this event is not sent.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">The associated content update was displayed to the user at the
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> tv_sec_hi <span class="green">/* high 32 bits of the seconds part of the presentation timestamp */</span> 
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> tv_sec_lo <span class="green">/* low 32 bits of the seconds part of the presentation timestamp */</span> 
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> tv_nsec <span class="green">/* nanoseconds part of the presentation timestamp */</span> 
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> refresh <span class="green">/* nanoseconds till next refresh */</span> 
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> seq_hi <span class="green">/* high 32 bits of refresh counter */</span> 
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> seq_lo <span class="green">/* low 32 bits of refresh counter */</span> 
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> flags <span class="green">/* combination of &#x27;kind&#x27; values */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">The associated content update was displayed to the user at the
 indicated time (tv_sec_hi&#x2f;lo, tv_nsec). For the interpretation of
 the timestamp, see presentation.clock_id event.
 
@@ -356,7 +398,9 @@ and seq_lo must be zero.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">The content update was never displayed to the user.
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">The content update was never displayed to the user.
 </div>
             </li>
             

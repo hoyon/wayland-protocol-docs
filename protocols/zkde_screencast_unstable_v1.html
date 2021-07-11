@@ -10,13 +10,13 @@
     <link rel="stylesheet" href="&#x2f;wayland-protocol-docs/main.css"></link>
      
   </head>
-  <body class="bg-near-white black-70 flex sans-serif ph4-l">
+  <body class="black-70 flex sans-serif ph4-l">
 
     
 
-    <div id="sidebar" class="w-20 br b--white bw3">
-      <div class="fixed h-100">
-        <a href="&#x2f;wayland-protocol-docs/" class="f4 link near-black dim lh-title">
+    <div id="sidebar" class="w-20">
+      <div class="fixed vh-100 overflow-y-auto w-20">
+        <a href="&#x2f;wayland-protocol-docs/" class="f4 link near-black dim lh-title db mt3">
           Home
         </a>
         
@@ -134,7 +134,7 @@
     
       <div class="ws-pre-wrap">    <span class="purple">struct wl_output*</span> output,</div>
     
-      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> pointer</div>
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> pointer <span class="green">/* Requested pointer mode */</span></div>
     
   )
 </div>
@@ -157,9 +157,9 @@
     
       <div class="ws-pre-wrap">    <span class="purple">struct zkde_screencast_unstable_v1*</span> zkde_screencast_unstable_v1,</div>
     
-      <div class="ws-pre-wrap">    <span class="purple">const char*</span> window_uuid,</div>
+      <div class="ws-pre-wrap">    <span class="purple">const char*</span> window_uuid, <span class="green">/* window Identifier */</span></div>
     
-      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> pointer</div>
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> pointer <span class="green">/* Requested pointer mode */</span></div>
     
   )
 </div>
@@ -247,7 +247,9 @@
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier"></div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2"></div>
             </li>
             
             <li class="mt3">
@@ -261,7 +263,13 @@
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier"></div>
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> node <span class="green">/* node of the pipewire buffer */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2"></div>
             </li>
             
             <li class="mt3">
@@ -275,7 +283,13 @@
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier"></div>
+              
+                <div class="courier">
+                  <span class="purple">const char*</span> error <span class="green">/* A human readable translated error message. */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2"></div>
             </li>
             
           </ul>

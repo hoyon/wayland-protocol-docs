@@ -10,13 +10,13 @@
     <link rel="stylesheet" href="&#x2f;wayland-protocol-docs/main.css"></link>
      
   </head>
-  <body class="bg-near-white black-70 flex sans-serif ph4-l">
+  <body class="black-70 flex sans-serif ph4-l">
 
     
 
-    <div id="sidebar" class="w-20 br b--white bw3">
-      <div class="fixed h-100">
-        <a href="&#x2f;wayland-protocol-docs/" class="f4 link near-black dim lh-title">
+    <div id="sidebar" class="w-20">
+      <div class="fixed vh-100 overflow-y-auto w-20">
+        <a href="&#x2f;wayland-protocol-docs/" class="f4 link near-black dim lh-title db mt3">
           Home
         </a>
         
@@ -133,7 +133,7 @@
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwlr_export_dmabuf_manager_v1*</span> zwlr_export_dmabuf_manager_v1,</div>
     
-      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> overlay_cursor,</div>
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> overlay_cursor, <span class="green">/* include custom client hardware cursor on top of the frame */</span></div>
     
       <div class="ws-pre-wrap">    <span class="purple">struct wl_output*</span> output</div>
     
@@ -244,7 +244,50 @@ to close any FDs it has been given.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">Main event supplying the client with information about the frame. If the
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> width <span class="green">/* frame width in pixels */</span> 
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> height <span class="green">/* frame height in pixels */</span> 
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> offset_x <span class="green">/* crop offset for the x axis */</span> 
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> offset_y <span class="green">/* crop offset for the y axis */</span> 
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> buffer_flags <span class="green">/* flags which indicate properties (invert, interlacing),
+                    has the same values as zwp_linux_buffer_params_v1:flags */</span> 
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> flags <span class="green">/* indicates special frame features */</span> 
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> format <span class="green">/* format of the frame (DRM_FORMAT_*) */</span> 
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> mod_high <span class="green">/* drm format modifier, high */</span> 
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> mod_low <span class="green">/* drm format modifier, low */</span> 
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> num_objects <span class="green">/* indicates how many objects (FDs) the frame has (max 4) */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">Main event supplying the client with information about the frame. If the
 capture didn&#x27;t fail, this event is always emitted first before any other
 events.
 
@@ -264,7 +307,33 @@ This event is followed by a number of &quot;object&quot; as specified by the
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">Event which serves to supply the client with the file descriptors
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> index <span class="green">/* index of the current object */</span> 
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">int32_t</span> fd <span class="green">/* fd of the current object */</span> 
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> size <span class="green">/* size in bytes for the current object */</span> 
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> offset <span class="green">/* starting point for the data in the object&#x27;s fd */</span> 
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> stride <span class="green">/* line size in bytes */</span> 
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> plane_index <span class="green">/* index of the plane the data in the object applies to */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">Event which serves to supply the client with the file descriptors
 containing the data for each object.
 
 After receiving this event, the client must always close the file
@@ -283,7 +352,21 @@ descriptor as soon as they&#x27;re done with it and even if the frame fails.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">This event is sent as soon as the frame is presented, indicating it is
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> tv_sec_hi <span class="green">/* high 32 bits of the seconds part of the timestamp */</span> 
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> tv_sec_lo <span class="green">/* low 32 bits of the seconds part of the timestamp */</span> 
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> tv_nsec <span class="green">/* nanoseconds part of the timestamp */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">This event is sent as soon as the frame is presented, indicating it is
 available for reading. This event includes the time at which
 presentation happened at.
 
@@ -309,7 +392,13 @@ After receiving this event, the client should destroy this object.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">If the capture failed or if the frame is no longer valid after the
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> reason <span class="green">/* indicates a reason for cancelling this frame capture */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">If the capture failed or if the frame is no longer valid after the
 &quot;frame&quot; event has been emitted, this event will be used to inform the
 client to scrap the frame.
 

@@ -10,13 +10,13 @@
     <link rel="stylesheet" href="&#x2f;wayland-protocol-docs/main.css"></link>
      
   </head>
-  <body class="bg-near-white black-70 flex sans-serif ph4-l">
+  <body class="black-70 flex sans-serif ph4-l">
 
     
 
-    <div id="sidebar" class="w-20 br b--white bw3">
-      <div class="fixed h-100">
-        <a href="&#x2f;wayland-protocol-docs/" class="f4 link near-black dim lh-title">
+    <div id="sidebar" class="w-20">
+      <div class="fixed vh-100 overflow-y-auto w-20">
+        <a href="&#x2f;wayland-protocol-docs/" class="f4 link near-black dim lh-title db mt3">
           Home
         </a>
         
@@ -298,7 +298,7 @@ wp_primary_selection_device objects.
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwp_primary_selection_source_v1*</span> source,</div>
     
-      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> serial</div>
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> serial <span class="green">/* serial of the event that triggered this request */</span></div>
     
   )
 </div>
@@ -349,7 +349,13 @@ To unset the selection, set the source to NULL.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">Introduces a new wp_primary_selection_offer object that may be used
+              
+                <div class="courier">
+                  <span class="purple">struct zwp_primary_selection_offer_v1*</span> offer  
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">Introduces a new wp_primary_selection_offer object that may be used
 to receive the current primary selection. Immediately following this
 event, the new wp_primary_selection_offer object will send
 wp_primary_selection_offer.offer events to describe the offered mime
@@ -368,7 +374,13 @@ types.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">The wp_primary_selection_device.selection event is sent to notify the
+              
+                <div class="courier">
+                  <span class="purple">struct zwp_primary_selection_offer_v1*</span> id  
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">The wp_primary_selection_device.selection event is sent to notify the
 client of a new primary selection. This event is sent after the
 wp_primary_selection.data_offer event introducing this object, and after
 the offer has announced its mimetypes through
@@ -476,7 +488,13 @@ closes its end, at which point the transfer is complete.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">Sent immediately after creating announcing the
+              
+                <div class="courier">
+                  <span class="purple">const char*</span> mime_type  
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">Sent immediately after creating announcing the
 wp_primary_selection_offer through
 wp_primary_selection_device.data_offer. One event is sent per offered
 mime type.
@@ -568,7 +586,17 @@ targets. Can be called several times to offer multiple types.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">Request for the current primary selection contents from the client.
+              
+                <div class="courier">
+                  <span class="purple">const char*</span> mime_type  
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">int32_t</span> fd  
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">Request for the current primary selection contents from the client.
 Send the specified mime type over the passed file descriptor, then
 close it.
 </div>
@@ -585,7 +613,9 @@ close it.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">This primary selection source is no longer valid. The client should
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">This primary selection source is no longer valid. The client should
 clean up and destroy this primary selection source.
 </div>
             </li>

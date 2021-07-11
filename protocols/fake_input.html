@@ -10,13 +10,13 @@
     <link rel="stylesheet" href="&#x2f;wayland-protocol-docs/main.css"></link>
      
   </head>
-  <body class="bg-near-white black-70 flex sans-serif ph4-l">
+  <body class="black-70 flex sans-serif ph4-l">
 
     
 
-    <div id="sidebar" class="w-20 br b--white bw3">
-      <div class="fixed h-100">
-        <a href="&#x2f;wayland-protocol-docs/" class="f4 link near-black dim lh-title">
+    <div id="sidebar" class="w-20">
+      <div class="fixed vh-100 overflow-y-auto w-20">
+        <a href="&#x2f;wayland-protocol-docs/" class="f4 link near-black dim lh-title db mt3">
           Home
         </a>
         
@@ -133,9 +133,9 @@ interface.
     
       <div class="ws-pre-wrap">    <span class="purple">struct org_kde_kwin_fake_input*</span> org_kde_kwin_fake_input,</div>
     
-      <div class="ws-pre-wrap">    <span class="purple">const char*</span> application,</div>
+      <div class="ws-pre-wrap">    <span class="purple">const char*</span> application, <span class="green">/* user visible name of the application */</span></div>
     
-      <div class="ws-pre-wrap">    <span class="purple">const char*</span> reason</div>
+      <div class="ws-pre-wrap">    <span class="purple">const char*</span> reason <span class="green">/* reason why the application wants to use this interface */</span></div>
     
   )
 </div>
@@ -238,11 +238,11 @@ this very privileged interface.
     
       <div class="ws-pre-wrap">    <span class="purple">struct org_kde_kwin_fake_input*</span> org_kde_kwin_fake_input,</div>
     
-      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> id,</div>
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> id, <span class="green">/* unique id for touch down event */</span></div>
     
-      <div class="ws-pre-wrap">    <span class="purple">wl_fixed_t</span> x,</div>
+      <div class="ws-pre-wrap">    <span class="purple">wl_fixed_t</span> x, <span class="green">/* x coordinate for touch down event */</span></div>
     
-      <div class="ws-pre-wrap">    <span class="purple">wl_fixed_t</span> y</div>
+      <div class="ws-pre-wrap">    <span class="purple">wl_fixed_t</span> y <span class="green">/* y coordinate for touch down event */</span></div>
     
   )
 </div>
@@ -267,11 +267,11 @@ co-ordinates.
     
       <div class="ws-pre-wrap">    <span class="purple">struct org_kde_kwin_fake_input*</span> org_kde_kwin_fake_input,</div>
     
-      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> id,</div>
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> id, <span class="green">/* unique id for touch motion event */</span></div>
     
-      <div class="ws-pre-wrap">    <span class="purple">wl_fixed_t</span> x,</div>
+      <div class="ws-pre-wrap">    <span class="purple">wl_fixed_t</span> x, <span class="green">/* x coordinate for touch motion event */</span></div>
     
-      <div class="ws-pre-wrap">    <span class="purple">wl_fixed_t</span> y</div>
+      <div class="ws-pre-wrap">    <span class="purple">wl_fixed_t</span> y <span class="green">/* y coordinate for touch motion event */</span></div>
     
   )
 </div>
@@ -295,7 +295,7 @@ co-ordinates.
     
       <div class="ws-pre-wrap">    <span class="purple">struct org_kde_kwin_fake_input*</span> org_kde_kwin_fake_input,</div>
     
-      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> id</div>
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> id <span class="green">/* unique id for touch up event */</span></div>
     
   )
 </div>

@@ -10,13 +10,13 @@
     <link rel="stylesheet" href="&#x2f;wayland-protocol-docs/main.css"></link>
      
   </head>
-  <body class="bg-near-white black-70 flex sans-serif ph4-l">
+  <body class="black-70 flex sans-serif ph4-l">
 
     
 
-    <div id="sidebar" class="w-20 br b--white bw3">
-      <div class="fixed h-100">
-        <a href="&#x2f;wayland-protocol-docs/" class="f4 link near-black dim lh-title">
+    <div id="sidebar" class="w-20">
+      <div class="fixed vh-100 overflow-y-auto w-20">
+        <a href="&#x2f;wayland-protocol-docs/" class="f4 link near-black dim lh-title db mt3">
           Home
         </a>
         
@@ -254,9 +254,9 @@ applied to the hardware and before the server side sends the applied event.
     
       <div class="ws-pre-wrap">    <span class="purple">struct org_kde_kwin_outputconfiguration*</span> org_kde_kwin_outputconfiguration,</div>
     
-      <div class="ws-pre-wrap">    <span class="purple">struct org_kde_kwin_outputdevice*</span> outputdevice,</div>
+      <div class="ws-pre-wrap">    <span class="purple">struct org_kde_kwin_outputdevice*</span> outputdevice, <span class="green">/* outputdevice to be en- or disabled */</span></div>
     
-      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> enable</div>
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> enable <span class="green">/* 1 to enable or 0 to disable this output */</span></div>
     
   )
 </div>
@@ -280,9 +280,9 @@ applied to the hardware and before the server side sends the applied event.
     
       <div class="ws-pre-wrap">    <span class="purple">struct org_kde_kwin_outputconfiguration*</span> org_kde_kwin_outputconfiguration,</div>
     
-      <div class="ws-pre-wrap">    <span class="purple">struct org_kde_kwin_outputdevice*</span> outputdevice,</div>
+      <div class="ws-pre-wrap">    <span class="purple">struct org_kde_kwin_outputdevice*</span> outputdevice, <span class="green">/* outputdevice this mode change applies to */</span></div>
     
-      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> mode_id</div>
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> mode_id <span class="green">/* aspired mode&#x27;s id */</span></div>
     
   )
 </div>
@@ -306,9 +306,9 @@ applied to the hardware and before the server side sends the applied event.
     
       <div class="ws-pre-wrap">    <span class="purple">struct org_kde_kwin_outputconfiguration*</span> org_kde_kwin_outputconfiguration,</div>
     
-      <div class="ws-pre-wrap">    <span class="purple">struct org_kde_kwin_outputdevice*</span> outputdevice,</div>
+      <div class="ws-pre-wrap">    <span class="purple">struct org_kde_kwin_outputdevice*</span> outputdevice, <span class="green">/* outputdevice this transformation change applies to */</span></div>
     
-      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> transform</div>
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> transform <span class="green">/* transform enum */</span></div>
     
   )
 </div>
@@ -332,11 +332,11 @@ applied to the hardware and before the server side sends the applied event.
     
       <div class="ws-pre-wrap">    <span class="purple">struct org_kde_kwin_outputconfiguration*</span> org_kde_kwin_outputconfiguration,</div>
     
-      <div class="ws-pre-wrap">    <span class="purple">struct org_kde_kwin_outputdevice*</span> outputdevice,</div>
+      <div class="ws-pre-wrap">    <span class="purple">struct org_kde_kwin_outputdevice*</span> outputdevice, <span class="green">/* outputdevice this position applies to */</span></div>
     
-      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> x,</div>
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> x, <span class="green">/* position on the x-axis */</span></div>
     
-      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> y</div>
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> y <span class="green">/* position on the y-axis */</span></div>
     
   )
 </div>
@@ -366,9 +366,9 @@ stacked horizontally, vertically, or both on each other.
     
       <div class="ws-pre-wrap">    <span class="purple">struct org_kde_kwin_outputconfiguration*</span> org_kde_kwin_outputconfiguration,</div>
     
-      <div class="ws-pre-wrap">    <span class="purple">struct org_kde_kwin_outputdevice*</span> outputdevice,</div>
+      <div class="ws-pre-wrap">    <span class="purple">struct org_kde_kwin_outputdevice*</span> outputdevice, <span class="green">/* outputdevice this mode change applies to */</span></div>
     
-      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> scale</div>
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> scale <span class="green">/* scaling factor */</span></div>
     
   )
 </div>
@@ -415,9 +415,9 @@ object to all outputs on the server side.
     
       <div class="ws-pre-wrap">    <span class="purple">struct org_kde_kwin_outputconfiguration*</span> org_kde_kwin_outputconfiguration,</div>
     
-      <div class="ws-pre-wrap">    <span class="purple">struct org_kde_kwin_outputdevice*</span> outputdevice,</div>
+      <div class="ws-pre-wrap">    <span class="purple">struct org_kde_kwin_outputdevice*</span> outputdevice, <span class="green">/* outputdevice this mode change applies to */</span></div>
     
-      <div class="ws-pre-wrap">    <span class="purple">wl_fixed_t</span> scale</div>
+      <div class="ws-pre-wrap">    <span class="purple">wl_fixed_t</span> scale <span class="green">/* scaling factor */</span></div>
     
   )
 </div>
@@ -442,13 +442,13 @@ Sending both scale and scalef is undefined.
     
       <div class="ws-pre-wrap">    <span class="purple">struct org_kde_kwin_outputconfiguration*</span> org_kde_kwin_outputconfiguration,</div>
     
-      <div class="ws-pre-wrap">    <span class="purple">struct org_kde_kwin_outputdevice*</span> outputdevice,</div>
+      <div class="ws-pre-wrap">    <span class="purple">struct org_kde_kwin_outputdevice*</span> outputdevice, <span class="green">/* outputdevice curves apply to */</span></div>
     
-      <div class="ws-pre-wrap">    <span class="purple">struct wl_array*</span> red,</div>
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_array*</span> red, <span class="green">/* red color ramp */</span></div>
     
-      <div class="ws-pre-wrap">    <span class="purple">struct wl_array*</span> green,</div>
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_array*</span> green, <span class="green">/* green color ramp */</span></div>
     
-      <div class="ws-pre-wrap">    <span class="purple">struct wl_array*</span> blue</div>
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_array*</span> blue <span class="green">/* blue color ramp */</span></div>
     
   )
 </div>
@@ -497,9 +497,9 @@ internally, for example to shift color temperature at night.
     
       <div class="ws-pre-wrap">    <span class="purple">struct org_kde_kwin_outputconfiguration*</span> org_kde_kwin_outputconfiguration,</div>
     
-      <div class="ws-pre-wrap">    <span class="purple">struct org_kde_kwin_outputdevice*</span> outputdevice,</div>
+      <div class="ws-pre-wrap">    <span class="purple">struct org_kde_kwin_outputdevice*</span> outputdevice, <span class="green">/* outputdevice overscan applies to */</span></div>
     
-      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> overscan</div>
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> overscan <span class="green">/* overscan value */</span></div>
     
   )
 </div>
@@ -523,9 +523,9 @@ internally, for example to shift color temperature at night.
     
       <div class="ws-pre-wrap">    <span class="purple">struct org_kde_kwin_outputconfiguration*</span> org_kde_kwin_outputconfiguration,</div>
     
-      <div class="ws-pre-wrap">    <span class="purple">struct org_kde_kwin_outputdevice*</span> outputdevice,</div>
+      <div class="ws-pre-wrap">    <span class="purple">struct org_kde_kwin_outputdevice*</span> outputdevice, <span class="green">/* outputdevice this VRR policy applies to */</span></div>
     
-      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> policy</div>
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> policy <span class="green">/* the vrr policy to apply */</span></div>
     
   )
 </div>
@@ -552,7 +552,9 @@ variable refresh rate.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">Sent after the server has successfully applied the changes.
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">Sent after the server has successfully applied the changes.
 .
 </div>
             </li>
@@ -568,7 +570,9 @@ variable refresh rate.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">Sent if the server rejects the changes or failed to apply them.
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">Sent if the server rejects the changes or failed to apply them.
 </div>
             </li>
             

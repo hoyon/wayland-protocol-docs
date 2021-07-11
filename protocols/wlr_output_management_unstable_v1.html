@@ -10,13 +10,13 @@
     <link rel="stylesheet" href="&#x2f;wayland-protocol-docs/main.css"></link>
      
   </head>
-  <body class="bg-near-white black-70 flex sans-serif ph4-l">
+  <body class="black-70 flex sans-serif ph4-l">
 
     
 
-    <div id="sidebar" class="w-20 br b--white bw3">
-      <div class="fixed h-100">
-        <a href="&#x2f;wayland-protocol-docs/" class="f4 link near-black dim lh-title">
+    <div id="sidebar" class="w-20">
+      <div class="fixed vh-100 overflow-y-auto w-20">
+        <a href="&#x2f;wayland-protocol-docs/" class="f4 link near-black dim lh-title db mt3">
           Home
         </a>
         
@@ -378,7 +378,13 @@ The client must not send any more requests after this one.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">This event introduces a new head. This happens whenever a new head
+              
+                <div class="courier">
+                  <span class="purple">struct zwlr_output_head_v1*</span> head  
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">This event introduces a new head. This happens whenever a new head
 appears (e.g. a monitor is plugged in) or after the output manager is
 bound.
 </div>
@@ -395,7 +401,13 @@ bound.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">This event is sent after all information has been sent after binding to
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> serial <span class="green">/* current configuration serial */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">This event is sent after all information has been sent after binding to
 the output manager object and after any subsequent changes. This applies
 to child head and mode objects as well. In other words, this event is
 sent whenever a head or mode is created or destroyed and whenever one of
@@ -420,7 +432,9 @@ A serial is sent to be used in a future create_configuration request.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">This event indicates that the compositor is done sending manager events.
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">This event indicates that the compositor is done sending manager events.
 The compositor will destroy the object immediately after sending this
 event, so it will become invalid and the client should release any
 resources associated with it.
@@ -471,7 +485,13 @@ in which properties are sent.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">This event describes the head name.
+              
+                <div class="courier">
+                  <span class="purple">const char*</span> name  
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">This event describes the head name.
 
 The naming convention is compositor defined, but limited to alphanumeric
 characters and dashes (-). Each name is unique among all wlr_output_head
@@ -503,7 +523,13 @@ the lifetime of the wlr_output_head object.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">This event describes a human-readable description of the head.
+              
+                <div class="courier">
+                  <span class="purple">const char*</span> description  
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">This event describes a human-readable description of the head.
 
 The description is a UTF-8 string with no convention defined for its
 contents. Examples might include &#x27;Foocorp 11&quot; Display&#x27; or &#x27;Virtual X11
@@ -531,7 +557,17 @@ change over the lifetime of the wlr_output_head object.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">This event describes the physical size of the head. This event is only
+              
+                <div class="courier">
+                  <span class="purple">int32_t</span> width <span class="green">/* width in millimeters of the output */</span> 
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">int32_t</span> height <span class="green">/* height in millimeters of the output */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">This event describes the physical size of the head. This event is only
 sent if the head has a physical size (e.g. is not a projector or a
 virtual device).
 </div>
@@ -548,7 +584,13 @@ virtual device).
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">This event introduces a mode for this head. It is sent once per
+              
+                <div class="courier">
+                  <span class="purple">struct zwlr_output_mode_v1*</span> mode  
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">This event introduces a mode for this head. It is sent once per
 supported mode.
 </div>
             </li>
@@ -564,7 +606,13 @@ supported mode.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">This event describes whether the head is enabled. A disabled head is not
+              
+                <div class="courier">
+                  <span class="purple">int32_t</span> enabled <span class="green">/* zero if disabled, non-zero if enabled */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">This event describes whether the head is enabled. A disabled head is not
 mapped to a region of the global compositor space.
 
 When a head is disabled, some properties (current_mode, position,
@@ -583,7 +631,13 @@ transform and scale) are irrelevant.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">This event describes the mode currently in use for this head. It is only
+              
+                <div class="courier">
+                  <span class="purple">struct zwlr_output_mode_v1*</span> mode  
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">This event describes the mode currently in use for this head. It is only
 sent if the output is enabled.
 </div>
             </li>
@@ -599,7 +653,17 @@ sent if the output is enabled.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">This events describes the position of the head in the global compositor
+              
+                <div class="courier">
+                  <span class="purple">int32_t</span> x <span class="green">/* x position within the global compositor space */</span> 
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">int32_t</span> y <span class="green">/* y position within the global compositor space */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">This events describes the position of the head in the global compositor
 space. It is only sent if the output is enabled.
 </div>
             </li>
@@ -615,7 +679,13 @@ space. It is only sent if the output is enabled.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">This event describes the transformation currently applied to the head.
+              
+                <div class="courier">
+                  <span class="purple">int32_t</span> transform  
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">This event describes the transformation currently applied to the head.
 It is only sent if the output is enabled.
 </div>
             </li>
@@ -631,7 +701,13 @@ It is only sent if the output is enabled.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">This events describes the scale of the head in the global compositor
+              
+                <div class="courier">
+                  <span class="purple">wl_fixed_t</span> scale  
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">This events describes the scale of the head in the global compositor
 space. It is only sent if the output is enabled.
 </div>
             </li>
@@ -647,7 +723,9 @@ space. It is only sent if the output is enabled.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">The compositor will destroy the object immediately after sending this
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">The compositor will destroy the object immediately after sending this
 event, so it will become invalid and the client should release any
 resources associated with it.
 </div>
@@ -664,7 +742,13 @@ resources associated with it.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">This event describes the manufacturer of the head.
+              
+                <div class="courier">
+                  <span class="purple">const char*</span> make  
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">This event describes the manufacturer of the head.
 
 This must report the same make as the wl_output interface does in its
 geometry event.
@@ -696,7 +780,13 @@ that the string provided by the description event should be preferred.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">This event describes the model of the head.
+              
+                <div class="courier">
+                  <span class="purple">const char*</span> model  
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">This event describes the model of the head.
 
 This must report the same model as the wl_output interface does in its
 geometry event.
@@ -728,7 +818,13 @@ that the string provided by the description event should be preferred.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">This event describes the serial number of the head.
+              
+                <div class="courier">
+                  <span class="purple">const char*</span> serial_number  
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">This event describes the serial number of the head.
 
 Together with the make and model events the purpose is to allow clients
 to recognize heads from previous sessions and for example load head-
@@ -786,7 +882,17 @@ in which properties are sent.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">This event describes the mode size. The size is given in physical
+              
+                <div class="courier">
+                  <span class="purple">int32_t</span> width <span class="green">/* width of the mode in hardware units */</span> 
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">int32_t</span> height <span class="green">/* height of the mode in hardware units */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">This event describes the mode size. The size is given in physical
 hardware units of the output device. This is not necessarily the same as
 the output size in the global compositor space. For instance, the output
 may be scaled or transformed.
@@ -804,7 +910,13 @@ may be scaled or transformed.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">This event describes the mode&#x27;s fixed vertical refresh rate. It is only
+              
+                <div class="courier">
+                  <span class="purple">int32_t</span> refresh <span class="green">/* vertical refresh rate in mHz */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">This event describes the mode&#x27;s fixed vertical refresh rate. It is only
 sent if the mode has a fixed refresh rate.
 </div>
             </li>
@@ -820,7 +932,9 @@ sent if the mode has a fixed refresh rate.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">This event advertises this mode as preferred.
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">This event advertises this mode as preferred.
 </div>
             </li>
             
@@ -835,7 +949,9 @@ sent if the mode has a fixed refresh rate.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">The compositor will destroy the object immediately after sending this
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">The compositor will destroy the object immediately after sending this
 event, so it will become invalid and the client should release any
 resources associated with it.
 </div>
@@ -884,7 +1000,7 @@ should destroy the configuration object.
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwlr_output_configuration_v1*</span> zwlr_output_configuration_v1,</div>
     
-      <div class="ws-pre-wrap">    <span class="purple">struct zwlr_output_head_v1*</span> head</div>
+      <div class="ws-pre-wrap">    <span class="purple">struct zwlr_output_head_v1*</span> head <span class="green">/* the head to be enabled */</span></div>
     
   )
 </div>
@@ -909,7 +1025,7 @@ be used to change the head&#x27;s properties.
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwlr_output_configuration_v1*</span> zwlr_output_configuration_v1,</div>
     
-      <div class="ws-pre-wrap">    <span class="purple">struct zwlr_output_head_v1*</span> head</div>
+      <div class="ws-pre-wrap">    <span class="purple">struct zwlr_output_head_v1*</span> head <span class="green">/* the head to be disabled */</span></div>
     
   )
 </div>
@@ -1023,7 +1139,9 @@ via this object.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">Sent after the compositor has successfully applied the changes or
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">Sent after the compositor has successfully applied the changes or
 tested them.
 
 Upon receiving this event, the client should destroy this object.
@@ -1044,7 +1162,9 @@ will be sent followed by a wlr_output_manager.done event.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">Sent if the compositor rejects the changes or failed to apply them. The
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">Sent if the compositor rejects the changes or failed to apply them. The
 compositor should revert any changes made by the apply request that
 triggered this event.
 
@@ -1063,7 +1183,9 @@ Upon receiving this event, the client should destroy this object.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">Sent if the compositor cancels the configuration because the state of an
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">Sent if the compositor cancels the configuration because the state of an
 output changed and the client has outdated information (e.g. after an
 output has been hotplugged).
 
@@ -1134,11 +1256,11 @@ It is a protocol error to set the same property twice.
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwlr_output_configuration_head_v1*</span> zwlr_output_configuration_head_v1,</div>
     
-      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> width,</div>
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> width, <span class="green">/* width of the mode in hardware units */</span></div>
     
-      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> height,</div>
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> height, <span class="green">/* height of the mode in hardware units */</span></div>
     
-      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> refresh</div>
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> refresh <span class="green">/* vertical refresh rate in mHz or zero */</span></div>
     
   )
 </div>
@@ -1166,9 +1288,9 @@ It is a protocol error to set both a mode and a custom mode.
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwlr_output_configuration_head_v1*</span> zwlr_output_configuration_head_v1,</div>
     
-      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> x,</div>
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> x, <span class="green">/* x position in the global compositor space */</span></div>
     
-      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> y</div>
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> y <span class="green">/* y position in the global compositor space */</span></div>
     
   )
 </div>

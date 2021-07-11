@@ -10,13 +10,13 @@
     <link rel="stylesheet" href="&#x2f;wayland-protocol-docs/main.css"></link>
      
   </head>
-  <body class="bg-near-white black-70 flex sans-serif ph4-l">
+  <body class="black-70 flex sans-serif ph4-l">
 
     
 
-    <div id="sidebar" class="w-20 br b--white bw3">
-      <div class="fixed h-100">
-        <a href="&#x2f;wayland-protocol-docs/" class="f4 link near-black dim lh-title">
+    <div id="sidebar" class="w-20">
+      <div class="fixed vh-100 overflow-y-auto w-20">
+        <a href="&#x2f;wayland-protocol-docs/" class="f4 link near-black dim lh-title db mt3">
           Home
         </a>
         
@@ -399,7 +399,13 @@ selection.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">The data_offer event introduces a new wlr_data_control_offer object,
+              
+                <div class="courier">
+                  <span class="purple">struct zwlr_data_control_offer_v1*</span> id  
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">The data_offer event introduces a new wlr_data_control_offer object,
 which will subsequently be used in either the
 wlr_data_control_device.selection event (for the regular clipboard
 selections) or the wlr_data_control_device.primary_selection event (for
@@ -421,7 +427,13 @@ types it offers.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">The selection event is sent out to notify the client of a new
+              
+                <div class="courier">
+                  <span class="purple">struct zwlr_data_control_offer_v1*</span> id  
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">The selection event is sent out to notify the client of a new
 wlr_data_control_offer for the selection for this device. The
 wlr_data_control_device.data_offer and the wlr_data_control_offer.offer
 events are sent out immediately before this event to introduce the data
@@ -447,7 +459,9 @@ wlr_data_control_device object.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">This data control object is no longer valid and should be destroyed by
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">This data control object is no longer valid and should be destroyed by
 the client.
 </div>
             </li>
@@ -463,7 +477,13 @@ the client.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">The primary_selection event is sent out to notify the client of a new
+              
+                <div class="courier">
+                  <span class="purple">struct zwlr_data_control_offer_v1*</span> id  
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">The primary_selection event is sent out to notify the client of a new
 wlr_data_control_offer for the primary selection for this device. The
 wlr_data_control_device.data_offer and the wlr_data_control_offer.offer
 events are sent out immediately before this event to introduce the data
@@ -516,7 +536,7 @@ respond to requests to transfer the data.
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwlr_data_control_source_v1*</span> zwlr_data_control_source_v1,</div>
     
-      <div class="ws-pre-wrap">    <span class="purple">const char*</span> mime_type</div>
+      <div class="ws-pre-wrap">    <span class="purple">const char*</span> mime_type <span class="green">/* MIME type offered by the data source */</span></div>
     
   )
 </div>
@@ -568,7 +588,17 @@ error.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">Request for data from the client. Send the data as the specified MIME
+              
+                <div class="courier">
+                  <span class="purple">const char*</span> mime_type <span class="green">/* MIME type for the data */</span> 
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">int32_t</span> fd <span class="green">/* file descriptor for the data */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">Request for data from the client. Send the data as the specified MIME
 type over the passed file descriptor, then close it.
 </div>
             </li>
@@ -584,7 +614,9 @@ type over the passed file descriptor, then close it.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">This data source is no longer valid. The data source has been replaced
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">This data source is no longer valid. The data source has been replaced
 by another data source.
 
 The client should clean up and destroy this data source.
@@ -628,9 +660,9 @@ for transferring the data directly from the source client.
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwlr_data_control_offer_v1*</span> zwlr_data_control_offer_v1,</div>
     
-      <div class="ws-pre-wrap">    <span class="purple">const char*</span> mime_type,</div>
+      <div class="ws-pre-wrap">    <span class="purple">const char*</span> mime_type, <span class="green">/* MIME type desired by receiver */</span></div>
     
-      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> fd</div>
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> fd <span class="green">/* file descriptor for data transfer */</span></div>
     
   )
 </div>
@@ -687,7 +719,13 @@ This request may happen multiple times for different MIME types.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">Sent immediately after creating the wlr_data_control_offer object.
+              
+                <div class="courier">
+                  <span class="purple">const char*</span> mime_type <span class="green">/* offered MIME type */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">Sent immediately after creating the wlr_data_control_offer object.
 One event per offered MIME type.
 </div>
             </li>

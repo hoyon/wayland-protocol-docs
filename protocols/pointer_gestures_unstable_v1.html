@@ -10,13 +10,13 @@
     <link rel="stylesheet" href="&#x2f;wayland-protocol-docs/main.css"></link>
      
   </head>
-  <body class="bg-near-white black-70 flex sans-serif ph4-l">
+  <body class="black-70 flex sans-serif ph4-l">
 
     
 
-    <div id="sidebar" class="w-20 br b--white bw3">
-      <div class="fixed h-100">
-        <a href="&#x2f;wayland-protocol-docs/" class="f4 link near-black dim lh-title">
+    <div id="sidebar" class="w-20">
+      <div class="fixed vh-100 overflow-y-auto w-20">
+        <a href="&#x2f;wayland-protocol-docs/" class="f4 link near-black dim lh-title db mt3">
           Home
         </a>
         
@@ -316,7 +316,25 @@ actions until the end of a gesture has been received.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">This event is sent when a multi-finger swipe gesture is detected
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> serial  
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> time <span class="green">/* timestamp with millisecond granularity */</span> 
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">struct wl_surface*</span> surface  
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> fingers <span class="green">/* number of fingers */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">This event is sent when a multi-finger swipe gesture is detected
 on the device.
   </div>
             </li>
@@ -332,7 +350,21 @@ on the device.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">This event is sent when a multi-finger swipe gesture changes the
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> time <span class="green">/* timestamp with millisecond granularity */</span> 
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">wl_fixed_t</span> dx <span class="green">/* delta x coordinate in surface coordinate space */</span> 
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">wl_fixed_t</span> dy <span class="green">/* delta y coordinate in surface coordinate space */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">This event is sent when a multi-finger swipe gesture changes the
 position of the logical center.
 
 The dx and dy coordinates are relative coordinates of the logical
@@ -351,7 +383,21 @@ center of the gesture compared to the previous event.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">This event is sent when a multi-finger swipe gesture ceases to
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> serial  
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> time <span class="green">/* timestamp with millisecond granularity */</span> 
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">int32_t</span> cancelled <span class="green">/* 1 if the gesture was cancelled, 0 otherwise */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">This event is sent when a multi-finger swipe gesture ceases to
 be valid. This may happen when one or more fingers are lifted or
 the gesture is cancelled.
 
@@ -432,7 +478,25 @@ actions until the end of a gesture has been received.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">This event is sent when a multi-finger pinch gesture is detected
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> serial  
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> time <span class="green">/* timestamp with millisecond granularity */</span> 
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">struct wl_surface*</span> surface  
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> fingers <span class="green">/* number of fingers */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">This event is sent when a multi-finger pinch gesture is detected
 on the device.
   </div>
             </li>
@@ -448,7 +512,29 @@ on the device.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">This event is sent when a multi-finger pinch gesture changes the
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> time <span class="green">/* timestamp with millisecond granularity */</span> 
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">wl_fixed_t</span> dx <span class="green">/* delta x coordinate in surface coordinate space */</span> 
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">wl_fixed_t</span> dy <span class="green">/* delta y coordinate in surface coordinate space */</span> 
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">wl_fixed_t</span> scale <span class="green">/* scale relative to the initial finger position */</span> 
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">wl_fixed_t</span> rotation <span class="green">/* angle in degrees cw relative to the previous event */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">This event is sent when a multi-finger pinch gesture changes the
 position of the logical center, the rotation or the relative scale.
 
 The dx and dy coordinates are relative coordinates in the
@@ -474,7 +560,21 @@ pointer_gesture_pinch.begin or pointer_gesture_pinch.update event.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">This event is sent when a multi-finger pinch gesture ceases to
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> serial  
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> time <span class="green">/* timestamp with millisecond granularity */</span> 
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">int32_t</span> cancelled <span class="green">/* 1 if the gesture was cancelled, 0 otherwise */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">This event is sent when a multi-finger pinch gesture ceases to
 be valid. This may happen when one or more fingers are lifted or
 the gesture is cancelled.
 

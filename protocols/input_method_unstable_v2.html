@@ -10,13 +10,13 @@
     <link rel="stylesheet" href="&#x2f;wayland-protocol-docs/main.css"></link>
      
   </head>
-  <body class="bg-near-white black-70 flex sans-serif ph4-l">
+  <body class="black-70 flex sans-serif ph4-l">
 
     
 
-    <div id="sidebar" class="w-20 br b--white bw3">
-      <div class="fixed h-100">
-        <a href="&#x2f;wayland-protocol-docs/" class="f4 link near-black dim lh-title">
+    <div id="sidebar" class="w-20">
+      <div class="fixed vh-100 overflow-y-auto w-20">
+        <a href="&#x2f;wayland-protocol-docs/" class="f4 link near-black dim lh-title db mt3">
           Home
         </a>
         
@@ -517,7 +517,9 @@ zwp_input_method_keyboard_grab_v2.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">Notification that a text input focused on this seat requested the input
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">Notification that a text input focused on this seat requested the input
 method to be activated.
 
 This event serves the purpose of providing the compositor with an
@@ -550,7 +552,9 @@ the next zwp_input_method_v2.done event, and stay valid until changed.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">Notification that no focused text input currently needs an active 
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">Notification that no focused text input currently needs an active 
 input method on this seat.
 
 This event marks the zwp_input_method_v2 object as inactive. The
@@ -573,7 +577,21 @@ the next zwp_input_method_v2.done event, and stay valid until changed.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">Updates the surrounding plain text around the cursor, excluding the
+              
+                <div class="courier">
+                  <span class="purple">const char*</span> text  
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> cursor  
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> anchor  
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">Updates the surrounding plain text around the cursor, excluding the
 preedit text.
 
 If any preedit text is present, it is replaced with the cursor for the
@@ -616,7 +634,13 @@ get applied, subsequent attempts to change them may have no effect.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">Tells the input method why the text surrounding the cursor changed.
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> cause  
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">Tells the input method why the text surrounding the cursor changed.
 
 Whenever the client detects an external change in text, cursor, or
 anchor position, it must issue this request to the compositor. This
@@ -645,7 +669,17 @@ The initial value of cause is input_method.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">Indicates the content type and hint for the current
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> hint  
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> purpose  
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">Indicates the content type and hint for the current
 zwp_input_method_v2 instance.
 
 Values set with this event are double-buffered. They will get applied
@@ -667,7 +701,9 @@ is normal.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">Atomically applies state changes recently sent to the client.
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">Atomically applies state changes recently sent to the client.
 
 The done event establishes and updates the state of the client, and
 must be issued after any changes to apply them.
@@ -698,7 +734,9 @@ Neither current nor pending state are modified unless noted otherwise.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">The input method ceased to be available.
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">The input method ceased to be available.
 
 The compositor must issue this event as the only event on the object if
 there was another input_method object associated with the same seat at
@@ -777,7 +815,25 @@ zwp_input_popup_surface_v2 object exists.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">Notify about the position of the area of the text input expressed as a
+              
+                <div class="courier">
+                  <span class="purple">int32_t</span> x  
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">int32_t</span> y  
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">int32_t</span> width  
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">int32_t</span> height  
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">Notify about the position of the area of the text input expressed as a
 rectangle in surface local coordinates.
 
 This is a hint to the input method telling it the relative position of
@@ -843,7 +899,21 @@ grab of the wl_keyboard interface associated with the seat.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">This event provides a file descriptor to the client which can be
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> format <span class="green">/* keymap format */</span> 
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">int32_t</span> fd <span class="green">/* keymap file descriptor */</span> 
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> size <span class="green">/* keymap size, in bytes */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">This event provides a file descriptor to the client which can be
 memory-mapped to provide a keyboard mapping description.
 </div>
             </li>
@@ -859,7 +929,25 @@ memory-mapped to provide a keyboard mapping description.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">A key was pressed or released.
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> serial <span class="green">/* serial number of the key event */</span> 
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> time <span class="green">/* timestamp with millisecond granularity */</span> 
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> key <span class="green">/* key that produced the event */</span> 
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> state <span class="green">/* physical state of the key */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">A key was pressed or released.
 The time argument is a timestamp with millisecond granularity, with an
 undefined base.
 </div>
@@ -876,7 +964,29 @@ undefined base.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">Notifies clients that the modifier and&#x2f;or group state has changed, and
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> serial <span class="green">/* serial number of the modifiers event */</span> 
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> mods_depressed <span class="green">/* depressed modifiers */</span> 
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> mods_latched <span class="green">/* latched modifiers */</span> 
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> mods_locked <span class="green">/* locked modifiers */</span> 
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> group <span class="green">/* keyboard layout */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">Notifies clients that the modifier and&#x2f;or group state has changed, and
 it should update its local state.
 </div>
             </li>
@@ -892,7 +1002,17 @@ it should update its local state.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">Informs the client about the keyboard&#x27;s repeat rate and delay.
+              
+                <div class="courier">
+                  <span class="purple">int32_t</span> rate <span class="green">/* the rate of repeating keys in characters per second */</span> 
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">int32_t</span> delay <span class="green">/* delay in milliseconds since key down until repeating starts */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">Informs the client about the keyboard&#x27;s repeat rate and delay.
 
 This event is sent as soon as the zwp_input_method_keyboard_grab_v2
 object has been created, and is guaranteed to be received by the

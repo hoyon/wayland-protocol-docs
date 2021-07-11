@@ -10,13 +10,13 @@
     <link rel="stylesheet" href="&#x2f;wayland-protocol-docs/main.css"></link>
      
   </head>
-  <body class="bg-near-white black-70 flex sans-serif ph4-l">
+  <body class="black-70 flex sans-serif ph4-l">
 
     
 
-    <div id="sidebar" class="w-20 br b--white bw3">
-      <div class="fixed h-100">
-        <a href="&#x2f;wayland-protocol-docs/" class="f4 link near-black dim lh-title">
+    <div id="sidebar" class="w-20">
+      <div class="fixed vh-100 overflow-y-auto w-20">
+        <a href="&#x2f;wayland-protocol-docs/" class="f4 link near-black dim lh-title db mt3">
           Home
         </a>
         
@@ -1044,7 +1044,21 @@ possible to avoid wasting memory.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">The error event is sent out when a fatal (non-recoverable)
+              
+                <div class="courier">
+                  <span class="purple">struct void*</span> object_id <span class="green">/* object where the error occurred */</span> 
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> code <span class="green">/* error code */</span> 
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">const char*</span> message <span class="green">/* error description */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">The error event is sent out when a fatal (non-recoverable)
 error has occurred.  The object_id argument is the object
 where the error occurred, most often in response to a request
 to that object.  The code identifies the error and is defined
@@ -1065,7 +1079,13 @@ of the error, for (debugging) convenience.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">This event is used internally by the object ID management
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> id <span class="green">/* deleted object ID */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">This event is used internally by the object ID management
 logic. When a client deletes an object that it had created,
 the server will send this event to acknowledge that it has
 seen the delete request. When the client receives this event,
@@ -1126,7 +1146,7 @@ the object.
     
       <div class="ws-pre-wrap">    <span class="purple">struct wl_registry*</span> wl_registry,</div>
     
-      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> name</div>
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> name <span class="green">/* unique numeric name of the object */</span></div>
     
   )
 </div>
@@ -1153,7 +1173,21 @@ specified name as the identifier.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">Notify the client of global objects.
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> name <span class="green">/* numeric name of the global object */</span> 
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">const char*</span> interface <span class="green">/* interface implemented by the object */</span> 
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> version <span class="green">/* interface version */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">Notify the client of global objects.
 
 The event notifies the client that a global object with
 the given name is now available, and it implements the
@@ -1172,7 +1206,13 @@ given version of the given interface.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">Notify the client of removed global objects.
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> name <span class="green">/* numeric name of the global object */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">Notify the client of removed global objects.
 
 This event notifies the client that the global identified
 by name is no longer available.  If the client bound to
@@ -1218,7 +1258,13 @@ the related request is done.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">Notify the client when the related request is done.
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> callback_data <span class="green">/* request-specific data for the callback */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">Notify the client when the related request is done.
   </div>
             </li>
             
@@ -1329,15 +1375,15 @@ a surface or for many small buffers.
     
       <div class="ws-pre-wrap">    <span class="purple">struct wl_shm_pool*</span> wl_shm_pool,</div>
     
-      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> offset,</div>
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> offset, <span class="green">/* buffer byte offset within the pool */</span></div>
     
-      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> width,</div>
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> width, <span class="green">/* buffer width, in pixels */</span></div>
     
-      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> height,</div>
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> height, <span class="green">/* buffer height, in pixels */</span></div>
     
-      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> stride,</div>
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> stride, <span class="green">/* number of bytes from the beginning of one row to the beginning of the next row */</span></div>
     
-      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> format</div>
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> format <span class="green">/* buffer pixel format */</span></div>
     
   )
 </div>
@@ -1397,7 +1443,7 @@ are gone.
     
       <div class="ws-pre-wrap">    <span class="purple">struct wl_shm_pool*</span> wl_shm_pool,</div>
     
-      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> size</div>
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> size <span class="green">/* new size of the pool, in bytes */</span></div>
     
   )
 </div>
@@ -1453,9 +1499,9 @@ that can be used for buffers.
     
       <div class="ws-pre-wrap">    <span class="purple">struct wl_shm*</span> wl_shm,</div>
     
-      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> fd,</div>
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> fd, <span class="green">/* file descriptor for the pool */</span></div>
     
-      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> size</div>
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> size <span class="green">/* pool size, in bytes */</span></div>
     
   )
 </div>
@@ -1485,7 +1531,13 @@ descriptor, to use as backing memory for the pool.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">Informs the client about a valid pixel format that
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> format <span class="green">/* buffer pixel format */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">Informs the client about a valid pixel format that
 can be used for buffers. Known formats include
 argb8888 and xrgb8888.
   </div>
@@ -1556,7 +1608,9 @@ For possible side-effects to a surface, see wl_surface.attach.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">Sent when this wl_buffer is no longer used by the compositor.
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">Sent when this wl_buffer is no longer used by the compositor.
 The client is now free to reuse or destroy this buffer and its
 backing storage.
 
@@ -1610,9 +1664,9 @@ data directly from the source client.
     
       <div class="ws-pre-wrap">    <span class="purple">struct wl_data_offer*</span> wl_data_offer,</div>
     
-      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> serial,</div>
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> serial, <span class="green">/* serial number of the accept request */</span></div>
     
-      <div class="ws-pre-wrap">    <span class="purple">const char*</span> mime_type</div>
+      <div class="ws-pre-wrap">    <span class="purple">const char*</span> mime_type <span class="green">/* mime type accepted by the client */</span></div>
     
   )
 </div>
@@ -1649,9 +1703,9 @@ conjunction with wl_data_source.action for feedback.
     
       <div class="ws-pre-wrap">    <span class="purple">struct wl_data_offer*</span> wl_data_offer,</div>
     
-      <div class="ws-pre-wrap">    <span class="purple">const char*</span> mime_type,</div>
+      <div class="ws-pre-wrap">    <span class="purple">const char*</span> mime_type, <span class="green">/* mime type desired by receiver */</span></div>
     
-      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> fd</div>
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> fd <span class="green">/* file descriptor for data transfer */</span></div>
     
   )
 </div>
@@ -1746,9 +1800,9 @@ operation, the invalid_finish protocol error is raised.
     
       <div class="ws-pre-wrap">    <span class="purple">struct wl_data_offer*</span> wl_data_offer,</div>
     
-      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> dnd_actions,</div>
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> dnd_actions, <span class="green">/* actions supported by the destination client */</span></div>
     
-      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> preferred_action</div>
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> preferred_action <span class="green">/* action preferred by the destination client */</span></div>
     
   )
 </div>
@@ -1804,7 +1858,13 @@ will be raised otherwise.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">Sent immediately after creating the wl_data_offer object.  One
+              
+                <div class="courier">
+                  <span class="purple">const char*</span> mime_type <span class="green">/* offered mime type */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">Sent immediately after creating the wl_data_offer object.  One
 event per offered mime type.
   </div>
             </li>
@@ -1820,7 +1880,13 @@ event per offered mime type.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">This event indicates the actions offered by the data source. It
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> source_actions <span class="green">/* actions offered by the data source */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">This event indicates the actions offered by the data source. It
 will be sent right after wl_data_device.enter, or anytime the source
 side changes its offered actions through wl_data_source.set_actions.
   </div>
@@ -1837,7 +1903,13 @@ side changes its offered actions through wl_data_source.set_actions.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">This event indicates the action selected by the compositor after
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> dnd_action <span class="green">/* action selected by the compositor */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">This event indicates the action selected by the compositor after
 matching the source&#x2f;destination side actions. Only one action (or
 none) will be offered here.
 
@@ -1912,7 +1984,7 @@ to requests to transfer the data.
     
       <div class="ws-pre-wrap">    <span class="purple">struct wl_data_source*</span> wl_data_source,</div>
     
-      <div class="ws-pre-wrap">    <span class="purple">const char*</span> mime_type</div>
+      <div class="ws-pre-wrap">    <span class="purple">const char*</span> mime_type <span class="green">/* mime type offered by the data source */</span></div>
     
   )
 </div>
@@ -1960,7 +2032,7 @@ multiple types.
     
       <div class="ws-pre-wrap">    <span class="purple">struct wl_data_source*</span> wl_data_source,</div>
     
-      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> dnd_actions</div>
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> dnd_actions <span class="green">/* actions supported by the data source */</span></div>
     
   )
 </div>
@@ -1998,7 +2070,13 @@ for drag-and-drop will raise a protocol error.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">Sent when a target accepts pointer_focus or motion events.  If
+              
+                <div class="courier">
+                  <span class="purple">const char*</span> mime_type <span class="green">/* mime type accepted by the target */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">Sent when a target accepts pointer_focus or motion events.  If
 a target does not accept any of the offered types, type is NULL.
 
 Used for feedback during drag-and-drop.
@@ -2016,7 +2094,17 @@ Used for feedback during drag-and-drop.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">Request for data from the client.  Send the data as the
+              
+                <div class="courier">
+                  <span class="purple">const char*</span> mime_type <span class="green">/* mime type for the data */</span> 
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">int32_t</span> fd <span class="green">/* file descriptor for the data */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">Request for data from the client.  Send the data as the
 specified mime type over the passed file descriptor, then
 close it.
   </div>
@@ -2033,7 +2121,9 @@ close it.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">This data source is no longer valid. There are several reasons why
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">This data source is no longer valid. There are several reasons why
 this could happen:
 
 - The data source has been replaced by another data source.
@@ -2067,7 +2157,9 @@ source.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">The user performed the drop action. This event does not indicate
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">The user performed the drop action. This event does not indicate
 acceptance, wl_data_source.cancelled may still be emitted afterwards
 if the drop destination does not accept any mime type.
 
@@ -2090,7 +2182,9 @@ not be destroyed here.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">The drop destination finished interoperating with this data
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">The drop destination finished interoperating with this data
 source, so the client is now free to destroy this data source and
 free all associated data.
 
@@ -2110,7 +2204,13 @@ source can now delete the transferred data.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">This event indicates the action selected by the compositor after
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> dnd_action <span class="green">/* action selected by the compositor */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">This event indicates the action selected by the compositor after
 matching the source&#x2f;destination side actions. Only one action (or
 none) will be offered here.
 
@@ -2176,13 +2276,13 @@ mechanisms such as copy-and-paste and drag-and-drop.
     
       <div class="ws-pre-wrap">    <span class="purple">struct wl_data_device*</span> wl_data_device,</div>
     
-      <div class="ws-pre-wrap">    <span class="purple">struct wl_data_source*</span> source,</div>
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_data_source*</span> source, <span class="green">/* data source for the eventual transfer */</span></div>
     
-      <div class="ws-pre-wrap">    <span class="purple">struct wl_surface*</span> origin,</div>
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_surface*</span> origin, <span class="green">/* surface where the drag originates */</span></div>
     
-      <div class="ws-pre-wrap">    <span class="purple">struct wl_surface*</span> icon,</div>
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_surface*</span> icon, <span class="green">/* drag-and-drop icon surface */</span></div>
     
-      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> serial</div>
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> serial <span class="green">/* serial number of the implicit grab on the origin */</span></div>
     
   )
 </div>
@@ -2233,9 +2333,9 @@ undefined, and the wl_surface is unmapped.
     
       <div class="ws-pre-wrap">    <span class="purple">struct wl_data_device*</span> wl_data_device,</div>
     
-      <div class="ws-pre-wrap">    <span class="purple">struct wl_data_source*</span> source,</div>
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_data_source*</span> source, <span class="green">/* data source for the selection */</span></div>
     
-      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> serial</div>
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> serial <span class="green">/* serial number of the event that triggered this request */</span></div>
     
   )
 </div>
@@ -2286,7 +2386,13 @@ To unset the selection, set the source to NULL.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">The data_offer event introduces a new wl_data_offer object,
+              
+                <div class="courier">
+                  <span class="purple">struct wl_data_offer*</span> id <span class="green">/* the new data_offer object */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">The data_offer event introduces a new wl_data_offer object,
 which will subsequently be used in either the
 data_device.enter event (for drag-and-drop) or the
 data_device.selection event (for selections).  Immediately
@@ -2307,7 +2413,29 @@ mime types it offers.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">This event is sent when an active drag-and-drop pointer enters
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> serial <span class="green">/* serial number of the enter event */</span> 
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">struct wl_surface*</span> surface <span class="green">/* client surface entered */</span> 
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">wl_fixed_t</span> x <span class="green">/* surface-local x coordinate */</span> 
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">wl_fixed_t</span> y <span class="green">/* surface-local y coordinate */</span> 
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">struct wl_data_offer*</span> id <span class="green">/* source data_offer object */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">This event is sent when an active drag-and-drop pointer enters
 a surface owned by the client.  The position of the pointer at
 enter time is provided by the x and y arguments, in surface-local
 coordinates.
@@ -2325,7 +2453,9 @@ coordinates.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">This event is sent when the drag-and-drop pointer leaves the
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">This event is sent when the drag-and-drop pointer leaves the
 surface and the session ends.  The client must destroy the
 wl_data_offer introduced at enter time at this point.
   </div>
@@ -2342,7 +2472,21 @@ wl_data_offer introduced at enter time at this point.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">This event is sent when the drag-and-drop pointer moves within
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> time <span class="green">/* timestamp with millisecond granularity */</span> 
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">wl_fixed_t</span> x <span class="green">/* surface-local x coordinate */</span> 
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">wl_fixed_t</span> y <span class="green">/* surface-local y coordinate */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">This event is sent when the drag-and-drop pointer moves within
 the currently focused surface. The new position of the pointer
 is provided by the x and y arguments, in surface-local
 coordinates.
@@ -2360,7 +2504,9 @@ coordinates.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">The event is sent when a drag-and-drop operation is ended
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">The event is sent when a drag-and-drop operation is ended
 because the implicit grab is removed.
 
 The drag-and-drop destination is expected to honor the last action
@@ -2387,7 +2533,13 @@ to cancel the operation.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">The selection event is sent out to notify the client of a new
+              
+                <div class="courier">
+                  <span class="purple">struct wl_data_offer*</span> id <span class="green">/* selection data_offer object */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">The selection event is sent out to notify the client of a new
 wl_data_offer for the selection for this device.  The
 data_device.data_offer and the data_offer.offer events are
 sent out immediately before this event to introduce the data
@@ -2466,7 +2618,7 @@ wl_data_offer.accept and wl_data_offer.finish for details.
     
       <div class="ws-pre-wrap">    <span class="purple">struct wl_data_device_manager*</span> wl_data_device_manager,</div>
     
-      <div class="ws-pre-wrap">    <span class="purple">struct wl_seat*</span> seat</div>
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_seat*</span> seat <span class="green">/* seat associated with the data device */</span></div>
     
   )
 </div>
@@ -2518,7 +2670,7 @@ For desktop-style user interfaces, use xdg_shell.
     
       <div class="ws-pre-wrap">    <span class="purple">struct wl_shell*</span> wl_shell,</div>
     
-      <div class="ws-pre-wrap">    <span class="purple">struct wl_surface*</span> surface</div>
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_surface*</span> surface <span class="green">/* surface to be given the shell surface role */</span></div>
     
   )
 </div>
@@ -2577,7 +2729,7 @@ the wl_surface object.
     
       <div class="ws-pre-wrap">    <span class="purple">struct wl_shell_surface*</span> wl_shell_surface,</div>
     
-      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> serial</div>
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> serial <span class="green">/* serial number of the ping event */</span></div>
     
   )
 </div>
@@ -2602,9 +2754,9 @@ the client may be deemed unresponsive.
     
       <div class="ws-pre-wrap">    <span class="purple">struct wl_shell_surface*</span> wl_shell_surface,</div>
     
-      <div class="ws-pre-wrap">    <span class="purple">struct wl_seat*</span> seat,</div>
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_seat*</span> seat, <span class="green">/* seat whose pointer is used */</span></div>
     
-      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> serial</div>
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> serial <span class="green">/* serial number of the implicit grab on the pointer */</span></div>
     
   )
 </div>
@@ -2632,11 +2784,11 @@ the surface (e.g. fullscreen or maximized).
     
       <div class="ws-pre-wrap">    <span class="purple">struct wl_shell_surface*</span> wl_shell_surface,</div>
     
-      <div class="ws-pre-wrap">    <span class="purple">struct wl_seat*</span> seat,</div>
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_seat*</span> seat, <span class="green">/* seat whose pointer is used */</span></div>
     
-      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> serial,</div>
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> serial, <span class="green">/* serial number of the implicit grab on the pointer */</span></div>
     
-      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> edges</div>
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> edges <span class="green">/* which edge or corner is being dragged */</span></div>
     
   )
 </div>
@@ -2688,13 +2840,13 @@ A toplevel surface is not fullscreen, maximized or transient.
     
       <div class="ws-pre-wrap">    <span class="purple">struct wl_shell_surface*</span> wl_shell_surface,</div>
     
-      <div class="ws-pre-wrap">    <span class="purple">struct wl_surface*</span> parent,</div>
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_surface*</span> parent, <span class="green">/* parent surface */</span></div>
     
-      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> x,</div>
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> x, <span class="green">/* surface-local x coordinate */</span></div>
     
-      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> y,</div>
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> y, <span class="green">/* surface-local y coordinate */</span></div>
     
-      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> flags</div>
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> flags <span class="green">/* transient surface behavior */</span></div>
     
   )
 </div>
@@ -2724,11 +2876,11 @@ The flags argument controls details of the transient behaviour.
     
       <div class="ws-pre-wrap">    <span class="purple">struct wl_shell_surface*</span> wl_shell_surface,</div>
     
-      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> method,</div>
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> method, <span class="green">/* method for resolving size conflict */</span></div>
     
-      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> framerate,</div>
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> framerate, <span class="green">/* framerate in mHz */</span></div>
     
-      <div class="ws-pre-wrap">    <span class="purple">struct wl_output*</span> output</div>
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_output*</span> output <span class="green">/* output on which the surface is to be fullscreen */</span></div>
     
   )
 </div>
@@ -2784,17 +2936,17 @@ be made fullscreen.
     
       <div class="ws-pre-wrap">    <span class="purple">struct wl_shell_surface*</span> wl_shell_surface,</div>
     
-      <div class="ws-pre-wrap">    <span class="purple">struct wl_seat*</span> seat,</div>
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_seat*</span> seat, <span class="green">/* seat whose pointer is used */</span></div>
     
-      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> serial,</div>
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> serial, <span class="green">/* serial number of the implicit grab on the pointer */</span></div>
     
-      <div class="ws-pre-wrap">    <span class="purple">struct wl_surface*</span> parent,</div>
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_surface*</span> parent, <span class="green">/* parent surface */</span></div>
     
-      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> x,</div>
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> x, <span class="green">/* surface-local x coordinate */</span></div>
     
-      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> y,</div>
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> y, <span class="green">/* surface-local y coordinate */</span></div>
     
-      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> flags</div>
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> flags <span class="green">/* transient surface behavior */</span></div>
     
   )
 </div>
@@ -2836,7 +2988,7 @@ parent surface, in surface-local coordinates.
     
       <div class="ws-pre-wrap">    <span class="purple">struct wl_shell_surface*</span> wl_shell_surface,</div>
     
-      <div class="ws-pre-wrap">    <span class="purple">struct wl_output*</span> output</div>
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_output*</span> output <span class="green">/* output on which the surface is to be maximized */</span></div>
     
   )
 </div>
@@ -2877,7 +3029,7 @@ The details depend on the compositor implementation.
     
       <div class="ws-pre-wrap">    <span class="purple">struct wl_shell_surface*</span> wl_shell_surface,</div>
     
-      <div class="ws-pre-wrap">    <span class="purple">const char*</span> title</div>
+      <div class="ws-pre-wrap">    <span class="purple">const char*</span> title <span class="green">/* surface title */</span></div>
     
   )
 </div>
@@ -2907,7 +3059,7 @@ The string must be encoded in UTF-8.
     
       <div class="ws-pre-wrap">    <span class="purple">struct wl_shell_surface*</span> wl_shell_surface,</div>
     
-      <div class="ws-pre-wrap">    <span class="purple">const char*</span> class_</div>
+      <div class="ws-pre-wrap">    <span class="purple">const char*</span> class_ <span class="green">/* surface class */</span></div>
     
   )
 </div>
@@ -2938,7 +3090,13 @@ the application&#x27;s .desktop file as the class.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">Ping a client to check if it is receiving events and sending
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> serial <span class="green">/* serial number of the ping */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">Ping a client to check if it is receiving events and sending
 requests. A client is expected to reply with a pong request.
   </div>
             </li>
@@ -2954,7 +3112,21 @@ requests. A client is expected to reply with a pong request.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">The configure event asks the client to resize its surface.
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> edges <span class="green">/* how the surface was resized */</span> 
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">int32_t</span> width <span class="green">/* new width of the surface */</span> 
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">int32_t</span> height <span class="green">/* new height of the surface */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">The configure event asks the client to resize its surface.
 
 The size is a hint, in the sense that the client is free to
 ignore it if it doesn&#x27;t resize, pick a smaller size (to
@@ -2985,7 +3157,9 @@ in surface-local coordinates.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">The popup_done event is sent out when a popup grab is broken,
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">The popup_done event is sent out when a popup grab is broken,
 that is, when the user clicks a surface that doesn&#x27;t belong
 to the client owning the popup surface.
   </div>
@@ -3087,11 +3261,11 @@ switching is not allowed).
     
       <div class="ws-pre-wrap">    <span class="purple">struct wl_surface*</span> wl_surface,</div>
     
-      <div class="ws-pre-wrap">    <span class="purple">struct wl_buffer*</span> buffer,</div>
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_buffer*</span> buffer, <span class="green">/* buffer of surface contents */</span></div>
     
-      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> x,</div>
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> x, <span class="green">/* surface-local x coordinate */</span></div>
     
-      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> y</div>
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> y <span class="green">/* surface-local y coordinate */</span></div>
     
   )
 </div>
@@ -3160,13 +3334,13 @@ following wl_surface.commit will remove the surface content.
     
       <div class="ws-pre-wrap">    <span class="purple">struct wl_surface*</span> wl_surface,</div>
     
-      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> x,</div>
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> x, <span class="green">/* surface-local x coordinate */</span></div>
     
-      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> y,</div>
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> y, <span class="green">/* surface-local y coordinate */</span></div>
     
-      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> width,</div>
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> width, <span class="green">/* width of damage rectangle */</span></div>
     
-      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> height</div>
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> height <span class="green">/* height of damage rectangle */</span></div>
     
   )
 </div>
@@ -3263,7 +3437,7 @@ milliseconds, with an undefined base.
     
       <div class="ws-pre-wrap">    <span class="purple">struct wl_surface*</span> wl_surface,</div>
     
-      <div class="ws-pre-wrap">    <span class="purple">struct wl_region*</span> region</div>
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_region*</span> region <span class="green">/* opaque region of the surface */</span></div>
     
   )
 </div>
@@ -3310,7 +3484,7 @@ region to be set to empty.
     
       <div class="ws-pre-wrap">    <span class="purple">struct wl_surface*</span> wl_surface,</div>
     
-      <div class="ws-pre-wrap">    <span class="purple">struct wl_region*</span> region</div>
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_region*</span> region <span class="green">/* input region of the surface */</span></div>
     
   )
 </div>
@@ -3393,7 +3567,7 @@ Other interfaces may add further double-buffered surface state.
     
       <div class="ws-pre-wrap">    <span class="purple">struct wl_surface*</span> wl_surface,</div>
     
-      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> transform</div>
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> transform <span class="green">/* transform for interpreting buffer contents */</span></div>
     
   )
 </div>
@@ -3445,7 +3619,7 @@ is raised.
     
       <div class="ws-pre-wrap">    <span class="purple">struct wl_surface*</span> wl_surface,</div>
     
-      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> scale</div>
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> scale <span class="green">/* positive scale for interpreting buffer contents */</span></div>
     
   )
 </div>
@@ -3491,13 +3665,13 @@ raised.
     
       <div class="ws-pre-wrap">    <span class="purple">struct wl_surface*</span> wl_surface,</div>
     
-      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> x,</div>
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> x, <span class="green">/* buffer-local x coordinate */</span></div>
     
-      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> y,</div>
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> y, <span class="green">/* buffer-local y coordinate */</span></div>
     
-      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> width,</div>
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> width, <span class="green">/* width of damage rectangle */</span></div>
     
-      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> height</div>
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> height <span class="green">/* height of damage rectangle */</span></div>
     
   )
 </div>
@@ -3554,7 +3728,13 @@ after receiving the wl_surface.commit.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">This is emitted whenever a surface&#x27;s creation, movement, or resizing
+              
+                <div class="courier">
+                  <span class="purple">struct wl_output*</span> output <span class="green">/* output entered by the surface */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">This is emitted whenever a surface&#x27;s creation, movement, or resizing
 results in some part of it being within the scanout region of an
 output.
 
@@ -3573,7 +3753,13 @@ Note that a surface may be overlapping with zero or more outputs.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">This is emitted whenever a surface&#x27;s creation, movement, or resizing
+              
+                <div class="courier">
+                  <span class="purple">struct wl_output*</span> output <span class="green">/* output left by the surface */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">This is emitted whenever a surface&#x27;s creation, movement, or resizing
 results in it no longer having any part of it within the scanout region
 of an output.
 
@@ -3734,7 +3920,13 @@ use the seat object anymore.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">This is emitted whenever a seat gains or loses the pointer,
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> capabilities <span class="green">/* capabilities of the seat */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">This is emitted whenever a seat gains or loses the pointer,
 keyboard or touch capabilities.  The argument is a capability
 enum containing the complete set of capabilities this seat has.
 
@@ -3772,7 +3964,13 @@ keyboard and touch capabilities, respectively.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">In a multiseat configuration this can be used by the client to help
+              
+                <div class="courier">
+                  <span class="purple">const char*</span> name <span class="green">/* seat identifier */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">In a multiseat configuration this can be used by the client to help
 identify which physical devices the seat represents. Based on
 the seat configuration used by the compositor.
   </div>
@@ -3819,13 +4017,13 @@ and scrolling.
     
       <div class="ws-pre-wrap">    <span class="purple">struct wl_pointer*</span> wl_pointer,</div>
     
-      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> serial,</div>
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> serial, <span class="green">/* serial number of the enter event */</span></div>
     
-      <div class="ws-pre-wrap">    <span class="purple">struct wl_surface*</span> surface,</div>
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_surface*</span> surface, <span class="green">/* pointer surface */</span></div>
     
-      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> hotspot_x,</div>
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> hotspot_x, <span class="green">/* surface-local x coordinate */</span></div>
     
-      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> hotspot_y</div>
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> hotspot_y <span class="green">/* surface-local y coordinate */</span></div>
     
   )
 </div>
@@ -3907,7 +4105,25 @@ wl_pointer_destroy() after using this request.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">Notification that this seat&#x27;s pointer is focused on a certain
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> serial <span class="green">/* serial number of the enter event */</span> 
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">struct wl_surface*</span> surface <span class="green">/* surface entered by the pointer */</span> 
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">wl_fixed_t</span> surface_x <span class="green">/* surface-local x coordinate */</span> 
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">wl_fixed_t</span> surface_y <span class="green">/* surface-local y coordinate */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">Notification that this seat&#x27;s pointer is focused on a certain
 surface.
 
 When a seat&#x27;s focus enters a surface, the pointer image
@@ -3927,7 +4143,17 @@ an appropriate pointer image with the set_cursor request.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">Notification that this seat&#x27;s pointer is no longer focused on
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> serial <span class="green">/* serial number of the leave event */</span> 
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">struct wl_surface*</span> surface <span class="green">/* surface left by the pointer */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">Notification that this seat&#x27;s pointer is no longer focused on
 a certain surface.
 
 The leave notification is sent before the enter notification
@@ -3946,7 +4172,21 @@ for the new focus.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">Notification of pointer location change. The arguments
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> time <span class="green">/* timestamp with millisecond granularity */</span> 
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">wl_fixed_t</span> surface_x <span class="green">/* surface-local x coordinate */</span> 
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">wl_fixed_t</span> surface_y <span class="green">/* surface-local y coordinate */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">Notification of pointer location change. The arguments
 surface_x and surface_y are the location relative to the
 focused surface.
   </div>
@@ -3963,7 +4203,25 @@ focused surface.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">Mouse button click and release notifications.
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> serial <span class="green">/* serial number of the button event */</span> 
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> time <span class="green">/* timestamp with millisecond granularity */</span> 
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> button <span class="green">/* button that produced the event */</span> 
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> state <span class="green">/* physical state of the button */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">Mouse button click and release notifications.
 
 The location of the click is given by the last motion or
 enter event.
@@ -3991,7 +4249,21 @@ protocol.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">Scroll and other axis notifications.
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> time <span class="green">/* timestamp with millisecond granularity */</span> 
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> axis <span class="green">/* axis type */</span> 
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">wl_fixed_t</span> value <span class="green">/* length of vector in surface-local coordinate space */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">Scroll and other axis notifications.
 
 For scroll events (vertical and horizontal scroll axes), the
 value parameter is the length of a vector along the specified
@@ -4021,7 +4293,9 @@ scroll distance.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">Indicates the end of a set of events that logically belong together.
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">Indicates the end of a set of events that logically belong together.
 A client is expected to accumulate the data in all events within the
 frame before proceeding.
 
@@ -4069,7 +4343,13 @@ groups.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">Source information for scroll and other axes.
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> axis_source <span class="green">/* source of the axis event */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">Source information for scroll and other axes.
 
 This event does not occur on its own. It is sent before a
 wl_pointer.frame event and carries the source information for
@@ -4108,7 +4388,17 @@ not guaranteed.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">Stop notification for scroll and other axes.
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> time <span class="green">/* timestamp with millisecond granularity */</span> 
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> axis <span class="green">/* the axis stopped with this event */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">Stop notification for scroll and other axes.
 
 For some wl_pointer.axis_source types, a wl_pointer.axis_stop event
 is sent to notify a client that the axis sequence has terminated.
@@ -4136,7 +4426,17 @@ preceding wl_pointer.axis event.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">Discrete step information for scroll and other axes.
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> axis <span class="green">/* axis type */</span> 
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">int32_t</span> discrete <span class="green">/* number of steps */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">Discrete step information for scroll and other axes.
 
 This event carries the axis value of the wl_pointer.axis event in
 discrete steps (e.g. mouse wheel clicks).
@@ -4223,7 +4523,21 @@ associated with a seat.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">This event provides a file descriptor to the client which can be
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> format <span class="green">/* keymap format */</span> 
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">int32_t</span> fd <span class="green">/* keymap file descriptor */</span> 
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> size <span class="green">/* keymap size, in bytes */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">This event provides a file descriptor to the client which can be
 memory-mapped to provide a keyboard mapping description.
 
 From version 7 onwards, the fd must be mapped with MAP_PRIVATE by
@@ -4242,7 +4556,21 @@ the recipient, as MAP_SHARED may fail.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">Notification that this seat&#x27;s keyboard focus is on a certain
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> serial <span class="green">/* serial number of the enter event */</span> 
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">struct wl_surface*</span> surface <span class="green">/* surface gaining keyboard focus */</span> 
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">struct wl_array*</span> keys <span class="green">/* the currently pressed keys */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">Notification that this seat&#x27;s keyboard focus is on a certain
 surface.
 
 The compositor must send the wl_keyboard.modifiers event after this
@@ -4261,7 +4589,17 @@ event.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">Notification that this seat&#x27;s keyboard focus is no longer on
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> serial <span class="green">/* serial number of the leave event */</span> 
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">struct wl_surface*</span> surface <span class="green">/* surface that lost keyboard focus */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">Notification that this seat&#x27;s keyboard focus is no longer on
 a certain surface.
 
 The leave notification is sent before the enter notification
@@ -4283,7 +4621,25 @@ are lifted and also it must stop key repeating if there&#x27;s some going on.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">A key was pressed or released.
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> serial <span class="green">/* serial number of the key event */</span> 
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> time <span class="green">/* timestamp with millisecond granularity */</span> 
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> key <span class="green">/* key that produced the event */</span> 
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> state <span class="green">/* physical state of the key */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">A key was pressed or released.
 The time argument is a timestamp with millisecond
 granularity, with an undefined base.
 
@@ -4306,7 +4662,29 @@ wl_keyboard.modifiers event must be sent after this event.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">Notifies clients that the modifier and&#x2f;or group state has
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> serial <span class="green">/* serial number of the modifiers event */</span> 
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> mods_depressed <span class="green">/* depressed modifiers */</span> 
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> mods_latched <span class="green">/* latched modifiers */</span> 
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> mods_locked <span class="green">/* locked modifiers */</span> 
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> group <span class="green">/* keyboard layout */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">Notifies clients that the modifier and&#x2f;or group state has
 changed, and it should update its local state.
   </div>
             </li>
@@ -4322,7 +4700,17 @@ changed, and it should update its local state.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">Informs the client about the keyboard&#x27;s repeat rate and delay.
+              
+                <div class="courier">
+                  <span class="purple">int32_t</span> rate <span class="green">/* the rate of repeating keys in characters per second */</span> 
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">int32_t</span> delay <span class="green">/* delay in milliseconds since key down until repeating starts */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">Informs the client about the keyboard&#x27;s repeat rate and delay.
 
 This event is sent as soon as the wl_keyboard object has been created,
 and is guaranteed to be received by the client before any key press
@@ -4401,7 +4789,33 @@ contact point can be identified by the ID of the sequence.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">A new touch point has appeared on the surface. This touch point is
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> serial <span class="green">/* serial number of the touch down event */</span> 
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> time <span class="green">/* timestamp with millisecond granularity */</span> 
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">struct wl_surface*</span> surface <span class="green">/* surface touched */</span> 
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">int32_t</span> id <span class="green">/* the unique ID of this touch point */</span> 
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">wl_fixed_t</span> x <span class="green">/* surface-local x coordinate */</span> 
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">wl_fixed_t</span> y <span class="green">/* surface-local y coordinate */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">A new touch point has appeared on the surface. This touch point is
 assigned a unique ID. Future events from this touch point reference
 this ID. The ID ceases to be valid after a touch up event and may be
 reused in the future.
@@ -4419,7 +4833,21 @@ reused in the future.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">The touch point has disappeared. No further events will be sent for
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> serial <span class="green">/* serial number of the touch up event */</span> 
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> time <span class="green">/* timestamp with millisecond granularity */</span> 
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">int32_t</span> id <span class="green">/* the unique ID of this touch point */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">The touch point has disappeared. No further events will be sent for
 this touch point and the touch point&#x27;s ID is released and may be
 reused in a future touch down event.
   </div>
@@ -4436,7 +4864,25 @@ reused in a future touch down event.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">A touch point has changed coordinates.
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> time <span class="green">/* timestamp with millisecond granularity */</span> 
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">int32_t</span> id <span class="green">/* the unique ID of this touch point */</span> 
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">wl_fixed_t</span> x <span class="green">/* surface-local x coordinate */</span> 
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">wl_fixed_t</span> y <span class="green">/* surface-local y coordinate */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">A touch point has changed coordinates.
   </div>
             </li>
             
@@ -4451,7 +4897,9 @@ reused in a future touch down event.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">Indicates the end of a set of events that logically belong together.
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">Indicates the end of a set of events that logically belong together.
 A client is expected to accumulate the data in all events within the
 frame before proceeding.
 
@@ -4473,7 +4921,9 @@ previously known state.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">Sent if the compositor decides the touch stream is a global
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">Sent if the compositor decides the touch stream is a global
 gesture. No further events are sent to the clients from that
 particular gesture. Touch cancellation applies to all touch points
 currently active on this client&#x27;s surface. The client is
@@ -4493,7 +4943,21 @@ this surface may reuse the touch point ID.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">Sent when a touchpoint has changed its shape.
+              
+                <div class="courier">
+                  <span class="purple">int32_t</span> id <span class="green">/* the unique ID of this touch point */</span> 
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">wl_fixed_t</span> major <span class="green">/* length of the major axis in surface-local coordinates */</span> 
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">wl_fixed_t</span> minor <span class="green">/* length of the minor axis in surface-local coordinates */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">Sent when a touchpoint has changed its shape.
 
 This event does not occur on its own. It is sent before a
 wl_touch.frame event and carries the new shape information for
@@ -4532,7 +4996,17 @@ shape if it did not receive this event.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">Sent when a touchpoint has changed its orientation.
+              
+                <div class="courier">
+                  <span class="purple">int32_t</span> id <span class="green">/* the unique ID of this touch point */</span> 
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">wl_fixed_t</span> orientation <span class="green">/* angle between major axis and positive surface y-axis in degrees */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">Sent when a touchpoint has changed its orientation.
 
 This event does not occur on its own. It is sent before a
 wl_touch.frame event and carries the new shape information for
@@ -4622,7 +5096,41 @@ use the output object anymore.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">The geometry event describes geometric properties of the output.
+              
+                <div class="courier">
+                  <span class="purple">int32_t</span> x <span class="green">/* x position within the global compositor space */</span> 
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">int32_t</span> y <span class="green">/* y position within the global compositor space */</span> 
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">int32_t</span> physical_width <span class="green">/* width in millimeters of the output */</span> 
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">int32_t</span> physical_height <span class="green">/* height in millimeters of the output */</span> 
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">int32_t</span> subpixel <span class="green">/* subpixel orientation of the output */</span> 
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">const char*</span> make <span class="green">/* textual description of the manufacturer */</span> 
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">const char*</span> model <span class="green">/* textual description of the model */</span> 
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">int32_t</span> transform <span class="green">/* transform that maps framebuffer to output */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">The geometry event describes geometric properties of the output.
 The event is sent when binding to the output object and whenever
 any of the properties change.
 
@@ -4649,7 +5157,25 @@ clients should use xdg_output.name and xdg_output.description.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">The mode event describes an available mode for the output.
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> flags <span class="green">/* bitfield of mode flags */</span> 
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">int32_t</span> width <span class="green">/* width of the mode in hardware units */</span> 
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">int32_t</span> height <span class="green">/* height of the mode in hardware units */</span> 
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">int32_t</span> refresh <span class="green">/* vertical refresh rate in mHz */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">The mode event describes an available mode for the output.
 
 The event is sent when binding to the output object and there
 will always be one mode, the current mode.  The event is sent
@@ -4693,7 +5219,9 @@ refresh rate or the size.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">This event is sent after all other properties have been
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">This event is sent after all other properties have been
 sent after binding to the output object and after any
 other property changes done after that. This allows
 changes to the output properties to be seen as
@@ -4712,7 +5240,13 @@ atomic, even if they happen via multiple events.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">This event contains scaling geometry information
+              
+                <div class="courier">
+                  <span class="purple">int32_t</span> factor <span class="green">/* scaling factor of output */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">This event contains scaling geometry information
 that is not in the geometry event. It may be sent after
 binding the output object or if the output scale changes
 later. If it is not sent, the client should assume a
@@ -4792,13 +5326,13 @@ regions of a surface.
     
       <div class="ws-pre-wrap">    <span class="purple">struct wl_region*</span> wl_region,</div>
     
-      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> x,</div>
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> x, <span class="green">/* region-local x coordinate */</span></div>
     
-      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> y,</div>
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> y, <span class="green">/* region-local y coordinate */</span></div>
     
-      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> width,</div>
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> width, <span class="green">/* rectangle width */</span></div>
     
-      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> height</div>
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> height <span class="green">/* rectangle height */</span></div>
     
   )
 </div>
@@ -4822,13 +5356,13 @@ regions of a surface.
     
       <div class="ws-pre-wrap">    <span class="purple">struct wl_region*</span> wl_region,</div>
     
-      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> x,</div>
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> x, <span class="green">/* region-local x coordinate */</span></div>
     
-      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> y,</div>
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> y, <span class="green">/* region-local y coordinate */</span></div>
     
-      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> width,</div>
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> width, <span class="green">/* rectangle width */</span></div>
     
-      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> height</div>
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> height <span class="green">/* rectangle height */</span></div>
     
   )
 </div>
@@ -4915,9 +5449,9 @@ objects, wl_subsurface objects included.
     
       <div class="ws-pre-wrap">    <span class="purple">struct wl_subcompositor*</span> wl_subcompositor,</div>
     
-      <div class="ws-pre-wrap">    <span class="purple">struct wl_surface*</span> surface,</div>
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_surface*</span> surface, <span class="green">/* the surface to be turned into a sub-surface */</span></div>
     
-      <div class="ws-pre-wrap">    <span class="purple">struct wl_surface*</span> parent</div>
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_surface*</span> parent <span class="green">/* the parent surface */</span></div>
     
   )
 </div>
@@ -5050,9 +5584,9 @@ a sub-surface. The wl_surface is unmapped immediately.
     
       <div class="ws-pre-wrap">    <span class="purple">struct wl_subsurface*</span> wl_subsurface,</div>
     
-      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> x,</div>
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> x, <span class="green">/* x coordinate in the parent surface */</span></div>
     
-      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> y</div>
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> y <span class="green">/* y coordinate in the parent surface */</span></div>
     
   )
 </div>
@@ -5091,7 +5625,7 @@ The initial position is 0, 0.
     
       <div class="ws-pre-wrap">    <span class="purple">struct wl_subsurface*</span> wl_subsurface,</div>
     
-      <div class="ws-pre-wrap">    <span class="purple">struct wl_surface*</span> sibling</div>
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_surface*</span> sibling <span class="green">/* the reference surface */</span></div>
     
   )
 </div>
@@ -5129,7 +5663,7 @@ of its siblings and parent.
     
       <div class="ws-pre-wrap">    <span class="purple">struct wl_subsurface*</span> wl_subsurface,</div>
     
-      <div class="ws-pre-wrap">    <span class="purple">struct wl_surface*</span> sibling</div>
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_surface*</span> sibling <span class="green">/* the reference surface */</span></div>
     
   )
 </div>

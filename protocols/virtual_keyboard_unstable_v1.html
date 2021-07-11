@@ -10,13 +10,13 @@
     <link rel="stylesheet" href="&#x2f;wayland-protocol-docs/main.css"></link>
      
   </head>
-  <body class="bg-near-white black-70 flex sans-serif ph4-l">
+  <body class="black-70 flex sans-serif ph4-l">
 
     
 
-    <div id="sidebar" class="w-20 br b--white bw3">
-      <div class="fixed h-100">
-        <a href="&#x2f;wayland-protocol-docs/" class="f4 link near-black dim lh-title">
+    <div id="sidebar" class="w-20">
+      <div class="fixed vh-100 overflow-y-auto w-20">
+        <a href="&#x2f;wayland-protocol-docs/" class="f4 link near-black dim lh-title db mt3">
           Home
         </a>
         
@@ -123,11 +123,11 @@ events, or it can accompany the input method protocol.
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwp_virtual_keyboard_v1*</span> zwp_virtual_keyboard_v1,</div>
     
-      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> format,</div>
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> format, <span class="green">/* keymap format */</span></div>
     
-      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> fd,</div>
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> fd, <span class="green">/* keymap file descriptor */</span></div>
     
-      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> size</div>
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> size <span class="green">/* keymap size, in bytes */</span></div>
     
   )
 </div>
@@ -154,11 +154,11 @@ Format carries a value from the keymap_format enumeration.
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwp_virtual_keyboard_v1*</span> zwp_virtual_keyboard_v1,</div>
     
-      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> time,</div>
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> time, <span class="green">/* timestamp with millisecond granularity */</span></div>
     
-      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> key,</div>
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> key, <span class="green">/* key that produced the event */</span></div>
     
-      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> state</div>
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> state <span class="green">/* physical state of the key */</span></div>
     
   )
 </div>
@@ -189,13 +189,13 @@ State carries a value from the key_state enumeration.
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwp_virtual_keyboard_v1*</span> zwp_virtual_keyboard_v1,</div>
     
-      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> mods_depressed,</div>
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> mods_depressed, <span class="green">/* depressed modifiers */</span></div>
     
-      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> mods_latched,</div>
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> mods_latched, <span class="green">/* latched modifiers */</span></div>
     
-      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> mods_locked,</div>
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> mods_locked, <span class="green">/* locked modifiers */</span></div>
     
-      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> group</div>
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> group <span class="green">/* keyboard layout */</span></div>
     
   )
 </div>

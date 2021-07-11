@@ -10,13 +10,13 @@
     <link rel="stylesheet" href="&#x2f;wayland-protocol-docs/main.css"></link>
      
   </head>
-  <body class="bg-near-white black-70 flex sans-serif ph4-l">
+  <body class="black-70 flex sans-serif ph4-l">
 
     
 
-    <div id="sidebar" class="w-20 br b--white bw3">
-      <div class="fixed h-100">
-        <a href="&#x2f;wayland-protocol-docs/" class="f4 link near-black dim lh-title">
+    <div id="sidebar" class="w-20">
+      <div class="fixed vh-100 overflow-y-auto w-20">
+        <a href="&#x2f;wayland-protocol-docs/" class="f4 link near-black dim lh-title db mt3">
           Home
         </a>
         
@@ -90,9 +90,10 @@
     
       <div class="ws-pre-wrap">    <span class="purple">struct wl_eglstream_controller*</span> wl_eglstream_controller,</div>
     
-      <div class="ws-pre-wrap">    <span class="purple">struct wl_surface*</span> wl_surface,</div>
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_surface*</span> wl_surface, <span class="green">/* wl_surface corresponds to the client surface associated with
+        newly created eglstream */</span></div>
     
-      <div class="ws-pre-wrap">    <span class="purple">struct wl_buffer*</span> wl_resource</div>
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_buffer*</span> wl_resource <span class="green">/* wl_resource corresponding to an EGLStream */</span></div>
     
   )
 </div>
@@ -117,11 +118,12 @@ and attaches a consumer to it.
     
       <div class="ws-pre-wrap">    <span class="purple">struct wl_eglstream_controller*</span> wl_eglstream_controller,</div>
     
-      <div class="ws-pre-wrap">    <span class="purple">struct wl_surface*</span> wl_surface,</div>
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_surface*</span> wl_surface, <span class="green">/* wl_surface corresponds to the client surface associated with
+        newly created eglstream */</span></div>
     
-      <div class="ws-pre-wrap">    <span class="purple">struct wl_buffer*</span> wl_resource,</div>
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_buffer*</span> wl_resource, <span class="green">/* wl_resource corresponding to an EGLStream */</span></div>
     
-      <div class="ws-pre-wrap">    <span class="purple">struct wl_array*</span> attribs</div>
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_array*</span> attribs <span class="green">/* Stream consumer attachment attribs */</span></div>
     
   )
 </div>

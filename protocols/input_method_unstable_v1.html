@@ -10,13 +10,13 @@
     <link rel="stylesheet" href="&#x2f;wayland-protocol-docs/main.css"></link>
      
   </head>
-  <body class="bg-near-white black-70 flex sans-serif ph4-l">
+  <body class="black-70 flex sans-serif ph4-l">
 
     
 
-    <div id="sidebar" class="w-20 br b--white bw3">
-      <div class="fixed h-100">
-        <a href="&#x2f;wayland-protocol-docs/" class="f4 link near-black dim lh-title">
+    <div id="sidebar" class="w-20">
+      <div class="fixed vh-100 overflow-y-auto w-20">
+        <a href="&#x2f;wayland-protocol-docs/" class="f4 link near-black dim lh-title db mt3">
           Home
         </a>
         
@@ -280,7 +280,7 @@ interface version number is reset.
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwp_input_method_context_v1*</span> zwp_input_method_context_v1,</div>
     
-      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> serial,</div>
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> serial, <span class="green">/* serial of the latest known text input state */</span></div>
     
       <div class="ws-pre-wrap">    <span class="purple">const char*</span> text</div>
     
@@ -314,7 +314,7 @@ Any previously set composing text will be removed.
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwp_input_method_context_v1*</span> zwp_input_method_context_v1,</div>
     
-      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> serial,</div>
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> serial, <span class="green">/* serial of the latest known text input state */</span></div>
     
       <div class="ws-pre-wrap">    <span class="purple">const char*</span> text,</div>
     
@@ -497,7 +497,7 @@ a commit_string request.
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwp_input_method_context_v1*</span> zwp_input_method_context_v1,</div>
     
-      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> serial,</div>
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> serial, <span class="green">/* serial of the latest known text input state */</span></div>
     
       <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> time,</div>
     
@@ -557,13 +557,13 @@ text like it is done for CJK languages.
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwp_input_method_context_v1*</span> zwp_input_method_context_v1,</div>
     
-      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> serial,</div>
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> serial, <span class="green">/* serial from wl_keyboard::key */</span></div>
     
-      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> time,</div>
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> time, <span class="green">/* time from wl_keyboard::key */</span></div>
     
-      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> key,</div>
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> key, <span class="green">/* key from wl_keyboard::key */</span></div>
     
-      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> state</div>
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> state <span class="green">/* state from wl_keyboard::key */</span></div>
     
   )
 </div>
@@ -592,15 +592,15 @@ For generating custom key events use the keysym request instead.
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwp_input_method_context_v1*</span> zwp_input_method_context_v1,</div>
     
-      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> serial,</div>
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> serial, <span class="green">/* serial from wl_keyboard::modifiers */</span></div>
     
-      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> mods_depressed,</div>
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> mods_depressed, <span class="green">/* mods_depressed from wl_keyboard::modifiers */</span></div>
     
-      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> mods_latched,</div>
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> mods_latched, <span class="green">/* mods_latched from wl_keyboard::modifiers */</span></div>
     
-      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> mods_locked,</div>
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> mods_locked, <span class="green">/* mods_locked from wl_keyboard::modifiers */</span></div>
     
-      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> group</div>
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> group <span class="green">/* group from wl_keyboard::modifiers */</span></div>
     
   )
 </div>
@@ -627,7 +627,7 @@ from the wl_keyboard::modifiers event.
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwp_input_method_context_v1*</span> zwp_input_method_context_v1,</div>
     
-      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> serial,</div>
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> serial, <span class="green">/* serial of the latest known text input state */</span></div>
     
       <div class="ws-pre-wrap">    <span class="purple">const char*</span> language</div>
     
@@ -652,7 +652,7 @@ from the wl_keyboard::modifiers event.
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwp_input_method_context_v1*</span> zwp_input_method_context_v1,</div>
     
-      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> serial,</div>
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> serial, <span class="green">/* serial of the latest known text input state */</span></div>
     
       <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> direction</div>
     
@@ -679,7 +679,21 @@ from the wl_keyboard::modifiers event.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">The plain surrounding text around the input position. Cursor is the
+              
+                <div class="courier">
+                  <span class="purple">const char*</span> text  
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> cursor  
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> anchor  
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">The plain surrounding text around the input position. Cursor is the
 position in bytes within the surrounding text relative to the beginning
 of the text. Anchor is the position in bytes of the selection anchor
 within the surrounding text relative to the beginning of the text. If
@@ -698,7 +712,9 @@ there is no selected text then anchor is the same as cursor.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier"></div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2"></div>
             </li>
             
             <li class="mt3">
@@ -712,7 +728,17 @@ there is no selected text then anchor is the same as cursor.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier"></div>
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> hint  
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> purpose  
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2"></div>
             </li>
             
             <li class="mt3">
@@ -726,7 +752,17 @@ there is no selected text then anchor is the same as cursor.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier"></div>
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> button  
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> index  
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2"></div>
             </li>
             
             <li class="mt3">
@@ -740,7 +776,13 @@ there is no selected text then anchor is the same as cursor.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier"></div>
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> serial <span class="green">/* serial of text input state */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2"></div>
             </li>
             
             <li class="mt3">
@@ -754,7 +796,13 @@ there is no selected text then anchor is the same as cursor.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier"></div>
+              
+                <div class="courier">
+                  <span class="purple">const char*</span> language  
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2"></div>
             </li>
             
           </ul>
@@ -792,7 +840,13 @@ created which allows the input method to communicate with the text input.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">A text input was activated. Creates an input method context object
+              
+                <div class="courier">
+                  <span class="purple">struct zwp_input_method_context_v1*</span> id  
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">A text input was activated. Creates an input method context object
 which allows communication with the text input.
   </div>
             </li>
@@ -808,7 +862,13 @@ which allows communication with the text input.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">The text input corresponding to the context argument was deactivated.
+              
+                <div class="courier">
+                  <span class="purple">struct zwp_input_method_context_v1*</span> context  
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">The text input corresponding to the context argument was deactivated.
 The input method context should be destroyed after deactivation is
 handled.
   </div>

@@ -10,13 +10,13 @@
     <link rel="stylesheet" href="&#x2f;wayland-protocol-docs/main.css"></link>
      
   </head>
-  <body class="bg-near-white black-70 flex sans-serif ph4-l">
+  <body class="black-70 flex sans-serif ph4-l">
 
     
 
-    <div id="sidebar" class="w-20 br b--white bw3">
-      <div class="fixed h-100">
-        <a href="&#x2f;wayland-protocol-docs/" class="f4 link near-black dim lh-title">
+    <div id="sidebar" class="w-20">
+      <div class="fixed vh-100 overflow-y-auto w-20">
+        <a href="&#x2f;wayland-protocol-docs/" class="f4 link near-black dim lh-title db mt3">
           Home
         </a>
         
@@ -471,7 +471,7 @@ languages of contacts.
     
       <div class="ws-pre-wrap">    <span class="purple">struct wl_text_input*</span> wl_text_input,</div>
     
-      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> serial</div>
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> serial <span class="green">/* used to identify the known state */</span></div>
     
   )
 </div>
@@ -521,7 +521,13 @@ languages of contacts.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">Notify the text-input object when it received focus. Typically in
+              
+                <div class="courier">
+                  <span class="purple">struct wl_surface*</span> surface  
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">Notify the text-input object when it received focus. Typically in
 response to an activate request.
 </div>
             </li>
@@ -537,7 +543,9 @@ response to an activate request.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">Notify the text-input object when it lost focus. Either in response
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">Notify the text-input object when it lost focus. Either in response
 to a deactivate request or when the assigned surface lost focus or was
 destroyed.
 </div>
@@ -554,7 +562,13 @@ destroyed.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">Transfer an array of 0-terminated modifiers names. The position in
+              
+                <div class="courier">
+                  <span class="purple">struct wl_array*</span> map  
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">Transfer an array of 0-terminated modifiers names. The position in
 the array is the index of the modifier as used in the modifiers
 bitmask in the keysym event.
 </div>
@@ -571,7 +585,13 @@ bitmask in the keysym event.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">Notify when the visibility state of the input panel changed.
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> state  
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">Notify when the visibility state of the input panel changed.
 </div>
             </li>
             
@@ -586,7 +606,21 @@ bitmask in the keysym event.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">    Notify when a new composing text (pre-edit) should be set around the
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> serial <span class="green">/* serial of the latest known text input state */</span> 
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">const char*</span> text  
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">const char*</span> commit  
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">    Notify when a new composing text (pre-edit) should be set around the
     current cursor position. Any previously set composing text should
     be removed.
 
@@ -609,7 +643,21 @@ events occuring directly before preedit_string.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">    Sets styling information on composing text. The style is applied for
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> index  
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> length  
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> style  
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">    Sets styling information on composing text. The style is applied for
 length bytes from index relative to the beginning of the composing
 text (as byte offset). Multiple styles can
     be applied to a composing text by sending multiple preedit_styling
@@ -630,7 +678,13 @@ text (as byte offset). Multiple styles can
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">Sets the cursor position inside the composing text (as byte
+              
+                <div class="courier">
+                  <span class="purple">int32_t</span> index  
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">Sets the cursor position inside the composing text (as byte
 offset) relative to the start of the composing text. When index is a
 negative number no cursor is shown.
 
@@ -649,7 +703,17 @@ This event is handled as part of a following preedit_string event.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">Notify when text should be inserted into the editor widget. The text to
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> serial <span class="green">/* serial of the latest known text input state */</span> 
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">const char*</span> text  
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">Notify when text should be inserted into the editor widget. The text to
 commit could be either just a single character after a key press or the
 result of some composing (pre-edit). It could be also an empty text
 when some text should be removed (see delete_surrounding_text) or when
@@ -670,7 +734,17 @@ Any previously set composing text should be removed.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">Notify when the cursor or anchor position should be modified.
+              
+                <div class="courier">
+                  <span class="purple">int32_t</span> index  
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">int32_t</span> anchor  
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">Notify when the cursor or anchor position should be modified.
 
 This event should be handled as part of a following commit_string
 event.
@@ -688,7 +762,17 @@ event.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">Notify when the text around the current cursor position should be
+              
+                <div class="courier">
+                  <span class="purple">int32_t</span> index  
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> length  
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">Notify when the text around the current cursor position should be
 deleted.
 
 Index is relative to the current cursor (in bytes).
@@ -710,7 +794,29 @@ event.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">Notify when a key event was sent. Key events should not be used
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> serial <span class="green">/* serial of the latest known text input state */</span> 
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> time  
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> sym  
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> state  
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> modifiers  
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">Notify when a key event was sent. Key events should not be used
 for normal text input operations, which should be done with
 commit_string, delete_surrounding_text, etc. The key event follows
 the wl_keyboard key event convention. Sym is a XKB keysym, state a
@@ -730,7 +836,17 @@ wl_keyboard key_state. Modifiers are a mask for effective modifiers
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">Sets the language of the input text. The &quot;language&quot; argument is a RFC-3066
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> serial <span class="green">/* serial of the latest known text input state */</span> 
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">const char*</span> language  
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">Sets the language of the input text. The &quot;language&quot; argument is a RFC-3066
 format language tag.
 </div>
             </li>
@@ -746,7 +862,17 @@ format language tag.
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">Sets the text direction of input text.
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> serial <span class="green">/* serial of the latest known text input state */</span> 
+                </div>
+              
+                <div class="courier">
+                  <span class="purple">uint32_t</span> direction  
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">Sets the text direction of input text.
 
 It is mainly needed for showing input cursor on correct side of the
 editor when there is no input yet done and making sure neutral
