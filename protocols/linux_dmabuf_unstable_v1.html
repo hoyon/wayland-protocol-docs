@@ -58,6 +58,9 @@
           
         </ul>
       
+
+      
+      
     </li>
   
     <li>
@@ -104,6 +107,23 @@
           
         </ul>
       
+
+      
+        <div>
+          <a href="#enumh:zwp_linux_buffer_params_v1" class="link blue underline-hover lh-copy pl3">Enums</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#enum:zwp_linux_buffer_params_v1:error" class="link blue underline-hover lh-copy">error</a>
+          </li>
+          
+          <li>
+            <a href="#enum:zwp_linux_buffer_params_v1:flags" class="link blue underline-hover lh-copy">flags</a>
+          </li>
+          
+        </ul>
+      
     </li>
   
   </ul>
@@ -113,7 +133,7 @@
       </div>
     </div>
 
-    <main id="content" class="mh4">
+    <main id="content" class="mh4 w-80">
       
   <div class="ph2">
     <h1 class="f1 lh-title">linux_dmabuf_unstable_v1</h1>
@@ -329,6 +349,10 @@ requests.
             </li>
             
           </ul>
+
+        
+
+        
 
         
 
@@ -626,6 +650,91 @@ has not been fulfilled.
 Upon receiving this event, the client should destroy the
 zlinux_buffer_params object.
 </div>
+            </li>
+            
+          </ul>
+
+        
+
+        
+          <h3 class=" f5 lh-title" id="enumh:zwp_linux_buffer_params_v1">Enums</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="enum:zwp_linux_buffer_params_v1:error">
+                <a href="#enum:zwp_linux_buffer_params_v1:error" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  error
+                </div>
+                <div class="f5 ml2">
+                  
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  ZWP_LINUX_BUFFER_PARAMS_V1_ERROR_ALREADY_USED  <span class="green">/* the dmabuf_batch object has already been used to create a wl_buffer */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  ZWP_LINUX_BUFFER_PARAMS_V1_ERROR_PLANE_IDX  <span class="green">/* plane index out of bounds */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  ZWP_LINUX_BUFFER_PARAMS_V1_ERROR_PLANE_SET  <span class="green">/* the plane index was already set */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  ZWP_LINUX_BUFFER_PARAMS_V1_ERROR_INCOMPLETE  <span class="green">/* missing or too many planes to create a buffer */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  ZWP_LINUX_BUFFER_PARAMS_V1_ERROR_INVALID_FORMAT  <span class="green">/* format not supported */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  ZWP_LINUX_BUFFER_PARAMS_V1_ERROR_INVALID_DIMENSIONS  <span class="green">/* invalid width or height */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  ZWP_LINUX_BUFFER_PARAMS_V1_ERROR_OUT_OF_BOUNDS  <span class="green">/* offset + stride * height goes out of dmabuf bounds */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  ZWP_LINUX_BUFFER_PARAMS_V1_ERROR_INVALID_WL_BUFFER  <span class="green">/* invalid wl_buffer resulted from importing dmabufs via
+               the create_immed request on given buffer_params */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3"></div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="enum:zwp_linux_buffer_params_v1:flags">
+                <a href="#enum:zwp_linux_buffer_params_v1:flags" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  flags
+                </div>
+                <div class="f5 ml2">
+                  
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  ZWP_LINUX_BUFFER_PARAMS_V1_FLAGS_Y_INVERT  <span class="green">/* contents are y-inverted */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  ZWP_LINUX_BUFFER_PARAMS_V1_FLAGS_INTERLACED  <span class="green">/* content is interlaced */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  ZWP_LINUX_BUFFER_PARAMS_V1_FLAGS_BOTTOM_FIRST  <span class="green">/* bottom field first */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3"></div>
             </li>
             
           </ul>

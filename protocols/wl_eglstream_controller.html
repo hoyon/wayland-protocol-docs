@@ -44,6 +44,23 @@
 
       
       
+
+      
+        <div>
+          <a href="#enumh:wl_eglstream_controller" class="link blue underline-hover lh-copy pl3">Enums</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#enum:wl_eglstream_controller:present_mode" class="link blue underline-hover lh-copy">present_mode</a>
+          </li>
+          
+          <li>
+            <a href="#enum:wl_eglstream_controller:attrib" class="link blue underline-hover lh-copy">attrib</a>
+          </li>
+          
+        </ul>
+      
     </li>
   
   </ul>
@@ -53,7 +70,7 @@
       </div>
     </div>
 
-    <main id="content" class="mh4">
+    <main id="content" class="mh4 w-80">
       
   <div class="ph2">
     <h1 class="f1 lh-title">wl_eglstream_controller</h1>
@@ -132,6 +149,79 @@ and attaches a consumer to it using the given attributes.
         
 
         
+
+        
+
+        
+          <h3 class=" f5 lh-title" id="enumh:wl_eglstream_controller">Enums</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="enum:wl_eglstream_controller:present_mode">
+                <a href="#enum:wl_eglstream_controller:present_mode" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  present_mode
+                </div>
+                <div class="f5 ml2">
+                  Stream present mode
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  WL_EGLSTREAM_CONTROLLER_PRESENT_MODE_DONT_CARE  <span class="green">/* Let the Server decide present mode */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  WL_EGLSTREAM_CONTROLLER_PRESENT_MODE_FIFO  <span class="green">/* Use a fifo present mode */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  WL_EGLSTREAM_CONTROLLER_PRESENT_MODE_MAILBOX  <span class="green">/* Use a mailbox mode */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">- dont_care: Using this enum will tell the server to make its own
+             decisions regarding present mode.
+
+- fifo:      Tells the server to use a fifo present mode. The decision to
+             use fifo synchronous is left up to the server.
+
+- mailbox:   Tells the server to use a mailbox present mode.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="enum:wl_eglstream_controller:attrib">
+                <a href="#enum:wl_eglstream_controller:attrib" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  attrib
+                </div>
+                <div class="f5 ml2">
+                  Stream consumer attachment attributes
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  WL_EGLSTREAM_CONTROLLER_ATTRIB_PRESENT_MODE  <span class="green">/* Tells the server the desired present mode */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  WL_EGLSTREAM_CONTROLLER_ATTRIB_FIFO_LENGTH  <span class="green">/* Tells the server the desired fifo length when the desired presenation_mode is fifo. */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">- present_mode: Must be one of wl_eglstream_controller_present_mode. Tells the
+                server the desired present mode that should be used.
+
+- fifo_length:  Only valid when the present_mode attrib is provided and its
+                value is specified as fifo. Tells the server the desired fifo
+                length to be used when the desired present_mode is fifo.
+</div>
+            </li>
+            
+          </ul>
 
         
 

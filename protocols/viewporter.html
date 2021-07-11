@@ -44,6 +44,19 @@
 
       
       
+
+      
+        <div>
+          <a href="#enumh:wp_viewporter" class="link blue underline-hover lh-copy pl3">Enums</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#enum:wp_viewporter:error" class="link blue underline-hover lh-copy">error</a>
+          </li>
+          
+        </ul>
+      
     </li>
   
     <li>
@@ -72,6 +85,19 @@
 
       
       
+
+      
+        <div>
+          <a href="#enumh:wp_viewport" class="link blue underline-hover lh-copy pl3">Enums</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#enum:wp_viewport:error" class="link blue underline-hover lh-copy">error</a>
+          </li>
+          
+        </ul>
+      
     </li>
   
   </ul>
@@ -81,7 +107,7 @@
       </div>
     </div>
 
-    <main id="content" class="mh4">
+    <main id="content" class="mh4 w-80">
       
   <div class="ph2">
     <h1 class="f1 lh-title">viewporter</h1>
@@ -159,6 +185,34 @@ protocol error is raised.
         
 
         
+
+        
+
+        
+          <h3 class=" f5 lh-title" id="enumh:wp_viewporter">Enums</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="enum:wp_viewporter:error">
+                <a href="#enum:wp_viewporter:error" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  error
+                </div>
+                <div class="f5 ml2">
+                  
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  WP_VIEWPORTER_ERROR_VIEWPORT_EXISTS  <span class="green">/* the surface already has a viewport object associated */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3"></div>
+            </li>
+            
+          </ul>
 
         
 
@@ -339,6 +393,46 @@ applied on the next wl_surface.commit.
         
 
         
+
+        
+
+        
+          <h3 class=" f5 lh-title" id="enumh:wp_viewport">Enums</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="enum:wp_viewport:error">
+                <a href="#enum:wp_viewport:error" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  error
+                </div>
+                <div class="f5 ml2">
+                  
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  WP_VIEWPORT_ERROR_BAD_VALUE  <span class="green">/* negative or zero values in width or height */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  WP_VIEWPORT_ERROR_BAD_SIZE  <span class="green">/* destination size is not integer */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  WP_VIEWPORT_ERROR_OUT_OF_BUFFER  <span class="green">/* source rectangle extends outside of the content area */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  WP_VIEWPORT_ERROR_NO_SURFACE  <span class="green">/* the wl_surface was destroyed */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3"></div>
+            </li>
+            
+          </ul>
 
         
 

@@ -138,6 +138,31 @@
           
         </ul>
       
+
+      
+        <div>
+          <a href="#enumh:wl_text_input" class="link blue underline-hover lh-copy pl3">Enums</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#enum:wl_text_input:content_hint" class="link blue underline-hover lh-copy">content_hint</a>
+          </li>
+          
+          <li>
+            <a href="#enum:wl_text_input:content_purpose" class="link blue underline-hover lh-copy">content_purpose</a>
+          </li>
+          
+          <li>
+            <a href="#enum:wl_text_input:preedit_style" class="link blue underline-hover lh-copy">preedit_style</a>
+          </li>
+          
+          <li>
+            <a href="#enum:wl_text_input:text_direction" class="link blue underline-hover lh-copy">text_direction</a>
+          </li>
+          
+        </ul>
+      
     </li>
   
     <li>
@@ -158,6 +183,9 @@
 
       
       
+
+      
+      
     </li>
   
   </ul>
@@ -167,7 +195,7 @@
       </div>
     </div>
 
-    <main id="content" class="mh4">
+    <main id="content" class="mh4 w-80">
       
   <div class="ph2">
     <h1 class="f1 lh-title">text</h1>
@@ -880,6 +908,233 @@ direction text is laid out properly.
 
         
 
+        
+          <h3 class=" f5 lh-title" id="enumh:wl_text_input">Enums</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="enum:wl_text_input:content_hint">
+                <a href="#enum:wl_text_input:content_hint" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  content_hint
+                </div>
+                <div class="f5 ml2">
+                  content hint
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  WL_TEXT_INPUT_CONTENT_HINT_NONE  <span class="green">/* no special behaviour */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  WL_TEXT_INPUT_CONTENT_HINT_DEFAULT  <span class="green">/* auto completion, correction and capitalization */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  WL_TEXT_INPUT_CONTENT_HINT_PASSWORD  <span class="green">/* hidden and sensitive text */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  WL_TEXT_INPUT_CONTENT_HINT_AUTO_COMPLETION  <span class="green">/* suggest word completions */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  WL_TEXT_INPUT_CONTENT_HINT_AUTO_CORRECTION  <span class="green">/* suggest word corrections */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  WL_TEXT_INPUT_CONTENT_HINT_AUTO_CAPITALIZATION  <span class="green">/* switch to uppercase letters at the start of a sentence */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  WL_TEXT_INPUT_CONTENT_HINT_LOWERCASE  <span class="green">/* prefer lowercase letters */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  WL_TEXT_INPUT_CONTENT_HINT_UPPERCASE  <span class="green">/* prefer uppercase letters */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  WL_TEXT_INPUT_CONTENT_HINT_TITLECASE  <span class="green">/* prefer casing for titles and headings (can be language dependent) */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  WL_TEXT_INPUT_CONTENT_HINT_HIDDEN_TEXT  <span class="green">/* characters should be hidden */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  WL_TEXT_INPUT_CONTENT_HINT_SENSITIVE_DATA  <span class="green">/* typed text should not be stored */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  WL_TEXT_INPUT_CONTENT_HINT_LATIN  <span class="green">/* just latin characters should be entered */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  WL_TEXT_INPUT_CONTENT_HINT_MULTILINE  <span class="green">/* the text input is multiline */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">Content hint is a bitmask to allow to modify the behavior of the text
+input.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="enum:wl_text_input:content_purpose">
+                <a href="#enum:wl_text_input:content_purpose" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  content_purpose
+                </div>
+                <div class="f5 ml2">
+                  content purpose
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  WL_TEXT_INPUT_CONTENT_PURPOSE_NORMAL  <span class="green">/* default input, allowing all characters */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  WL_TEXT_INPUT_CONTENT_PURPOSE_ALPHA  <span class="green">/* allow only alphabetic characters */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  WL_TEXT_INPUT_CONTENT_PURPOSE_DIGITS  <span class="green">/* allow only digits */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  WL_TEXT_INPUT_CONTENT_PURPOSE_NUMBER  <span class="green">/* input a number (including decimal separator and sign) */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  WL_TEXT_INPUT_CONTENT_PURPOSE_PHONE  <span class="green">/* input a phone number */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  WL_TEXT_INPUT_CONTENT_PURPOSE_URL  <span class="green">/* input an URL */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  WL_TEXT_INPUT_CONTENT_PURPOSE_EMAIL  <span class="green">/* input an email address */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  WL_TEXT_INPUT_CONTENT_PURPOSE_NAME  <span class="green">/* input a name of a person */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  WL_TEXT_INPUT_CONTENT_PURPOSE_PASSWORD  <span class="green">/* input a password (combine with password or sensitive_data hint) */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  WL_TEXT_INPUT_CONTENT_PURPOSE_DATE  <span class="green">/* input a date */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  WL_TEXT_INPUT_CONTENT_PURPOSE_TIME  <span class="green">/* input a time */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  WL_TEXT_INPUT_CONTENT_PURPOSE_DATETIME  <span class="green">/* input a date and time */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  WL_TEXT_INPUT_CONTENT_PURPOSE_TERMINAL  <span class="green">/* input for a terminal */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">The content purpose allows to specify the primary purpose of a text
+input.
+
+This allows an input method to show special purpose input panels with
+extra characters or to disallow some characters.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="enum:wl_text_input:preedit_style">
+                <a href="#enum:wl_text_input:preedit_style" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  preedit_style
+                </div>
+                <div class="f5 ml2">
+                  
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  WL_TEXT_INPUT_PREEDIT_STYLE_DEFAULT  <span class="green">/* default style for composing text */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  WL_TEXT_INPUT_PREEDIT_STYLE_NONE  <span class="green">/* style should be the same as in non-composing text */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  WL_TEXT_INPUT_PREEDIT_STYLE_ACTIVE  
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  WL_TEXT_INPUT_PREEDIT_STYLE_INACTIVE  
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  WL_TEXT_INPUT_PREEDIT_STYLE_HIGHLIGHT  
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  WL_TEXT_INPUT_PREEDIT_STYLE_UNDERLINE  
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  WL_TEXT_INPUT_PREEDIT_STYLE_SELECTION  
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  WL_TEXT_INPUT_PREEDIT_STYLE_INCORRECT  
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3"></div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="enum:wl_text_input:text_direction">
+                <a href="#enum:wl_text_input:text_direction" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  text_direction
+                </div>
+                <div class="f5 ml2">
+                  
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  WL_TEXT_INPUT_TEXT_DIRECTION_AUTO  <span class="green">/* automatic text direction based on text and language */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  WL_TEXT_INPUT_TEXT_DIRECTION_LTR  <span class="green">/* left-to-right */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  WL_TEXT_INPUT_TEXT_DIRECTION_RTL  <span class="green">/* right-to-left */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3"></div>
+            </li>
+            
+          </ul>
+
+        
+
       </li>
       
       <li class="mt4">
@@ -917,6 +1172,10 @@ direction text is laid out properly.
             </li>
             
           </ul>
+        
+
+        
+
         
 
         

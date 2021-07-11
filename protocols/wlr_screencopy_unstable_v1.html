@@ -48,6 +48,9 @@
 
       
       
+
+      
+      
     </li>
   
     <li>
@@ -110,6 +113,23 @@
           
         </ul>
       
+
+      
+        <div>
+          <a href="#enumh:zwlr_screencopy_frame_v1" class="link blue underline-hover lh-copy pl3">Enums</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#enum:zwlr_screencopy_frame_v1:error" class="link blue underline-hover lh-copy">error</a>
+          </li>
+          
+          <li>
+            <a href="#enum:zwlr_screencopy_frame_v1:flags" class="link blue underline-hover lh-copy">flags</a>
+          </li>
+          
+        </ul>
+      
     </li>
   
   </ul>
@@ -119,7 +139,7 @@
       </div>
     </div>
 
-    <main id="content" class="mh4">
+    <main id="content" class="mh4 w-80">
       
   <div class="ph2">
     <h1 class="f1 lh-title">wlr_screencopy_unstable_v1</h1>
@@ -226,6 +246,10 @@ appropriate destroy request has been called.
             </li>
             
           </ul>
+        
+
+        
+
         
 
         
@@ -551,6 +575,58 @@ created if linux-dmabuf buffers are supported.
 The client should proceed to create a buffer of one of the supported
 types, and send a &quot;copy&quot; request.
 </div>
+            </li>
+            
+          </ul>
+
+        
+
+        
+          <h3 class=" f5 lh-title" id="enumh:zwlr_screencopy_frame_v1">Enums</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="enum:zwlr_screencopy_frame_v1:error">
+                <a href="#enum:zwlr_screencopy_frame_v1:error" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  error
+                </div>
+                <div class="f5 ml2">
+                  
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  ZWLR_SCREENCOPY_FRAME_V1_ERROR_ALREADY_USED  <span class="green">/* the object has already been used to copy a wl_buffer */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  ZWLR_SCREENCOPY_FRAME_V1_ERROR_INVALID_BUFFER  <span class="green">/* buffer attributes are invalid */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3"></div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="enum:zwlr_screencopy_frame_v1:flags">
+                <a href="#enum:zwlr_screencopy_frame_v1:flags" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  flags
+                </div>
+                <div class="f5 ml2">
+                  
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  ZWLR_SCREENCOPY_FRAME_V1_FLAGS_Y_INVERT  <span class="green">/* contents are y-inverted */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3"></div>
             </li>
             
           </ul>

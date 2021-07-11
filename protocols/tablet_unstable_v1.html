@@ -44,6 +44,9 @@
 
       
       
+
+      
+      
     </li>
   
     <li>
@@ -77,6 +80,9 @@
           </li>
           
         </ul>
+      
+
+      
       
     </li>
   
@@ -184,6 +190,31 @@
           
         </ul>
       
+
+      
+        <div>
+          <a href="#enumh:zwp_tablet_tool_v1" class="link blue underline-hover lh-copy pl3">Enums</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#enum:zwp_tablet_tool_v1:type" class="link blue underline-hover lh-copy">type</a>
+          </li>
+          
+          <li>
+            <a href="#enum:zwp_tablet_tool_v1:capability" class="link blue underline-hover lh-copy">capability</a>
+          </li>
+          
+          <li>
+            <a href="#enum:zwp_tablet_tool_v1:button_state" class="link blue underline-hover lh-copy">button_state</a>
+          </li>
+          
+          <li>
+            <a href="#enum:zwp_tablet_tool_v1:error" class="link blue underline-hover lh-copy">error</a>
+          </li>
+          
+        </ul>
+      
     </li>
   
     <li>
@@ -230,6 +261,9 @@
           
         </ul>
       
+
+      
+      
     </li>
   
   </ul>
@@ -239,7 +273,7 @@
       </div>
     </div>
 
-    <main id="content" class="mh4">
+    <main id="content" class="mh4 w-80">
       
   <div class="ph2">
     <h1 class="f1 lh-title">tablet_unstable_v1</h1>
@@ -308,6 +342,10 @@ object are unaffected and should be destroyed separately.
             </li>
             
           </ul>
+        
+
+        
+
         
 
         
@@ -409,6 +447,10 @@ type, etc.) is sent through the wp_tablet_tool interface.
             </li>
             
           </ul>
+
+        
+
+        
 
         
 
@@ -1087,6 +1129,160 @@ one hardware event.
 
         
 
+        
+          <h3 class=" f5 lh-title" id="enumh:zwp_tablet_tool_v1">Enums</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="enum:zwp_tablet_tool_v1:type">
+                <a href="#enum:zwp_tablet_tool_v1:type" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  type
+                </div>
+                <div class="f5 ml2">
+                  a physical tool type
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  ZWP_TABLET_TOOL_V1_TYPE_PEN  <span class="green">/* Pen */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  ZWP_TABLET_TOOL_V1_TYPE_ERASER  <span class="green">/* Eraser */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  ZWP_TABLET_TOOL_V1_TYPE_BRUSH  <span class="green">/* Brush */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  ZWP_TABLET_TOOL_V1_TYPE_PENCIL  <span class="green">/* Pencil */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  ZWP_TABLET_TOOL_V1_TYPE_AIRBRUSH  <span class="green">/* Airbrush */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  ZWP_TABLET_TOOL_V1_TYPE_FINGER  <span class="green">/* Finger */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  ZWP_TABLET_TOOL_V1_TYPE_MOUSE  <span class="green">/* Mouse */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  ZWP_TABLET_TOOL_V1_TYPE_LENS  <span class="green">/* Lens */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">Describes the physical type of a tool. The physical type of a tool
+generally defines its base usage.
+
+The mouse tool represents a mouse-shaped tool that is not a relative
+device but bound to the tablet&#x27;s surface, providing absolute
+coordinates.
+
+The lens tool is a mouse-shaped tool with an attached lens to
+provide precision focus.
+  </div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="enum:zwp_tablet_tool_v1:capability">
+                <a href="#enum:zwp_tablet_tool_v1:capability" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  capability
+                </div>
+                <div class="f5 ml2">
+                  capability flags for a tool
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  ZWP_TABLET_TOOL_V1_CAPABILITY_TILT  <span class="green">/* Tilt axes */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  ZWP_TABLET_TOOL_V1_CAPABILITY_PRESSURE  <span class="green">/* Pressure axis */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  ZWP_TABLET_TOOL_V1_CAPABILITY_DISTANCE  <span class="green">/* Distance axis */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  ZWP_TABLET_TOOL_V1_CAPABILITY_ROTATION  <span class="green">/* Z-rotation axis */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  ZWP_TABLET_TOOL_V1_CAPABILITY_SLIDER  <span class="green">/* Slider axis */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  ZWP_TABLET_TOOL_V1_CAPABILITY_WHEEL  <span class="green">/* Wheel axis */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">Describes extra capabilities on a tablet.
+
+Any tool must provide x and y values, extra axes are
+device-specific.
+  </div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="enum:zwp_tablet_tool_v1:button_state">
+                <a href="#enum:zwp_tablet_tool_v1:button_state" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  button_state
+                </div>
+                <div class="f5 ml2">
+                  physical button state
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  ZWP_TABLET_TOOL_V1_BUTTON_STATE_RELEASED  <span class="green">/* button is not pressed */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  ZWP_TABLET_TOOL_V1_BUTTON_STATE_PRESSED  <span class="green">/* button is pressed */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">Describes the physical state of a button that produced the button event.
+  </div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="enum:zwp_tablet_tool_v1:error">
+                <a href="#enum:zwp_tablet_tool_v1:error" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  error
+                </div>
+                <div class="f5 ml2">
+                  
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  ZWP_TABLET_TOOL_V1_ERROR_ROLE  <span class="green">/* given wl_surface has another role */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3"></div>
+            </li>
+            
+          </ul>
+
+        
+
       </li>
       
       <li class="mt4">
@@ -1261,6 +1457,10 @@ the object.
             </li>
             
           </ul>
+
+        
+
+        
 
         
 

@@ -50,6 +50,19 @@
           
         </ul>
       
+
+      
+        <div>
+          <a href="#enumh:org_kde_kwin_server_decoration_manager" class="link blue underline-hover lh-copy pl3">Enums</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#enum:org_kde_kwin_server_decoration_manager:mode" class="link blue underline-hover lh-copy">mode</a>
+          </li>
+          
+        </ul>
+      
     </li>
   
     <li>
@@ -84,6 +97,19 @@
           
         </ul>
       
+
+      
+        <div>
+          <a href="#enumh:org_kde_kwin_server_decoration" class="link blue underline-hover lh-copy pl3">Enums</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#enum:org_kde_kwin_server_decoration:mode" class="link blue underline-hover lh-copy">mode</a>
+          </li>
+          
+        </ul>
+      
     </li>
   
   </ul>
@@ -93,7 +119,7 @@
       </div>
     </div>
 
-    <main id="content" class="mh4">
+    <main id="content" class="mh4 w-80">
       
   <div class="ph2">
     <h1 class="f1 lh-title">server_decoration</h1>
@@ -181,6 +207,42 @@ request_mode is requested.
 
 The server may change the default mode at any time.
 </div>
+            </li>
+            
+          </ul>
+
+        
+
+        
+          <h3 class=" f5 lh-title" id="enumh:org_kde_kwin_server_decoration_manager">Enums</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="enum:org_kde_kwin_server_decoration_manager:mode">
+                <a href="#enum:org_kde_kwin_server_decoration_manager:mode" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  mode
+                </div>
+                <div class="f5 ml2">
+                  Possible values to use in request_mode and the event mode.
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  ORG_KDE_KWIN_SERVER_DECORATION_MANAGER_MODE_NONE  <span class="green">/* Undecorated: The surface is not decorated at all, neither server nor client-side. An example is a popup surface which should not be decorated. */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  ORG_KDE_KWIN_SERVER_DECORATION_MANAGER_MODE_CLIENT  <span class="green">/* Client-side decoration: The decoration is part of the surface and the client. */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  ORG_KDE_KWIN_SERVER_DECORATION_MANAGER_MODE_SERVER  <span class="green">/* Server-side decoration: The server embeds the surface into a decoration frame. */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3"></div>
             </li>
             
           </ul>
@@ -282,6 +344,42 @@ The server may emit this event at any time. In this case the client can
 again request a different mode. It&#x27;s the responsibility of the server to
 prevent a feedback loop.
 </div>
+            </li>
+            
+          </ul>
+
+        
+
+        
+          <h3 class=" f5 lh-title" id="enumh:org_kde_kwin_server_decoration">Enums</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="enum:org_kde_kwin_server_decoration:mode">
+                <a href="#enum:org_kde_kwin_server_decoration:mode" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  mode
+                </div>
+                <div class="f5 ml2">
+                  Possible values to use in request_mode and the event mode.
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  ORG_KDE_KWIN_SERVER_DECORATION_MODE_NONE  <span class="green">/* Undecorated: The surface is not decorated at all, neither server nor client-side. An example is a popup surface which should not be decorated. */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  ORG_KDE_KWIN_SERVER_DECORATION_MODE_CLIENT  <span class="green">/* Client-side decoration: The decoration is part of the surface and the client. */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  ORG_KDE_KWIN_SERVER_DECORATION_MODE_SERVER  <span class="green">/* Server-side decoration: The server embeds the surface into a decoration frame. */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3"></div>
             </li>
             
           </ul>

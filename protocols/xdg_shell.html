@@ -62,6 +62,19 @@
           
         </ul>
       
+
+      
+        <div>
+          <a href="#enumh:xdg_wm_base" class="link blue underline-hover lh-copy pl3">Enums</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#enum:xdg_wm_base:error" class="link blue underline-hover lh-copy">error</a>
+          </li>
+          
+        </ul>
+      
     </li>
   
     <li>
@@ -118,6 +131,31 @@
 
       
       
+
+      
+        <div>
+          <a href="#enumh:xdg_positioner" class="link blue underline-hover lh-copy pl3">Enums</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#enum:xdg_positioner:error" class="link blue underline-hover lh-copy">error</a>
+          </li>
+          
+          <li>
+            <a href="#enum:xdg_positioner:anchor" class="link blue underline-hover lh-copy">anchor</a>
+          </li>
+          
+          <li>
+            <a href="#enum:xdg_positioner:gravity" class="link blue underline-hover lh-copy">gravity</a>
+          </li>
+          
+          <li>
+            <a href="#enum:xdg_positioner:constraint_adjustment" class="link blue underline-hover lh-copy">constraint_adjustment</a>
+          </li>
+          
+        </ul>
+      
     </li>
   
     <li>
@@ -160,6 +198,19 @@
           
           <li>
             <a href="#e:xdg_surface:configure" class="link blue underline-hover lh-copy">configure</a>
+          </li>
+          
+        </ul>
+      
+
+      
+        <div>
+          <a href="#enumh:xdg_surface" class="link blue underline-hover lh-copy pl3">Enums</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#enum:xdg_surface:error" class="link blue underline-hover lh-copy">error</a>
           </li>
           
         </ul>
@@ -250,6 +301,23 @@
           
         </ul>
       
+
+      
+        <div>
+          <a href="#enumh:xdg_toplevel" class="link blue underline-hover lh-copy pl3">Enums</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#enum:xdg_toplevel:resize_edge" class="link blue underline-hover lh-copy">resize_edge</a>
+          </li>
+          
+          <li>
+            <a href="#enum:xdg_toplevel:state" class="link blue underline-hover lh-copy">state</a>
+          </li>
+          
+        </ul>
+      
     </li>
   
     <li>
@@ -296,6 +364,19 @@
           
         </ul>
       
+
+      
+        <div>
+          <a href="#enumh:xdg_popup" class="link blue underline-hover lh-copy pl3">Enums</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#enum:xdg_popup:error" class="link blue underline-hover lh-copy">error</a>
+          </li>
+          
+        </ul>
+      
     </li>
   
   </ul>
@@ -305,7 +386,7 @@
       </div>
     </div>
 
-    <main id="content" class="mh4">
+    <main id="content" class="mh4 w-80">
       
   <div class="ph2">
     <h1 class="f1 lh-title">xdg_shell</h1>
@@ -472,6 +553,54 @@ try to respond in a reasonable amount of time.
 A compositor is free to ping in any way it wants, but a client must
 always respond to any xdg_wm_base object it created.
   </div>
+            </li>
+            
+          </ul>
+
+        
+
+        
+          <h3 class=" f5 lh-title" id="enumh:xdg_wm_base">Enums</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="enum:xdg_wm_base:error">
+                <a href="#enum:xdg_wm_base:error" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  error
+                </div>
+                <div class="f5 ml2">
+                  
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  XDG_WM_BASE_ERROR_ROLE  <span class="green">/* given wl_surface has another role */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  XDG_WM_BASE_ERROR_DEFUNCT_SURFACES  <span class="green">/* xdg_wm_base was destroyed before children */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  XDG_WM_BASE_ERROR_NOT_THE_TOPMOST_POPUP  <span class="green">/* the client tried to map or destroy a non-topmost popup */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  XDG_WM_BASE_ERROR_INVALID_POPUP_PARENT  <span class="green">/* the client specified an invalid popup parent surface */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  XDG_WM_BASE_ERROR_INVALID_SURFACE_STATE  <span class="green">/* the client provided an invalid surface state */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  XDG_WM_BASE_ERROR_INVALID_POSITIONER  <span class="green">/* the client provided an invalid positioner */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3"></div>
             </li>
             
           </ul>
@@ -824,6 +953,193 @@ constrained using.
 
         
 
+        
+          <h3 class=" f5 lh-title" id="enumh:xdg_positioner">Enums</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="enum:xdg_positioner:error">
+                <a href="#enum:xdg_positioner:error" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  error
+                </div>
+                <div class="f5 ml2">
+                  
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  XDG_POSITIONER_ERROR_INVALID_INPUT  <span class="green">/* invalid input provided */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3"></div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="enum:xdg_positioner:anchor">
+                <a href="#enum:xdg_positioner:anchor" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  anchor
+                </div>
+                <div class="f5 ml2">
+                  
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  XDG_POSITIONER_ANCHOR_NONE  
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  XDG_POSITIONER_ANCHOR_TOP  
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  XDG_POSITIONER_ANCHOR_BOTTOM  
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  XDG_POSITIONER_ANCHOR_LEFT  
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  XDG_POSITIONER_ANCHOR_RIGHT  
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  XDG_POSITIONER_ANCHOR_TOP_LEFT  
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  XDG_POSITIONER_ANCHOR_BOTTOM_LEFT  
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  XDG_POSITIONER_ANCHOR_TOP_RIGHT  
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  XDG_POSITIONER_ANCHOR_BOTTOM_RIGHT  
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3"></div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="enum:xdg_positioner:gravity">
+                <a href="#enum:xdg_positioner:gravity" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  gravity
+                </div>
+                <div class="f5 ml2">
+                  
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  XDG_POSITIONER_GRAVITY_NONE  
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  XDG_POSITIONER_GRAVITY_TOP  
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  XDG_POSITIONER_GRAVITY_BOTTOM  
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  XDG_POSITIONER_GRAVITY_LEFT  
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  XDG_POSITIONER_GRAVITY_RIGHT  
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  XDG_POSITIONER_GRAVITY_TOP_LEFT  
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  XDG_POSITIONER_GRAVITY_BOTTOM_LEFT  
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  XDG_POSITIONER_GRAVITY_TOP_RIGHT  
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  XDG_POSITIONER_GRAVITY_BOTTOM_RIGHT  
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3"></div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="enum:xdg_positioner:constraint_adjustment">
+                <a href="#enum:xdg_positioner:constraint_adjustment" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  constraint_adjustment
+                </div>
+                <div class="f5 ml2">
+                  constraint adjustments
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  XDG_POSITIONER_CONSTRAINT_ADJUSTMENT_NONE  
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  XDG_POSITIONER_CONSTRAINT_ADJUSTMENT_SLIDE_X  
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  XDG_POSITIONER_CONSTRAINT_ADJUSTMENT_SLIDE_Y  
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  XDG_POSITIONER_CONSTRAINT_ADJUSTMENT_FLIP_X  
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  XDG_POSITIONER_CONSTRAINT_ADJUSTMENT_FLIP_Y  
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  XDG_POSITIONER_CONSTRAINT_ADJUSTMENT_RESIZE_X  
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  XDG_POSITIONER_CONSTRAINT_ADJUSTMENT_RESIZE_Y  
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">The constraint adjustment value define ways the compositor will adjust
+the position of the surface, if the unadjusted position would result
+in the surface being partly constrained.
+
+Whether a surface is considered &#x27;constrained&#x27; is left to the compositor
+to determine. For example, the surface may be partly outside the
+compositor&#x27;s defined &#x27;work area&#x27;, thus necessitating the child surface&#x27;s
+position be adjusted until it is entirely inside the work area.
+
+The adjustments can be combined, according to a defined precedence: 1)
+Flip, 2) Slide, 3) Resize.
+  </div>
+            </li>
+            
+          </ul>
+
+        
+
       </li>
       
       <li class="mt4">
@@ -1104,6 +1420,42 @@ some point before committing the new surface.
 If the client receives multiple configure events before it can respond
 to one, it is free to discard all but the last event it received.
   </div>
+            </li>
+            
+          </ul>
+
+        
+
+        
+          <h3 class=" f5 lh-title" id="enumh:xdg_surface">Enums</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="enum:xdg_surface:error">
+                <a href="#enum:xdg_surface:error" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  error
+                </div>
+                <div class="f5 ml2">
+                  
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  XDG_SURFACE_ERROR_NOT_CONSTRUCTED  
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  XDG_SURFACE_ERROR_ALREADY_CONSTRUCTED  
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  XDG_SURFACE_ERROR_UNCONFIGURED_BUFFER  
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3"></div>
             </li>
             
           </ul>
@@ -1811,6 +2163,123 @@ a dialog to ask the user to save their data, etc.
 
         
 
+        
+          <h3 class=" f5 lh-title" id="enumh:xdg_toplevel">Enums</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="enum:xdg_toplevel:resize_edge">
+                <a href="#enum:xdg_toplevel:resize_edge" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  resize_edge
+                </div>
+                <div class="f5 ml2">
+                  edge values for resizing
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  XDG_TOPLEVEL_RESIZE_EDGE_NONE  
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  XDG_TOPLEVEL_RESIZE_EDGE_TOP  
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  XDG_TOPLEVEL_RESIZE_EDGE_BOTTOM  
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  XDG_TOPLEVEL_RESIZE_EDGE_LEFT  
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  XDG_TOPLEVEL_RESIZE_EDGE_TOP_LEFT  
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  XDG_TOPLEVEL_RESIZE_EDGE_BOTTOM_LEFT  
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  XDG_TOPLEVEL_RESIZE_EDGE_RIGHT  
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  XDG_TOPLEVEL_RESIZE_EDGE_TOP_RIGHT  
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  XDG_TOPLEVEL_RESIZE_EDGE_BOTTOM_RIGHT  
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">These values are used to indicate which edge of a surface
+is being dragged in a resize operation.
+  </div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="enum:xdg_toplevel:state">
+                <a href="#enum:xdg_toplevel:state" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  state
+                </div>
+                <div class="f5 ml2">
+                  types of state on the surface
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  XDG_TOPLEVEL_STATE_MAXIMIZED  <span class="green">/* the surface is maximized */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  XDG_TOPLEVEL_STATE_FULLSCREEN  <span class="green">/* the surface is fullscreen */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  XDG_TOPLEVEL_STATE_RESIZING  <span class="green">/* the surface is being resized */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  XDG_TOPLEVEL_STATE_ACTIVATED  <span class="green">/* the surface is now activated */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  XDG_TOPLEVEL_STATE_TILED_LEFT  
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  XDG_TOPLEVEL_STATE_TILED_RIGHT  
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  XDG_TOPLEVEL_STATE_TILED_TOP  
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  XDG_TOPLEVEL_STATE_TILED_BOTTOM  
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">The different state values used on the surface. This is designed for
+state values like maximized, fullscreen. It is paired with the
+configure event to ensure that both the client and the compositor
+setting the state can be synchronized.
+
+States set in this way are double-buffered. They will get applied on
+the next commit.
+  </div>
+            </li>
+            
+          </ul>
+
+        
+
       </li>
       
       <li class="mt4">
@@ -2091,6 +2560,34 @@ The client should optionally update the content of the popup, but must
 acknowledge the new popup configuration for the new position to take
 effect. See xdg_surface.ack_configure for details.
   </div>
+            </li>
+            
+          </ul>
+
+        
+
+        
+          <h3 class=" f5 lh-title" id="enumh:xdg_popup">Enums</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="enum:xdg_popup:error">
+                <a href="#enum:xdg_popup:error" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  error
+                </div>
+                <div class="f5 ml2">
+                  
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  XDG_POPUP_ERROR_INVALID_GRAB  <span class="green">/* tried to grab after being mapped */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3"></div>
             </li>
             
           </ul>

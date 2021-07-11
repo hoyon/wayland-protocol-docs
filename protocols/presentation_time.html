@@ -54,6 +54,19 @@
           
         </ul>
       
+
+      
+        <div>
+          <a href="#enumh:wp_presentation" class="link blue underline-hover lh-copy pl3">Enums</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#enum:wp_presentation:error" class="link blue underline-hover lh-copy">error</a>
+          </li>
+          
+        </ul>
+      
     </li>
   
     <li>
@@ -82,6 +95,19 @@
           
         </ul>
       
+
+      
+        <div>
+          <a href="#enumh:wp_presentation_feedback" class="link blue underline-hover lh-copy pl3">Enums</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#enum:wp_presentation_feedback:kind" class="link blue underline-hover lh-copy">kind</a>
+          </li>
+          
+        </ul>
+      
     </li>
   
   </ul>
@@ -91,7 +117,7 @@
       </div>
     </div>
 
-    <main id="content" class="mh4">
+    <main id="content" class="mh4 w-80">
       
   <div class="ph2">
     <h1 class="f1 lh-title">presentation_time</h1>
@@ -236,6 +262,40 @@ not slewed e.g. by NTP. The absolute value of the clock is
 irrelevant. Precision of one millisecond or better is
 recommended. Clients must be able to query the current clock
 value directly, not by asking the compositor.
+</div>
+            </li>
+            
+          </ul>
+
+        
+
+        
+          <h3 class=" f5 lh-title" id="enumh:wp_presentation">Enums</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="enum:wp_presentation:error">
+                <a href="#enum:wp_presentation:error" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  error
+                </div>
+                <div class="f5 ml2">
+                  fatal presentation errors
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  WP_PRESENTATION_ERROR_INVALID_TIMESTAMP  <span class="green">/* invalid value in tv_nsec */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  WP_PRESENTATION_ERROR_INVALID_FLAG  <span class="green">/* invalid flag */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">These fatal protocol errors may be emitted in response to
+illegal presentation requests.
 </div>
             </li>
             
@@ -397,6 +457,78 @@ and seq_lo must be zero.
               
 
               <div class="f6 lh-copy ws-pre-line code mt3">The content update was never displayed to the user.
+</div>
+            </li>
+            
+          </ul>
+
+        
+
+        
+          <h3 class=" f5 lh-title" id="enumh:wp_presentation_feedback">Enums</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="enum:wp_presentation_feedback:kind">
+                <a href="#enum:wp_presentation_feedback:kind" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  kind
+                </div>
+                <div class="f5 ml2">
+                  bitmask of flags in presented event
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  WP_PRESENTATION_FEEDBACK_KIND_VSYNC  <span class="green">/* presentation was vsync&#x27;d */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  WP_PRESENTATION_FEEDBACK_KIND_HW_CLOCK  <span class="green">/* hardware provided the presentation timestamp */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  WP_PRESENTATION_FEEDBACK_KIND_HW_COMPLETION  <span class="green">/* hardware signalled the start of the presentation */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  WP_PRESENTATION_FEEDBACK_KIND_ZERO_COPY  <span class="green">/* presentation was done zero-copy */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">These flags provide information about how the presentation of
+the related content update was done. The intent is to help
+clients assess the reliability of the feedback and the visual
+quality with respect to possible tearing and timings. The
+flags are:
+
+VSYNC:
+The presentation was synchronized to the &quot;vertical retrace&quot; by
+the display hardware such that tearing does not happen.
+Relying on user space scheduling is not acceptable for this
+flag. If presentation is done by a copy to the active
+frontbuffer, then it must guarantee that tearing cannot
+happen.
+
+HW_CLOCK:
+The display hardware provided measurements that the hardware
+driver converted into a presentation timestamp. Sampling a
+clock in user space is not acceptable for this flag.
+
+HW_COMPLETION:
+The display hardware signalled that it started using the new
+image content. The opposite of this is e.g. a timer being used
+to guess when the display hardware has switched to the new
+image content.
+
+ZERO_COPY:
+The presentation of this update was done zero-copy. This means
+the buffer from the client was given to display hardware as
+is, without copying it. Compositing with OpenGL counts as
+copying, even if textured directly from the client buffer.
+Possible zero-copy cases include direct scanout of a
+fullscreen surface and a surface on a hardware overlay.
 </div>
             </li>
             

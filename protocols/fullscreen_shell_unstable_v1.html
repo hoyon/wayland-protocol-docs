@@ -58,6 +58,27 @@
           
         </ul>
       
+
+      
+        <div>
+          <a href="#enumh:zwp_fullscreen_shell_v1" class="link blue underline-hover lh-copy pl3">Enums</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#enum:zwp_fullscreen_shell_v1:capability" class="link blue underline-hover lh-copy">capability</a>
+          </li>
+          
+          <li>
+            <a href="#enum:zwp_fullscreen_shell_v1:present_method" class="link blue underline-hover lh-copy">present_method</a>
+          </li>
+          
+          <li>
+            <a href="#enum:zwp_fullscreen_shell_v1:error" class="link blue underline-hover lh-copy">error</a>
+          </li>
+          
+        </ul>
+      
     </li>
   
     <li>
@@ -86,6 +107,9 @@
           
         </ul>
       
+
+      
+      
     </li>
   
   </ul>
@@ -95,7 +119,7 @@
       </div>
     </div>
 
-    <main id="content" class="mh4">
+    <main id="content" class="mh4 w-80">
       
   <div class="ph2">
     <h1 class="f1 lh-title">fullscreen_shell_unstable_v1</h1>
@@ -326,6 +350,123 @@ receive all the capability events.
 
         
 
+        
+          <h3 class=" f5 lh-title" id="enumh:zwp_fullscreen_shell_v1">Enums</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="enum:zwp_fullscreen_shell_v1:capability">
+                <a href="#enum:zwp_fullscreen_shell_v1:capability" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  capability
+                </div>
+                <div class="f5 ml2">
+                  capabilities advertised by the compositor
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  ZWP_FULLSCREEN_SHELL_V1_CAPABILITY_ARBITRARY_MODES  <span class="green">/* compositor is capable of almost any output mode */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  ZWP_FULLSCREEN_SHELL_V1_CAPABILITY_CURSOR_PLANE  <span class="green">/* compositor has a separate cursor plane */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">Various capabilities that can be advertised by the compositor.  They
+are advertised one-at-a-time when the wl_fullscreen_shell interface is
+bound.  See the wl_fullscreen_shell.capability event for more details.
+
+ARBITRARY_MODES:
+This is a hint to the client that indicates that the compositor is
+capable of setting practically any mode on its outputs.  If this
+capability is provided, wl_fullscreen_shell.present_surface_for_mode
+will almost never fail and clients should feel free to set whatever
+mode they like.  If the compositor does not advertise this, it may
+still support some modes that are not advertised through wl_global.mode
+but it is less likely.
+
+CURSOR_PLANE:
+This is a hint to the client that indicates that the compositor can
+handle a cursor surface from the client without actually compositing.
+This may be because of a hardware cursor plane or some other mechanism.
+If the compositor does not advertise this capability then setting
+wl_pointer.cursor may degrade performance or be ignored entirely.  If
+CURSOR_PLANE is not advertised, it is recommended that the client draw
+its own cursor and set wl_pointer.cursor(NULL).
+  </div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="enum:zwp_fullscreen_shell_v1:present_method">
+                <a href="#enum:zwp_fullscreen_shell_v1:present_method" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  present_method
+                </div>
+                <div class="f5 ml2">
+                  different method to set the surface fullscreen
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  ZWP_FULLSCREEN_SHELL_V1_PRESENT_METHOD_DEFAULT  <span class="green">/* no preference, apply default policy */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  ZWP_FULLSCREEN_SHELL_V1_PRESENT_METHOD_CENTER  <span class="green">/* center the surface on the output */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  ZWP_FULLSCREEN_SHELL_V1_PRESENT_METHOD_ZOOM  <span class="green">/* scale the surface, preserving aspect ratio, to the largest size that will fit on the output */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  ZWP_FULLSCREEN_SHELL_V1_PRESENT_METHOD_ZOOM_CROP  <span class="green">/* scale the surface, preserving aspect ratio, to fully fill the output cropping if needed */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  ZWP_FULLSCREEN_SHELL_V1_PRESENT_METHOD_STRETCH  <span class="green">/* scale the surface to the size of the output ignoring aspect ratio */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">Hints to indicate to the compositor how to deal with a conflict
+between the dimensions of the surface and the dimensions of the
+output. The compositor is free to ignore this parameter.
+  </div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="enum:zwp_fullscreen_shell_v1:error">
+                <a href="#enum:zwp_fullscreen_shell_v1:error" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  error
+                </div>
+                <div class="f5 ml2">
+                  wl_fullscreen_shell error values
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  ZWP_FULLSCREEN_SHELL_V1_ERROR_INVALID_METHOD  <span class="green">/* present_method is not known */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  ZWP_FULLSCREEN_SHELL_V1_ERROR_ROLE  <span class="green">/* given wl_surface has another role */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">These errors can be emitted in response to wl_fullscreen_shell requests.
+  </div>
+            </li>
+            
+          </ul>
+
+        
+
       </li>
       
       <li class="mt4">
@@ -409,6 +550,10 @@ wl_fullscreen_shell_mode_feedback object.
             </li>
             
           </ul>
+
+        
+
+        
 
         
 

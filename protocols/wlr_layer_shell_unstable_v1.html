@@ -44,6 +44,23 @@
 
       
       
+
+      
+        <div>
+          <a href="#enumh:zwlr_layer_shell_v1" class="link blue underline-hover lh-copy pl3">Enums</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#enum:zwlr_layer_shell_v1:error" class="link blue underline-hover lh-copy">error</a>
+          </li>
+          
+          <li>
+            <a href="#enum:zwlr_layer_shell_v1:layer" class="link blue underline-hover lh-copy">layer</a>
+          </li>
+          
+        </ul>
+      
     </li>
   
     <li>
@@ -110,6 +127,27 @@
           
         </ul>
       
+
+      
+        <div>
+          <a href="#enumh:zwlr_layer_surface_v1" class="link blue underline-hover lh-copy pl3">Enums</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#enum:zwlr_layer_surface_v1:keyboard_interactivity" class="link blue underline-hover lh-copy">keyboard_interactivity</a>
+          </li>
+          
+          <li>
+            <a href="#enum:zwlr_layer_surface_v1:error" class="link blue underline-hover lh-copy">error</a>
+          </li>
+          
+          <li>
+            <a href="#enum:zwlr_layer_surface_v1:anchor" class="link blue underline-hover lh-copy">anchor</a>
+          </li>
+          
+        </ul>
+      
     </li>
   
   </ul>
@@ -119,7 +157,7 @@
       </div>
     </div>
 
-    <main id="content" class="mh4">
+    <main id="content" class="mh4 w-80">
       
   <div class="ph2">
     <h1 class="f1 lh-title">wlr_layer_shell_unstable_v1</h1>
@@ -221,6 +259,80 @@ are not affected.
         
 
         
+
+        
+
+        
+          <h3 class=" f5 lh-title" id="enumh:zwlr_layer_shell_v1">Enums</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="enum:zwlr_layer_shell_v1:error">
+                <a href="#enum:zwlr_layer_shell_v1:error" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  error
+                </div>
+                <div class="f5 ml2">
+                  
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  ZWLR_LAYER_SHELL_V1_ERROR_ROLE  <span class="green">/* wl_surface has another role */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  ZWLR_LAYER_SHELL_V1_ERROR_INVALID_LAYER  <span class="green">/* layer value is invalid */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  ZWLR_LAYER_SHELL_V1_ERROR_ALREADY_CONSTRUCTED  <span class="green">/* wl_surface has a buffer attached or committed */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3"></div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="enum:zwlr_layer_shell_v1:layer">
+                <a href="#enum:zwlr_layer_shell_v1:layer" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  layer
+                </div>
+                <div class="f5 ml2">
+                  available layers for surfaces
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  ZWLR_LAYER_SHELL_V1_LAYER_BACKGROUND  
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  ZWLR_LAYER_SHELL_V1_LAYER_BOTTOM  
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  ZWLR_LAYER_SHELL_V1_LAYER_TOP  
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  ZWLR_LAYER_SHELL_V1_LAYER_OVERLAY  
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">These values indicate which layers a surface can be rendered in. They
+are ordered by z depth, bottom-most first. Traditional shell surfaces
+will typically be rendered between the bottom and top layers.
+Fullscreen shell surfaces are typically rendered at the top layer.
+Multiple surfaces can share a single layer, and ordering within a
+single layer is undefined.
+</div>
+            </li>
+            
+          </ul>
 
         
 
@@ -633,6 +745,111 @@ have asked for it to be removed. Further changes to the surface will be
 ignored. The client should destroy the resource after receiving this
 event, and create a new surface if they so choose.
 </div>
+            </li>
+            
+          </ul>
+
+        
+
+        
+          <h3 class=" f5 lh-title" id="enumh:zwlr_layer_surface_v1">Enums</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="enum:zwlr_layer_surface_v1:keyboard_interactivity">
+                <a href="#enum:zwlr_layer_surface_v1:keyboard_interactivity" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  keyboard_interactivity
+                </div>
+                <div class="f5 ml2">
+                  types of keyboard interaction possible for a layer shell surface
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  ZWLR_LAYER_SURFACE_V1_KEYBOARD_INTERACTIVITY_NONE  
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  ZWLR_LAYER_SURFACE_V1_KEYBOARD_INTERACTIVITY_EXCLUSIVE  
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  ZWLR_LAYER_SURFACE_V1_KEYBOARD_INTERACTIVITY_ON_DEMAND  
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">Types of keyboard interaction possible for layer shell surfaces. The
+rationale for this is twofold: (1) some applications are not interested
+in keyboard events and not allowing them to be focused can improve the
+desktop experience; (2) some applications will want to take exclusive
+keyboard focus.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="enum:zwlr_layer_surface_v1:error">
+                <a href="#enum:zwlr_layer_surface_v1:error" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  error
+                </div>
+                <div class="f5 ml2">
+                  
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  ZWLR_LAYER_SURFACE_V1_ERROR_INVALID_SURFACE_STATE  <span class="green">/* provided surface state is invalid */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  ZWLR_LAYER_SURFACE_V1_ERROR_INVALID_SIZE  <span class="green">/* size is invalid */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  ZWLR_LAYER_SURFACE_V1_ERROR_INVALID_ANCHOR  <span class="green">/* anchor bitfield is invalid */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  ZWLR_LAYER_SURFACE_V1_ERROR_INVALID_KEYBOARD_INTERACTIVITY  <span class="green">/* keyboard interactivity is invalid */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3"></div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="enum:zwlr_layer_surface_v1:anchor">
+                <a href="#enum:zwlr_layer_surface_v1:anchor" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  anchor
+                </div>
+                <div class="f5 ml2">
+                  
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  ZWLR_LAYER_SURFACE_V1_ANCHOR_TOP  <span class="green">/* the top edge of the anchor rectangle */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  ZWLR_LAYER_SURFACE_V1_ANCHOR_BOTTOM  <span class="green">/* the bottom edge of the anchor rectangle */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  ZWLR_LAYER_SURFACE_V1_ANCHOR_LEFT  <span class="green">/* the left edge of the anchor rectangle */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  ZWLR_LAYER_SURFACE_V1_ANCHOR_RIGHT  <span class="green">/* the right edge of the anchor rectangle */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3"></div>
             </li>
             
           </ul>

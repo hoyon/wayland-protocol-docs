@@ -48,6 +48,9 @@
 
       
       
+
+      
+      
     </li>
   
     <li>
@@ -98,6 +101,19 @@
           
         </ul>
       
+
+      
+        <div>
+          <a href="#enumh:zwlr_data_control_device_v1" class="link blue underline-hover lh-copy pl3">Enums</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#enum:zwlr_data_control_device_v1:error" class="link blue underline-hover lh-copy">error</a>
+          </li>
+          
+        </ul>
+      
     </li>
   
     <li>
@@ -136,6 +152,19 @@
           
         </ul>
       
+
+      
+        <div>
+          <a href="#enumh:zwlr_data_control_source_v1" class="link blue underline-hover lh-copy pl3">Enums</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#enum:zwlr_data_control_source_v1:error" class="link blue underline-hover lh-copy">error</a>
+          </li>
+          
+        </ul>
+      
     </li>
   
     <li>
@@ -170,6 +199,9 @@
           
         </ul>
       
+
+      
+      
     </li>
   
   </ul>
@@ -179,7 +211,7 @@
       </div>
     </div>
 
-    <main id="content" class="mh4">
+    <main id="content" class="mh4 w-80">
       
   <div class="ph2">
     <h1 class="f1 lh-title">wlr_data_control_unstable_v1</h1>
@@ -268,6 +300,10 @@ appropriate destroy request has been called.
             </li>
             
           </ul>
+        
+
+        
+
         
 
         
@@ -499,6 +535,34 @@ wlr_data_control_device object.
 
         
 
+        
+          <h3 class=" f5 lh-title" id="enumh:zwlr_data_control_device_v1">Enums</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="enum:zwlr_data_control_device_v1:error">
+                <a href="#enum:zwlr_data_control_device_v1:error" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  error
+                </div>
+                <div class="f5 ml2">
+                  
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  ZWLR_DATA_CONTROL_DEVICE_V1_ERROR_USED_SOURCE  <span class="green">/* source given to set_selection or set_primary_selection was already used before */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3"></div>
+            </li>
+            
+          </ul>
+
+        
+
       </li>
       
       <li class="mt4">
@@ -623,6 +687,34 @@ The client should clean up and destroy this data source.
 
         
 
+        
+          <h3 class=" f5 lh-title" id="enumh:zwlr_data_control_source_v1">Enums</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="enum:zwlr_data_control_source_v1:error">
+                <a href="#enum:zwlr_data_control_source_v1:error" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  error
+                </div>
+                <div class="f5 ml2">
+                  
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  ZWLR_DATA_CONTROL_SOURCE_V1_ERROR_INVALID_OFFER  <span class="green">/* offer sent after wlr_data_control_device.set_selection */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3"></div>
+            </li>
+            
+          </ul>
+
+        
+
       </li>
       
       <li class="mt4">
@@ -727,6 +819,10 @@ One event per offered MIME type.
             </li>
             
           </ul>
+
+        
+
+        
 
         
 

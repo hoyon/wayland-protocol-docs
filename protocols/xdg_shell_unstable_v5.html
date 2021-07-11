@@ -66,6 +66,23 @@
           
         </ul>
       
+
+      
+        <div>
+          <a href="#enumh:xdg_shell" class="link blue underline-hover lh-copy pl3">Enums</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#enum:xdg_shell:version" class="link blue underline-hover lh-copy">version</a>
+          </li>
+          
+          <li>
+            <a href="#enum:xdg_shell:error" class="link blue underline-hover lh-copy">error</a>
+          </li>
+          
+        </ul>
+      
     </li>
   
     <li>
@@ -152,6 +169,23 @@
           
         </ul>
       
+
+      
+        <div>
+          <a href="#enumh:xdg_surface" class="link blue underline-hover lh-copy pl3">Enums</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#enum:xdg_surface:resize_edge" class="link blue underline-hover lh-copy">resize_edge</a>
+          </li>
+          
+          <li>
+            <a href="#enum:xdg_surface:state" class="link blue underline-hover lh-copy">state</a>
+          </li>
+          
+        </ul>
+      
     </li>
   
     <li>
@@ -182,6 +216,9 @@
           
         </ul>
       
+
+      
+      
     </li>
   
   </ul>
@@ -191,7 +228,7 @@
       </div>
     </div>
 
-    <main id="content" class="mh4">
+    <main id="content" class="mh4 w-80">
       
   <div class="ph2">
     <h1 class="f1 lh-title">xdg_shell_unstable_v5</h1>
@@ -402,6 +439,70 @@ try to respond in a reasonable amount of time.
 A compositor is free to ping in any way it wants, but a client must
 always respond to any xdg_shell object it created.
 </div>
+            </li>
+            
+          </ul>
+
+        
+
+        
+          <h3 class=" f5 lh-title" id="enumh:xdg_shell">Enums</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="enum:xdg_shell:version">
+                <a href="#enum:xdg_shell:version" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  version
+                </div>
+                <div class="f5 ml2">
+                  latest protocol version
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  XDG_SHELL_VERSION_CURRENT  <span class="green">/* Always the latest version */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">The &#x27;current&#x27; member of this enum gives the version of the
+protocol.  Implementations can compare this to the version
+they implement using static_assert to ensure the protocol and
+implementation versions match.
+  </div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="enum:xdg_shell:error">
+                <a href="#enum:xdg_shell:error" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  error
+                </div>
+                <div class="f5 ml2">
+                  
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  XDG_SHELL_ERROR_ROLE  <span class="green">/* given wl_surface has another role */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  XDG_SHELL_ERROR_DEFUNCT_SURFACES  <span class="green">/* xdg_shell was destroyed before children */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  XDG_SHELL_ERROR_NOT_THE_TOPMOST_POPUP  <span class="green">/* the client tried to map or destroy a non-topmost popup */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  XDG_SHELL_ERROR_INVALID_POPUP_PARENT  <span class="green">/* the client specified an invalid popup parent surface */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3"></div>
             </li>
             
           </ul>
@@ -1049,6 +1150,119 @@ a dialog to ask the user to save their data...
 
         
 
+        
+          <h3 class=" f5 lh-title" id="enumh:xdg_surface">Enums</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="enum:xdg_surface:resize_edge">
+                <a href="#enum:xdg_surface:resize_edge" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  resize_edge
+                </div>
+                <div class="f5 ml2">
+                  edge values for resizing
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  XDG_SURFACE_RESIZE_EDGE_NONE  
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  XDG_SURFACE_RESIZE_EDGE_TOP  
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  XDG_SURFACE_RESIZE_EDGE_BOTTOM  
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  XDG_SURFACE_RESIZE_EDGE_LEFT  
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  XDG_SURFACE_RESIZE_EDGE_TOP_LEFT  
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  XDG_SURFACE_RESIZE_EDGE_BOTTOM_LEFT  
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  XDG_SURFACE_RESIZE_EDGE_RIGHT  
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  XDG_SURFACE_RESIZE_EDGE_TOP_RIGHT  
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  XDG_SURFACE_RESIZE_EDGE_BOTTOM_RIGHT  
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">These values are used to indicate which edge of a surface
+is being dragged in a resize operation.
+  </div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="enum:xdg_surface:state">
+                <a href="#enum:xdg_surface:state" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  state
+                </div>
+                <div class="f5 ml2">
+                  types of state on the surface
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  XDG_SURFACE_STATE_MAXIMIZED  <span class="green">/* the surface is maximized */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  XDG_SURFACE_STATE_FULLSCREEN  <span class="green">/* the surface is fullscreen */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  XDG_SURFACE_STATE_RESIZING  <span class="green">/* the surface is being resized */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  XDG_SURFACE_STATE_ACTIVATED  <span class="green">/* the surface is now activated */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">The different state values used on the surface. This is designed for
+state values like maximized, fullscreen. It is paired with the
+configure event to ensure that both the client and the compositor
+setting the state can be synchronized.
+
+States set in this way are double-buffered. They will get applied on
+the next commit.
+
+Desktop environments may extend this enum by taking up a range of
+values and documenting the range they chose in this description.
+They are not required to document the values for the range that they
+chose. Ideally, any good extensions from a desktop environment should
+make its way into standardization into this enum.
+
+The current reserved ranges are:
+
+0x0000 - 0x0FFF: xdg-shell core values, documented below.
+0x1000 - 0x1FFF: GNOME
+0x2000 - 0x2FFF: EFL
+</div>
+            </li>
+            
+          </ul>
+
+        
+
       </li>
       
       <li class="mt4">
@@ -1166,6 +1380,10 @@ point.
             </li>
             
           </ul>
+
+        
+
+        
 
         
 
