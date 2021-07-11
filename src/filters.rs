@@ -1,5 +1,5 @@
 use crate::format;
-use crate::protocol::{Describable, Event, Interface, Request};
+use crate::protocol::{Arg, Describable, Event, Interface, Request};
 use askama::Result;
 
 pub fn unwrap(option: &Option<String>) -> Result<&str> {
@@ -37,6 +37,11 @@ pub fn request_id(request: &Request, interface: &Interface) -> Result<String> {
 
 pub fn event_id(event: &Event, interface: &Interface) -> Result<String> {
     Ok(format!("e:{}:{}", interface.name, event.name))
+}
+
+pub fn event_arg(arg: &Arg) -> Result<String> {
+    let (arg_type, _name, _) = format::format_arg(arg);
+    Ok(arg_type)
 }
 
 pub fn interface_requests_id(interface: &Interface) -> Result<String> {

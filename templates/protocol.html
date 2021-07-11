@@ -57,7 +57,13 @@
                 </div>
               </div>
 
-              <div class="f6 lh-copy ws-pre-line courier">{{ event|desc_full }}</div>
+              {% for arg in event.args %}
+                <div class="courier">
+                  <span class="purple">{{ arg|event_arg }}</span> {{ arg.name }} {% if arg.summary.is_some() %}<span class="green">/* {{ arg.summary|unwrap }} */</span> {% endif %}
+                </div>
+              {% endfor %}
+
+              <div class="f6 lh-copy ws-pre-line courier mt2">{{ event|desc_full }}</div>
             </li>
             {% endfor %}
           </ul>

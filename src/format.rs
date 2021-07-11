@@ -1,6 +1,7 @@
 use askama::Template;
 
 use crate::protocol::{Arg, Request};
+use crate::filters;
 
 #[derive(Template)]
 #[template(path = "request.html")]
@@ -10,7 +11,7 @@ struct RequestTemplate {
     args: Vec<ArgTuple>,
 }
 
-type ArgTuple = (String, String);
+type ArgTuple = (String, String, Option<String>);
 
 pub fn format_request(request: &Request, protocol_name: &str) -> String {
     match request.request_type {
@@ -62,23 +63,24 @@ fn format_args(request: &Request, protocol_name: &str) -> Vec<ArgTuple> {
     default
 }
 
-fn format_arg(arg: &Arg) -> ArgTuple {
+pub fn format_arg(arg: &Arg) -> ArgTuple {
     let arg_type = match arg.arg_type.as_ref() {
         "int" => "int32_t".to_string(),
         "uint" => "uint32_t".to_string(),
         "fixed" => "wl_fixed_t".to_string(),
         "string" => "const char*".to_string(),
-        "object" => format!("struct {}*", arg.interface.clone().unwrap()),
+        "object" => format!("struct {}*", arg.interface.clone().unwrap_or("void".to_string())),
         "array" => "struct wl_array*".to_string(),
         "fd" => "int32_t".to_string(),
-        _ => {
-            panic!("Unknown argument type");
+        "new_id" => format!("struct {}*", arg.interface.clone().unwrap_or("void".to_string())),
+        t => {
+            panic!("Unknown argument type: {}", t);
         }
     };
-    (arg_type, arg.name.to_string())
+    (arg_type, arg.name.to_string(), arg.summary.clone())
 }
 
 fn this_arg(protocol_name: &str) -> ArgTuple {
     let arg_type = format!("struct {}*", protocol_name);
-    (arg_type, protocol_name.to_string())
+    (arg_type, protocol_name.to_string(), None)
 }
