@@ -236,7 +236,7 @@
           <a href="#i:org_kde_plasma_window_management" class="link dim black-70 child pr2 absolute left--2">#</a>
           org_kde_plasma_window_management
         </h2>
-        <div class="f6 lh-copy ws-pre-line courier">This interface manages application windows.
+        <div class="f6 lh-copy ws-pre-line code">This interface manages application windows.
 It provides requests to show and hide the desktop and emits
 an event every time a window is created so that the client can
 use it to manage the window.
@@ -259,7 +259,7 @@ Only one client can bind this interface at a time.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">org_kde_plasma_window_management_show_desktop</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct org_kde_plasma_window_management*</span> org_kde_plasma_window_management,</div>
@@ -268,7 +268,7 @@ Only one client can bind this interface at a time.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Tell the compositor to show&#x2f;hide the desktop.
+              <div class="f6 lh-copy ws-pre-line code">Tell the compositor to show&#x2f;hide the desktop.
 </div>
             </li>
             
@@ -283,7 +283,7 @@ Only one client can bind this interface at a time.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>struct org_kde_plasma_window* </span><span class="dark-blue">org_kde_plasma_window_management_get_window</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct org_kde_plasma_window_management*</span> org_kde_plasma_window_management,</div>
@@ -292,7 +292,7 @@ Only one client can bind this interface at a time.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Deprecated: use get_window_by_uuid</div>
+              <div class="f6 lh-copy ws-pre-line code">Deprecated: use get_window_by_uuid</div>
             </li>
             
             <li class="mt3">
@@ -306,7 +306,7 @@ Only one client can bind this interface at a time.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>struct org_kde_plasma_window* </span><span class="dark-blue">org_kde_plasma_window_management_get_window_by_uuid</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct org_kde_plasma_window_management*</span> org_kde_plasma_window_management,</div>
@@ -315,7 +315,7 @@ Only one client can bind this interface at a time.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier"></div>
+              <div class="f6 lh-copy ws-pre-line code"></div>
             </li>
             
           </ul>
@@ -337,12 +337,12 @@ Only one client can bind this interface at a time.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> state <span class="green">/* new state */</span> 
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">This event will be sent whenever the show desktop mode changes. E.g. when it is entered
+              <div class="f6 lh-copy ws-pre-line code mt3">This event will be sent whenever the show desktop mode changes. E.g. when it is entered
 or left.
 
 On binding the interface the current state is sent.
@@ -361,12 +361,12 @@ On binding the interface the current state is sent.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> id <span class="green">/* Deprecated: internal window Id */</span> 
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">This event will be sent immediately after a window is mapped.
+              <div class="f6 lh-copy ws-pre-line code mt3">This event will be sent immediately after a window is mapped.
 </div>
             </li>
             
@@ -382,12 +382,12 @@ On binding the interface the current state is sent.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">struct wl_array*</span> ids <span class="green">/* internal windows id array */</span> 
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">This event will be sent when stacking order changed and on bind
+              <div class="f6 lh-copy ws-pre-line code mt3">This event will be sent when stacking order changed and on bind
 </div>
             </li>
             
@@ -403,12 +403,12 @@ On binding the interface the current state is sent.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">const char*</span> uuids <span class="green">/* internal windows id ;-separated */</span> 
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">This event will be sent when stacking order changed and on bind
+              <div class="f6 lh-copy ws-pre-line code mt3">This event will be sent when stacking order changed and on bind
 </div>
             </li>
             
@@ -424,16 +424,16 @@ On binding the interface the current state is sent.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> id <span class="green">/* Deprecated: internal window Id */</span> 
                 </div>
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">const char*</span> uuid <span class="green">/* internal window uuid */</span> 
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">This event will be sent immediately after a window is mapped.
+              <div class="f6 lh-copy ws-pre-line code mt3">This event will be sent immediately after a window is mapped.
 </div>
             </li>
             
@@ -448,7 +448,7 @@ On binding the interface the current state is sent.
           <a href="#i:org_kde_plasma_window" class="link dim black-70 child pr2 absolute left--2">#</a>
           org_kde_plasma_window
         </h2>
-        <div class="f6 lh-copy ws-pre-line courier">Manages and control an application window.
+        <div class="f6 lh-copy ws-pre-line code">Manages and control an application window.
 
 Only one client can bind this interface at a time.
 </div>
@@ -468,7 +468,7 @@ Only one client can bind this interface at a time.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">org_kde_plasma_window_set_state</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct org_kde_plasma_window*</span> org_kde_plasma_window,</div>
@@ -479,7 +479,7 @@ Only one client can bind this interface at a time.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Set window state.
+              <div class="f6 lh-copy ws-pre-line code">Set window state.
 
 Values for state argument are described by org_kde_plasma_window_management.state
 and can be used together in a bitfield. The flags bitfield describes which flags are
@@ -498,7 +498,7 @@ supposed to be set, the state bitfield the value for the set flags
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">org_kde_plasma_window_set_virtual_desktop</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct org_kde_plasma_window*</span> org_kde_plasma_window,</div>
@@ -507,7 +507,7 @@ supposed to be set, the state bitfield the value for the set flags
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">  Deprecated: use enter_virtual_desktop
+              <div class="f6 lh-copy ws-pre-line code">  Deprecated: use enter_virtual_desktop
 Maps the window to a different virtual desktop.
 
 To show the window on all virtual desktops, call the
@@ -527,7 +527,7 @@ state in the bitfield.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">org_kde_plasma_window_set_minimized_geometry</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct org_kde_plasma_window*</span> org_kde_plasma_window,</div>
@@ -544,7 +544,7 @@ state in the bitfield.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Sets the geometry of the taskbar entry for this window.
+              <div class="f6 lh-copy ws-pre-line code">Sets the geometry of the taskbar entry for this window.
 The geometry is relative to a panel in particular.
 </div>
             </li>
@@ -560,7 +560,7 @@ The geometry is relative to a panel in particular.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">org_kde_plasma_window_unset_minimized_geometry</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct org_kde_plasma_window*</span> org_kde_plasma_window,</div>
@@ -569,7 +569,7 @@ The geometry is relative to a panel in particular.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Remove the task geometry information for a particular panel.
+              <div class="f6 lh-copy ws-pre-line code">Remove the task geometry information for a particular panel.
 </div>
             </li>
             
@@ -584,14 +584,14 @@ The geometry is relative to a panel in particular.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">org_kde_plasma_window_close</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct org_kde_plasma_window*</span> org_kde_plasma_window</div>
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Close this window.
+              <div class="f6 lh-copy ws-pre-line code">Close this window.
 </div>
             </li>
             
@@ -606,14 +606,14 @@ The geometry is relative to a panel in particular.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">org_kde_plasma_window_request_move</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct org_kde_plasma_window*</span> org_kde_plasma_window</div>
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Request an interactive move for this window.
+              <div class="f6 lh-copy ws-pre-line code">Request an interactive move for this window.
 </div>
             </li>
             
@@ -628,14 +628,14 @@ The geometry is relative to a panel in particular.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">org_kde_plasma_window_request_resize</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct org_kde_plasma_window*</span> org_kde_plasma_window</div>
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Request an interactive resize for this window.
+              <div class="f6 lh-copy ws-pre-line code">Request an interactive resize for this window.
 </div>
             </li>
             
@@ -650,14 +650,14 @@ The geometry is relative to a panel in particular.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">org_kde_plasma_window_destroy</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct org_kde_plasma_window*</span> org_kde_plasma_window</div>
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Removes the resource bound for this org_kde_plasma_window.
+              <div class="f6 lh-copy ws-pre-line code">Removes the resource bound for this org_kde_plasma_window.
 </div>
             </li>
             
@@ -672,7 +672,7 @@ The geometry is relative to a panel in particular.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">org_kde_plasma_window_get_icon</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct org_kde_plasma_window*</span> org_kde_plasma_window,</div>
@@ -681,7 +681,7 @@ The geometry is relative to a panel in particular.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">The compositor will write the window icon into the provided file descriptor.
+              <div class="f6 lh-copy ws-pre-line code">The compositor will write the window icon into the provided file descriptor.
 The data is a serialized QIcon with QDataStream.
 </div>
             </li>
@@ -697,7 +697,7 @@ The data is a serialized QIcon with QDataStream.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">org_kde_plasma_window_request_enter_virtual_desktop</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct org_kde_plasma_window*</span> org_kde_plasma_window,</div>
@@ -706,7 +706,7 @@ The data is a serialized QIcon with QDataStream.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Make the window enter a virtual desktop. A window can enter more
+              <div class="f6 lh-copy ws-pre-line code">Make the window enter a virtual desktop. A window can enter more
 than one virtual desktop. if the id is empty or invalid, no action will be performed.
 </div>
             </li>
@@ -722,14 +722,14 @@ than one virtual desktop. if the id is empty or invalid, no action will be perfo
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">org_kde_plasma_window_request_enter_new_virtual_desktop</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct org_kde_plasma_window*</span> org_kde_plasma_window</div>
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">RFC: do this with an empty id to request_enter_virtual_desktop?
+              <div class="f6 lh-copy ws-pre-line code">RFC: do this with an empty id to request_enter_virtual_desktop?
 Make the window enter a new virtual desktop. If the server consents the request,
 it will create a new virtual desktop and assign the window to it.
 </div>
@@ -746,7 +746,7 @@ it will create a new virtual desktop and assign the window to it.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">org_kde_plasma_window_request_leave_virtual_desktop</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct org_kde_plasma_window*</span> org_kde_plasma_window,</div>
@@ -755,7 +755,7 @@ it will create a new virtual desktop and assign the window to it.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Make the window exit a virtual desktop. If it exits all desktops it will be considered on all of them.
+              <div class="f6 lh-copy ws-pre-line code">Make the window exit a virtual desktop. If it exits all desktops it will be considered on all of them.
 </div>
             </li>
             
@@ -770,7 +770,7 @@ it will create a new virtual desktop and assign the window to it.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">org_kde_plasma_window_request_enter_activity</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct org_kde_plasma_window*</span> org_kde_plasma_window,</div>
@@ -779,7 +779,7 @@ it will create a new virtual desktop and assign the window to it.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Make the window enter an activity. A window can enter more activity. If the id is empty or invalid, no action will be performed.
+              <div class="f6 lh-copy ws-pre-line code">Make the window enter an activity. A window can enter more activity. If the id is empty or invalid, no action will be performed.
 </div>
             </li>
             
@@ -794,7 +794,7 @@ it will create a new virtual desktop and assign the window to it.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">org_kde_plasma_window_request_leave_activity</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct org_kde_plasma_window*</span> org_kde_plasma_window,</div>
@@ -803,7 +803,7 @@ it will create a new virtual desktop and assign the window to it.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Make the window exit a an activity. If it exits all activities it will be considered on all of them.
+              <div class="f6 lh-copy ws-pre-line code">Make the window exit a an activity. If it exits all activities it will be considered on all of them.
 </div>
             </li>
             
@@ -826,12 +826,12 @@ it will create a new virtual desktop and assign the window to it.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">const char*</span> title <span class="green">/* window title */</span> 
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">This event will be sent as soon as the window title is changed.
+              <div class="f6 lh-copy ws-pre-line code mt3">This event will be sent as soon as the window title is changed.
 </div>
             </li>
             
@@ -847,12 +847,12 @@ it will create a new virtual desktop and assign the window to it.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">const char*</span> app_id  
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">This event will be sent as soon as the application
+              <div class="f6 lh-copy ws-pre-line code mt3">This event will be sent as soon as the application
 identifier is changed.
 </div>
             </li>
@@ -869,12 +869,12 @@ identifier is changed.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> flags <span class="green">/* bitfield of state flags */</span> 
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">This event will be sent as soon as the window state changes.
+              <div class="f6 lh-copy ws-pre-line code mt3">This event will be sent as soon as the window state changes.
 
 Values for state argument are described by org_kde_plasma_window_management.state.
 </div>
@@ -892,12 +892,12 @@ Values for state argument are described by org_kde_plasma_window_management.stat
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">int32_t</span> number <span class="green">/* zero based virtual desktop number */</span> 
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">  DEPRECATED: use virtual_desktop_entered and virtual_desktop_left instead
+              <div class="f6 lh-copy ws-pre-line code mt3">  DEPRECATED: use virtual_desktop_entered and virtual_desktop_left instead
 This event will be sent when a window is moved to another
 virtual desktop.
 
@@ -917,12 +917,12 @@ It is not sent if it becomes visible on all virtual desktops though.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">const char*</span> name <span class="green">/* the new themed icon name */</span> 
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">This event will be sent whenever the themed icon name changes. May be null.
+              <div class="f6 lh-copy ws-pre-line code mt3">This event will be sent whenever the themed icon name changes. May be null.
 </div>
             </li>
             
@@ -939,7 +939,7 @@ It is not sent if it becomes visible on all virtual desktops though.
 
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">This event will be sent immediately after the window is closed
+              <div class="f6 lh-copy ws-pre-line code mt3">This event will be sent immediately after the window is closed
 and its surface is unmapped.
 </div>
             </li>
@@ -957,7 +957,7 @@ and its surface is unmapped.
 
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">This event will be sent immediately after all initial state been sent to the client.
+              <div class="f6 lh-copy ws-pre-line code mt3">This event will be sent immediately after all initial state been sent to the client.
 If the Plasma window is already unmapped, the unmapped event will be sent before the
 initial_state event.
 </div>
@@ -975,12 +975,12 @@ initial_state event.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">struct org_kde_plasma_window*</span> parent <span class="green">/* The parent window */</span> 
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">This event will be sent whenever the parent window of this org_kde_plasma_window changes.
+              <div class="f6 lh-copy ws-pre-line code mt3">This event will be sent whenever the parent window of this org_kde_plasma_window changes.
 The passed parent is another org_kde_plasma_window and this org_kde_plasma_window is a
 transient window to the parent window. If the parent argument is null, this
 org_kde_plasma_window does not have a parent window.
@@ -999,24 +999,24 @@ org_kde_plasma_window does not have a parent window.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">int32_t</span> x <span class="green">/* x position of the org_kde_plasma_window */</span> 
                 </div>
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">int32_t</span> y <span class="green">/* y position of the org_kde_plasma_window */</span> 
                 </div>
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> width <span class="green">/* width of the org_kde_plasma_window */</span> 
                 </div>
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> height <span class="green">/* height of the org_kde_plasma_window */</span> 
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">This event will be sent whenever the window geometry of this org_kde_plasma_window changes.
+              <div class="f6 lh-copy ws-pre-line code mt3">This event will be sent whenever the window geometry of this org_kde_plasma_window changes.
 The coordinates are in absolute coordinates of the windowing system.
 </div>
             </li>
@@ -1034,7 +1034,7 @@ The coordinates are in absolute coordinates of the windowing system.
 
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">This event will be sent whenever the icon of the window changes, but there is no themed
+              <div class="f6 lh-copy ws-pre-line code mt3">This event will be sent whenever the icon of the window changes, but there is no themed
 icon name. Common examples are Xwayland windows which have a pixmap based icon.
 
 The client can request the icon using get_icon.
@@ -1053,12 +1053,12 @@ The client can request the icon using get_icon.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> pid <span class="green">/* process id */</span> 
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">This event will be sent when the compositor has set the process id this window belongs to.
+              <div class="f6 lh-copy ws-pre-line code mt3">This event will be sent when the compositor has set the process id this window belongs to.
 This should be set once before the initial_state is sent.
 </div>
             </li>
@@ -1075,12 +1075,12 @@ This should be set once before the initial_state is sent.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">const char*</span> id <span class="green">/* desktop id */</span> 
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">This event will be sent when the window has entered a new virtual desktop. The window can be on more than one desktop, or none: then is considered on all of them.
+              <div class="f6 lh-copy ws-pre-line code mt3">This event will be sent when the window has entered a new virtual desktop. The window can be on more than one desktop, or none: then is considered on all of them.
 </div>
             </li>
             
@@ -1096,12 +1096,12 @@ This should be set once before the initial_state is sent.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">const char*</span> is <span class="green">/* desktop id */</span> 
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">This event will be sent when the window left a virtual desktop. If the window leaves all desktops, it can be considered on all.
+              <div class="f6 lh-copy ws-pre-line code mt3">This event will be sent when the window left a virtual desktop. If the window leaves all desktops, it can be considered on all.
 If the window gets manually added on all desktops, the server has to send virtual_desktop_left for every previous desktop it was in for the window to be really considered on all desktops.
 </div>
             </li>
@@ -1118,16 +1118,16 @@ If the window gets manually added on all desktops, the server has to send virtua
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">const char*</span> service_name  
                 </div>
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">const char*</span> object_path  
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">This event will be sent after the application menu
+              <div class="f6 lh-copy ws-pre-line code mt3">This event will be sent after the application menu
 for the window has changed.
 </div>
             </li>
@@ -1144,12 +1144,12 @@ for the window has changed.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">const char*</span> id <span class="green">/* activity id */</span> 
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">This event will be sent when the window has entered an activity. The window can be on more than one activity, or none: then is considered on all of them.
+              <div class="f6 lh-copy ws-pre-line code mt3">This event will be sent when the window has entered an activity. The window can be on more than one activity, or none: then is considered on all of them.
 </div>
             </li>
             
@@ -1165,12 +1165,12 @@ for the window has changed.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">const char*</span> id <span class="green">/* activity id */</span> 
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">This event will be sent when the window left an activity. If the window leaves all activities, it will be considered on all.
+              <div class="f6 lh-copy ws-pre-line code mt3">This event will be sent when the window left an activity. If the window leaves all activities, it will be considered on all.
 If the window gets manually added on all activities, the server has to send activity_left for every previous activity it was in for the window to be really considered on all activities.
 </div>
             </li>
@@ -1184,7 +1184,7 @@ If the window gets manually added on all activities, the server has to send acti
     </ul>
 
     <h2 class="f4 lh-title">Copyright Info</h2>
-    <div class="f7 lh-copy ws-pre-line courier">SPDX-FileCopyrightText: 2013-2014 Pier Luigi Fiorini
+    <div class="f7 lh-copy ws-pre-line code">SPDX-FileCopyrightText: 2013-2014 Pier Luigi Fiorini
 
 SPDX-License-Identifier: LGPL-2.1-or-later
 </div>

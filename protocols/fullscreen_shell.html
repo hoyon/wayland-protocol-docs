@@ -106,7 +106,7 @@
           <a href="#i:_wl_fullscreen_shell" class="link dim black-70 child pr2 absolute left--2">#</a>
           _wl_fullscreen_shell
         </h2>
-        <div class="f6 lh-copy ws-pre-line courier">Displays a single surface per output.
+        <div class="f6 lh-copy ws-pre-line code">Displays a single surface per output.
 
 This interface provides a mechanism for a single client to display
 simple full-screen surfaces.  While there technically may be multiple
@@ -147,14 +147,14 @@ simply attaching a new buffer.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">_wl_fullscreen_shell_release</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct _wl_fullscreen_shell*</span> _wl_fullscreen_shell</div>
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Release the binding from the wl_fullscreen_shell interface
+              <div class="f6 lh-copy ws-pre-line code">Release the binding from the wl_fullscreen_shell interface
 
 This destroys the server-side object and frees this binding.  If
 the client binds to wl_fullscreen_shell multiple times, it may wish
@@ -173,7 +173,7 @@ to free some of those bindings.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">_wl_fullscreen_shell_present_surface</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct _wl_fullscreen_shell*</span> _wl_fullscreen_shell,</div>
@@ -186,7 +186,7 @@ to free some of those bindings.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Present a surface on the given output.
+              <div class="f6 lh-copy ws-pre-line code">Present a surface on the given output.
 
 If the output is null, the compositor will present the surface on
 whatever display (or displays) it thinks best.  In particular, this
@@ -217,7 +217,7 @@ ignored.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>struct _wl_fullscreen_shell_mode_feedback* </span><span class="dark-blue">_wl_fullscreen_shell_present_surface_for_mode</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct _wl_fullscreen_shell*</span> _wl_fullscreen_shell,</div>
@@ -230,7 +230,7 @@ ignored.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Presents a surface on the given output for a particular mode.
+              <div class="f6 lh-copy ws-pre-line code">Presents a surface on the given output for a particular mode.
 
 If the current size of the output differs from that of the surface,
 the compositor will attempt to change the size of the output to
@@ -289,12 +289,12 @@ output.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> capabilty  
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">Advertises a single capability of the compositor.
+              <div class="f6 lh-copy ws-pre-line code mt3">Advertises a single capability of the compositor.
 
 When the wl_fullscreen_shell interface is bound, this event is emitted
 once for each capability advertised.  Valid capabilities are given by
@@ -316,7 +316,7 @@ receive all the capability events.
           <a href="#i:_wl_fullscreen_shell_mode_feedback" class="link dim black-70 child pr2 absolute left--2">#</a>
           _wl_fullscreen_shell_mode_feedback
         </h2>
-        <div class="f6 lh-copy ws-pre-line courier"></div>
+        <div class="f6 lh-copy ws-pre-line code"></div>
 
         
         
@@ -338,7 +338,7 @@ receive all the capability events.
 
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">This event indicates that the attempted mode switch operation was
+              <div class="f6 lh-copy ws-pre-line code mt3">This event indicates that the attempted mode switch operation was
 successful.  A surface of the size requested in the mode switch
 will fill the output without scaling.
 
@@ -360,7 +360,7 @@ wl_fullscreen_shell_mode_feedback object.
 
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">This event indicates that the attempted mode switch operation
+              <div class="f6 lh-copy ws-pre-line code mt3">This event indicates that the attempted mode switch operation
 failed. This may be because the requested output mode is not
 possible or it may mean that the compositor does not want to allow it.
 
@@ -382,7 +382,7 @@ wl_fullscreen_shell_mode_feedback object.
 
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">This event indicates that the attempted mode switch operation was
+              <div class="f6 lh-copy ws-pre-line code mt3">This event indicates that the attempted mode switch operation was
 cancelled.  Most likely this is because the client requested a
 second mode switch before the first one completed.
 
@@ -400,7 +400,7 @@ wl_fullscreen_shell_mode_feedback object.
     </ul>
 
     <h2 class="f4 lh-title">Copyright Info</h2>
-    <div class="f7 lh-copy ws-pre-line courier"></div>
+    <div class="f7 lh-copy ws-pre-line code"></div>
   </div>
 
     </main>

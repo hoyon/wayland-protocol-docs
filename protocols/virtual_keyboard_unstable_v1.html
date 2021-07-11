@@ -92,7 +92,7 @@
           <a href="#i:zwp_virtual_keyboard_v1" class="link dim black-70 child pr2 absolute left--2">#</a>
           zwp_virtual_keyboard_v1
         </h2>
-        <div class="f6 lh-copy ws-pre-line courier">The virtual keyboard provides an application with requests which emulate
+        <div class="f6 lh-copy ws-pre-line code">The virtual keyboard provides an application with requests which emulate
 the behaviour of a physical keyboard.
 
 This interface can be used by clients on its own to provide raw input
@@ -114,7 +114,7 @@ events, or it can accompany the input method protocol.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">zwp_virtual_keyboard_v1_keymap</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwp_virtual_keyboard_v1*</span> zwp_virtual_keyboard_v1,</div>
@@ -127,7 +127,7 @@ events, or it can accompany the input method protocol.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Provide a file descriptor to the compositor which can be
+              <div class="f6 lh-copy ws-pre-line code">Provide a file descriptor to the compositor which can be
 memory-mapped to provide a keyboard mapping description.
 
 Format carries a value from the keymap_format enumeration.
@@ -145,7 +145,7 @@ Format carries a value from the keymap_format enumeration.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">zwp_virtual_keyboard_v1_key</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwp_virtual_keyboard_v1*</span> zwp_virtual_keyboard_v1,</div>
@@ -158,7 +158,7 @@ Format carries a value from the keymap_format enumeration.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">A key was pressed or released.
+              <div class="f6 lh-copy ws-pre-line code">A key was pressed or released.
 The time argument is a timestamp with millisecond granularity, with an
 undefined base. All requests regarding a single object must share the
 same clock.
@@ -180,7 +180,7 @@ State carries a value from the key_state enumeration.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">zwp_virtual_keyboard_v1_modifiers</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwp_virtual_keyboard_v1*</span> zwp_virtual_keyboard_v1,</div>
@@ -195,7 +195,7 @@ State carries a value from the key_state enumeration.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Notifies the compositor that the modifier and&#x2f;or group state has
+              <div class="f6 lh-copy ws-pre-line code">Notifies the compositor that the modifier and&#x2f;or group state has
 changed, and it should update state.
 
 The client should use wl_keyboard.modifiers event to synchronize its
@@ -216,14 +216,14 @@ Keymap must be set before issuing this request.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">zwp_virtual_keyboard_v1_destroy</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwp_virtual_keyboard_v1*</span> zwp_virtual_keyboard_v1</div>
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier"></div>
+              <div class="f6 lh-copy ws-pre-line code"></div>
             </li>
             
           </ul>
@@ -240,7 +240,7 @@ Keymap must be set before issuing this request.
           <a href="#i:zwp_virtual_keyboard_manager_v1" class="link dim black-70 child pr2 absolute left--2">#</a>
           zwp_virtual_keyboard_manager_v1
         </h2>
-        <div class="f6 lh-copy ws-pre-line courier">A virtual keyboard manager allows an application to provide keyboard
+        <div class="f6 lh-copy ws-pre-line code">A virtual keyboard manager allows an application to provide keyboard
 input events as if they came from a physical keyboard.
 </div>
 
@@ -259,7 +259,7 @@ input events as if they came from a physical keyboard.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>struct zwp_virtual_keyboard_v1* </span><span class="dark-blue">zwp_virtual_keyboard_manager_v1_create_virtual_keyboard</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwp_virtual_keyboard_manager_v1*</span> zwp_virtual_keyboard_manager_v1,</div>
@@ -268,7 +268,7 @@ input events as if they came from a physical keyboard.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Creates a new virtual keyboard associated to a seat.
+              <div class="f6 lh-copy ws-pre-line code">Creates a new virtual keyboard associated to a seat.
 
 If the compositor enables a keyboard to perform arbitrary actions, it
 should present an error when an untrusted client requests a new
@@ -288,7 +288,7 @@ keyboard.
     </ul>
 
     <h2 class="f4 lh-title">Copyright Info</h2>
-    <div class="f7 lh-copy ws-pre-line courier">Copyright © 2008-2011  Kristian Høgsberg
+    <div class="f7 lh-copy ws-pre-line code">Copyright © 2008-2011  Kristian Høgsberg
 Copyright © 2010-2013  Intel Corporation
 Copyright © 2012-2013  Collabora, Ltd.
 Copyright © 2018       Purism SPC

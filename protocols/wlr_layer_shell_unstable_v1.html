@@ -130,7 +130,7 @@
           <a href="#i:zwlr_layer_shell_v1" class="link dim black-70 child pr2 absolute left--2">#</a>
           zwlr_layer_shell_v1
         </h2>
-        <div class="f6 lh-copy ws-pre-line courier">Clients can use this interface to assign the surface_layer role to
+        <div class="f6 lh-copy ws-pre-line code">Clients can use this interface to assign the surface_layer role to
 wl_surfaces. Such surfaces are assigned to a &quot;layer&quot; of the output and
 rendered with a defined z-depth respective to each other. They may also be
 anchored to the edges and corners of a screen and specify input handling
@@ -154,7 +154,7 @@ that interact with the desktop.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>struct zwlr_layer_surface_v1* </span><span class="dark-blue">zwlr_layer_shell_v1_get_layer_surface</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwlr_layer_shell_v1*</span> zwlr_layer_shell_v1,</div>
@@ -169,7 +169,7 @@ that interact with the desktop.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Create a layer surface for an existing surface. This assigns the role of
+              <div class="f6 lh-copy ws-pre-line code">Create a layer surface for an existing surface. This assigns the role of
 layer_surface, or raises a protocol error if another role is already
 assigned.
 
@@ -204,14 +204,14 @@ surface.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">zwlr_layer_shell_v1_destroy</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwlr_layer_shell_v1*</span> zwlr_layer_shell_v1</div>
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">This request indicates that the client will not use the layer_shell
+              <div class="f6 lh-copy ws-pre-line code">This request indicates that the client will not use the layer_shell
 object any more. Objects that have been created through this instance
 are not affected.
 </div>
@@ -231,7 +231,7 @@ are not affected.
           <a href="#i:zwlr_layer_surface_v1" class="link dim black-70 child pr2 absolute left--2">#</a>
           zwlr_layer_surface_v1
         </h2>
-        <div class="f6 lh-copy ws-pre-line courier">An interface that may be implemented by a wl_surface, for surfaces that
+        <div class="f6 lh-copy ws-pre-line code">An interface that may be implemented by a wl_surface, for surfaces that
 are designed to be rendered as a layer of a stacked desktop-like
 environment.
 
@@ -263,7 +263,7 @@ buffer attached, waiting for a configure event and handling it as usual.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">zwlr_layer_surface_v1_set_size</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwlr_layer_surface_v1*</span> zwlr_layer_surface_v1,</div>
@@ -274,7 +274,7 @@ buffer attached, waiting for a configure event and handling it as usual.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Sets the size of the surface in surface-local coordinates. The
+              <div class="f6 lh-copy ws-pre-line code">Sets the size of the surface in surface-local coordinates. The
 compositor will display the surface centered with respect to its
 anchors.
 
@@ -298,7 +298,7 @@ Size is double-buffered, see wl_surface.commit.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">zwlr_layer_surface_v1_set_anchor</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwlr_layer_surface_v1*</span> zwlr_layer_surface_v1,</div>
@@ -307,7 +307,7 @@ Size is double-buffered, see wl_surface.commit.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Requests that the compositor anchor the surface to the specified edges
+              <div class="f6 lh-copy ws-pre-line code">Requests that the compositor anchor the surface to the specified edges
 and corners. If two orthogonal edges are specified (e.g. &#x27;top&#x27; and
 &#x27;left&#x27;), then the anchor point will be the intersection of the edges
 (e.g. the top left corner of the output); otherwise the anchor point
@@ -328,7 +328,7 @@ Anchor is double-buffered, see wl_surface.commit.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">zwlr_layer_surface_v1_set_exclusive_zone</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwlr_layer_surface_v1*</span> zwlr_layer_surface_v1,</div>
@@ -337,7 +337,7 @@ Anchor is double-buffered, see wl_surface.commit.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Requests that the compositor avoids occluding an area with other
+              <div class="f6 lh-copy ws-pre-line code">Requests that the compositor avoids occluding an area with other
 surfaces. The compositor&#x27;s use of this information is
 implementation-dependent - do not assume that this region will not
 actually be occluded.
@@ -383,7 +383,7 @@ Exclusive zone is double-buffered, see wl_surface.commit.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">zwlr_layer_surface_v1_set_margin</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwlr_layer_surface_v1*</span> zwlr_layer_surface_v1,</div>
@@ -398,7 +398,7 @@ Exclusive zone is double-buffered, see wl_surface.commit.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Requests that the surface be placed some distance away from the anchor
+              <div class="f6 lh-copy ws-pre-line code">Requests that the surface be placed some distance away from the anchor
 point on the output, in surface-local coordinates. Setting this value
 for edges you are not anchored to has no effect.
 
@@ -419,7 +419,7 @@ Margin is double-buffered, see wl_surface.commit.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">zwlr_layer_surface_v1_set_keyboard_interactivity</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwlr_layer_surface_v1*</span> zwlr_layer_surface_v1,</div>
@@ -428,7 +428,7 @@ Margin is double-buffered, see wl_surface.commit.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Set how keyboard events are delivered to this surface. By default,
+              <div class="f6 lh-copy ws-pre-line code">Set how keyboard events are delivered to this surface. By default,
 layer shell surfaces do not receive keyboard events; this request can
 be used to change this.
 
@@ -454,7 +454,7 @@ Keyboard interactivity is double-buffered, see wl_surface.commit.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">zwlr_layer_surface_v1_get_popup</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwlr_layer_surface_v1*</span> zwlr_layer_surface_v1,</div>
@@ -463,7 +463,7 @@ Keyboard interactivity is double-buffered, see wl_surface.commit.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">This assigns an xdg_popup&#x27;s parent to this layer_surface.  This popup
+              <div class="f6 lh-copy ws-pre-line code">This assigns an xdg_popup&#x27;s parent to this layer_surface.  This popup
 should have been created via xdg_surface::get_popup with the parent set
 to NULL, and this request must be invoked before committing the popup&#x27;s
 initial state.
@@ -484,7 +484,7 @@ xdg_popup is and how it is used.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">zwlr_layer_surface_v1_ack_configure</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwlr_layer_surface_v1*</span> zwlr_layer_surface_v1,</div>
@@ -493,7 +493,7 @@ xdg_popup is and how it is used.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">When a configure event is received, if a client commits the
+              <div class="f6 lh-copy ws-pre-line code">When a configure event is received, if a client commits the
 surface in response to the configure event, then the client
 must make an ack_configure request sometime before the commit
 request, passing along the serial of the configure event.
@@ -522,14 +522,14 @@ event the client really is responding to.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">zwlr_layer_surface_v1_destroy</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwlr_layer_surface_v1*</span> zwlr_layer_surface_v1</div>
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">This request destroys the layer surface.
+              <div class="f6 lh-copy ws-pre-line code">This request destroys the layer surface.
 </div>
             </li>
             
@@ -544,7 +544,7 @@ event the client really is responding to.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">zwlr_layer_surface_v1_set_layer</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwlr_layer_surface_v1*</span> zwlr_layer_surface_v1,</div>
@@ -553,7 +553,7 @@ event the client really is responding to.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Change the layer that the surface is rendered on.
+              <div class="f6 lh-copy ws-pre-line code">Change the layer that the surface is rendered on.
 
 Layer is double-buffered, see wl_surface.commit.
 </div>
@@ -578,20 +578,20 @@ Layer is double-buffered, see wl_surface.commit.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> serial  
                 </div>
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> width  
                 </div>
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> height  
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">The configure event asks the client to resize its surface.
+              <div class="f6 lh-copy ws-pre-line code mt3">The configure event asks the client to resize its surface.
 
 Clients should arrange their surface for the new states, and then send
 an ack_configure request with the serial sent in this configure event at
@@ -627,7 +627,7 @@ decide its own window dimension.
 
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">The closed event is sent by the compositor when the surface will no
+              <div class="f6 lh-copy ws-pre-line code mt3">The closed event is sent by the compositor when the surface will no
 longer be shown. The output may have been destroyed or the user may
 have asked for it to be removed. Further changes to the surface will be
 ignored. The client should destroy the resource after receiving this
@@ -644,7 +644,7 @@ event, and create a new surface if they so choose.
     </ul>
 
     <h2 class="f4 lh-title">Copyright Info</h2>
-    <div class="f7 lh-copy ws-pre-line courier">Copyright © 2017 Drew DeVault
+    <div class="f7 lh-copy ws-pre-line code">Copyright © 2017 Drew DeVault
 
 Permission to use, copy, modify, distribute, and sell this
 software and its documentation for any purpose is hereby granted

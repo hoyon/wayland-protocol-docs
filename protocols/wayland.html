@@ -952,7 +952,7 @@
           <a href="#i:wl_display" class="link dim black-70 child pr2 absolute left--2">#</a>
           wl_display
         </h2>
-        <div class="f6 lh-copy ws-pre-line courier">The core global object.  This is a special singleton object.  It
+        <div class="f6 lh-copy ws-pre-line code">The core global object.  This is a special singleton object.  It
 is used for internal Wayland protocol features.
 </div>
 
@@ -971,14 +971,14 @@ is used for internal Wayland protocol features.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>struct wl_callback* </span><span class="dark-blue">wl_display_sync</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct wl_display*</span> wl_display</div>
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">The sync request asks the server to emit the &#x27;done&#x27; event
+              <div class="f6 lh-copy ws-pre-line code">The sync request asks the server to emit the &#x27;done&#x27; event
 on the returned wl_callback object.  Since requests are
 handled in-order and events are delivered in-order, this can
 be used as a barrier to ensure all previous requests and the
@@ -1003,14 +1003,14 @@ The callback_data passed in the callback is the event serial.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>struct wl_registry* </span><span class="dark-blue">wl_display_get_registry</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct wl_display*</span> wl_display</div>
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">This request creates a registry object that allows the client
+              <div class="f6 lh-copy ws-pre-line code">This request creates a registry object that allows the client
 to list and bind the global objects available from the
 compositor.
 
@@ -1041,20 +1041,20 @@ possible to avoid wasting memory.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">struct void*</span> object_id <span class="green">/* object where the error occurred */</span> 
                 </div>
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> code <span class="green">/* error code */</span> 
                 </div>
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">const char*</span> message <span class="green">/* error description */</span> 
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">The error event is sent out when a fatal (non-recoverable)
+              <div class="f6 lh-copy ws-pre-line code mt3">The error event is sent out when a fatal (non-recoverable)
 error has occurred.  The object_id argument is the object
 where the error occurred, most often in response to a request
 to that object.  The code identifies the error and is defined
@@ -1076,12 +1076,12 @@ of the error, for (debugging) convenience.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> id <span class="green">/* deleted object ID */</span> 
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">This event is used internally by the object ID management
+              <div class="f6 lh-copy ws-pre-line code mt3">This event is used internally by the object ID management
 logic. When a client deletes an object that it had created,
 the server will send this event to acknowledge that it has
 seen the delete request. When the client receives this event,
@@ -1100,7 +1100,7 @@ it will know that it can safely reuse the object ID.
           <a href="#i:wl_registry" class="link dim black-70 child pr2 absolute left--2">#</a>
           wl_registry
         </h2>
-        <div class="f6 lh-copy ws-pre-line courier">The singleton global registry object.  The server has a number of
+        <div class="f6 lh-copy ws-pre-line code">The singleton global registry object.  The server has a number of
 global objects that are available to all clients.  These objects
 typically represent an actual object in the server (for example,
 an input device) or they are singleton objects that provide
@@ -1137,7 +1137,7 @@ the object.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void* </span><span class="dark-blue">wl_registry_bind</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct wl_registry*</span> wl_registry,</div>
@@ -1146,7 +1146,7 @@ the object.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Binds a new, client-created object to the server using the
+              <div class="f6 lh-copy ws-pre-line code">Binds a new, client-created object to the server using the
 specified name as the identifier.
   </div>
             </li>
@@ -1170,20 +1170,20 @@ specified name as the identifier.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> name <span class="green">/* numeric name of the global object */</span> 
                 </div>
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">const char*</span> interface <span class="green">/* interface implemented by the object */</span> 
                 </div>
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> version <span class="green">/* interface version */</span> 
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">Notify the client of global objects.
+              <div class="f6 lh-copy ws-pre-line code mt3">Notify the client of global objects.
 
 The event notifies the client that a global object with
 the given name is now available, and it implements the
@@ -1203,12 +1203,12 @@ given version of the given interface.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> name <span class="green">/* numeric name of the global object */</span> 
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">Notify the client of removed global objects.
+              <div class="f6 lh-copy ws-pre-line code mt3">Notify the client of removed global objects.
 
 This event notifies the client that the global identified
 by name is no longer available.  If the client bound to
@@ -1232,7 +1232,7 @@ the global going away and a client sending a request to it.
           <a href="#i:wl_callback" class="link dim black-70 child pr2 absolute left--2">#</a>
           wl_callback
         </h2>
-        <div class="f6 lh-copy ws-pre-line courier">Clients can handle the &#x27;done&#x27; event to get notified when
+        <div class="f6 lh-copy ws-pre-line code">Clients can handle the &#x27;done&#x27; event to get notified when
 the related request is done.
 </div>
 
@@ -1255,12 +1255,12 @@ the related request is done.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> callback_data <span class="green">/* request-specific data for the callback */</span> 
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">Notify the client when the related request is done.
+              <div class="f6 lh-copy ws-pre-line code mt3">Notify the client when the related request is done.
   </div>
             </li>
             
@@ -1275,7 +1275,7 @@ the related request is done.
           <a href="#i:wl_compositor" class="link dim black-70 child pr2 absolute left--2">#</a>
           wl_compositor
         </h2>
-        <div class="f6 lh-copy ws-pre-line courier">A compositor.  This object is a singleton global.  The
+        <div class="f6 lh-copy ws-pre-line code">A compositor.  This object is a singleton global.  The
 compositor is in charge of combining the contents of multiple
 surfaces into one displayable output.
 </div>
@@ -1295,14 +1295,14 @@ surfaces into one displayable output.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>struct wl_surface* </span><span class="dark-blue">wl_compositor_create_surface</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct wl_compositor*</span> wl_compositor</div>
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Ask the compositor to create a new surface.
+              <div class="f6 lh-copy ws-pre-line code">Ask the compositor to create a new surface.
   </div>
             </li>
             
@@ -1317,14 +1317,14 @@ surfaces into one displayable output.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>struct wl_region* </span><span class="dark-blue">wl_compositor_create_region</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct wl_compositor*</span> wl_compositor</div>
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Ask the compositor to create a new region.
+              <div class="f6 lh-copy ws-pre-line code">Ask the compositor to create a new region.
   </div>
             </li>
             
@@ -1342,7 +1342,7 @@ surfaces into one displayable output.
           <a href="#i:wl_shm_pool" class="link dim black-70 child pr2 absolute left--2">#</a>
           wl_shm_pool
         </h2>
-        <div class="f6 lh-copy ws-pre-line courier">The wl_shm_pool object encapsulates a piece of memory shared
+        <div class="f6 lh-copy ws-pre-line code">The wl_shm_pool object encapsulates a piece of memory shared
 between the compositor and client.  Through the wl_shm_pool
 object, the client can allocate shared memory wl_buffer objects.
 All objects created through the same pool share the same
@@ -1366,7 +1366,7 @@ a surface or for many small buffers.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>struct wl_buffer* </span><span class="dark-blue">wl_shm_pool_create_buffer</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct wl_shm_pool*</span> wl_shm_pool,</div>
@@ -1383,7 +1383,7 @@ a surface or for many small buffers.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Create a wl_buffer object from the pool.
+              <div class="f6 lh-copy ws-pre-line code">Create a wl_buffer object from the pool.
 
 The buffer is created offset bytes into the pool and has
 width and height as specified.  The stride argument specifies
@@ -1408,14 +1408,14 @@ a buffer from it.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">wl_shm_pool_destroy</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct wl_shm_pool*</span> wl_shm_pool</div>
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Destroy the shared memory pool.
+              <div class="f6 lh-copy ws-pre-line code">Destroy the shared memory pool.
 
 The mmapped memory will be released when all
 buffers that have been created from this pool
@@ -1434,7 +1434,7 @@ are gone.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">wl_shm_pool_resize</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct wl_shm_pool*</span> wl_shm_pool,</div>
@@ -1443,7 +1443,7 @@ are gone.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">This request will cause the server to remap the backing memory
+              <div class="f6 lh-copy ws-pre-line code">This request will cause the server to remap the backing memory
 for the pool from the file descriptor passed when the pool was
 created, but using the new size.  This request can only be
 used to make the pool bigger.
@@ -1464,7 +1464,7 @@ used to make the pool bigger.
           <a href="#i:wl_shm" class="link dim black-70 child pr2 absolute left--2">#</a>
           wl_shm
         </h2>
-        <div class="f6 lh-copy ws-pre-line courier">A singleton global object that provides support for shared
+        <div class="f6 lh-copy ws-pre-line code">A singleton global object that provides support for shared
 memory.
 
 Clients can create wl_shm_pool objects using the create_pool
@@ -1490,7 +1490,7 @@ that can be used for buffers.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>struct wl_shm_pool* </span><span class="dark-blue">wl_shm_create_pool</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct wl_shm*</span> wl_shm,</div>
@@ -1501,7 +1501,7 @@ that can be used for buffers.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Create a new wl_shm_pool object.
+              <div class="f6 lh-copy ws-pre-line code">Create a new wl_shm_pool object.
 
 The pool can be used to create shared memory based buffer
 objects.  The server will mmap size bytes of the passed file
@@ -1528,12 +1528,12 @@ descriptor, to use as backing memory for the pool.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> format <span class="green">/* buffer pixel format */</span> 
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">Informs the client about a valid pixel format that
+              <div class="f6 lh-copy ws-pre-line code mt3">Informs the client about a valid pixel format that
 can be used for buffers. Known formats include
 argb8888 and xrgb8888.
   </div>
@@ -1550,7 +1550,7 @@ argb8888 and xrgb8888.
           <a href="#i:wl_buffer" class="link dim black-70 child pr2 absolute left--2">#</a>
           wl_buffer
         </h2>
-        <div class="f6 lh-copy ws-pre-line courier">A buffer provides the content for a wl_surface. Buffers are
+        <div class="f6 lh-copy ws-pre-line code">A buffer provides the content for a wl_surface. Buffers are
 created through factory interfaces such as wl_drm, wl_shm or
 similar. It has a width and a height and can be attached to a
 wl_surface, but the mechanism by which a client provides and
@@ -1572,14 +1572,14 @@ updates the contents is defined by the buffer factory interface.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">wl_buffer_destroy</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct wl_buffer*</span> wl_buffer</div>
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Destroy a buffer. If and how you need to release the backing
+              <div class="f6 lh-copy ws-pre-line code">Destroy a buffer. If and how you need to release the backing
 storage is defined by the buffer factory interface.
 
 For possible side-effects to a surface, see wl_surface.attach.
@@ -1606,7 +1606,7 @@ For possible side-effects to a surface, see wl_surface.attach.
 
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">Sent when this wl_buffer is no longer used by the compositor.
+              <div class="f6 lh-copy ws-pre-line code mt3">Sent when this wl_buffer is no longer used by the compositor.
 The client is now free to reuse or destroy this buffer and its
 backing storage.
 
@@ -1632,7 +1632,7 @@ optimization for GL(ES) compositors with wl_shm clients.
           <a href="#i:wl_data_offer" class="link dim black-70 child pr2 absolute left--2">#</a>
           wl_data_offer
         </h2>
-        <div class="f6 lh-copy ws-pre-line courier">A wl_data_offer represents a piece of data offered for transfer
+        <div class="f6 lh-copy ws-pre-line code">A wl_data_offer represents a piece of data offered for transfer
 by another client (the source client).  It is used by the
 copy-and-paste and drag-and-drop mechanisms.  The offer
 describes the different mime types that the data can be
@@ -1655,7 +1655,7 @@ data directly from the source client.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">wl_data_offer_accept</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct wl_data_offer*</span> wl_data_offer,</div>
@@ -1666,7 +1666,7 @@ data directly from the source client.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Indicate that the client can accept the given mime type, or
+              <div class="f6 lh-copy ws-pre-line code">Indicate that the client can accept the given mime type, or
 NULL for not accepted.
 
 For objects of version 2 or older, this request is used by the
@@ -1694,7 +1694,7 @@ conjunction with wl_data_source.action for feedback.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">wl_data_offer_receive</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct wl_data_offer*</span> wl_data_offer,</div>
@@ -1705,7 +1705,7 @@ conjunction with wl_data_source.action for feedback.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">To transfer the offered data, the client issues this request
+              <div class="f6 lh-copy ws-pre-line code">To transfer the offered data, the client issues this request
 and indicates the mime type it wants to receive.  The transfer
 happens through the passed file descriptor (typically created
 with the pipe system call).  The source client writes the data
@@ -1734,14 +1734,14 @@ determine acceptance.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">wl_data_offer_destroy</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct wl_data_offer*</span> wl_data_offer</div>
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Destroy the data offer.
+              <div class="f6 lh-copy ws-pre-line code">Destroy the data offer.
   </div>
             </li>
             
@@ -1756,14 +1756,14 @@ determine acceptance.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">wl_data_offer_finish</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct wl_data_offer*</span> wl_data_offer</div>
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Notifies the compositor that the drag destination successfully
+              <div class="f6 lh-copy ws-pre-line code">Notifies the compositor that the drag destination successfully
 finished the drag-and-drop operation.
 
 Upon receiving this request, the compositor will emit
@@ -1791,7 +1791,7 @@ operation, the invalid_finish protocol error is raised.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">wl_data_offer_set_actions</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct wl_data_offer*</span> wl_data_offer,</div>
@@ -1802,7 +1802,7 @@ operation, the invalid_finish protocol error is raised.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Sets the actions that the destination side client supports for
+              <div class="f6 lh-copy ws-pre-line code">Sets the actions that the destination side client supports for
 this operation. This request may trigger the emission of
 wl_data_source.action and wl_data_offer.action events if the compositor
 needs to change the selected action.
@@ -1855,12 +1855,12 @@ will be raised otherwise.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">const char*</span> mime_type <span class="green">/* offered mime type */</span> 
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">Sent immediately after creating the wl_data_offer object.  One
+              <div class="f6 lh-copy ws-pre-line code mt3">Sent immediately after creating the wl_data_offer object.  One
 event per offered mime type.
   </div>
             </li>
@@ -1877,12 +1877,12 @@ event per offered mime type.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> source_actions <span class="green">/* actions offered by the data source */</span> 
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">This event indicates the actions offered by the data source. It
+              <div class="f6 lh-copy ws-pre-line code mt3">This event indicates the actions offered by the data source. It
 will be sent right after wl_data_device.enter, or anytime the source
 side changes its offered actions through wl_data_source.set_actions.
   </div>
@@ -1900,12 +1900,12 @@ side changes its offered actions through wl_data_source.set_actions.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> dnd_action <span class="green">/* action selected by the compositor */</span> 
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">This event indicates the action selected by the compositor after
+              <div class="f6 lh-copy ws-pre-line code mt3">This event indicates the action selected by the compositor after
 matching the source&#x2f;destination side actions. Only one action (or
 none) will be offered here.
 
@@ -1954,7 +1954,7 @@ must happen before the call to wl_data_offer.finish.
           <a href="#i:wl_data_source" class="link dim black-70 child pr2 absolute left--2">#</a>
           wl_data_source
         </h2>
-        <div class="f6 lh-copy ws-pre-line courier">The wl_data_source object is the source side of a wl_data_offer.
+        <div class="f6 lh-copy ws-pre-line code">The wl_data_source object is the source side of a wl_data_offer.
 It is created by the source client in a data transfer and
 provides a way to describe the offered data and a way to respond
 to requests to transfer the data.
@@ -1975,7 +1975,7 @@ to requests to transfer the data.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">wl_data_source_offer</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct wl_data_source*</span> wl_data_source,</div>
@@ -1984,7 +1984,7 @@ to requests to transfer the data.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">This request adds a mime type to the set of mime types
+              <div class="f6 lh-copy ws-pre-line code">This request adds a mime type to the set of mime types
 advertised to targets.  Can be called several times to offer
 multiple types.
   </div>
@@ -2001,14 +2001,14 @@ multiple types.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">wl_data_source_destroy</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct wl_data_source*</span> wl_data_source</div>
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Destroy the data source.
+              <div class="f6 lh-copy ws-pre-line code">Destroy the data source.
   </div>
             </li>
             
@@ -2023,7 +2023,7 @@ multiple types.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">wl_data_source_set_actions</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct wl_data_source*</span> wl_data_source,</div>
@@ -2032,7 +2032,7 @@ multiple types.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Sets the actions that the source side client supports for this
+              <div class="f6 lh-copy ws-pre-line code">Sets the actions that the source side client supports for this
 operation. This request may trigger wl_data_source.action and
 wl_data_offer.action events if the compositor needs to change the
 selected action.
@@ -2067,12 +2067,12 @@ for drag-and-drop will raise a protocol error.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">const char*</span> mime_type <span class="green">/* mime type accepted by the target */</span> 
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">Sent when a target accepts pointer_focus or motion events.  If
+              <div class="f6 lh-copy ws-pre-line code mt3">Sent when a target accepts pointer_focus or motion events.  If
 a target does not accept any of the offered types, type is NULL.
 
 Used for feedback during drag-and-drop.
@@ -2091,16 +2091,16 @@ Used for feedback during drag-and-drop.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">const char*</span> mime_type <span class="green">/* mime type for the data */</span> 
                 </div>
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">int32_t</span> fd <span class="green">/* file descriptor for the data */</span> 
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">Request for data from the client.  Send the data as the
+              <div class="f6 lh-copy ws-pre-line code mt3">Request for data from the client.  Send the data as the
 specified mime type over the passed file descriptor, then
 close it.
   </div>
@@ -2119,7 +2119,7 @@ close it.
 
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">This data source is no longer valid. There are several reasons why
+              <div class="f6 lh-copy ws-pre-line code mt3">This data source is no longer valid. There are several reasons why
 this could happen:
 
 - The data source has been replaced by another data source.
@@ -2155,7 +2155,7 @@ source.
 
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">The user performed the drop action. This event does not indicate
+              <div class="f6 lh-copy ws-pre-line code mt3">The user performed the drop action. This event does not indicate
 acceptance, wl_data_source.cancelled may still be emitted afterwards
 if the drop destination does not accept any mime type.
 
@@ -2180,7 +2180,7 @@ not be destroyed here.
 
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">The drop destination finished interoperating with this data
+              <div class="f6 lh-copy ws-pre-line code mt3">The drop destination finished interoperating with this data
 source, so the client is now free to destroy this data source and
 free all associated data.
 
@@ -2201,12 +2201,12 @@ source can now delete the transferred data.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> dnd_action <span class="green">/* action selected by the compositor */</span> 
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">This event indicates the action selected by the compositor after
+              <div class="f6 lh-copy ws-pre-line code mt3">This event indicates the action selected by the compositor after
 matching the source&#x2f;destination side actions. Only one action (or
 none) will be offered here.
 
@@ -2245,7 +2245,7 @@ they reflect the current action.
           <a href="#i:wl_data_device" class="link dim black-70 child pr2 absolute left--2">#</a>
           wl_data_device
         </h2>
-        <div class="f6 lh-copy ws-pre-line courier">There is one wl_data_device per seat which can be obtained
+        <div class="f6 lh-copy ws-pre-line code">There is one wl_data_device per seat which can be obtained
 from the global wl_data_device_manager singleton.
 
 A wl_data_device provides access to inter-client data transfer
@@ -2267,7 +2267,7 @@ mechanisms such as copy-and-paste and drag-and-drop.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">wl_data_device_start_drag</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct wl_data_device*</span> wl_data_device,</div>
@@ -2282,7 +2282,7 @@ mechanisms such as copy-and-paste and drag-and-drop.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">This request asks the compositor to start a drag-and-drop
+              <div class="f6 lh-copy ws-pre-line code">This request asks the compositor to start a drag-and-drop
 operation on behalf of the client.
 
 The source argument is the data source that provides the data
@@ -2324,7 +2324,7 @@ undefined, and the wl_surface is unmapped.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">wl_data_device_set_selection</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct wl_data_device*</span> wl_data_device,</div>
@@ -2335,7 +2335,7 @@ undefined, and the wl_surface is unmapped.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">This request asks the compositor to set the selection
+              <div class="f6 lh-copy ws-pre-line code">This request asks the compositor to set the selection
 to the data from the source on behalf of the client.
 
 To unset the selection, set the source to NULL.
@@ -2353,14 +2353,14 @@ To unset the selection, set the source to NULL.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">wl_data_device_release</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct wl_data_device*</span> wl_data_device</div>
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">This request destroys the data device.
+              <div class="f6 lh-copy ws-pre-line code">This request destroys the data device.
   </div>
             </li>
             
@@ -2383,12 +2383,12 @@ To unset the selection, set the source to NULL.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">struct wl_data_offer*</span> id <span class="green">/* the new data_offer object */</span> 
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">The data_offer event introduces a new wl_data_offer object,
+              <div class="f6 lh-copy ws-pre-line code mt3">The data_offer event introduces a new wl_data_offer object,
 which will subsequently be used in either the
 data_device.enter event (for drag-and-drop) or the
 data_device.selection event (for selections).  Immediately
@@ -2410,28 +2410,28 @@ mime types it offers.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> serial <span class="green">/* serial number of the enter event */</span> 
                 </div>
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">struct wl_surface*</span> surface <span class="green">/* client surface entered */</span> 
                 </div>
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">wl_fixed_t</span> x <span class="green">/* surface-local x coordinate */</span> 
                 </div>
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">wl_fixed_t</span> y <span class="green">/* surface-local y coordinate */</span> 
                 </div>
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">struct wl_data_offer*</span> id <span class="green">/* source data_offer object */</span> 
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">This event is sent when an active drag-and-drop pointer enters
+              <div class="f6 lh-copy ws-pre-line code mt3">This event is sent when an active drag-and-drop pointer enters
 a surface owned by the client.  The position of the pointer at
 enter time is provided by the x and y arguments, in surface-local
 coordinates.
@@ -2451,7 +2451,7 @@ coordinates.
 
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">This event is sent when the drag-and-drop pointer leaves the
+              <div class="f6 lh-copy ws-pre-line code mt3">This event is sent when the drag-and-drop pointer leaves the
 surface and the session ends.  The client must destroy the
 wl_data_offer introduced at enter time at this point.
   </div>
@@ -2469,20 +2469,20 @@ wl_data_offer introduced at enter time at this point.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> time <span class="green">/* timestamp with millisecond granularity */</span> 
                 </div>
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">wl_fixed_t</span> x <span class="green">/* surface-local x coordinate */</span> 
                 </div>
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">wl_fixed_t</span> y <span class="green">/* surface-local y coordinate */</span> 
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">This event is sent when the drag-and-drop pointer moves within
+              <div class="f6 lh-copy ws-pre-line code mt3">This event is sent when the drag-and-drop pointer moves within
 the currently focused surface. The new position of the pointer
 is provided by the x and y arguments, in surface-local
 coordinates.
@@ -2502,7 +2502,7 @@ coordinates.
 
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">The event is sent when a drag-and-drop operation is ended
+              <div class="f6 lh-copy ws-pre-line code mt3">The event is sent when a drag-and-drop operation is ended
 because the implicit grab is removed.
 
 The drag-and-drop destination is expected to honor the last action
@@ -2530,12 +2530,12 @@ to cancel the operation.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">struct wl_data_offer*</span> id <span class="green">/* selection data_offer object */</span> 
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">The selection event is sent out to notify the client of a new
+              <div class="f6 lh-copy ws-pre-line code mt3">The selection event is sent out to notify the client of a new
 wl_data_offer for the selection for this device.  The
 data_device.data_offer and the data_offer.offer events are
 sent out immediately before this event to introduce the data
@@ -2560,7 +2560,7 @@ this event.
           <a href="#i:wl_data_device_manager" class="link dim black-70 child pr2 absolute left--2">#</a>
           wl_data_device_manager
         </h2>
-        <div class="f6 lh-copy ws-pre-line courier">The wl_data_device_manager is a singleton global object that
+        <div class="f6 lh-copy ws-pre-line code">The wl_data_device_manager is a singleton global object that
 provides access to inter-client data transfer mechanisms such as
 copy-and-paste and drag-and-drop.  These mechanisms are tied to
 a wl_seat and this interface lets a client get a wl_data_device
@@ -2587,14 +2587,14 @@ wl_data_offer.accept and wl_data_offer.finish for details.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>struct wl_data_source* </span><span class="dark-blue">wl_data_device_manager_create_data_source</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct wl_data_device_manager*</span> wl_data_device_manager</div>
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Create a new data source.
+              <div class="f6 lh-copy ws-pre-line code">Create a new data source.
   </div>
             </li>
             
@@ -2609,7 +2609,7 @@ wl_data_offer.accept and wl_data_offer.finish for details.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>struct wl_data_device* </span><span class="dark-blue">wl_data_device_manager_get_data_device</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct wl_data_device_manager*</span> wl_data_device_manager,</div>
@@ -2618,7 +2618,7 @@ wl_data_offer.accept and wl_data_offer.finish for details.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Create a new data device for a given seat.
+              <div class="f6 lh-copy ws-pre-line code">Create a new data device for a given seat.
   </div>
             </li>
             
@@ -2636,7 +2636,7 @@ wl_data_offer.accept and wl_data_offer.finish for details.
           <a href="#i:wl_shell" class="link dim black-70 child pr2 absolute left--2">#</a>
           wl_shell
         </h2>
-        <div class="f6 lh-copy ws-pre-line courier">This interface is implemented by servers that provide
+        <div class="f6 lh-copy ws-pre-line code">This interface is implemented by servers that provide
 desktop-style user interfaces.
 
 It allows clients to associate a wl_shell_surface with
@@ -2661,7 +2661,7 @@ For desktop-style user interfaces, use xdg_shell.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>struct wl_shell_surface* </span><span class="dark-blue">wl_shell_get_shell_surface</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct wl_shell*</span> wl_shell,</div>
@@ -2670,7 +2670,7 @@ For desktop-style user interfaces, use xdg_shell.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Create a shell surface for an existing surface. This gives
+              <div class="f6 lh-copy ws-pre-line code">Create a shell surface for an existing surface. This gives
 the wl_surface the role of a shell surface. If the wl_surface
 already has another role, it raises a protocol error.
 
@@ -2692,7 +2692,7 @@ Only one shell surface can be associated with a given surface.
           <a href="#i:wl_shell_surface" class="link dim black-70 child pr2 absolute left--2">#</a>
           wl_shell_surface
         </h2>
-        <div class="f6 lh-copy ws-pre-line courier">An interface that may be implemented by a wl_surface, for
+        <div class="f6 lh-copy ws-pre-line code">An interface that may be implemented by a wl_surface, for
 implementations that provide a desktop-style user interface.
 
 It provides requests to treat surfaces like toplevel, fullscreen
@@ -2720,7 +2720,7 @@ the wl_surface object.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">wl_shell_surface_pong</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct wl_shell_surface*</span> wl_shell_surface,</div>
@@ -2729,7 +2729,7 @@ the wl_surface object.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">A client must respond to a ping event with a pong request or
+              <div class="f6 lh-copy ws-pre-line code">A client must respond to a ping event with a pong request or
 the client may be deemed unresponsive.
   </div>
             </li>
@@ -2745,7 +2745,7 @@ the client may be deemed unresponsive.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">wl_shell_surface_move</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct wl_shell_surface*</span> wl_shell_surface,</div>
@@ -2756,7 +2756,7 @@ the client may be deemed unresponsive.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Start a pointer-driven move of the surface.
+              <div class="f6 lh-copy ws-pre-line code">Start a pointer-driven move of the surface.
 
 This request must be used in response to a button press event.
 The server may ignore move requests depending on the state of
@@ -2775,7 +2775,7 @@ the surface (e.g. fullscreen or maximized).
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">wl_shell_surface_resize</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct wl_shell_surface*</span> wl_shell_surface,</div>
@@ -2788,7 +2788,7 @@ the surface (e.g. fullscreen or maximized).
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Start a pointer-driven resizing of the surface.
+              <div class="f6 lh-copy ws-pre-line code">Start a pointer-driven resizing of the surface.
 
 This request must be used in response to a button press event.
 The server may ignore resize requests depending on the state of
@@ -2807,14 +2807,14 @@ the surface (e.g. fullscreen or maximized).
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">wl_shell_surface_set_toplevel</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct wl_shell_surface*</span> wl_shell_surface</div>
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Map the surface as a toplevel surface.
+              <div class="f6 lh-copy ws-pre-line code">Map the surface as a toplevel surface.
 
 A toplevel surface is not fullscreen, maximized or transient.
   </div>
@@ -2831,7 +2831,7 @@ A toplevel surface is not fullscreen, maximized or transient.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">wl_shell_surface_set_transient</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct wl_shell_surface*</span> wl_shell_surface,</div>
@@ -2846,7 +2846,7 @@ A toplevel surface is not fullscreen, maximized or transient.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Map the surface relative to an existing surface.
+              <div class="f6 lh-copy ws-pre-line code">Map the surface relative to an existing surface.
 
 The x and y arguments specify the location of the upper left
 corner of the surface relative to the upper left corner of the
@@ -2867,7 +2867,7 @@ The flags argument controls details of the transient behaviour.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">wl_shell_surface_set_fullscreen</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct wl_shell_surface*</span> wl_shell_surface,</div>
@@ -2880,7 +2880,7 @@ The flags argument controls details of the transient behaviour.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Map the surface as a fullscreen surface.
+              <div class="f6 lh-copy ws-pre-line code">Map the surface as a fullscreen surface.
 
 If an output parameter is given then the surface will be made
 fullscreen on that output. If the client does not specify the
@@ -2927,7 +2927,7 @@ be made fullscreen.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">wl_shell_surface_set_popup</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct wl_shell_surface*</span> wl_shell_surface,</div>
@@ -2946,7 +2946,7 @@ be made fullscreen.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Map the surface as a popup.
+              <div class="f6 lh-copy ws-pre-line code">Map the surface as a popup.
 
 A popup surface is a transient surface with an added pointer
 grab.
@@ -2979,7 +2979,7 @@ parent surface, in surface-local coordinates.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">wl_shell_surface_set_maximized</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct wl_shell_surface*</span> wl_shell_surface,</div>
@@ -2988,7 +2988,7 @@ parent surface, in surface-local coordinates.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Map the surface as a maximized surface.
+              <div class="f6 lh-copy ws-pre-line code">Map the surface as a maximized surface.
 
 If an output parameter is given then the surface will be
 maximized on that output. If the client does not specify the
@@ -3020,7 +3020,7 @@ The details depend on the compositor implementation.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">wl_shell_surface_set_title</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct wl_shell_surface*</span> wl_shell_surface,</div>
@@ -3029,7 +3029,7 @@ The details depend on the compositor implementation.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Set a short title for the surface.
+              <div class="f6 lh-copy ws-pre-line code">Set a short title for the surface.
 
 This string may be used to identify the surface in a task bar,
 window list, or other user interface elements provided by the
@@ -3050,7 +3050,7 @@ The string must be encoded in UTF-8.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">wl_shell_surface_set_class</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct wl_shell_surface*</span> wl_shell_surface,</div>
@@ -3059,7 +3059,7 @@ The string must be encoded in UTF-8.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Set a class for the surface.
+              <div class="f6 lh-copy ws-pre-line code">Set a class for the surface.
 
 The surface class identifies the general class of applications
 to which the surface belongs. A common convention is to use the
@@ -3087,12 +3087,12 @@ the application&#x27;s .desktop file as the class.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> serial <span class="green">/* serial number of the ping */</span> 
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">Ping a client to check if it is receiving events and sending
+              <div class="f6 lh-copy ws-pre-line code mt3">Ping a client to check if it is receiving events and sending
 requests. A client is expected to reply with a pong request.
   </div>
             </li>
@@ -3109,20 +3109,20 @@ requests. A client is expected to reply with a pong request.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> edges <span class="green">/* how the surface was resized */</span> 
                 </div>
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">int32_t</span> width <span class="green">/* new width of the surface */</span> 
                 </div>
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">int32_t</span> height <span class="green">/* new height of the surface */</span> 
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">The configure event asks the client to resize its surface.
+              <div class="f6 lh-copy ws-pre-line code mt3">The configure event asks the client to resize its surface.
 
 The size is a hint, in the sense that the client is free to
 ignore it if it doesn&#x27;t resize, pick a smaller size (to
@@ -3155,7 +3155,7 @@ in surface-local coordinates.
 
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">The popup_done event is sent out when a popup grab is broken,
+              <div class="f6 lh-copy ws-pre-line code mt3">The popup_done event is sent out when a popup grab is broken,
 that is, when the user clicks a surface that doesn&#x27;t belong
 to the client owning the popup surface.
   </div>
@@ -3172,7 +3172,7 @@ to the client owning the popup surface.
           <a href="#i:wl_surface" class="link dim black-70 child pr2 absolute left--2">#</a>
           wl_surface
         </h2>
-        <div class="f6 lh-copy ws-pre-line courier">A surface is a rectangular area that may be displayed on zero
+        <div class="f6 lh-copy ws-pre-line code">A surface is a rectangular area that may be displayed on zero
 or more outputs, and shown any number of times at the compositor&#x27;s
 discretion. They can present wl_buffers, receive user input, and
 define a local coordinate system.
@@ -3230,14 +3230,14 @@ switching is not allowed).
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">wl_surface_destroy</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct wl_surface*</span> wl_surface</div>
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Deletes the surface and invalidates its object ID.
+              <div class="f6 lh-copy ws-pre-line code">Deletes the surface and invalidates its object ID.
   </div>
             </li>
             
@@ -3252,7 +3252,7 @@ switching is not allowed).
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">wl_surface_attach</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct wl_surface*</span> wl_surface,</div>
@@ -3265,7 +3265,7 @@ switching is not allowed).
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Set a buffer as the content of this surface.
+              <div class="f6 lh-copy ws-pre-line code">Set a buffer as the content of this surface.
 
 The new size of the surface is calculated based on the buffer
 size transformed by the inverse buffer_transform and the
@@ -3325,7 +3325,7 @@ following wl_surface.commit will remove the surface content.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">wl_surface_damage</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct wl_surface*</span> wl_surface,</div>
@@ -3340,7 +3340,7 @@ following wl_surface.commit will remove the surface content.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">This request is used to describe the regions where the pending
+              <div class="f6 lh-copy ws-pre-line code">This request is used to describe the regions where the pending
 buffer is different from the current surface contents, and where
 the surface therefore needs to be repainted. The compositor
 ignores the parts of the damage that fall outside of the surface.
@@ -3375,14 +3375,14 @@ instead of surface coordinates.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>struct wl_callback* </span><span class="dark-blue">wl_surface_frame</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct wl_surface*</span> wl_surface</div>
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Request a notification when it is a good time to start drawing a new
+              <div class="f6 lh-copy ws-pre-line code">Request a notification when it is a good time to start drawing a new
 frame, by creating a frame callback. This is useful for throttling
 redrawing operations, and driving animations.
 
@@ -3428,7 +3428,7 @@ milliseconds, with an undefined base.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">wl_surface_set_opaque_region</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct wl_surface*</span> wl_surface,</div>
@@ -3437,7 +3437,7 @@ milliseconds, with an undefined base.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">This request sets the region of the surface that contains
+              <div class="f6 lh-copy ws-pre-line code">This request sets the region of the surface that contains
 opaque content.
 
 The opaque region is an optimization hint for the compositor
@@ -3475,7 +3475,7 @@ region to be set to empty.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">wl_surface_set_input_region</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct wl_surface*</span> wl_surface,</div>
@@ -3484,7 +3484,7 @@ region to be set to empty.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">This request sets the region of the surface that can receive
+              <div class="f6 lh-copy ws-pre-line code">This request sets the region of the surface that can receive
 pointer and touch events.
 
 Input events happening outside of this region will try the next
@@ -3520,14 +3520,14 @@ to infinite.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">wl_surface_commit</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct wl_surface*</span> wl_surface</div>
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Surface state (input, opaque, and damage regions, attached buffers,
+              <div class="f6 lh-copy ws-pre-line code">Surface state (input, opaque, and damage regions, attached buffers,
 etc.) is double-buffered. Protocol requests modify the pending state,
 as opposed to the current state in use by the compositor. A commit
 request atomically applies all pending state, replacing the current
@@ -3558,7 +3558,7 @@ Other interfaces may add further double-buffered surface state.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">wl_surface_set_buffer_transform</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct wl_surface*</span> wl_surface,</div>
@@ -3567,7 +3567,7 @@ Other interfaces may add further double-buffered surface state.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">This request sets an optional transformation on how the compositor
+              <div class="f6 lh-copy ws-pre-line code">This request sets an optional transformation on how the compositor
 interprets the contents of the buffer attached to the surface. The
 accepted values for the transform parameter are the values for
 wl_output.transform.
@@ -3610,7 +3610,7 @@ is raised.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">wl_surface_set_buffer_scale</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct wl_surface*</span> wl_surface,</div>
@@ -3619,7 +3619,7 @@ is raised.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">This request sets an optional scaling factor on how the compositor
+              <div class="f6 lh-copy ws-pre-line code">This request sets an optional scaling factor on how the compositor
 interprets the contents of the buffer attached to the window.
 
 Buffer scale is double-buffered state, see wl_surface.commit.
@@ -3656,7 +3656,7 @@ raised.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">wl_surface_damage_buffer</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct wl_surface*</span> wl_surface,</div>
@@ -3671,7 +3671,7 @@ raised.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">This request is used to describe the regions where the pending
+              <div class="f6 lh-copy ws-pre-line code">This request is used to describe the regions where the pending
 buffer is different from the current surface contents, and where
 the surface therefore needs to be repainted. The compositor
 ignores the parts of the damage that fall outside of the surface.
@@ -3725,12 +3725,12 @@ after receiving the wl_surface.commit.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">struct wl_output*</span> output <span class="green">/* output entered by the surface */</span> 
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">This is emitted whenever a surface&#x27;s creation, movement, or resizing
+              <div class="f6 lh-copy ws-pre-line code mt3">This is emitted whenever a surface&#x27;s creation, movement, or resizing
 results in some part of it being within the scanout region of an
 output.
 
@@ -3750,12 +3750,12 @@ Note that a surface may be overlapping with zero or more outputs.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">struct wl_output*</span> output <span class="green">/* output left by the surface */</span> 
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">This is emitted whenever a surface&#x27;s creation, movement, or resizing
+              <div class="f6 lh-copy ws-pre-line code mt3">This is emitted whenever a surface&#x27;s creation, movement, or resizing
 results in it no longer having any part of it within the scanout region
 of an output.
 
@@ -3778,7 +3778,7 @@ used instead.
           <a href="#i:wl_seat" class="link dim black-70 child pr2 absolute left--2">#</a>
           wl_seat
         </h2>
-        <div class="f6 lh-copy ws-pre-line courier">A seat is a group of keyboards, pointer and touch devices. This
+        <div class="f6 lh-copy ws-pre-line code">A seat is a group of keyboards, pointer and touch devices. This
 object is published as a global during start up, or when such a
 device is hot plugged.  A seat typically has a pointer and
 maintains a keyboard focus and a pointer focus.
@@ -3799,14 +3799,14 @@ maintains a keyboard focus and a pointer focus.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>struct wl_pointer* </span><span class="dark-blue">wl_seat_get_pointer</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct wl_seat*</span> wl_seat</div>
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">The ID provided will be initialized to the wl_pointer interface
+              <div class="f6 lh-copy ws-pre-line code">The ID provided will be initialized to the wl_pointer interface
 for this seat.
 
 This request only takes effect if the seat has the pointer
@@ -3828,14 +3828,14 @@ be sent in this case.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>struct wl_keyboard* </span><span class="dark-blue">wl_seat_get_keyboard</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct wl_seat*</span> wl_seat</div>
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">The ID provided will be initialized to the wl_keyboard interface
+              <div class="f6 lh-copy ws-pre-line code">The ID provided will be initialized to the wl_keyboard interface
 for this seat.
 
 This request only takes effect if the seat has the keyboard
@@ -3857,14 +3857,14 @@ be sent in this case.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>struct wl_touch* </span><span class="dark-blue">wl_seat_get_touch</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct wl_seat*</span> wl_seat</div>
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">The ID provided will be initialized to the wl_touch interface
+              <div class="f6 lh-copy ws-pre-line code">The ID provided will be initialized to the wl_touch interface
 for this seat.
 
 This request only takes effect if the seat has the touch
@@ -3886,14 +3886,14 @@ be sent in this case.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">wl_seat_release</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct wl_seat*</span> wl_seat</div>
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Using this request a client can tell the server that it is not going to
+              <div class="f6 lh-copy ws-pre-line code">Using this request a client can tell the server that it is not going to
 use the seat object anymore.
   </div>
             </li>
@@ -3917,12 +3917,12 @@ use the seat object anymore.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> capabilities <span class="green">/* capabilities of the seat */</span> 
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">This is emitted whenever a seat gains or loses the pointer,
+              <div class="f6 lh-copy ws-pre-line code mt3">This is emitted whenever a seat gains or loses the pointer,
 keyboard or touch capabilities.  The argument is a capability
 enum containing the complete set of capabilities this seat has.
 
@@ -3961,12 +3961,12 @@ keyboard and touch capabilities, respectively.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">const char*</span> name <span class="green">/* seat identifier */</span> 
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">In a multiseat configuration this can be used by the client to help
+              <div class="f6 lh-copy ws-pre-line code mt3">In a multiseat configuration this can be used by the client to help
 identify which physical devices the seat represents. Based on
 the seat configuration used by the compositor.
   </div>
@@ -3983,7 +3983,7 @@ the seat configuration used by the compositor.
           <a href="#i:wl_pointer" class="link dim black-70 child pr2 absolute left--2">#</a>
           wl_pointer
         </h2>
-        <div class="f6 lh-copy ws-pre-line courier">The wl_pointer interface represents one or more input devices,
+        <div class="f6 lh-copy ws-pre-line code">The wl_pointer interface represents one or more input devices,
 such as mice, which control the pointer location and pointer_focus
 of a seat.
 
@@ -4008,7 +4008,7 @@ and scrolling.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">wl_pointer_set_cursor</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct wl_pointer*</span> wl_pointer,</div>
@@ -4023,7 +4023,7 @@ and scrolling.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Set the pointer surface, i.e., the surface that contains the
+              <div class="f6 lh-copy ws-pre-line code">Set the pointer surface, i.e., the surface that contains the
 pointer image (cursor). This request gives the surface the role
 of a cursor. If the surface already has another role, it raises
 a protocol error.
@@ -4068,14 +4068,14 @@ undefined, and the wl_surface is unmapped.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">wl_pointer_release</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct wl_pointer*</span> wl_pointer</div>
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Using this request a client can tell the server that it is not going to
+              <div class="f6 lh-copy ws-pre-line code">Using this request a client can tell the server that it is not going to
 use the pointer object anymore.
 
 This request destroys the pointer proxy object, so clients must not call
@@ -4102,24 +4102,24 @@ wl_pointer_destroy() after using this request.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> serial <span class="green">/* serial number of the enter event */</span> 
                 </div>
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">struct wl_surface*</span> surface <span class="green">/* surface entered by the pointer */</span> 
                 </div>
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">wl_fixed_t</span> surface_x <span class="green">/* surface-local x coordinate */</span> 
                 </div>
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">wl_fixed_t</span> surface_y <span class="green">/* surface-local y coordinate */</span> 
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">Notification that this seat&#x27;s pointer is focused on a certain
+              <div class="f6 lh-copy ws-pre-line code mt3">Notification that this seat&#x27;s pointer is focused on a certain
 surface.
 
 When a seat&#x27;s focus enters a surface, the pointer image
@@ -4140,16 +4140,16 @@ an appropriate pointer image with the set_cursor request.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> serial <span class="green">/* serial number of the leave event */</span> 
                 </div>
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">struct wl_surface*</span> surface <span class="green">/* surface left by the pointer */</span> 
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">Notification that this seat&#x27;s pointer is no longer focused on
+              <div class="f6 lh-copy ws-pre-line code mt3">Notification that this seat&#x27;s pointer is no longer focused on
 a certain surface.
 
 The leave notification is sent before the enter notification
@@ -4169,20 +4169,20 @@ for the new focus.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> time <span class="green">/* timestamp with millisecond granularity */</span> 
                 </div>
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">wl_fixed_t</span> surface_x <span class="green">/* surface-local x coordinate */</span> 
                 </div>
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">wl_fixed_t</span> surface_y <span class="green">/* surface-local y coordinate */</span> 
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">Notification of pointer location change. The arguments
+              <div class="f6 lh-copy ws-pre-line code mt3">Notification of pointer location change. The arguments
 surface_x and surface_y are the location relative to the
 focused surface.
   </div>
@@ -4200,24 +4200,24 @@ focused surface.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> serial <span class="green">/* serial number of the button event */</span> 
                 </div>
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> time <span class="green">/* timestamp with millisecond granularity */</span> 
                 </div>
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> button <span class="green">/* button that produced the event */</span> 
                 </div>
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> state <span class="green">/* physical state of the button */</span> 
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">Mouse button click and release notifications.
+              <div class="f6 lh-copy ws-pre-line code mt3">Mouse button click and release notifications.
 
 The location of the click is given by the last motion or
 enter event.
@@ -4246,20 +4246,20 @@ protocol.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> time <span class="green">/* timestamp with millisecond granularity */</span> 
                 </div>
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> axis <span class="green">/* axis type */</span> 
                 </div>
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">wl_fixed_t</span> value <span class="green">/* length of vector in surface-local coordinate space */</span> 
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">Scroll and other axis notifications.
+              <div class="f6 lh-copy ws-pre-line code mt3">Scroll and other axis notifications.
 
 For scroll events (vertical and horizontal scroll axes), the
 value parameter is the length of a vector along the specified
@@ -4291,7 +4291,7 @@ scroll distance.
 
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">Indicates the end of a set of events that logically belong together.
+              <div class="f6 lh-copy ws-pre-line code mt3">Indicates the end of a set of events that logically belong together.
 A client is expected to accumulate the data in all events within the
 frame before proceeding.
 
@@ -4340,12 +4340,12 @@ groups.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> axis_source <span class="green">/* source of the axis event */</span> 
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">Source information for scroll and other axes.
+              <div class="f6 lh-copy ws-pre-line code mt3">Source information for scroll and other axes.
 
 This event does not occur on its own. It is sent before a
 wl_pointer.frame event and carries the source information for
@@ -4385,16 +4385,16 @@ not guaranteed.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> time <span class="green">/* timestamp with millisecond granularity */</span> 
                 </div>
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> axis <span class="green">/* the axis stopped with this event */</span> 
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">Stop notification for scroll and other axes.
+              <div class="f6 lh-copy ws-pre-line code mt3">Stop notification for scroll and other axes.
 
 For some wl_pointer.axis_source types, a wl_pointer.axis_stop event
 is sent to notify a client that the axis sequence has terminated.
@@ -4423,16 +4423,16 @@ preceding wl_pointer.axis event.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> axis <span class="green">/* axis type */</span> 
                 </div>
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">int32_t</span> discrete <span class="green">/* number of steps */</span> 
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">Discrete step information for scroll and other axes.
+              <div class="f6 lh-copy ws-pre-line code mt3">Discrete step information for scroll and other axes.
 
 This event carries the axis value of the wl_pointer.axis event in
 discrete steps (e.g. mouse wheel clicks).
@@ -4472,7 +4472,7 @@ not guaranteed.
           <a href="#i:wl_keyboard" class="link dim black-70 child pr2 absolute left--2">#</a>
           wl_keyboard
         </h2>
-        <div class="f6 lh-copy ws-pre-line courier">The wl_keyboard interface represents one or more keyboards
+        <div class="f6 lh-copy ws-pre-line code">The wl_keyboard interface represents one or more keyboards
 associated with a seat.
 </div>
 
@@ -4491,14 +4491,14 @@ associated with a seat.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">wl_keyboard_release</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct wl_keyboard*</span> wl_keyboard</div>
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier"></div>
+              <div class="f6 lh-copy ws-pre-line code"></div>
             </li>
             
           </ul>
@@ -4520,20 +4520,20 @@ associated with a seat.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> format <span class="green">/* keymap format */</span> 
                 </div>
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">int32_t</span> fd <span class="green">/* keymap file descriptor */</span> 
                 </div>
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> size <span class="green">/* keymap size, in bytes */</span> 
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">This event provides a file descriptor to the client which can be
+              <div class="f6 lh-copy ws-pre-line code mt3">This event provides a file descriptor to the client which can be
 memory-mapped to provide a keyboard mapping description.
 
 From version 7 onwards, the fd must be mapped with MAP_PRIVATE by
@@ -4553,20 +4553,20 @@ the recipient, as MAP_SHARED may fail.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> serial <span class="green">/* serial number of the enter event */</span> 
                 </div>
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">struct wl_surface*</span> surface <span class="green">/* surface gaining keyboard focus */</span> 
                 </div>
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">struct wl_array*</span> keys <span class="green">/* the currently pressed keys */</span> 
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">Notification that this seat&#x27;s keyboard focus is on a certain
+              <div class="f6 lh-copy ws-pre-line code mt3">Notification that this seat&#x27;s keyboard focus is on a certain
 surface.
 
 The compositor must send the wl_keyboard.modifiers event after this
@@ -4586,16 +4586,16 @@ event.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> serial <span class="green">/* serial number of the leave event */</span> 
                 </div>
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">struct wl_surface*</span> surface <span class="green">/* surface that lost keyboard focus */</span> 
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">Notification that this seat&#x27;s keyboard focus is no longer on
+              <div class="f6 lh-copy ws-pre-line code mt3">Notification that this seat&#x27;s keyboard focus is no longer on
 a certain surface.
 
 The leave notification is sent before the enter notification
@@ -4618,24 +4618,24 @@ are lifted and also it must stop key repeating if there&#x27;s some going on.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> serial <span class="green">/* serial number of the key event */</span> 
                 </div>
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> time <span class="green">/* timestamp with millisecond granularity */</span> 
                 </div>
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> key <span class="green">/* key that produced the event */</span> 
                 </div>
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> state <span class="green">/* physical state of the key */</span> 
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">A key was pressed or released.
+              <div class="f6 lh-copy ws-pre-line code mt3">A key was pressed or released.
 The time argument is a timestamp with millisecond
 granularity, with an undefined base.
 
@@ -4659,28 +4659,28 @@ wl_keyboard.modifiers event must be sent after this event.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> serial <span class="green">/* serial number of the modifiers event */</span> 
                 </div>
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> mods_depressed <span class="green">/* depressed modifiers */</span> 
                 </div>
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> mods_latched <span class="green">/* latched modifiers */</span> 
                 </div>
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> mods_locked <span class="green">/* locked modifiers */</span> 
                 </div>
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> group <span class="green">/* keyboard layout */</span> 
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">Notifies clients that the modifier and&#x2f;or group state has
+              <div class="f6 lh-copy ws-pre-line code mt3">Notifies clients that the modifier and&#x2f;or group state has
 changed, and it should update its local state.
   </div>
             </li>
@@ -4697,16 +4697,16 @@ changed, and it should update its local state.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">int32_t</span> rate <span class="green">/* the rate of repeating keys in characters per second */</span> 
                 </div>
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">int32_t</span> delay <span class="green">/* delay in milliseconds since key down until repeating starts */</span> 
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">Informs the client about the keyboard&#x27;s repeat rate and delay.
+              <div class="f6 lh-copy ws-pre-line code mt3">Informs the client about the keyboard&#x27;s repeat rate and delay.
 
 This event is sent as soon as the wl_keyboard object has been created,
 and is guaranteed to be received by the client before any key press
@@ -4732,7 +4732,7 @@ of wl_keyboard.
           <a href="#i:wl_touch" class="link dim black-70 child pr2 absolute left--2">#</a>
           wl_touch
         </h2>
-        <div class="f6 lh-copy ws-pre-line courier">The wl_touch interface represents a touchscreen
+        <div class="f6 lh-copy ws-pre-line code">The wl_touch interface represents a touchscreen
 associated with a seat.
 
 Touch interactions can consist of one or more contacts.
@@ -4757,14 +4757,14 @@ contact point can be identified by the ID of the sequence.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">wl_touch_release</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct wl_touch*</span> wl_touch</div>
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier"></div>
+              <div class="f6 lh-copy ws-pre-line code"></div>
             </li>
             
           </ul>
@@ -4786,32 +4786,32 @@ contact point can be identified by the ID of the sequence.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> serial <span class="green">/* serial number of the touch down event */</span> 
                 </div>
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> time <span class="green">/* timestamp with millisecond granularity */</span> 
                 </div>
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">struct wl_surface*</span> surface <span class="green">/* surface touched */</span> 
                 </div>
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">int32_t</span> id <span class="green">/* the unique ID of this touch point */</span> 
                 </div>
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">wl_fixed_t</span> x <span class="green">/* surface-local x coordinate */</span> 
                 </div>
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">wl_fixed_t</span> y <span class="green">/* surface-local y coordinate */</span> 
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">A new touch point has appeared on the surface. This touch point is
+              <div class="f6 lh-copy ws-pre-line code mt3">A new touch point has appeared on the surface. This touch point is
 assigned a unique ID. Future events from this touch point reference
 this ID. The ID ceases to be valid after a touch up event and may be
 reused in the future.
@@ -4830,20 +4830,20 @@ reused in the future.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> serial <span class="green">/* serial number of the touch up event */</span> 
                 </div>
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> time <span class="green">/* timestamp with millisecond granularity */</span> 
                 </div>
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">int32_t</span> id <span class="green">/* the unique ID of this touch point */</span> 
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">The touch point has disappeared. No further events will be sent for
+              <div class="f6 lh-copy ws-pre-line code mt3">The touch point has disappeared. No further events will be sent for
 this touch point and the touch point&#x27;s ID is released and may be
 reused in a future touch down event.
   </div>
@@ -4861,24 +4861,24 @@ reused in a future touch down event.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> time <span class="green">/* timestamp with millisecond granularity */</span> 
                 </div>
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">int32_t</span> id <span class="green">/* the unique ID of this touch point */</span> 
                 </div>
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">wl_fixed_t</span> x <span class="green">/* surface-local x coordinate */</span> 
                 </div>
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">wl_fixed_t</span> y <span class="green">/* surface-local y coordinate */</span> 
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">A touch point has changed coordinates.
+              <div class="f6 lh-copy ws-pre-line code mt3">A touch point has changed coordinates.
   </div>
             </li>
             
@@ -4895,7 +4895,7 @@ reused in a future touch down event.
 
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">Indicates the end of a set of events that logically belong together.
+              <div class="f6 lh-copy ws-pre-line code mt3">Indicates the end of a set of events that logically belong together.
 A client is expected to accumulate the data in all events within the
 frame before proceeding.
 
@@ -4919,7 +4919,7 @@ previously known state.
 
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">Sent if the compositor decides the touch stream is a global
+              <div class="f6 lh-copy ws-pre-line code mt3">Sent if the compositor decides the touch stream is a global
 gesture. No further events are sent to the clients from that
 particular gesture. Touch cancellation applies to all touch points
 currently active on this client&#x27;s surface. The client is
@@ -4940,20 +4940,20 @@ this surface may reuse the touch point ID.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">int32_t</span> id <span class="green">/* the unique ID of this touch point */</span> 
                 </div>
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">wl_fixed_t</span> major <span class="green">/* length of the major axis in surface-local coordinates */</span> 
                 </div>
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">wl_fixed_t</span> minor <span class="green">/* length of the minor axis in surface-local coordinates */</span> 
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">Sent when a touchpoint has changed its shape.
+              <div class="f6 lh-copy ws-pre-line code mt3">Sent when a touchpoint has changed its shape.
 
 This event does not occur on its own. It is sent before a
 wl_touch.frame event and carries the new shape information for
@@ -4993,16 +4993,16 @@ shape if it did not receive this event.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">int32_t</span> id <span class="green">/* the unique ID of this touch point */</span> 
                 </div>
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">wl_fixed_t</span> orientation <span class="green">/* angle between major axis and positive surface y-axis in degrees */</span> 
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">Sent when a touchpoint has changed its orientation.
+              <div class="f6 lh-copy ws-pre-line code mt3">Sent when a touchpoint has changed its orientation.
 
 This event does not occur on its own. It is sent before a
 wl_touch.frame event and carries the new shape information for
@@ -5039,7 +5039,7 @@ orientation reports.
           <a href="#i:wl_output" class="link dim black-70 child pr2 absolute left--2">#</a>
           wl_output
         </h2>
-        <div class="f6 lh-copy ws-pre-line courier">An output describes part of the compositor geometry.  The
+        <div class="f6 lh-copy ws-pre-line code">An output describes part of the compositor geometry.  The
 compositor works in the &#x27;compositor coordinate system&#x27; and an
 output corresponds to a rectangular area in that space that is
 actually visible.  This typically corresponds to a monitor that
@@ -5062,14 +5062,14 @@ as global during start up, or when a monitor is hotplugged.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">wl_output_release</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct wl_output*</span> wl_output</div>
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Using this request a client can tell the server that it is not going to
+              <div class="f6 lh-copy ws-pre-line code">Using this request a client can tell the server that it is not going to
 use the output object anymore.
   </div>
             </li>
@@ -5093,40 +5093,40 @@ use the output object anymore.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">int32_t</span> x <span class="green">/* x position within the global compositor space */</span> 
                 </div>
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">int32_t</span> y <span class="green">/* y position within the global compositor space */</span> 
                 </div>
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">int32_t</span> physical_width <span class="green">/* width in millimeters of the output */</span> 
                 </div>
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">int32_t</span> physical_height <span class="green">/* height in millimeters of the output */</span> 
                 </div>
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">int32_t</span> subpixel <span class="green">/* subpixel orientation of the output */</span> 
                 </div>
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">const char*</span> make <span class="green">/* textual description of the manufacturer */</span> 
                 </div>
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">const char*</span> model <span class="green">/* textual description of the model */</span> 
                 </div>
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">int32_t</span> transform <span class="green">/* transform that maps framebuffer to output */</span> 
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">The geometry event describes geometric properties of the output.
+              <div class="f6 lh-copy ws-pre-line code mt3">The geometry event describes geometric properties of the output.
 The event is sent when binding to the output object and whenever
 any of the properties change.
 
@@ -5154,24 +5154,24 @@ clients should use xdg_output.name and xdg_output.description.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> flags <span class="green">/* bitfield of mode flags */</span> 
                 </div>
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">int32_t</span> width <span class="green">/* width of the mode in hardware units */</span> 
                 </div>
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">int32_t</span> height <span class="green">/* height of the mode in hardware units */</span> 
                 </div>
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">int32_t</span> refresh <span class="green">/* vertical refresh rate in mHz */</span> 
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">The mode event describes an available mode for the output.
+              <div class="f6 lh-copy ws-pre-line code mt3">The mode event describes an available mode for the output.
 
 The event is sent when binding to the output object and there
 will always be one mode, the current mode.  The event is sent
@@ -5217,7 +5217,7 @@ refresh rate or the size.
 
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">This event is sent after all other properties have been
+              <div class="f6 lh-copy ws-pre-line code mt3">This event is sent after all other properties have been
 sent after binding to the output object and after any
 other property changes done after that. This allows
 changes to the output properties to be seen as
@@ -5237,12 +5237,12 @@ atomic, even if they happen via multiple events.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">int32_t</span> factor <span class="green">/* scaling factor of output */</span> 
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">This event contains scaling geometry information
+              <div class="f6 lh-copy ws-pre-line code mt3">This event contains scaling geometry information
 that is not in the geometry event. It may be sent after
 binding the output object or if the output scale changes
 later. If it is not sent, the client should assume a
@@ -5274,7 +5274,7 @@ a higher detail image.
           <a href="#i:wl_region" class="link dim black-70 child pr2 absolute left--2">#</a>
           wl_region
         </h2>
-        <div class="f6 lh-copy ws-pre-line courier">A region object describes an area.
+        <div class="f6 lh-copy ws-pre-line code">A region object describes an area.
 
 Region objects are used to describe the opaque and input
 regions of a surface.
@@ -5295,14 +5295,14 @@ regions of a surface.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">wl_region_destroy</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct wl_region*</span> wl_region</div>
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Destroy the region.  This will invalidate the object ID.
+              <div class="f6 lh-copy ws-pre-line code">Destroy the region.  This will invalidate the object ID.
   </div>
             </li>
             
@@ -5317,7 +5317,7 @@ regions of a surface.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">wl_region_add</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct wl_region*</span> wl_region,</div>
@@ -5332,7 +5332,7 @@ regions of a surface.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Add the specified rectangle to the region.
+              <div class="f6 lh-copy ws-pre-line code">Add the specified rectangle to the region.
   </div>
             </li>
             
@@ -5347,7 +5347,7 @@ regions of a surface.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">wl_region_subtract</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct wl_region*</span> wl_region,</div>
@@ -5362,7 +5362,7 @@ regions of a surface.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Subtract the specified rectangle from the region.
+              <div class="f6 lh-copy ws-pre-line code">Subtract the specified rectangle from the region.
   </div>
             </li>
             
@@ -5380,7 +5380,7 @@ regions of a surface.
           <a href="#i:wl_subcompositor" class="link dim black-70 child pr2 absolute left--2">#</a>
           wl_subcompositor
         </h2>
-        <div class="f6 lh-copy ws-pre-line courier">The global interface exposing sub-surface compositing capabilities.
+        <div class="f6 lh-copy ws-pre-line code">The global interface exposing sub-surface compositing capabilities.
 A wl_surface, that has sub-surfaces associated, is called the
 parent surface. Sub-surfaces can be arbitrarily nested and create
 a tree of sub-surfaces.
@@ -5416,14 +5416,14 @@ processing to dedicated overlay hardware when possible.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">wl_subcompositor_destroy</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct wl_subcompositor*</span> wl_subcompositor</div>
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Informs the server that the client will not be using this
+              <div class="f6 lh-copy ws-pre-line code">Informs the server that the client will not be using this
 protocol object anymore. This does not affect any other
 objects, wl_subsurface objects included.
   </div>
@@ -5440,7 +5440,7 @@ objects, wl_subsurface objects included.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>struct wl_subsurface* </span><span class="dark-blue">wl_subcompositor_get_subsurface</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct wl_subcompositor*</span> wl_subcompositor,</div>
@@ -5451,7 +5451,7 @@ objects, wl_subsurface objects included.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Create a sub-surface interface for the given surface, and
+              <div class="f6 lh-copy ws-pre-line code">Create a sub-surface interface for the given surface, and
 associate it with the given parent surface. This turns a
 plain wl_surface into a sub-surface.
 
@@ -5483,7 +5483,7 @@ the sub-surface, see the documentation on wl_subsurface interface.
           <a href="#i:wl_subsurface" class="link dim black-70 child pr2 absolute left--2">#</a>
           wl_subsurface
         </h2>
-        <div class="f6 lh-copy ws-pre-line courier">An additional interface to a wl_surface object, which has been
+        <div class="f6 lh-copy ws-pre-line code">An additional interface to a wl_surface object, which has been
 made a sub-surface. A sub-surface has one parent surface. A
 sub-surface&#x27;s size and position are not limited to that of the parent.
 Particularly, a sub-surface is not automatically clipped to its
@@ -5549,14 +5549,14 @@ unmapped.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">wl_subsurface_destroy</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct wl_subsurface*</span> wl_subsurface</div>
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">The sub-surface interface is removed from the wl_surface object
+              <div class="f6 lh-copy ws-pre-line code">The sub-surface interface is removed from the wl_surface object
 that was turned into a sub-surface with a
 wl_subcompositor.get_subsurface request. The wl_surface&#x27;s association
 to the parent is deleted, and the wl_surface loses its role as
@@ -5575,7 +5575,7 @@ a sub-surface. The wl_surface is unmapped immediately.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">wl_subsurface_set_position</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct wl_subsurface*</span> wl_subsurface,</div>
@@ -5586,7 +5586,7 @@ a sub-surface. The wl_surface is unmapped immediately.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">This schedules a sub-surface position change.
+              <div class="f6 lh-copy ws-pre-line code">This schedules a sub-surface position change.
 The sub-surface will be moved so that its origin (top left
 corner pixel) will be at the location x, y of the parent surface
 coordinate system. The coordinates are not restricted to the parent
@@ -5616,7 +5616,7 @@ The initial position is 0, 0.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">wl_subsurface_place_above</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct wl_subsurface*</span> wl_subsurface,</div>
@@ -5625,7 +5625,7 @@ The initial position is 0, 0.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">This sub-surface is taken from the stack, and put back just
+              <div class="f6 lh-copy ws-pre-line code">This sub-surface is taken from the stack, and put back just
 above the reference surface, changing the z-order of the sub-surfaces.
 The reference surface must be one of the sibling surfaces, or the
 parent surface. Using any other surface, including this sub-surface,
@@ -5654,7 +5654,7 @@ of its siblings and parent.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">wl_subsurface_place_below</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct wl_subsurface*</span> wl_subsurface,</div>
@@ -5663,7 +5663,7 @@ of its siblings and parent.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">The sub-surface is placed just below the reference surface.
+              <div class="f6 lh-copy ws-pre-line code">The sub-surface is placed just below the reference surface.
 See wl_subsurface.place_above.
   </div>
             </li>
@@ -5679,14 +5679,14 @@ See wl_subsurface.place_above.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">wl_subsurface_set_sync</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct wl_subsurface*</span> wl_subsurface</div>
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Change the commit behaviour of the sub-surface to synchronized
+              <div class="f6 lh-copy ws-pre-line code">Change the commit behaviour of the sub-surface to synchronized
 mode, also described as the parent dependent mode.
 
 In synchronized mode, wl_surface.commit on a sub-surface will
@@ -5713,14 +5713,14 @@ See wl_subsurface for the recursive effect of this mode.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">wl_subsurface_set_desync</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct wl_subsurface*</span> wl_subsurface</div>
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Change the commit behaviour of the sub-surface to desynchronized
+              <div class="f6 lh-copy ws-pre-line code">Change the commit behaviour of the sub-surface to desynchronized
 mode, also described as independent or freely running mode.
 
 In desynchronized mode, wl_surface.commit on a sub-surface will
@@ -5754,7 +5754,7 @@ the cached state is applied on set_desync.
     </ul>
 
     <h2 class="f4 lh-title">Copyright Info</h2>
-    <div class="f7 lh-copy ws-pre-line courier">Copyright © 2008-2011 Kristian Høgsberg
+    <div class="f7 lh-copy ws-pre-line code">Copyright © 2008-2011 Kristian Høgsberg
 Copyright © 2010-2011 Intel Corporation
 Copyright © 2012-2013 Collabora, Ltd.
 

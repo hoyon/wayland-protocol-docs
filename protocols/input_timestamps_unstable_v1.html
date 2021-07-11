@@ -102,7 +102,7 @@
           <a href="#i:zwp_input_timestamps_manager_v1" class="link dim black-70 child pr2 absolute left--2">#</a>
           zwp_input_timestamps_manager_v1
         </h2>
-        <div class="f6 lh-copy ws-pre-line courier">A global interface used for requesting high-resolution timestamps
+        <div class="f6 lh-copy ws-pre-line code">A global interface used for requesting high-resolution timestamps
 for input events.
 </div>
 
@@ -121,14 +121,14 @@ for input events.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">zwp_input_timestamps_manager_v1_destroy</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwp_input_timestamps_manager_v1*</span> zwp_input_timestamps_manager_v1</div>
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Informs the server that the client will no longer be using this
+              <div class="f6 lh-copy ws-pre-line code">Informs the server that the client will no longer be using this
 protocol object. Existing objects created by this object are not
 affected.
 </div>
@@ -145,7 +145,7 @@ affected.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>struct zwp_input_timestamps_v1* </span><span class="dark-blue">zwp_input_timestamps_manager_v1_get_keyboard_timestamps</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwp_input_timestamps_manager_v1*</span> zwp_input_timestamps_manager_v1,</div>
@@ -154,7 +154,7 @@ affected.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Creates a new input timestamps object that represents a subscription
+              <div class="f6 lh-copy ws-pre-line code">Creates a new input timestamps object that represents a subscription
 to high-resolution timestamp events for all wl_keyboard events that
 carry a timestamp.
 
@@ -176,7 +176,7 @@ by calling zwp_input_timestamps_v1.destroy.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>struct zwp_input_timestamps_v1* </span><span class="dark-blue">zwp_input_timestamps_manager_v1_get_pointer_timestamps</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwp_input_timestamps_manager_v1*</span> zwp_input_timestamps_manager_v1,</div>
@@ -185,7 +185,7 @@ by calling zwp_input_timestamps_v1.destroy.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Creates a new input timestamps object that represents a subscription
+              <div class="f6 lh-copy ws-pre-line code">Creates a new input timestamps object that represents a subscription
 to high-resolution timestamp events for all wl_pointer events that
 carry a timestamp.
 
@@ -207,7 +207,7 @@ by calling zwp_input_timestamps_v1.destroy.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>struct zwp_input_timestamps_v1* </span><span class="dark-blue">zwp_input_timestamps_manager_v1_get_touch_timestamps</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwp_input_timestamps_manager_v1*</span> zwp_input_timestamps_manager_v1,</div>
@@ -216,7 +216,7 @@ by calling zwp_input_timestamps_v1.destroy.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Creates a new input timestamps object that represents a subscription
+              <div class="f6 lh-copy ws-pre-line code">Creates a new input timestamps object that represents a subscription
 to high-resolution timestamp events for all wl_touch events that
 carry a timestamp.
 
@@ -241,7 +241,7 @@ by calling zwp_input_timestamps_v1.destroy.
           <a href="#i:zwp_input_timestamps_v1" class="link dim black-70 child pr2 absolute left--2">#</a>
           zwp_input_timestamps_v1
         </h2>
-        <div class="f6 lh-copy ws-pre-line courier">Provides high-resolution timestamp events for a set of subscribed input
+        <div class="f6 lh-copy ws-pre-line code">Provides high-resolution timestamp events for a set of subscribed input
 events. The set of subscribed input events is determined by the
 zwp_input_timestamps_manager_v1 request used to create this object.
 </div>
@@ -261,14 +261,14 @@ zwp_input_timestamps_manager_v1 request used to create this object.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">zwp_input_timestamps_v1_destroy</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwp_input_timestamps_v1*</span> zwp_input_timestamps_v1</div>
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Informs the server that the client will no longer be using this
+              <div class="f6 lh-copy ws-pre-line code">Informs the server that the client will no longer be using this
 protocol object. After the server processes the request, no more
 timestamp events will be emitted.
 </div>
@@ -293,20 +293,20 @@ timestamp events will be emitted.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> tv_sec_hi <span class="green">/* high 32 bits of the seconds part of the timestamp */</span> 
                 </div>
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> tv_sec_lo <span class="green">/* low 32 bits of the seconds part of the timestamp */</span> 
                 </div>
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> tv_nsec <span class="green">/* nanoseconds part of the timestamp */</span> 
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">The timestamp event is associated with the first subsequent input event
+              <div class="f6 lh-copy ws-pre-line code mt3">The timestamp event is associated with the first subsequent input event
 carrying a timestamp which belongs to the set of input events this
 object is subscribed to.
 
@@ -332,7 +332,7 @@ for valid timestamps tv_nsec must be in [0, 999999999].
     </ul>
 
     <h2 class="f4 lh-title">Copyright Info</h2>
-    <div class="f7 lh-copy ws-pre-line courier">Copyright © 2017 Collabora, Ltd.
+    <div class="f7 lh-copy ws-pre-line code">Copyright © 2017 Collabora, Ltd.
 
 Permission is hereby granted, free of charge, to any person obtaining a
 copy of this software and associated documentation files (the &quot;Software&quot;),

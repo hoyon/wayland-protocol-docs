@@ -214,7 +214,7 @@
           <a href="#i:zwp_input_method_v2" class="link dim black-70 child pr2 absolute left--2">#</a>
           zwp_input_method_v2
         </h2>
-        <div class="f6 lh-copy ws-pre-line courier">An input method object allows for clients to compose text.
+        <div class="f6 lh-copy ws-pre-line code">An input method object allows for clients to compose text.
 
 The objects connects the client to a text input in an application, and
 lets the client to serve as an input method for a seat.
@@ -247,7 +247,7 @@ There must be no more than one input method object per seat.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">zwp_input_method_v2_commit_string</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwp_input_method_v2*</span> zwp_input_method_v2,</div>
@@ -256,7 +256,7 @@ There must be no more than one input method object per seat.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Send the commit string text for insertion to the application.
+              <div class="f6 lh-copy ws-pre-line code">Send the commit string text for insertion to the application.
 
 Inserts a string at current cursor position (see commit event
 sequence). The string to commit could be either just a single character
@@ -284,7 +284,7 @@ The initial value of text is an empty string.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">zwp_input_method_v2_set_preedit_string</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwp_input_method_v2*</span> zwp_input_method_v2,</div>
@@ -297,7 +297,7 @@ The initial value of text is an empty string.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Send the pre-edit string text to the application text input.
+              <div class="f6 lh-copy ws-pre-line code">Send the pre-edit string text to the application text input.
 
 Place a new composing text (pre-edit) at the current cursor position.
 Any previously set composing text must be removed. Any previously
@@ -335,7 +335,7 @@ cursor_begin, and cursor_end are both 0.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">zwp_input_method_v2_delete_surrounding_text</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwp_input_method_v2*</span> zwp_input_method_v2,</div>
@@ -346,7 +346,7 @@ cursor_begin, and cursor_end are both 0.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Remove the surrounding text.
+              <div class="f6 lh-copy ws-pre-line code">Remove the surrounding text.
 
 before_length and after_length are the number of bytes before and after
 the current cursor index (excluding the preedit text) to delete.
@@ -374,7 +374,7 @@ The initial values of both before_length and after_length are 0.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">zwp_input_method_v2_commit</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwp_input_method_v2*</span> zwp_input_method_v2,</div>
@@ -383,7 +383,7 @@ The initial values of both before_length and after_length are 0.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Apply state changes from commit_string, set_preedit_string and
+              <div class="f6 lh-copy ws-pre-line code">Apply state changes from commit_string, set_preedit_string and
 delete_surrounding_text requests.
 
 The state relating to these events is double-buffered, and each one
@@ -420,7 +420,7 @@ should not change the current state of the zwp_input_method_v2 object.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>struct zwp_input_popup_surface_v2* </span><span class="dark-blue">zwp_input_method_v2_get_input_popup_surface</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwp_input_method_v2*</span> zwp_input_method_v2,</div>
@@ -429,7 +429,7 @@ should not change the current state of the zwp_input_method_v2 object.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Creates a new zwp_input_popup_surface_v2 object wrapping a given
+              <div class="f6 lh-copy ws-pre-line code">Creates a new zwp_input_popup_surface_v2 object wrapping a given
 surface.
 
 The surface gets assigned the &quot;input_popup&quot; role. If the surface
@@ -449,14 +449,14 @@ error.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>struct zwp_input_method_keyboard_grab_v2* </span><span class="dark-blue">zwp_input_method_v2_grab_keyboard</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwp_input_method_v2*</span> zwp_input_method_v2</div>
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Allow an input method to receive hardware keyboard input and process
+              <div class="f6 lh-copy ws-pre-line code">Allow an input method to receive hardware keyboard input and process
 key events to generate text events (with pre-edit) over the wire. This
 allows input methods which compose multiple key events for inputting
 text like it is done for CJK languages.
@@ -482,14 +482,14 @@ Releasing the resulting wl_keyboard object releases the grab.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">zwp_input_method_v2_destroy</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwp_input_method_v2*</span> zwp_input_method_v2</div>
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Destroys the zwp_text_input_v2 object and any associated child
+              <div class="f6 lh-copy ws-pre-line code">Destroys the zwp_text_input_v2 object and any associated child
 objects, i.e. zwp_input_popup_surface_v2 and
 zwp_input_method_keyboard_grab_v2.
 </div>
@@ -515,7 +515,7 @@ zwp_input_method_keyboard_grab_v2.
 
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">Notification that a text input focused on this seat requested the input
+              <div class="f6 lh-copy ws-pre-line code mt3">Notification that a text input focused on this seat requested the input
 method to be activated.
 
 This event serves the purpose of providing the compositor with an
@@ -550,7 +550,7 @@ the next zwp_input_method_v2.done event, and stay valid until changed.
 
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">Notification that no focused text input currently needs an active 
+              <div class="f6 lh-copy ws-pre-line code mt3">Notification that no focused text input currently needs an active 
 input method on this seat.
 
 This event marks the zwp_input_method_v2 object as inactive. The
@@ -574,20 +574,20 @@ the next zwp_input_method_v2.done event, and stay valid until changed.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">const char*</span> text  
                 </div>
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> cursor  
                 </div>
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> anchor  
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">Updates the surrounding plain text around the cursor, excluding the
+              <div class="f6 lh-copy ws-pre-line code mt3">Updates the surrounding plain text around the cursor, excluding the
 preedit text.
 
 If any preedit text is present, it is replaced with the cursor for the
@@ -631,12 +631,12 @@ get applied, subsequent attempts to change them may have no effect.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> cause  
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">Tells the input method why the text surrounding the cursor changed.
+              <div class="f6 lh-copy ws-pre-line code mt3">Tells the input method why the text surrounding the cursor changed.
 
 Whenever the client detects an external change in text, cursor, or
 anchor position, it must issue this request to the compositor. This
@@ -666,16 +666,16 @@ The initial value of cause is input_method.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> hint  
                 </div>
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> purpose  
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">Indicates the content type and hint for the current
+              <div class="f6 lh-copy ws-pre-line code mt3">Indicates the content type and hint for the current
 zwp_input_method_v2 instance.
 
 Values set with this event are double-buffered. They will get applied
@@ -699,7 +699,7 @@ is normal.
 
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">Atomically applies state changes recently sent to the client.
+              <div class="f6 lh-copy ws-pre-line code mt3">Atomically applies state changes recently sent to the client.
 
 The done event establishes and updates the state of the client, and
 must be issued after any changes to apply them.
@@ -732,7 +732,7 @@ Neither current nor pending state are modified unless noted otherwise.
 
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">The input method ceased to be available.
+              <div class="f6 lh-copy ws-pre-line code mt3">The input method ceased to be available.
 
 The compositor must issue this event as the only event on the object if
 there was another input_method object associated with the same seat at
@@ -758,7 +758,7 @@ destroy request must be ignored.
           <a href="#i:zwp_input_popup_surface_v2" class="link dim black-70 child pr2 absolute left--2">#</a>
           zwp_input_popup_surface_v2
         </h2>
-        <div class="f6 lh-copy ws-pre-line courier">This interface marks a surface as a popup for interacting with an input
+        <div class="f6 lh-copy ws-pre-line code">This interface marks a surface as a popup for interacting with an input
 method.
 
 The compositor should place it near the active text input area. It must
@@ -783,14 +783,14 @@ zwp_input_popup_surface_v2 object exists.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">zwp_input_popup_surface_v2_destroy</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwp_input_popup_surface_v2*</span> zwp_input_popup_surface_v2</div>
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier"></div>
+              <div class="f6 lh-copy ws-pre-line code"></div>
             </li>
             
           </ul>
@@ -812,24 +812,24 @@ zwp_input_popup_surface_v2 object exists.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">int32_t</span> x  
                 </div>
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">int32_t</span> y  
                 </div>
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">int32_t</span> width  
                 </div>
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">int32_t</span> height  
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">Notify about the position of the area of the text input expressed as a
+              <div class="f6 lh-copy ws-pre-line code mt3">Notify about the position of the area of the text input expressed as a
 rectangle in surface local coordinates.
 
 This is a hint to the input method telling it the relative position of
@@ -848,7 +848,7 @@ the text being entered.
           <a href="#i:zwp_input_method_keyboard_grab_v2" class="link dim black-70 child pr2 absolute left--2">#</a>
           zwp_input_method_keyboard_grab_v2
         </h2>
-        <div class="f6 lh-copy ws-pre-line courier">The zwp_input_method_keyboard_grab_v2 interface represents an exclusive
+        <div class="f6 lh-copy ws-pre-line code">The zwp_input_method_keyboard_grab_v2 interface represents an exclusive
 grab of the wl_keyboard interface associated with the seat.
 </div>
 
@@ -867,14 +867,14 @@ grab of the wl_keyboard interface associated with the seat.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">zwp_input_method_keyboard_grab_v2_release</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwp_input_method_keyboard_grab_v2*</span> zwp_input_method_keyboard_grab_v2</div>
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier"></div>
+              <div class="f6 lh-copy ws-pre-line code"></div>
             </li>
             
           </ul>
@@ -896,20 +896,20 @@ grab of the wl_keyboard interface associated with the seat.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> format <span class="green">/* keymap format */</span> 
                 </div>
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">int32_t</span> fd <span class="green">/* keymap file descriptor */</span> 
                 </div>
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> size <span class="green">/* keymap size, in bytes */</span> 
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">This event provides a file descriptor to the client which can be
+              <div class="f6 lh-copy ws-pre-line code mt3">This event provides a file descriptor to the client which can be
 memory-mapped to provide a keyboard mapping description.
 </div>
             </li>
@@ -926,24 +926,24 @@ memory-mapped to provide a keyboard mapping description.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> serial <span class="green">/* serial number of the key event */</span> 
                 </div>
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> time <span class="green">/* timestamp with millisecond granularity */</span> 
                 </div>
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> key <span class="green">/* key that produced the event */</span> 
                 </div>
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> state <span class="green">/* physical state of the key */</span> 
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">A key was pressed or released.
+              <div class="f6 lh-copy ws-pre-line code mt3">A key was pressed or released.
 The time argument is a timestamp with millisecond granularity, with an
 undefined base.
 </div>
@@ -961,28 +961,28 @@ undefined base.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> serial <span class="green">/* serial number of the modifiers event */</span> 
                 </div>
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> mods_depressed <span class="green">/* depressed modifiers */</span> 
                 </div>
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> mods_latched <span class="green">/* latched modifiers */</span> 
                 </div>
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> mods_locked <span class="green">/* locked modifiers */</span> 
                 </div>
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> group <span class="green">/* keyboard layout */</span> 
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">Notifies clients that the modifier and&#x2f;or group state has changed, and
+              <div class="f6 lh-copy ws-pre-line code mt3">Notifies clients that the modifier and&#x2f;or group state has changed, and
 it should update its local state.
 </div>
             </li>
@@ -999,16 +999,16 @@ it should update its local state.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">int32_t</span> rate <span class="green">/* the rate of repeating keys in characters per second */</span> 
                 </div>
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">int32_t</span> delay <span class="green">/* delay in milliseconds since key down until repeating starts */</span> 
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">Informs the client about the keyboard&#x27;s repeat rate and delay.
+              <div class="f6 lh-copy ws-pre-line code mt3">Informs the client about the keyboard&#x27;s repeat rate and delay.
 
 This event is sent as soon as the zwp_input_method_keyboard_grab_v2
 object has been created, and is guaranteed to be received by the
@@ -1034,7 +1034,7 @@ of zwp_input_method_keyboard_grab_v2.
           <a href="#i:zwp_input_method_manager_v2" class="link dim black-70 child pr2 absolute left--2">#</a>
           zwp_input_method_manager_v2
         </h2>
-        <div class="f6 lh-copy ws-pre-line courier">The input method manager allows the client to become the input method on
+        <div class="f6 lh-copy ws-pre-line code">The input method manager allows the client to become the input method on
 a chosen seat.
 
 No more than one input method must be associated with any seat at any
@@ -1056,7 +1056,7 @@ given time.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>struct zwp_input_method_v2* </span><span class="dark-blue">zwp_input_method_manager_v2_get_input_method</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwp_input_method_manager_v2*</span> zwp_input_method_manager_v2,</div>
@@ -1065,7 +1065,7 @@ given time.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Request a new input zwp_input_method_v2 object associated with a given
+              <div class="f6 lh-copy ws-pre-line code">Request a new input zwp_input_method_v2 object associated with a given
 seat.
 </div>
             </li>
@@ -1081,14 +1081,14 @@ seat.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">zwp_input_method_manager_v2_destroy</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwp_input_method_manager_v2*</span> zwp_input_method_manager_v2</div>
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Destroys the zwp_input_method_manager_v2 object.
+              <div class="f6 lh-copy ws-pre-line code">Destroys the zwp_input_method_manager_v2 object.
 
 The zwp_input_method_v2 objects originating from it remain valid.
 </div>
@@ -1106,7 +1106,7 @@ The zwp_input_method_v2 objects originating from it remain valid.
     </ul>
 
     <h2 class="f4 lh-title">Copyright Info</h2>
-    <div class="f7 lh-copy ws-pre-line courier">Copyright © 2008-2011 Kristian Høgsberg
+    <div class="f7 lh-copy ws-pre-line code">Copyright © 2008-2011 Kristian Høgsberg
 Copyright © 2010-2011 Intel Corporation
 Copyright © 2012-2013 Collabora, Ltd.
 Copyright © 2012, 2013 Intel Corporation

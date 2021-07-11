@@ -152,7 +152,7 @@
           <a href="#i:zxdg_exporter_v2" class="link dim black-70 child pr2 absolute left--2">#</a>
           zxdg_exporter_v2
         </h2>
-        <div class="f6 lh-copy ws-pre-line courier">A global interface used for exporting surfaces that can later be imported
+        <div class="f6 lh-copy ws-pre-line code">A global interface used for exporting surfaces that can later be imported
 using xdg_importer.
 </div>
 
@@ -171,14 +171,14 @@ using xdg_importer.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">zxdg_exporter_v2_destroy</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zxdg_exporter_v2*</span> zxdg_exporter_v2</div>
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Notify the compositor that the xdg_exporter object will no longer be
+              <div class="f6 lh-copy ws-pre-line code">Notify the compositor that the xdg_exporter object will no longer be
 used.
   </div>
             </li>
@@ -194,7 +194,7 @@ used.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>struct zxdg_exported_v2* </span><span class="dark-blue">zxdg_exporter_v2_export_toplevel</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zxdg_exporter_v2*</span> zxdg_exporter_v2,</div>
@@ -203,7 +203,7 @@ used.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">The export_toplevel request exports the passed surface so that it can later be
+              <div class="f6 lh-copy ws-pre-line code">The export_toplevel request exports the passed surface so that it can later be
 imported via xdg_importer. When called, a new xdg_exported object will
 be created and xdg_exported.handle will be sent immediately. See the
 corresponding interface and event for details.
@@ -229,7 +229,7 @@ be used to create an xdg_imported multiple times. Only xdg_toplevel
           <a href="#i:zxdg_importer_v2" class="link dim black-70 child pr2 absolute left--2">#</a>
           zxdg_importer_v2
         </h2>
-        <div class="f6 lh-copy ws-pre-line courier">A global interface used for importing surfaces exported by xdg_exporter.
+        <div class="f6 lh-copy ws-pre-line code">A global interface used for importing surfaces exported by xdg_exporter.
 With this interface, a client can create a reference to a surface of
 another client.
 </div>
@@ -249,14 +249,14 @@ another client.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">zxdg_importer_v2_destroy</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zxdg_importer_v2*</span> zxdg_importer_v2</div>
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Notify the compositor that the xdg_importer object will no longer be
+              <div class="f6 lh-copy ws-pre-line code">Notify the compositor that the xdg_importer object will no longer be
 used.
   </div>
             </li>
@@ -272,7 +272,7 @@ used.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>struct zxdg_imported_v2* </span><span class="dark-blue">zxdg_importer_v2_import_toplevel</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zxdg_importer_v2*</span> zxdg_importer_v2,</div>
@@ -281,7 +281,7 @@ used.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">The import_toplevel request imports a surface from any client given a handle
+              <div class="f6 lh-copy ws-pre-line code">The import_toplevel request imports a surface from any client given a handle
 retrieved by exporting said surface using xdg_exporter.export_toplevel.
 When called, a new xdg_imported object will be created. This new object
 represents the imported surface, and the importing client can
@@ -303,7 +303,7 @@ manipulate its relationship using it. See xdg_imported for details.
           <a href="#i:zxdg_exported_v2" class="link dim black-70 child pr2 absolute left--2">#</a>
           zxdg_exported_v2
         </h2>
-        <div class="f6 lh-copy ws-pre-line courier">An xdg_exported object represents an exported reference to a surface. The
+        <div class="f6 lh-copy ws-pre-line code">An xdg_exported object represents an exported reference to a surface. The
 exported surface may be referenced as long as the xdg_exported object not
 destroyed. Destroying the xdg_exported invalidates any relationship the
 importer may have established using xdg_imported.
@@ -324,14 +324,14 @@ importer may have established using xdg_imported.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">zxdg_exported_v2_destroy</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zxdg_exported_v2*</span> zxdg_exported_v2</div>
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Revoke the previously exported surface. This invalidates any
+              <div class="f6 lh-copy ws-pre-line code">Revoke the previously exported surface. This invalidates any
 relationship the importer may have set up using the xdg_imported created
 given the handle sent via xdg_exported.handle.
   </div>
@@ -356,12 +356,12 @@ given the handle sent via xdg_exported.handle.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">const char*</span> handle <span class="green">/* the exported surface handle */</span> 
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">The handle event contains the unique handle of this exported surface
+              <div class="f6 lh-copy ws-pre-line code mt3">The handle event contains the unique handle of this exported surface
 reference. It may be shared with any client, which then can use it to
 import the surface by calling xdg_importer.import_toplevel. A handle
 may be used to import the surface multiple times.
@@ -379,7 +379,7 @@ may be used to import the surface multiple times.
           <a href="#i:zxdg_imported_v2" class="link dim black-70 child pr2 absolute left--2">#</a>
           zxdg_imported_v2
         </h2>
-        <div class="f6 lh-copy ws-pre-line courier">An xdg_imported object represents an imported reference to surface exported
+        <div class="f6 lh-copy ws-pre-line code">An xdg_imported object represents an imported reference to surface exported
 by some client. A client can use this interface to manipulate
 relationships between its own surfaces and the imported surface.
 </div>
@@ -399,14 +399,14 @@ relationships between its own surfaces and the imported surface.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">zxdg_imported_v2_destroy</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zxdg_imported_v2*</span> zxdg_imported_v2</div>
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Notify the compositor that it will no longer use the xdg_imported
+              <div class="f6 lh-copy ws-pre-line code">Notify the compositor that it will no longer use the xdg_imported
 object. Any relationship that may have been set up will at this point
 be invalidated.
   </div>
@@ -423,7 +423,7 @@ be invalidated.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">zxdg_imported_v2_set_parent_of</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zxdg_imported_v2*</span> zxdg_imported_v2,</div>
@@ -432,7 +432,7 @@ be invalidated.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Set the imported surface as the parent of some surface of the client.
+              <div class="f6 lh-copy ws-pre-line code">Set the imported surface as the parent of some surface of the client.
 The passed surface must be an xdg_toplevel equivalent, otherwise an
 invalid_surface protocol error is sent. Calling this function sets up
 a surface to surface relation with the same stacking and positioning
@@ -460,7 +460,7 @@ semantics as xdg_toplevel.set_parent.
 
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">The imported surface handle has been destroyed and any relationship set
+              <div class="f6 lh-copy ws-pre-line code mt3">The imported surface handle has been destroyed and any relationship set
 up has been invalidated. This may happen for various reasons, for
 example if the exported surface or the exported surface handle has been
 destroyed, if the handle used for importing was invalid.
@@ -476,7 +476,7 @@ destroyed, if the handle used for importing was invalid.
     </ul>
 
     <h2 class="f4 lh-title">Copyright Info</h2>
-    <div class="f7 lh-copy ws-pre-line courier">Copyright © 2015-2016 Red Hat Inc.
+    <div class="f7 lh-copy ws-pre-line code">Copyright © 2015-2016 Red Hat Inc.
 
 Permission is hereby granted, free of charge, to any person obtaining a
 copy of this software and associated documentation files (the &quot;Software&quot;),

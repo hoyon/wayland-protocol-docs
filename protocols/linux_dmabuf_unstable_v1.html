@@ -124,7 +124,7 @@
           <a href="#i:zwp_linux_dmabuf_v1" class="link dim black-70 child pr2 absolute left--2">#</a>
           zwp_linux_dmabuf_v1
         </h2>
-        <div class="f6 lh-copy ws-pre-line courier">Following the interfaces from:
+        <div class="f6 lh-copy ws-pre-line code">Following the interfaces from:
 https:&#x2f;&#x2f;www.khronos.org&#x2f;registry&#x2f;egl&#x2f;extensions&#x2f;EXT&#x2f;EGL_EXT_image_dma_buf_import.txt
 https:&#x2f;&#x2f;www.khronos.org&#x2f;registry&#x2f;EGL&#x2f;extensions&#x2f;EXT&#x2f;EGL_EXT_image_dma_buf_import_modifiers.txt
 and the Linux DRM sub-system&#x27;s AddFb2 ioctl.
@@ -205,14 +205,14 @@ interface version number is reset.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">zwp_linux_dmabuf_v1_destroy</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwp_linux_dmabuf_v1*</span> zwp_linux_dmabuf_v1</div>
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Objects created through this interface, especially wl_buffers, will
+              <div class="f6 lh-copy ws-pre-line code">Objects created through this interface, especially wl_buffers, will
 remain valid.
 </div>
             </li>
@@ -228,14 +228,14 @@ remain valid.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>struct zwp_linux_buffer_params_v1* </span><span class="dark-blue">zwp_linux_dmabuf_v1_create_params</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwp_linux_dmabuf_v1*</span> zwp_linux_dmabuf_v1</div>
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">This temporary object is used to collect multiple dmabuf handles into
+              <div class="f6 lh-copy ws-pre-line code">This temporary object is used to collect multiple dmabuf handles into
 a single batch to create a wl_buffer. It can only be used once and
 should be destroyed after a &#x27;created&#x27; or &#x27;failed&#x27; event has been
 received.
@@ -261,12 +261,12 @@ received.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> format <span class="green">/* DRM_FORMAT code */</span> 
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">This event advertises one buffer format that the server supports.
+              <div class="f6 lh-copy ws-pre-line code mt3">This event advertises one buffer format that the server supports.
 All the supported formats are advertised once when the client
 binds to this interface. A roundtrip after binding guarantees
 that the client has received all supported formats.
@@ -293,20 +293,20 @@ received from this event.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> format <span class="green">/* DRM_FORMAT code */</span> 
                 </div>
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> modifier_hi <span class="green">/* high 32 bits of layout modifier */</span> 
                 </div>
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> modifier_lo <span class="green">/* low 32 bits of layout modifier */</span> 
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">This event advertises the formats that the server supports, along with
+              <div class="f6 lh-copy ws-pre-line code mt3">This event advertises the formats that the server supports, along with
 the modifiers supported for each format. All the supported modifiers
 for all the supported formats are advertised once when the client
 binds to this interface. A roundtrip after binding guarantees that
@@ -339,7 +339,7 @@ requests.
           <a href="#i:zwp_linux_buffer_params_v1" class="link dim black-70 child pr2 absolute left--2">#</a>
           zwp_linux_buffer_params_v1
         </h2>
-        <div class="f6 lh-copy ws-pre-line courier">This temporary object is a collection of dmabufs and other
+        <div class="f6 lh-copy ws-pre-line code">This temporary object is a collection of dmabufs and other
 parameters that together form a single logical buffer. The temporary
 object may eventually create one wl_buffer unless cancelled by
 destroying it before requesting &#x27;create&#x27;.
@@ -370,14 +370,14 @@ be given in any order. Each plane index can be set only once.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">zwp_linux_buffer_params_v1_destroy</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwp_linux_buffer_params_v1*</span> zwp_linux_buffer_params_v1</div>
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Cleans up the temporary data sent to the server for dmabuf-based
+              <div class="f6 lh-copy ws-pre-line code">Cleans up the temporary data sent to the server for dmabuf-based
 wl_buffer creation.
 </div>
             </li>
@@ -393,7 +393,7 @@ wl_buffer creation.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">zwp_linux_buffer_params_v1_add</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwp_linux_buffer_params_v1*</span> zwp_linux_buffer_params_v1,</div>
@@ -412,7 +412,7 @@ wl_buffer creation.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">This request adds one dmabuf to the set in this
+              <div class="f6 lh-copy ws-pre-line code">This request adds one dmabuf to the set in this
 zwp_linux_buffer_params_v1.
 
 The 64-bit unsigned value combined from modifier_hi and modifier_lo
@@ -444,7 +444,7 @@ was already set.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">zwp_linux_buffer_params_v1_create</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwp_linux_buffer_params_v1*</span> zwp_linux_buffer_params_v1,</div>
@@ -459,7 +459,7 @@ was already set.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">This asks for creation of a wl_buffer from the added dmabuf
+              <div class="f6 lh-copy ws-pre-line code">This asks for creation of a wl_buffer from the added dmabuf
 buffers. The wl_buffer is not created immediately but returned via
 the &#x27;created&#x27; event if the dmabuf sharing succeeds. The sharing
 may fail at runtime for reasons a client cannot predict, in
@@ -533,7 +533,7 @@ dmabufs
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>struct wl_buffer* </span><span class="dark-blue">zwp_linux_buffer_params_v1_create_immed</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwp_linux_buffer_params_v1*</span> zwp_linux_buffer_params_v1,</div>
@@ -548,7 +548,7 @@ dmabufs
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">This asks for immediate creation of a wl_buffer by importing the
+              <div class="f6 lh-copy ws-pre-line code">This asks for immediate creation of a wl_buffer by importing the
 added dmabufs.
 
 In case of import success, no event is sent from the server, and the
@@ -593,12 +593,12 @@ same restrictions.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">struct wl_buffer*</span> buffer <span class="green">/* the newly created wl_buffer */</span> 
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">This event indicates that the attempted buffer creation was
+              <div class="f6 lh-copy ws-pre-line code mt3">This event indicates that the attempted buffer creation was
 successful. It provides the new wl_buffer referencing the dmabuf(s).
 
 Upon receiving this event, the client should destroy the
@@ -619,7 +619,7 @@ zlinux_dmabuf_params object.
 
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">This event indicates that the attempted buffer creation has
+              <div class="f6 lh-copy ws-pre-line code mt3">This event indicates that the attempted buffer creation has
 failed. It usually means that one of the dmabuf constraints
 has not been fulfilled.
 
@@ -637,7 +637,7 @@ zlinux_buffer_params object.
     </ul>
 
     <h2 class="f4 lh-title">Copyright Info</h2>
-    <div class="f7 lh-copy ws-pre-line courier">Copyright © 2014, 2015 Collabora, Ltd.
+    <div class="f7 lh-copy ws-pre-line code">Copyright © 2014, 2015 Collabora, Ltd.
 
 Permission is hereby granted, free of charge, to any person obtaining a
 copy of this software and associated documentation files (the &quot;Software&quot;),

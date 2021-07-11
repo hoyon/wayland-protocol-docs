@@ -142,7 +142,7 @@
           <a href="#i:zwp_text_input_v3" class="link dim black-70 child pr2 absolute left--2">#</a>
           zwp_text_input_v3
         </h2>
-        <div class="f6 lh-copy ws-pre-line courier">The zwp_text_input_v3 interface represents text input and input methods
+        <div class="f6 lh-copy ws-pre-line code">The zwp_text_input_v3 interface represents text input and input methods
 associated with a seat. It provides enter&#x2f;leave events to follow the
 text input focus for a seat.
 
@@ -185,14 +185,14 @@ needs to be resent by the client.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">zwp_text_input_v3_destroy</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwp_text_input_v3*</span> zwp_text_input_v3</div>
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Destroy the wp_text_input object. Also disables all surfaces enabled
+              <div class="f6 lh-copy ws-pre-line code">Destroy the wp_text_input object. Also disables all surfaces enabled
 through this wp_text_input object.
 </div>
             </li>
@@ -208,14 +208,14 @@ through this wp_text_input object.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">zwp_text_input_v3_enable</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwp_text_input_v3*</span> zwp_text_input_v3</div>
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Requests text input on the surface previously obtained from the enter
+              <div class="f6 lh-copy ws-pre-line code">Requests text input on the surface previously obtained from the enter
 event.
 
 This request must be issued every time the active text input changes
@@ -258,14 +258,14 @@ zwp_text_input_v3.commit request.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">zwp_text_input_v3_disable</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwp_text_input_v3*</span> zwp_text_input_v3</div>
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Explicitly disable text input on the current surface (typically when
+              <div class="f6 lh-copy ws-pre-line code">Explicitly disable text input on the current surface (typically when
 there is no focus on any text entry inside the surface).
 
 State set with this request is double-buffered. It will get applied on
@@ -284,7 +284,7 @@ the next zwp_text_input_v3.commit request.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">zwp_text_input_v3_set_surrounding_text</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwp_text_input_v3*</span> zwp_text_input_v3,</div>
@@ -297,7 +297,7 @@ the next zwp_text_input_v3.commit request.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Sets the surrounding plain text around the input, excluding the preedit
+              <div class="f6 lh-copy ws-pre-line code">Sets the surrounding plain text around the input, excluding the preedit
 text.
 
 The client should notify the compositor of any changes in any of the
@@ -342,7 +342,7 @@ get applied, subsequent attempts to change them may have no effect.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">zwp_text_input_v3_set_text_change_cause</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwp_text_input_v3*</span> zwp_text_input_v3,</div>
@@ -351,7 +351,7 @@ get applied, subsequent attempts to change them may have no effect.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Tells the compositor why the text surrounding the cursor changed.
+              <div class="f6 lh-copy ws-pre-line code">Tells the compositor why the text surrounding the cursor changed.
 
 Whenever the client detects an external change in text, cursor, or
 anchor posision, it must issue this request to the compositor. This
@@ -379,7 +379,7 @@ The initial value of cause is input_method.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">zwp_text_input_v3_set_content_type</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwp_text_input_v3*</span> zwp_text_input_v3,</div>
@@ -390,7 +390,7 @@ The initial value of cause is input_method.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Sets the content purpose and content hint. While the purpose is the
+              <div class="f6 lh-copy ws-pre-line code">Sets the content purpose and content hint. While the purpose is the
 basic purpose of an input field, the hint flags allow to modify some of
 the behavior.
 
@@ -415,7 +415,7 @@ is normal.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">zwp_text_input_v3_set_cursor_rectangle</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwp_text_input_v3*</span> zwp_text_input_v3,</div>
@@ -430,7 +430,7 @@ is normal.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Marks an area around the cursor as a x, y, width, height rectangle in
+              <div class="f6 lh-copy ws-pre-line code">Marks an area around the cursor as a x, y, width, height rectangle in
 surface local coordinates.
 
 Allows the compositor to put a window with word suggestions near the
@@ -461,14 +461,14 @@ no effect.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">zwp_text_input_v3_commit</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwp_text_input_v3*</span> zwp_text_input_v3</div>
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Atomically applies state changes recently sent to the compositor.
+              <div class="f6 lh-copy ws-pre-line code">Atomically applies state changes recently sent to the compositor.
 
 The commit request establishes and updates the state of the client, and
 must be issued after any changes to apply them.
@@ -513,12 +513,12 @@ events.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">struct wl_surface*</span> surface  
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">Notification that this seat&#x27;s text-input focus is on a certain surface.
+              <div class="f6 lh-copy ws-pre-line code mt3">Notification that this seat&#x27;s text-input focus is on a certain surface.
 
 If client has created multiple text input objects, compositor must send
 this event to all of them.
@@ -541,12 +541,12 @@ text-input object.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">struct wl_surface*</span> surface  
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">Notification that this seat&#x27;s text-input focus is no longer on a
+              <div class="f6 lh-copy ws-pre-line code mt3">Notification that this seat&#x27;s text-input focus is no longer on a
 certain surface. The client should reset any preedit string previously
 set.
 
@@ -572,20 +572,20 @@ the keyboard focus.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">const char*</span> text  
                 </div>
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">int32_t</span> cursor_begin  
                 </div>
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">int32_t</span> cursor_end  
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">Notify when a new composing text (pre-edit) should be set at the
+              <div class="f6 lh-copy ws-pre-line code mt3">Notify when a new composing text (pre-edit) should be set at the
 current cursor position. Any previously set composing text must be
 removed. Any previously existing selected text must be removed.
 
@@ -618,12 +618,12 @@ cursor_end and cursor_hidden are all 0.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">const char*</span> text  
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">Notify when text should be inserted into the editor widget. The text to
+              <div class="f6 lh-copy ws-pre-line code mt3">Notify when text should be inserted into the editor widget. The text to
 commit could be either just a single character after a key press or the
 result of some composing (pre-edit).
 
@@ -646,16 +646,16 @@ The initial value of text is an empty string.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> before_length <span class="green">/* length of text before current cursor position */</span> 
                 </div>
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> after_length <span class="green">/* length of text after current cursor position */</span> 
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">Notify when the text around the current cursor position should be
+              <div class="f6 lh-copy ws-pre-line code mt3">Notify when the text around the current cursor position should be
 deleted.
 
 Before_length and after_length are the number of bytes before and after
@@ -684,12 +684,12 @@ The initial values of both before_length and after_length are 0.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> serial  
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">Instruct the application to apply changes to state requested by the
+              <div class="f6 lh-copy ws-pre-line code mt3">Instruct the application to apply changes to state requested by the
 preedit_string, commit_string and delete_surrounding_text events. The
 state relating to these events is double-buffered, and each one
 modifies the pending state. This event replaces the current state with
@@ -725,7 +725,7 @@ should not change the current state of the zwp_text_input_v3 object.
           <a href="#i:zwp_text_input_manager_v3" class="link dim black-70 child pr2 absolute left--2">#</a>
           zwp_text_input_manager_v3
         </h2>
-        <div class="f6 lh-copy ws-pre-line courier">A factory for text-input objects. This object is a global singleton.
+        <div class="f6 lh-copy ws-pre-line code">A factory for text-input objects. This object is a global singleton.
 </div>
 
         
@@ -743,14 +743,14 @@ should not change the current state of the zwp_text_input_v3 object.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">zwp_text_input_manager_v3_destroy</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwp_text_input_manager_v3*</span> zwp_text_input_manager_v3</div>
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Destroy the wp_text_input_manager object.
+              <div class="f6 lh-copy ws-pre-line code">Destroy the wp_text_input_manager object.
 </div>
             </li>
             
@@ -765,7 +765,7 @@ should not change the current state of the zwp_text_input_v3 object.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>struct zwp_text_input_v3* </span><span class="dark-blue">zwp_text_input_manager_v3_get_text_input</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwp_text_input_manager_v3*</span> zwp_text_input_manager_v3,</div>
@@ -774,7 +774,7 @@ should not change the current state of the zwp_text_input_v3 object.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Creates a new text-input object for a given seat.
+              <div class="f6 lh-copy ws-pre-line code">Creates a new text-input object for a given seat.
 </div>
             </li>
             
@@ -790,7 +790,7 @@ should not change the current state of the zwp_text_input_v3 object.
     </ul>
 
     <h2 class="f4 lh-title">Copyright Info</h2>
-    <div class="f7 lh-copy ws-pre-line courier">Copyright © 2012, 2013 Intel Corporation
+    <div class="f7 lh-copy ws-pre-line code">Copyright © 2012, 2013 Intel Corporation
 Copyright © 2015, 2016 Jan Arne Petersen
 Copyright © 2017, 2018 Red Hat, Inc.
 Copyright © 2018       Purism SPC

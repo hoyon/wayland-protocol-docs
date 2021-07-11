@@ -98,7 +98,7 @@
           <a href="#i:zwp_keyboard_shortcuts_inhibit_manager_v1" class="link dim black-70 child pr2 absolute left--2">#</a>
           zwp_keyboard_shortcuts_inhibit_manager_v1
         </h2>
-        <div class="f6 lh-copy ws-pre-line courier">A global interface used for inhibiting the compositor keyboard shortcuts.
+        <div class="f6 lh-copy ws-pre-line code">A global interface used for inhibiting the compositor keyboard shortcuts.
 </div>
 
         
@@ -116,14 +116,14 @@
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">zwp_keyboard_shortcuts_inhibit_manager_v1_destroy</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwp_keyboard_shortcuts_inhibit_manager_v1*</span> zwp_keyboard_shortcuts_inhibit_manager_v1</div>
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Destroy the keyboard shortcuts inhibitor manager.
+              <div class="f6 lh-copy ws-pre-line code">Destroy the keyboard shortcuts inhibitor manager.
   </div>
             </li>
             
@@ -138,7 +138,7 @@
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>struct zwp_keyboard_shortcuts_inhibitor_v1* </span><span class="dark-blue">zwp_keyboard_shortcuts_inhibit_manager_v1_inhibit_shortcuts</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwp_keyboard_shortcuts_inhibit_manager_v1*</span> zwp_keyboard_shortcuts_inhibit_manager_v1,</div>
@@ -149,7 +149,7 @@
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Create a new keyboard shortcuts inhibitor object associated with
+              <div class="f6 lh-copy ws-pre-line code">Create a new keyboard shortcuts inhibitor object associated with
 the given surface for the given seat.
 
 If shortcuts are already inhibited for the specified seat and surface,
@@ -171,7 +171,7 @@ a protocol error &quot;already_inhibited&quot; is raised by the compositor.
           <a href="#i:zwp_keyboard_shortcuts_inhibitor_v1" class="link dim black-70 child pr2 absolute left--2">#</a>
           zwp_keyboard_shortcuts_inhibitor_v1
         </h2>
-        <div class="f6 lh-copy ws-pre-line courier">A keyboard shortcuts inhibitor instructs the compositor to ignore
+        <div class="f6 lh-copy ws-pre-line code">A keyboard shortcuts inhibitor instructs the compositor to ignore
 its own keyboard shortcuts when the associated surface has keyboard
 focus. As a result, when the surface has keyboard focus on the given
 seat, it will receive all key events originating from the specified
@@ -221,14 +221,14 @@ event is emitted in this case.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">zwp_keyboard_shortcuts_inhibitor_v1_destroy</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwp_keyboard_shortcuts_inhibitor_v1*</span> zwp_keyboard_shortcuts_inhibitor_v1</div>
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Remove the keyboard shortcuts inhibitor from the associated wl_surface.
+              <div class="f6 lh-copy ws-pre-line code">Remove the keyboard shortcuts inhibitor from the associated wl_surface.
   </div>
             </li>
             
@@ -252,7 +252,7 @@ event is emitted in this case.
 
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">This event indicates that the shortcut inhibitor is active.
+              <div class="f6 lh-copy ws-pre-line code mt3">This event indicates that the shortcut inhibitor is active.
 
 The compositor sends this event every time compositor shortcuts
 are inhibited on behalf of the surface. When active, the client
@@ -279,7 +279,7 @@ offered by the compositor.
 
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">This event indicates that the shortcuts inhibitor is inactive,
+              <div class="f6 lh-copy ws-pre-line code mt3">This event indicates that the shortcuts inhibitor is inactive,
 normal shortcuts processing is restored by the compositor.
    </div>
             </li>
@@ -293,7 +293,7 @@ normal shortcuts processing is restored by the compositor.
     </ul>
 
     <h2 class="f4 lh-title">Copyright Info</h2>
-    <div class="f7 lh-copy ws-pre-line courier">Copyright © 2017 Red Hat Inc.
+    <div class="f7 lh-copy ws-pre-line code">Copyright © 2017 Red Hat Inc.
 
 Permission is hereby granted, free of charge, to any person obtaining a
 copy of this software and associated documentation files (the &quot;Software&quot;),

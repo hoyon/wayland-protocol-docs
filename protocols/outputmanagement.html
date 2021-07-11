@@ -134,7 +134,7 @@
           <a href="#i:org_kde_kwin_outputmanagement" class="link dim black-70 child pr2 absolute left--2">#</a>
           org_kde_kwin_outputmanagement
         </h2>
-        <div class="f6 lh-copy ws-pre-line courier">This interface enables clients to set properties of output devices for screen
+        <div class="f6 lh-copy ws-pre-line code">This interface enables clients to set properties of output devices for screen
 configuration purposes via the server. To this end output devices are referenced
 by global org_kde_kwin_outputdevice objects.
 
@@ -190,14 +190,14 @@ internally supported by the server.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>struct org_kde_kwin_outputconfiguration* </span><span class="dark-blue">org_kde_kwin_outputmanagement_create_configuration</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct org_kde_kwin_outputmanagement*</span> org_kde_kwin_outputmanagement</div>
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Request an outputconfiguration object through which the client can configure
+              <div class="f6 lh-copy ws-pre-line code">Request an outputconfiguration object through which the client can configure
 output devices.
 </div>
             </li>
@@ -216,7 +216,7 @@ output devices.
           <a href="#i:org_kde_kwin_outputconfiguration" class="link dim black-70 child pr2 absolute left--2">#</a>
           org_kde_kwin_outputconfiguration
         </h2>
-        <div class="f6 lh-copy ws-pre-line courier">outputconfiguration is a client-specific resource that can be used to ask
+        <div class="f6 lh-copy ws-pre-line code">outputconfiguration is a client-specific resource that can be used to ask
 the server to apply changes to available output devices.
 
 The client receives a list of output devices from the registry. When it wants
@@ -245,7 +245,7 @@ applied to the hardware and before the server side sends the applied event.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">org_kde_kwin_outputconfiguration_enable</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct org_kde_kwin_outputconfiguration*</span> org_kde_kwin_outputconfiguration,</div>
@@ -256,7 +256,7 @@ applied to the hardware and before the server side sends the applied event.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Mark the output as enabled or disabled.
+              <div class="f6 lh-copy ws-pre-line code">Mark the output as enabled or disabled.
 </div>
             </li>
             
@@ -271,7 +271,7 @@ applied to the hardware and before the server side sends the applied event.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">org_kde_kwin_outputconfiguration_mode</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct org_kde_kwin_outputconfiguration*</span> org_kde_kwin_outputconfiguration,</div>
@@ -282,7 +282,7 @@ applied to the hardware and before the server side sends the applied event.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Sets the mode for a given output by its mode size (width and height) and refresh rate.
+              <div class="f6 lh-copy ws-pre-line code">Sets the mode for a given output by its mode size (width and height) and refresh rate.
 </div>
             </li>
             
@@ -297,7 +297,7 @@ applied to the hardware and before the server side sends the applied event.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">org_kde_kwin_outputconfiguration_transform</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct org_kde_kwin_outputconfiguration*</span> org_kde_kwin_outputconfiguration,</div>
@@ -308,7 +308,7 @@ applied to the hardware and before the server side sends the applied event.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Sets the transformation for a given output.
+              <div class="f6 lh-copy ws-pre-line code">Sets the transformation for a given output.
 </div>
             </li>
             
@@ -323,7 +323,7 @@ applied to the hardware and before the server side sends the applied event.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">org_kde_kwin_outputconfiguration_position</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct org_kde_kwin_outputconfiguration*</span> org_kde_kwin_outputconfiguration,</div>
@@ -336,7 +336,7 @@ applied to the hardware and before the server side sends the applied event.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Sets the position for this output device. (x,y) describe the top-left corner
+              <div class="f6 lh-copy ws-pre-line code">Sets the position for this output device. (x,y) describe the top-left corner
 of the output in global space, whereby the origin (0,0) of the global space
 has to be aligned with the top-left corner of the most left and in case this
 does not define a single one the top output.
@@ -357,7 +357,7 @@ stacked horizontally, vertically, or both on each other.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">org_kde_kwin_outputconfiguration_scale</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct org_kde_kwin_outputconfiguration*</span> org_kde_kwin_outputconfiguration,</div>
@@ -368,7 +368,7 @@ stacked horizontally, vertically, or both on each other.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Sets the scaling factor for this output device.
+              <div class="f6 lh-copy ws-pre-line code">Sets the scaling factor for this output device.
 </div>
             </li>
             
@@ -383,14 +383,14 @@ stacked horizontally, vertically, or both on each other.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">org_kde_kwin_outputconfiguration_apply</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct org_kde_kwin_outputconfiguration*</span> org_kde_kwin_outputconfiguration</div>
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Asks the server to apply property changes requested through this outputconfiguration
+              <div class="f6 lh-copy ws-pre-line code">Asks the server to apply property changes requested through this outputconfiguration
 object to all outputs on the server side.
 </div>
             </li>
@@ -406,7 +406,7 @@ object to all outputs on the server side.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">org_kde_kwin_outputconfiguration_scalef</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct org_kde_kwin_outputconfiguration*</span> org_kde_kwin_outputconfiguration,</div>
@@ -417,7 +417,7 @@ object to all outputs on the server side.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Sets the scaling factor for this output device.
+              <div class="f6 lh-copy ws-pre-line code">Sets the scaling factor for this output device.
 Sending both scale and scalef is undefined.
 </div>
             </li>
@@ -433,7 +433,7 @@ Sending both scale and scalef is undefined.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">org_kde_kwin_outputconfiguration_colorcurves</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct org_kde_kwin_outputconfiguration*</span> org_kde_kwin_outputconfiguration,</div>
@@ -448,7 +448,7 @@ Sending both scale and scalef is undefined.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Set color curves of output devices through RGB color ramps. Allows color
+              <div class="f6 lh-copy ws-pre-line code">Set color curves of output devices through RGB color ramps. Allows color
 correction of output device from user space.
 
 These are the raw values. A compositor might opt to adjust these values
@@ -467,14 +467,14 @@ internally, for example to shift color temperature at night.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">org_kde_kwin_outputconfiguration_destroy</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct org_kde_kwin_outputconfiguration*</span> org_kde_kwin_outputconfiguration</div>
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier"></div>
+              <div class="f6 lh-copy ws-pre-line code"></div>
             </li>
             
             <li class="mt3">
@@ -488,7 +488,7 @@ internally, for example to shift color temperature at night.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">org_kde_kwin_outputconfiguration_overscan</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct org_kde_kwin_outputconfiguration*</span> org_kde_kwin_outputconfiguration,</div>
@@ -499,7 +499,7 @@ internally, for example to shift color temperature at night.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Set the overscan value of this output device with a value in percent.
+              <div class="f6 lh-copy ws-pre-line code">Set the overscan value of this output device with a value in percent.
 </div>
             </li>
             
@@ -514,7 +514,7 @@ internally, for example to shift color temperature at night.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">org_kde_kwin_outputconfiguration_set_vrr_policy</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct org_kde_kwin_outputconfiguration*</span> org_kde_kwin_outputconfiguration,</div>
@@ -525,7 +525,7 @@ internally, for example to shift color temperature at night.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Set what policy the compositor should employ regarding its use of
+              <div class="f6 lh-copy ws-pre-line code">Set what policy the compositor should employ regarding its use of
 variable refresh rate.
 </div>
             </li>
@@ -550,7 +550,7 @@ variable refresh rate.
 
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">Sent after the server has successfully applied the changes.
+              <div class="f6 lh-copy ws-pre-line code mt3">Sent after the server has successfully applied the changes.
 .
 </div>
             </li>
@@ -568,7 +568,7 @@ variable refresh rate.
 
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">Sent if the server rejects the changes or failed to apply them.
+              <div class="f6 lh-copy ws-pre-line code mt3">Sent if the server rejects the changes or failed to apply them.
 </div>
             </li>
             
@@ -581,7 +581,7 @@ variable refresh rate.
     </ul>
 
     <h2 class="f4 lh-title">Copyright Info</h2>
-    <div class="f7 lh-copy ws-pre-line courier">SPDX-FileCopyrightText: 2008-2011 Kristian Høgsberg
+    <div class="f7 lh-copy ws-pre-line code">SPDX-FileCopyrightText: 2008-2011 Kristian Høgsberg
 SPDX-FileCopyrightText: 2010-2011 Intel Corporation
 SPDX-FileCopyrightText: 2012-2013 Collabora, Ltd.
 SPDX-FileCopyrightText: 2015 Sebastian Kügler &lt;sebas@kde.org&gt;

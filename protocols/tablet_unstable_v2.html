@@ -458,7 +458,7 @@
           <a href="#i:zwp_tablet_manager_v2" class="link dim black-70 child pr2 absolute left--2">#</a>
           zwp_tablet_manager_v2
         </h2>
-        <div class="f6 lh-copy ws-pre-line courier">An object that provides access to the graphics tablets available on this
+        <div class="f6 lh-copy ws-pre-line code">An object that provides access to the graphics tablets available on this
 system. All tablets are associated with a seat, to get access to the
 actual tablets, use wp_tablet_manager.get_tablet_seat.
 </div>
@@ -478,7 +478,7 @@ actual tablets, use wp_tablet_manager.get_tablet_seat.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>struct zwp_tablet_seat_v2* </span><span class="dark-blue">zwp_tablet_manager_v2_get_tablet_seat</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwp_tablet_manager_v2*</span> zwp_tablet_manager_v2,</div>
@@ -487,7 +487,7 @@ actual tablets, use wp_tablet_manager.get_tablet_seat.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Get the wp_tablet_seat object for the given seat. This object
+              <div class="f6 lh-copy ws-pre-line code">Get the wp_tablet_seat object for the given seat. This object
 provides access to all graphics tablets in this seat.
   </div>
             </li>
@@ -503,14 +503,14 @@ provides access to all graphics tablets in this seat.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">zwp_tablet_manager_v2_destroy</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwp_tablet_manager_v2*</span> zwp_tablet_manager_v2</div>
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Destroy the wp_tablet_manager object. Objects created from this
+              <div class="f6 lh-copy ws-pre-line code">Destroy the wp_tablet_manager object. Objects created from this
 object are unaffected and should be destroyed separately.
   </div>
             </li>
@@ -529,7 +529,7 @@ object are unaffected and should be destroyed separately.
           <a href="#i:zwp_tablet_seat_v2" class="link dim black-70 child pr2 absolute left--2">#</a>
           zwp_tablet_seat_v2
         </h2>
-        <div class="f6 lh-copy ws-pre-line courier">An object that provides access to the graphics tablets available on this
+        <div class="f6 lh-copy ws-pre-line code">An object that provides access to the graphics tablets available on this
 seat. After binding to this interface, the compositor sends a set of
 wp_tablet_seat.tablet_added and wp_tablet_seat.tool_added events.
 </div>
@@ -549,14 +549,14 @@ wp_tablet_seat.tablet_added and wp_tablet_seat.tool_added events.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">zwp_tablet_seat_v2_destroy</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwp_tablet_seat_v2*</span> zwp_tablet_seat_v2</div>
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Destroy the wp_tablet_seat object. Objects created from this
+              <div class="f6 lh-copy ws-pre-line code">Destroy the wp_tablet_seat object. Objects created from this
 object are unaffected and should be destroyed separately.
   </div>
             </li>
@@ -580,12 +580,12 @@ object are unaffected and should be destroyed separately.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">struct zwp_tablet_v2*</span> id <span class="green">/* the newly added graphics tablet */</span> 
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">This event is sent whenever a new tablet becomes available on this
+              <div class="f6 lh-copy ws-pre-line code mt3">This event is sent whenever a new tablet becomes available on this
 seat. This event only provides the object id of the tablet, any
 static information about the tablet (device name, vid&#x2f;pid, etc.) is
 sent through the wp_tablet interface.
@@ -604,12 +604,12 @@ sent through the wp_tablet interface.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">struct zwp_tablet_tool_v2*</span> id <span class="green">/* the newly added tablet tool */</span> 
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">This event is sent whenever a tool that has not previously been used
+              <div class="f6 lh-copy ws-pre-line code mt3">This event is sent whenever a tool that has not previously been used
 with a tablet comes into use. This event only provides the object id
 of the tool; any static information about the tool (capabilities,
 type, etc.) is sent through the wp_tablet_tool interface.
@@ -628,12 +628,12 @@ type, etc.) is sent through the wp_tablet_tool interface.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">struct zwp_tablet_pad_v2*</span> id <span class="green">/* the newly added pad */</span> 
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">This event is sent whenever a new pad is known to the system. Typically,
+              <div class="f6 lh-copy ws-pre-line code mt3">This event is sent whenever a new pad is known to the system. Typically,
 pads are physically attached to tablets and a pad_added event is
 sent immediately after the wp_tablet_seat.tablet_added.
 However, some standalone pad devices logically attach to tablets at
@@ -657,7 +657,7 @@ interface.
           <a href="#i:zwp_tablet_tool_v2" class="link dim black-70 child pr2 absolute left--2">#</a>
           zwp_tablet_tool_v2
         </h2>
-        <div class="f6 lh-copy ws-pre-line courier">An object that represents a physical tool that has been, or is
+        <div class="f6 lh-copy ws-pre-line code">An object that represents a physical tool that has been, or is
 currently in use with a tablet in this seat. Each wp_tablet_tool
 object stays valid until the client destroys it; the compositor
 reuses the wp_tablet_tool object to indicate that the object&#x27;s
@@ -694,7 +694,7 @@ considered part of the same hardware state change.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">zwp_tablet_tool_v2_set_cursor</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwp_tablet_tool_v2*</span> zwp_tablet_tool_v2,</div>
@@ -709,7 +709,7 @@ considered part of the same hardware state change.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Sets the surface of the cursor used for this tool on the given
+              <div class="f6 lh-copy ws-pre-line code">Sets the surface of the cursor used for this tool on the given
 tablet. This request only takes effect if the tool is in proximity
 of one of the requesting client&#x27;s surfaces or the surface parameter
 is the current pointer surface. If there was a previous surface set
@@ -753,14 +753,14 @@ protocol error is raised.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">zwp_tablet_tool_v2_destroy</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwp_tablet_tool_v2*</span> zwp_tablet_tool_v2</div>
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">This destroys the client&#x27;s resource for this tool object.
+              <div class="f6 lh-copy ws-pre-line code">This destroys the client&#x27;s resource for this tool object.
   </div>
             </li>
             
@@ -783,12 +783,12 @@ protocol error is raised.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> tool_type <span class="green">/* the physical tool type */</span> 
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">The tool type is the high-level type of the tool and usually decides
+              <div class="f6 lh-copy ws-pre-line code mt3">The tool type is the high-level type of the tool and usually decides
 the interaction expected from this tool.
 
 This event is sent in the initial burst of events before the
@@ -808,16 +808,16 @@ wp_tablet_tool.done event.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> hardware_serial_hi <span class="green">/* the unique serial number of the tool, most significant bits */</span> 
                 </div>
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> hardware_serial_lo <span class="green">/* the unique serial number of the tool, least significant bits */</span> 
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">If the physical tool can be identified by a unique 64-bit serial
+              <div class="f6 lh-copy ws-pre-line code mt3">If the physical tool can be identified by a unique 64-bit serial
 number, this event notifies the client of this serial number.
 
 If multiple tablets are available in the same seat and the tool is
@@ -847,16 +847,16 @@ wp_tablet_tool.done event.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> hardware_id_hi <span class="green">/* the hardware id, most significant bits */</span> 
                 </div>
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> hardware_id_lo <span class="green">/* the hardware id, least significant bits */</span> 
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">This event notifies the client of a hardware id available on this tool.
+              <div class="f6 lh-copy ws-pre-line code mt3">This event notifies the client of a hardware id available on this tool.
 
 The hardware id is a device-specific 64-bit id that provides extra
 information about the tool in use, beyond the wl_tool.type
@@ -881,12 +881,12 @@ wp_tablet_tool.done event.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> capability <span class="green">/* the capability */</span> 
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">This event notifies the client of any capabilities of this tool,
+              <div class="f6 lh-copy ws-pre-line code mt3">This event notifies the client of any capabilities of this tool,
 beyond the main set of x&#x2f;y axes and tip up&#x2f;down detection.
 
 One event is sent for each extra capability available on this tool.
@@ -909,7 +909,7 @@ wp_tablet_tool.done event.
 
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">This event signals the end of the initial burst of descriptive
+              <div class="f6 lh-copy ws-pre-line code mt3">This event signals the end of the initial burst of descriptive
 events. A client may consider the static description of the tool to
 be complete and finalize initialization of the tool.
   </div>
@@ -928,7 +928,7 @@ be complete and finalize initialization of the tool.
 
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">This event is sent when the tool is removed from the system and will
+              <div class="f6 lh-copy ws-pre-line code mt3">This event is sent when the tool is removed from the system and will
 send no further events. Should the physical tool come back into
 proximity later, a new wp_tablet_tool object will be created.
 
@@ -957,20 +957,20 @@ the object.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> serial  
                 </div>
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">struct zwp_tablet_v2*</span> tablet <span class="green">/* The tablet the tool is in proximity of */</span> 
                 </div>
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">struct wl_surface*</span> surface <span class="green">/* The current surface the tablet tool is over */</span> 
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">Notification that this tool is focused on a certain surface.
+              <div class="f6 lh-copy ws-pre-line code mt3">Notification that this tool is focused on a certain surface.
 
 This event can be received when the tool has moved from one surface to
 another, or when the tool has come back into proximity above the
@@ -995,7 +995,7 @@ within the same frame as the proximity_in event.
 
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">Notification that this tool has either left proximity, or is no
+              <div class="f6 lh-copy ws-pre-line code mt3">Notification that this tool has either left proximity, or is no
 longer focused on a certain surface.
 
 When the tablet tool leaves proximity of the tablet, button release
@@ -1022,12 +1022,12 @@ proximity of the tablet.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> serial  
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">Sent whenever the tablet tool comes in contact with the surface of the
+              <div class="f6 lh-copy ws-pre-line code mt3">Sent whenever the tablet tool comes in contact with the surface of the
 tablet.
 
 If the tool is already in contact with the tablet when entering the
@@ -1055,7 +1055,7 @@ exceeded.
 
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">Sent whenever the tablet tool stops making contact with the surface of
+              <div class="f6 lh-copy ws-pre-line code mt3">Sent whenever the tablet tool stops making contact with the surface of
 the tablet, or when the tablet tool moves out of the input region
 and the compositor grab (if any) is dismissed.
 
@@ -1086,16 +1086,16 @@ threshold.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">wl_fixed_t</span> x <span class="green">/* surface-local x coordinate */</span> 
                 </div>
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">wl_fixed_t</span> y <span class="green">/* surface-local y coordinate */</span> 
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">Sent whenever a tablet tool moves.
+              <div class="f6 lh-copy ws-pre-line code mt3">Sent whenever a tablet tool moves.
   </div>
             </li>
             
@@ -1111,12 +1111,12 @@ threshold.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> pressure <span class="green">/* The current pressure value */</span> 
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">Sent whenever the pressure axis on a tool changes. The value of this
+              <div class="f6 lh-copy ws-pre-line code mt3">Sent whenever the pressure axis on a tool changes. The value of this
 event is normalized to a value between 0 and 65535.
 
 Note that pressure may be nonzero even when a tool is not in logical
@@ -1136,12 +1136,12 @@ contact. See the down and up events for more details.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> distance <span class="green">/* The current distance value */</span> 
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">Sent whenever the distance axis on a tool changes. The value of this
+              <div class="f6 lh-copy ws-pre-line code mt3">Sent whenever the distance axis on a tool changes. The value of this
 event is normalized to a value between 0 and 65535.
 
 Note that distance may be nonzero even when a tool is not in logical
@@ -1161,16 +1161,16 @@ contact. See the down and up events for more details.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">wl_fixed_t</span> tilt_x <span class="green">/* The current value of the X tilt axis */</span> 
                 </div>
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">wl_fixed_t</span> tilt_y <span class="green">/* The current value of the Y tilt axis */</span> 
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">Sent whenever one or both of the tilt axes on a tool change. Each tilt
+              <div class="f6 lh-copy ws-pre-line code mt3">Sent whenever one or both of the tilt axes on a tool change. Each tilt
 value is in degrees, relative to the z-axis of the tablet.
 The angle is positive when the top of a tool tilts along the
 positive x or y axis.
@@ -1189,12 +1189,12 @@ positive x or y axis.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">wl_fixed_t</span> degrees <span class="green">/* The current rotation of the Z axis */</span> 
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">Sent whenever the z-rotation axis on the tool changes. The
+              <div class="f6 lh-copy ws-pre-line code mt3">Sent whenever the z-rotation axis on the tool changes. The
 rotation value is in degrees clockwise from the tool&#x27;s
 logical neutral position.
   </div>
@@ -1212,12 +1212,12 @@ logical neutral position.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">int32_t</span> position <span class="green">/* The current position of slider */</span> 
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">Sent whenever the slider position on the tool changes. The
+              <div class="f6 lh-copy ws-pre-line code mt3">Sent whenever the slider position on the tool changes. The
 value is normalized between -65535 and 65535, with 0 as the logical
 neutral position of the slider.
 
@@ -1237,16 +1237,16 @@ The slider is available on e.g. the Wacom Airbrush tool.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">wl_fixed_t</span> degrees <span class="green">/* The wheel delta in degrees */</span> 
                 </div>
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">int32_t</span> clicks <span class="green">/* The wheel delta in discrete clicks */</span> 
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">Sent whenever the wheel on the tool emits an event. This event
+              <div class="f6 lh-copy ws-pre-line code mt3">Sent whenever the wheel on the tool emits an event. This event
 contains two values for the same axis change. The degrees value is
 in the same orientation as the wl_pointer.vertical_scroll axis. The
 clicks value is in discrete logical clicks of the mouse wheel. This
@@ -1273,20 +1273,20 @@ have different degrees values.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> serial  
                 </div>
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> button <span class="green">/* The button whose state has changed */</span> 
                 </div>
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> state <span class="green">/* Whether the button was pressed or released */</span> 
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">Sent whenever a button on the tool is pressed or released.
+              <div class="f6 lh-copy ws-pre-line code mt3">Sent whenever a button on the tool is pressed or released.
 
 If a button is held down when the tool moves in or out of proximity,
 button events are generated by the compositor. See
@@ -1307,12 +1307,12 @@ details.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> time <span class="green">/* The time of the event with millisecond granularity */</span> 
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">Marks the end of a series of axis and&#x2f;or button updates from the
+              <div class="f6 lh-copy ws-pre-line code mt3">Marks the end of a series of axis and&#x2f;or button updates from the
 tablet. The Wayland protocol requires axis updates to be sent
 sequentially, however all events within a frame should be considered
 one hardware event.
@@ -1330,7 +1330,7 @@ one hardware event.
           <a href="#i:zwp_tablet_v2" class="link dim black-70 child pr2 absolute left--2">#</a>
           zwp_tablet_v2
         </h2>
-        <div class="f6 lh-copy ws-pre-line courier">The wp_tablet interface represents one graphics tablet device. The
+        <div class="f6 lh-copy ws-pre-line code">The wp_tablet interface represents one graphics tablet device. The
 tablet interface itself does not generate events; all events are
 generated by wp_tablet_tool objects when in proximity above a tablet.
 
@@ -1355,14 +1355,14 @@ terminated by a wp_tablet.done event.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">zwp_tablet_v2_destroy</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwp_tablet_v2*</span> zwp_tablet_v2</div>
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">This destroys the client&#x27;s resource for this tablet object.
+              <div class="f6 lh-copy ws-pre-line code">This destroys the client&#x27;s resource for this tablet object.
   </div>
             </li>
             
@@ -1385,12 +1385,12 @@ terminated by a wp_tablet.done event.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">const char*</span> name <span class="green">/* the device name */</span> 
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">This event is sent in the initial burst of events before the
+              <div class="f6 lh-copy ws-pre-line code mt3">This event is sent in the initial burst of events before the
 wp_tablet.done event.
   </div>
             </li>
@@ -1407,16 +1407,16 @@ wp_tablet.done event.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> vid <span class="green">/* USB vendor id */</span> 
                 </div>
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> pid <span class="green">/* USB product id */</span> 
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">This event is sent in the initial burst of events before the
+              <div class="f6 lh-copy ws-pre-line code mt3">This event is sent in the initial burst of events before the
 wp_tablet.done event.
   </div>
             </li>
@@ -1433,12 +1433,12 @@ wp_tablet.done event.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">const char*</span> path <span class="green">/* path to local device */</span> 
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">A system-specific device path that indicates which device is behind
+              <div class="f6 lh-copy ws-pre-line code mt3">A system-specific device path that indicates which device is behind
 this wp_tablet. This information may be used to gather additional
 information about the device, e.g. through libwacom.
 
@@ -1468,7 +1468,7 @@ wp_tablet.done event.
 
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">This event is sent immediately to signal the end of the initial
+              <div class="f6 lh-copy ws-pre-line code mt3">This event is sent immediately to signal the end of the initial
 burst of descriptive events. A client may consider the static
 description of the tablet to be complete and finalize initialization
 of the tablet.
@@ -1488,7 +1488,7 @@ of the tablet.
 
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">Sent when the tablet has been removed from the system. When a tablet
+              <div class="f6 lh-copy ws-pre-line code mt3">Sent when the tablet has been removed from the system. When a tablet
 is removed, some tools may be removed.
 
 When this event is received, the client must wp_tablet.destroy
@@ -1507,7 +1507,7 @@ the object.
           <a href="#i:zwp_tablet_pad_ring_v2" class="link dim black-70 child pr2 absolute left--2">#</a>
           zwp_tablet_pad_ring_v2
         </h2>
-        <div class="f6 lh-copy ws-pre-line courier">A circular interaction area, such as the touch ring on the Wacom Intuos
+        <div class="f6 lh-copy ws-pre-line code">A circular interaction area, such as the touch ring on the Wacom Intuos
 Pro series tablets.
 
 Events on a ring are logically grouped by the wl_tablet_pad_ring.frame
@@ -1529,7 +1529,7 @@ event.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">zwp_tablet_pad_ring_v2_set_feedback</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwp_tablet_pad_ring_v2*</span> zwp_tablet_pad_ring_v2,</div>
@@ -1540,7 +1540,7 @@ event.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Request that the compositor use the provided feedback string
+              <div class="f6 lh-copy ws-pre-line code">Request that the compositor use the provided feedback string
 associated with this ring. This request should be issued immediately
 after a wp_tablet_pad_group.mode_switch event from the corresponding
 group is received, or whenever the ring is mapped to a different
@@ -1573,14 +1573,14 @@ ignored.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">zwp_tablet_pad_ring_v2_destroy</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwp_tablet_pad_ring_v2*</span> zwp_tablet_pad_ring_v2</div>
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">This destroys the client&#x27;s resource for this ring object.
+              <div class="f6 lh-copy ws-pre-line code">This destroys the client&#x27;s resource for this ring object.
   </div>
             </li>
             
@@ -1603,12 +1603,12 @@ ignored.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> source <span class="green">/* the event source */</span> 
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">Source information for ring events.
+              <div class="f6 lh-copy ws-pre-line code mt3">Source information for ring events.
 
 This event does not occur on its own. It is sent before a
 wp_tablet_pad_ring.frame event and carries the source information
@@ -1635,12 +1635,12 @@ no event is sent.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">wl_fixed_t</span> degrees <span class="green">/* the current angle in degrees */</span> 
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">Sent whenever the angle on a ring changes.
+              <div class="f6 lh-copy ws-pre-line code mt3">Sent whenever the angle on a ring changes.
 
 The angle is provided in degrees clockwise from the logical
 north of the ring in the pad&#x27;s current rotation.
@@ -1660,7 +1660,7 @@ north of the ring in the pad&#x27;s current rotation.
 
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">Stop notification for ring events.
+              <div class="f6 lh-copy ws-pre-line code mt3">Stop notification for ring events.
 
 For some wp_tablet_pad_ring.source types, a wp_tablet_pad_ring.stop
 event is sent to notify a client that the interaction with the ring
@@ -1685,12 +1685,12 @@ event should be considered as the start of a new interaction.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> time <span class="green">/* timestamp with millisecond granularity */</span> 
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">Indicates the end of a set of ring events that logically belong
+              <div class="f6 lh-copy ws-pre-line code mt3">Indicates the end of a set of ring events that logically belong
 together. A client is expected to accumulate the data in all events
 within the frame before proceeding.
 
@@ -1717,7 +1717,7 @@ angle, frame, etc.
           <a href="#i:zwp_tablet_pad_strip_v2" class="link dim black-70 child pr2 absolute left--2">#</a>
           zwp_tablet_pad_strip_v2
         </h2>
-        <div class="f6 lh-copy ws-pre-line courier">A linear interaction area, such as the strips found in Wacom Cintiq
+        <div class="f6 lh-copy ws-pre-line code">A linear interaction area, such as the strips found in Wacom Cintiq
 models.
 
 Events on a strip are logically grouped by the wl_tablet_pad_strip.frame
@@ -1739,7 +1739,7 @@ event.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">zwp_tablet_pad_strip_v2_set_feedback</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwp_tablet_pad_strip_v2*</span> zwp_tablet_pad_strip_v2,</div>
@@ -1750,7 +1750,7 @@ event.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Requests the compositor to use the provided feedback string
+              <div class="f6 lh-copy ws-pre-line code">Requests the compositor to use the provided feedback string
 associated with this strip. This request should be issued immediately
 after a wp_tablet_pad_group.mode_switch event from the corresponding
 group is received, or whenever the strip is mapped to a different
@@ -1783,14 +1783,14 @@ ignored.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">zwp_tablet_pad_strip_v2_destroy</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwp_tablet_pad_strip_v2*</span> zwp_tablet_pad_strip_v2</div>
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">This destroys the client&#x27;s resource for this strip object.
+              <div class="f6 lh-copy ws-pre-line code">This destroys the client&#x27;s resource for this strip object.
   </div>
             </li>
             
@@ -1813,12 +1813,12 @@ ignored.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> source <span class="green">/* the event source */</span> 
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">Source information for strip events.
+              <div class="f6 lh-copy ws-pre-line code mt3">Source information for strip events.
 
 This event does not occur on its own. It is sent before a
 wp_tablet_pad_strip.frame event and carries the source information
@@ -1845,12 +1845,12 @@ no event is sent.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> position <span class="green">/* the current position */</span> 
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">Sent whenever the position on a strip changes.
+              <div class="f6 lh-copy ws-pre-line code mt3">Sent whenever the position on a strip changes.
 
 The position is normalized to a range of [0, 65535], the 0-value
 represents the top-most and&#x2f;or left-most position of the strip in
@@ -1871,7 +1871,7 @@ the pad&#x27;s current rotation.
 
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">Stop notification for strip events.
+              <div class="f6 lh-copy ws-pre-line code mt3">Stop notification for strip events.
 
 For some wp_tablet_pad_strip.source types, a wp_tablet_pad_strip.stop
 event is sent to notify a client that the interaction with the strip
@@ -1896,12 +1896,12 @@ event should be considered as the start of a new interaction.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> time <span class="green">/* timestamp with millisecond granularity */</span> 
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">Indicates the end of a set of events that represent one logical
+              <div class="f6 lh-copy ws-pre-line code mt3">Indicates the end of a set of events that represent one logical
 hardware strip event. A client is expected to accumulate the data
 in all events within the frame before proceeding.
 
@@ -1929,7 +1929,7 @@ position, frame, etc.
           <a href="#i:zwp_tablet_pad_group_v2" class="link dim black-70 child pr2 absolute left--2">#</a>
           zwp_tablet_pad_group_v2
         </h2>
-        <div class="f6 lh-copy ws-pre-line courier">A pad group describes a distinct (sub)set of buttons, rings and strips
+        <div class="f6 lh-copy ws-pre-line code">A pad group describes a distinct (sub)set of buttons, rings and strips
 present in the tablet. The criteria of this grouping is usually positional,
 eg. if a tablet has buttons on the left and right side, 2 groups will be
 presented. The physical arrangement of groups is undisclosed and may
@@ -1967,14 +1967,14 @@ compositor. See the wp_tablet_pad_group.mode_switch event for more details.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">zwp_tablet_pad_group_v2_destroy</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwp_tablet_pad_group_v2*</span> zwp_tablet_pad_group_v2</div>
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Destroy the wp_tablet_pad_group object. Objects created from this object
+              <div class="f6 lh-copy ws-pre-line code">Destroy the wp_tablet_pad_group object. Objects created from this object
 are unaffected and should be destroyed separately.
   </div>
             </li>
@@ -1998,12 +1998,12 @@ are unaffected and should be destroyed separately.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">struct wl_array*</span> buttons <span class="green">/* buttons in this group */</span> 
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">Sent on wp_tablet_pad_group initialization to announce the available
+              <div class="f6 lh-copy ws-pre-line code mt3">Sent on wp_tablet_pad_group initialization to announce the available
 buttons in the group. Button indices start at 0, a button may only be
 in one group at a time.
 
@@ -2030,12 +2030,12 @@ will be sent with an empty array.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">struct zwp_tablet_pad_ring_v2*</span> ring  
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">Sent on wp_tablet_pad_group initialization to announce available rings.
+              <div class="f6 lh-copy ws-pre-line code mt3">Sent on wp_tablet_pad_group initialization to announce available rings.
 One event is sent for each ring available on this pad group.
 
 This event is sent in the initial burst of events before the
@@ -2055,12 +2055,12 @@ wp_tablet_pad_group.done event.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">struct zwp_tablet_pad_strip_v2*</span> strip  
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">Sent on wp_tablet_pad initialization to announce available strips.
+              <div class="f6 lh-copy ws-pre-line code mt3">Sent on wp_tablet_pad initialization to announce available strips.
 One event is sent for each strip available on this pad group.
 
 This event is sent in the initial burst of events before the
@@ -2080,12 +2080,12 @@ wp_tablet_pad_group.done event.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> modes <span class="green">/* the number of modes */</span> 
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">Sent on wp_tablet_pad_group initialization to announce that the pad
+              <div class="f6 lh-copy ws-pre-line code mt3">Sent on wp_tablet_pad_group initialization to announce that the pad
 group may switch between modes. A client may use a mode to store a
 specific configuration for buttons, rings and strips and use the
 wl_tablet_pad_group.mode_switch event to toggle between these
@@ -2113,7 +2113,7 @@ more than one mode is available.
 
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">This event is sent immediately to signal the end of the initial
+              <div class="f6 lh-copy ws-pre-line code mt3">This event is sent immediately to signal the end of the initial
 burst of descriptive events. A client may consider the static
 description of the tablet to be complete and finalize initialization
 of the tablet group.
@@ -2132,20 +2132,20 @@ of the tablet group.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> time <span class="green">/* the time of the event with millisecond granularity */</span> 
                 </div>
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> serial  
                 </div>
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> mode <span class="green">/* the new mode of the pad */</span> 
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">Notification that the mode was switched.
+              <div class="f6 lh-copy ws-pre-line code mt3">Notification that the mode was switched.
 
 A mode applies to all buttons, rings and strips in a group
 simultaneously, but a client is not required to assign different actions
@@ -2186,7 +2186,7 @@ for each changed ring or strip.
           <a href="#i:zwp_tablet_pad_v2" class="link dim black-70 child pr2 absolute left--2">#</a>
           zwp_tablet_pad_v2
         </h2>
-        <div class="f6 lh-copy ws-pre-line courier">A pad device is a set of buttons, rings and strips
+        <div class="f6 lh-copy ws-pre-line code">A pad device is a set of buttons, rings and strips
 usually physically present on the tablet device itself. Some
 exceptions exist where the pad device is physically detached, e.g. the
 Wacom ExpressKey Remote.
@@ -2225,7 +2225,7 @@ although different groups may have different active modes.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">zwp_tablet_pad_v2_set_feedback</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwp_tablet_pad_v2*</span> zwp_tablet_pad_v2,</div>
@@ -2238,7 +2238,7 @@ although different groups may have different active modes.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Requests the compositor to use the provided feedback string
+              <div class="f6 lh-copy ws-pre-line code">Requests the compositor to use the provided feedback string
 associated with this button. This request should be issued immediately
 after a wp_tablet_pad_group.mode_switch event from the corresponding
 group is received, or whenever a button is mapped to a different
@@ -2276,14 +2276,14 @@ be ignored.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">zwp_tablet_pad_v2_destroy</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwp_tablet_pad_v2*</span> zwp_tablet_pad_v2</div>
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Destroy the wp_tablet_pad object. Objects created from this object
+              <div class="f6 lh-copy ws-pre-line code">Destroy the wp_tablet_pad object. Objects created from this object
 are unaffected and should be destroyed separately.
   </div>
             </li>
@@ -2307,12 +2307,12 @@ are unaffected and should be destroyed separately.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">struct zwp_tablet_pad_group_v2*</span> pad_group  
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">Sent on wp_tablet_pad initialization to announce available groups.
+              <div class="f6 lh-copy ws-pre-line code mt3">Sent on wp_tablet_pad initialization to announce available groups.
 One event is sent for each pad group available.
 
 This event is sent in the initial burst of events before the
@@ -2332,12 +2332,12 @@ wp_tablet_pad.done event. At least one group will be announced.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">const char*</span> path <span class="green">/* path to local device */</span> 
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">A system-specific device path that indicates which device is behind
+              <div class="f6 lh-copy ws-pre-line code mt3">A system-specific device path that indicates which device is behind
 this wp_tablet_pad. This information may be used to gather additional
 information about the device, e.g. through libwacom.
 
@@ -2362,12 +2362,12 @@ wp_tablet_pad.done event.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> buttons <span class="green">/* the number of buttons */</span> 
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">Sent on wp_tablet_pad initialization to announce the available
+              <div class="f6 lh-copy ws-pre-line code mt3">Sent on wp_tablet_pad initialization to announce the available
 buttons.
 
 This event is sent in the initial burst of events before the
@@ -2389,7 +2389,7 @@ button is available.
 
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">This event signals the end of the initial burst of descriptive
+              <div class="f6 lh-copy ws-pre-line code mt3">This event signals the end of the initial burst of descriptive
 events. A client may consider the static description of the pad to
 be complete and finalize initialization of the pad.
   </div>
@@ -2407,20 +2407,20 @@ be complete and finalize initialization of the pad.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> time <span class="green">/* the time of the event with millisecond granularity */</span> 
                 </div>
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> button <span class="green">/* the index of the button that changed state */</span> 
                 </div>
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> state  
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">Sent whenever the physical state of a button changes.
+              <div class="f6 lh-copy ws-pre-line code mt3">Sent whenever the physical state of a button changes.
   </div>
             </li>
             
@@ -2436,20 +2436,20 @@ be complete and finalize initialization of the pad.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> serial <span class="green">/* serial number of the enter event */</span> 
                 </div>
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">struct zwp_tablet_v2*</span> tablet <span class="green">/* the tablet the pad is attached to */</span> 
                 </div>
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">struct wl_surface*</span> surface <span class="green">/* surface the pad is focused on */</span> 
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">Notification that this pad is focused on the specified surface.
+              <div class="f6 lh-copy ws-pre-line code mt3">Notification that this pad is focused on the specified surface.
   </div>
             </li>
             
@@ -2465,16 +2465,16 @@ be complete and finalize initialization of the pad.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> serial <span class="green">/* serial number of the leave event */</span> 
                 </div>
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">struct wl_surface*</span> surface <span class="green">/* surface the pad is no longer focused on */</span> 
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">Notification that this pad is no longer focused on the specified
+              <div class="f6 lh-copy ws-pre-line code mt3">Notification that this pad is no longer focused on the specified
 surface.
   </div>
             </li>
@@ -2492,7 +2492,7 @@ surface.
 
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">Sent when the pad has been removed from the system. When a tablet
+              <div class="f6 lh-copy ws-pre-line code mt3">Sent when the pad has been removed from the system. When a tablet
 is removed its pad(s) will be removed too.
 
 When this event is received, the client must destroy all rings, strips
@@ -2510,7 +2510,7 @@ the pad itself.
     </ul>
 
     <h2 class="f4 lh-title">Copyright Info</h2>
-    <div class="f7 lh-copy ws-pre-line courier">Copyright 2014 © Stephen &quot;Lyude&quot; Chandler Paul
+    <div class="f7 lh-copy ws-pre-line code">Copyright 2014 © Stephen &quot;Lyude&quot; Chandler Paul
 Copyright 2015-2016 © Red Hat, Inc.
 
 Permission is hereby granted, free of charge, to any person

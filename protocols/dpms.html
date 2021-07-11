@@ -102,7 +102,7 @@
           <a href="#i:org_kde_kwin_dpms_manager" class="link dim black-70 child pr2 absolute left--2">#</a>
           org_kde_kwin_dpms_manager
         </h2>
-        <div class="f6 lh-copy ws-pre-line courier">The Dpms manager allows to get a org_kde_kwin_dpms for a given wl_output.
+        <div class="f6 lh-copy ws-pre-line code">The Dpms manager allows to get a org_kde_kwin_dpms for a given wl_output.
 The org_kde_kwin_dpms provides the currently used VESA Display Power Management
 Signaling state (see https:&#x2f;&#x2f;en.wikipedia.org&#x2f;wiki&#x2f;VESA_Display_Power_Management_Signaling ).
 In addition it allows to request a state change. A compositor is not obliged to honor it
@@ -124,7 +124,7 @@ and will normally automatically switch back to on state.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>struct org_kde_kwin_dpms* </span><span class="dark-blue">org_kde_kwin_dpms_manager_get</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct org_kde_kwin_dpms_manager*</span> org_kde_kwin_dpms_manager,</div>
@@ -133,7 +133,7 @@ and will normally automatically switch back to on state.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Factory request to get the org_kde_kwin_dpms for a given wl_output.
+              <div class="f6 lh-copy ws-pre-line code">Factory request to get the org_kde_kwin_dpms for a given wl_output.
 </div>
             </li>
             
@@ -151,7 +151,7 @@ and will normally automatically switch back to on state.
           <a href="#i:org_kde_kwin_dpms" class="link dim black-70 child pr2 absolute left--2">#</a>
           org_kde_kwin_dpms
         </h2>
-        <div class="f6 lh-copy ws-pre-line courier">This interface provides information about the VESA DPMS state for a wl_output.
+        <div class="f6 lh-copy ws-pre-line code">This interface provides information about the VESA DPMS state for a wl_output.
 It gets created through the request get on the org_kde_kwin_dpms_manager interface.
 
 On creating the resource the server will push whether DPSM is supported for the output,
@@ -175,7 +175,7 @@ done event.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">org_kde_kwin_dpms_set</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct org_kde_kwin_dpms*</span> org_kde_kwin_dpms,</div>
@@ -184,7 +184,7 @@ done event.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Requests that the compositor puts the wl_output into the passed mode. The compositor
+              <div class="f6 lh-copy ws-pre-line code">Requests that the compositor puts the wl_output into the passed mode. The compositor
 is not obliged to change the state. In addition the compositor might leave the mode
 whenever it seems suitable. E.g. the compositor might return to On state on user input.
 
@@ -204,14 +204,14 @@ Instead the client should listen for the mode event.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">org_kde_kwin_dpms_release</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct org_kde_kwin_dpms*</span> org_kde_kwin_dpms</div>
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier"></div>
+              <div class="f6 lh-copy ws-pre-line code"></div>
             </li>
             
           </ul>
@@ -233,12 +233,12 @@ Instead the client should listen for the mode event.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> supported <span class="green">/* Boolean value whether DPMS is supported (1) for the wl_output or not (0) */</span> 
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">This event gets pushed on binding the resource and indicates whether the wl_output
+              <div class="f6 lh-copy ws-pre-line code mt3">This event gets pushed on binding the resource and indicates whether the wl_output
 supports DPMS. There are operation modes of a Wayland server where DPMS might not
 make sense (e.g. nested compositors).
 </div>
@@ -256,12 +256,12 @@ make sense (e.g. nested compositors).
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> mode <span class="green">/* The new currently used mode */</span> 
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">This mode gets pushed on binding the resource and provides the currently used
+              <div class="f6 lh-copy ws-pre-line code mt3">This mode gets pushed on binding the resource and provides the currently used
 DPMS mode. It also gets pushed if DPMS is not supported for the wl_output, in that
 case the value will be On.
 
@@ -282,7 +282,7 @@ The event is also pushed whenever the state changes.
 
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">This event gets pushed on binding the resource once all other states are pushed.
+              <div class="f6 lh-copy ws-pre-line code mt3">This event gets pushed on binding the resource once all other states are pushed.
 
 In addition it gets pushed whenever a state changes to tell the client that all
 state changes have been pushed.
@@ -298,7 +298,7 @@ state changes have been pushed.
     </ul>
 
     <h2 class="f4 lh-title">Copyright Info</h2>
-    <div class="f7 lh-copy ws-pre-line courier">SPDX-FileCopyrightText: 2015 Martin Gräßlin
+    <div class="f7 lh-copy ws-pre-line code">SPDX-FileCopyrightText: 2015 Martin Gräßlin
 
 SPDX-License-Identifier: LGPL-2.1-or-later
 </div>

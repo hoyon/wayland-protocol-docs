@@ -104,7 +104,7 @@
           <a href="#i:org_kde_kwin_server_decoration_manager" class="link dim black-70 child pr2 absolute left--2">#</a>
           org_kde_kwin_server_decoration_manager
         </h2>
-        <div class="f6 lh-copy ws-pre-line courier">This interface allows to coordinate whether the server should create
+        <div class="f6 lh-copy ws-pre-line code">This interface allows to coordinate whether the server should create
 a server-side window decoration around a wl_surface representing a
 shell surface (wl_shell_surface or similar). By announcing support
 for this interface the server indicates that it supports server
@@ -128,7 +128,7 @@ Use in conjunction with zxdg_decoration_manager_v1 is undefined.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>struct org_kde_kwin_server_decoration* </span><span class="dark-blue">org_kde_kwin_server_decoration_manager_create</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct org_kde_kwin_server_decoration_manager*</span> org_kde_kwin_server_decoration_manager,</div>
@@ -137,7 +137,7 @@ Use in conjunction with zxdg_decoration_manager_v1 is undefined.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">When a client creates a server-side decoration object it indicates
+              <div class="f6 lh-copy ws-pre-line code">When a client creates a server-side decoration object it indicates
 that it supports the protocol. The client is supposed to tell the
 server whether it wants server-side decorations or will provide
 client-side decorations.
@@ -169,12 +169,12 @@ to the server that it does not want a server-side deco.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> mode <span class="green">/* The default decoration mode applied to newly created server decorations. */</span> 
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">This event is emitted directly after binding the interface. It contains
+              <div class="f6 lh-copy ws-pre-line code mt3">This event is emitted directly after binding the interface. It contains
 the default mode for the decoration. When a new server decoration object
 is created this new object will be in the default mode until the first
 request_mode is requested.
@@ -194,7 +194,7 @@ The server may change the default mode at any time.
           <a href="#i:org_kde_kwin_server_decoration" class="link dim black-70 child pr2 absolute left--2">#</a>
           org_kde_kwin_server_decoration
         </h2>
-        <div class="f6 lh-copy ws-pre-line courier"></div>
+        <div class="f6 lh-copy ws-pre-line code"></div>
 
         
           <h3 class=" f5 lh-title" id="rh:org_kde_kwin_server_decoration">Requests</h3>
@@ -211,14 +211,14 @@ The server may change the default mode at any time.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">org_kde_kwin_server_decoration_release</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct org_kde_kwin_server_decoration*</span> org_kde_kwin_server_decoration</div>
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier"></div>
+              <div class="f6 lh-copy ws-pre-line code"></div>
             </li>
             
             <li class="mt3">
@@ -232,7 +232,7 @@ The server may change the default mode at any time.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">org_kde_kwin_server_decoration_request_mode</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct org_kde_kwin_server_decoration*</span> org_kde_kwin_server_decoration,</div>
@@ -241,7 +241,7 @@ The server may change the default mode at any time.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier"></div>
+              <div class="f6 lh-copy ws-pre-line code"></div>
             </li>
             
           </ul>
@@ -263,12 +263,12 @@ The server may change the default mode at any time.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> mode <span class="green">/* The decoration mode applied to the surface by the server. */</span> 
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">This event is emitted directly after the decoration is created and
+              <div class="f6 lh-copy ws-pre-line code mt3">This event is emitted directly after the decoration is created and
 represents the base decoration policy by the server. E.g. a server
 which wants all surfaces to be client-side decorated will send Client,
 a server which wants server-side decoration will send Server.
@@ -293,7 +293,7 @@ prevent a feedback loop.
     </ul>
 
     <h2 class="f4 lh-title">Copyright Info</h2>
-    <div class="f7 lh-copy ws-pre-line courier">SPDX-FileCopyrightText: 2015 Martin Gräßlin
+    <div class="f7 lh-copy ws-pre-line code">SPDX-FileCopyrightText: 2015 Martin Gräßlin
 
 SPDX-License-Identifier: LGPL-2.1-or-later
 </div>

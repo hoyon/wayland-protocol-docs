@@ -84,7 +84,7 @@
           <a href="#i:zwp_idle_inhibit_manager_v1" class="link dim black-70 child pr2 absolute left--2">#</a>
           zwp_idle_inhibit_manager_v1
         </h2>
-        <div class="f6 lh-copy ws-pre-line courier">This interface permits inhibiting the idle behavior such as screen
+        <div class="f6 lh-copy ws-pre-line code">This interface permits inhibiting the idle behavior such as screen
 blanking, locking, and screensaving.  The client binds the idle manager
 globally, then creates idle-inhibitor objects for each surface.
 
@@ -113,14 +113,14 @@ interface version number is reset.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">zwp_idle_inhibit_manager_v1_destroy</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwp_idle_inhibit_manager_v1*</span> zwp_idle_inhibit_manager_v1</div>
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Destroy the inhibit manager.
+              <div class="f6 lh-copy ws-pre-line code">Destroy the inhibit manager.
   </div>
             </li>
             
@@ -135,7 +135,7 @@ interface version number is reset.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>struct zwp_idle_inhibitor_v1* </span><span class="dark-blue">zwp_idle_inhibit_manager_v1_create_inhibitor</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwp_idle_inhibit_manager_v1*</span> zwp_idle_inhibit_manager_v1,</div>
@@ -144,7 +144,7 @@ interface version number is reset.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Create a new inhibitor object associated with the given surface.
+              <div class="f6 lh-copy ws-pre-line code">Create a new inhibitor object associated with the given surface.
   </div>
             </li>
             
@@ -162,7 +162,7 @@ interface version number is reset.
           <a href="#i:zwp_idle_inhibitor_v1" class="link dim black-70 child pr2 absolute left--2">#</a>
           zwp_idle_inhibitor_v1
         </h2>
-        <div class="f6 lh-copy ws-pre-line courier">An idle inhibitor prevents the output that the associated surface is
+        <div class="f6 lh-copy ws-pre-line code">An idle inhibitor prevents the output that the associated surface is
 visible on from being set to a state where it is not visually usable due
 to lack of user interaction (e.g. blanked, dimmed, locked, set to power
 save, etc.)  Any screensaver processes are also blocked from displaying.
@@ -191,14 +191,14 @@ de-idles and re-idles the inhibitor will take effect.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">zwp_idle_inhibitor_v1_destroy</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwp_idle_inhibitor_v1*</span> zwp_idle_inhibitor_v1</div>
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Remove the inhibitor effect from the associated wl_surface.
+              <div class="f6 lh-copy ws-pre-line code">Remove the inhibitor effect from the associated wl_surface.
   </div>
             </li>
             
@@ -214,7 +214,7 @@ de-idles and re-idles the inhibitor will take effect.
     </ul>
 
     <h2 class="f4 lh-title">Copyright Info</h2>
-    <div class="f7 lh-copy ws-pre-line courier">Copyright © 2015 Samsung Electronics Co., Ltd
+    <div class="f7 lh-copy ws-pre-line code">Copyright © 2015 Samsung Electronics Co., Ltd
 
 Permission is hereby granted, free of charge, to any person obtaining a
 copy of this software and associated documentation files (the &quot;Software&quot;),

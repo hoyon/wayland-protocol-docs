@@ -186,7 +186,7 @@
           <a href="#i:zwp_text_input_v2" class="link dim black-70 child pr2 absolute left--2">#</a>
           zwp_text_input_v2
         </h2>
-        <div class="f6 lh-copy ws-pre-line courier">The zwp_text_input_v2 interface represents text input and input methods
+        <div class="f6 lh-copy ws-pre-line code">The zwp_text_input_v2 interface represents text input and input methods
 associated with a seat. It provides enter&#x2f;leave events to follow the
 text input focus for a seat.
 
@@ -225,14 +225,14 @@ invalidates all current state information.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">zwp_text_input_v2_destroy</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwp_text_input_v2*</span> zwp_text_input_v2</div>
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Destroy the wp_text_input object. Also disables all surfaces enabled
+              <div class="f6 lh-copy ws-pre-line code">Destroy the wp_text_input object. Also disables all surfaces enabled
 through this wp_text_input object
   </div>
             </li>
@@ -248,7 +248,7 @@ through this wp_text_input object
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">zwp_text_input_v2_enable</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwp_text_input_v2*</span> zwp_text_input_v2,</div>
@@ -257,7 +257,7 @@ through this wp_text_input object
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Enable text input in a surface (usually when a text entry inside of it
+              <div class="f6 lh-copy ws-pre-line code">Enable text input in a surface (usually when a text entry inside of it
 has focus).
 
 This can be called before or after a surface gets text (or keyboard)
@@ -277,7 +277,7 @@ when it has the current text (or keyboard) focus and is enabled.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">zwp_text_input_v2_disable</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwp_text_input_v2*</span> zwp_text_input_v2,</div>
@@ -286,7 +286,7 @@ when it has the current text (or keyboard) focus and is enabled.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Disable text input in a surface (typically when there is no focus on any
+              <div class="f6 lh-copy ws-pre-line code">Disable text input in a surface (typically when there is no focus on any
 text entry inside the surface).
   </div>
             </li>
@@ -302,14 +302,14 @@ text entry inside the surface).
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">zwp_text_input_v2_show_input_panel</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwp_text_input_v2*</span> zwp_text_input_v2</div>
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Requests input panels (virtual keyboard) to show.
+              <div class="f6 lh-copy ws-pre-line code">Requests input panels (virtual keyboard) to show.
 
 This should be used for example to show a virtual keyboard again
 (with a tap) after it was closed by pressing on a close button on the
@@ -328,14 +328,14 @@ keyboard.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">zwp_text_input_v2_hide_input_panel</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwp_text_input_v2*</span> zwp_text_input_v2</div>
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Requests input panels (virtual keyboard) to hide.
+              <div class="f6 lh-copy ws-pre-line code">Requests input panels (virtual keyboard) to hide.
   </div>
             </li>
             
@@ -350,7 +350,7 @@ keyboard.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">zwp_text_input_v2_set_surrounding_text</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwp_text_input_v2*</span> zwp_text_input_v2,</div>
@@ -363,7 +363,7 @@ keyboard.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Sets the plain surrounding text around the input position. Text is
+              <div class="f6 lh-copy ws-pre-line code">Sets the plain surrounding text around the input position. Text is
 UTF-8 encoded. Cursor is the byte offset within the surrounding text.
 Anchor is the byte offset of the selection anchor within the
 surrounding text. If there is no selected text, anchor is the same as
@@ -392,7 +392,7 @@ longer than 4000 bytes.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">zwp_text_input_v2_set_content_type</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwp_text_input_v2*</span> zwp_text_input_v2,</div>
@@ -403,7 +403,7 @@ longer than 4000 bytes.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Sets the content purpose and content hint. While the purpose is the
+              <div class="f6 lh-copy ws-pre-line code">Sets the content purpose and content hint. While the purpose is the
 basic purpose of an input field, the hint flags allow to modify some
 of the behavior.
 
@@ -423,7 +423,7 @@ none hint should be assumed.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">zwp_text_input_v2_set_cursor_rectangle</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwp_text_input_v2*</span> zwp_text_input_v2,</div>
@@ -438,7 +438,7 @@ none hint should be assumed.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Sets the cursor outline as a x, y, width, height rectangle in surface
+              <div class="f6 lh-copy ws-pre-line code">Sets the cursor outline as a x, y, width, height rectangle in surface
 local coordinates.
 
 Allows the compositor to put a window with word suggestions near the
@@ -457,7 +457,7 @@ cursor.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">zwp_text_input_v2_set_preferred_language</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwp_text_input_v2*</span> zwp_text_input_v2,</div>
@@ -466,7 +466,7 @@ cursor.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Sets a specific language. This allows for example a virtual keyboard to
+              <div class="f6 lh-copy ws-pre-line code">Sets a specific language. This allows for example a virtual keyboard to
 show a language specific layout. The &quot;language&quot; argument is a RFC-3066
 format language tag.
 
@@ -487,7 +487,7 @@ tracks languages of contacts.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">zwp_text_input_v2_update_state</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwp_text_input_v2*</span> zwp_text_input_v2,</div>
@@ -498,7 +498,7 @@ tracks languages of contacts.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Allows to atomically send state updates from client.
+              <div class="f6 lh-copy ws-pre-line code">Allows to atomically send state updates from client.
 
 This request should follow after a batch of state updating requests
 like set_surrounding_text, set_content_type, set_cursor_rectangle and
@@ -541,16 +541,16 @@ after update_state in these cases.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> serial <span class="green">/* serial to be used by update_state */</span> 
                 </div>
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">struct wl_surface*</span> surface  
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">Notification that this seat&#x27;s text-input focus is on a certain surface.
+              <div class="f6 lh-copy ws-pre-line code mt3">Notification that this seat&#x27;s text-input focus is on a certain surface.
 
 When the seat has the keyboard capability the text-input focus follows
 the keyboard focus.
@@ -569,16 +569,16 @@ the keyboard focus.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> serial  
                 </div>
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">struct wl_surface*</span> surface  
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">Notification that this seat&#x27;s text-input focus is no longer on
+              <div class="f6 lh-copy ws-pre-line code mt3">Notification that this seat&#x27;s text-input focus is no longer on
 a certain surface.
 
 The leave notification is sent before the enter notification
@@ -601,28 +601,28 @@ the keyboard focus.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> state  
                 </div>
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">int32_t</span> x  
                 </div>
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">int32_t</span> y  
                 </div>
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">int32_t</span> width  
                 </div>
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">int32_t</span> height  
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">Notification that the visibility of the input panel (virtual keyboard)
+              <div class="f6 lh-copy ws-pre-line code mt3">Notification that the visibility of the input panel (virtual keyboard)
 changed.
 
 The rectangle x, y, width, height defines the area overlapped by the
@@ -646,16 +646,16 @@ a virtual keyboard.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">const char*</span> text  
                 </div>
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">const char*</span> commit  
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">Notify when a new composing text (pre-edit) should be set around the
+              <div class="f6 lh-copy ws-pre-line code mt3">Notify when a new composing text (pre-edit) should be set around the
 current cursor position. Any previously set composing text should
 be removed.
 
@@ -679,20 +679,20 @@ events occurring directly before preedit_string.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> index  
                 </div>
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> length  
                 </div>
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> style  
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">Sets styling information on composing text. The style is applied for
+              <div class="f6 lh-copy ws-pre-line code mt3">Sets styling information on composing text. The style is applied for
 length bytes from index relative to the beginning of the composing
 text (as byte offset). Multiple styles can be applied to a composing
 text by sending multiple preedit_styling events.
@@ -713,12 +713,12 @@ This event is handled as part of a following preedit_string event.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">int32_t</span> index  
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">Sets the cursor position inside the composing text (as byte
+              <div class="f6 lh-copy ws-pre-line code mt3">Sets the cursor position inside the composing text (as byte
 offset) relative to the start of the composing text. When index is a
 negative number no cursor is shown.
 
@@ -741,12 +741,12 @@ This event is handled as part of a following preedit_string event.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">const char*</span> text  
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">Notify when text should be inserted into the editor widget. The text to
+              <div class="f6 lh-copy ws-pre-line code mt3">Notify when text should be inserted into the editor widget. The text to
 commit could be either just a single character after a key press or the
 result of some composing (pre-edit). It could be also an empty text
 when some text should be removed (see delete_surrounding_text) or when
@@ -768,16 +768,16 @@ Any previously set composing text should be removed.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">int32_t</span> index <span class="green">/* position of cursor */</span> 
                 </div>
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">int32_t</span> anchor <span class="green">/* position of selection anchor */</span> 
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">Notify when the cursor or anchor position should be modified.
+              <div class="f6 lh-copy ws-pre-line code mt3">Notify when the cursor or anchor position should be modified.
 
 This event should be handled as part of a following commit_string
 event.
@@ -798,16 +798,16 @@ The text between anchor and index should be selected.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> before_length <span class="green">/* length of text before current cursor position */</span> 
                 </div>
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> after_length <span class="green">/* length of text after current cursor position */</span> 
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">Notify when the text around the current cursor position should be
+              <div class="f6 lh-copy ws-pre-line code mt3">Notify when the text around the current cursor position should be
 deleted. BeforeLength and afterLength is the length (in bytes) of text
 before and after the current cursor position (excluding the selection)
 to delete.
@@ -829,12 +829,12 @@ or preedit_string event.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">struct wl_array*</span> map  
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">Transfer an array of 0-terminated modifiers names. The position in
+              <div class="f6 lh-copy ws-pre-line code mt3">Transfer an array of 0-terminated modifiers names. The position in
 the array is the index of the modifier as used in the modifiers
 bitmask in the keysym event.
   </div>
@@ -852,24 +852,24 @@ bitmask in the keysym event.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> time  
                 </div>
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> sym  
                 </div>
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> state  
                 </div>
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> modifiers  
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">Notify when a key event was sent. Key events should not be used
+              <div class="f6 lh-copy ws-pre-line code mt3">Notify when a key event was sent. Key events should not be used
 for normal text input operations, which should be done with
 commit_string, delete_surrounding_text, etc. The key event follows
 the wl_keyboard key event convention. Sym is a XKB keysym, state a
@@ -890,12 +890,12 @@ wl_keyboard key_state. Modifiers are a mask for effective modifiers
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">const char*</span> language  
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">Sets the language of the input text. The &quot;language&quot; argument is a RFC-3066
+              <div class="f6 lh-copy ws-pre-line code mt3">Sets the language of the input text. The &quot;language&quot; argument is a RFC-3066
 format language tag.
   </div>
             </li>
@@ -912,12 +912,12 @@ format language tag.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> direction  
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">Sets the text direction of input text.
+              <div class="f6 lh-copy ws-pre-line code mt3">Sets the text direction of input text.
 
 It is mainly needed for showing input cursor on correct side of the
 editor when there is no input yet done and making sure neutral
@@ -937,16 +937,16 @@ direction text is laid out properly.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">int32_t</span> before_cursor  
                 </div>
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">int32_t</span> after_cursor  
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">Configure what amount of surrounding text is expected by the
+              <div class="f6 lh-copy ws-pre-line code mt3">Configure what amount of surrounding text is expected by the
 input method. The surrounding text will be sent in the
 set_surrounding_text request on the following state information updates.
   </div>
@@ -964,16 +964,16 @@ set_surrounding_text request on the following state information updates.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> serial <span class="green">/* serial to be used by update_state */</span> 
                 </div>
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> flags <span class="green">/* currently unused */</span> 
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">The input method changed on compositor side, which invalidates all
+              <div class="f6 lh-copy ws-pre-line code mt3">The input method changed on compositor side, which invalidates all
 current state information. New state information should be sent from
 the client via state requests (set_surrounding_text,
 set_content_hint, ...) and update_state.
@@ -991,7 +991,7 @@ set_content_hint, ...) and update_state.
           <a href="#i:zwp_text_input_manager_v2" class="link dim black-70 child pr2 absolute left--2">#</a>
           zwp_text_input_manager_v2
         </h2>
-        <div class="f6 lh-copy ws-pre-line courier">A factory for text-input objects. This object is a global singleton.
+        <div class="f6 lh-copy ws-pre-line code">A factory for text-input objects. This object is a global singleton.
 </div>
 
         
@@ -1009,14 +1009,14 @@ set_content_hint, ...) and update_state.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">zwp_text_input_manager_v2_destroy</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwp_text_input_manager_v2*</span> zwp_text_input_manager_v2</div>
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Destroy the wp_text_input_manager object.
+              <div class="f6 lh-copy ws-pre-line code">Destroy the wp_text_input_manager object.
   </div>
             </li>
             
@@ -1031,7 +1031,7 @@ set_content_hint, ...) and update_state.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>struct zwp_text_input_v2* </span><span class="dark-blue">zwp_text_input_manager_v2_get_text_input</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwp_text_input_manager_v2*</span> zwp_text_input_manager_v2,</div>
@@ -1040,7 +1040,7 @@ set_content_hint, ...) and update_state.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Creates a new text-input object for a given seat.
+              <div class="f6 lh-copy ws-pre-line code">Creates a new text-input object for a given seat.
   </div>
             </li>
             
@@ -1056,7 +1056,7 @@ set_content_hint, ...) and update_state.
     </ul>
 
     <h2 class="f4 lh-title">Copyright Info</h2>
-    <div class="f7 lh-copy ws-pre-line courier">SPDX-FileCopyrightText: 2012, 2013 Intel Corporation
+    <div class="f7 lh-copy ws-pre-line code">SPDX-FileCopyrightText: 2012, 2013 Intel Corporation
 SPDX-FileCopyrightText: 2015, 2016 Jan Arne Petersen
 
 SPDX-License-Identifier: MIT-CMU

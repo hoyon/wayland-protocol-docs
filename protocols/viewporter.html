@@ -92,7 +92,7 @@
           <a href="#i:wp_viewporter" class="link dim black-70 child pr2 absolute left--2">#</a>
           wp_viewporter
         </h2>
-        <div class="f6 lh-copy ws-pre-line courier">The global interface exposing surface cropping and scaling
+        <div class="f6 lh-copy ws-pre-line code">The global interface exposing surface cropping and scaling
 capabilities is used to instantiate an interface extension for a
 wl_surface object. This extended interface will then allow
 cropping and scaling the surface contents, effectively
@@ -115,14 +115,14 @@ surface size.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">wp_viewporter_destroy</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct wp_viewporter*</span> wp_viewporter</div>
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Informs the server that the client will not be using this
+              <div class="f6 lh-copy ws-pre-line code">Informs the server that the client will not be using this
 protocol object anymore. This does not affect any other objects,
 wp_viewport objects included.
   </div>
@@ -139,7 +139,7 @@ wp_viewport objects included.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>struct wp_viewport* </span><span class="dark-blue">wp_viewporter_get_viewport</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct wp_viewporter*</span> wp_viewporter,</div>
@@ -148,7 +148,7 @@ wp_viewport objects included.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Instantiate an interface extension for the given wl_surface to
+              <div class="f6 lh-copy ws-pre-line code">Instantiate an interface extension for the given wl_surface to
 crop and scale its content. If the given wl_surface already has
 a wp_viewport object associated, the viewport_exists
 protocol error is raised.
@@ -169,7 +169,7 @@ protocol error is raised.
           <a href="#i:wp_viewport" class="link dim black-70 child pr2 absolute left--2">#</a>
           wp_viewport
         </h2>
-        <div class="f6 lh-copy ws-pre-line courier">An additional interface to a wl_surface object, which allows the
+        <div class="f6 lh-copy ws-pre-line code">An additional interface to a wl_surface object, which allows the
 client to specify the cropping and scaling of the surface
 contents.
 
@@ -247,14 +247,14 @@ on the next wl_surface.commit.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">wp_viewport_destroy</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct wp_viewport*</span> wp_viewport</div>
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">The associated wl_surface&#x27;s crop and scale state is removed.
+              <div class="f6 lh-copy ws-pre-line code">The associated wl_surface&#x27;s crop and scale state is removed.
 The change is applied on the next wl_surface.commit.
   </div>
             </li>
@@ -270,7 +270,7 @@ The change is applied on the next wl_surface.commit.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">wp_viewport_set_source</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct wp_viewport*</span> wp_viewport,</div>
@@ -285,7 +285,7 @@ The change is applied on the next wl_surface.commit.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Set the source rectangle of the associated wl_surface. See
+              <div class="f6 lh-copy ws-pre-line code">Set the source rectangle of the associated wl_surface. See
 wp_viewport for the description, and relation to the wl_buffer
 size.
 
@@ -310,7 +310,7 @@ applied on the next wl_surface.commit.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">wp_viewport_set_destination</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct wp_viewport*</span> wp_viewport,</div>
@@ -321,7 +321,7 @@ applied on the next wl_surface.commit.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Set the destination size of the associated wl_surface. See
+              <div class="f6 lh-copy ws-pre-line code">Set the destination size of the associated wl_surface. See
 wp_viewport for the description, and relation to the wl_buffer
 size.
 
@@ -347,7 +347,7 @@ applied on the next wl_surface.commit.
     </ul>
 
     <h2 class="f4 lh-title">Copyright Info</h2>
-    <div class="f7 lh-copy ws-pre-line courier">Copyright © 2013-2016 Collabora, Ltd.
+    <div class="f7 lh-copy ws-pre-line code">Copyright © 2013-2016 Collabora, Ltd.
 
 Permission is hereby granted, free of charge, to any person obtaining a
 copy of this software and associated documentation files (the &quot;Software&quot;),

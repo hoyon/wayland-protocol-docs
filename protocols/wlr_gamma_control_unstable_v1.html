@@ -102,7 +102,7 @@
           <a href="#i:zwlr_gamma_control_manager_v1" class="link dim black-70 child pr2 absolute left--2">#</a>
           zwlr_gamma_control_manager_v1
         </h2>
-        <div class="f6 lh-copy ws-pre-line courier">This interface is a manager that allows creating per-output gamma
+        <div class="f6 lh-copy ws-pre-line code">This interface is a manager that allows creating per-output gamma
 controls.
 </div>
 
@@ -121,7 +121,7 @@ controls.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>struct zwlr_gamma_control_v1* </span><span class="dark-blue">zwlr_gamma_control_manager_v1_get_gamma_control</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwlr_gamma_control_manager_v1*</span> zwlr_gamma_control_manager_v1,</div>
@@ -130,7 +130,7 @@ controls.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Create a gamma control that can be used to adjust gamma tables for the
+              <div class="f6 lh-copy ws-pre-line code">Create a gamma control that can be used to adjust gamma tables for the
 provided output.
 </div>
             </li>
@@ -146,14 +146,14 @@ provided output.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">zwlr_gamma_control_manager_v1_destroy</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwlr_gamma_control_manager_v1*</span> zwlr_gamma_control_manager_v1</div>
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">All objects created by the manager will still remain valid, until their
+              <div class="f6 lh-copy ws-pre-line code">All objects created by the manager will still remain valid, until their
 appropriate destroy request has been called.
 </div>
             </li>
@@ -172,7 +172,7 @@ appropriate destroy request has been called.
           <a href="#i:zwlr_gamma_control_v1" class="link dim black-70 child pr2 absolute left--2">#</a>
           zwlr_gamma_control_v1
         </h2>
-        <div class="f6 lh-copy ws-pre-line courier">This interface allows a client to adjust gamma tables for a particular
+        <div class="f6 lh-copy ws-pre-line code">This interface allows a client to adjust gamma tables for a particular
 output.
 
 The client will receive the gamma size, and will then be able to set gamma
@@ -199,7 +199,7 @@ object is destroyed, the gamma table is restored to its original value.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">zwlr_gamma_control_v1_set_gamma</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwlr_gamma_control_v1*</span> zwlr_gamma_control_v1,</div>
@@ -208,7 +208,7 @@ object is destroyed, the gamma table is restored to its original value.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Set the gamma table. The file descriptor can be memory-mapped to provide
+              <div class="f6 lh-copy ws-pre-line code">Set the gamma table. The file descriptor can be memory-mapped to provide
 the raw gamma table, which contains successive gamma ramps for the red,
 green and blue channels. Each gamma ramp is an array of 16-byte unsigned
 integers which has the same length as the gamma size.
@@ -229,14 +229,14 @@ gamma size.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">zwlr_gamma_control_v1_destroy</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwlr_gamma_control_v1*</span> zwlr_gamma_control_v1</div>
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Destroys the gamma control object. If the object is still valid, this
+              <div class="f6 lh-copy ws-pre-line code">Destroys the gamma control object. If the object is still valid, this
 restores the original gamma tables.
 </div>
             </li>
@@ -260,12 +260,12 @@ restores the original gamma tables.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> size <span class="green">/* number of elements in a ramp */</span> 
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">Advertise the size of each gamma ramp.
+              <div class="f6 lh-copy ws-pre-line code mt3">Advertise the size of each gamma ramp.
 
 This event is sent immediately when the gamma control object is created.
 </div>
@@ -284,7 +284,7 @@ This event is sent immediately when the gamma control object is created.
 
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">This event indicates that the gamma control is no longer valid. This
+              <div class="f6 lh-copy ws-pre-line code mt3">This event indicates that the gamma control is no longer valid. This
 can happen for a number of reasons, including:
 - The output doesn&#x27;t support gamma tables
 - Setting the gamma tables failed
@@ -304,7 +304,7 @@ Upon receiving this event, the client should destroy this object.
     </ul>
 
     <h2 class="f4 lh-title">Copyright Info</h2>
-    <div class="f7 lh-copy ws-pre-line courier">Copyright © 2015 Giulio camuffo
+    <div class="f7 lh-copy ws-pre-line code">Copyright © 2015 Giulio camuffo
 Copyright © 2018 Simon Ser
 
 Permission to use, copy, modify, distribute, and sell this

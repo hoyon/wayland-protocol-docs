@@ -168,7 +168,7 @@
           <a href="#i:zwlr_foreign_toplevel_manager_v1" class="link dim black-70 child pr2 absolute left--2">#</a>
           zwlr_foreign_toplevel_manager_v1
         </h2>
-        <div class="f6 lh-copy ws-pre-line courier">The purpose of this protocol is to enable the creation of taskbars
+        <div class="f6 lh-copy ws-pre-line code">The purpose of this protocol is to enable the creation of taskbars
 and docks by providing them with a list of opened applications and
 letting them request certain actions on them, like maximizing, etc.
 
@@ -191,14 +191,14 @@ toplevel window will be sent via the toplevel event
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">zwlr_foreign_toplevel_manager_v1_stop</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwlr_foreign_toplevel_manager_v1*</span> zwlr_foreign_toplevel_manager_v1</div>
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Indicates the client no longer wishes to receive events for new toplevels.
+              <div class="f6 lh-copy ws-pre-line code">Indicates the client no longer wishes to receive events for new toplevels.
 However the compositor may emit further toplevel_created events, until
 the finished event is emitted.
 
@@ -225,12 +225,12 @@ The client must not send any more requests after this one.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">struct zwlr_foreign_toplevel_handle_v1*</span> toplevel  
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">This event is emitted whenever a new toplevel window is created. It
+              <div class="f6 lh-copy ws-pre-line code mt3">This event is emitted whenever a new toplevel window is created. It
 is emitted for all toplevels, regardless of the app that has created
 them.
 
@@ -253,7 +253,7 @@ zwlr_foreign_toplevel_handle_v1.
 
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">This event indicates that the compositor is done sending events to the
+              <div class="f6 lh-copy ws-pre-line code mt3">This event indicates that the compositor is done sending events to the
 zwlr_foreign_toplevel_manager_v1. The server will destroy the object
 immediately after sending this request, so it will become invalid and
 the client should free any resources associated with it.
@@ -271,7 +271,7 @@ the client should free any resources associated with it.
           <a href="#i:zwlr_foreign_toplevel_handle_v1" class="link dim black-70 child pr2 absolute left--2">#</a>
           zwlr_foreign_toplevel_handle_v1
         </h2>
-        <div class="f6 lh-copy ws-pre-line courier">A zwlr_foreign_toplevel_handle_v1 object represents an opened toplevel
+        <div class="f6 lh-copy ws-pre-line code">A zwlr_foreign_toplevel_handle_v1 object represents an opened toplevel
 window. Each app may have multiple opened toplevels.
 
 Each toplevel has a list of outputs it is visible on, conveyed to the
@@ -293,14 +293,14 @@ client with the output_enter and output_leave events.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">zwlr_foreign_toplevel_handle_v1_set_maximized</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwlr_foreign_toplevel_handle_v1*</span> zwlr_foreign_toplevel_handle_v1</div>
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Requests that the toplevel be maximized. If the maximized state actually
+              <div class="f6 lh-copy ws-pre-line code">Requests that the toplevel be maximized. If the maximized state actually
 changes, this will be indicated by the state event.
 </div>
             </li>
@@ -316,14 +316,14 @@ changes, this will be indicated by the state event.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">zwlr_foreign_toplevel_handle_v1_unset_maximized</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwlr_foreign_toplevel_handle_v1*</span> zwlr_foreign_toplevel_handle_v1</div>
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Requests that the toplevel be unmaximized. If the maximized state actually
+              <div class="f6 lh-copy ws-pre-line code">Requests that the toplevel be unmaximized. If the maximized state actually
 changes, this will be indicated by the state event.
 </div>
             </li>
@@ -339,14 +339,14 @@ changes, this will be indicated by the state event.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">zwlr_foreign_toplevel_handle_v1_set_minimized</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwlr_foreign_toplevel_handle_v1*</span> zwlr_foreign_toplevel_handle_v1</div>
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Requests that the toplevel be minimized. If the minimized state actually
+              <div class="f6 lh-copy ws-pre-line code">Requests that the toplevel be minimized. If the minimized state actually
 changes, this will be indicated by the state event.
 </div>
             </li>
@@ -362,14 +362,14 @@ changes, this will be indicated by the state event.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">zwlr_foreign_toplevel_handle_v1_unset_minimized</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwlr_foreign_toplevel_handle_v1*</span> zwlr_foreign_toplevel_handle_v1</div>
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Requests that the toplevel be unminimized. If the minimized state actually
+              <div class="f6 lh-copy ws-pre-line code">Requests that the toplevel be unminimized. If the minimized state actually
 changes, this will be indicated by the state event.
 </div>
             </li>
@@ -385,7 +385,7 @@ changes, this will be indicated by the state event.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">zwlr_foreign_toplevel_handle_v1_activate</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwlr_foreign_toplevel_handle_v1*</span> zwlr_foreign_toplevel_handle_v1,</div>
@@ -394,7 +394,7 @@ changes, this will be indicated by the state event.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Request that this toplevel be activated on the given seat.
+              <div class="f6 lh-copy ws-pre-line code">Request that this toplevel be activated on the given seat.
 There is no guarantee the toplevel will be actually activated.
 </div>
             </li>
@@ -410,14 +410,14 @@ There is no guarantee the toplevel will be actually activated.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">zwlr_foreign_toplevel_handle_v1_close</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwlr_foreign_toplevel_handle_v1*</span> zwlr_foreign_toplevel_handle_v1</div>
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Send a request to the toplevel to close itself. The compositor would
+              <div class="f6 lh-copy ws-pre-line code">Send a request to the toplevel to close itself. The compositor would
 typically use a shell-specific method to carry out this request, for
 example by sending the xdg_toplevel.close event. However, this gives
 no guarantees the toplevel will actually be destroyed. If and when
@@ -437,7 +437,7 @@ be emitted.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">zwlr_foreign_toplevel_handle_v1_set_rectangle</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwlr_foreign_toplevel_handle_v1*</span> zwlr_foreign_toplevel_handle_v1,</div>
@@ -454,7 +454,7 @@ be emitted.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">The rectangle of the surface specified in this request corresponds to
+              <div class="f6 lh-copy ws-pre-line code">The rectangle of the surface specified in this request corresponds to
 the place where the app using this protocol represents the given toplevel.
 It can be used by the compositor as a hint for some operations, e.g
 minimizing. The client is however not required to set this, in which
@@ -479,14 +479,14 @@ Setting width=height=0 removes the already-set rectangle.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">zwlr_foreign_toplevel_handle_v1_destroy</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwlr_foreign_toplevel_handle_v1*</span> zwlr_foreign_toplevel_handle_v1</div>
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Destroys the zwlr_foreign_toplevel_handle_v1 object.
+              <div class="f6 lh-copy ws-pre-line code">Destroys the zwlr_foreign_toplevel_handle_v1 object.
 
 This request should be called either when the client does not want to
 use the toplevel anymore or after the closed event to finalize the
@@ -505,7 +505,7 @@ destruction of the object.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">zwlr_foreign_toplevel_handle_v1_set_fullscreen</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwlr_foreign_toplevel_handle_v1*</span> zwlr_foreign_toplevel_handle_v1,</div>
@@ -514,7 +514,7 @@ destruction of the object.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Requests that the toplevel be fullscreened on the given output. If the
+              <div class="f6 lh-copy ws-pre-line code">Requests that the toplevel be fullscreened on the given output. If the
 fullscreen state and&#x2f;or the outputs the toplevel is visible on actually
 change, this will be indicated by the state and output_enter&#x2f;leave
 events.
@@ -536,14 +536,14 @@ fullscreened on, if at all.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">zwlr_foreign_toplevel_handle_v1_unset_fullscreen</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwlr_foreign_toplevel_handle_v1*</span> zwlr_foreign_toplevel_handle_v1</div>
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Requests that the toplevel be unfullscreened. If the fullscreen state
+              <div class="f6 lh-copy ws-pre-line code">Requests that the toplevel be unfullscreened. If the fullscreen state
 actually changes, this will be indicated by the state event.
 </div>
             </li>
@@ -567,12 +567,12 @@ actually changes, this will be indicated by the state event.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">const char*</span> title  
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">This event is emitted whenever the title of the toplevel changes.
+              <div class="f6 lh-copy ws-pre-line code mt3">This event is emitted whenever the title of the toplevel changes.
 </div>
             </li>
             
@@ -588,12 +588,12 @@ actually changes, this will be indicated by the state event.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">const char*</span> app_id  
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">This event is emitted whenever the app-id of the toplevel changes.
+              <div class="f6 lh-copy ws-pre-line code mt3">This event is emitted whenever the app-id of the toplevel changes.
 </div>
             </li>
             
@@ -609,12 +609,12 @@ actually changes, this will be indicated by the state event.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">struct wl_output*</span> output  
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">This event is emitted whenever the toplevel becomes visible on
+              <div class="f6 lh-copy ws-pre-line code mt3">This event is emitted whenever the toplevel becomes visible on
 the given output. A toplevel may be visible on multiple outputs.
 </div>
             </li>
@@ -631,12 +631,12 @@ the given output. A toplevel may be visible on multiple outputs.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">struct wl_output*</span> output  
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">This event is emitted whenever the toplevel stops being visible on
+              <div class="f6 lh-copy ws-pre-line code mt3">This event is emitted whenever the toplevel stops being visible on
 the given output. It is guaranteed that an entered-output event
 with the same output has been emitted before this event.
 </div>
@@ -654,12 +654,12 @@ with the same output has been emitted before this event.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">struct wl_array*</span> state  
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">This event is emitted immediately after the zlw_foreign_toplevel_handle_v1
+              <div class="f6 lh-copy ws-pre-line code mt3">This event is emitted immediately after the zlw_foreign_toplevel_handle_v1
 is created and each time the toplevel state changes, either because of a
 compositor action or because of a request in this protocol.
 </div>
@@ -678,7 +678,7 @@ compositor action or because of a request in this protocol.
 
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">This event is sent after all changes in the toplevel state have been
+              <div class="f6 lh-copy ws-pre-line code mt3">This event is sent after all changes in the toplevel state have been
 sent.
 
 This allows changes to the zwlr_foreign_toplevel_handle_v1 properties
@@ -699,7 +699,7 @@ to be seen as atomic, even if they happen via multiple events.
 
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">This event means the toplevel has been destroyed. It is guaranteed there
+              <div class="f6 lh-copy ws-pre-line code mt3">This event means the toplevel has been destroyed. It is guaranteed there
 won&#x27;t be any more events for this zwlr_foreign_toplevel_handle_v1. The
 toplevel itself becomes inert so any requests will be ignored except the
 destroy request.
@@ -718,12 +718,12 @@ destroy request.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">struct zwlr_foreign_toplevel_handle_v1*</span> parent  
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">This event is emitted whenever the parent of the toplevel changes.
+              <div class="f6 lh-copy ws-pre-line code mt3">This event is emitted whenever the parent of the toplevel changes.
 
 No event is emitted when the parent handle is destroyed by the client.
 </div>
@@ -738,7 +738,7 @@ No event is emitted when the parent handle is destroyed by the client.
     </ul>
 
     <h2 class="f4 lh-title">Copyright Info</h2>
-    <div class="f7 lh-copy ws-pre-line courier">Copyright © 2018 Ilia Bozhinov
+    <div class="f7 lh-copy ws-pre-line code">Copyright © 2018 Ilia Bozhinov
 
 Permission to use, copy, modify, distribute, and sell this
 software and its documentation for any purpose is hereby granted

@@ -202,7 +202,7 @@
           <a href="#i:xdg_shell" class="link dim black-70 child pr2 absolute left--2">#</a>
           xdg_shell
         </h2>
-        <div class="f6 lh-copy ws-pre-line courier">xdg_shell allows clients to turn a wl_surface into a &quot;real window&quot;
+        <div class="f6 lh-copy ws-pre-line code">xdg_shell allows clients to turn a wl_surface into a &quot;real window&quot;
 which can be dragged, resized, stacked, and moved around by the
 user. Everything about this interface is suited towards traditional
 desktop environments.
@@ -223,14 +223,14 @@ desktop environments.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">xdg_shell_destroy</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct xdg_shell*</span> xdg_shell</div>
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Destroy this xdg_shell object.
+              <div class="f6 lh-copy ws-pre-line code">Destroy this xdg_shell object.
 
 Destroying a bound xdg_shell object while there are surfaces
 still alive created by this xdg_shell object instance is illegal
@@ -249,7 +249,7 @@ and will result in a protocol error.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">xdg_shell_use_unstable_version</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct xdg_shell*</span> xdg_shell,</div>
@@ -258,7 +258,7 @@ and will result in a protocol error.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Negotiate the unstable version of the interface.  This
+              <div class="f6 lh-copy ws-pre-line code">Negotiate the unstable version of the interface.  This
 mechanism is in place to ensure client and server agree on the
 unstable versions of the protocol that they speak or exit
 cleanly if they don&#x27;t agree.  This request will go away once
@@ -277,7 +277,7 @@ the xdg-shell protocol is stable.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>struct xdg_surface* </span><span class="dark-blue">xdg_shell_get_xdg_surface</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct xdg_shell*</span> xdg_shell,</div>
@@ -286,7 +286,7 @@ the xdg-shell protocol is stable.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">This creates an xdg_surface for the given surface and gives it the
+              <div class="f6 lh-copy ws-pre-line code">This creates an xdg_surface for the given surface and gives it the
 xdg_surface role. A wl_surface can only be given an xdg_surface role
 once. If get_xdg_surface is called with a wl_surface that already has
 an active xdg_surface associated with it, or if it had any other role,
@@ -308,7 +308,7 @@ xdg_surface is and how it is used.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>struct xdg_popup* </span><span class="dark-blue">xdg_shell_get_xdg_popup</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct xdg_shell*</span> xdg_shell,</div>
@@ -327,7 +327,7 @@ xdg_surface is and how it is used.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">This creates an xdg_popup for the given surface and gives it the
+              <div class="f6 lh-copy ws-pre-line code">This creates an xdg_popup for the given surface and gives it the
 xdg_popup role. A wl_surface can only be given an xdg_popup role
 once. If get_xdg_popup is called with a wl_surface that already has
 an active xdg_popup associated with it, or if it had any other role,
@@ -352,7 +352,7 @@ xdg_popup is and how it is used.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">xdg_shell_pong</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct xdg_shell*</span> xdg_shell,</div>
@@ -361,7 +361,7 @@ xdg_popup is and how it is used.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">A client must respond to a ping event with a pong request or
+              <div class="f6 lh-copy ws-pre-line code">A client must respond to a ping event with a pong request or
 the client may be deemed unresponsive.
   </div>
             </li>
@@ -385,12 +385,12 @@ the client may be deemed unresponsive.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> serial <span class="green">/* pass this to the pong request */</span> 
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">The ping event asks the client if it&#x27;s still alive. Pass the
+              <div class="f6 lh-copy ws-pre-line code mt3">The ping event asks the client if it&#x27;s still alive. Pass the
 serial specified in the event back to the compositor by sending
 a &quot;pong&quot; request back with the specified serial.
 
@@ -415,7 +415,7 @@ always respond to any xdg_shell object it created.
           <a href="#i:xdg_surface" class="link dim black-70 child pr2 absolute left--2">#</a>
           xdg_surface
         </h2>
-        <div class="f6 lh-copy ws-pre-line courier">An interface that may be implemented by a wl_surface, for
+        <div class="f6 lh-copy ws-pre-line code">An interface that may be implemented by a wl_surface, for
 implementations that provide a desktop-style user interface.
 
 It provides requests to treat surfaces like windows, allowing to set
@@ -451,14 +451,14 @@ committed both an xdg_surface state and a buffer.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">xdg_surface_destroy</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct xdg_surface*</span> xdg_surface</div>
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Unmap and destroy the window. The window will be effectively
+              <div class="f6 lh-copy ws-pre-line code">Unmap and destroy the window. The window will be effectively
 hidden from the user&#x27;s point of view, and all state like
 maximization, fullscreen, and so on, will be lost.
   </div>
@@ -475,7 +475,7 @@ maximization, fullscreen, and so on, will be lost.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">xdg_surface_set_parent</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct xdg_surface*</span> xdg_surface,</div>
@@ -484,7 +484,7 @@ maximization, fullscreen, and so on, will be lost.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Set the &quot;parent&quot; of this surface. This window should be stacked
+              <div class="f6 lh-copy ws-pre-line code">Set the &quot;parent&quot; of this surface. This window should be stacked
 above a parent. The parent surface must be mapped as long as this
 surface is mapped.
 
@@ -505,7 +505,7 @@ is raised.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">xdg_surface_set_title</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct xdg_surface*</span> xdg_surface,</div>
@@ -514,7 +514,7 @@ is raised.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Set a short title for the surface.
+              <div class="f6 lh-copy ws-pre-line code">Set a short title for the surface.
 
 This string may be used to identify the surface in a task bar,
 window list, or other user interface elements provided by the
@@ -535,7 +535,7 @@ The string must be encoded in UTF-8.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">xdg_surface_set_app_id</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct xdg_surface*</span> xdg_surface,</div>
@@ -544,7 +544,7 @@ The string must be encoded in UTF-8.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Set an application identifier for the surface.
+              <div class="f6 lh-copy ws-pre-line code">Set an application identifier for the surface.
 
 The app ID identifies the general class of applications to which
 the surface belongs. The compositor can use this to group multiple
@@ -578,7 +578,7 @@ names and .desktop files.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">xdg_surface_show_window_menu</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct xdg_surface*</span> xdg_surface,</div>
@@ -593,7 +593,7 @@ names and .desktop files.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Clients implementing client-side decorations might want to show
+              <div class="f6 lh-copy ws-pre-line code">Clients implementing client-side decorations might want to show
 a context menu when right-clicking on the decorations, giving the
 user a menu that they can use to maximize or minimize the window.
 
@@ -618,7 +618,7 @@ like a button press, key press, or touch down event.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">xdg_surface_move</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct xdg_surface*</span> xdg_surface,</div>
@@ -629,7 +629,7 @@ like a button press, key press, or touch down event.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Start an interactive, user-driven move of the surface.
+              <div class="f6 lh-copy ws-pre-line code">Start an interactive, user-driven move of the surface.
 
 This request must be used in response to some sort of user action
 like a button press, key press, or touch down event. The passed
@@ -659,7 +659,7 @@ that the device focus will return when the move is completed.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">xdg_surface_resize</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct xdg_surface*</span> xdg_surface,</div>
@@ -672,7 +672,7 @@ that the device focus will return when the move is completed.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Start a user-driven, interactive resize of the surface.
+              <div class="f6 lh-copy ws-pre-line code">Start a user-driven, interactive resize of the surface.
 
 This request must be used in response to some sort of user action
 like a button press, key press, or touch down event. The passed
@@ -716,7 +716,7 @@ appropriate cursor image.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">xdg_surface_ack_configure</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct xdg_surface*</span> xdg_surface,</div>
@@ -725,7 +725,7 @@ appropriate cursor image.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">When a configure event is received, if a client commits the
+              <div class="f6 lh-copy ws-pre-line code">When a configure event is received, if a client commits the
 surface in response to the configure event, then the client
 must make an ack_configure request sometime before the commit
 request, passing along the serial of the configure event.
@@ -758,7 +758,7 @@ configure event the client is responding to.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">xdg_surface_set_window_geometry</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct xdg_surface*</span> xdg_surface,</div>
@@ -773,7 +773,7 @@ configure event the client is responding to.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">The window geometry of a window is its &quot;visible bounds&quot; from the
+              <div class="f6 lh-copy ws-pre-line code">The window geometry of a window is its &quot;visible bounds&quot; from the
 user&#x27;s perspective. Client-side decorations often have invisible
 portions like drop-shadows which should be ignored for the
 purposes of aligning, placing and constraining windows.
@@ -812,14 +812,14 @@ The width and height must be greater than zero.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">xdg_surface_set_maximized</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct xdg_surface*</span> xdg_surface</div>
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Maximize the surface.
+              <div class="f6 lh-copy ws-pre-line code">Maximize the surface.
 
 After requesting that the surface should be maximized, the compositor
 will respond by emitting a configure event with the &quot;maximized&quot; state
@@ -849,14 +849,14 @@ a configure event with the &quot;maximized&quot; state.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">xdg_surface_unset_maximized</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct xdg_surface*</span> xdg_surface</div>
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Unmaximize the surface.
+              <div class="f6 lh-copy ws-pre-line code">Unmaximize the surface.
 
 After requesting that the surface should be unmaximized, the compositor
 will respond by emitting a configure event without the &quot;maximized&quot;
@@ -887,7 +887,7 @@ emit a configure event without the &quot;maximized&quot; state.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">xdg_surface_set_fullscreen</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct xdg_surface*</span> xdg_surface,</div>
@@ -896,7 +896,7 @@ emit a configure event without the &quot;maximized&quot; state.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Make the surface fullscreen.
+              <div class="f6 lh-copy ws-pre-line code">Make the surface fullscreen.
 
     You can specify an output that you would prefer to be fullscreen.
 If this value is NULL, it&#x27;s up to the compositor to choose which
@@ -919,14 +919,14 @@ If this value is NULL, it&#x27;s up to the compositor to choose which
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">xdg_surface_unset_fullscreen</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct xdg_surface*</span> xdg_surface</div>
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier"></div>
+              <div class="f6 lh-copy ws-pre-line code"></div>
             </li>
             
             <li class="mt3">
@@ -940,14 +940,14 @@ If this value is NULL, it&#x27;s up to the compositor to choose which
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">xdg_surface_set_minimized</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct xdg_surface*</span> xdg_surface</div>
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Request that the compositor minimize your surface. There is no
+              <div class="f6 lh-copy ws-pre-line code">Request that the compositor minimize your surface. There is no
 way to know if the surface is currently minimized, nor is there
 any way to unset minimization on this surface.
 
@@ -977,24 +977,24 @@ similar compositor features.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">int32_t</span> width  
                 </div>
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">int32_t</span> height  
                 </div>
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">struct wl_array*</span> states  
                 </div>
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> serial  
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">The configure event asks the client to resize its surface or to
+              <div class="f6 lh-copy ws-pre-line code mt3">The configure event asks the client to resize its surface or to
 change its state.
 
 The width and height arguments specify a hint to the window
@@ -1034,7 +1034,7 @@ If the client receives multiple configure events before it
 
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">The close event is sent by the compositor when the user
+              <div class="f6 lh-copy ws-pre-line code mt3">The close event is sent by the compositor when the user
 wants the surface to be closed. This should be equivalent to
 the user clicking the close button in client-side decorations,
 if your application has any...
@@ -1056,7 +1056,7 @@ a dialog to ask the user to save their data...
           <a href="#i:xdg_popup" class="link dim black-70 child pr2 absolute left--2">#</a>
           xdg_popup
         </h2>
-        <div class="f6 lh-copy ws-pre-line courier">A popup surface is a short-lived, temporary surface that can be
+        <div class="f6 lh-copy ws-pre-line code">A popup surface is a short-lived, temporary surface that can be
 used to implement menus. It takes an explicit grab on the surface
 that will be dismissed when the user dismisses the popup. This can
 be done by the user clicking outside the surface, using the keyboard,
@@ -1124,14 +1124,14 @@ committed both the xdg_popup state and a buffer.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">xdg_popup_destroy</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct xdg_popup*</span> xdg_popup</div>
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">This destroys the popup. Explicitly destroying the xdg_popup
+              <div class="f6 lh-copy ws-pre-line code">This destroys the popup. Explicitly destroying the xdg_popup
 object will also dismiss the popup, and unmap the surface.
 
 If this xdg_popup is not the &quot;topmost&quot; popup, a protocol error
@@ -1159,7 +1159,7 @@ will be sent.
 
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">The popup_done event is sent out when a popup is dismissed by the
+              <div class="f6 lh-copy ws-pre-line code mt3">The popup_done event is sent out when a popup is dismissed by the
 compositor. The client should destroy the xdg_popup object at this
 point.
   </div>
@@ -1174,7 +1174,7 @@ point.
     </ul>
 
     <h2 class="f4 lh-title">Copyright Info</h2>
-    <div class="f7 lh-copy ws-pre-line courier">Copyright © 2008-2013 Kristian Høgsberg
+    <div class="f7 lh-copy ws-pre-line code">Copyright © 2008-2013 Kristian Høgsberg
 Copyright © 2013      Rafael Antognolli
 Copyright © 2013      Jasper St. Pierre
 Copyright © 2010-2013 Intel Corporation

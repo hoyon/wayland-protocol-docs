@@ -110,7 +110,7 @@
           <a href="#i:zxdg_output_manager_v1" class="link dim black-70 child pr2 absolute left--2">#</a>
           zxdg_output_manager_v1
         </h2>
-        <div class="f6 lh-copy ws-pre-line courier">A global factory interface for xdg_output objects.
+        <div class="f6 lh-copy ws-pre-line code">A global factory interface for xdg_output objects.
 </div>
 
         
@@ -128,14 +128,14 @@
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">zxdg_output_manager_v1_destroy</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zxdg_output_manager_v1*</span> zxdg_output_manager_v1</div>
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Using this request a client can tell the server that it is not
+              <div class="f6 lh-copy ws-pre-line code">Using this request a client can tell the server that it is not
 going to use the xdg_output_manager object anymore.
 
 Any objects already created through this instance are not affected.
@@ -153,7 +153,7 @@ Any objects already created through this instance are not affected.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>struct zxdg_output_v1* </span><span class="dark-blue">zxdg_output_manager_v1_get_xdg_output</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zxdg_output_manager_v1*</span> zxdg_output_manager_v1,</div>
@@ -162,7 +162,7 @@ Any objects already created through this instance are not affected.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">This creates a new xdg_output object for the given wl_output.
+              <div class="f6 lh-copy ws-pre-line code">This creates a new xdg_output object for the given wl_output.
   </div>
             </li>
             
@@ -180,7 +180,7 @@ Any objects already created through this instance are not affected.
           <a href="#i:zxdg_output_v1" class="link dim black-70 child pr2 absolute left--2">#</a>
           zxdg_output_v1
         </h2>
-        <div class="f6 lh-copy ws-pre-line courier">An xdg_output describes part of the compositor geometry.
+        <div class="f6 lh-copy ws-pre-line code">An xdg_output describes part of the compositor geometry.
 
 This typically corresponds to a monitor that displays part of the
 compositor space.
@@ -206,14 +206,14 @@ properties to be seen as atomic, even if they happen via multiple events.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">zxdg_output_v1_destroy</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zxdg_output_v1*</span> zxdg_output_v1</div>
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Using this request a client can tell the server that it is not
+              <div class="f6 lh-copy ws-pre-line code">Using this request a client can tell the server that it is not
 going to use the xdg_output object anymore.
   </div>
             </li>
@@ -237,16 +237,16 @@ going to use the xdg_output object anymore.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">int32_t</span> x <span class="green">/* x position within the global compositor space */</span> 
                 </div>
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">int32_t</span> y <span class="green">/* y position within the global compositor space */</span> 
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">The position event describes the location of the wl_output within
+              <div class="f6 lh-copy ws-pre-line code mt3">The position event describes the location of the wl_output within
 the global compositor space.
 
 The logical_position event is sent after creating an xdg_output
@@ -267,16 +267,16 @@ of the output changes within the global compositor space.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">int32_t</span> width <span class="green">/* width in global compositor space */</span> 
                 </div>
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">int32_t</span> height <span class="green">/* height in global compositor space */</span> 
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">The logical_size event describes the size of the output in the
+              <div class="f6 lh-copy ws-pre-line code mt3">The logical_size event describes the size of the output in the
 global compositor space.
 
 For example, a surface without any buffer scale, transformation
@@ -326,7 +326,7 @@ mode(see wl_output.mode) or transform (see wl_output.transform).
 
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">This event is sent after all other properties of an xdg_output
+              <div class="f6 lh-copy ws-pre-line code mt3">This event is sent after all other properties of an xdg_output
 have been sent.
 
 This allows changes to the xdg_output properties to be seen as
@@ -350,12 +350,12 @@ instead.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">const char*</span> name <span class="green">/* output name */</span> 
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">Many compositors will assign names to their outputs, show them to the
+              <div class="f6 lh-copy ws-pre-line code mt3">Many compositors will assign names to their outputs, show them to the
 user, allow them to be configured by name, etc. The client may wish to
 know this name as well to offer the user similar behaviors.
 
@@ -388,12 +388,12 @@ wl_output global.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">const char*</span> description <span class="green">/* output description */</span> 
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">Many compositors can produce human-readable descriptions of their
+              <div class="f6 lh-copy ws-pre-line code mt3">Many compositors can produce human-readable descriptions of their
 outputs.  The client may wish to know this description as well, to
 communicate the user for various purposes.
 
@@ -420,7 +420,7 @@ the wl_output global.
     </ul>
 
     <h2 class="f4 lh-title">Copyright Info</h2>
-    <div class="f7 lh-copy ws-pre-line courier">Copyright © 2017 Red Hat Inc.
+    <div class="f7 lh-copy ws-pre-line code">Copyright © 2017 Red Hat Inc.
 
 Permission is hereby granted, free of charge, to any person obtaining a
 copy of this software and associated documentation files (the &quot;Software&quot;),

@@ -102,7 +102,7 @@
           <a href="#i:wp_presentation" class="link dim black-70 child pr2 absolute left--2">#</a>
           wp_presentation
         </h2>
-        <div class="f6 lh-copy ws-pre-line courier">
+        <div class="f6 lh-copy ws-pre-line code">
 The main feature of this interface is accurate presentation
 timing feedback to ensure smooth video playback while maintaining
 audio&#x2f;video synchronization. Some features use the concept of a
@@ -139,14 +139,14 @@ when the compositor misses its target vertical blanking period.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">wp_presentation_destroy</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct wp_presentation*</span> wp_presentation</div>
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Informs the server that the client will no longer be using
+              <div class="f6 lh-copy ws-pre-line code">Informs the server that the client will no longer be using
 this protocol object. Existing objects created by this object
 are not affected.
 </div>
@@ -163,7 +163,7 @@ are not affected.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>struct wp_presentation_feedback* </span><span class="dark-blue">wp_presentation_feedback</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct wp_presentation*</span> wp_presentation,</div>
@@ -172,7 +172,7 @@ are not affected.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Request presentation feedback for the current content submission
+              <div class="f6 lh-copy ws-pre-line code">Request presentation feedback for the current content submission
 on the given surface. This creates a new presentation_feedback
 object, which will deliver the feedback information once. If
 multiple presentation_feedback objects are created for the same
@@ -202,12 +202,12 @@ presentation_feedback interface.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> clk_id <span class="green">/* platform clock identifier */</span> 
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">This event tells the client in which clock domain the
+              <div class="f6 lh-copy ws-pre-line code mt3">This event tells the client in which clock domain the
 compositor interprets the timestamps used by the presentation
 extension. This clock is called the presentation clock.
 
@@ -250,7 +250,7 @@ value directly, not by asking the compositor.
           <a href="#i:wp_presentation_feedback" class="link dim black-70 child pr2 absolute left--2">#</a>
           wp_presentation_feedback
         </h2>
-        <div class="f6 lh-copy ws-pre-line courier">A presentation_feedback object returns an indication that a
+        <div class="f6 lh-copy ws-pre-line code">A presentation_feedback object returns an indication that a
 wl_surface content update has become visible to the user.
 One object corresponds to one content update submission
 (wl_surface.commit). There are two possible outcomes: the
@@ -282,12 +282,12 @@ or &#x27;discarded&#x27; event it is automatically destroyed.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">struct wl_output*</span> output <span class="green">/* presentation output */</span> 
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">As presentation can be synchronized to only one output at a
+              <div class="f6 lh-copy ws-pre-line code mt3">As presentation can be synchronized to only one output at a
 time, this event tells which output it was. This event is only
 sent prior to the presented event.
 
@@ -310,36 +310,36 @@ right wl_output global at all, this event is not sent.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> tv_sec_hi <span class="green">/* high 32 bits of the seconds part of the presentation timestamp */</span> 
                 </div>
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> tv_sec_lo <span class="green">/* low 32 bits of the seconds part of the presentation timestamp */</span> 
                 </div>
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> tv_nsec <span class="green">/* nanoseconds part of the presentation timestamp */</span> 
                 </div>
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> refresh <span class="green">/* nanoseconds till next refresh */</span> 
                 </div>
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> seq_hi <span class="green">/* high 32 bits of refresh counter */</span> 
                 </div>
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> seq_lo <span class="green">/* low 32 bits of refresh counter */</span> 
                 </div>
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> flags <span class="green">/* combination of &#x27;kind&#x27; values */</span> 
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">The associated content update was displayed to the user at the
+              <div class="f6 lh-copy ws-pre-line code mt3">The associated content update was displayed to the user at the
 indicated time (tv_sec_hi&#x2f;lo, tv_nsec). For the interpretation of
 the timestamp, see presentation.clock_id event.
 
@@ -396,7 +396,7 @@ and seq_lo must be zero.
 
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">The content update was never displayed to the user.
+              <div class="f6 lh-copy ws-pre-line code mt3">The content update was never displayed to the user.
 </div>
             </li>
             
@@ -409,7 +409,7 @@ and seq_lo must be zero.
     </ul>
 
     <h2 class="f4 lh-title">Copyright Info</h2>
-    <div class="f7 lh-copy ws-pre-line courier">Copyright © 2013-2014 Collabora, Ltd.
+    <div class="f7 lh-copy ws-pre-line code">Copyright © 2013-2014 Collabora, Ltd.
 
 Permission is hereby granted, free of charge, to any person obtaining a
 copy of this software and associated documentation files (the &quot;Software&quot;),

@@ -80,7 +80,7 @@
           <a href="#i:zwlr_input_inhibit_manager_v1" class="link dim black-70 child pr2 absolute left--2">#</a>
           zwlr_input_inhibit_manager_v1
         </h2>
-        <div class="f6 lh-copy ws-pre-line courier">Clients can use this interface to prevent input events from being sent to
+        <div class="f6 lh-copy ws-pre-line code">Clients can use this interface to prevent input events from being sent to
 any surfaces but its own, which is useful for example in lock screen
 software. It is assumed that access to this interface will be locked down
 to whitelisted clients by the compositor.
@@ -101,14 +101,14 @@ to whitelisted clients by the compositor.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>struct zwlr_input_inhibitor_v1* </span><span class="dark-blue">zwlr_input_inhibit_manager_v1_get_inhibitor</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwlr_input_inhibit_manager_v1*</span> zwlr_input_inhibit_manager_v1</div>
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Activates the input inhibitor. As long as the inhibitor is active, the
+              <div class="f6 lh-copy ws-pre-line code">Activates the input inhibitor. As long as the inhibitor is active, the
 compositor will not send input events to other clients.
 </div>
             </li>
@@ -127,7 +127,7 @@ compositor will not send input events to other clients.
           <a href="#i:zwlr_input_inhibitor_v1" class="link dim black-70 child pr2 absolute left--2">#</a>
           zwlr_input_inhibitor_v1
         </h2>
-        <div class="f6 lh-copy ws-pre-line courier">While this resource exists, input to clients other than the owner of the
+        <div class="f6 lh-copy ws-pre-line code">While this resource exists, input to clients other than the owner of the
 inhibitor resource will not receive input events. Any client which
 previously had focus will receive a leave event and will not be given
 focus again. The client that owns this resource will receive all input
@@ -153,14 +153,14 @@ such as an on-screen keyboard (via the input-method protocol).
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">zwlr_input_inhibitor_v1_destroy</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwlr_input_inhibitor_v1*</span> zwlr_input_inhibitor_v1</div>
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Destroy the inhibitor and allow other clients to receive input.
+              <div class="f6 lh-copy ws-pre-line code">Destroy the inhibitor and allow other clients to receive input.
 </div>
             </li>
             
@@ -176,7 +176,7 @@ such as an on-screen keyboard (via the input-method protocol).
     </ul>
 
     <h2 class="f4 lh-title">Copyright Info</h2>
-    <div class="f7 lh-copy ws-pre-line courier">Copyright © 2018 Drew DeVault
+    <div class="f7 lh-copy ws-pre-line code">Copyright © 2018 Drew DeVault
 
 Permission to use, copy, modify, distribute, and sell this
 software and its documentation for any purpose is hereby granted

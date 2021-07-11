@@ -100,7 +100,7 @@
           <a href="#i:org_kde_kwin_fake_input" class="link dim black-70 child pr2 absolute left--2">#</a>
           org_kde_kwin_fake_input
         </h2>
-        <div class="f6 lh-copy ws-pre-line courier">This interface allows other processes to provide fake input events.
+        <div class="f6 lh-copy ws-pre-line code">This interface allows other processes to provide fake input events.
 Purpose is on the one hand side to provide testing facilities like XTest on X11.
 But also to support use case like kdeconnect&#x27;s mouse pad interface.
 
@@ -124,7 +124,7 @@ interface.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">org_kde_kwin_fake_input_authenticate</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct org_kde_kwin_fake_input*</span> org_kde_kwin_fake_input,</div>
@@ -135,7 +135,7 @@ interface.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">A client should use this request to tell the compositor why it wants to
+              <div class="f6 lh-copy ws-pre-line code">A client should use this request to tell the compositor why it wants to
 use this interface. The compositor might use the information to decide
 whether it wants to grant the request. The data might also be passed to
 the user to decide whether the application should get granted access to
@@ -154,7 +154,7 @@ this very privileged interface.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">org_kde_kwin_fake_input_pointer_motion</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct org_kde_kwin_fake_input*</span> org_kde_kwin_fake_input,</div>
@@ -165,7 +165,7 @@ this very privileged interface.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier"></div>
+              <div class="f6 lh-copy ws-pre-line code"></div>
             </li>
             
             <li class="mt3">
@@ -179,7 +179,7 @@ this very privileged interface.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">org_kde_kwin_fake_input_button</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct org_kde_kwin_fake_input*</span> org_kde_kwin_fake_input,</div>
@@ -190,7 +190,7 @@ this very privileged interface.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier"></div>
+              <div class="f6 lh-copy ws-pre-line code"></div>
             </li>
             
             <li class="mt3">
@@ -204,7 +204,7 @@ this very privileged interface.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">org_kde_kwin_fake_input_axis</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct org_kde_kwin_fake_input*</span> org_kde_kwin_fake_input,</div>
@@ -215,7 +215,7 @@ this very privileged interface.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier"></div>
+              <div class="f6 lh-copy ws-pre-line code"></div>
             </li>
             
             <li class="mt3">
@@ -229,7 +229,7 @@ this very privileged interface.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">org_kde_kwin_fake_input_touch_down</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct org_kde_kwin_fake_input*</span> org_kde_kwin_fake_input,</div>
@@ -242,7 +242,7 @@ this very privileged interface.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">A client should use this request to send touch down event at specific
+              <div class="f6 lh-copy ws-pre-line code">A client should use this request to send touch down event at specific
 co-ordinates.
 </div>
             </li>
@@ -258,7 +258,7 @@ co-ordinates.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">org_kde_kwin_fake_input_touch_motion</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct org_kde_kwin_fake_input*</span> org_kde_kwin_fake_input,</div>
@@ -271,7 +271,7 @@ co-ordinates.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">A client should use this request to send touch motion to specific position.
+              <div class="f6 lh-copy ws-pre-line code">A client should use this request to send touch motion to specific position.
 </div>
             </li>
             
@@ -286,7 +286,7 @@ co-ordinates.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">org_kde_kwin_fake_input_touch_up</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct org_kde_kwin_fake_input*</span> org_kde_kwin_fake_input,</div>
@@ -295,7 +295,7 @@ co-ordinates.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">A client should use this request to send touch up event.
+              <div class="f6 lh-copy ws-pre-line code">A client should use this request to send touch up event.
 </div>
             </li>
             
@@ -310,14 +310,14 @@ co-ordinates.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">org_kde_kwin_fake_input_touch_cancel</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct org_kde_kwin_fake_input*</span> org_kde_kwin_fake_input</div>
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">A client should use this request to cancel the current
+              <div class="f6 lh-copy ws-pre-line code">A client should use this request to cancel the current
 touch event.
 </div>
             </li>
@@ -333,14 +333,14 @@ touch event.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">org_kde_kwin_fake_input_touch_frame</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct org_kde_kwin_fake_input*</span> org_kde_kwin_fake_input</div>
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">A client should use this request to send touch frame event.
+              <div class="f6 lh-copy ws-pre-line code">A client should use this request to send touch frame event.
 </div>
             </li>
             
@@ -355,7 +355,7 @@ touch event.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">org_kde_kwin_fake_input_pointer_motion_absolute</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct org_kde_kwin_fake_input*</span> org_kde_kwin_fake_input,</div>
@@ -366,7 +366,7 @@ touch event.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier"></div>
+              <div class="f6 lh-copy ws-pre-line code"></div>
             </li>
             
             <li class="mt3">
@@ -380,7 +380,7 @@ touch event.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">org_kde_kwin_fake_input_keyboard_key</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct org_kde_kwin_fake_input*</span> org_kde_kwin_fake_input,</div>
@@ -391,7 +391,7 @@ touch event.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier"></div>
+              <div class="f6 lh-copy ws-pre-line code"></div>
             </li>
             
           </ul>
@@ -406,7 +406,7 @@ touch event.
     </ul>
 
     <h2 class="f4 lh-title">Copyright Info</h2>
-    <div class="f7 lh-copy ws-pre-line courier">SPDX-FileCopyrightText: 2015 Martin Gräßlin
+    <div class="f7 lh-copy ws-pre-line code">SPDX-FileCopyrightText: 2015 Martin Gräßlin
 
 SPDX-License-Identifier: LGPL-2.1-or-later
 </div>

@@ -102,7 +102,7 @@
           <a href="#i:zxdg_decoration_manager_v1" class="link dim black-70 child pr2 absolute left--2">#</a>
           zxdg_decoration_manager_v1
         </h2>
-        <div class="f6 lh-copy ws-pre-line courier">This interface allows a compositor to announce support for server-side
+        <div class="f6 lh-copy ws-pre-line code">This interface allows a compositor to announce support for server-side
 decorations.
 
 A window decoration is a set of window controls as deemed appropriate by
@@ -141,14 +141,14 @@ interface version number is reset.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">zxdg_decoration_manager_v1_destroy</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zxdg_decoration_manager_v1*</span> zxdg_decoration_manager_v1</div>
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Destroy the decoration manager. This doesn&#x27;t destroy objects created
+              <div class="f6 lh-copy ws-pre-line code">Destroy the decoration manager. This doesn&#x27;t destroy objects created
 with the manager.
 </div>
             </li>
@@ -164,7 +164,7 @@ with the manager.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>struct zxdg_toplevel_decoration_v1* </span><span class="dark-blue">zxdg_decoration_manager_v1_get_toplevel_decoration</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zxdg_decoration_manager_v1*</span> zxdg_decoration_manager_v1,</div>
@@ -173,7 +173,7 @@ with the manager.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Create a new decoration object associated with the given toplevel.
+              <div class="f6 lh-copy ws-pre-line code">Create a new decoration object associated with the given toplevel.
 
 Creating an xdg_toplevel_decoration from an xdg_toplevel which has a
 buffer attached or committed is a client error, and any attempts by a
@@ -197,7 +197,7 @@ errors.
           <a href="#i:zxdg_toplevel_decoration_v1" class="link dim black-70 child pr2 absolute left--2">#</a>
           zxdg_toplevel_decoration_v1
         </h2>
-        <div class="f6 lh-copy ws-pre-line courier">The decoration object allows the compositor to toggle server-side window
+        <div class="f6 lh-copy ws-pre-line code">The decoration object allows the compositor to toggle server-side window
 decorations for a toplevel surface. The client can request to switch to
 another mode.
 
@@ -220,14 +220,14 @@ xdg_toplevel.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">zxdg_toplevel_decoration_v1_destroy</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zxdg_toplevel_decoration_v1*</span> zxdg_toplevel_decoration_v1</div>
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Switch back to a mode without any server-side decorations at the next
+              <div class="f6 lh-copy ws-pre-line code">Switch back to a mode without any server-side decorations at the next
 commit.
 </div>
             </li>
@@ -243,7 +243,7 @@ commit.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">zxdg_toplevel_decoration_v1_set_mode</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zxdg_toplevel_decoration_v1*</span> zxdg_toplevel_decoration_v1,</div>
@@ -252,7 +252,7 @@ commit.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Set the toplevel surface decoration mode. This informs the compositor
+              <div class="f6 lh-copy ws-pre-line code">Set the toplevel surface decoration mode. This informs the compositor
 that the client prefers the provided decoration mode.
 
 After requesting a decoration mode, the compositor will respond by
@@ -284,14 +284,14 @@ same decoration mode.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">zxdg_toplevel_decoration_v1_unset_mode</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zxdg_toplevel_decoration_v1*</span> zxdg_toplevel_decoration_v1</div>
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Unset the toplevel surface decoration mode. This informs the compositor
+              <div class="f6 lh-copy ws-pre-line code">Unset the toplevel surface decoration mode. This informs the compositor
 that the client doesn&#x27;t prefer a particular decoration mode.
 
 This request has the same semantics as set_mode.
@@ -317,12 +317,12 @@ This request has the same semantics as set_mode.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> mode <span class="green">/* the decoration mode */</span> 
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">The configure event asks the client to change its decoration mode. The
+              <div class="f6 lh-copy ws-pre-line code mt3">The configure event asks the client to change its decoration mode. The
 configured state should not be applied immediately. Clients must send an
 ack_configure in response to this event. See xdg_surface.configure and
 xdg_surface.ack_configure for details.
@@ -341,7 +341,7 @@ obeyed by the client.
     </ul>
 
     <h2 class="f4 lh-title">Copyright Info</h2>
-    <div class="f7 lh-copy ws-pre-line courier">Copyright © 2018 Simon Ser
+    <div class="f7 lh-copy ws-pre-line code">Copyright © 2018 Simon Ser
 
 Permission is hereby granted, free of charge, to any person obtaining a
 copy of this software and associated documentation files (the &quot;Software&quot;),

@@ -102,7 +102,7 @@
           <a href="#i:zwlr_output_power_manager_v1" class="link dim black-70 child pr2 absolute left--2">#</a>
           zwlr_output_power_manager_v1
         </h2>
-        <div class="f6 lh-copy ws-pre-line courier">This interface is a manager that allows creating per-output power
+        <div class="f6 lh-copy ws-pre-line code">This interface is a manager that allows creating per-output power
 management mode controls.
 </div>
 
@@ -121,7 +121,7 @@ management mode controls.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>struct zwlr_output_power_v1* </span><span class="dark-blue">zwlr_output_power_manager_v1_get_output_power</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwlr_output_power_manager_v1*</span> zwlr_output_power_manager_v1,</div>
@@ -130,7 +130,7 @@ management mode controls.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Create an output power management mode control that can be used to
+              <div class="f6 lh-copy ws-pre-line code">Create an output power management mode control that can be used to
 adjust the power management mode for a given output.
 </div>
             </li>
@@ -146,14 +146,14 @@ adjust the power management mode for a given output.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">zwlr_output_power_manager_v1_destroy</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwlr_output_power_manager_v1*</span> zwlr_output_power_manager_v1</div>
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">All objects created by the manager will still remain valid, until their
+              <div class="f6 lh-copy ws-pre-line code">All objects created by the manager will still remain valid, until their
 appropriate destroy request has been called.
 </div>
             </li>
@@ -172,7 +172,7 @@ appropriate destroy request has been called.
           <a href="#i:zwlr_output_power_v1" class="link dim black-70 child pr2 absolute left--2">#</a>
           zwlr_output_power_v1
         </h2>
-        <div class="f6 lh-copy ws-pre-line courier">This object offers requests to set the power management mode of
+        <div class="f6 lh-copy ws-pre-line code">This object offers requests to set the power management mode of
 an output.
 </div>
 
@@ -191,7 +191,7 @@ an output.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">zwlr_output_power_v1_set_mode</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwlr_output_power_v1*</span> zwlr_output_power_v1,</div>
@@ -200,7 +200,7 @@ an output.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Set an output&#x27;s power save mode to the given mode. The mode change
+              <div class="f6 lh-copy ws-pre-line code">Set an output&#x27;s power save mode to the given mode. The mode change
 is effective immediately. If the output does not support the given
 mode a failed event is sent.
 </div>
@@ -217,14 +217,14 @@ mode a failed event is sent.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">zwlr_output_power_v1_destroy</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwlr_output_power_v1*</span> zwlr_output_power_v1</div>
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Destroys the output power management mode control object.
+              <div class="f6 lh-copy ws-pre-line code">Destroys the output power management mode control object.
 </div>
             </li>
             
@@ -247,12 +247,12 @@ mode a failed event is sent.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> mode <span class="green">/* the output&#x27;s new power management mode */</span> 
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">Report the power management mode change of an output.
+              <div class="f6 lh-copy ws-pre-line code mt3">Report the power management mode change of an output.
 
 The mode event is sent after an output changed its power
 management mode. The reason can be a client using set_mode or the
@@ -275,7 +275,7 @@ so the client is informed about the current power management mode.
 
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">This event indicates that the output power management mode control
+              <div class="f6 lh-copy ws-pre-line code mt3">This event indicates that the output power management mode control
 is no longer valid. This can happen for a number of reasons,
 including:
 - The output doesn&#x27;t support power management
@@ -296,7 +296,7 @@ Upon receiving this event, the client should destroy this object.
     </ul>
 
     <h2 class="f4 lh-title">Copyright Info</h2>
-    <div class="f7 lh-copy ws-pre-line courier">Copyright © 2019 Purism SPC
+    <div class="f7 lh-copy ws-pre-line code">Copyright © 2019 Purism SPC
 
 Permission is hereby granted, free of charge, to any person obtaining a
 copy of this software and associated documentation files (the &quot;Software&quot;),

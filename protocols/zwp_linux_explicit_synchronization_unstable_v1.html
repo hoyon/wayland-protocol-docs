@@ -116,7 +116,7 @@
           <a href="#i:zwp_linux_explicit_synchronization_v1" class="link dim black-70 child pr2 absolute left--2">#</a>
           zwp_linux_explicit_synchronization_v1
         </h2>
-        <div class="f6 lh-copy ws-pre-line courier">This global is a factory interface, allowing clients to request
+        <div class="f6 lh-copy ws-pre-line code">This global is a factory interface, allowing clients to request
 explicit synchronization for buffers on a per-surface basis.
 
 See zwp_linux_surface_synchronization_v1 for more information.
@@ -149,14 +149,14 @@ interface version number is reset.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">zwp_linux_explicit_synchronization_v1_destroy</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwp_linux_explicit_synchronization_v1*</span> zwp_linux_explicit_synchronization_v1</div>
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Destroy this explicit synchronization factory object. Other objects,
+              <div class="f6 lh-copy ws-pre-line code">Destroy this explicit synchronization factory object. Other objects,
 including zwp_linux_surface_synchronization_v1 objects created by this
 factory, shall not be affected by this request.
 </div>
@@ -173,7 +173,7 @@ factory, shall not be affected by this request.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>struct zwp_linux_surface_synchronization_v1* </span><span class="dark-blue">zwp_linux_explicit_synchronization_v1_get_synchronization</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwp_linux_explicit_synchronization_v1*</span> zwp_linux_explicit_synchronization_v1,</div>
@@ -182,7 +182,7 @@ factory, shall not be affected by this request.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Instantiate an interface extension for the given wl_surface to provide
+              <div class="f6 lh-copy ws-pre-line code">Instantiate an interface extension for the given wl_surface to provide
 explicit synchronization.
 
 If the given wl_surface already has an explicit synchronization object
@@ -210,7 +210,7 @@ to avoid raising a synchronization_exists protocol error.
           <a href="#i:zwp_linux_surface_synchronization_v1" class="link dim black-70 child pr2 absolute left--2">#</a>
           zwp_linux_surface_synchronization_v1
         </h2>
-        <div class="f6 lh-copy ws-pre-line courier">This object implements per-surface explicit synchronization.
+        <div class="f6 lh-copy ws-pre-line code">This object implements per-surface explicit synchronization.
 
 Synchronization refers to co-ordination of pipelined operations performed
 on buffers. Most GPU clients will schedule an asynchronous operation to
@@ -257,14 +257,14 @@ additional buffer types.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">zwp_linux_surface_synchronization_v1_destroy</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwp_linux_surface_synchronization_v1*</span> zwp_linux_surface_synchronization_v1</div>
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Destroy this explicit synchronization object.
+              <div class="f6 lh-copy ws-pre-line code">Destroy this explicit synchronization object.
 
 Any fence set by this object with set_acquire_fence since the last
 commit will be discarded by the server. Any fences set by this object
@@ -286,7 +286,7 @@ affected by this request.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">zwp_linux_surface_synchronization_v1_set_acquire_fence</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwp_linux_surface_synchronization_v1*</span> zwp_linux_surface_synchronization_v1,</div>
@@ -295,7 +295,7 @@ affected by this request.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Set the acquire fence that must be signaled before the compositor
+              <div class="f6 lh-copy ws-pre-line code">Set the acquire fence that must be signaled before the compositor
 may sample from the buffer attached with wl_surface.attach. The fence
 is a dma_fence kernel object.
 
@@ -332,14 +332,14 @@ error is raised.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>struct zwp_linux_buffer_release_v1* </span><span class="dark-blue">zwp_linux_surface_synchronization_v1_get_release</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwp_linux_surface_synchronization_v1*</span> zwp_linux_surface_synchronization_v1</div>
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Create a listener for the release of the buffer attached by the
+              <div class="f6 lh-copy ws-pre-line code">Create a listener for the release of the buffer attached by the
 client with wl_surface.attach. See zwp_linux_buffer_release_v1
 documentation for more information.
 
@@ -373,7 +373,7 @@ error is raised.
           <a href="#i:zwp_linux_buffer_release_v1" class="link dim black-70 child pr2 absolute left--2">#</a>
           zwp_linux_buffer_release_v1
         </h2>
-        <div class="f6 lh-copy ws-pre-line courier">This object is instantiated in response to a
+        <div class="f6 lh-copy ws-pre-line code">This object is instantiated in response to a
 zwp_linux_surface_synchronization_v1.get_release request.
 
 It provides an alternative to wl_buffer.release events, providing a
@@ -411,12 +411,12 @@ Once a buffer release object has delivered a &#x27;fenced_release&#x27; or an
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">int32_t</span> fence <span class="green">/* fence for last operation on buffer */</span> 
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">Sent when the compositor has finalised its usage of the associated
+              <div class="f6 lh-copy ws-pre-line code mt3">Sent when the compositor has finalised its usage of the associated
 buffer for the relevant commit, providing a dma_fence which will be
 signaled when all operations by the compositor on that buffer for that
 commit have finished.
@@ -443,7 +443,7 @@ This event destroys the zwp_linux_buffer_release_v1 object.
 
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">Sent when the compositor has finalised its usage of the associated
+              <div class="f6 lh-copy ws-pre-line code mt3">Sent when the compositor has finalised its usage of the associated
 buffer for the relevant commit, and either performed no operations
 using it, or has a guarantee that all its operations on that buffer for
 that commit have finished.
@@ -466,7 +466,7 @@ This event destroys the zwp_linux_buffer_release_v1 object.
     </ul>
 
     <h2 class="f4 lh-title">Copyright Info</h2>
-    <div class="f7 lh-copy ws-pre-line courier">Copyright 2016 The Chromium Authors.
+    <div class="f7 lh-copy ws-pre-line code">Copyright 2016 The Chromium Authors.
 Copyright 2017 Intel Corporation
 Copyright 2018 Collabora, Ltd
 

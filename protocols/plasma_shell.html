@@ -130,7 +130,7 @@
           <a href="#i:org_kde_plasma_shell" class="link dim black-70 child pr2 absolute left--2">#</a>
           org_kde_plasma_shell
         </h2>
-        <div class="f6 lh-copy ws-pre-line courier">This interface is used by KF5 powered Wayland shells to communicate with
+        <div class="f6 lh-copy ws-pre-line code">This interface is used by KF5 powered Wayland shells to communicate with
 the compositor and can only be bound one time.
 </div>
 
@@ -149,7 +149,7 @@ the compositor and can only be bound one time.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>struct org_kde_plasma_surface* </span><span class="dark-blue">org_kde_plasma_shell_get_surface</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct org_kde_plasma_shell*</span> org_kde_plasma_shell,</div>
@@ -158,7 +158,7 @@ the compositor and can only be bound one time.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Create a shell surface for an existing surface.
+              <div class="f6 lh-copy ws-pre-line code">Create a shell surface for an existing surface.
 
 Only one shell surface can be associated with a given
 surface.
@@ -179,7 +179,7 @@ surface.
           <a href="#i:org_kde_plasma_surface" class="link dim black-70 child pr2 absolute left--2">#</a>
           org_kde_plasma_surface
         </h2>
-        <div class="f6 lh-copy ws-pre-line courier">An interface that may be implemented by a wl_surface, for
+        <div class="f6 lh-copy ws-pre-line code">An interface that may be implemented by a wl_surface, for
 implementations that provide the shell user interface.
 
 It provides requests to set surface roles, assign an output
@@ -206,14 +206,14 @@ destroying the wl_surface object.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">org_kde_plasma_surface_destroy</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct org_kde_plasma_surface*</span> org_kde_plasma_surface</div>
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">The org_kde_plasma_surface interface is removed from the
+              <div class="f6 lh-copy ws-pre-line code">The org_kde_plasma_surface interface is removed from the
 wl_surface object that was turned into a shell surface with the
 org_kde_plasma_shell.get_surface request.
 The shell surface role is lost and wl_surface is unmapped.
@@ -231,7 +231,7 @@ The shell surface role is lost and wl_surface is unmapped.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">org_kde_plasma_surface_set_output</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct org_kde_plasma_surface*</span> org_kde_plasma_surface,</div>
@@ -240,7 +240,7 @@ The shell surface role is lost and wl_surface is unmapped.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Assign an output to this shell surface.
+              <div class="f6 lh-copy ws-pre-line code">Assign an output to this shell surface.
 The compositor will use this information to set the position
 when org_kde_plasma_surface.set_position request is
 called.
@@ -258,7 +258,7 @@ called.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">org_kde_plasma_surface_set_position</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct org_kde_plasma_surface*</span> org_kde_plasma_surface,</div>
@@ -269,7 +269,7 @@ called.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Move the surface to new coordinates.
+              <div class="f6 lh-copy ws-pre-line code">Move the surface to new coordinates.
 
 Coordinates are global, for example 50,50 for a 1920,0+1920x1080 output
 is 1970,50 in global coordinates space.
@@ -290,7 +290,7 @@ to this surface.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">org_kde_plasma_surface_set_role</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct org_kde_plasma_surface*</span> org_kde_plasma_surface,</div>
@@ -299,7 +299,7 @@ to this surface.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Assign a role to a shell surface.
+              <div class="f6 lh-copy ws-pre-line code">Assign a role to a shell surface.
 
 The compositor handles surfaces depending on their role.
 See the explanation below.
@@ -406,7 +406,7 @@ Only one surface per output can have the lock role.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">org_kde_plasma_surface_set_panel_behavior</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct org_kde_plasma_surface*</span> org_kde_plasma_surface,</div>
@@ -415,7 +415,7 @@ Only one surface per output can have the lock role.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Set flags bitmask as described by the flag enum.
+              <div class="f6 lh-copy ws-pre-line code">Set flags bitmask as described by the flag enum.
 Pass 0 to unset any flag, the surface will adjust its behavior to
 the default.
 </div>
@@ -432,7 +432,7 @@ the default.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">org_kde_plasma_surface_set_skip_taskbar</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct org_kde_plasma_surface*</span> org_kde_plasma_surface,</div>
@@ -441,7 +441,7 @@ the default.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Setting this bit to the window, will make it say it prefers to not be listed in the taskbar. Taskbar implementations may or may not follow this hint.
+              <div class="f6 lh-copy ws-pre-line code">Setting this bit to the window, will make it say it prefers to not be listed in the taskbar. Taskbar implementations may or may not follow this hint.
 </div>
             </li>
             
@@ -456,14 +456,14 @@ the default.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">org_kde_plasma_surface_panel_auto_hide_hide</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct org_kde_plasma_surface*</span> org_kde_plasma_surface</div>
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">A panel surface with panel_behavior auto_hide can perform this request to hide the panel
+              <div class="f6 lh-copy ws-pre-line code">A panel surface with panel_behavior auto_hide can perform this request to hide the panel
 on a screen edge without unmapping it. The compositor informs the client about the panel
 being hidden with the event auto_hidden_panel_hidden.
 
@@ -487,14 +487,14 @@ The client can also request to show the panel again with the request panel_auto_
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">org_kde_plasma_surface_panel_auto_hide_show</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct org_kde_plasma_surface*</span> org_kde_plasma_surface</div>
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">A panel surface with panel_behavior auto_hide can perform this request to show the panel
+              <div class="f6 lh-copy ws-pre-line code">A panel surface with panel_behavior auto_hide can perform this request to show the panel
 again which got hidden with panel_auto_hide_hide.
 </div>
             </li>
@@ -510,7 +510,7 @@ again which got hidden with panel_auto_hide_hide.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">org_kde_plasma_surface_set_panel_takes_focus</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct org_kde_plasma_surface*</span> org_kde_plasma_surface,</div>
@@ -519,7 +519,7 @@ again which got hidden with panel_auto_hide_hide.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">By default various org_kde_plasma_surface roles do not take focus and cannot be
+              <div class="f6 lh-copy ws-pre-line code">By default various org_kde_plasma_surface roles do not take focus and cannot be
 activated. With this request the compositor can be instructed to pass focus also to this
 org_kde_plasma_surface.
 </div>
@@ -536,7 +536,7 @@ org_kde_plasma_surface.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">org_kde_plasma_surface_set_skip_switcher</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct org_kde_plasma_surface*</span> org_kde_plasma_surface,</div>
@@ -545,7 +545,7 @@ org_kde_plasma_surface.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Setting this bit will indicate that the window prefers not to be listed in a switcher.
+              <div class="f6 lh-copy ws-pre-line code">Setting this bit will indicate that the window prefers not to be listed in a switcher.
 </div>
             </li>
             
@@ -569,7 +569,7 @@ org_kde_plasma_surface.
 
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">An auto-hiding panel got hidden by the compositor.
+              <div class="f6 lh-copy ws-pre-line code mt3">An auto-hiding panel got hidden by the compositor.
 </div>
             </li>
             
@@ -586,7 +586,7 @@ org_kde_plasma_surface.
 
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">An auto-hiding panel got shown by the compositor.
+              <div class="f6 lh-copy ws-pre-line code mt3">An auto-hiding panel got shown by the compositor.
 </div>
             </li>
             
@@ -599,7 +599,7 @@ org_kde_plasma_surface.
     </ul>
 
     <h2 class="f4 lh-title">Copyright Info</h2>
-    <div class="f7 lh-copy ws-pre-line courier">SPDX-FileCopyrightText: 2013-2014 Pier Luigi Fiorini
+    <div class="f7 lh-copy ws-pre-line code">SPDX-FileCopyrightText: 2013-2014 Pier Luigi Fiorini
 
 SPDX-License-Identifier: LGPL-2.1-or-later
 </div>

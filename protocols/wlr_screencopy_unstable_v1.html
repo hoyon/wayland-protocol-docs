@@ -130,7 +130,7 @@
           <a href="#i:zwlr_screencopy_manager_v1" class="link dim black-70 child pr2 absolute left--2">#</a>
           zwlr_screencopy_manager_v1
         </h2>
-        <div class="f6 lh-copy ws-pre-line courier">This object is a manager which offers requests to start capturing from a
+        <div class="f6 lh-copy ws-pre-line code">This object is a manager which offers requests to start capturing from a
 source.
 </div>
 
@@ -149,7 +149,7 @@ source.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>struct zwlr_screencopy_frame_v1* </span><span class="dark-blue">zwlr_screencopy_manager_v1_capture_output</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwlr_screencopy_manager_v1*</span> zwlr_screencopy_manager_v1,</div>
@@ -160,7 +160,7 @@ source.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Capture the next frame of an entire output.
+              <div class="f6 lh-copy ws-pre-line code">Capture the next frame of an entire output.
 </div>
             </li>
             
@@ -175,7 +175,7 @@ source.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>struct zwlr_screencopy_frame_v1* </span><span class="dark-blue">zwlr_screencopy_manager_v1_capture_output_region</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwlr_screencopy_manager_v1*</span> zwlr_screencopy_manager_v1,</div>
@@ -194,7 +194,7 @@ source.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Capture the next frame of an output&#x27;s region.
+              <div class="f6 lh-copy ws-pre-line code">Capture the next frame of an output&#x27;s region.
 
 The region is given in output logical coordinates, see
 xdg_output.logical_size. The region will be clipped to the output&#x27;s
@@ -213,14 +213,14 @@ extents.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">zwlr_screencopy_manager_v1_destroy</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwlr_screencopy_manager_v1*</span> zwlr_screencopy_manager_v1</div>
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">All objects created by the manager will still remain valid, until their
+              <div class="f6 lh-copy ws-pre-line code">All objects created by the manager will still remain valid, until their
 appropriate destroy request has been called.
 </div>
             </li>
@@ -239,7 +239,7 @@ appropriate destroy request has been called.
           <a href="#i:zwlr_screencopy_frame_v1" class="link dim black-70 child pr2 absolute left--2">#</a>
           zwlr_screencopy_frame_v1
         </h2>
-        <div class="f6 lh-copy ws-pre-line courier">This object represents a single frame.
+        <div class="f6 lh-copy ws-pre-line code">This object represents a single frame.
 
 When created, a series of buffer events will be sent, each representing a
 supported buffer type. The &quot;buffer_done&quot; event is sent afterwards to
@@ -272,7 +272,7 @@ destroy the frame.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">zwlr_screencopy_frame_v1_copy</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwlr_screencopy_frame_v1*</span> zwlr_screencopy_frame_v1,</div>
@@ -281,7 +281,7 @@ destroy the frame.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Copy the frame to the supplied buffer. The buffer must have a the
+              <div class="f6 lh-copy ws-pre-line code">Copy the frame to the supplied buffer. The buffer must have a the
 correct size, see zwlr_screencopy_frame_v1.buffer and
 zwlr_screencopy_frame_v1.linux_dmabuf. The buffer needs to have a
 supported format.
@@ -302,14 +302,14 @@ sent. Otherwise, a &quot;failed&quot; event is sent.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">zwlr_screencopy_frame_v1_destroy</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwlr_screencopy_frame_v1*</span> zwlr_screencopy_frame_v1</div>
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Destroys the frame. This request can be sent at any time by the client.
+              <div class="f6 lh-copy ws-pre-line code">Destroys the frame. This request can be sent at any time by the client.
 </div>
             </li>
             
@@ -324,7 +324,7 @@ sent. Otherwise, a &quot;failed&quot; event is sent.
                 </div>
               </div>
               
-<div class="f6 lh-copy courier">
+<div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">zwlr_screencopy_frame_v1_copy_with_damage</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct zwlr_screencopy_frame_v1*</span> zwlr_screencopy_frame_v1,</div>
@@ -333,7 +333,7 @@ sent. Otherwise, a &quot;failed&quot; event is sent.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line courier">Same as copy, except it waits until there is damage to copy.
+              <div class="f6 lh-copy ws-pre-line code">Same as copy, except it waits until there is damage to copy.
 </div>
             </li>
             
@@ -356,24 +356,24 @@ sent. Otherwise, a &quot;failed&quot; event is sent.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> format <span class="green">/* buffer format */</span> 
                 </div>
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> width <span class="green">/* buffer width */</span> 
                 </div>
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> height <span class="green">/* buffer height */</span> 
                 </div>
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> stride <span class="green">/* buffer stride */</span> 
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">Provides information about wl_shm buffer parameters that need to be
+              <div class="f6 lh-copy ws-pre-line code mt3">Provides information about wl_shm buffer parameters that need to be
 used for this frame. This event is sent once after the frame is created
 if wl_shm buffers are supported.
 </div>
@@ -391,12 +391,12 @@ if wl_shm buffers are supported.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> flags <span class="green">/* frame flags */</span> 
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">Provides flags about the frame. This event is sent once before the
+              <div class="f6 lh-copy ws-pre-line code mt3">Provides flags about the frame. This event is sent once before the
 &quot;ready&quot; event.
 </div>
             </li>
@@ -413,20 +413,20 @@ if wl_shm buffers are supported.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> tv_sec_hi <span class="green">/* high 32 bits of the seconds part of the timestamp */</span> 
                 </div>
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> tv_sec_lo <span class="green">/* low 32 bits of the seconds part of the timestamp */</span> 
                 </div>
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> tv_nsec <span class="green">/* nanoseconds part of the timestamp */</span> 
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">Called as soon as the frame is copied, indicating it is available
+              <div class="f6 lh-copy ws-pre-line code mt3">Called as soon as the frame is copied, indicating it is available
 for reading. This event includes the time at which presentation happened
 at.
 
@@ -454,7 +454,7 @@ After receiving this event, the client should destroy the object.
 
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">This event indicates that the attempted frame copy has failed.
+              <div class="f6 lh-copy ws-pre-line code mt3">This event indicates that the attempted frame copy has failed.
 
 After receiving this event, the client should destroy the object.
 </div>
@@ -472,24 +472,24 @@ After receiving this event, the client should destroy the object.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> x <span class="green">/* damaged x coordinates */</span> 
                 </div>
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> y <span class="green">/* damaged y coordinates */</span> 
                 </div>
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> width <span class="green">/* current width */</span> 
                 </div>
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> height <span class="green">/* current height */</span> 
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">This event is sent right before the ready event when copy_with_damage is
+              <div class="f6 lh-copy ws-pre-line code mt3">This event is sent right before the ready event when copy_with_damage is
 requested. It may be generated multiple times for each copy_with_damage
 request.
 
@@ -514,20 +514,20 @@ and a ready event is the total damage since the prior ready event.
               </div>
 
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> format <span class="green">/* fourcc pixel format */</span> 
                 </div>
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> width <span class="green">/* buffer width */</span> 
                 </div>
               
-                <div class="courier">
+                <div class="f6 lh-copy code">
                   <span class="purple">uint32_t</span> height <span class="green">/* buffer height */</span> 
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">Provides information about linux-dmabuf buffer parameters that need to
+              <div class="f6 lh-copy ws-pre-line code mt3">Provides information about linux-dmabuf buffer parameters that need to
 be used for this frame. This event is sent once after the frame is
 created if linux-dmabuf buffers are supported.
 </div>
@@ -546,7 +546,7 @@ created if linux-dmabuf buffers are supported.
 
               
 
-              <div class="f6 lh-copy ws-pre-line courier mt2">This event is sent once after all buffer events have been sent.
+              <div class="f6 lh-copy ws-pre-line code mt3">This event is sent once after all buffer events have been sent.
 
 The client should proceed to create a buffer of one of the supported
 types, and send a &quot;copy&quot; request.
@@ -562,7 +562,7 @@ types, and send a &quot;copy&quot; request.
     </ul>
 
     <h2 class="f4 lh-title">Copyright Info</h2>
-    <div class="f7 lh-copy ws-pre-line courier">Copyright © 2018 Simon Ser
+    <div class="f7 lh-copy ws-pre-line code">Copyright © 2018 Simon Ser
 Copyright © 2019 Andri Yngvason
 
 Permission is hereby granted, free of charge, to any person obtaining a
