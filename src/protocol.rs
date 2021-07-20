@@ -21,7 +21,14 @@ impl Protocol {
             .map(|e| e.get_text().unwrap().to_string())
             .map(unindent_string);
 
-        let category = path.parent().unwrap().file_name().unwrap().to_str().unwrap().to_string();
+        let category = path
+            .parent()
+            .unwrap()
+            .file_name()
+            .unwrap()
+            .to_str()
+            .unwrap()
+            .to_string();
 
         Protocol {
             name,
@@ -69,7 +76,34 @@ pub struct Request {
 
 impl Request {
     pub fn from_element(element: &Element) -> Request {
-        let args = element_map(element, "arg", |a| Arg::from_element(&a));
+        let mut args = element_map(element, "arg", |a| Arg::from_element(&a));
+
+        // Magical extra arguments for wl_registry_bind
+        if args
+            .iter()
+            .any(|a| a.arg_type == "new_id" && a.interface == None)
+        {
+            args.push(Arg {
+                name: "interface".to_string(),
+                arg_type: "object".to_string(),
+                summary: None,
+                interface: Some("wl_interface".to_string()),
+                allow_null: None,
+                enum_name: None,
+                description: None,
+            });
+
+            args.push(Arg {
+                name: "version".to_string(),
+                arg_type: "uint".to_string(),
+                summary: None,
+                interface: None,
+                allow_null: None,
+                enum_name: None,
+                description: None,
+            });
+        }
+
         Request {
             name: get_attribute(element, "name"),
             request_type: get_optional_attribute(element, "type"),
