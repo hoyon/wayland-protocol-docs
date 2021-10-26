@@ -1,0 +1,648 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>kde_output_management_v2</title>
+
+    <link rel="stylesheet" href="&#x2f;wayland-protocol-docs/main.css">
+     
+  </head>
+  <body class="black-70 flex sans-serif ph4-l">
+    <div id="sidebar" class="w-20">
+      <div class="fixed vh-100 overflow-y-auto w-20">
+        <a href="&#x2f;wayland-protocol-docs/" class="f4 link near-black dim lh-title db mt3">
+          Home
+        </a>
+        
+  <div class="ph2">
+    
+
+<div>
+  <ul class="list pl0">
+  
+    <li>
+      <a href="#i:kde_output_management_v2" class="link blue underline-hover lh-copy">kde_output_management_v2</a>
+
+      
+        <div>
+          <a href="#rh:kde_output_management_v2" class="link blue underline-hover lh-copy pl3">Requests</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#r:kde_output_management_v2:create_configuration" class="link blue underline-hover lh-copy">create_configuration</a>
+          </li>
+          
+        </ul>
+      
+
+      
+      
+
+      
+      
+    </li>
+  
+    <li>
+      <a href="#i:kde_output_configuration_v2" class="link blue underline-hover lh-copy">kde_output_configuration_v2</a>
+
+      
+        <div>
+          <a href="#rh:kde_output_configuration_v2" class="link blue underline-hover lh-copy pl3">Requests</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#r:kde_output_configuration_v2:enable" class="link blue underline-hover lh-copy">enable</a>
+          </li>
+          
+          <li>
+            <a href="#r:kde_output_configuration_v2:mode" class="link blue underline-hover lh-copy">mode</a>
+          </li>
+          
+          <li>
+            <a href="#r:kde_output_configuration_v2:transform" class="link blue underline-hover lh-copy">transform</a>
+          </li>
+          
+          <li>
+            <a href="#r:kde_output_configuration_v2:position" class="link blue underline-hover lh-copy">position</a>
+          </li>
+          
+          <li>
+            <a href="#r:kde_output_configuration_v2:scale" class="link blue underline-hover lh-copy">scale</a>
+          </li>
+          
+          <li>
+            <a href="#r:kde_output_configuration_v2:apply" class="link blue underline-hover lh-copy">apply</a>
+          </li>
+          
+          <li>
+            <a href="#r:kde_output_configuration_v2:destroy" class="link blue underline-hover lh-copy">destroy</a>
+          </li>
+          
+          <li>
+            <a href="#r:kde_output_configuration_v2:overscan" class="link blue underline-hover lh-copy">overscan</a>
+          </li>
+          
+          <li>
+            <a href="#r:kde_output_configuration_v2:set_vrr_policy" class="link blue underline-hover lh-copy">set_vrr_policy</a>
+          </li>
+          
+          <li>
+            <a href="#r:kde_output_configuration_v2:set_rgb_range" class="link blue underline-hover lh-copy">set_rgb_range</a>
+          </li>
+          
+        </ul>
+      
+
+      
+        <div>
+          <a href="#eh:kde_output_configuration_v2" class="link blue underline-hover lh-copy pl3">Events</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#e:kde_output_configuration_v2:applied" class="link blue underline-hover lh-copy">applied</a>
+          </li>
+          
+          <li>
+            <a href="#e:kde_output_configuration_v2:failed" class="link blue underline-hover lh-copy">failed</a>
+          </li>
+          
+        </ul>
+      
+
+      
+        <div>
+          <a href="#enumh:kde_output_configuration_v2" class="link blue underline-hover lh-copy pl3">Enums</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#enum:kde_output_configuration_v2:vrr_policy" class="link blue underline-hover lh-copy">vrr_policy</a>
+          </li>
+          
+          <li>
+            <a href="#enum:kde_output_configuration_v2:rgb_range" class="link blue underline-hover lh-copy">rgb_range</a>
+          </li>
+          
+        </ul>
+      
+    </li>
+  
+  </ul>
+</div>
+  </div>
+
+      </div>
+    </div>
+
+    <main id="content" class="mh4 w-80">
+      
+  <div class="ph2">
+    <h1 class="f1 lh-title">kde_output_management_v2</h1>
+    <ul class="list pl0">
+      
+      <li class="mt4">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:kde_output_management_v2">
+          <a href="#i:kde_output_management_v2" class="link dim black-70 child pr2 absolute left--2">#</a>
+          kde_output_management_v2
+        </h2>
+        <div class="f6 lh-copy ws-pre-line code">This interface enables clients to set properties of output devices for screen
+configuration purposes via the server. To this end output devices are referenced
+by global kde_output_device_v2 objects.
+
+outputmanagement (wl_global)
+--------------------------
+request:
+* create_configuration -&gt; outputconfiguration (wl_resource)
+
+outputconfiguration (wl_resource)
+--------------------------
+requests:
+* enable(outputdevice, bool)
+* mode(outputdevice, mode)
+* transformation(outputdevice, flag)
+* position(outputdevice, x, y)
+* apply
+
+events:
+* applied
+* failed
+
+The server registers one outputmanagement object as a global object. In order
+to configure outputs a client requests create_configuration, which provides a
+resource referencing an outputconfiguration for one-time configuration. That
+way the server knows which requests belong together and can group them by that.
+
+On the outputconfiguration object the client calls for each output whether the
+output should be enabled, which mode should be set (by referencing the mode from
+the list of announced modes) and the output&#x27;s global position. Once all outputs
+are configured that way, the client calls apply.
+At that point and not earlier the server should try to apply the configuration.
+If this succeeds the server emits the applied signal, otherwise the failed
+signal, such that the configuring client is noticed about the success of its
+configuration request.
+
+Through this design the interface enables atomic output configuration changes if
+internally supported by the server.
+
+</div>
+
+        
+          <h3 class=" f5 lh-title" id="rh:kde_output_management_v2">Requests</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:kde_output_management_v2:create_configuration">
+                <a href="#r:kde_output_management_v2:create_configuration" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  create_configuration
+                </div>
+                <div class="f5 ml2">
+                  provide outputconfiguration object for configuring outputs
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>struct kde_output_configuration_v2* </span><span class="dark-blue">kde_output_management_v2_create_configuration</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct kde_output_management_v2*</span> kde_output_management_v2</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Request an outputconfiguration object through which the client can configure
+output devices.
+</div>
+            </li>
+            
+          </ul>
+        
+
+        
+
+        
+
+        
+
+        
+
+      </li>
+      
+      <li class="mt4">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:kde_output_configuration_v2">
+          <a href="#i:kde_output_configuration_v2" class="link dim black-70 child pr2 absolute left--2">#</a>
+          kde_output_configuration_v2
+        </h2>
+        <div class="f6 lh-copy ws-pre-line code">outputconfiguration is a client-specific resource that can be used to ask
+the server to apply changes to available output devices.
+
+The client receives a list of output devices from the registry. When it wants
+to apply new settings, it creates a configuration object from the
+outputmanagement global, writes changes through this object&#x27;s enable, scale,
+transform and mode calls. It then asks the server to apply these settings in
+an atomic fashion, for example through Linux&#x27; DRM interface.
+
+The server signals back whether the new settings have applied successfully
+or failed to apply. outputdevice objects are updated after the changes have been
+applied to the hardware and before the server side sends the applied event.
+</div>
+
+        
+          <h3 class=" f5 lh-title" id="rh:kde_output_configuration_v2">Requests</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:kde_output_configuration_v2:enable">
+                <a href="#r:kde_output_configuration_v2:enable" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  enable
+                </div>
+                <div class="f5 ml2">
+                  enable or disable an output
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">kde_output_configuration_v2_enable</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct kde_output_configuration_v2*</span> kde_output_configuration_v2,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct kde_output_device_v2*</span> outputdevice, <span class="green">/* outputdevice to be en- or disabled */</span></div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> enable <span class="green">/* 1 to enable or 0 to disable this output */</span></div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Mark the output as enabled or disabled.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:kde_output_configuration_v2:mode">
+                <a href="#r:kde_output_configuration_v2:mode" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  mode
+                </div>
+                <div class="f5 ml2">
+                  switch output-device to mode
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">kde_output_configuration_v2_mode</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct kde_output_configuration_v2*</span> kde_output_configuration_v2,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct kde_output_device_v2*</span> outputdevice, <span class="green">/* outputdevice this mode change applies to */</span></div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct kde_output_device_mode_v2*</span> mode <span class="green">/* the mode to apply */</span></div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Sets the mode for a given output.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:kde_output_configuration_v2:transform">
+                <a href="#r:kde_output_configuration_v2:transform" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  transform
+                </div>
+                <div class="f5 ml2">
+                  transform output-device
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">kde_output_configuration_v2_transform</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct kde_output_configuration_v2*</span> kde_output_configuration_v2,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct kde_output_device_v2*</span> outputdevice, <span class="green">/* outputdevice this transformation change applies to */</span></div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> transform <span class="green">/* transform enum */</span></div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Sets the transformation for a given output.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:kde_output_configuration_v2:position">
+                <a href="#r:kde_output_configuration_v2:position" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  position
+                </div>
+                <div class="f5 ml2">
+                  position output in global space
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">kde_output_configuration_v2_position</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct kde_output_configuration_v2*</span> kde_output_configuration_v2,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct kde_output_device_v2*</span> outputdevice, <span class="green">/* outputdevice this position applies to */</span></div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> x, <span class="green">/* position on the x-axis */</span></div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> y <span class="green">/* position on the y-axis */</span></div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Sets the position for this output device. (x,y) describe the top-left corner
+of the output in global space, whereby the origin (0,0) of the global space
+has to be aligned with the top-left corner of the most left and in case this
+does not define a single one the top output.
+
+There may be no gaps or overlaps between outputs, i.e. the outputs are
+stacked horizontally, vertically, or both on each other.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:kde_output_configuration_v2:scale">
+                <a href="#r:kde_output_configuration_v2:scale" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  scale
+                </div>
+                <div class="f5 ml2">
+                  set scaling factor of this output
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">kde_output_configuration_v2_scale</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct kde_output_configuration_v2*</span> kde_output_configuration_v2,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct kde_output_device_v2*</span> outputdevice, <span class="green">/* outputdevice this scale change applies to */</span></div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">wl_fixed_t</span> scale <span class="green">/* scaling factor */</span></div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Sets the scaling factor for this output device.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:kde_output_configuration_v2:apply">
+                <a href="#r:kde_output_configuration_v2:apply" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  apply
+                </div>
+                <div class="f5 ml2">
+                  apply configuration changes to all output devices
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">kde_output_configuration_v2_apply</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct kde_output_configuration_v2*</span> kde_output_configuration_v2</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Asks the server to apply property changes requested through this outputconfiguration
+object to all outputs on the server side.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:kde_output_configuration_v2:destroy">
+                <a href="#r:kde_output_configuration_v2:destroy" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  destroy
+                </div>
+                <div class="f5 ml2">
+                  release the outputconfiguration object
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">kde_output_configuration_v2_destroy</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct kde_output_configuration_v2*</span> kde_output_configuration_v2</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code"></div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:kde_output_configuration_v2:overscan">
+                <a href="#r:kde_output_configuration_v2:overscan" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  overscan
+                </div>
+                <div class="f5 ml2">
+                  set overscan value
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">kde_output_configuration_v2_overscan</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct kde_output_configuration_v2*</span> kde_output_configuration_v2,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct kde_output_device_v2*</span> outputdevice, <span class="green">/* outputdevice overscan applies to */</span></div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> overscan <span class="green">/* overscan value */</span></div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Set the overscan value of this output device with a value in percent.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:kde_output_configuration_v2:set_vrr_policy">
+                <a href="#r:kde_output_configuration_v2:set_vrr_policy" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  set_vrr_policy
+                </div>
+                <div class="f5 ml2">
+                  set the VRR policy
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">kde_output_configuration_v2_set_vrr_policy</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct kde_output_configuration_v2*</span> kde_output_configuration_v2,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct kde_output_device_v2*</span> outputdevice, <span class="green">/* outputdevice this VRR policy applies to */</span></div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> policy <span class="green">/* the vrr policy to apply */</span></div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Set what policy the compositor should employ regarding its use of
+variable refresh rate.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:kde_output_configuration_v2:set_rgb_range">
+                <a href="#r:kde_output_configuration_v2:set_rgb_range" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  set_rgb_range
+                </div>
+                <div class="f5 ml2">
+                  RGB range
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">kde_output_configuration_v2_set_rgb_range</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct kde_output_configuration_v2*</span> kde_output_configuration_v2,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct kde_output_device_v2*</span> outputdevice, <span class="green">/* outputdevice the rgb range applies to */</span></div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> rgb_range</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Whether full or limited color range should be used
+</div>
+            </li>
+            
+          </ul>
+        
+
+        
+          <h3 class=" f5 lh-title" id="eh:kde_output_configuration_v2">Events</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:kde_output_configuration_v2:applied">
+                <a href="#e:kde_output_configuration_v2:applied" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  applied
+                </div>
+                <div class="f5 ml2">
+                  configuration changes have been applied
+                </div>
+              </div>
+
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">Sent after the server has successfully applied the changes.
+.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:kde_output_configuration_v2:failed">
+                <a href="#e:kde_output_configuration_v2:failed" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  failed
+                </div>
+                <div class="f5 ml2">
+                  configuration changes failed to apply
+                </div>
+              </div>
+
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">Sent if the server rejects the changes or failed to apply them.
+</div>
+            </li>
+            
+          </ul>
+
+        
+
+        
+          <h3 class=" f5 lh-title" id="enumh:kde_output_configuration_v2">Enums</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="enum:kde_output_configuration_v2:vrr_policy">
+                <a href="#enum:kde_output_configuration_v2:vrr_policy" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  vrr_policy
+                </div>
+                <div class="f5 ml2">
+                  describes vrr policy
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  KDE_OUTPUT_CONFIGURATION_V2_VRR_POLICY_NEVER  
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  KDE_OUTPUT_CONFIGURATION_V2_VRR_POLICY_ALWAYS  
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  KDE_OUTPUT_CONFIGURATION_V2_VRR_POLICY_AUTOMATIC  
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">Describes when the compositor may employ variable refresh rate
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="enum:kde_output_configuration_v2:rgb_range">
+                <a href="#enum:kde_output_configuration_v2:rgb_range" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  rgb_range
+                </div>
+                <div class="f5 ml2">
+                  describes RGB range policy
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  KDE_OUTPUT_CONFIGURATION_V2_RGB_RANGE_AUTOMATIC  
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  KDE_OUTPUT_CONFIGURATION_V2_RGB_RANGE_FULL  
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  KDE_OUTPUT_CONFIGURATION_V2_RGB_RANGE_LIMITED  
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">Whether this output should use full or limited rgb.
+</div>
+            </li>
+            
+          </ul>
+
+        
+
+      </li>
+      
+    </ul>
+
+    <h2 class="f4 lh-title">Copyright Info</h2>
+    <div class="f7 lh-copy ws-pre-line code">SPDX-FileCopyrightText: 2008-2011 Kristian Høgsberg
+SPDX-FileCopyrightText: 2010-2011 Intel Corporation
+SPDX-FileCopyrightText: 2012-2013 Collabora, Ltd.
+SPDX-FileCopyrightText: 2015 Sebastian Kügler &lt;sebas@kde.org&gt;
+SPDX-FileCopyrightText: 2021 Méven Car &lt;meven.car@enioka.com&gt;
+
+SPDX-License-Identifier: MIT-CMU
+</div>
+  </div>
+
+    </main>
+
+  </body>
+</html>

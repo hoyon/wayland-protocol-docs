@@ -43,6 +43,10 @@
             <a href="#r:zkde_screencast_unstable_v1:destroy" class="link blue underline-hover lh-copy">destroy</a>
           </li>
           
+          <li>
+            <a href="#r:zkde_screencast_unstable_v1:stream_virtual_output" class="link blue underline-hover lh-copy">stream_virtual_output</a>
+          </li>
+          
         </ul>
       
 
@@ -200,6 +204,37 @@
 </div>
             </li>
             
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zkde_screencast_unstable_v1:stream_virtual_output">
+                <a href="#r:zkde_screencast_unstable_v1:stream_virtual_output" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  stream_virtual_output
+                </div>
+                <div class="f5 ml2">
+                  requests a feed from a new virtual output
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>struct zkde_screencast_stream_unstable_v1* </span><span class="dark-blue">zkde_screencast_unstable_v1_stream_virtual_output</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zkde_screencast_unstable_v1*</span> zkde_screencast_unstable_v1,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">const char*</span> name, <span class="green">/* name of the created output */</span></div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> width, <span class="green">/* Logical width resolution */</span></div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> height, <span class="green">/* Logical height resolution */</span></div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">wl_fixed_t</span> scale, <span class="green">/* Scaling factor of the display where it&#x27;s to be displayed */</span></div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> pointer <span class="green">/* Requested pointer mode */</span></div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code"></div>
+            </li>
+            
           </ul>
         
 
@@ -353,7 +388,7 @@
     </ul>
 
     <h2 class="f4 lh-title">Copyright Info</h2>
-    <div class="f7 lh-copy ws-pre-line code">  SPDX-FileCopyrightText: 2020 Aleix Pol Gonzalez &lt;aleixpol@kde.org&gt;
+    <div class="f7 lh-copy ws-pre-line code">  SPDX-FileCopyrightText: 2020-2021 Aleix Pol Gonzalez &lt;aleixpol@kde.org&gt;
 
 SPDX-License-Identifier: LGPL-2.1-or-later
 </div>

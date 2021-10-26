@@ -158,6 +158,10 @@
             <a href="#r:org_kde_plasma_window:request_leave_activity" class="link blue underline-hover lh-copy">request_leave_activity</a>
           </li>
           
+          <li>
+            <a href="#r:org_kde_plasma_window:send_to_output" class="link blue underline-hover lh-copy">send_to_output</a>
+          </li>
+          
         </ul>
       
 
@@ -229,6 +233,76 @@
           
           <li>
             <a href="#e:org_kde_plasma_window:activity_left" class="link blue underline-hover lh-copy">activity_left</a>
+          </li>
+          
+        </ul>
+      
+
+      
+      
+    </li>
+  
+    <li>
+      <a href="#i:org_kde_plasma_activation_feedback" class="link blue underline-hover lh-copy">org_kde_plasma_activation_feedback</a>
+
+      
+        <div>
+          <a href="#rh:org_kde_plasma_activation_feedback" class="link blue underline-hover lh-copy pl3">Requests</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#r:org_kde_plasma_activation_feedback:destroy" class="link blue underline-hover lh-copy">destroy</a>
+          </li>
+          
+        </ul>
+      
+
+      
+        <div>
+          <a href="#eh:org_kde_plasma_activation_feedback" class="link blue underline-hover lh-copy pl3">Events</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#e:org_kde_plasma_activation_feedback:activation" class="link blue underline-hover lh-copy">activation</a>
+          </li>
+          
+        </ul>
+      
+
+      
+      
+    </li>
+  
+    <li>
+      <a href="#i:org_kde_plasma_activation" class="link blue underline-hover lh-copy">org_kde_plasma_activation</a>
+
+      
+        <div>
+          <a href="#rh:org_kde_plasma_activation" class="link blue underline-hover lh-copy pl3">Requests</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#r:org_kde_plasma_activation:destroy" class="link blue underline-hover lh-copy">destroy</a>
+          </li>
+          
+        </ul>
+      
+
+      
+        <div>
+          <a href="#eh:org_kde_plasma_activation" class="link blue underline-hover lh-copy pl3">Events</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#e:org_kde_plasma_activation:app_id" class="link blue underline-hover lh-copy">app_id</a>
+          </li>
+          
+          <li>
+            <a href="#e:org_kde_plasma_activation:finished" class="link blue underline-hover lh-copy">finished</a>
           </li>
           
         </ul>
@@ -951,6 +1025,30 @@ it will create a new virtual desktop and assign the window to it.
 </div>
             </li>
             
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:org_kde_plasma_window:send_to_output">
+                <a href="#r:org_kde_plasma_window:send_to_output" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  send_to_output
+                </div>
+                <div class="f5 ml2">
+                  send window to specified output
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">org_kde_plasma_window_send_to_output</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct org_kde_plasma_window*</span> org_kde_plasma_window,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_output*</span> output</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Requests this window to be displayed in a specific output.
+</div>
+            </li>
+            
           </ul>
         
 
@@ -1317,6 +1415,169 @@ for the window has changed.
               <div class="f6 lh-copy ws-pre-line code mt3">This event will be sent when the window left an activity. If the window leaves all activities, it will be considered on all.
 If the window gets manually added on all activities, the server has to send activity_left for every previous activity it was in for the window to be really considered on all activities.
 </div>
+            </li>
+            
+          </ul>
+
+        
+
+        
+
+        
+
+      </li>
+      
+      <li class="mt4">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:org_kde_plasma_activation_feedback">
+          <a href="#i:org_kde_plasma_activation_feedback" class="link dim black-70 child pr2 absolute left--2">#</a>
+          org_kde_plasma_activation_feedback
+        </h2>
+        <div class="f6 lh-copy ws-pre-line code">The activation manager interface provides a way to get notified
+when an application is about to be activated.
+</div>
+
+        
+          <h3 class=" f5 lh-title" id="rh:org_kde_plasma_activation_feedback">Requests</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:org_kde_plasma_activation_feedback:destroy">
+                <a href="#r:org_kde_plasma_activation_feedback:destroy" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  destroy
+                </div>
+                <div class="f5 ml2">
+                  destroy the activation manager object
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">org_kde_plasma_activation_feedback_destroy</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct org_kde_plasma_activation_feedback*</span> org_kde_plasma_activation_feedback</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Destroy the activation manager object. The activation objects introduced
+by this manager object will be unaffected.
+</div>
+            </li>
+            
+          </ul>
+        
+
+        
+          <h3 class=" f5 lh-title" id="eh:org_kde_plasma_activation_feedback">Events</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:org_kde_plasma_activation_feedback:activation">
+                <a href="#e:org_kde_plasma_activation_feedback:activation" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  activation
+                </div>
+                <div class="f5 ml2">
+                  notify that an app is starting
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  <span class="purple">struct org_kde_plasma_activation*</span> id  
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">Will be issued when an app is set to be activated. It offers
+an instance of org_kde_plasma_activation that will tell us the app_id
+and the extent of the activation.
+</div>
+            </li>
+            
+          </ul>
+
+        
+
+        
+
+        
+
+      </li>
+      
+      <li class="mt4">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:org_kde_plasma_activation">
+          <a href="#i:org_kde_plasma_activation" class="link dim black-70 child pr2 absolute left--2">#</a>
+          org_kde_plasma_activation
+        </h2>
+        <div class="f6 lh-copy ws-pre-line code"></div>
+
+        
+          <h3 class=" f5 lh-title" id="rh:org_kde_plasma_activation">Requests</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:org_kde_plasma_activation:destroy">
+                <a href="#r:org_kde_plasma_activation:destroy" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  destroy
+                </div>
+                <div class="f5 ml2">
+                  destroy the org_kde_plasma_activation object
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">org_kde_plasma_activation_destroy</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct org_kde_plasma_activation*</span> org_kde_plasma_activation</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Notify the compositor that the org_kde_plasma_activation object will no
+longer be used.
+</div>
+            </li>
+            
+          </ul>
+        
+
+        
+          <h3 class=" f5 lh-title" id="eh:org_kde_plasma_activation">Events</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:org_kde_plasma_activation:app_id">
+                <a href="#e:org_kde_plasma_activation:app_id" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  app_id
+                </div>
+                <div class="f5 ml2">
+                  Offers the app_id
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  <span class="purple">const char*</span> app_id <span class="green">/* application id, as described in xdg_activation_v1 */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3"></div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:org_kde_plasma_activation:finished">
+                <a href="#e:org_kde_plasma_activation:finished" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  finished
+                </div>
+                <div class="f5 ml2">
+                  Notifies about activation finished, either by activation or because it got invalidated
+                </div>
+              </div>
+
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3"></div>
             </li>
             
           </ul>

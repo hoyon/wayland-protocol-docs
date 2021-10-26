@@ -82,6 +82,14 @@
             <a href="#r:org_kde_kwin_contrast:release" class="link blue underline-hover lh-copy">release</a>
           </li>
           
+          <li>
+            <a href="#r:org_kde_kwin_contrast:set_frost" class="link blue underline-hover lh-copy">set_frost</a>
+          </li>
+          
+          <li>
+            <a href="#r:org_kde_kwin_contrast:unset_frost" class="link blue underline-hover lh-copy">unset_frost</a>
+          </li>
+          
         </ul>
       
 
@@ -312,6 +320,64 @@
               
 <div class="f6 lh-copy code">
   <span>void </span><span class="dark-blue">org_kde_kwin_contrast_release</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct org_kde_kwin_contrast*</span> org_kde_kwin_contrast</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code"></div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:org_kde_kwin_contrast:set_frost">
+                <a href="#r:org_kde_kwin_contrast:set_frost" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  set_frost
+                </div>
+                <div class="f5 ml2">
+                  opt into frost effect w&#x2f; given colour
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">org_kde_kwin_contrast_set_frost</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct org_kde_kwin_contrast*</span> org_kde_kwin_contrast,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> red,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> green,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> blue,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> alpha</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">enables &#x27;frost&#x27; variant of contrast effect.
+
+&#x27;frost&#x27; is an enhanced version of the contrast effect that
+uses different colour arithmetic to get backgrounds simultaneously
+higher in contrast and (apparent) transparency.
+
+r, g, b, a are channels from 0-255, indicating a colour to use in contrast calculation.
+should be based off of the &quot;main&quot; background colour of the surface.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:org_kde_kwin_contrast:unset_frost">
+                <a href="#r:org_kde_kwin_contrast:unset_frost" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  unset_frost
+                </div>
+                <div class="f5 ml2">
+                  opts out of frost effect
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">org_kde_kwin_contrast_unset_frost</span>(
     
       <div class="ws-pre-wrap">    <span class="purple">struct org_kde_kwin_contrast*</span> org_kde_kwin_contrast</div>
     
