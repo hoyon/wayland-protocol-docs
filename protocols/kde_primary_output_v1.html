@@ -1,0 +1,119 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>kde_primary_output_v1</title>
+
+    <link rel="stylesheet" href="&#x2f;wayland-protocol-docs/main.css">
+     
+  </head>
+  <body class="black-70 flex sans-serif ph4-l">
+    <div id="sidebar" class="w-20">
+      <div class="fixed vh-100 overflow-y-auto w-20">
+        <a href="&#x2f;wayland-protocol-docs/" class="f4 link near-black dim lh-title db mt3">
+          Home
+        </a>
+        
+  <div class="ph2">
+    
+
+<div>
+  <ul class="list pl0">
+  
+    <li>
+      <a href="#i:kde_primary_output_v1" class="link blue underline-hover lh-copy">kde_primary_output_v1</a>
+
+      
+      
+
+      
+        <div>
+          <a href="#eh:kde_primary_output_v1" class="link blue underline-hover lh-copy pl3">Events</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#e:kde_primary_output_v1:primary_output" class="link blue underline-hover lh-copy">primary_output</a>
+          </li>
+          
+        </ul>
+      
+
+      
+      
+    </li>
+  
+  </ul>
+</div>
+  </div>
+
+      </div>
+    </div>
+
+    <main id="content" class="mh4 w-80">
+      
+  <div class="ph2">
+    <h1 class="f1 lh-title">kde_primary_output_v1</h1>
+    <ul class="list pl0">
+      
+      <li class="mt4">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:kde_primary_output_v1">
+          <a href="#i:kde_primary_output_v1" class="link dim black-70 child pr2 absolute left--2">#</a>
+          kde_primary_output_v1
+        </h2>
+        <div class="f6 lh-copy ws-pre-line code">Protocol for telling which is the primary display among the selection of enabled outputs.
+</div>
+
+        
+        
+
+        
+          <h3 class=" f5 lh-title" id="eh:kde_primary_output_v1">Events</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:kde_primary_output_v1:primary_output">
+                <a href="#e:kde_primary_output_v1:primary_output" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  primary_output
+                </div>
+                <div class="f5 ml2">
+                  Provide the current primary output&#x27;s name
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  <span class="purple">const char*</span> output_name <span class="green">/* the name of the output */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">Specifies which output is the primary one identified by their uuid. See kde_output_device_v2 uuid event for more information about it.
+</div>
+            </li>
+            
+          </ul>
+
+        
+
+        
+
+        
+
+      </li>
+      
+    </ul>
+
+    <h2 class="f4 lh-title">Copyright Info</h2>
+    <div class="f7 lh-copy ws-pre-line code">SPDX-FileCopyrightText: 2021 Aleix Pol Gonzalez &lt;aleixpol@kde.org&gt;
+
+SPDX-License-Identifier: MIT-CMU
+</div>
+  </div>
+
+    </main>
+
+  </body>
+</html>
