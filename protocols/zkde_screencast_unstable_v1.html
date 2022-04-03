@@ -47,6 +47,10 @@
             <a href="#r:zkde_screencast_unstable_v1:stream_virtual_output" class="link blue underline-hover lh-copy">stream_virtual_output</a>
           </li>
           
+          <li>
+            <a href="#r:zkde_screencast_unstable_v1:stream_region" class="link blue underline-hover lh-copy">stream_region</a>
+          </li>
+          
         </ul>
       
 
@@ -227,6 +231,39 @@
       <div class="ws-pre-wrap">    <span class="purple">int32_t</span> height, <span class="green">/* Logical height resolution */</span></div>
     
       <div class="ws-pre-wrap">    <span class="purple">wl_fixed_t</span> scale, <span class="green">/* Scaling factor of the display where it&#x27;s to be displayed */</span></div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> pointer <span class="green">/* Requested pointer mode */</span></div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code"></div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zkde_screencast_unstable_v1:stream_region">
+                <a href="#r:zkde_screencast_unstable_v1:stream_region" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  stream_region
+                </div>
+                <div class="f5 ml2">
+                  requests a feed from region in the workspace
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>struct zkde_screencast_stream_unstable_v1* </span><span class="dark-blue">zkde_screencast_unstable_v1_stream_region</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zkde_screencast_unstable_v1*</span> zkde_screencast_unstable_v1,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> x, <span class="green">/* Logical left position */</span></div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> y, <span class="green">/* Logical top position */</span></div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> width, <span class="green">/* Logical width resolution */</span></div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> height, <span class="green">/* Logical height resolution */</span></div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">wl_fixed_t</span> scale, <span class="green">/* Scaling factor of the output recording */</span></div>
     
       <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> pointer <span class="green">/* Requested pointer mode */</span></div>
     

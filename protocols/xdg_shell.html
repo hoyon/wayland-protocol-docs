@@ -299,6 +299,10 @@
             <a href="#e:xdg_toplevel:close" class="link blue underline-hover lh-copy">close</a>
           </li>
           
+          <li>
+            <a href="#e:xdg_toplevel:configure_bounds" class="link blue underline-hover lh-copy">configure_bounds</a>
+          </li>
+          
         </ul>
       
 
@@ -307,6 +311,10 @@
           <a href="#enumh:xdg_toplevel" class="link blue underline-hover lh-copy pl3">Enums</a>
         </div>
         <ul class="list pl4">
+          
+          <li>
+            <a href="#enum:xdg_toplevel:error" class="link blue underline-hover lh-copy">error</a>
+          </li>
           
           <li>
             <a href="#enum:xdg_toplevel:resize_edge" class="link blue underline-hover lh-copy">resize_edge</a>
@@ -1762,12 +1770,13 @@ such as updating a pointer cursor, during the resize. There is no
 guarantee that the device focus will return when the resize is
 completed.
 
-The edges parameter specifies how the surface should be resized,
-and is one of the values of the resize_edge enum. The compositor
-may use this information to update the surface position for
-example when dragging the top left corner. The compositor may also
-use this information to adapt its behavior, e.g. choose an
-appropriate cursor image.
+The edges parameter specifies how the surface should be resized, and
+is one of the values of the resize_edge enum. Values not matching
+a variant of the enum will cause a protocol error. The compositor
+may use this information to update the surface position for example
+when dragging the top left corner. The compositor may also use
+this information to adapt its behavior, e.g. choose an appropriate
+cursor image.
   </div>
             </li>
             
@@ -2162,6 +2171,45 @@ a dialog to ask the user to save their data, etc.
   </div>
             </li>
             
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:xdg_toplevel:configure_bounds">
+                <a href="#e:xdg_toplevel:configure_bounds" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  configure_bounds
+                </div>
+                <div class="f5 ml2">
+                  recommended window geometry bounds
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  <span class="purple">int32_t</span> width  
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  <span class="purple">int32_t</span> height  
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">The configure_bounds event may be sent prior to a xdg_toplevel.configure
+event to communicate the bounds a window geometry size is recommended
+to constrain to.
+
+The passed width and height are in surface coordinate space. If width
+and height are 0, it means bounds is unknown and equivalent to as if no
+configure_bounds event was ever sent for this surface.
+
+The bounds can for example correspond to the size of a monitor excluding
+any panels or other shell components, so that a surface isn&#x27;t created in
+a way that it cannot fit.
+
+The bounds may change at any point, and in such a case, a new
+xdg_toplevel.configure_bounds will be sent, followed by
+xdg_toplevel.configure and xdg_surface.configure.
+  </div>
+            </li>
+            
           </ul>
 
         
@@ -2169,6 +2217,27 @@ a dialog to ask the user to save their data, etc.
         
           <h3 class=" f5 lh-title" id="enumh:xdg_toplevel">Enums</h3>
           <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="enum:xdg_toplevel:error">
+                <a href="#enum:xdg_toplevel:error" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  error
+                </div>
+                <div class="f5 ml2">
+                  
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  XDG_TOPLEVEL_ERROR_INVALID_RESIZE_EDGE  <span class="green">/* provided value is
+        not a valid variant of the resize_edge enum */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3"></div>
+            </li>
             
             <li class="mt3">
               <div class="flex items-baseline lh-title mb2 hide-child relative" id="enum:xdg_toplevel:resize_edge">
