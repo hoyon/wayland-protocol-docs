@@ -303,6 +303,10 @@
             <a href="#e:xdg_toplevel:configure_bounds" class="link blue underline-hover lh-copy">configure_bounds</a>
           </li>
           
+          <li>
+            <a href="#e:xdg_toplevel:wm_capabilities" class="link blue underline-hover lh-copy">wm_capabilities</a>
+          </li>
+          
         </ul>
       
 
@@ -322,6 +326,10 @@
           
           <li>
             <a href="#enum:xdg_toplevel:state" class="link blue underline-hover lh-copy">state</a>
+          </li>
+          
+          <li>
+            <a href="#enum:xdg_toplevel:wm_capabilities" class="link blue underline-hover lh-copy">wm_capabilities</a>
           </li>
           
         </ul>
@@ -1549,19 +1557,19 @@ see &quot;Unmapping&quot; behavior in interface section for details.
               <div class="f6 lh-copy ws-pre-line code">Set the &quot;parent&quot; of this surface. This surface should be stacked
 above the parent surface and all other ancestor surfaces.
 
-Parent windows should be set on dialogs, toolboxes, or other
+Parent surfaces should be set on dialogs, toolboxes, or other
 &quot;auxiliary&quot; surfaces, so that the parent is raised when the dialog
 is raised.
 
-Setting a null parent for a child window removes any parent-child
-relationship for the child. Setting a null parent for a window which
-currently has no parent is a no-op.
+Setting a null parent for a child surface unsets its parent. Setting
+a null parent for a surface which currently has no parent is a no-op.
 
-If the parent is unmapped then its children are managed as
-though the parent of the now-unmapped parent has become the
-parent of this surface. If no parent exists for the now-unmapped
-parent then the children are managed as though they have no
-parent surface.
+Only mapped surfaces can have child surfaces. Setting a parent which
+is not mapped is equivalent to setting a null parent. If a surface
+becomes unmapped, its children&#x27;s parent is set to the parent of
+the now-unmapped surface. If the now-unmapped surface has no parent,
+its children&#x27;s parent is unset. If the now-unmapped surface becomes
+mapped again, its parent-child relationship is not restored.
   </div>
             </li>
             
@@ -2210,6 +2218,46 @@ xdg_toplevel.configure and xdg_surface.configure.
   </div>
             </li>
             
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:xdg_toplevel:wm_capabilities">
+                <a href="#e:xdg_toplevel:wm_capabilities" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  wm_capabilities
+                </div>
+                <div class="f5 ml2">
+                  compositor capabilities
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  <span class="purple">struct wl_array*</span> capabilities <span class="green">/* array of 32-bit capabilities */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">This event advertises the capabilities supported by the compositor. If
+a capability isn&#x27;t supported, clients should hide or disable the UI
+elements that expose this functionality. For instance, if the
+compositor doesn&#x27;t advertise support for minimized toplevels, a button
+triggering the set_minimized request should not be displayed.
+
+The compositor will ignore requests it doesn&#x27;t support. For instance,
+a compositor which doesn&#x27;t advertise support for minimized will ignore
+set_minimized requests.
+
+Compositors must send this event once before the first
+xdg_surface.configure event. When the capabilities change, compositors
+must send this event again and then send an xdg_surface.configure
+event.
+
+The configured state should not be applied immediately. See
+xdg_surface.configure for details.
+
+The capabilities are sent as an array of 32-bit unsigned integers in
+native endianness.
+  </div>
+            </li>
+            
           </ul>
 
         
@@ -2348,6 +2396,38 @@ the next commit.
   </div>
             </li>
             
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="enum:xdg_toplevel:wm_capabilities">
+                <a href="#enum:xdg_toplevel:wm_capabilities" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  wm_capabilities
+                </div>
+                <div class="f5 ml2">
+                  
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  XDG_TOPLEVEL_WM_CAPABILITIES_WINDOW_MENU  <span class="green">/* show_window_menu is available */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  XDG_TOPLEVEL_WM_CAPABILITIES_MAXIMIZE  <span class="green">/* set_maximized and unset_maximized are available */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  XDG_TOPLEVEL_WM_CAPABILITIES_FULLSCREEN  <span class="green">/* set_fullscreen and unset_fullscreen are available */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  XDG_TOPLEVEL_WM_CAPABILITIES_MINIMIZE  <span class="green">/* set_minimized is available */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3"></div>
+            </li>
+            
           </ul>
 
         
@@ -2462,10 +2542,6 @@ topmost one.
 When compositors choose to dismiss a popup, they may dismiss every
 nested grabbing popup as well. When a compositor dismisses popups, it
 will follow the same dismissing order as required from the client.
-
-The parent of a grabbing popup must either be another xdg_popup with an
-active explicit grab, or an xdg_popup or xdg_toplevel, if there are no
-explicit grabs already taken.
 
 If the topmost grabbing popup is destroyed, the grab will be returned to
 the parent of the popup, if that parent previously had an explicit grab.

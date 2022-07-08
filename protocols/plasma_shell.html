@@ -94,6 +94,10 @@
             <a href="#r:org_kde_plasma_surface:set_skip_switcher" class="link blue underline-hover lh-copy">set_skip_switcher</a>
           </li>
           
+          <li>
+            <a href="#r:org_kde_plasma_surface:open_under_cursor" class="link blue underline-hover lh-copy">open_under_cursor</a>
+          </li>
+          
         </ul>
       
 
@@ -577,6 +581,29 @@ org_kde_plasma_surface.
 </div>
             </li>
             
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:org_kde_plasma_surface:open_under_cursor">
+                <a href="#r:org_kde_plasma_surface:open_under_cursor" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  open_under_cursor
+                </div>
+                <div class="f5 ml2">
+                  open under cursor
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">org_kde_plasma_surface_open_under_cursor</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct org_kde_plasma_surface*</span> org_kde_plasma_surface</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Request the initial position of this surface to be under the current
+cursor position. Has to be called before attaching any buffer to this surface.
+</div>
+            </li>
+            
           </ul>
         
 
@@ -664,6 +691,10 @@ org_kde_plasma_surface.
               
                 <div class="f6 lh-copy code">
                   ORG_KDE_PLASMA_SURFACE_ROLE_CRITICALNOTIFICATION  
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  ORG_KDE_PLASMA_SURFACE_ROLE_APPLETPOPUP  
                 </div>
               
 

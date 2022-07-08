@@ -235,6 +235,10 @@
             <a href="#e:org_kde_plasma_window:activity_left" class="link blue underline-hover lh-copy">activity_left</a>
           </li>
           
+          <li>
+            <a href="#e:org_kde_plasma_window:resource_name_changed" class="link blue underline-hover lh-copy">resource_name_changed</a>
+          </li>
+          
         </ul>
       
 
@@ -1414,6 +1418,28 @@ for the window has changed.
 
               <div class="f6 lh-copy ws-pre-line code mt3">This event will be sent when the window left an activity. If the window leaves all activities, it will be considered on all.
 If the window gets manually added on all activities, the server has to send activity_left for every previous activity it was in for the window to be really considered on all activities.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:org_kde_plasma_window:resource_name_changed">
+                <a href="#e:org_kde_plasma_window:resource_name_changed" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  resource_name_changed
+                </div>
+                <div class="f5 ml2">
+                  X11 resource name has changed
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  <span class="purple">const char*</span> resource_name <span class="green">/* resource name */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">This event will be sent when the X11 resource name of the window has changed.
+This is only set for XWayland windows.
 </div>
             </li>
             
