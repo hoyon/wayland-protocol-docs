@@ -1,0 +1,184 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>kde_lockscreen_overlay_v1</title>
+
+    <link rel="stylesheet" href="&#x2f;wayland-protocol-docs/main.css">
+     
+  </head>
+  <body class="black-70 flex sans-serif ph4-l">
+    <div id="sidebar" class="w-20">
+      <div class="fixed vh-100 overflow-y-auto w-20">
+        <a href="&#x2f;wayland-protocol-docs/" class="f4 link near-black dim lh-title db mt3">
+          Home
+        </a>
+        
+  <div class="ph2">
+    
+
+<div>
+  <ul class="list pl0">
+  
+    <li>
+      <a href="#i:kde_lockscreen_overlay_v1" class="link blue underline-hover lh-copy">kde_lockscreen_overlay_v1</a>
+
+      
+        <div>
+          <a href="#rh:kde_lockscreen_overlay_v1" class="link blue underline-hover lh-copy pl3">Requests</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#r:kde_lockscreen_overlay_v1:allow" class="link blue underline-hover lh-copy">allow</a>
+          </li>
+          
+          <li>
+            <a href="#r:kde_lockscreen_overlay_v1:destroy" class="link blue underline-hover lh-copy">destroy</a>
+          </li>
+          
+        </ul>
+      
+
+      
+      
+
+      
+        <div>
+          <a href="#enumh:kde_lockscreen_overlay_v1" class="link blue underline-hover lh-copy pl3">Enums</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#enum:kde_lockscreen_overlay_v1:error" class="link blue underline-hover lh-copy">error</a>
+          </li>
+          
+        </ul>
+      
+    </li>
+  
+  </ul>
+</div>
+  </div>
+
+      </div>
+    </div>
+
+    <main id="content" class="mh4 w-80">
+      
+  <div class="ph2">
+    <h1 class="f1 lh-title">kde_lockscreen_overlay_v1</h1>
+    <ul class="list pl0">
+      
+      <li class="mt4">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:kde_lockscreen_overlay_v1">
+          <a href="#i:kde_lockscreen_overlay_v1" class="link dim black-70 child pr2 absolute left--2">#</a>
+          kde_lockscreen_overlay_v1
+        </h2>
+        <div class="f6 lh-copy ws-pre-line code">Allows a client to request a surface to be visible when the system is locked.
+
+This is meant to be used for specific high urgency cases like phone calls or alarms.
+</div>
+
+        
+          <h3 class=" f5 lh-title" id="rh:kde_lockscreen_overlay_v1">Requests</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:kde_lockscreen_overlay_v1:allow">
+                <a href="#r:kde_lockscreen_overlay_v1:allow" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  allow
+                </div>
+                <div class="f5 ml2">
+                  Tell about which surface could be raised above the lockscreen
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">kde_lockscreen_overlay_v1_allow</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct kde_lockscreen_overlay_v1*</span> kde_lockscreen_overlay_v1,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_surface*</span> surface</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Informs the compositor that the surface could be shown when the screen is locked. This request should be called while the surface is unmapped.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:kde_lockscreen_overlay_v1:destroy">
+                <a href="#r:kde_lockscreen_overlay_v1:destroy" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  destroy
+                </div>
+                <div class="f5 ml2">
+                  Destroy the kde_lockscreen_overlay_v1
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">kde_lockscreen_overlay_v1_destroy</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct kde_lockscreen_overlay_v1*</span> kde_lockscreen_overlay_v1</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">This won&#x27;t affect the surface previously marked with the allow request.
+</div>
+            </li>
+            
+          </ul>
+        
+
+        
+
+        
+
+        
+          <h3 class=" f5 lh-title" id="enumh:kde_lockscreen_overlay_v1">Enums</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="enum:kde_lockscreen_overlay_v1:error">
+                <a href="#enum:kde_lockscreen_overlay_v1:error" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  error
+                </div>
+                <div class="f5 ml2">
+                  
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  KDE_LOCKSCREEN_OVERLAY_V1_ERROR_INVALID_SURFACE_STATE  <span class="green">/* the client provided an invalid surface state */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3"></div>
+            </li>
+            
+          </ul>
+
+        
+
+      </li>
+      
+    </ul>
+
+    <h2 class="f4 lh-title">Copyright Info</h2>
+    <div class="f7 lh-copy ws-pre-line code">SPDX-FileCopyrightText: 2022 Aleix Pol Gonzalez &lt;aleixpol@kde.org&gt;
+
+SPDX-License-Identifier: LGPL-2.1-or-later
+</div>
+  </div>
+
+    </main>
+
+  </body>
+</html>

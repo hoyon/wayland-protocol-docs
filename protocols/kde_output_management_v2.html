@@ -125,6 +125,10 @@
         <ul class="list pl4">
           
           <li>
+            <a href="#enum:kde_output_configuration_v2:error" class="link blue underline-hover lh-copy">error</a>
+          </li>
+          
+          <li>
             <a href="#enum:kde_output_configuration_v2:vrr_policy" class="link blue underline-hover lh-copy">vrr_policy</a>
           </li>
           
@@ -416,6 +420,9 @@ stacked horizontally, vertically, or both on each other.
 </div>
               <div class="f6 lh-copy ws-pre-line code">Asks the server to apply property changes requested through this outputconfiguration
 object to all outputs on the server side.
+
+The output configuration can be applied only once. The already_applied protocol error
+will be posted if the apply request is called the second time.
 </div>
             </li>
             
@@ -591,6 +598,27 @@ variable refresh rate.
         
           <h3 class=" f5 lh-title" id="enumh:kde_output_configuration_v2">Enums</h3>
           <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="enum:kde_output_configuration_v2:error">
+                <a href="#enum:kde_output_configuration_v2:error" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  error
+                </div>
+                <div class="f5 ml2">
+                  kde_output_configuration_v2 error values
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  KDE_OUTPUT_CONFIGURATION_V2_ERROR_ALREADY_APPLIED  <span class="green">/* the config is already applied */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">These error can be emitted in response to kde_output_configuration_v2 requests.
+</div>
+            </li>
             
             <li class="mt3">
               <div class="flex items-baseline lh-title mb2 hide-child relative" id="enum:kde_output_configuration_v2:vrr_policy">
