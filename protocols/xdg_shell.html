@@ -446,7 +446,7 @@ creating transient windows such as popup menus.
 
 Destroying a bound xdg_wm_base object while there are surfaces
 still alive created by this xdg_wm_base object instance is illegal
-and will result in a protocol error.
+and will result in a defunct_surfaces error.
   </div>
             </li>
             
@@ -498,7 +498,7 @@ and xdg_surface.get_popup for details.
 itself is not a role, the corresponding surface may only be assigned
 a role extending xdg_surface, such as xdg_toplevel or xdg_popup. It is
 illegal to create an xdg_surface for a wl_surface which already has an
-assigned role and this will result in a protocol error.
+assigned role and this will result in a role error.
 
 This creates an xdg_surface for the given surface. An xdg_surface is
 used as basis to define a role to a given surface, such as xdg_toplevel
@@ -531,7 +531,8 @@ xdg_surface is and how it is used.
   )
 </div>
               <div class="f6 lh-copy ws-pre-line code">A client must respond to a ping event with a pong request or
-the client may be deemed unresponsive. See xdg_wm_base.ping.
+the client may be deemed unresponsive. See xdg_wm_base.ping
+and xdg_wm_base.error.unresponsive.
   </div>
             </li>
             
@@ -566,7 +567,9 @@ a &quot;pong&quot; request back with the specified serial. See xdg_wm_base.pong.
 Compositors can use this to determine if the client is still
 alive. It&#x27;s unspecified what will happen if the client doesn&#x27;t
 respond to the ping request, or in what timeframe. Clients should
-try to respond in a reasonable amount of time.
+try to respond in a reasonable amount of time. The “unresponsive”
+error is provided for compositors that wish to disconnect unresponsive
+clients.
 
 A compositor is free to ping in any way it wants, but a client must
 always respond to any xdg_wm_base object it created.
@@ -617,6 +620,10 @@ always respond to any xdg_wm_base object it created.
                   XDG_WM_BASE_ERROR_INVALID_POSITIONER  <span class="green">/* the client provided an invalid positioner */</span> 
                 </div>
               
+                <div class="f6 lh-copy code">
+                  XDG_WM_BASE_ERROR_UNRESPONSIVE  <span class="green">/* the client didn’t respond to a ping event in time */</span> 
+                </div>
+              
 
               <div class="f6 lh-copy ws-pre-line code mt3"></div>
             </li>
@@ -650,7 +657,7 @@ object will have no effect on previous usages.
 For an xdg_positioner object to be considered complete, it must have a
 non-zero size set by set_size, and a non-zero anchor rectangle set by
 set_anchor_rect. Passing an incomplete xdg_positioner object when
-positioning a surface raises an error.
+positioning a surface raises an invalid_positioner error.
 </div>
 
         
@@ -802,7 +809,8 @@ the anchor point of the parent surface. If a corner gravity is
 specified (e.g. &#x27;bottom_right&#x27; or &#x27;top_left&#x27;), then the child surface
 will be placed towards the specified gravity; otherwise, the child
 surface will be centered over the anchor point on any axis that had no
-gravity specified.
+gravity specified. If the gravity is not in the ‘gravity’ enum, an
+invalid_input error is raised.
   </div>
             </li>
             
@@ -1349,10 +1357,10 @@ The arguments are given in the surface-local coordinate space of
 the wl_surface associated with this xdg_surface.
 
 The width and height must be greater than zero. Setting an invalid size
-will raise an error. When applied, the effective window geometry will be
-the set window geometry clamped to the bounding rectangle of the
-combined geometry of the surface of the xdg_surface and the associated
-subsurfaces.
+will raise an invalid_size error. When applied, the effective window
+geometry will be the set window geometry clamped to the bounding
+rectangle of the combined geometry of the surface of the xdg_surface and
+the associated subsurfaces.
   </div>
             </li>
             
@@ -1387,6 +1395,8 @@ drawn itself for the maximized or fullscreen state.
 
 If the client receives multiple configure events before it
 can respond to one, it only has to ack the last configure event.
+Acking a configure event that was never sent raises an invalid_serial
+error.
 
 A client is not required to commit immediately after sending
 an ack_configure request - it may even ack_configure several times
@@ -1395,6 +1405,17 @@ before its next surface commit.
 A client may send multiple ack_configure requests before committing, but
 only the last request sent before a commit indicates which configure
 event the client really is responding to.
+
+Sending an ack_configure request consumes the serial number sent with
+the request, as well as serial numbers sent by all configure events
+sent on this xdg_surface prior to the configure event referenced by
+the committed serial.
+
+It is an error to issue multiple ack_configure requests referencing a
+serial from the same configure event, or to issue an ack_configure
+request referencing a serial from a configure event issued before the
+event identified by the last ack_configure request for the same
+xdg_surface. Doing so will raise an invalid_serial error.
   </div>
             </li>
             
@@ -1462,15 +1483,23 @@ to one, it is free to discard all but the last event it received.
 
               
                 <div class="f6 lh-copy code">
-                  XDG_SURFACE_ERROR_NOT_CONSTRUCTED  
+                  XDG_SURFACE_ERROR_NOT_CONSTRUCTED  <span class="green">/* Surface was not fully constructed */</span> 
                 </div>
               
                 <div class="f6 lh-copy code">
-                  XDG_SURFACE_ERROR_ALREADY_CONSTRUCTED  
+                  XDG_SURFACE_ERROR_ALREADY_CONSTRUCTED  <span class="green">/* Surface was already constructed */</span> 
                 </div>
               
                 <div class="f6 lh-copy code">
-                  XDG_SURFACE_ERROR_UNCONFIGURED_BUFFER  
+                  XDG_SURFACE_ERROR_UNCONFIGURED_BUFFER  <span class="green">/* Attaching a buffer to an unconfigured surface */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  XDG_SURFACE_ERROR_INVALID_SERIAL  <span class="green">/* Invalid serial number when acking a configure event */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  XDG_SURFACE_ERROR_INVALID_SIZE  <span class="green">/* Width or height was zero or negative */</span> 
                 </div>
               
 
@@ -1570,6 +1599,10 @@ becomes unmapped, its children&#x27;s parent is set to the parent of
 the now-unmapped surface. If the now-unmapped surface has no parent,
 its children&#x27;s parent is unset. If the now-unmapped surface becomes
 mapped again, its parent-child relationship is not restored.
+
+The parent toplevel must not be one of the child toplevel&#x27;s
+descendants, and the parent must be different from the child toplevel,
+otherwise the invalid_parent protocol error is raised.
   </div>
             </li>
             
@@ -1645,7 +1678,7 @@ See the desktop-entry specification [0] for more details on
 application identifiers and how they relate to well-known D-Bus
 names and .desktop files.
 
-[0] http:&#x2f;&#x2f;standards.freedesktop.org&#x2f;desktop-entry-spec&#x2f;
+[0] https:&#x2f;&#x2f;standards.freedesktop.org&#x2f;desktop-entry-spec&#x2f;
   </div>
             </li>
             
@@ -1682,7 +1715,8 @@ user a menu that they can use to maximize or minimize the window.
 This request asks the compositor to pop up such a window menu at
 the given position, relative to the local surface coordinates of
 the parent surface. There are no guarantees as to what menu items
-the window menu contains.
+the window menu contains, or even if a window menu will be drawn
+at all.
 
 This request must be used in response to some sort of user action
 like a button press, key press, or touch down event.
@@ -1839,11 +1873,11 @@ to an unspecified state can use zero for width and height in the
 request.
 
 Requesting a maximum size to be smaller than the minimum size of
-a surface is illegal and will result in a protocol error.
+a surface is illegal and will result in an invalid_size error.
 
 The width and height must be greater than or equal to zero. Using
-strictly negative values for width and height will result in a
-protocol error.
+strictly negative values for width or height will result in a
+invalid_size error.
   </div>
             </li>
             
@@ -1898,11 +1932,11 @@ to an unspecified state can use zero for width and height in the
 request.
 
 Requesting a minimum size to be larger than the maximum size of
-a surface is illegal and will result in a protocol error.
+a surface is illegal and will result in an invalid_size error.
 
 The width and height must be greater than or equal to zero. Using
 strictly negative values for width and height will result in a
-protocol error.
+invalid_size error.
   </div>
             </li>
             
@@ -2281,6 +2315,14 @@ native endianness.
                 <div class="f6 lh-copy code">
                   XDG_TOPLEVEL_ERROR_INVALID_RESIZE_EDGE  <span class="green">/* provided value is
         not a valid variant of the resize_edge enum */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  XDG_TOPLEVEL_ERROR_INVALID_PARENT  <span class="green">/* invalid parent toplevel */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  XDG_TOPLEVEL_ERROR_INVALID_SIZE  <span class="green">/* client provided an invalid min or max size */</span> 
                 </div>
               
 

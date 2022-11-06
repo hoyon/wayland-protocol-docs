@@ -1,0 +1,321 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ext_idle_notify_v1</title>
+
+    <link rel="stylesheet" href="&#x2f;wayland-protocol-docs/main.css">
+     
+  </head>
+  <body class="black-70 flex sans-serif ph4-l">
+    <div id="sidebar" class="w-20">
+      <div class="fixed vh-100 overflow-y-auto w-20">
+        <a href="&#x2f;wayland-protocol-docs/" class="f4 link near-black dim lh-title db mt3">
+          Home
+        </a>
+        
+  <div class="ph2">
+    
+
+<div>
+  <ul class="list pl0">
+  
+    <li>
+      <a href="#i:ext_idle_notifier_v1" class="link blue underline-hover lh-copy">ext_idle_notifier_v1</a>
+
+      
+        <div>
+          <a href="#rh:ext_idle_notifier_v1" class="link blue underline-hover lh-copy pl3">Requests</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#r:ext_idle_notifier_v1:destroy" class="link blue underline-hover lh-copy">destroy</a>
+          </li>
+          
+          <li>
+            <a href="#r:ext_idle_notifier_v1:get_idle_notification" class="link blue underline-hover lh-copy">get_idle_notification</a>
+          </li>
+          
+        </ul>
+      
+
+      
+      
+
+      
+      
+    </li>
+  
+    <li>
+      <a href="#i:ext_idle_notification_v1" class="link blue underline-hover lh-copy">ext_idle_notification_v1</a>
+
+      
+        <div>
+          <a href="#rh:ext_idle_notification_v1" class="link blue underline-hover lh-copy pl3">Requests</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#r:ext_idle_notification_v1:destroy" class="link blue underline-hover lh-copy">destroy</a>
+          </li>
+          
+        </ul>
+      
+
+      
+        <div>
+          <a href="#eh:ext_idle_notification_v1" class="link blue underline-hover lh-copy pl3">Events</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#e:ext_idle_notification_v1:idled" class="link blue underline-hover lh-copy">idled</a>
+          </li>
+          
+          <li>
+            <a href="#e:ext_idle_notification_v1:resumed" class="link blue underline-hover lh-copy">resumed</a>
+          </li>
+          
+        </ul>
+      
+
+      
+      
+    </li>
+  
+  </ul>
+</div>
+  </div>
+
+      </div>
+    </div>
+
+    <main id="content" class="mh4 w-80">
+      
+  <div class="ph2">
+    <h1 class="f1 lh-title">ext_idle_notify_v1</h1>
+    <ul class="list pl0">
+      
+      <li class="mt4">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:ext_idle_notifier_v1">
+          <a href="#i:ext_idle_notifier_v1" class="link dim black-70 child pr2 absolute left--2">#</a>
+          ext_idle_notifier_v1
+        </h2>
+        <div class="f6 lh-copy ws-pre-line code">This interface allows clients to monitor user idle status.
+
+After binding to this global, clients can create ext_idle_notification_v1
+objects to get notified when the user is idle for a given amount of time.
+</div>
+
+        
+          <h3 class=" f5 lh-title" id="rh:ext_idle_notifier_v1">Requests</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:ext_idle_notifier_v1:destroy">
+                <a href="#r:ext_idle_notifier_v1:destroy" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  destroy
+                </div>
+                <div class="f5 ml2">
+                  destroy the manager
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">ext_idle_notifier_v1_destroy</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct ext_idle_notifier_v1*</span> ext_idle_notifier_v1</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Destroy the manager object. All objects created via this interface
+remain valid.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:ext_idle_notifier_v1:get_idle_notification">
+                <a href="#r:ext_idle_notifier_v1:get_idle_notification" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  get_idle_notification
+                </div>
+                <div class="f5 ml2">
+                  create a notification object
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>struct ext_idle_notification_v1* </span><span class="dark-blue">ext_idle_notifier_v1_get_idle_notification</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct ext_idle_notifier_v1*</span> ext_idle_notifier_v1,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> timeout, <span class="green">/* minimum idle timeout in msec */</span></div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_seat*</span> seat</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Create a new idle notification object.
+
+The notification object has a minimum timeout duration and is tied to a
+seat. The client will be notified if the seat is inactive for at least
+the provided timeout. See ext_idle_notification_v1 for more details.
+
+A zero timeout is valid and means the client wants to be notified as
+soon as possible when the seat is inactive.
+</div>
+            </li>
+            
+          </ul>
+        
+
+        
+
+        
+
+        
+
+        
+
+      </li>
+      
+      <li class="mt4">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:ext_idle_notification_v1">
+          <a href="#i:ext_idle_notification_v1" class="link dim black-70 child pr2 absolute left--2">#</a>
+          ext_idle_notification_v1
+        </h2>
+        <div class="f6 lh-copy ws-pre-line code">This interface is used by the compositor to send idle notification events
+to clients.
+
+Initially the notification object is not idle. The notification object
+becomes idle when no user activity has happened for at least the timeout
+duration, starting from the creation of the notification object. User
+activity may include input events or a presence sensor, but is
+compositor-specific. If an idle inhibitor is active (e.g. another client
+has created a zwp_idle_inhibitor_v1 on a visible surface), the compositor
+must not make the notification object idle.
+
+When the notification object becomes idle, an idled event is sent. When
+user activity starts again, the notification object stops being idle,
+a resumed event is sent and the timeout is restarted.
+</div>
+
+        
+          <h3 class=" f5 lh-title" id="rh:ext_idle_notification_v1">Requests</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:ext_idle_notification_v1:destroy">
+                <a href="#r:ext_idle_notification_v1:destroy" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  destroy
+                </div>
+                <div class="f5 ml2">
+                  destroy the notification object
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">ext_idle_notification_v1_destroy</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct ext_idle_notification_v1*</span> ext_idle_notification_v1</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Destroy the notification object.
+</div>
+            </li>
+            
+          </ul>
+        
+
+        
+          <h3 class=" f5 lh-title" id="eh:ext_idle_notification_v1">Events</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:ext_idle_notification_v1:idled">
+                <a href="#e:ext_idle_notification_v1:idled" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  idled
+                </div>
+                <div class="f5 ml2">
+                  notification object is idle
+                </div>
+              </div>
+
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">This event is sent when the notification object becomes idle.
+
+It&#x27;s a compositor protocol error to send this event twice without a
+resumed event in-between.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:ext_idle_notification_v1:resumed">
+                <a href="#e:ext_idle_notification_v1:resumed" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  resumed
+                </div>
+                <div class="f5 ml2">
+                  notification object is no longer idle
+                </div>
+              </div>
+
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">This event is sent when the notification object stops being idle.
+
+It&#x27;s a compositor protocol error to send this event twice without an
+idled event in-between. It&#x27;s a compositor protocol error to send this
+event prior to any idled event.
+</div>
+            </li>
+            
+          </ul>
+
+        
+
+        
+
+        
+
+      </li>
+      
+    </ul>
+
+    <h2 class="f4 lh-title">Copyright Info</h2>
+    <div class="f7 lh-copy ws-pre-line code">Copyright © 2015 Martin Gräßlin
+Copyright © 2022 Simon Ser
+
+Permission is hereby granted, free of charge, to any person obtaining a
+copy of this software and associated documentation files (the &quot;Software&quot;),
+to deal in the Software without restriction, including without limitation
+the rights to use, copy, modify, merge, publish, distribute, sublicense,
+and&#x2f;or sell copies of the Software, and to permit persons to whom the
+Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice (including the next
+paragraph) shall be included in all copies or substantial portions of the
+Software.
+
+THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL
+THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+DEALINGS IN THE SOFTWARE.
+</div>
+  </div>
+
+    </main>
+
+  </body>
+</html>
