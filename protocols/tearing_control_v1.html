@@ -1,0 +1,367 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>tearing_control_v1</title>
+
+    <link rel="stylesheet" href="&#x2f;wayland-protocol-docs/main.css">
+     
+  </head>
+  <body class="black-70 flex sans-serif ph4-l">
+    <div id="sidebar" class="w-20">
+      <div class="fixed vh-100 overflow-y-auto w-20">
+        <a href="&#x2f;wayland-protocol-docs/" class="f4 link near-black dim lh-title db mt3">
+          Home
+        </a>
+        
+  <div class="ph2">
+    
+
+<div>
+  <ul class="list pl0">
+  
+    <li>
+      <a href="#i:wp_tearing_control_manager_v1" class="link blue underline-hover lh-copy">wp_tearing_control_manager_v1</a>
+
+      
+        <div>
+          <a href="#rh:wp_tearing_control_manager_v1" class="link blue underline-hover lh-copy pl3">Requests</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#r:wp_tearing_control_manager_v1:destroy" class="link blue underline-hover lh-copy">destroy</a>
+          </li>
+          
+          <li>
+            <a href="#r:wp_tearing_control_manager_v1:get_tearing_control" class="link blue underline-hover lh-copy">get_tearing_control</a>
+          </li>
+          
+        </ul>
+      
+
+      
+      
+
+      
+        <div>
+          <a href="#enumh:wp_tearing_control_manager_v1" class="link blue underline-hover lh-copy pl3">Enums</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#enum:wp_tearing_control_manager_v1:error" class="link blue underline-hover lh-copy">error</a>
+          </li>
+          
+        </ul>
+      
+    </li>
+  
+    <li>
+      <a href="#i:wp_tearing_control_v1" class="link blue underline-hover lh-copy">wp_tearing_control_v1</a>
+
+      
+        <div>
+          <a href="#rh:wp_tearing_control_v1" class="link blue underline-hover lh-copy pl3">Requests</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#r:wp_tearing_control_v1:set_presentation_hint" class="link blue underline-hover lh-copy">set_presentation_hint</a>
+          </li>
+          
+          <li>
+            <a href="#r:wp_tearing_control_v1:destroy" class="link blue underline-hover lh-copy">destroy</a>
+          </li>
+          
+        </ul>
+      
+
+      
+      
+
+      
+        <div>
+          <a href="#enumh:wp_tearing_control_v1" class="link blue underline-hover lh-copy pl3">Enums</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#enum:wp_tearing_control_v1:presentation_hint" class="link blue underline-hover lh-copy">presentation_hint</a>
+          </li>
+          
+        </ul>
+      
+    </li>
+  
+  </ul>
+</div>
+  </div>
+
+      </div>
+    </div>
+
+    <main id="content" class="mh4 w-80">
+      
+  <div class="ph2">
+    <h1 class="f1 lh-title">tearing_control_v1</h1>
+    <ul class="list pl0">
+      
+      <li class="mt4">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:wp_tearing_control_manager_v1">
+          <a href="#i:wp_tearing_control_manager_v1" class="link dim black-70 child pr2 absolute left--2">#</a>
+          wp_tearing_control_manager_v1
+        </h2>
+        <div class="f6 lh-copy ws-pre-line code">For some use cases like games or drawing tablets it can make sense to
+reduce latency by accepting tearing with the use of asynchronous page
+flips. This global is a factory interface, allowing clients to inform
+which type of presentation the content of their surfaces is suitable for.
+
+Graphics APIs like EGL or Vulkan, that manage the buffer queue and commits
+of a wl_surface themselves, are likely to be using this extension
+internally. If a client is using such an API for a wl_surface, it should
+not directly use this extension on that surface, to avoid raising a
+tearing_control_exists protocol error.
+
+Warning! The protocol described in this file is currently in the testing
+phase. Backward compatible changes may be added together with the
+corresponding interface version bump. Backward incompatible changes can
+only be done by creating a new major version of the extension.
+</div>
+
+        
+          <h3 class=" f5 lh-title" id="rh:wp_tearing_control_manager_v1">Requests</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:wp_tearing_control_manager_v1:destroy">
+                <a href="#r:wp_tearing_control_manager_v1:destroy" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  destroy
+                </div>
+                <div class="f5 ml2">
+                  destroy tearing control factory object
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">wp_tearing_control_manager_v1_destroy</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wp_tearing_control_manager_v1*</span> wp_tearing_control_manager_v1</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Destroy this tearing control factory object. Other objects, including
+wp_tearing_control_v1 objects created by this factory, are not affected
+by this request.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:wp_tearing_control_manager_v1:get_tearing_control">
+                <a href="#r:wp_tearing_control_manager_v1:get_tearing_control" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  get_tearing_control
+                </div>
+                <div class="f5 ml2">
+                  extend surface interface for tearing control
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>struct wp_tearing_control_v1* </span><span class="dark-blue">wp_tearing_control_manager_v1_get_tearing_control</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wp_tearing_control_manager_v1*</span> wp_tearing_control_manager_v1,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_surface*</span> surface</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Instantiate an interface extension for the given wl_surface to request
+asynchronous page flips for presentation.
+
+If the given wl_surface already has a wp_tearing_control_v1 object
+associated, the tearing_control_exists protocol error is raised.
+</div>
+            </li>
+            
+          </ul>
+        
+
+        
+
+        
+
+        
+          <h3 class=" f5 lh-title" id="enumh:wp_tearing_control_manager_v1">Enums</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="enum:wp_tearing_control_manager_v1:error">
+                <a href="#enum:wp_tearing_control_manager_v1:error" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  error
+                </div>
+                <div class="f5 ml2">
+                  
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  WP_TEARING_CONTROL_MANAGER_V1_ERROR_TEARING_CONTROL_EXISTS  <span class="green">/* the surface already has a tearing object associated */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3"></div>
+            </li>
+            
+          </ul>
+
+        
+
+      </li>
+      
+      <li class="mt4">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:wp_tearing_control_v1">
+          <a href="#i:wp_tearing_control_v1" class="link dim black-70 child pr2 absolute left--2">#</a>
+          wp_tearing_control_v1
+        </h2>
+        <div class="f6 lh-copy ws-pre-line code">An additional interface to a wl_surface object, which allows the client
+to hint to the compositor if the content on the surface is suitable for
+presentation with tearing.
+The default presentation hint is vsync. See presentation_hint for more
+details.
+</div>
+
+        
+          <h3 class=" f5 lh-title" id="rh:wp_tearing_control_v1">Requests</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:wp_tearing_control_v1:set_presentation_hint">
+                <a href="#r:wp_tearing_control_v1:set_presentation_hint" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  set_presentation_hint
+                </div>
+                <div class="f5 ml2">
+                  set presentation hint
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">wp_tearing_control_v1_set_presentation_hint</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wp_tearing_control_v1*</span> wp_tearing_control_v1,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> hint</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Set the presentation hint for the associated wl_surface. This state is
+double-buffered and is applied on the next wl_surface.commit.
+
+The compositor is free to dynamically respect or ignore this hint based
+on various conditions like hardware capabilities, surface state and
+user preferences.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:wp_tearing_control_v1:destroy">
+                <a href="#r:wp_tearing_control_v1:destroy" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  destroy
+                </div>
+                <div class="f5 ml2">
+                  destroy tearing control object
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">wp_tearing_control_v1_destroy</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wp_tearing_control_v1*</span> wp_tearing_control_v1</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Destroy this surface tearing object and revert the presentation hint to
+vsync. The change will be applied on the next wl_surface.commit.
+</div>
+            </li>
+            
+          </ul>
+        
+
+        
+
+        
+
+        
+          <h3 class=" f5 lh-title" id="enumh:wp_tearing_control_v1">Enums</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="enum:wp_tearing_control_v1:presentation_hint">
+                <a href="#enum:wp_tearing_control_v1:presentation_hint" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  presentation_hint
+                </div>
+                <div class="f5 ml2">
+                  presentation hint values
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  WP_TEARING_CONTROL_V1_PRESENTATION_HINT_VSYNC  
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  WP_TEARING_CONTROL_V1_PRESENTATION_HINT_ASYNC  
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">This enum provides information for if submitted frames from the client
+may be presented with tearing.
+</div>
+            </li>
+            
+          </ul>
+
+        
+
+      </li>
+      
+    </ul>
+
+    <h2 class="f4 lh-title">Copyright Info</h2>
+    <div class="f7 lh-copy ws-pre-line code">Copyright © 2021 Xaver Hugl
+
+Permission is hereby granted, free of charge, to any person obtaining a
+copy of this software and associated documentation files (the &quot;Software&quot;),
+to deal in the Software without restriction, including without limitation
+the rights to use, copy, modify, merge, publish, distribute, sublicense,
+and&#x2f;or sell copies of the Software, and to permit persons to whom the
+Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice (including the next
+paragraph) shall be included in all copies or substantial portions of the
+Software.
+
+THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL
+THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+DEALINGS IN THE SOFTWARE.
+</div>
+  </div>
+
+    </main>
+
+  </body>
+</html>
