@@ -6,13 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>presentation_time</title>
 
-    <link rel="stylesheet" href="&#x2f;wayland-protocol-docs/main.css">
+    <link rel="stylesheet" href="/wayland-protocol-docs/main.css">
      
   </head>
   <body class="black-70 flex sans-serif ph4-l">
     <div id="sidebar" class="w-20">
       <div class="fixed vh-100 overflow-y-auto w-20">
-        <a href="&#x2f;wayland-protocol-docs/" class="f4 link near-black dim lh-title db mt3">
+        <a href="/wayland-protocol-docs/" class="f4 link near-black dim lh-title db mt3">
           Home
         </a>
         
@@ -131,7 +131,7 @@
         <div class="f6 lh-copy ws-pre-line code">
 The main feature of this interface is accurate presentation
 timing feedback to ensure smooth video playback while maintaining
-audio&#x2f;video synchronization. Some features use the concept of a
+audio/video synchronization. Some features use the concept of a
 presentation clock, which is defined in the
 presentation.clock_id event.
 
@@ -241,10 +241,9 @@ The compositor sends this event when the client binds to the
 presentation interface. The presentation clock does not change
 during the lifetime of the client connection.
 
-The clock identifier is platform dependent. On Linux&#x2f;glibc,
-the identifier value is one of the clockid_t values accepted
-by clock_gettime(). clock_gettime() is defined by
-POSIX.1-2001.
+The clock identifier is platform dependent. On POSIX platforms, the
+identifier value is one of the clockid_t values accepted by
+clock_gettime(). clock_gettime() is defined by POSIX.1-2001.
 
 Timestamps in this clock domain are expressed as tv_sec_hi,
 tv_sec_lo, tv_nsec triples, each component being an unsigned
@@ -400,7 +399,7 @@ right wl_output global at all, this event is not sent.
               
 
               <div class="f6 lh-copy ws-pre-line code mt3">The associated content update was displayed to the user at the
-indicated time (tv_sec_hi&#x2f;lo, tv_nsec). For the interpretation of
+indicated time (tv_sec_hi/lo, tv_nsec). For the interpretation of
 the timestamp, see presentation.clock_id event.
 
 The timestamp corresponds to the time when the content update
@@ -519,7 +518,7 @@ Permission is hereby granted, free of charge, to any person obtaining a
 copy of this software and associated documentation files (the &quot;Software&quot;),
 to deal in the Software without restriction, including without limitation
 the rights to use, copy, modify, merge, publish, distribute, sublicense,
-and&#x2f;or sell copies of the Software, and to permit persons to whom the
+and/or sell copies of the Software, and to permit persons to whom the
 Software is furnished to do so, subject to the following conditions:
 
 The above copyright notice and this permission notice (including the next

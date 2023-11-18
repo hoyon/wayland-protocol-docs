@@ -6,13 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>wayland</title>
 
-    <link rel="stylesheet" href="&#x2f;wayland-protocol-docs/main.css">
+    <link rel="stylesheet" href="/wayland-protocol-docs/main.css">
      
   </head>
   <body class="black-70 flex sans-serif ph4-l">
     <div id="sidebar" class="w-20">
       <div class="fixed vh-100 overflow-y-auto w-20">
-        <a href="&#x2f;wayland-protocol-docs/" class="f4 link near-black dim lh-title db mt3">
+        <a href="/wayland-protocol-docs/" class="f4 link near-black dim lh-title db mt3">
           Home
         </a>
         
@@ -1661,7 +1661,7 @@ between the compositor and client.  Through the wl_shm_pool
 object, the client can allocate shared memory wl_buffer objects.
 All objects created through the same pool share the same
 underlying mapped memory. Reusing the mapped memory avoids the
-setup&#x2f;teardown overhead and is useful when interactively resizing
+setup/teardown overhead and is useful when interactively resizing
 a surface or for many small buffers.
 </div>
 
@@ -2587,7 +2587,7 @@ operation, the invalid_finish protocol error is raised.
                   set_actions
                 </div>
                 <div class="f5 ml2">
-                  set the available&#x2f;preferred drag-and-drop actions
+                  set the available/preferred drag-and-drop actions
                 </div>
               </div>
               
@@ -2706,7 +2706,7 @@ side changes its offered actions through wl_data_source.set_actions.
               
 
               <div class="f6 lh-copy ws-pre-line code mt3">This event indicates the action selected by the compositor after
-matching the source&#x2f;destination side actions. Only one action (or
+matching the source/destination side actions. Only one action (or
 none) will be offered here.
 
 This event can be emitted multiple times during the drag-and-drop
@@ -2735,7 +2735,7 @@ at this stage are always the result of inter-client negotiation, the
 compositor shall no longer be able to induce a different action.
 
 Upon &quot;ask&quot; actions, it is expected that the drag-and-drop destination
-may potentially choose a different action and&#x2f;or mime type,
+may potentially choose a different action and/or mime type,
 based on wl_data_offer.source_actions and finally chosen by the
 user (e.g. popping up a menu with the available options). The
 final wl_data_offer.set_actions and wl_data_offer.accept requests
@@ -3047,12 +3047,12 @@ source can now delete the transferred data.
               
 
               <div class="f6 lh-copy ws-pre-line code mt3">This event indicates the action selected by the compositor after
-matching the source&#x2f;destination side actions. Only one action (or
+matching the source/destination side actions. Only one action (or
 none) will be offered here.
 
 This event can be emitted multiple times during the drag-and-drop
 operation, mainly in response to destination side changes through
-wl_data_offer.set_actions, and as the data device enters&#x2f;leaves
+wl_data_offer.set_actions, and as the data device enters/leaves
 surfaces.
 
 It is only possible to receive this event after
@@ -3562,7 +3562,7 @@ wl_data_offer.accept and wl_data_offer.finish for details.
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line code mt3">This is a bitmask of the available&#x2f;preferred actions in a
+              <div class="f6 lh-copy ws-pre-line code mt3">This is a bitmask of the available/preferred actions in a
 drag-and-drop operation.
 
 In the compositor, the selected action is a result of matching the
@@ -3582,7 +3582,7 @@ compositors) is:
 - Pressing Control selects &quot;copy&quot;, if enabled in the mask.
 
 Behavior beyond that is considered implementation-dependent.
-Compositors may for example bind other modifiers (like Alt&#x2f;Meta)
+Compositors may for example bind other modifiers (like Alt/Meta)
 or drags initiated with other buttons than BTN_LEFT to specific
 actions (e.g. &quot;ask&quot;).
   </div>
@@ -5433,7 +5433,7 @@ The time argument is a timestamp with millisecond
 granularity, with an undefined base.
 
 The button is a button code as defined in the Linux kernel&#x27;s
-linux&#x2f;input-event-codes.h header file, e.g. BTN_LEFT.
+linux/input-event-codes.h header file, e.g. BTN_LEFT.
 
 Any 16-bit button code value is reserved for future additions to the
 kernel&#x27;s event code list. All other button codes above 0xFFFF are
@@ -6015,7 +6015,7 @@ wl_keyboard.modifiers event must be sent after this event.
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line code mt3">Notifies clients that the modifier and&#x2f;or group state has
+              <div class="f6 lh-copy ws-pre-line code mt3">Notifies clients that the modifier and/or group state has
 changed, and it should update its local state.
   </div>
             </li>
@@ -7355,7 +7355,7 @@ Permission is hereby granted, free of charge, to any person
 obtaining a copy of this software and associated documentation files
 (the &quot;Software&quot;), to deal in the Software without restriction,
 including without limitation the rights to use, copy, modify, merge,
-publish, distribute, sublicense, and&#x2f;or sell copies of the Software,
+publish, distribute, sublicense, and/or sell copies of the Software,
 and to permit persons to whom the Software is furnished to do so,
 subject to the following conditions:
 

@@ -6,13 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>xdg_output_unstable_v1</title>
 
-    <link rel="stylesheet" href="&#x2f;wayland-protocol-docs/main.css">
+    <link rel="stylesheet" href="/wayland-protocol-docs/main.css">
      
   </head>
   <body class="black-70 flex sans-serif ph4-l">
     <div id="sidebar" class="w-20">
       <div class="fixed vh-100 overflow-y-auto w-20">
-        <a href="&#x2f;wayland-protocol-docs/" class="f4 link near-black dim lh-title db mt3">
+        <a href="/wayland-protocol-docs/" class="f4 link near-black dim lh-title db mt3">
           Home
         </a>
         
@@ -289,10 +289,6 @@ of the output changes within the global compositor space.
               <div class="f6 lh-copy ws-pre-line code mt3">The logical_size event describes the size of the output in the
 global compositor space.
 
-For example, a surface without any buffer scale, transformation
-nor rotation set, with the size matching the logical_size will
-have the same size as the corresponding output when displayed.
-
 Most regular Wayland clients should not pay attention to the
 logical size and would rather rely on xdg_shell interfaces.
 
@@ -303,14 +299,14 @@ scaling property (to achieve fractional scaling, for example).
 
 For example, for a wl_output mode 3840×2160 and a scale factor 2:
 
-- A compositor not scaling the surface buffers will advertise a
-  logical size of 3840×2160,
+- A compositor not scaling the monitor viewport in its compositing space
+  will advertise a logical size of 3840×2160,
 
-- A compositor automatically scaling the surface buffers will
+- A compositor scaling the monitor viewport with scale factor 2 will
   advertise a logical size of 1920×1080,
 
-- A compositor using a fractional scale of 1.5 will advertise a
-  logical size of 2560×1440.
+- A compositor scaling the monitor viewport using a fractional scale of
+  1.5 will advertise a logical size of 2560×1440.
 
 For example, for a wl_output mode 1920×1080 and a 90 degree rotation,
 the compositor will advertise a logical size of 1080x1920.
@@ -383,6 +379,9 @@ The name event is sent after creating an xdg_output (see
 xdg_output_manager.get_xdg_output). This event is only sent once per
 xdg_output, and the name does not change over the lifetime of the
 wl_output global.
+
+    This event is deprecated, instead clients should use wl_output.name.
+    Compositors must still support this event.
   </div>
             </li>
             
@@ -418,6 +417,9 @@ changes. The description is optional, and may not be sent at all.
 For objects of version 2 and lower, this event is only sent once per
 xdg_output, and the description does not change over the lifetime of
 the wl_output global.
+
+This event is deprecated, instead clients should use
+wl_output.description. Compositors must still support this event.
   </div>
             </li>
             
@@ -440,7 +442,7 @@ Permission is hereby granted, free of charge, to any person obtaining a
 copy of this software and associated documentation files (the &quot;Software&quot;),
 to deal in the Software without restriction, including without limitation
 the rights to use, copy, modify, merge, publish, distribute, sublicense,
-and&#x2f;or sell copies of the Software, and to permit persons to whom the
+and/or sell copies of the Software, and to permit persons to whom the
 Software is furnished to do so, subject to the following conditions:
 
 The above copyright notice and this permission notice (including the next

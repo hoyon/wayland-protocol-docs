@@ -1,0 +1,384 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>kde_screen_edge_v1</title>
+
+    <link rel="stylesheet" href="/wayland-protocol-docs/main.css">
+     
+  </head>
+  <body class="black-70 flex sans-serif ph4-l">
+    <div id="sidebar" class="w-20">
+      <div class="fixed vh-100 overflow-y-auto w-20">
+        <a href="/wayland-protocol-docs/" class="f4 link near-black dim lh-title db mt3">
+          Home
+        </a>
+        
+  <div class="ph2">
+    
+
+<div>
+  <ul class="list pl0">
+  
+    <li>
+      <a href="#i:kde_screen_edge_manager_v1" class="link blue underline-hover lh-copy">kde_screen_edge_manager_v1</a>
+
+      
+        <div>
+          <a href="#rh:kde_screen_edge_manager_v1" class="link blue underline-hover lh-copy pl3">Requests</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#r:kde_screen_edge_manager_v1:destroy" class="link blue underline-hover lh-copy">destroy</a>
+          </li>
+          
+          <li>
+            <a href="#r:kde_screen_edge_manager_v1:get_auto_hide_screen_edge" class="link blue underline-hover lh-copy">get_auto_hide_screen_edge</a>
+          </li>
+          
+        </ul>
+      
+
+      
+      
+
+      
+        <div>
+          <a href="#enumh:kde_screen_edge_manager_v1" class="link blue underline-hover lh-copy pl3">Enums</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#enum:kde_screen_edge_manager_v1:error" class="link blue underline-hover lh-copy">error</a>
+          </li>
+          
+          <li>
+            <a href="#enum:kde_screen_edge_manager_v1:border" class="link blue underline-hover lh-copy">border</a>
+          </li>
+          
+        </ul>
+      
+    </li>
+  
+    <li>
+      <a href="#i:kde_auto_hide_screen_edge_v1" class="link blue underline-hover lh-copy">kde_auto_hide_screen_edge_v1</a>
+
+      
+        <div>
+          <a href="#rh:kde_auto_hide_screen_edge_v1" class="link blue underline-hover lh-copy pl3">Requests</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#r:kde_auto_hide_screen_edge_v1:destroy" class="link blue underline-hover lh-copy">destroy</a>
+          </li>
+          
+          <li>
+            <a href="#r:kde_auto_hide_screen_edge_v1:deactivate" class="link blue underline-hover lh-copy">deactivate</a>
+          </li>
+          
+          <li>
+            <a href="#r:kde_auto_hide_screen_edge_v1:activate" class="link blue underline-hover lh-copy">activate</a>
+          </li>
+          
+        </ul>
+      
+
+      
+      
+
+      
+      
+    </li>
+  
+  </ul>
+</div>
+  </div>
+
+      </div>
+    </div>
+
+    <main id="content" class="mh4 w-80">
+      
+  <div class="ph2">
+    <h1 class="f1 lh-title">kde_screen_edge_v1</h1>
+    <ul class="list pl0">
+      
+      <li class="mt4">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:kde_screen_edge_manager_v1">
+          <a href="#i:kde_screen_edge_manager_v1" class="link dim black-70 child pr2 absolute left--2">#</a>
+          kde_screen_edge_manager_v1
+        </h2>
+        <div class="f6 lh-copy ws-pre-line code">This interface allows clients to associate actions with screen edges. For
+example, showing a surface by moving the pointer to a screen edge.
+
+Potential ways to trigger the screen edge are subject to compositor
+policies. As an example, the compositor may consider the screen edge to be
+triggered if the pointer hits its associated screen border. Other ways may
+include using touchscreen or touchpad gestures.
+</div>
+
+        
+          <h3 class=" f5 lh-title" id="rh:kde_screen_edge_manager_v1">Requests</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:kde_screen_edge_manager_v1:destroy">
+                <a href="#r:kde_screen_edge_manager_v1:destroy" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  destroy
+                </div>
+                <div class="f5 ml2">
+                  destroy the screen edge manager
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">kde_screen_edge_manager_v1_destroy</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct kde_screen_edge_manager_v1*</span> kde_screen_edge_manager_v1</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Destroy the screen edge manager. This doesn&#x27;t destroy objects created
+with this manager.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:kde_screen_edge_manager_v1:get_auto_hide_screen_edge">
+                <a href="#r:kde_screen_edge_manager_v1:get_auto_hide_screen_edge" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  get_auto_hide_screen_edge
+                </div>
+                <div class="f5 ml2">
+                  create an auto hide edge
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>struct kde_auto_hide_screen_edge_v1* </span><span class="dark-blue">kde_screen_edge_manager_v1_get_auto_hide_screen_edge</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct kde_screen_edge_manager_v1*</span> kde_screen_edge_manager_v1,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> border, <span class="green">/* the associated screen border */</span></div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_surface*</span> surface <span class="green">/* the surface */</span></div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Create a new auto hide screen edge object associated with the specified
+surface and the border.
+
+Creating a kde_auto_hide_screen_edge_v1 object does not change the
+visibility of the surface. The kde_auto_hide_screen_edge_v1.activate
+request must be issued in order to hide the surface.
+
+The &quot;border&quot; argument must be a valid enum entry, otherwise the
+invalid_border protocol error is raised.
+
+The invalid_role protocol error will be raised if the specified surface
+does not have layer_surface role.
+</div>
+            </li>
+            
+          </ul>
+        
+
+        
+
+        
+
+        
+          <h3 class=" f5 lh-title" id="enumh:kde_screen_edge_manager_v1">Enums</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="enum:kde_screen_edge_manager_v1:error">
+                <a href="#enum:kde_screen_edge_manager_v1:error" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  error
+                </div>
+                <div class="f5 ml2">
+                  
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  KDE_SCREEN_EDGE_MANAGER_V1_ERROR_INVALID_BORDER  <span class="green">/* the specified border value is invalid */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  KDE_SCREEN_EDGE_MANAGER_V1_ERROR_INVALID_ROLE  <span class="green">/* the surface has invalid role */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  KDE_SCREEN_EDGE_MANAGER_V1_ERROR_ALREADY_CONSTRUCTED  <span class="green">/* the surface already has a screen edge */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3"></div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="enum:kde_screen_edge_manager_v1:border">
+                <a href="#enum:kde_screen_edge_manager_v1:border" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  border
+                </div>
+                <div class="f5 ml2">
+                  screen border
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  KDE_SCREEN_EDGE_MANAGER_V1_BORDER_TOP  <span class="green">/* top screen edge */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  KDE_SCREEN_EDGE_MANAGER_V1_BORDER_BOTTOM  <span class="green">/* bottom screen edge */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  KDE_SCREEN_EDGE_MANAGER_V1_BORDER_LEFT  <span class="green">/* left screen edge */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  KDE_SCREEN_EDGE_MANAGER_V1_BORDER_RIGHT  <span class="green">/* right screen edge */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">These values describe possible screen borders.
+</div>
+            </li>
+            
+          </ul>
+
+        
+
+      </li>
+      
+      <li class="mt4">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:kde_auto_hide_screen_edge_v1">
+          <a href="#i:kde_auto_hide_screen_edge_v1" class="link dim black-70 child pr2 absolute left--2">#</a>
+          kde_auto_hide_screen_edge_v1
+        </h2>
+        <div class="f6 lh-copy ws-pre-line code">The auto hide screen edge object allows to hide the surface and make it
+visible by triggering the screen edge. The screen edge is inactive and
+the surface is visible by default.
+
+This interface can be used to implement user interface elements such as
+auto-hide panels or docks.
+
+kde_auto_hide_screen_edge_v1.activate activates the screen edge and makes
+the surface hidden. The surface can be made visible by triggering the
+screen edge or calling kde_auto_hide_screen_edge_v1.deactivate.
+
+If the screen edge has been triggered, it won&#x27;t be re-activated again.
+Another kde_auto_hide_screen_edge_v1.activate request must be made by the
+client to activate the screen edge.
+</div>
+
+        
+          <h3 class=" f5 lh-title" id="rh:kde_auto_hide_screen_edge_v1">Requests</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:kde_auto_hide_screen_edge_v1:destroy">
+                <a href="#r:kde_auto_hide_screen_edge_v1:destroy" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  destroy
+                </div>
+                <div class="f5 ml2">
+                  destroy the auto hide screen edge object
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">kde_auto_hide_screen_edge_v1_destroy</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct kde_auto_hide_screen_edge_v1*</span> kde_auto_hide_screen_edge_v1</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Destroy the auto hide screen edge object. If the screen edge is active,
+it will be deactivated and the surface will be made visible.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:kde_auto_hide_screen_edge_v1:deactivate">
+                <a href="#r:kde_auto_hide_screen_edge_v1:deactivate" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  deactivate
+                </div>
+                <div class="f5 ml2">
+                  deactivate the screen edge
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">kde_auto_hide_screen_edge_v1_deactivate</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct kde_auto_hide_screen_edge_v1*</span> kde_auto_hide_screen_edge_v1</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Deactivate the screen edge. The surface will be made visible.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:kde_auto_hide_screen_edge_v1:activate">
+                <a href="#r:kde_auto_hide_screen_edge_v1:activate" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  activate
+                </div>
+                <div class="f5 ml2">
+                  activate the screen edge
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">kde_auto_hide_screen_edge_v1_activate</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct kde_auto_hide_screen_edge_v1*</span> kde_auto_hide_screen_edge_v1</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Activate the screen edge. The surface will be hidden until the screen
+edge is triggered.
+</div>
+            </li>
+            
+          </ul>
+        
+
+        
+
+        
+
+        
+
+        
+
+      </li>
+      
+    </ul>
+
+    <h2 class="f4 lh-title">Copyright Info</h2>
+    <div class="f7 lh-copy ws-pre-line code">SPDX-FileCopyrightText: 2023 Vlad Zahorodnii
+
+SPDX-License-Identifier: MIT-CMU
+</div>
+  </div>
+
+    </main>
+
+  </body>
+</html>

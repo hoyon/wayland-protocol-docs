@@ -6,13 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>xdg_decoration_unstable_v1</title>
 
-    <link rel="stylesheet" href="&#x2f;wayland-protocol-docs/main.css">
+    <link rel="stylesheet" href="/wayland-protocol-docs/main.css">
      
   </head>
   <body class="black-70 flex sans-serif ph4-l">
     <div id="sidebar" class="w-20">
       <div class="fixed vh-100 overflow-y-auto w-20">
-        <a href="&#x2f;wayland-protocol-docs/" class="f4 link near-black dim lh-title db mt3">
+        <a href="/wayland-protocol-docs/" class="f4 link near-black dim lh-title db mt3">
           Home
         </a>
         
@@ -336,7 +336,7 @@ This request has the same semantics as set_mode.
                   configure
                 </div>
                 <div class="f5 ml2">
-                  suggest a surface change
+                  notify a decoration mode change
                 </div>
               </div>
 
@@ -346,7 +346,7 @@ This request has the same semantics as set_mode.
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line code mt3">The configure event asks the client to change its decoration mode. The
+              <div class="f6 lh-copy ws-pre-line code mt3">The configure event configures the effective decoration mode. The
 configured state should not be applied immediately. Clients must send an
 ack_configure in response to this event. See xdg_surface.configure and
 xdg_surface.ack_configure for details.
@@ -432,7 +432,7 @@ Permission is hereby granted, free of charge, to any person obtaining a
 copy of this software and associated documentation files (the &quot;Software&quot;),
 to deal in the Software without restriction, including without limitation
 the rights to use, copy, modify, merge, publish, distribute, sublicense,
-and&#x2f;or sell copies of the Software, and to permit persons to whom the
+and/or sell copies of the Software, and to permit persons to whom the
 Software is furnished to do so, subject to the following conditions:
 
 The above copyright notice and this permission notice (including the next

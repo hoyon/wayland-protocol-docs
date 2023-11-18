@@ -6,13 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>xdg_shell</title>
 
-    <link rel="stylesheet" href="&#x2f;wayland-protocol-docs/main.css">
+    <link rel="stylesheet" href="/wayland-protocol-docs/main.css">
      
   </head>
   <body class="black-70 flex sans-serif ph4-l">
     <div id="sidebar" class="w-20">
       <div class="fixed vh-100 overflow-y-auto w-20">
-        <a href="&#x2f;wayland-protocol-docs/" class="f4 link near-black dim lh-title db mt3">
+        <a href="/wayland-protocol-docs/" class="f4 link near-black dim lh-title db mt3">
           Home
         </a>
         
@@ -1200,8 +1200,10 @@ also be treated as errors.
 
 After creating a role-specific object and setting it up, the client must
 perform an initial commit without any buffer attached. The compositor
-will reply with an xdg_surface.configure event. The client must
-acknowledge it and is then allowed to attach a buffer to map the surface.
+will reply with initial wl_surface state such as
+wl_surface.preferred_buffer_scale followed by an xdg_surface.configure
+event. The client must acknowledge it and is then allowed to attach a
+buffer to map the surface.
 
 Mapping an xdg_surface-based role surface is defined as making it
 possible for the surface to be shown by the compositor. Note that
@@ -1243,7 +1245,8 @@ again before attaching a buffer.
   )
 </div>
               <div class="f6 lh-copy ws-pre-line code">Destroy the xdg_surface object. An xdg_surface must only be destroyed
-after its role object has been destroyed.
+after its role object has been destroyed, otherwise
+a defunct_role_object error is raised.
   </div>
             </li>
             
@@ -1354,13 +1357,22 @@ including any subsurfaces. This updates dynamically on every
 commit. This unset is meant for extremely simple clients.
 
 The arguments are given in the surface-local coordinate space of
-the wl_surface associated with this xdg_surface.
+the wl_surface associated with this xdg_surface, and may extend outside
+of the wl_surface itself to mark parts of the subsurface tree as part of
+the window geometry.
 
-The width and height must be greater than zero. Setting an invalid size
-will raise an invalid_size error. When applied, the effective window
-geometry will be the set window geometry clamped to the bounding
-rectangle of the combined geometry of the surface of the xdg_surface and
-the associated subsurfaces.
+When applied, the effective window geometry will be the set window
+geometry clamped to the bounding rectangle of the combined
+geometry of the surface of the xdg_surface and the associated
+subsurfaces.
+
+The effective geometry will not be recalculated unless a new call to
+set_window_geometry is done and the new pending surface state is
+subsequently applied.
+
+The width and height of the effective window geometry must be
+greater than zero. Setting an invalid size will raise an
+invalid_size error.
   </div>
             </li>
             
@@ -1500,6 +1512,10 @@ to one, it is free to discard all but the last event it received.
               
                 <div class="f6 lh-copy code">
                   XDG_SURFACE_ERROR_INVALID_SIZE  <span class="green">/* Width or height was zero or negative */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  XDG_SURFACE_ERROR_DEFUNCT_ROLE_OBJECT  <span class="green">/* Surface was destroyed before its role object */</span> 
                 </div>
               
 
@@ -1678,7 +1694,7 @@ See the desktop-entry specification [0] for more details on
 application identifiers and how they relate to well-known D-Bus
 names and .desktop files.
 
-[0] https:&#x2f;&#x2f;standards.freedesktop.org&#x2f;desktop-entry-spec&#x2f;
+[0] https://standards.freedesktop.org/desktop-entry-spec/
   </div>
             </li>
             
@@ -1814,10 +1830,10 @@ completed.
 
 The edges parameter specifies how the surface should be resized, and
 is one of the values of the resize_edge enum. Values not matching
-a variant of the enum will cause a protocol error. The compositor
-may use this information to update the surface position for example
-when dragging the top left corner. The compositor may also use
-this information to adapt its behavior, e.g. choose an appropriate
+a variant of the enum will cause the invalid_resize_edge protocol error.
+The compositor may use this information to update the surface position
+for example when dragging the top left corner. The compositor may also
+use this information to adapt its behavior, e.g. choose an appropriate
 cursor image.
   </div>
             </li>
@@ -2180,7 +2196,7 @@ should decide its own window dimension. This may happen when the
 compositor needs to configure the state of the surface but doesn&#x27;t
 have any information about any previous or expected dimension.
 
-The states listed in the event specify how the width&#x2f;height
+The states listed in the event specify how the width/height
 arguments should be interpreted, and possibly how it should be
 drawn.
 
@@ -2427,6 +2443,10 @@ is being dragged in a resize operation.
                   XDG_TOPLEVEL_STATE_TILED_BOTTOM  
                 </div>
               
+                <div class="f6 lh-copy code">
+                  XDG_TOPLEVEL_STATE_SUSPENDED  
+                </div>
+              
 
               <div class="f6 lh-copy ws-pre-line code mt3">The different state values used on the surface. This is designed for
 state values like maximized, fullscreen. It is paired with the
@@ -2532,8 +2552,8 @@ for the xdg_popup state to take effect.
               <div class="f6 lh-copy ws-pre-line code">This destroys the popup. Explicitly destroying the xdg_popup
 object will also dismiss the popup, and unmap the surface.
 
-If this xdg_popup is not the &quot;topmost&quot; popup, a protocol error
-will be sent.
+If this xdg_popup is not the &quot;topmost&quot; popup, the
+xdg_wm_base.not_the_topmost_popup protocol error will be sent.
   </div>
             </li>
             
@@ -2800,7 +2820,7 @@ Permission is hereby granted, free of charge, to any person obtaining a
 copy of this software and associated documentation files (the &quot;Software&quot;),
 to deal in the Software without restriction, including without limitation
 the rights to use, copy, modify, merge, publish, distribute, sublicense,
-and&#x2f;or sell copies of the Software, and to permit persons to whom the
+and/or sell copies of the Software, and to permit persons to whom the
 Software is furnished to do so, subject to the following conditions:
 
 The above copyright notice and this permission notice (including the next

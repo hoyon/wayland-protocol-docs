@@ -6,13 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>kde_output_management_v2</title>
 
-    <link rel="stylesheet" href="&#x2f;wayland-protocol-docs/main.css">
+    <link rel="stylesheet" href="/wayland-protocol-docs/main.css">
      
   </head>
   <body class="black-70 flex sans-serif ph4-l">
     <div id="sidebar" class="w-20">
       <div class="fixed vh-100 overflow-y-auto w-20">
-        <a href="&#x2f;wayland-protocol-docs/" class="f4 link near-black dim lh-title db mt3">
+        <a href="/wayland-protocol-docs/" class="f4 link near-black dim lh-title db mt3">
           Home
         </a>
         
@@ -98,6 +98,30 @@
             <a href="#r:kde_output_configuration_v2:set_primary_output" class="link blue underline-hover lh-copy">set_primary_output</a>
           </li>
           
+          <li>
+            <a href="#r:kde_output_configuration_v2:set_priority" class="link blue underline-hover lh-copy">set_priority</a>
+          </li>
+          
+          <li>
+            <a href="#r:kde_output_configuration_v2:set_high_dynamic_range" class="link blue underline-hover lh-copy">set_high_dynamic_range</a>
+          </li>
+          
+          <li>
+            <a href="#r:kde_output_configuration_v2:set_sdr_brightness" class="link blue underline-hover lh-copy">set_sdr_brightness</a>
+          </li>
+          
+          <li>
+            <a href="#r:kde_output_configuration_v2:set_wide_color_gamut" class="link blue underline-hover lh-copy">set_wide_color_gamut</a>
+          </li>
+          
+          <li>
+            <a href="#r:kde_output_configuration_v2:set_auto_rotate_policy" class="link blue underline-hover lh-copy">set_auto_rotate_policy</a>
+          </li>
+          
+          <li>
+            <a href="#r:kde_output_configuration_v2:set_icc_profile_path" class="link blue underline-hover lh-copy">set_icc_profile_path</a>
+          </li>
+          
         </ul>
       
 
@@ -134,6 +158,10 @@
           
           <li>
             <a href="#enum:kde_output_configuration_v2:rgb_range" class="link blue underline-hover lh-copy">rgb_range</a>
+          </li>
+          
+          <li>
+            <a href="#enum:kde_output_configuration_v2:auto_rotate_policy" class="link blue underline-hover lh-copy">auto_rotate_policy</a>
           </li>
           
         </ul>
@@ -549,6 +577,163 @@ variable refresh rate.
               <div class="f6 lh-copy ws-pre-line code"></div>
             </li>
             
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:kde_output_configuration_v2:set_priority">
+                <a href="#r:kde_output_configuration_v2:set_priority" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  set_priority
+                </div>
+                <div class="f5 ml2">
+                  Set the order of outputs
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">kde_output_configuration_v2_set_priority</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct kde_output_configuration_v2*</span> kde_output_configuration_v2,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct kde_output_device_v2*</span> outputdevice, <span class="green">/* outputdevice the index applies to */</span></div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> priority <span class="green">/* the priority of the output */</span></div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">The order of outputs can be used to assign desktop environment components to a specific screen,
+see kde_output_order_v1 for details. The priority is 1-based for outputs that will be enabled after
+this changeset is applied, all outputs that are disabled need to have the index set to zero.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:kde_output_configuration_v2:set_high_dynamic_range">
+                <a href="#r:kde_output_configuration_v2:set_high_dynamic_range" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  set_high_dynamic_range
+                </div>
+                <div class="f5 ml2">
+                  change if HDR should be enabled
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">kde_output_configuration_v2_set_high_dynamic_range</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct kde_output_configuration_v2*</span> kde_output_configuration_v2,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct kde_output_device_v2*</span> outputdevice, <span class="green">/* outputdevice this setting applies to */</span></div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> enable_hdr <span class="green">/* 1 to enable, 0 to disable hdr */</span></div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Sets whether or not the output should be set to HDR mode.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:kde_output_configuration_v2:set_sdr_brightness">
+                <a href="#r:kde_output_configuration_v2:set_sdr_brightness" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  set_sdr_brightness
+                </div>
+                <div class="f5 ml2">
+                  set the brightness for sdr content
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">kde_output_configuration_v2_set_sdr_brightness</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct kde_output_configuration_v2*</span> kde_output_configuration_v2,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct kde_output_device_v2*</span> outputdevice, <span class="green">/* outputdevice this setting applies to */</span></div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> sdr_brightness</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Sets the brightness of standard dynamic range content in nits. Only has an effect while the output is in HDR mode.
+Note that while the value is in nits, that doesn&#x27;t necessarily translate to the same brightness on the screen.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:kde_output_configuration_v2:set_wide_color_gamut">
+                <a href="#r:kde_output_configuration_v2:set_wide_color_gamut" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  set_wide_color_gamut
+                </div>
+                <div class="f5 ml2">
+                  change if a wide color gamut should be used
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">kde_output_configuration_v2_set_wide_color_gamut</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct kde_output_configuration_v2*</span> kde_output_configuration_v2,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct kde_output_device_v2*</span> outputdevice, <span class="green">/* outputdevice this setting applies to */</span></div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> enable_wcg <span class="green">/* 1 to enable, 0 to disable wcg */</span></div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Whether or not the output should use a wide color gamut
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:kde_output_configuration_v2:set_auto_rotate_policy">
+                <a href="#r:kde_output_configuration_v2:set_auto_rotate_policy" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  set_auto_rotate_policy
+                </div>
+                <div class="f5 ml2">
+                  change when auto rotate should be used
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">kde_output_configuration_v2_set_auto_rotate_policy</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct kde_output_configuration_v2*</span> kde_output_configuration_v2,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct kde_output_device_v2*</span> outputdevice, <span class="green">/* outputdevice this setting applies to */</span></div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> policy</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code"></div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:kde_output_configuration_v2:set_icc_profile_path">
+                <a href="#r:kde_output_configuration_v2:set_icc_profile_path" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  set_icc_profile_path
+                </div>
+                <div class="f5 ml2">
+                  change the used icc profile
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">kde_output_configuration_v2_set_icc_profile_path</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct kde_output_configuration_v2*</span> kde_output_configuration_v2,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct kde_output_device_v2*</span> outputdevice, <span class="green">/* outputdevice this setting applies to */</span></div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">const char*</span> profile_path</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code"></div>
+            </li>
+            
           </ul>
         
 
@@ -676,6 +861,34 @@ variable refresh rate.
 
               <div class="f6 lh-copy ws-pre-line code mt3">Whether this output should use full or limited rgb.
 </div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="enum:kde_output_configuration_v2:auto_rotate_policy">
+                <a href="#enum:kde_output_configuration_v2:auto_rotate_policy" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  auto_rotate_policy
+                </div>
+                <div class="f5 ml2">
+                  describes when auto rotate should be used
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  KDE_OUTPUT_CONFIGURATION_V2_AUTO_ROTATE_POLICY_NEVER  
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  KDE_OUTPUT_CONFIGURATION_V2_AUTO_ROTATE_POLICY_IN_TABLET_MODE  
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  KDE_OUTPUT_CONFIGURATION_V2_AUTO_ROTATE_POLICY_ALWAYS  
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3"></div>
             </li>
             
           </ul>
