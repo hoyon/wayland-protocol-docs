@@ -114,6 +114,18 @@
             <a href="#e:kde_output_device_v2:icc_profile_path" class="link blue underline-hover lh-copy">icc_profile_path</a>
           </li>
           
+          <li>
+            <a href="#e:kde_output_device_v2:brightness_metadata" class="link blue underline-hover lh-copy">brightness_metadata</a>
+          </li>
+          
+          <li>
+            <a href="#e:kde_output_device_v2:brightness_overrides" class="link blue underline-hover lh-copy">brightness_overrides</a>
+          </li>
+          
+          <li>
+            <a href="#e:kde_output_device_v2:sdr_gamut_wideness" class="link blue underline-hover lh-copy">sdr_gamut_wideness</a>
+          </li>
+          
         </ul>
       
 
@@ -726,6 +738,84 @@ doesn&#x27;t necessarily translate to the same brightness on the screen.
               
 
               <div class="f6 lh-copy ws-pre-line code mt3"></div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:kde_output_device_v2:brightness_metadata">
+                <a href="#e:kde_output_device_v2:brightness_metadata" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  brightness_metadata
+                </div>
+                <div class="f5 ml2">
+                  metadata about the screen&#x27;s brightness limits
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  <span class="purple">uint32_t</span> max_peak_brightness <span class="green">/* in nits */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  <span class="purple">uint32_t</span> max_frame_average_brightness <span class="green">/* in nits */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  <span class="purple">uint32_t</span> min_brightness <span class="green">/* in 0.0001 nits */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3"></div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:kde_output_device_v2:brightness_overrides">
+                <a href="#e:kde_output_device_v2:brightness_overrides" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  brightness_overrides
+                </div>
+                <div class="f5 ml2">
+                  overrides for the screen&#x27;s brightness limits
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  <span class="purple">int32_t</span> max_peak_brightness <span class="green">/* -1 for no override, positive values are the brightness in nits */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  <span class="purple">int32_t</span> max_average_brightness <span class="green">/* -1 for no override, positive values are the brightness in nits */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  <span class="purple">int32_t</span> min_brightness <span class="green">/* -1 for no override, positive values are the brightness in 0.0001 nits */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3"></div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:kde_output_device_v2:sdr_gamut_wideness">
+                <a href="#e:kde_output_device_v2:sdr_gamut_wideness" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  sdr_gamut_wideness
+                </div>
+                <div class="f5 ml2">
+                  describes which gamut is assumed for sRGB applications
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  <span class="purple">uint32_t</span> gamut_wideness <span class="green">/* 0 means rec.709 primaries, 10000 means rec.2020 primaries */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">This can be used to provide the colors users assume sRGB applications should have based on the
+default experience on many modern sRGB screens.
+</div>
             </li>
             
           </ul>

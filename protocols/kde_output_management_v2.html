@@ -122,6 +122,14 @@
             <a href="#r:kde_output_configuration_v2:set_icc_profile_path" class="link blue underline-hover lh-copy">set_icc_profile_path</a>
           </li>
           
+          <li>
+            <a href="#r:kde_output_configuration_v2:set_brightness_overrides" class="link blue underline-hover lh-copy">set_brightness_overrides</a>
+          </li>
+          
+          <li>
+            <a href="#r:kde_output_configuration_v2:set_sdr_gamut_wideness" class="link blue underline-hover lh-copy">set_sdr_gamut_wideness</a>
+          </li>
+          
         </ul>
       
 
@@ -734,6 +742,62 @@ Note that while the value is in nits, that doesn&#x27;t necessarily translate to
               <div class="f6 lh-copy ws-pre-line code"></div>
             </li>
             
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:kde_output_configuration_v2:set_brightness_overrides">
+                <a href="#r:kde_output_configuration_v2:set_brightness_overrides" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  set_brightness_overrides
+                </div>
+                <div class="f5 ml2">
+                  override metadata about the screen&#x27;s brightness limits
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">kde_output_configuration_v2_set_brightness_overrides</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct kde_output_configuration_v2*</span> kde_output_configuration_v2,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct kde_output_device_v2*</span> outputdevice, <span class="green">/* outputdevice this setting applies to */</span></div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> max_peak_brightness, <span class="green">/* -1 for not overriding, or positive values in nits */</span></div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> max_frame_average_brightness, <span class="green">/* -1 for not overriding, or positive values in nits */</span></div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> min_brightness <span class="green">/* -1 for not overriding, or positive values in 0.0001 nits */</span></div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code"></div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:kde_output_configuration_v2:set_sdr_gamut_wideness">
+                <a href="#r:kde_output_configuration_v2:set_sdr_gamut_wideness" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  set_sdr_gamut_wideness
+                </div>
+                <div class="f5 ml2">
+                  describes which gamut is assumed for sRGB applications
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">kde_output_configuration_v2_set_sdr_gamut_wideness</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct kde_output_configuration_v2*</span> kde_output_configuration_v2,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct kde_output_device_v2*</span> outputdevice, <span class="green">/* outputdevice this setting applies to */</span></div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> gamut_wideness <span class="green">/* 0 means rec.709 primaries, 10000 means rec.2020 primaries */</span></div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">This can be used to provide the colors users assume sRGB applications should have based on the
+default experience on many modern sRGB screens.
+</div>
+            </li>
+            
           </ul>
         
 
@@ -905,6 +969,7 @@ SPDX-FileCopyrightText: 2010-2011 Intel Corporation
 SPDX-FileCopyrightText: 2012-2013 Collabora, Ltd.
 SPDX-FileCopyrightText: 2015 Sebastian Kügler &lt;sebas@kde.org&gt;
 SPDX-FileCopyrightText: 2021 Méven Car &lt;meven.car@enioka.com&gt;
+SPDX-FileCopyrightText: 2023 Xaver Hugl &lt;xaver.hugl@kde.org&gt;
 
 SPDX-License-Identifier: MIT-CMU
 </div>
