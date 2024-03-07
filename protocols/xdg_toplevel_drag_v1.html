@@ -1,0 +1,397 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>xdg_toplevel_drag_v1</title>
+
+    <link rel="stylesheet" href="/wayland-protocol-docs/main.css">
+     
+  </head>
+  <body class="black-70 flex sans-serif ph4-l">
+    <div id="sidebar" class="w-20">
+      <div class="fixed vh-100 overflow-y-auto w-20">
+        <a href="/wayland-protocol-docs/" class="f4 link near-black dim lh-title db mt3">
+          Home
+        </a>
+        
+  <div class="ph2">
+    
+
+<div>
+  <ul class="list pl0">
+  
+    <li>
+      <a href="#i:xdg_toplevel_drag_manager_v1" class="link blue underline-hover lh-copy">xdg_toplevel_drag_manager_v1</a>
+
+      
+        <div>
+          <a href="#rh:xdg_toplevel_drag_manager_v1" class="link blue underline-hover lh-copy pl3">Requests</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#r:xdg_toplevel_drag_manager_v1:destroy" class="link blue underline-hover lh-copy">destroy</a>
+          </li>
+          
+          <li>
+            <a href="#r:xdg_toplevel_drag_manager_v1:get_xdg_toplevel_drag" class="link blue underline-hover lh-copy">get_xdg_toplevel_drag</a>
+          </li>
+          
+        </ul>
+      
+
+      
+      
+
+      
+        <div>
+          <a href="#enumh:xdg_toplevel_drag_manager_v1" class="link blue underline-hover lh-copy pl3">Enums</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#enum:xdg_toplevel_drag_manager_v1:error" class="link blue underline-hover lh-copy">error</a>
+          </li>
+          
+        </ul>
+      
+    </li>
+  
+    <li>
+      <a href="#i:xdg_toplevel_drag_v1" class="link blue underline-hover lh-copy">xdg_toplevel_drag_v1</a>
+
+      
+        <div>
+          <a href="#rh:xdg_toplevel_drag_v1" class="link blue underline-hover lh-copy pl3">Requests</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#r:xdg_toplevel_drag_v1:destroy" class="link blue underline-hover lh-copy">destroy</a>
+          </li>
+          
+          <li>
+            <a href="#r:xdg_toplevel_drag_v1:attach" class="link blue underline-hover lh-copy">attach</a>
+          </li>
+          
+        </ul>
+      
+
+      
+      
+
+      
+        <div>
+          <a href="#enumh:xdg_toplevel_drag_v1" class="link blue underline-hover lh-copy pl3">Enums</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#enum:xdg_toplevel_drag_v1:error" class="link blue underline-hover lh-copy">error</a>
+          </li>
+          
+        </ul>
+      
+    </li>
+  
+  </ul>
+</div>
+  </div>
+
+      </div>
+    </div>
+
+    <main id="content" class="mh4 w-80">
+      
+  <div class="ph2">
+    <h1 class="f1 lh-title">xdg_toplevel_drag_v1</h1>
+    <ul class="list pl0">
+      
+      <li class="mt4">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:xdg_toplevel_drag_manager_v1">
+          <a href="#i:xdg_toplevel_drag_manager_v1" class="link dim black-70 child pr2 absolute left--2">#</a>
+          xdg_toplevel_drag_manager_v1
+        </h2>
+        <div class="f6 lh-copy ws-pre-line code">This protocol enhances normal drag and drop with the ability to move a
+window at the same time. This allows having detachable parts of a window
+that when dragged out of it become a new window and can be dragged over
+an existing window to be reattached.
+
+A typical workflow would be when the user starts dragging on top of a
+detachable part of a window, the client would create a wl_data_source and
+a xdg_toplevel_drag_v1 object and start the drag as normal via
+wl_data_device.start_drag. Once the client determines that the detachable
+window contents should be detached from the originating window, it creates
+a new xdg_toplevel with these contents and issues a
+xdg_toplevel_drag_v1.attach request before mapping it. From now on the new
+window is moved by the compositor during the drag as if the client called
+xdg_toplevel.move.
+
+Dragging an existing window is similar. The client creates a
+xdg_toplevel_drag_v1 object and attaches the existing toplevel before
+starting the drag.
+
+Clients use the existing drag and drop mechanism to detect when a window
+can be docked or undocked. If the client wants to snap a window into a
+parent window it should delete or unmap the dragged top-level. If the
+contents should be detached again it attaches a new toplevel as described
+above. If a drag operation is cancelled without being dropped, clients
+should revert to the previous state, deleting any newly created windows
+as appropriate. When a drag operation ends as indicated by
+wl_data_source.dnd_drop_performed the dragged toplevel window&#x27;s final
+position is determined as if a xdg_toplevel_move operation ended.
+
+Warning! The protocol described in this file is currently in the testing
+phase. Backward compatible changes may be added together with the
+corresponding interface version bump. Backward incompatible changes can
+only be done by creating a new major version of the extension.
+</div>
+
+        
+          <h3 class=" f5 lh-title" id="rh:xdg_toplevel_drag_manager_v1">Requests</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:xdg_toplevel_drag_manager_v1:destroy">
+                <a href="#r:xdg_toplevel_drag_manager_v1:destroy" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  destroy
+                </div>
+                <div class="f5 ml2">
+                  destroy the xdg_toplevel_drag_manager_v1 object
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">xdg_toplevel_drag_manager_v1_destroy</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct xdg_toplevel_drag_manager_v1*</span> xdg_toplevel_drag_manager_v1</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Destroy this xdg_toplevel_drag_manager_v1 object. Other objects,
+including xdg_toplevel_drag_v1 objects created by this factory, are not
+affected by this request.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:xdg_toplevel_drag_manager_v1:get_xdg_toplevel_drag">
+                <a href="#r:xdg_toplevel_drag_manager_v1:get_xdg_toplevel_drag" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  get_xdg_toplevel_drag
+                </div>
+                <div class="f5 ml2">
+                  get an xdg_toplevel_drag for a wl_data_source
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>struct xdg_toplevel_drag_v1* </span><span class="dark-blue">xdg_toplevel_drag_manager_v1_get_xdg_toplevel_drag</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct xdg_toplevel_drag_manager_v1*</span> xdg_toplevel_drag_manager_v1,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_data_source*</span> data_source</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Create an xdg_toplevel_drag for a drag and drop operation that is going
+to be started with data_source.
+
+This request can only be made on sources used in drag-and-drop, so it
+must be performed before wl_data_device.start_drag. Attempting to use
+the source other than for drag-and-drop such as in
+wl_data_device.set_selection will raise an invalid_source error.
+
+Destroying data_source while a toplevel is attached to the
+xdg_toplevel_drag is undefined.
+</div>
+            </li>
+            
+          </ul>
+        
+
+        
+
+        
+
+        
+          <h3 class=" f5 lh-title" id="enumh:xdg_toplevel_drag_manager_v1">Enums</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="enum:xdg_toplevel_drag_manager_v1:error">
+                <a href="#enum:xdg_toplevel_drag_manager_v1:error" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  error
+                </div>
+                <div class="f5 ml2">
+                  
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  XDG_TOPLEVEL_DRAG_MANAGER_V1_ERROR_INVALID_SOURCE  <span class="green">/* data_source already used for toplevel drag */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3"></div>
+            </li>
+            
+          </ul>
+
+        
+
+      </li>
+      
+      <li class="mt4">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:xdg_toplevel_drag_v1">
+          <a href="#i:xdg_toplevel_drag_v1" class="link dim black-70 child pr2 absolute left--2">#</a>
+          xdg_toplevel_drag_v1
+        </h2>
+        <div class="f6 lh-copy ws-pre-line code"></div>
+
+        
+          <h3 class=" f5 lh-title" id="rh:xdg_toplevel_drag_v1">Requests</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:xdg_toplevel_drag_v1:destroy">
+                <a href="#r:xdg_toplevel_drag_v1:destroy" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  destroy
+                </div>
+                <div class="f5 ml2">
+                  destroy an xdg_toplevel_drag_v1 object
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">xdg_toplevel_drag_v1_destroy</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct xdg_toplevel_drag_v1*</span> xdg_toplevel_drag_v1</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Destroy this xdg_toplevel_drag_v1 object. This request must only be
+called after the underlying wl_data_source drag has ended, as indicated
+by the dnd_drop_performed or cancelled events. In any other case an
+ongoing_drag error is raised.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:xdg_toplevel_drag_v1:attach">
+                <a href="#r:xdg_toplevel_drag_v1:attach" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  attach
+                </div>
+                <div class="f5 ml2">
+                  Move a toplevel with the drag operation
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">xdg_toplevel_drag_v1_attach</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct xdg_toplevel_drag_v1*</span> xdg_toplevel_drag_v1,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct xdg_toplevel*</span> toplevel,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> x_offset, <span class="green">/* dragged surface x offset */</span></div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> y_offset <span class="green">/* dragged surface y offset */</span></div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Request that the window will be moved with the cursor during the drag
+operation. The offset is a hint to the compositor how the toplevel
+should be positioned relative to the cursor hotspot in surface local
+coordinates. For example it might only be used when an unmapped window
+is attached. The attached window does not participate in the selection
+of the drag target.
+
+If the toplevel is unmapped while it is attached, it is automatically
+detached from the drag. In this case this request has to be called again
+if the window should be attached after it is remapped.
+
+This request can be called multiple times but issuing it while a
+toplevel with an active role is attached raises a toplevel_attached
+error.
+</div>
+            </li>
+            
+          </ul>
+        
+
+        
+
+        
+
+        
+          <h3 class=" f5 lh-title" id="enumh:xdg_toplevel_drag_v1">Enums</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="enum:xdg_toplevel_drag_v1:error">
+                <a href="#enum:xdg_toplevel_drag_v1:error" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  error
+                </div>
+                <div class="f5 ml2">
+                  
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  XDG_TOPLEVEL_DRAG_V1_ERROR_TOPLEVEL_ATTACHED  <span class="green">/* valid toplevel already attached */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  XDG_TOPLEVEL_DRAG_V1_ERROR_ONGOING_DRAG  <span class="green">/* drag has not ended */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3"></div>
+            </li>
+            
+          </ul>
+
+        
+
+      </li>
+      
+    </ul>
+
+    <h2 class="f4 lh-title">Copyright Info</h2>
+    <div class="f7 lh-copy ws-pre-line code">Copyright 2023 David Redondo
+
+Permission is hereby granted, free of charge, to any person obtaining a
+copy of this software and associated documentation files (the &quot;Software&quot;),
+to deal in the Software without restriction, including without limitation
+the rights to use, copy, modify, merge, publish, distribute, sublicense,
+and/or sell copies of the Software, and to permit persons to whom the
+Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice (including the next
+paragraph) shall be included in all copies or substantial portions of the
+Software.
+
+THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL
+THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+DEALINGS IN THE SOFTWARE.
+</div>
+  </div>
+
+    </main>
+
+  </body>
+</html>
