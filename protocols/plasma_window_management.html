@@ -43,6 +43,10 @@
             <a href="#r:org_kde_plasma_window_management:get_window_by_uuid" class="link blue underline-hover lh-copy">get_window_by_uuid</a>
           </li>
           
+          <li>
+            <a href="#r:org_kde_plasma_window_management:get_stacking_order" class="link blue underline-hover lh-copy">get_stacking_order</a>
+          </li>
+          
         </ul>
       
 
@@ -70,6 +74,10 @@
           
           <li>
             <a href="#e:org_kde_plasma_window_management:window_with_uuid" class="link blue underline-hover lh-copy">window_with_uuid</a>
+          </li>
+          
+          <li>
+            <a href="#e:org_kde_plasma_window_management:stacking_order_changed_2" class="link blue underline-hover lh-copy">stacking_order_changed_2</a>
           </li>
           
         </ul>
@@ -239,6 +247,10 @@
             <a href="#e:org_kde_plasma_window:resource_name_changed" class="link blue underline-hover lh-copy">resource_name_changed</a>
           </li>
           
+          <li>
+            <a href="#e:org_kde_plasma_window:client_geometry" class="link blue underline-hover lh-copy">client_geometry</a>
+          </li>
+          
         </ul>
       
 
@@ -316,6 +328,33 @@
       
     </li>
   
+    <li>
+      <a href="#i:org_kde_plasma_stacking_order" class="link blue underline-hover lh-copy">org_kde_plasma_stacking_order</a>
+
+      
+      
+
+      
+        <div>
+          <a href="#eh:org_kde_plasma_stacking_order" class="link blue underline-hover lh-copy pl3">Events</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#e:org_kde_plasma_stacking_order:window" class="link blue underline-hover lh-copy">window</a>
+          </li>
+          
+          <li>
+            <a href="#e:org_kde_plasma_stacking_order:done" class="link blue underline-hover lh-copy">done</a>
+          </li>
+          
+        </ul>
+      
+
+      
+      
+    </li>
+  
   </ul>
 </div>
   </div>
@@ -340,6 +379,11 @@ an event every time a window is created so that the client can
 use it to manage the window.
 
 Only one client can bind this interface at a time.
+
+Warning! The protocol described in this file is a desktop environment
+implementation detail. Regular clients must not use this protocol.
+Backward incompatible changes may be added without bumping the major
+version of the extension.
 </div>
 
         
@@ -416,6 +460,27 @@ Only one client can bind this interface at a time.
               <div class="f6 lh-copy ws-pre-line code"></div>
             </li>
             
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:org_kde_plasma_window_management:get_stacking_order">
+                <a href="#r:org_kde_plasma_window_management:get_stacking_order" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  get_stacking_order
+                </div>
+                <div class="f5 ml2">
+                  get the stacking order
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>struct org_kde_plasma_stacking_order* </span><span class="dark-blue">org_kde_plasma_window_management_get_stacking_order</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct org_kde_plasma_window_management*</span> org_kde_plasma_window_management</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code"></div>
+            </li>
+            
           </ul>
         
 
@@ -485,7 +550,9 @@ On binding the interface the current state is sent.
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line code mt3">This event will be sent when stacking order changed and on bind
+              <div class="f6 lh-copy ws-pre-line code mt3">This event will be sent when stacking order changed and on bind.
+
+With version 17 this event is deprecated and will no longer be sent.
 </div>
             </li>
             
@@ -506,7 +573,9 @@ On binding the interface the current state is sent.
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line code mt3">This event will be sent when stacking order changed and on bind
+              <div class="f6 lh-copy ws-pre-line code mt3">This event will be sent when stacking order changed and on bind.
+
+With version 17 this event is deprecated and will no longer be sent.
 </div>
             </li>
             
@@ -532,6 +601,23 @@ On binding the interface the current state is sent.
               
 
               <div class="f6 lh-copy ws-pre-line code mt3">This event will be sent immediately after a window is mapped.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:org_kde_plasma_window_management:stacking_order_changed_2">
+                <a href="#e:org_kde_plasma_window_management:stacking_order_changed_2" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  stacking_order_changed_2
+                </div>
+                <div class="f5 ml2">
+                  notify the client when stacking order changed
+                </div>
+              </div>
+
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">This event will be sent when stacking order changed.
 </div>
             </li>
             
@@ -1443,6 +1529,40 @@ This is only set for XWayland windows.
 </div>
             </li>
             
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:org_kde_plasma_window:client_geometry">
+                <a href="#e:org_kde_plasma_window:client_geometry" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  client_geometry
+                </div>
+                <div class="f5 ml2">
+                  The client geometry (i.e. without decorations etc) of this window in absolute coordinates
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  <span class="purple">int32_t</span> x <span class="green">/* x position of the org_kde_plasma_window */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  <span class="purple">int32_t</span> y <span class="green">/* y position of the org_kde_plasma_window */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  <span class="purple">uint32_t</span> width <span class="green">/* width of the org_kde_plasma_window */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  <span class="purple">uint32_t</span> height <span class="green">/* height of the org_kde_plasma_window */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">This event will be sent whenever the window geometry of this org_kde_plasma_window changes.
+The coordinates are in absolute coordinates of the windowing system.
+</div>
+            </li>
+            
           </ul>
 
         
@@ -1598,6 +1718,69 @@ longer be used.
                 </div>
                 <div class="f5 ml2">
                   Notifies about activation finished, either by activation or because it got invalidated
+                </div>
+              </div>
+
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3"></div>
+            </li>
+            
+          </ul>
+
+        
+
+        
+
+        
+
+      </li>
+      
+      <li class="mt4">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:org_kde_plasma_stacking_order">
+          <a href="#i:org_kde_plasma_stacking_order" class="link dim black-70 child pr2 absolute left--2">#</a>
+          org_kde_plasma_stacking_order
+        </h2>
+        <div class="f6 lh-copy ws-pre-line code">When this object is created, the compositor sends a window event for
+each window in the stacking order, and afterwards sends the done event
+and destroys this object.
+</div>
+
+        
+        
+
+        
+          <h3 class=" f5 lh-title" id="eh:org_kde_plasma_stacking_order">Events</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:org_kde_plasma_stacking_order:window">
+                <a href="#e:org_kde_plasma_stacking_order:window" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  window
+                </div>
+                <div class="f5 ml2">
+                  a window in the stacking order list
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  <span class="purple">const char*</span> uuid <span class="green">/* window uuid */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3"></div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:org_kde_plasma_stacking_order:done">
+                <a href="#e:org_kde_plasma_stacking_order:done" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  done
+                </div>
+                <div class="f5 ml2">
+                  marks the end of the list
                 </div>
               </div>
 

@@ -1,0 +1,360 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>kde_external_brightness_v1</title>
+
+    <link rel="stylesheet" href="/wayland-protocol-docs/main.css">
+     
+  </head>
+  <body class="black-70 flex sans-serif ph4-l">
+    <div id="sidebar" class="w-20">
+      <div class="fixed vh-100 overflow-y-auto w-20">
+        <a href="/wayland-protocol-docs/" class="f4 link near-black dim lh-title db mt3">
+          Home
+        </a>
+        
+  <div class="ph2">
+    
+
+<div>
+  <ul class="list pl0">
+  
+    <li>
+      <a href="#i:kde_external_brightness_v1" class="link blue underline-hover lh-copy">kde_external_brightness_v1</a>
+
+      
+        <div>
+          <a href="#rh:kde_external_brightness_v1" class="link blue underline-hover lh-copy pl3">Requests</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#r:kde_external_brightness_v1:destroy" class="link blue underline-hover lh-copy">destroy</a>
+          </li>
+          
+          <li>
+            <a href="#r:kde_external_brightness_v1:create_brightness_control" class="link blue underline-hover lh-copy">create_brightness_control</a>
+          </li>
+          
+        </ul>
+      
+
+      
+      
+
+      
+      
+    </li>
+  
+    <li>
+      <a href="#i:kde_external_brightness_device_v1" class="link blue underline-hover lh-copy">kde_external_brightness_device_v1</a>
+
+      
+        <div>
+          <a href="#rh:kde_external_brightness_device_v1" class="link blue underline-hover lh-copy pl3">Requests</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#r:kde_external_brightness_device_v1:destroy" class="link blue underline-hover lh-copy">destroy</a>
+          </li>
+          
+          <li>
+            <a href="#r:kde_external_brightness_device_v1:set_internal" class="link blue underline-hover lh-copy">set_internal</a>
+          </li>
+          
+          <li>
+            <a href="#r:kde_external_brightness_device_v1:set_edid" class="link blue underline-hover lh-copy">set_edid</a>
+          </li>
+          
+          <li>
+            <a href="#r:kde_external_brightness_device_v1:set_max_brightness" class="link blue underline-hover lh-copy">set_max_brightness</a>
+          </li>
+          
+          <li>
+            <a href="#r:kde_external_brightness_device_v1:commit" class="link blue underline-hover lh-copy">commit</a>
+          </li>
+          
+        </ul>
+      
+
+      
+        <div>
+          <a href="#eh:kde_external_brightness_device_v1" class="link blue underline-hover lh-copy pl3">Events</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#e:kde_external_brightness_device_v1:requested_brightness" class="link blue underline-hover lh-copy">requested_brightness</a>
+          </li>
+          
+        </ul>
+      
+
+      
+      
+    </li>
+  
+  </ul>
+</div>
+  </div>
+
+      </div>
+    </div>
+
+    <main id="content" class="mh4 w-80">
+      
+  <div class="ph2">
+    <h1 class="f1 lh-title">kde_external_brightness_v1</h1>
+    <ul class="list pl0">
+      
+      <li class="mt4">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:kde_external_brightness_v1">
+          <a href="#i:kde_external_brightness_v1" class="link dim black-70 child pr2 absolute left--2">#</a>
+          kde_external_brightness_v1
+        </h2>
+        <div class="f6 lh-copy ws-pre-line code">Some brightness control mechanisms are somewhat unstable, or require root
+privileges, so putting them inside of the compositor is not desired.
+This protocol is for outsourcing the actual brightness-setting to a
+process outside of the compositor.
+</div>
+
+        
+          <h3 class=" f5 lh-title" id="rh:kde_external_brightness_v1">Requests</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:kde_external_brightness_v1:destroy">
+                <a href="#r:kde_external_brightness_v1:destroy" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  destroy
+                </div>
+                <div class="f5 ml2">
+                  Destroy the object.
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">kde_external_brightness_v1_destroy</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct kde_external_brightness_v1*</span> kde_external_brightness_v1</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code"></div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:kde_external_brightness_v1:create_brightness_control">
+                <a href="#r:kde_external_brightness_v1:create_brightness_control" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  create_brightness_control
+                </div>
+                <div class="f5 ml2">
+                  registers a brightness device with the compositor
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>struct kde_external_brightness_device_v1* </span><span class="dark-blue">kde_external_brightness_v1_create_brightness_control</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct kde_external_brightness_v1*</span> kde_external_brightness_v1</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code"></div>
+            </li>
+            
+          </ul>
+        
+
+        
+
+        
+
+        
+
+        
+
+      </li>
+      
+      <li class="mt4">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:kde_external_brightness_device_v1">
+          <a href="#i:kde_external_brightness_device_v1" class="link dim black-70 child pr2 absolute left--2">#</a>
+          kde_external_brightness_device_v1
+        </h2>
+        <div class="f6 lh-copy ws-pre-line code">After creating this object, the client should issue all relevant setup requests
+(set_internal, set_edid, set_max_brightness) and finish the sequence with commit.
+Afterwards, for each change in values, the client must call commit again.
+</div>
+
+        
+          <h3 class=" f5 lh-title" id="rh:kde_external_brightness_device_v1">Requests</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:kde_external_brightness_device_v1:destroy">
+                <a href="#r:kde_external_brightness_device_v1:destroy" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  destroy
+                </div>
+                <div class="f5 ml2">
+                  destroy the object and unregister the brightness control device
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">kde_external_brightness_device_v1_destroy</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct kde_external_brightness_device_v1*</span> kde_external_brightness_device_v1</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code"></div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:kde_external_brightness_device_v1:set_internal">
+                <a href="#r:kde_external_brightness_device_v1:set_internal" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  set_internal
+                </div>
+                <div class="f5 ml2">
+                  sets whether or not the brightness device belongs to an internal display
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">kde_external_brightness_device_v1_set_internal</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct kde_external_brightness_device_v1*</span> kde_external_brightness_device_v1,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> internal <span class="green">/* 1 if it&#x27;s an internal panel, 0 if not */</span></div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code"></div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:kde_external_brightness_device_v1:set_edid">
+                <a href="#r:kde_external_brightness_device_v1:set_edid" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  set_edid
+                </div>
+                <div class="f5 ml2">
+                  set the EDID data for identification of the display
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">kde_external_brightness_device_v1_set_edid</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct kde_external_brightness_device_v1*</span> kde_external_brightness_device_v1,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">const char*</span> string <span class="green">/* base-64 encoded string of the first 128 bytes of the EDID */</span></div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code"></div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:kde_external_brightness_device_v1:set_max_brightness">
+                <a href="#r:kde_external_brightness_device_v1:set_max_brightness" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  set_max_brightness
+                </div>
+                <div class="f5 ml2">
+                  notifies the compositor of the maximum brightness that can be set on this device
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">kde_external_brightness_device_v1_set_max_brightness</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct kde_external_brightness_device_v1*</span> kde_external_brightness_device_v1,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> value <span class="green">/* the maximum value that can be set */</span></div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code"></div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:kde_external_brightness_device_v1:commit">
+                <a href="#r:kde_external_brightness_device_v1:commit" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  commit
+                </div>
+                <div class="f5 ml2">
+                  notifies the compositor that all relevant identifiers and values have been sent
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">kde_external_brightness_device_v1_commit</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct kde_external_brightness_device_v1*</span> kde_external_brightness_device_v1</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code"></div>
+            </li>
+            
+          </ul>
+        
+
+        
+          <h3 class=" f5 lh-title" id="eh:kde_external_brightness_device_v1">Events</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:kde_external_brightness_device_v1:requested_brightness">
+                <a href="#e:kde_external_brightness_device_v1:requested_brightness" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  requested_brightness
+                </div>
+                <div class="f5 ml2">
+                  requests the client to change the brightness to this value
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  <span class="purple">uint32_t</span> value <span class="green">/* the value to set the device to */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">The client must ensure that if the brightness level changes due to external factors,
+that it overwrites those changes with what the compositor last requested.
+</div>
+            </li>
+            
+          </ul>
+
+        
+
+        
+
+        
+
+      </li>
+      
+    </ul>
+
+    <h2 class="f4 lh-title">Copyright Info</h2>
+    <div class="f7 lh-copy ws-pre-line code">SPDX-FileCopyrightText: 2024 Xaver Hugl &lt;xaver.hugl@gmail.com&gt;
+
+SPDX-License-Identifier: MIT-CMU
+</div>
+  </div>
+
+    </main>
+
+  </body>
+</html>

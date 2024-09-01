@@ -130,6 +130,14 @@
             <a href="#r:kde_output_configuration_v2:set_sdr_gamut_wideness" class="link blue underline-hover lh-copy">set_sdr_gamut_wideness</a>
           </li>
           
+          <li>
+            <a href="#r:kde_output_configuration_v2:set_color_profile_source" class="link blue underline-hover lh-copy">set_color_profile_source</a>
+          </li>
+          
+          <li>
+            <a href="#r:kde_output_configuration_v2:set_brightness" class="link blue underline-hover lh-copy">set_brightness</a>
+          </li>
+          
         </ul>
       
 
@@ -170,6 +178,10 @@
           
           <li>
             <a href="#enum:kde_output_configuration_v2:auto_rotate_policy" class="link blue underline-hover lh-copy">auto_rotate_policy</a>
+          </li>
+          
+          <li>
+            <a href="#enum:kde_output_configuration_v2:color_profile_source" class="link blue underline-hover lh-copy">color_profile_source</a>
           </li>
           
         </ul>
@@ -233,6 +245,9 @@ configuration request.
 Through this design the interface enables atomic output configuration changes if
 internally supported by the server.
 
+Warning! The protocol described in this file is a desktop environment implementation
+detail. Regular clients must not use this protocol. Backward incompatible
+changes may be added without bumping the major version of the extension.
 </div>
 
         
@@ -798,6 +813,64 @@ default experience on many modern sRGB screens.
 </div>
             </li>
             
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:kde_output_configuration_v2:set_color_profile_source">
+                <a href="#r:kde_output_configuration_v2:set_color_profile_source" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  set_color_profile_source
+                </div>
+                <div class="f5 ml2">
+                  which source the compositor should use for the color profile on an output
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">kde_output_configuration_v2_set_color_profile_source</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct kde_output_configuration_v2*</span> kde_output_configuration_v2,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct kde_output_device_v2*</span> outputdevice, <span class="green">/* outputdevice this setting applies to */</span></div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> color_profile_source <span class="green">/* the color profile source */</span></div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code"></div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:kde_output_configuration_v2:set_brightness">
+                <a href="#r:kde_output_configuration_v2:set_brightness" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  set_brightness
+                </div>
+                <div class="f5 ml2">
+                  brightness multiplier
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">kde_output_configuration_v2_set_brightness</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct kde_output_configuration_v2*</span> kde_output_configuration_v2,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct kde_output_device_v2*</span> outputdevice, <span class="green">/* outputdevice this setting applies to */</span></div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> brightness <span class="green">/* brightness in 0-10000 */</span></div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Set the brightness modifier of the output. It doesn&#x27;t specify
+any absolute values, but is merely a multiplier on top of other
+brightness values, like sdr_brightness and brightness_metadata.
+0 is the minimum brightness (not completely dark) and 10000 is
+the maximum brightness.
+This is supported while HDR is active in versions 8 and below,
+or when the device supports the brightness_control capability in
+versions 9 and above.
+</div>
+            </li>
+            
           </ul>
         
 
@@ -949,6 +1022,34 @@ default experience on many modern sRGB screens.
               
                 <div class="f6 lh-copy code">
                   KDE_OUTPUT_CONFIGURATION_V2_AUTO_ROTATE_POLICY_ALWAYS  
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3"></div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="enum:kde_output_configuration_v2:color_profile_source">
+                <a href="#enum:kde_output_configuration_v2:color_profile_source" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  color_profile_source
+                </div>
+                <div class="f5 ml2">
+                  which source the compositor should use for the color profile on an output
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  KDE_OUTPUT_CONFIGURATION_V2_COLOR_PROFILE_SOURCE_SRGB  
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  KDE_OUTPUT_CONFIGURATION_V2_COLOR_PROFILE_SOURCE_ICC  
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  KDE_OUTPUT_CONFIGURATION_V2_COLOR_PROFILE_SOURCE_EDID  
                 </div>
               
 
