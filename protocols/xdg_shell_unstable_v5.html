@@ -1,0 +1,1432 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>xdg_shell_unstable_v5</title>
+
+    <link rel="stylesheet" href="/wayland-protocol-docs/main.css">
+     
+  </head>
+  <body class="black-70 flex sans-serif ph4-l">
+    <div id="sidebar" class="w-20">
+      <div class="fixed vh-100 overflow-y-auto w-20">
+        <a href="/wayland-protocol-docs/" class="f4 link near-black dim lh-title db mt3">
+          Home
+        </a>
+        
+  <div class="ph2">
+    
+
+<div>
+  <ul class="list pl0">
+  
+    <li>
+      <a href="#i:xdg_shell" class="link blue underline-hover lh-copy">xdg_shell</a>
+
+      
+        <div>
+          <a href="#rh:xdg_shell" class="link blue underline-hover lh-copy pl3">Requests</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#r:xdg_shell:destroy" class="link blue underline-hover lh-copy">destroy</a>
+          </li>
+          
+          <li>
+            <a href="#r:xdg_shell:use_unstable_version" class="link blue underline-hover lh-copy">use_unstable_version</a>
+          </li>
+          
+          <li>
+            <a href="#r:xdg_shell:get_xdg_surface" class="link blue underline-hover lh-copy">get_xdg_surface</a>
+          </li>
+          
+          <li>
+            <a href="#r:xdg_shell:get_xdg_popup" class="link blue underline-hover lh-copy">get_xdg_popup</a>
+          </li>
+          
+          <li>
+            <a href="#r:xdg_shell:pong" class="link blue underline-hover lh-copy">pong</a>
+          </li>
+          
+        </ul>
+      
+
+      
+        <div>
+          <a href="#eh:xdg_shell" class="link blue underline-hover lh-copy pl3">Events</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#e:xdg_shell:ping" class="link blue underline-hover lh-copy">ping</a>
+          </li>
+          
+        </ul>
+      
+
+      
+        <div>
+          <a href="#enumh:xdg_shell" class="link blue underline-hover lh-copy pl3">Enums</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#enum:xdg_shell:version" class="link blue underline-hover lh-copy">version</a>
+          </li>
+          
+          <li>
+            <a href="#enum:xdg_shell:error" class="link blue underline-hover lh-copy">error</a>
+          </li>
+          
+        </ul>
+      
+    </li>
+  
+    <li>
+      <a href="#i:xdg_surface" class="link blue underline-hover lh-copy">xdg_surface</a>
+
+      
+        <div>
+          <a href="#rh:xdg_surface" class="link blue underline-hover lh-copy pl3">Requests</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#r:xdg_surface:destroy" class="link blue underline-hover lh-copy">destroy</a>
+          </li>
+          
+          <li>
+            <a href="#r:xdg_surface:set_parent" class="link blue underline-hover lh-copy">set_parent</a>
+          </li>
+          
+          <li>
+            <a href="#r:xdg_surface:set_title" class="link blue underline-hover lh-copy">set_title</a>
+          </li>
+          
+          <li>
+            <a href="#r:xdg_surface:set_app_id" class="link blue underline-hover lh-copy">set_app_id</a>
+          </li>
+          
+          <li>
+            <a href="#r:xdg_surface:show_window_menu" class="link blue underline-hover lh-copy">show_window_menu</a>
+          </li>
+          
+          <li>
+            <a href="#r:xdg_surface:move" class="link blue underline-hover lh-copy">move</a>
+          </li>
+          
+          <li>
+            <a href="#r:xdg_surface:resize" class="link blue underline-hover lh-copy">resize</a>
+          </li>
+          
+          <li>
+            <a href="#r:xdg_surface:ack_configure" class="link blue underline-hover lh-copy">ack_configure</a>
+          </li>
+          
+          <li>
+            <a href="#r:xdg_surface:set_window_geometry" class="link blue underline-hover lh-copy">set_window_geometry</a>
+          </li>
+          
+          <li>
+            <a href="#r:xdg_surface:set_maximized" class="link blue underline-hover lh-copy">set_maximized</a>
+          </li>
+          
+          <li>
+            <a href="#r:xdg_surface:unset_maximized" class="link blue underline-hover lh-copy">unset_maximized</a>
+          </li>
+          
+          <li>
+            <a href="#r:xdg_surface:set_fullscreen" class="link blue underline-hover lh-copy">set_fullscreen</a>
+          </li>
+          
+          <li>
+            <a href="#r:xdg_surface:unset_fullscreen" class="link blue underline-hover lh-copy">unset_fullscreen</a>
+          </li>
+          
+          <li>
+            <a href="#r:xdg_surface:set_minimized" class="link blue underline-hover lh-copy">set_minimized</a>
+          </li>
+          
+        </ul>
+      
+
+      
+        <div>
+          <a href="#eh:xdg_surface" class="link blue underline-hover lh-copy pl3">Events</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#e:xdg_surface:configure" class="link blue underline-hover lh-copy">configure</a>
+          </li>
+          
+          <li>
+            <a href="#e:xdg_surface:close" class="link blue underline-hover lh-copy">close</a>
+          </li>
+          
+        </ul>
+      
+
+      
+        <div>
+          <a href="#enumh:xdg_surface" class="link blue underline-hover lh-copy pl3">Enums</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#enum:xdg_surface:resize_edge" class="link blue underline-hover lh-copy">resize_edge</a>
+          </li>
+          
+          <li>
+            <a href="#enum:xdg_surface:state" class="link blue underline-hover lh-copy">state</a>
+          </li>
+          
+        </ul>
+      
+    </li>
+  
+    <li>
+      <a href="#i:xdg_popup" class="link blue underline-hover lh-copy">xdg_popup</a>
+
+      
+        <div>
+          <a href="#rh:xdg_popup" class="link blue underline-hover lh-copy pl3">Requests</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#r:xdg_popup:destroy" class="link blue underline-hover lh-copy">destroy</a>
+          </li>
+          
+        </ul>
+      
+
+      
+        <div>
+          <a href="#eh:xdg_popup" class="link blue underline-hover lh-copy pl3">Events</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#e:xdg_popup:popup_done" class="link blue underline-hover lh-copy">popup_done</a>
+          </li>
+          
+        </ul>
+      
+
+      
+      
+    </li>
+  
+  </ul>
+</div>
+  </div>
+
+      </div>
+    </div>
+
+    <main id="content" class="mh4 w-80">
+      
+  <div class="ph2">
+    <h1 class="f1 lh-title">xdg_shell_unstable_v5</h1>
+    <ul class="list pl0">
+      
+      <li class="mt4">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:xdg_shell">
+          <a href="#i:xdg_shell" class="link dim black-70 child pr2 absolute left--2">#</a>
+          xdg_shell
+        </h2>
+        <div class="f6 lh-copy ws-pre-line code">xdg_shell allows clients to turn a wl_surface into a &quot;real window&quot;
+which can be dragged, resized, stacked, and moved around by the
+user. Everything about this interface is suited towards traditional
+desktop environments.
+</div>
+
+        
+          <h3 class=" f5 lh-title" id="rh:xdg_shell">Requests</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:xdg_shell:destroy">
+                <a href="#r:xdg_shell:destroy" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  destroy
+                </div>
+                <div class="f5 ml2">
+                  destroy xdg_shell
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">xdg_shell_destroy</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct xdg_shell*</span> xdg_shell</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Destroy this xdg_shell object.
+
+Destroying a bound xdg_shell object while there are surfaces
+still alive created by this xdg_shell object instance is illegal
+and will result in a protocol error.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:xdg_shell:use_unstable_version">
+                <a href="#r:xdg_shell:use_unstable_version" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  use_unstable_version
+                </div>
+                <div class="f5 ml2">
+                  enable use of this unstable version
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">xdg_shell_use_unstable_version</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct xdg_shell*</span> xdg_shell,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> version</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Negotiate the unstable version of the interface.  This
+mechanism is in place to ensure client and server agree on the
+unstable versions of the protocol that they speak or exit
+cleanly if they don&#x27;t agree.  This request will go away once
+the xdg-shell protocol is stable.
+  </div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:xdg_shell:get_xdg_surface">
+                <a href="#r:xdg_shell:get_xdg_surface" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  get_xdg_surface
+                </div>
+                <div class="f5 ml2">
+                  create a shell surface from a surface
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>struct xdg_surface* </span><span class="dark-blue">xdg_shell_get_xdg_surface</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct xdg_shell*</span> xdg_shell,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_surface*</span> surface</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">This creates an xdg_surface for the given surface and gives it the
+xdg_surface role. A wl_surface can only be given an xdg_surface role
+once. If get_xdg_surface is called with a wl_surface that already has
+an active xdg_surface associated with it, or if it had any other role,
+an error is raised.
+
+See the documentation of xdg_surface for more details about what an
+xdg_surface is and how it is used.
+  </div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:xdg_shell:get_xdg_popup">
+                <a href="#r:xdg_shell:get_xdg_popup" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  get_xdg_popup
+                </div>
+                <div class="f5 ml2">
+                  create a popup for a surface
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>struct xdg_popup* </span><span class="dark-blue">xdg_shell_get_xdg_popup</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct xdg_shell*</span> xdg_shell,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_surface*</span> surface,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_surface*</span> parent,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_seat*</span> seat, <span class="green">/* the wl_seat of the user event */</span></div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> serial, <span class="green">/* the serial of the user event */</span></div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> x,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> y</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">This creates an xdg_popup for the given surface and gives it the
+xdg_popup role. A wl_surface can only be given an xdg_popup role
+once. If get_xdg_popup is called with a wl_surface that already has
+an active xdg_popup associated with it, or if it had any other role,
+an error is raised.
+
+This request must be used in response to some sort of user action
+like a button press, key press, or touch down event.
+
+See the documentation of xdg_popup for more details about what an
+xdg_popup is and how it is used.
+  </div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:xdg_shell:pong">
+                <a href="#r:xdg_shell:pong" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  pong
+                </div>
+                <div class="f5 ml2">
+                  respond to a ping event
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">xdg_shell_pong</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct xdg_shell*</span> xdg_shell,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> serial <span class="green">/* serial of the ping event */</span></div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">A client must respond to a ping event with a pong request or
+the client may be deemed unresponsive.
+  </div>
+            </li>
+            
+          </ul>
+        
+
+        
+          <h3 class=" f5 lh-title" id="eh:xdg_shell">Events</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:xdg_shell:ping">
+                <a href="#e:xdg_shell:ping" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  ping
+                </div>
+                <div class="f5 ml2">
+                  check if the client is alive
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  <span class="purple">uint32_t</span> serial <span class="green">/* pass this to the pong request */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">The ping event asks the client if it&#x27;s still alive. Pass the
+serial specified in the event back to the compositor by sending
+a &quot;pong&quot; request back with the specified serial.
+
+Compositors can use this to determine if the client is still
+alive. It&#x27;s unspecified what will happen if the client doesn&#x27;t
+respond to the ping request, or in what timeframe. Clients should
+try to respond in a reasonable amount of time.
+
+A compositor is free to ping in any way it wants, but a client must
+always respond to any xdg_shell object it created.
+</div>
+            </li>
+            
+          </ul>
+
+        
+
+        
+          <h3 class=" f5 lh-title" id="enumh:xdg_shell">Enums</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="enum:xdg_shell:version">
+                <a href="#enum:xdg_shell:version" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  version
+                </div>
+                <div class="f5 ml2">
+                  latest protocol version
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  XDG_SHELL_VERSION_CURRENT  <span class="green">/* Always the latest version */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">The &#x27;current&#x27; member of this enum gives the version of the
+protocol.  Implementations can compare this to the version
+they implement using static_assert to ensure the protocol and
+implementation versions match.
+  </div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="enum:xdg_shell:error">
+                <a href="#enum:xdg_shell:error" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  error
+                </div>
+                <div class="f5 ml2">
+                  
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  XDG_SHELL_ERROR_ROLE  <span class="green">/* given wl_surface has another role */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  XDG_SHELL_ERROR_DEFUNCT_SURFACES  <span class="green">/* xdg_shell was destroyed before children */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  XDG_SHELL_ERROR_NOT_THE_TOPMOST_POPUP  <span class="green">/* the client tried to map or destroy a non-topmost popup */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  XDG_SHELL_ERROR_INVALID_POPUP_PARENT  <span class="green">/* the client specified an invalid popup parent surface */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3"></div>
+            </li>
+            
+          </ul>
+
+        
+
+      </li>
+      
+      <li class="mt4">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:xdg_surface">
+          <a href="#i:xdg_surface" class="link dim black-70 child pr2 absolute left--2">#</a>
+          xdg_surface
+        </h2>
+        <div class="f6 lh-copy ws-pre-line code">An interface that may be implemented by a wl_surface, for
+implementations that provide a desktop-style user interface.
+
+It provides requests to treat surfaces like windows, allowing to set
+properties like maximized, fullscreen, minimized, and to move and resize
+them, and associate metadata like title and app id.
+
+The client must call wl_surface.commit on the corresponding wl_surface
+for the xdg_surface state to take effect. Prior to committing the new
+state, it can set up initial configuration, such as maximizing or setting
+a window geometry.
+
+Even without attaching a buffer the compositor must respond to initial
+committed configuration, for instance sending a configure event with
+expected window geometry if the client maximized its surface during
+initialization.
+
+For a surface to be mapped by the compositor the client must have
+committed both an xdg_surface state and a buffer.
+</div>
+
+        
+          <h3 class=" f5 lh-title" id="rh:xdg_surface">Requests</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:xdg_surface:destroy">
+                <a href="#r:xdg_surface:destroy" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  destroy
+                </div>
+                <div class="f5 ml2">
+                  Destroy the xdg_surface
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">xdg_surface_destroy</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct xdg_surface*</span> xdg_surface</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Unmap and destroy the window. The window will be effectively
+hidden from the user&#x27;s point of view, and all state like
+maximization, fullscreen, and so on, will be lost.
+  </div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:xdg_surface:set_parent">
+                <a href="#r:xdg_surface:set_parent" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  set_parent
+                </div>
+                <div class="f5 ml2">
+                  set the parent of this surface
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">xdg_surface_set_parent</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct xdg_surface*</span> xdg_surface,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct xdg_surface*</span> parent</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Set the &quot;parent&quot; of this surface. This window should be stacked
+above a parent. The parent surface must be mapped as long as this
+surface is mapped.
+
+Parent windows should be set on dialogs, toolboxes, or other
+&quot;auxiliary&quot; surfaces, so that the parent is raised when the dialog
+is raised.
+  </div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:xdg_surface:set_title">
+                <a href="#r:xdg_surface:set_title" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  set_title
+                </div>
+                <div class="f5 ml2">
+                  set surface title
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">xdg_surface_set_title</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct xdg_surface*</span> xdg_surface,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">const char*</span> title</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Set a short title for the surface.
+
+This string may be used to identify the surface in a task bar,
+window list, or other user interface elements provided by the
+compositor.
+
+The string must be encoded in UTF-8.
+  </div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:xdg_surface:set_app_id">
+                <a href="#r:xdg_surface:set_app_id" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  set_app_id
+                </div>
+                <div class="f5 ml2">
+                  set application ID
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">xdg_surface_set_app_id</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct xdg_surface*</span> xdg_surface,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">const char*</span> app_id</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Set an application identifier for the surface.
+
+The app ID identifies the general class of applications to which
+the surface belongs. The compositor can use this to group multiple
+surfaces together, or to determine how to launch a new application.
+
+For D-Bus activatable applications, the app ID is used as the D-Bus
+service name.
+
+The compositor shell will try to group application surfaces together
+by their app ID.  As a best practice, it is suggested to select app
+ID&#x27;s that match the basename of the application&#x27;s .desktop file.
+For example, &quot;org.freedesktop.FooViewer&quot; where the .desktop file is
+&quot;org.freedesktop.FooViewer.desktop&quot;.
+
+See the desktop-entry specification [0] for more details on
+application identifiers and how they relate to well-known D-Bus
+names and .desktop files.
+
+[0] http://standards.freedesktop.org/desktop-entry-spec/
+  </div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:xdg_surface:show_window_menu">
+                <a href="#r:xdg_surface:show_window_menu" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  show_window_menu
+                </div>
+                <div class="f5 ml2">
+                  show the window menu
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">xdg_surface_show_window_menu</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct xdg_surface*</span> xdg_surface,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_seat*</span> seat, <span class="green">/* the wl_seat of the user event */</span></div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> serial, <span class="green">/* the serial of the user event */</span></div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> x, <span class="green">/* the x position to pop up the window menu at */</span></div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> y <span class="green">/* the y position to pop up the window menu at */</span></div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Clients implementing client-side decorations might want to show
+a context menu when right-clicking on the decorations, giving the
+user a menu that they can use to maximize or minimize the window.
+
+This request asks the compositor to pop up such a window menu at
+the given position, relative to the local surface coordinates of
+the parent surface. There are no guarantees as to what menu items
+the window menu contains.
+
+This request must be used in response to some sort of user action
+like a button press, key press, or touch down event.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:xdg_surface:move">
+                <a href="#r:xdg_surface:move" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  move
+                </div>
+                <div class="f5 ml2">
+                  start an interactive move
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">xdg_surface_move</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct xdg_surface*</span> xdg_surface,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_seat*</span> seat, <span class="green">/* the wl_seat of the user event */</span></div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> serial <span class="green">/* the serial of the user event */</span></div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Start an interactive, user-driven move of the surface.
+
+This request must be used in response to some sort of user action
+like a button press, key press, or touch down event. The passed
+serial is used to determine the type of interactive move (touch,
+pointer, etc).
+
+The server may ignore move requests depending on the state of
+the surface (e.g. fullscreen or maximized), or if the passed serial
+is no longer valid.
+
+If triggered, the surface will lose the focus of the device
+(wl_pointer, wl_touch, etc) used for the move. It is up to the
+compositor to visually indicate that the move is taking place, such as
+updating a pointer cursor, during the move. There is no guarantee
+that the device focus will return when the move is completed.
+  </div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:xdg_surface:resize">
+                <a href="#r:xdg_surface:resize" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  resize
+                </div>
+                <div class="f5 ml2">
+                  start an interactive resize
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">xdg_surface_resize</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct xdg_surface*</span> xdg_surface,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_seat*</span> seat, <span class="green">/* the wl_seat of the user event */</span></div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> serial, <span class="green">/* the serial of the user event */</span></div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> edges <span class="green">/* which edge or corner is being dragged */</span></div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Start a user-driven, interactive resize of the surface.
+
+This request must be used in response to some sort of user action
+like a button press, key press, or touch down event. The passed
+serial is used to determine the type of interactive resize (touch,
+pointer, etc).
+
+The server may ignore resize requests depending on the state of
+the surface (e.g. fullscreen or maximized).
+
+If triggered, the client will receive configure events with the
+&quot;resize&quot; state enum value and the expected sizes. See the &quot;resize&quot;
+enum value for more details about what is required. The client
+must also acknowledge configure events using &quot;ack_configure&quot;. After
+the resize is completed, the client will receive another &quot;configure&quot;
+event without the resize state.
+
+If triggered, the surface also will lose the focus of the device
+(wl_pointer, wl_touch, etc) used for the resize. It is up to the
+compositor to visually indicate that the resize is taking place,
+such as updating a pointer cursor, during the resize. There is no
+guarantee that the device focus will return when the resize is
+completed.
+
+The edges parameter specifies how the surface should be resized,
+and is one of the values of the resize_edge enum. The compositor
+may use this information to update the surface position for
+example when dragging the top left corner. The compositor may also
+use this information to adapt its behavior, e.g. choose an
+appropriate cursor image.
+  </div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:xdg_surface:ack_configure">
+                <a href="#r:xdg_surface:ack_configure" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  ack_configure
+                </div>
+                <div class="f5 ml2">
+                  ack a configure event
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">xdg_surface_ack_configure</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct xdg_surface*</span> xdg_surface,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> serial <span class="green">/* the serial from the configure event */</span></div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">When a configure event is received, if a client commits the
+surface in response to the configure event, then the client
+must make an ack_configure request sometime before the commit
+request, passing along the serial of the configure event.
+
+For instance, the compositor might use this information to move
+a surface to the top left only when the client has drawn itself
+for the maximized or fullscreen state.
+
+If the client receives multiple configure events before it
+can respond to one, it only has to ack the last configure event.
+
+A client is not required to commit immediately after sending
+an ack_configure request - it may even ack_configure several times
+before its next surface commit.
+
+The compositor expects that the most recently received
+ack_configure request at the time of a commit indicates which
+configure event the client is responding to.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:xdg_surface:set_window_geometry">
+                <a href="#r:xdg_surface:set_window_geometry" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  set_window_geometry
+                </div>
+                <div class="f5 ml2">
+                  set the new window geometry
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">xdg_surface_set_window_geometry</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct xdg_surface*</span> xdg_surface,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> x,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> y,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> width,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> height</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">The window geometry of a window is its &quot;visible bounds&quot; from the
+user&#x27;s perspective. Client-side decorations often have invisible
+portions like drop-shadows which should be ignored for the
+purposes of aligning, placing and constraining windows.
+
+The window geometry is double-buffered state, see wl_surface.commit.
+
+Once the window geometry of the surface is set once, it is not
+possible to unset it, and it will remain the same until
+set_window_geometry is called again, even if a new subsurface or
+buffer is attached.
+
+If never set, the value is the full bounds of the surface,
+including any subsurfaces. This updates dynamically on every
+commit. This unset mode is meant for extremely simple clients.
+
+If responding to a configure event, the window geometry in here
+must respect the sizing negotiations specified by the states in
+the configure event.
+
+The arguments are given in the surface local coordinate space of
+the wl_surface associated with this xdg_surface.
+
+The width and height must be greater than zero.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:xdg_surface:set_maximized">
+                <a href="#r:xdg_surface:set_maximized" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  set_maximized
+                </div>
+                <div class="f5 ml2">
+                  maximize the window
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">xdg_surface_set_maximized</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct xdg_surface*</span> xdg_surface</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Maximize the surface.
+
+After requesting that the surface should be maximized, the compositor
+will respond by emitting a configure event with the &quot;maximized&quot; state
+and the required window geometry. The client should then update its
+content, drawing it in a maximized state, i.e. without shadow or other
+decoration outside of the window geometry. The client must also
+acknowledge the configure when committing the new content (see
+ack_configure).
+
+It is up to the compositor to decide how and where to maximize the
+surface, for example which output and what region of the screen should
+be used.
+
+If the surface was already maximized, the compositor will still emit
+a configure event with the &quot;maximized&quot; state.
+
+Note that unrelated compositor side state changes may cause
+configure events to be emitted at any time, meaning trying to
+match this request to a specific future configure event is
+futile.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:xdg_surface:unset_maximized">
+                <a href="#r:xdg_surface:unset_maximized" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  unset_maximized
+                </div>
+                <div class="f5 ml2">
+                  unmaximize the window
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">xdg_surface_unset_maximized</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct xdg_surface*</span> xdg_surface</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Unmaximize the surface.
+
+After requesting that the surface should be unmaximized, the compositor
+will respond by emitting a configure event without the &quot;maximized&quot;
+state. If available, the compositor will include the window geometry
+dimensions the window had prior to being maximized in the configure
+request. The client must then update its content, drawing it in a
+regular state, i.e. potentially with shadow, etc. The client must also
+acknowledge the configure when committing the new content (see
+ack_configure).
+
+It is up to the compositor to position the surface after it was
+unmaximized; usually the position the surface had before maximizing, if
+applicable.
+
+If the surface was already not maximized, the compositor will still
+emit a configure event without the &quot;maximized&quot; state.
+
+Note that unrelated compositor side state changes may cause
+configure events to be emitted at any time, meaning trying to
+match this request to a specific future configure event is
+futile.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:xdg_surface:set_fullscreen">
+                <a href="#r:xdg_surface:set_fullscreen" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  set_fullscreen
+                </div>
+                <div class="f5 ml2">
+                  set the window as fullscreen on a monitor
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">xdg_surface_set_fullscreen</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct xdg_surface*</span> xdg_surface,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_output*</span> output</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Make the surface fullscreen.
+
+    You can specify an output that you would prefer to be fullscreen.
+If this value is NULL, it&#x27;s up to the compositor to choose which
+    display will be used to map this surface.
+
+    If the surface doesn&#x27;t cover the whole output, the compositor will
+    position the surface in the center of the output and compensate with
+    black borders filling the rest of the output.
+  </div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:xdg_surface:unset_fullscreen">
+                <a href="#r:xdg_surface:unset_fullscreen" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  unset_fullscreen
+                </div>
+                <div class="f5 ml2">
+                  
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">xdg_surface_unset_fullscreen</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct xdg_surface*</span> xdg_surface</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code"></div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:xdg_surface:set_minimized">
+                <a href="#r:xdg_surface:set_minimized" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  set_minimized
+                </div>
+                <div class="f5 ml2">
+                  set the window as minimized
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">xdg_surface_set_minimized</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct xdg_surface*</span> xdg_surface</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Request that the compositor minimize your surface. There is no
+way to know if the surface is currently minimized, nor is there
+any way to unset minimization on this surface.
+
+If you are looking to throttle redrawing when minimized, please
+instead use the wl_surface.frame event for this, as this will
+also work with live previews on windows in Alt-Tab, Expose or
+similar compositor features.
+  </div>
+            </li>
+            
+          </ul>
+        
+
+        
+          <h3 class=" f5 lh-title" id="eh:xdg_surface">Events</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:xdg_surface:configure">
+                <a href="#e:xdg_surface:configure" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  configure
+                </div>
+                <div class="f5 ml2">
+                  suggest a surface change
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  <span class="purple">int32_t</span> width  
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  <span class="purple">int32_t</span> height  
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  <span class="purple">struct wl_array*</span> states  
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  <span class="purple">uint32_t</span> serial  
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">The configure event asks the client to resize its surface or to
+change its state.
+
+The width and height arguments specify a hint to the window
+about how its surface should be resized in window geometry
+coordinates. See set_window_geometry.
+
+If the width or height arguments are zero, it means the client
+should decide its own window dimension. This may happen when the
+compositor need to configure the state of the surface but doesn&#x27;t
+have any information about any previous or expected dimension.
+
+The states listed in the event specify how the width/height
+arguments should be interpreted, and possibly how it should be
+drawn.
+
+Clients should arrange their surface for the new size and
+states, and then send a ack_configure request with the serial
+sent in this configure event at some point before committing
+the new surface.
+
+If the client receives multiple configure events before it
+    can respond to one, it is free to discard all but the last
+    event it received.
+  </div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:xdg_surface:close">
+                <a href="#e:xdg_surface:close" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  close
+                </div>
+                <div class="f5 ml2">
+                  surface wants to be closed
+                </div>
+              </div>
+
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">The close event is sent by the compositor when the user
+wants the surface to be closed. This should be equivalent to
+the user clicking the close button in client-side decorations,
+if your application has any...
+
+This is only a request that the user intends to close your
+window. The client may choose to ignore this request, or show
+a dialog to ask the user to save their data...
+</div>
+            </li>
+            
+          </ul>
+
+        
+
+        
+          <h3 class=" f5 lh-title" id="enumh:xdg_surface">Enums</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="enum:xdg_surface:resize_edge">
+                <a href="#enum:xdg_surface:resize_edge" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  resize_edge
+                </div>
+                <div class="f5 ml2">
+                  edge values for resizing
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  XDG_SURFACE_RESIZE_EDGE_NONE  
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  XDG_SURFACE_RESIZE_EDGE_TOP  
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  XDG_SURFACE_RESIZE_EDGE_BOTTOM  
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  XDG_SURFACE_RESIZE_EDGE_LEFT  
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  XDG_SURFACE_RESIZE_EDGE_TOP_LEFT  
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  XDG_SURFACE_RESIZE_EDGE_BOTTOM_LEFT  
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  XDG_SURFACE_RESIZE_EDGE_RIGHT  
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  XDG_SURFACE_RESIZE_EDGE_TOP_RIGHT  
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  XDG_SURFACE_RESIZE_EDGE_BOTTOM_RIGHT  
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">These values are used to indicate which edge of a surface
+is being dragged in a resize operation.
+  </div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="enum:xdg_surface:state">
+                <a href="#enum:xdg_surface:state" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  state
+                </div>
+                <div class="f5 ml2">
+                  types of state on the surface
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  XDG_SURFACE_STATE_MAXIMIZED  <span class="green">/* the surface is maximized */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  XDG_SURFACE_STATE_FULLSCREEN  <span class="green">/* the surface is fullscreen */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  XDG_SURFACE_STATE_RESIZING  <span class="green">/* the surface is being resized */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  XDG_SURFACE_STATE_ACTIVATED  <span class="green">/* the surface is now activated */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">The different state values used on the surface. This is designed for
+state values like maximized, fullscreen. It is paired with the
+configure event to ensure that both the client and the compositor
+setting the state can be synchronized.
+
+States set in this way are double-buffered, see wl_surface.commit.
+
+Desktop environments may extend this enum by taking up a range of
+values and documenting the range they chose in this description.
+They are not required to document the values for the range that they
+chose. Ideally, any good extensions from a desktop environment should
+make its way into standardization into this enum.
+
+The current reserved ranges are:
+
+0x0000 - 0x0FFF: xdg-shell core values, documented below.
+0x1000 - 0x1FFF: GNOME
+0x2000 - 0x2FFF: EFL
+</div>
+            </li>
+            
+          </ul>
+
+        
+
+      </li>
+      
+      <li class="mt4">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:xdg_popup">
+          <a href="#i:xdg_popup" class="link dim black-70 child pr2 absolute left--2">#</a>
+          xdg_popup
+        </h2>
+        <div class="f6 lh-copy ws-pre-line code">A popup surface is a short-lived, temporary surface that can be
+used to implement menus. It takes an explicit grab on the surface
+that will be dismissed when the user dismisses the popup. This can
+be done by the user clicking outside the surface, using the keyboard,
+or even locking the screen through closing the lid or a timeout.
+
+When the popup is dismissed, a popup_done event will be sent out,
+and at the same time the surface will be unmapped. The xdg_popup
+object is now inert and cannot be reactivated, so clients should
+destroy it. Explicitly destroying the xdg_popup object will also
+dismiss the popup and unmap the surface.
+
+Clients will receive events for all their surfaces during this
+grab (which is an &quot;owner-events&quot; grab in X11 parlance). This is
+done so that users can navigate through submenus and other
+&quot;nested&quot; popup windows without having to dismiss the topmost
+popup.
+
+Clients that want to dismiss the popup when another surface of
+their own is clicked should dismiss the popup using the destroy
+request.
+
+The parent surface must have either an xdg_surface or xdg_popup
+role.
+
+Specifying an xdg_popup for the parent means that the popups are
+nested, with this popup now being the topmost popup. Nested
+popups must be destroyed in the reverse order they were created
+in, e.g. the only popup you are allowed to destroy at all times
+is the topmost one.
+
+If there is an existing popup when creating a new popup, the
+parent must be the current topmost popup.
+
+A parent surface must be mapped before the new popup is mapped.
+
+When compositors choose to dismiss a popup, they will likely
+dismiss every nested popup as well. When a compositor dismisses
+popups, it will follow the same dismissing order as required
+from the client.
+
+The x and y arguments passed when creating the popup object specify
+where the top left of the popup should be placed, relative to the
+local surface coordinates of the parent surface. See
+xdg_shell.get_xdg_popup.
+
+The client must call wl_surface.commit on the corresponding wl_surface
+for the xdg_popup state to take effect.
+
+For a surface to be mapped by the compositor the client must have
+committed both the xdg_popup state and a buffer.
+</div>
+
+        
+          <h3 class=" f5 lh-title" id="rh:xdg_popup">Requests</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:xdg_popup:destroy">
+                <a href="#r:xdg_popup:destroy" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  destroy
+                </div>
+                <div class="f5 ml2">
+                  remove xdg_popup interface
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">xdg_popup_destroy</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct xdg_popup*</span> xdg_popup</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">This destroys the popup. Explicitly destroying the xdg_popup
+object will also dismiss the popup, and unmap the surface.
+
+If this xdg_popup is not the &quot;topmost&quot; popup, a protocol error
+will be sent.
+  </div>
+            </li>
+            
+          </ul>
+        
+
+        
+          <h3 class=" f5 lh-title" id="eh:xdg_popup">Events</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:xdg_popup:popup_done">
+                <a href="#e:xdg_popup:popup_done" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  popup_done
+                </div>
+                <div class="f5 ml2">
+                  popup interaction is done
+                </div>
+              </div>
+
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">The popup_done event is sent out when a popup is dismissed by the
+compositor. The client should destroy the xdg_popup object at this
+point.
+  </div>
+            </li>
+            
+          </ul>
+
+        
+
+        
+
+        
+
+      </li>
+      
+    </ul>
+
+    <h2 class="f4 lh-title">Copyright Info</h2>
+    <div class="f7 lh-copy ws-pre-line code">Copyright © 2008-2013 Kristian Høgsberg
+Copyright © 2013      Rafael Antognolli
+Copyright © 2013      Jasper St. Pierre
+Copyright © 2010-2013 Intel Corporation
+
+Permission is hereby granted, free of charge, to any person obtaining a
+copy of this software and associated documentation files (the &quot;Software&quot;),
+to deal in the Software without restriction, including without limitation
+the rights to use, copy, modify, merge, publish, distribute, sublicense,
+and/or sell copies of the Software, and to permit persons to whom the
+Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice (including the next
+paragraph) shall be included in all copies or substantial portions of the
+Software.
+
+THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL
+THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+DEALINGS IN THE SOFTWARE.
+</div>
+  </div>
+
+    </main>
+
+  </body>
+</html>

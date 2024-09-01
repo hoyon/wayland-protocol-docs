@@ -1,0 +1,506 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>security_context_v1</title>
+
+    <link rel="stylesheet" href="/wayland-protocol-docs/main.css">
+     
+  </head>
+  <body class="black-70 flex sans-serif ph4-l">
+    <div id="sidebar" class="w-20">
+      <div class="fixed vh-100 overflow-y-auto w-20">
+        <a href="/wayland-protocol-docs/" class="f4 link near-black dim lh-title db mt3">
+          Home
+        </a>
+        
+  <div class="ph2">
+    
+
+<div>
+  <ul class="list pl0">
+  
+    <li>
+      <a href="#i:wp_security_context_manager_v1" class="link blue underline-hover lh-copy">wp_security_context_manager_v1</a>
+
+      
+        <div>
+          <a href="#rh:wp_security_context_manager_v1" class="link blue underline-hover lh-copy pl3">Requests</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#r:wp_security_context_manager_v1:destroy" class="link blue underline-hover lh-copy">destroy</a>
+          </li>
+          
+          <li>
+            <a href="#r:wp_security_context_manager_v1:create_listener" class="link blue underline-hover lh-copy">create_listener</a>
+          </li>
+          
+        </ul>
+      
+
+      
+      
+
+      
+        <div>
+          <a href="#enumh:wp_security_context_manager_v1" class="link blue underline-hover lh-copy pl3">Enums</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#enum:wp_security_context_manager_v1:error" class="link blue underline-hover lh-copy">error</a>
+          </li>
+          
+        </ul>
+      
+    </li>
+  
+    <li>
+      <a href="#i:wp_security_context_v1" class="link blue underline-hover lh-copy">wp_security_context_v1</a>
+
+      
+        <div>
+          <a href="#rh:wp_security_context_v1" class="link blue underline-hover lh-copy pl3">Requests</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#r:wp_security_context_v1:destroy" class="link blue underline-hover lh-copy">destroy</a>
+          </li>
+          
+          <li>
+            <a href="#r:wp_security_context_v1:set_sandbox_engine" class="link blue underline-hover lh-copy">set_sandbox_engine</a>
+          </li>
+          
+          <li>
+            <a href="#r:wp_security_context_v1:set_app_id" class="link blue underline-hover lh-copy">set_app_id</a>
+          </li>
+          
+          <li>
+            <a href="#r:wp_security_context_v1:set_instance_id" class="link blue underline-hover lh-copy">set_instance_id</a>
+          </li>
+          
+          <li>
+            <a href="#r:wp_security_context_v1:commit" class="link blue underline-hover lh-copy">commit</a>
+          </li>
+          
+        </ul>
+      
+
+      
+      
+
+      
+        <div>
+          <a href="#enumh:wp_security_context_v1" class="link blue underline-hover lh-copy pl3">Enums</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#enum:wp_security_context_v1:error" class="link blue underline-hover lh-copy">error</a>
+          </li>
+          
+        </ul>
+      
+    </li>
+  
+  </ul>
+</div>
+  </div>
+
+      </div>
+    </div>
+
+    <main id="content" class="mh4 w-80">
+      
+  <div class="ph2">
+    <h1 class="f1 lh-title">security_context_v1</h1>
+    <ul class="list pl0">
+      
+      <li class="mt4">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:wp_security_context_manager_v1">
+          <a href="#i:wp_security_context_manager_v1" class="link dim black-70 child pr2 absolute left--2">#</a>
+          wp_security_context_manager_v1
+        </h2>
+        <div class="f6 lh-copy ws-pre-line code">This interface allows a client to register a new Wayland connection to
+the compositor and attach a security context to it.
+
+This is intended to be used by sandboxes. Sandbox engines attach a
+security context to all connections coming from inside the sandbox. The
+compositor can then restrict the features that the sandboxed connections
+can use.
+
+Compositors should forbid nesting multiple security contexts by not
+exposing wp_security_context_manager_v1 global to clients with a security
+context attached, or by sending the nested protocol error. Nested
+security contexts are dangerous because they can potentially allow
+privilege escalation of a sandboxed client.
+
+Warning! The protocol described in this file is currently in the testing
+phase. Backward compatible changes may be added together with the
+corresponding interface version bump. Backward incompatible changes can
+only be done by creating a new major version of the extension.
+</div>
+
+        
+          <h3 class=" f5 lh-title" id="rh:wp_security_context_manager_v1">Requests</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:wp_security_context_manager_v1:destroy">
+                <a href="#r:wp_security_context_manager_v1:destroy" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  destroy
+                </div>
+                <div class="f5 ml2">
+                  destroy the manager object
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">wp_security_context_manager_v1_destroy</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wp_security_context_manager_v1*</span> wp_security_context_manager_v1</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Destroy the manager. This doesn&#x27;t destroy objects created with the
+manager.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:wp_security_context_manager_v1:create_listener">
+                <a href="#r:wp_security_context_manager_v1:create_listener" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  create_listener
+                </div>
+                <div class="f5 ml2">
+                  create a new security context
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>struct wp_security_context_v1* </span><span class="dark-blue">wp_security_context_manager_v1_create_listener</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wp_security_context_manager_v1*</span> wp_security_context_manager_v1,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> listen_fd, <span class="green">/* listening socket FD */</span></div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> close_fd <span class="green">/* FD closed when done */</span></div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Creates a new security context with a socket listening FD.
+
+The compositor will accept new client connections on listen_fd.
+listen_fd must be ready to accept new connections when this request is
+sent by the client. In other words, the client must call bind(2) and
+listen(2) before sending the FD.
+
+close_fd is a FD closed by the client when the compositor should stop
+accepting new connections on listen_fd.
+
+The compositor must continue to accept connections on listen_fd when
+the Wayland client which created the security context disconnects.
+
+After sending this request, closing listen_fd and close_fd remains the
+only valid operation on them.
+</div>
+            </li>
+            
+          </ul>
+        
+
+        
+
+        
+
+        
+          <h3 class=" f5 lh-title" id="enumh:wp_security_context_manager_v1">Enums</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="enum:wp_security_context_manager_v1:error">
+                <a href="#enum:wp_security_context_manager_v1:error" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  error
+                </div>
+                <div class="f5 ml2">
+                  
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  WP_SECURITY_CONTEXT_MANAGER_V1_ERROR_INVALID_LISTEN_FD  <span class="green">/* listening socket FD is invalid */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  WP_SECURITY_CONTEXT_MANAGER_V1_ERROR_NESTED  <span class="green">/* nested security contexts are forbidden */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3"></div>
+            </li>
+            
+          </ul>
+
+        
+
+      </li>
+      
+      <li class="mt4">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:wp_security_context_v1">
+          <a href="#i:wp_security_context_v1" class="link dim black-70 child pr2 absolute left--2">#</a>
+          wp_security_context_v1
+        </h2>
+        <div class="f6 lh-copy ws-pre-line code">The security context allows a client to register a new client and attach
+security context metadata to the connections.
+
+When both are set, the combination of the application ID and the sandbox
+engine must uniquely identify an application. The same application ID
+will be used across instances (e.g. if the application is restarted, or
+if the application is started multiple times).
+
+When both are set, the combination of the instance ID and the sandbox
+engine must uniquely identify a running instance of an application.
+</div>
+
+        
+          <h3 class=" f5 lh-title" id="rh:wp_security_context_v1">Requests</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:wp_security_context_v1:destroy">
+                <a href="#r:wp_security_context_v1:destroy" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  destroy
+                </div>
+                <div class="f5 ml2">
+                  destroy the security context object
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">wp_security_context_v1_destroy</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wp_security_context_v1*</span> wp_security_context_v1</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Destroy the security context object.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:wp_security_context_v1:set_sandbox_engine">
+                <a href="#r:wp_security_context_v1:set_sandbox_engine" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  set_sandbox_engine
+                </div>
+                <div class="f5 ml2">
+                  set the sandbox engine
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">wp_security_context_v1_set_sandbox_engine</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wp_security_context_v1*</span> wp_security_context_v1,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">const char*</span> name <span class="green">/* the sandbox engine name */</span></div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Attach a unique sandbox engine name to the security context. The name
+should follow the reverse-DNS style (e.g. &quot;org.flatpak&quot;).
+
+A list of well-known engines is maintained at:
+https://gitlab.freedesktop.org/wayland/wayland-protocols/-/blob/main/staging/security-context/engines.md
+
+It is a protocol error to call this request twice. The already_set
+error is sent in this case.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:wp_security_context_v1:set_app_id">
+                <a href="#r:wp_security_context_v1:set_app_id" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  set_app_id
+                </div>
+                <div class="f5 ml2">
+                  set the application ID
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">wp_security_context_v1_set_app_id</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wp_security_context_v1*</span> wp_security_context_v1,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">const char*</span> app_id <span class="green">/* the application ID */</span></div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Attach an application ID to the security context.
+
+The application ID is an opaque, sandbox-specific identifier for an
+application. See the well-known engines document for more details:
+https://gitlab.freedesktop.org/wayland/wayland-protocols/-/blob/main/staging/security-context/engines.md
+
+The compositor may use the application ID to group clients belonging to
+the same security context application.
+
+Whether this request is optional or not depends on the sandbox engine used.
+
+It is a protocol error to call this request twice. The already_set
+error is sent in this case.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:wp_security_context_v1:set_instance_id">
+                <a href="#r:wp_security_context_v1:set_instance_id" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  set_instance_id
+                </div>
+                <div class="f5 ml2">
+                  set the instance ID
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">wp_security_context_v1_set_instance_id</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wp_security_context_v1*</span> wp_security_context_v1,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">const char*</span> instance_id <span class="green">/* the instance ID */</span></div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Attach an instance ID to the security context.
+
+The instance ID is an opaque, sandbox-specific identifier for a running
+instance of an application. See the well-known engines document for
+more details:
+https://gitlab.freedesktop.org/wayland/wayland-protocols/-/blob/main/staging/security-context/engines.md
+
+Whether this request is optional or not depends on the sandbox engine used.
+
+It is a protocol error to call this request twice. The already_set
+error is sent in this case.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:wp_security_context_v1:commit">
+                <a href="#r:wp_security_context_v1:commit" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  commit
+                </div>
+                <div class="f5 ml2">
+                  register the security context
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">wp_security_context_v1_commit</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wp_security_context_v1*</span> wp_security_context_v1</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Atomically register the new client and attach the security context
+metadata.
+
+If the provided metadata is inconsistent or does not match with out of
+band metadata (see
+https://gitlab.freedesktop.org/wayland/wayland-protocols/-/blob/main/staging/security-context/engines.md),
+the invalid_metadata error may be sent eventually.
+
+It&#x27;s a protocol error to send any request other than &quot;destroy&quot; after
+this request. In this case, the already_used error is sent.
+</div>
+            </li>
+            
+          </ul>
+        
+
+        
+
+        
+
+        
+          <h3 class=" f5 lh-title" id="enumh:wp_security_context_v1">Enums</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="enum:wp_security_context_v1:error">
+                <a href="#enum:wp_security_context_v1:error" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  error
+                </div>
+                <div class="f5 ml2">
+                  
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  WP_SECURITY_CONTEXT_V1_ERROR_ALREADY_USED  <span class="green">/* security context has already been committed */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  WP_SECURITY_CONTEXT_V1_ERROR_ALREADY_SET  <span class="green">/* metadata has already been set */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  WP_SECURITY_CONTEXT_V1_ERROR_INVALID_METADATA  <span class="green">/* metadata is invalid */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3"></div>
+            </li>
+            
+          </ul>
+
+        
+
+      </li>
+      
+    </ul>
+
+    <h2 class="f4 lh-title">Copyright Info</h2>
+    <div class="f7 lh-copy ws-pre-line code">Copyright © 2021 Simon Ser
+
+Permission is hereby granted, free of charge, to any person obtaining a
+copy of this software and associated documentation files (the &quot;Software&quot;),
+to deal in the Software without restriction, including without limitation
+the rights to use, copy, modify, merge, publish, distribute, sublicense,
+and/or sell copies of the Software, and to permit persons to whom the
+Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice (including the next
+paragraph) shall be included in all copies or substantial portions of the
+Software.
+
+THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL
+THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+DEALINGS IN THE SOFTWARE.
+</div>
+  </div>
+
+    </main>
+
+  </body>
+</html>

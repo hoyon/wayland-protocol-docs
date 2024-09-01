@@ -1,0 +1,497 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>xdg_toplevel_icon_v1</title>
+
+    <link rel="stylesheet" href="/wayland-protocol-docs/main.css">
+     
+  </head>
+  <body class="black-70 flex sans-serif ph4-l">
+    <div id="sidebar" class="w-20">
+      <div class="fixed vh-100 overflow-y-auto w-20">
+        <a href="/wayland-protocol-docs/" class="f4 link near-black dim lh-title db mt3">
+          Home
+        </a>
+        
+  <div class="ph2">
+    
+
+<div>
+  <ul class="list pl0">
+  
+    <li>
+      <a href="#i:xdg_toplevel_icon_manager_v1" class="link blue underline-hover lh-copy">xdg_toplevel_icon_manager_v1</a>
+
+      
+        <div>
+          <a href="#rh:xdg_toplevel_icon_manager_v1" class="link blue underline-hover lh-copy pl3">Requests</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#r:xdg_toplevel_icon_manager_v1:destroy" class="link blue underline-hover lh-copy">destroy</a>
+          </li>
+          
+          <li>
+            <a href="#r:xdg_toplevel_icon_manager_v1:create_icon" class="link blue underline-hover lh-copy">create_icon</a>
+          </li>
+          
+          <li>
+            <a href="#r:xdg_toplevel_icon_manager_v1:set_icon" class="link blue underline-hover lh-copy">set_icon</a>
+          </li>
+          
+        </ul>
+      
+
+      
+        <div>
+          <a href="#eh:xdg_toplevel_icon_manager_v1" class="link blue underline-hover lh-copy pl3">Events</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#e:xdg_toplevel_icon_manager_v1:icon_size" class="link blue underline-hover lh-copy">icon_size</a>
+          </li>
+          
+          <li>
+            <a href="#e:xdg_toplevel_icon_manager_v1:done" class="link blue underline-hover lh-copy">done</a>
+          </li>
+          
+        </ul>
+      
+
+      
+      
+    </li>
+  
+    <li>
+      <a href="#i:xdg_toplevel_icon_v1" class="link blue underline-hover lh-copy">xdg_toplevel_icon_v1</a>
+
+      
+        <div>
+          <a href="#rh:xdg_toplevel_icon_v1" class="link blue underline-hover lh-copy pl3">Requests</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#r:xdg_toplevel_icon_v1:destroy" class="link blue underline-hover lh-copy">destroy</a>
+          </li>
+          
+          <li>
+            <a href="#r:xdg_toplevel_icon_v1:set_name" class="link blue underline-hover lh-copy">set_name</a>
+          </li>
+          
+          <li>
+            <a href="#r:xdg_toplevel_icon_v1:add_buffer" class="link blue underline-hover lh-copy">add_buffer</a>
+          </li>
+          
+        </ul>
+      
+
+      
+      
+
+      
+        <div>
+          <a href="#enumh:xdg_toplevel_icon_v1" class="link blue underline-hover lh-copy pl3">Enums</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#enum:xdg_toplevel_icon_v1:error" class="link blue underline-hover lh-copy">error</a>
+          </li>
+          
+        </ul>
+      
+    </li>
+  
+  </ul>
+</div>
+  </div>
+
+      </div>
+    </div>
+
+    <main id="content" class="mh4 w-80">
+      
+  <div class="ph2">
+    <h1 class="f1 lh-title">xdg_toplevel_icon_v1</h1>
+    <ul class="list pl0">
+      
+      <li class="mt4">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:xdg_toplevel_icon_manager_v1">
+          <a href="#i:xdg_toplevel_icon_manager_v1" class="link dim black-70 child pr2 absolute left--2">#</a>
+          xdg_toplevel_icon_manager_v1
+        </h2>
+        <div class="f6 lh-copy ws-pre-line code">This interface allows clients to create toplevel window icons and set
+them on toplevel windows to be displayed to the user.
+</div>
+
+        
+          <h3 class=" f5 lh-title" id="rh:xdg_toplevel_icon_manager_v1">Requests</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:xdg_toplevel_icon_manager_v1:destroy">
+                <a href="#r:xdg_toplevel_icon_manager_v1:destroy" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  destroy
+                </div>
+                <div class="f5 ml2">
+                  destroy the toplevel icon manager
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">xdg_toplevel_icon_manager_v1_destroy</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct xdg_toplevel_icon_manager_v1*</span> xdg_toplevel_icon_manager_v1</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Destroy the toplevel icon manager.
+This does not destroy objects created with the manager.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:xdg_toplevel_icon_manager_v1:create_icon">
+                <a href="#r:xdg_toplevel_icon_manager_v1:create_icon" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  create_icon
+                </div>
+                <div class="f5 ml2">
+                  create a new icon instance
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>struct xdg_toplevel_icon_v1* </span><span class="dark-blue">xdg_toplevel_icon_manager_v1_create_icon</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct xdg_toplevel_icon_manager_v1*</span> xdg_toplevel_icon_manager_v1</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Creates a new icon object. This icon can then be attached to a
+xdg_toplevel via the &#x27;set_icon&#x27; request.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:xdg_toplevel_icon_manager_v1:set_icon">
+                <a href="#r:xdg_toplevel_icon_manager_v1:set_icon" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  set_icon
+                </div>
+                <div class="f5 ml2">
+                  set an icon on a toplevel window
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">xdg_toplevel_icon_manager_v1_set_icon</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct xdg_toplevel_icon_manager_v1*</span> xdg_toplevel_icon_manager_v1,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct xdg_toplevel*</span> toplevel, <span class="green">/* the toplevel to act on */</span></div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct xdg_toplevel_icon_v1*</span> icon</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">This request assigns the icon &#x27;icon&#x27; to &#x27;toplevel&#x27;, or clears the
+toplevel icon if &#x27;icon&#x27; was null.
+This state is double-buffered and is applied on the next
+wl_surface.commit of the toplevel.
+
+After making this call, the xdg_toplevel_icon_v1 provided as &#x27;icon&#x27;
+can be destroyed by the client without &#x27;toplevel&#x27; losing its icon.
+The xdg_toplevel_icon_v1 is immutable from this point, and any
+future attempts to change it must raise the
+&#x27;xdg_toplevel_icon_v1.immutable&#x27; protocol error.
+
+The compositor must set the toplevel icon from either the pixel data
+the icon provides, or by loading a stock icon using the icon name.
+See the description of &#x27;xdg_toplevel_icon_v1&#x27; for details.
+
+If &#x27;icon&#x27; is set to null, the icon of the respective toplevel is reset
+to its default icon (usually the icon of the application, derived from
+its desktop-entry file, or a placeholder icon).
+If this request is passed an icon with no pixel buffers or icon name
+assigned, the icon must be reset just like if &#x27;icon&#x27; was null.
+</div>
+            </li>
+            
+          </ul>
+        
+
+        
+          <h3 class=" f5 lh-title" id="eh:xdg_toplevel_icon_manager_v1">Events</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:xdg_toplevel_icon_manager_v1:icon_size">
+                <a href="#e:xdg_toplevel_icon_manager_v1:icon_size" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  icon_size
+                </div>
+                <div class="f5 ml2">
+                  describes a supported &amp; preferred icon size
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  <span class="purple">int32_t</span> size <span class="green">/* the edge size of the square icon in surface-local coordinates, e.g. 64 */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">This event indicates an icon size the compositor prefers to be
+available if the client has scalable icons and can render to any size.
+
+When the &#x27;xdg_toplevel_icon_manager_v1&#x27; object is created, the
+compositor may send one or more &#x27;icon_size&#x27; events to describe the list
+of preferred icon sizes. If the compositor has no size preference, it
+may not send any &#x27;icon_size&#x27; event, and it is up to the client to
+decide a suitable icon size.
+
+A sequence of &#x27;icon_size&#x27; events must be finished with a &#x27;done&#x27; event.
+If the compositor has no size preferences, it must still send the
+&#x27;done&#x27; event, without any preceding &#x27;icon_size&#x27; events.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:xdg_toplevel_icon_manager_v1:done">
+                <a href="#e:xdg_toplevel_icon_manager_v1:done" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  done
+                </div>
+                <div class="f5 ml2">
+                  all information has been sent
+                </div>
+              </div>
+
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">This event is sent after all &#x27;icon_size&#x27; events have been sent.
+</div>
+            </li>
+            
+          </ul>
+
+        
+
+        
+
+        
+
+      </li>
+      
+      <li class="mt4">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:xdg_toplevel_icon_v1">
+          <a href="#i:xdg_toplevel_icon_v1" class="link dim black-70 child pr2 absolute left--2">#</a>
+          xdg_toplevel_icon_v1
+        </h2>
+        <div class="f6 lh-copy ws-pre-line code">This interface defines a toplevel icon.
+An icon can have a name, and multiple buffers.
+In order to be applied, the icon must have either a name, or at least
+one buffer assigned. Applying an empty icon (with no buffer or name) to
+a toplevel should reset its icon to the default icon.
+
+It is up to compositor policy whether to prefer using a buffer or loading
+an icon via its name. See &#x27;set_name&#x27; and &#x27;add_buffer&#x27; for details.
+</div>
+
+        
+          <h3 class=" f5 lh-title" id="rh:xdg_toplevel_icon_v1">Requests</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:xdg_toplevel_icon_v1:destroy">
+                <a href="#r:xdg_toplevel_icon_v1:destroy" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  destroy
+                </div>
+                <div class="f5 ml2">
+                  destroy the icon object
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">xdg_toplevel_icon_v1_destroy</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct xdg_toplevel_icon_v1*</span> xdg_toplevel_icon_v1</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Destroys the &#x27;xdg_toplevel_icon_v1&#x27; object.
+The icon must still remain set on every toplevel it was assigned to,
+until the toplevel icon is reset explicitly.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:xdg_toplevel_icon_v1:set_name">
+                <a href="#r:xdg_toplevel_icon_v1:set_name" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  set_name
+                </div>
+                <div class="f5 ml2">
+                  set an icon name
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">xdg_toplevel_icon_v1_set_name</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct xdg_toplevel_icon_v1*</span> xdg_toplevel_icon_v1,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">const char*</span> icon_name</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">This request assigns an icon name to this icon.
+Any previously set name is overridden.
+
+The compositor must resolve &#x27;icon_name&#x27; according to the lookup rules
+described in the XDG icon theme specification[1] using the
+environment&#x27;s current icon theme.
+
+If the compositor does not support icon names or cannot resolve
+&#x27;icon_name&#x27; according to the XDG icon theme specification it must
+fall back to using pixel buffer data instead.
+
+If this request is made after the icon has been assigned to a toplevel
+via &#x27;set_icon&#x27;, a &#x27;immutable&#x27; error must be raised.
+
+[1]: https://specifications.freedesktop.org/icon-theme-spec/icon-theme-spec-latest.html
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:xdg_toplevel_icon_v1:add_buffer">
+                <a href="#r:xdg_toplevel_icon_v1:add_buffer" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  add_buffer
+                </div>
+                <div class="f5 ml2">
+                  add icon data from a pixel buffer
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">xdg_toplevel_icon_v1_add_buffer</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct xdg_toplevel_icon_v1*</span> xdg_toplevel_icon_v1,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_buffer*</span> buffer,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> scale <span class="green">/* the scaling factor of the icon, e.g. 1 */</span></div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">This request adds pixel data supplied as wl_buffer to the icon.
+
+The client should add pixel data for all icon sizes and scales that
+it can provide, or which are explicitly requested by the compositor
+via &#x27;icon_size&#x27; events on xdg_toplevel_icon_manager_v1.
+
+The wl_buffer supplying pixel data as &#x27;buffer&#x27; must be backed by wl_shm
+and must be a square (width and height being equal).
+If any of these buffer requirements are not fulfilled, a &#x27;invalid_buffer&#x27;
+error must be raised.
+
+If this icon instance already has a buffer of the same size and scale
+from a previous &#x27;add_buffer&#x27; request, data from the last request
+overrides the preexisting pixel data.
+
+The wl_buffer must be kept alive for as long as the xdg_toplevel_icon
+it is associated with is not destroyed, otherwise a &#x27;no_buffer&#x27; error
+is raised. The buffer contents must not be modified after it was
+assigned to the icon.
+
+If this request is made after the icon has been assigned to a toplevel
+via &#x27;set_icon&#x27;, a &#x27;immutable&#x27; error must be raised.
+</div>
+            </li>
+            
+          </ul>
+        
+
+        
+
+        
+
+        
+          <h3 class=" f5 lh-title" id="enumh:xdg_toplevel_icon_v1">Enums</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="enum:xdg_toplevel_icon_v1:error">
+                <a href="#enum:xdg_toplevel_icon_v1:error" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  error
+                </div>
+                <div class="f5 ml2">
+                  
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  XDG_TOPLEVEL_ICON_V1_ERROR_INVALID_BUFFER  <span class="green">/* the provided buffer does not satisfy requirements */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  XDG_TOPLEVEL_ICON_V1_ERROR_IMMUTABLE  <span class="green">/* the icon has already been assigned to a toplevel and must not be changed */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  XDG_TOPLEVEL_ICON_V1_ERROR_NO_BUFFER  <span class="green">/* the provided buffer has been destroyed before the toplevel icon */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3"></div>
+            </li>
+            
+          </ul>
+
+        
+
+      </li>
+      
+    </ul>
+
+    <h2 class="f4 lh-title">Copyright Info</h2>
+    <div class="f7 lh-copy ws-pre-line code">Copyright © 2023-2024 Matthias Klumpp
+Copyright ©      2024 David Edmundson
+
+Permission is hereby granted, free of charge, to any person obtaining a
+copy of this software and associated documentation files (the &quot;Software&quot;),
+to deal in the Software without restriction, including without limitation
+the rights to use, copy, modify, merge, publish, distribute, sublicense,
+and/or sell copies of the Software, and to permit persons to whom the
+Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice (including the next
+paragraph) shall be included in all copies or substantial portions of the
+Software.
+
+THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL
+THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+DEALINGS IN THE SOFTWARE.
+</div>
+  </div>
+
+    </main>
+
+  </body>
+</html>

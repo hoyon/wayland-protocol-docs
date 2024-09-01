@@ -1,0 +1,350 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ext_image_capture_source_v1</title>
+
+    <link rel="stylesheet" href="/wayland-protocol-docs/main.css">
+     
+  </head>
+  <body class="black-70 flex sans-serif ph4-l">
+    <div id="sidebar" class="w-20">
+      <div class="fixed vh-100 overflow-y-auto w-20">
+        <a href="/wayland-protocol-docs/" class="f4 link near-black dim lh-title db mt3">
+          Home
+        </a>
+        
+  <div class="ph2">
+    
+
+<div>
+  <ul class="list pl0">
+  
+    <li>
+      <a href="#i:ext_image_capture_source_v1" class="link blue underline-hover lh-copy">ext_image_capture_source_v1</a>
+
+      
+        <div>
+          <a href="#rh:ext_image_capture_source_v1" class="link blue underline-hover lh-copy pl3">Requests</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#r:ext_image_capture_source_v1:destroy" class="link blue underline-hover lh-copy">destroy</a>
+          </li>
+          
+        </ul>
+      
+
+      
+      
+
+      
+      
+    </li>
+  
+    <li>
+      <a href="#i:ext_output_image_capture_source_manager_v1" class="link blue underline-hover lh-copy">ext_output_image_capture_source_manager_v1</a>
+
+      
+        <div>
+          <a href="#rh:ext_output_image_capture_source_manager_v1" class="link blue underline-hover lh-copy pl3">Requests</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#r:ext_output_image_capture_source_manager_v1:create_source" class="link blue underline-hover lh-copy">create_source</a>
+          </li>
+          
+          <li>
+            <a href="#r:ext_output_image_capture_source_manager_v1:destroy" class="link blue underline-hover lh-copy">destroy</a>
+          </li>
+          
+        </ul>
+      
+
+      
+      
+
+      
+      
+    </li>
+  
+    <li>
+      <a href="#i:ext_foreign_toplevel_image_capture_source_manager_v1" class="link blue underline-hover lh-copy">ext_foreign_toplevel_image_capture_source_manager_v1</a>
+
+      
+        <div>
+          <a href="#rh:ext_foreign_toplevel_image_capture_source_manager_v1" class="link blue underline-hover lh-copy pl3">Requests</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#r:ext_foreign_toplevel_image_capture_source_manager_v1:create_source" class="link blue underline-hover lh-copy">create_source</a>
+          </li>
+          
+          <li>
+            <a href="#r:ext_foreign_toplevel_image_capture_source_manager_v1:destroy" class="link blue underline-hover lh-copy">destroy</a>
+          </li>
+          
+        </ul>
+      
+
+      
+      
+
+      
+      
+    </li>
+  
+  </ul>
+</div>
+  </div>
+
+      </div>
+    </div>
+
+    <main id="content" class="mh4 w-80">
+      
+  <div class="ph2">
+    <h1 class="f1 lh-title">ext_image_capture_source_v1</h1>
+    <ul class="list pl0">
+      
+      <li class="mt4">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:ext_image_capture_source_v1">
+          <a href="#i:ext_image_capture_source_v1" class="link dim black-70 child pr2 absolute left--2">#</a>
+          ext_image_capture_source_v1
+        </h2>
+        <div class="f6 lh-copy ws-pre-line code">The image capture source object is an opaque descriptor for a capturable
+resource.  This resource may be any sort of entity from which an image
+may be derived.
+
+Note, because ext_image_capture_source_v1 objects are created from multiple
+independent factory interfaces, the ext_image_capture_source_v1 interface is
+frozen at version 1.
+</div>
+
+        
+          <h3 class=" f5 lh-title" id="rh:ext_image_capture_source_v1">Requests</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:ext_image_capture_source_v1:destroy">
+                <a href="#r:ext_image_capture_source_v1:destroy" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  destroy
+                </div>
+                <div class="f5 ml2">
+                  delete this object
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">ext_image_capture_source_v1_destroy</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct ext_image_capture_source_v1*</span> ext_image_capture_source_v1</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Destroys the image capture source. This request may be sent at any time
+by the client.
+</div>
+            </li>
+            
+          </ul>
+        
+
+        
+
+        
+
+        
+
+        
+
+      </li>
+      
+      <li class="mt4">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:ext_output_image_capture_source_manager_v1">
+          <a href="#i:ext_output_image_capture_source_manager_v1" class="link dim black-70 child pr2 absolute left--2">#</a>
+          ext_output_image_capture_source_manager_v1
+        </h2>
+        <div class="f6 lh-copy ws-pre-line code">A manager for creating image capture source objects for wl_output objects.
+</div>
+
+        
+          <h3 class=" f5 lh-title" id="rh:ext_output_image_capture_source_manager_v1">Requests</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:ext_output_image_capture_source_manager_v1:create_source">
+                <a href="#r:ext_output_image_capture_source_manager_v1:create_source" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  create_source
+                </div>
+                <div class="f5 ml2">
+                  create source object for output
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>struct ext_image_capture_source_v1* </span><span class="dark-blue">ext_output_image_capture_source_manager_v1_create_source</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct ext_output_image_capture_source_manager_v1*</span> ext_output_image_capture_source_manager_v1,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_output*</span> output</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Creates a source object for an output. Images captured from this source
+will show the same content as the output. Some elements may be omitted,
+such as cursors and overlays that have been marked as transparent to
+capturing.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:ext_output_image_capture_source_manager_v1:destroy">
+                <a href="#r:ext_output_image_capture_source_manager_v1:destroy" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  destroy
+                </div>
+                <div class="f5 ml2">
+                  delete this object
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">ext_output_image_capture_source_manager_v1_destroy</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct ext_output_image_capture_source_manager_v1*</span> ext_output_image_capture_source_manager_v1</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Destroys the manager. This request may be sent at any time by the client
+and objects created by the manager will remain valid after its
+destruction.
+</div>
+            </li>
+            
+          </ul>
+        
+
+        
+
+        
+
+        
+
+        
+
+      </li>
+      
+      <li class="mt4">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:ext_foreign_toplevel_image_capture_source_manager_v1">
+          <a href="#i:ext_foreign_toplevel_image_capture_source_manager_v1" class="link dim black-70 child pr2 absolute left--2">#</a>
+          ext_foreign_toplevel_image_capture_source_manager_v1
+        </h2>
+        <div class="f6 lh-copy ws-pre-line code">A manager for creating image capture source objects for
+ext_foreign_toplevel_handle_v1 objects.
+</div>
+
+        
+          <h3 class=" f5 lh-title" id="rh:ext_foreign_toplevel_image_capture_source_manager_v1">Requests</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:ext_foreign_toplevel_image_capture_source_manager_v1:create_source">
+                <a href="#r:ext_foreign_toplevel_image_capture_source_manager_v1:create_source" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  create_source
+                </div>
+                <div class="f5 ml2">
+                  create source object for foreign toplevel
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>struct ext_image_capture_source_v1* </span><span class="dark-blue">ext_foreign_toplevel_image_capture_source_manager_v1_create_source</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct ext_foreign_toplevel_image_capture_source_manager_v1*</span> ext_foreign_toplevel_image_capture_source_manager_v1,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct ext_foreign_toplevel_handle_v1*</span> toplevel_handle</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Creates a source object for a foreign toplevel handle. Images captured
+from this source will show the same content as the toplevel.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:ext_foreign_toplevel_image_capture_source_manager_v1:destroy">
+                <a href="#r:ext_foreign_toplevel_image_capture_source_manager_v1:destroy" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  destroy
+                </div>
+                <div class="f5 ml2">
+                  delete this object
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">ext_foreign_toplevel_image_capture_source_manager_v1_destroy</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct ext_foreign_toplevel_image_capture_source_manager_v1*</span> ext_foreign_toplevel_image_capture_source_manager_v1</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Destroys the manager. This request may be sent at any time by the client
+and objects created by the manager will remain valid after its
+destruction.
+</div>
+            </li>
+            
+          </ul>
+        
+
+        
+
+        
+
+        
+
+        
+
+      </li>
+      
+    </ul>
+
+    <h2 class="f4 lh-title">Copyright Info</h2>
+    <div class="f7 lh-copy ws-pre-line code">Copyright © 2022 Andri Yngvason
+Copyright © 2024 Simon Ser
+
+Permission is hereby granted, free of charge, to any person obtaining a
+copy of this software and associated documentation files (the &quot;Software&quot;),
+to deal in the Software without restriction, including without limitation
+the rights to use, copy, modify, merge, publish, distribute, sublicense,
+and/or sell copies of the Software, and to permit persons to whom the
+Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice (including the next
+paragraph) shall be included in all copies or substantial portions of the
+Software.
+
+THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL
+THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+DEALINGS IN THE SOFTWARE.
+</div>
+  </div>
+
+    </main>
+
+  </body>
+</html>

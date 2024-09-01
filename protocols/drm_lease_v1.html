@@ -1,0 +1,865 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>drm_lease_v1</title>
+
+    <link rel="stylesheet" href="/wayland-protocol-docs/main.css">
+     
+  </head>
+  <body class="black-70 flex sans-serif ph4-l">
+    <div id="sidebar" class="w-20">
+      <div class="fixed vh-100 overflow-y-auto w-20">
+        <a href="/wayland-protocol-docs/" class="f4 link near-black dim lh-title db mt3">
+          Home
+        </a>
+        
+  <div class="ph2">
+    
+
+<div>
+  <ul class="list pl0">
+  
+    <li>
+      <a href="#i:wp_drm_lease_device_v1" class="link blue underline-hover lh-copy">wp_drm_lease_device_v1</a>
+
+      
+        <div>
+          <a href="#rh:wp_drm_lease_device_v1" class="link blue underline-hover lh-copy pl3">Requests</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#r:wp_drm_lease_device_v1:create_lease_request" class="link blue underline-hover lh-copy">create_lease_request</a>
+          </li>
+          
+          <li>
+            <a href="#r:wp_drm_lease_device_v1:release" class="link blue underline-hover lh-copy">release</a>
+          </li>
+          
+        </ul>
+      
+
+      
+        <div>
+          <a href="#eh:wp_drm_lease_device_v1" class="link blue underline-hover lh-copy pl3">Events</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#e:wp_drm_lease_device_v1:drm_fd" class="link blue underline-hover lh-copy">drm_fd</a>
+          </li>
+          
+          <li>
+            <a href="#e:wp_drm_lease_device_v1:connector" class="link blue underline-hover lh-copy">connector</a>
+          </li>
+          
+          <li>
+            <a href="#e:wp_drm_lease_device_v1:done" class="link blue underline-hover lh-copy">done</a>
+          </li>
+          
+          <li>
+            <a href="#e:wp_drm_lease_device_v1:released" class="link blue underline-hover lh-copy">released</a>
+          </li>
+          
+        </ul>
+      
+
+      
+      
+    </li>
+  
+    <li>
+      <a href="#i:wp_drm_lease_connector_v1" class="link blue underline-hover lh-copy">wp_drm_lease_connector_v1</a>
+
+      
+        <div>
+          <a href="#rh:wp_drm_lease_connector_v1" class="link blue underline-hover lh-copy pl3">Requests</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#r:wp_drm_lease_connector_v1:destroy" class="link blue underline-hover lh-copy">destroy</a>
+          </li>
+          
+        </ul>
+      
+
+      
+        <div>
+          <a href="#eh:wp_drm_lease_connector_v1" class="link blue underline-hover lh-copy pl3">Events</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#e:wp_drm_lease_connector_v1:name" class="link blue underline-hover lh-copy">name</a>
+          </li>
+          
+          <li>
+            <a href="#e:wp_drm_lease_connector_v1:description" class="link blue underline-hover lh-copy">description</a>
+          </li>
+          
+          <li>
+            <a href="#e:wp_drm_lease_connector_v1:connector_id" class="link blue underline-hover lh-copy">connector_id</a>
+          </li>
+          
+          <li>
+            <a href="#e:wp_drm_lease_connector_v1:done" class="link blue underline-hover lh-copy">done</a>
+          </li>
+          
+          <li>
+            <a href="#e:wp_drm_lease_connector_v1:withdrawn" class="link blue underline-hover lh-copy">withdrawn</a>
+          </li>
+          
+        </ul>
+      
+
+      
+      
+    </li>
+  
+    <li>
+      <a href="#i:wp_drm_lease_request_v1" class="link blue underline-hover lh-copy">wp_drm_lease_request_v1</a>
+
+      
+        <div>
+          <a href="#rh:wp_drm_lease_request_v1" class="link blue underline-hover lh-copy pl3">Requests</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#r:wp_drm_lease_request_v1:request_connector" class="link blue underline-hover lh-copy">request_connector</a>
+          </li>
+          
+          <li>
+            <a href="#r:wp_drm_lease_request_v1:submit" class="link blue underline-hover lh-copy">submit</a>
+          </li>
+          
+        </ul>
+      
+
+      
+      
+
+      
+        <div>
+          <a href="#enumh:wp_drm_lease_request_v1" class="link blue underline-hover lh-copy pl3">Enums</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#enum:wp_drm_lease_request_v1:error" class="link blue underline-hover lh-copy">error</a>
+          </li>
+          
+        </ul>
+      
+    </li>
+  
+    <li>
+      <a href="#i:wp_drm_lease_v1" class="link blue underline-hover lh-copy">wp_drm_lease_v1</a>
+
+      
+        <div>
+          <a href="#rh:wp_drm_lease_v1" class="link blue underline-hover lh-copy pl3">Requests</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#r:wp_drm_lease_v1:destroy" class="link blue underline-hover lh-copy">destroy</a>
+          </li>
+          
+        </ul>
+      
+
+      
+        <div>
+          <a href="#eh:wp_drm_lease_v1" class="link blue underline-hover lh-copy pl3">Events</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#e:wp_drm_lease_v1:lease_fd" class="link blue underline-hover lh-copy">lease_fd</a>
+          </li>
+          
+          <li>
+            <a href="#e:wp_drm_lease_v1:finished" class="link blue underline-hover lh-copy">finished</a>
+          </li>
+          
+        </ul>
+      
+
+      
+      
+    </li>
+  
+  </ul>
+</div>
+  </div>
+
+      </div>
+    </div>
+
+    <main id="content" class="mh4 w-80">
+      
+  <div class="ph2">
+    <h1 class="f1 lh-title">drm_lease_v1</h1>
+    <ul class="list pl0">
+      
+      <li class="mt4">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:wp_drm_lease_device_v1">
+          <a href="#i:wp_drm_lease_device_v1" class="link dim black-70 child pr2 absolute left--2">#</a>
+          wp_drm_lease_device_v1
+        </h2>
+        <div class="f6 lh-copy ws-pre-line code">This protocol is used by Wayland compositors which act as Direct
+Rendering Manager (DRM) masters to lease DRM resources to Wayland
+clients.
+
+The compositor will advertise one wp_drm_lease_device_v1 global for each
+DRM node. Some time after a client binds to the wp_drm_lease_device_v1
+global, the compositor will send a drm_fd event followed by zero, one or
+more connector events. After all currently available connectors have been
+sent, the compositor will send a wp_drm_lease_device_v1.done event.
+
+When the list of connectors available for lease changes the compositor
+will send wp_drm_lease_device_v1.connector events for added connectors and
+wp_drm_lease_connector_v1.withdrawn events for removed connectors,
+followed by a wp_drm_lease_device_v1.done event.
+
+The compositor will indicate when a device is gone by removing the global
+via a wl_registry.global_remove event. Upon receiving this event, the
+client should destroy any matching wp_drm_lease_device_v1 object.
+
+To destroy a wp_drm_lease_device_v1 object, the client must first issue
+a release request. Upon receiving this request, the compositor will
+immediately send a released event and destroy the object. The client must
+continue to process and discard drm_fd and connector events until it
+receives the released event. Upon receiving the released event, the
+client can safely cleanup any client-side resources.
+
+Warning! The protocol described in this file is currently in the testing
+phase. Backward compatible changes may be added together with the
+corresponding interface version bump. Backward incompatible changes can
+only be done by creating a new major version of the extension.
+</div>
+
+        
+          <h3 class=" f5 lh-title" id="rh:wp_drm_lease_device_v1">Requests</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:wp_drm_lease_device_v1:create_lease_request">
+                <a href="#r:wp_drm_lease_device_v1:create_lease_request" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  create_lease_request
+                </div>
+                <div class="f5 ml2">
+                  create a lease request object
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>struct wp_drm_lease_request_v1* </span><span class="dark-blue">wp_drm_lease_device_v1_create_lease_request</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wp_drm_lease_device_v1*</span> wp_drm_lease_device_v1</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Creates a lease request object.
+
+See the documentation for wp_drm_lease_request_v1 for details.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:wp_drm_lease_device_v1:release">
+                <a href="#r:wp_drm_lease_device_v1:release" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  release
+                </div>
+                <div class="f5 ml2">
+                  release this object
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">wp_drm_lease_device_v1_release</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wp_drm_lease_device_v1*</span> wp_drm_lease_device_v1</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Indicates the client no longer wishes to use this object. In response
+the compositor will immediately send the released event and destroy
+this object. It can however not guarantee that the client won&#x27;t receive
+connector events before the released event. The client must not send any
+requests after this one, doing so will raise a wl_display error.
+Existing connectors, lease request and leases will not be affected.
+</div>
+            </li>
+            
+          </ul>
+        
+
+        
+          <h3 class=" f5 lh-title" id="eh:wp_drm_lease_device_v1">Events</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:wp_drm_lease_device_v1:drm_fd">
+                <a href="#e:wp_drm_lease_device_v1:drm_fd" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  drm_fd
+                </div>
+                <div class="f5 ml2">
+                  open a non-master fd for this DRM node
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  <span class="purple">int32_t</span> fd <span class="green">/* DRM file descriptor */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">The compositor will send this event when the wp_drm_lease_device_v1
+global is bound, although there are no guarantees as to how long this
+takes - the compositor might need to wait until regaining DRM master.
+The included fd is a non-master DRM file descriptor opened for this
+device and the compositor must not authenticate it.
+The purpose of this event is to give the client the ability to
+query DRM and discover information which may help them pick the
+appropriate DRM device or select the appropriate connectors therein.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:wp_drm_lease_device_v1:connector">
+                <a href="#e:wp_drm_lease_device_v1:connector" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  connector
+                </div>
+                <div class="f5 ml2">
+                  advertise connectors available for leases
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  <span class="purple">struct wp_drm_lease_connector_v1*</span> id  
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">The compositor will use this event to advertise connectors available for
+lease by clients. This object may be passed into a lease request to
+indicate the client would like to lease that connector, see
+wp_drm_lease_request_v1.request_connector for details. While the
+compositor will make a best effort to not send disconnected connectors,
+no guarantees can be made.
+
+The compositor must send the drm_fd event before sending connectors.
+After the drm_fd event it will send all available connectors but may
+send additional connectors at any time.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:wp_drm_lease_device_v1:done">
+                <a href="#e:wp_drm_lease_device_v1:done" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  done
+                </div>
+                <div class="f5 ml2">
+                  signals grouping of connectors
+                </div>
+              </div>
+
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">The compositor will send this event to indicate that it has sent all
+currently available connectors after the client binds to the global or
+when it updates the connector list, for example on hotplug, drm master
+change or when a leased connector becomes available again. It will
+similarly send this event to group wp_drm_lease_connector_v1.withdrawn
+events of connectors of this device.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:wp_drm_lease_device_v1:released">
+                <a href="#e:wp_drm_lease_device_v1:released" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  released
+                </div>
+                <div class="f5 ml2">
+                  the compositor has finished using the device
+                </div>
+              </div>
+
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">This event is sent in response to the release request and indicates
+that the compositor is done sending connector events.
+The compositor will destroy this object immediately after sending the
+event and it will become invalid. The client should release any
+resources associated with this device after receiving this event.
+</div>
+            </li>
+            
+          </ul>
+
+        
+
+        
+
+        
+
+      </li>
+      
+      <li class="mt4">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:wp_drm_lease_connector_v1">
+          <a href="#i:wp_drm_lease_connector_v1" class="link dim black-70 child pr2 absolute left--2">#</a>
+          wp_drm_lease_connector_v1
+        </h2>
+        <div class="f6 lh-copy ws-pre-line code">Represents a DRM connector which is available for lease. These objects are
+created via wp_drm_lease_device_v1.connector events, and should be passed
+to lease requests via wp_drm_lease_request_v1.request_connector.
+Immediately after the wp_drm_lease_connector_v1 object is created the
+compositor will send a name, a description, a connector_id and a done
+event. When the description is updated the compositor will send a
+description event followed by a done event.
+</div>
+
+        
+          <h3 class=" f5 lh-title" id="rh:wp_drm_lease_connector_v1">Requests</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:wp_drm_lease_connector_v1:destroy">
+                <a href="#r:wp_drm_lease_connector_v1:destroy" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  destroy
+                </div>
+                <div class="f5 ml2">
+                  destroy connector
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">wp_drm_lease_connector_v1_destroy</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wp_drm_lease_connector_v1*</span> wp_drm_lease_connector_v1</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">The client may send this request to indicate that it will not use this
+connector. Clients are encouraged to send this after receiving the
+&quot;withdrawn&quot; event so that the server can release the resources
+associated with this connector offer. Neither existing lease requests
+nor leases will be affected.
+</div>
+            </li>
+            
+          </ul>
+        
+
+        
+          <h3 class=" f5 lh-title" id="eh:wp_drm_lease_connector_v1">Events</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:wp_drm_lease_connector_v1:name">
+                <a href="#e:wp_drm_lease_connector_v1:name" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  name
+                </div>
+                <div class="f5 ml2">
+                  name
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  <span class="purple">const char*</span> name <span class="green">/* connector name */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">The compositor sends this event once the connector is created to
+indicate the name of this connector. This will not change for the
+duration of the Wayland session, but is not guaranteed to be consistent
+between sessions.
+
+If the compositor supports wl_output version 4 and this connector
+corresponds to a wl_output, the compositor should use the same name as
+for the wl_output.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:wp_drm_lease_connector_v1:description">
+                <a href="#e:wp_drm_lease_connector_v1:description" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  description
+                </div>
+                <div class="f5 ml2">
+                  description
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  <span class="purple">const char*</span> description <span class="green">/* connector description */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">The compositor sends this event once the connector is created to provide
+a human-readable description for this connector, which may be presented
+to the user. The compositor may send this event multiple times over the
+lifetime of this object to reflect changes in the description.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:wp_drm_lease_connector_v1:connector_id">
+                <a href="#e:wp_drm_lease_connector_v1:connector_id" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  connector_id
+                </div>
+                <div class="f5 ml2">
+                  connector_id
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  <span class="purple">uint32_t</span> connector_id <span class="green">/* DRM connector ID */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">The compositor sends this event once the connector is created to
+indicate the DRM object ID which represents the underlying connector
+that is being offered. Note that the final lease may include additional
+object IDs, such as CRTCs and planes.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:wp_drm_lease_connector_v1:done">
+                <a href="#e:wp_drm_lease_connector_v1:done" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  done
+                </div>
+                <div class="f5 ml2">
+                  all properties have been sent
+                </div>
+              </div>
+
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">This event is sent after all properties of a connector have been sent.
+This allows changes to the properties to be seen as atomic even if they
+happen via multiple events.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:wp_drm_lease_connector_v1:withdrawn">
+                <a href="#e:wp_drm_lease_connector_v1:withdrawn" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  withdrawn
+                </div>
+                <div class="f5 ml2">
+                  lease offer withdrawn
+                </div>
+              </div>
+
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">Sent to indicate that the compositor will no longer honor requests for
+DRM leases which include this connector. The client may still issue a
+lease request including this connector, but the compositor will send
+wp_drm_lease_v1.finished without issuing a lease fd. Compositors are
+encouraged to send this event when they lose access to connector, for
+example when the connector is hot-unplugged, when the connector gets
+leased to a client or when the compositor loses DRM master.
+</div>
+            </li>
+            
+          </ul>
+
+        
+
+        
+
+        
+
+      </li>
+      
+      <li class="mt4">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:wp_drm_lease_request_v1">
+          <a href="#i:wp_drm_lease_request_v1" class="link dim black-70 child pr2 absolute left--2">#</a>
+          wp_drm_lease_request_v1
+        </h2>
+        <div class="f6 lh-copy ws-pre-line code">A client that wishes to lease DRM resources will attach the list of
+connectors advertised with wp_drm_lease_device_v1.connector that they
+wish to lease, then use wp_drm_lease_request_v1.submit to submit the
+request.
+</div>
+
+        
+          <h3 class=" f5 lh-title" id="rh:wp_drm_lease_request_v1">Requests</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:wp_drm_lease_request_v1:request_connector">
+                <a href="#r:wp_drm_lease_request_v1:request_connector" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  request_connector
+                </div>
+                <div class="f5 ml2">
+                  request a connector for this lease
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">wp_drm_lease_request_v1_request_connector</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wp_drm_lease_request_v1*</span> wp_drm_lease_request_v1,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wp_drm_lease_connector_v1*</span> connector</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Indicates that the client would like to lease the given connector.
+This is only used as a suggestion, the compositor may choose to
+include any resources in the lease it issues, or change the set of
+leased resources at any time. Compositors are however encouraged to
+include the requested connector and other resources necessary
+to drive the connected output in the lease.
+
+Requesting a connector that was created from a different lease device
+than this lease request raises the wrong_device error. Requesting a
+connector twice will raise the duplicate_connector error.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:wp_drm_lease_request_v1:submit">
+                <a href="#r:wp_drm_lease_request_v1:submit" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  submit
+                </div>
+                <div class="f5 ml2">
+                  submit the lease request
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">wp_drm_lease_request_v1_submit</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wp_drm_lease_request_v1*</span> wp_drm_lease_request_v1</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Submits the lease request and creates a new wp_drm_lease_v1 object.
+After calling submit the compositor will immediately destroy this
+object, issuing any more requests will cause a wl_display error.
+The compositor doesn&#x27;t make any guarantees about the events of the
+lease object, clients cannot expect an immediate response.
+Not requesting any connectors before submitting the lease request
+will raise the empty_lease error.
+</div>
+            </li>
+            
+          </ul>
+        
+
+        
+
+        
+
+        
+          <h3 class=" f5 lh-title" id="enumh:wp_drm_lease_request_v1">Enums</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="enum:wp_drm_lease_request_v1:error">
+                <a href="#enum:wp_drm_lease_request_v1:error" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  error
+                </div>
+                <div class="f5 ml2">
+                  
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  WP_DRM_LEASE_REQUEST_V1_ERROR_WRONG_DEVICE  <span class="green">/* requested a connector from a different lease device */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  WP_DRM_LEASE_REQUEST_V1_ERROR_DUPLICATE_CONNECTOR  <span class="green">/* requested a connector twice */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  WP_DRM_LEASE_REQUEST_V1_ERROR_EMPTY_LEASE  <span class="green">/* requested a lease without requesting a connector */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3"></div>
+            </li>
+            
+          </ul>
+
+        
+
+      </li>
+      
+      <li class="mt4">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:wp_drm_lease_v1">
+          <a href="#i:wp_drm_lease_v1" class="link dim black-70 child pr2 absolute left--2">#</a>
+          wp_drm_lease_v1
+        </h2>
+        <div class="f6 lh-copy ws-pre-line code">A DRM lease object is used to transfer the DRM file descriptor to the
+client and manage the lifetime of the lease.
+
+Some time after the wp_drm_lease_v1 object is created, the compositor
+will reply with the lease request&#x27;s result. If the lease request is
+granted, the compositor will send a lease_fd event. If the lease request
+is denied, the compositor will send a finished event without a lease_fd
+event.
+</div>
+
+        
+          <h3 class=" f5 lh-title" id="rh:wp_drm_lease_v1">Requests</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:wp_drm_lease_v1:destroy">
+                <a href="#r:wp_drm_lease_v1:destroy" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  destroy
+                </div>
+                <div class="f5 ml2">
+                  destroys the lease object
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">wp_drm_lease_v1_destroy</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wp_drm_lease_v1*</span> wp_drm_lease_v1</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">The client should send this to indicate that it no longer wishes to use
+this lease. The compositor should use drmModeRevokeLease on the
+appropriate file descriptor, if necessary.
+</div>
+            </li>
+            
+          </ul>
+        
+
+        
+          <h3 class=" f5 lh-title" id="eh:wp_drm_lease_v1">Events</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:wp_drm_lease_v1:lease_fd">
+                <a href="#e:wp_drm_lease_v1:lease_fd" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  lease_fd
+                </div>
+                <div class="f5 ml2">
+                  shares the DRM file descriptor
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  <span class="purple">int32_t</span> leased_fd <span class="green">/* leased DRM file descriptor */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">This event returns a file descriptor suitable for use with DRM-related
+ioctls. The client should use drmModeGetLease to enumerate the DRM
+objects which have been leased to them. The compositor guarantees it
+will not use the leased DRM objects itself until it sends the finished
+event. If the compositor cannot or will not grant a lease for the
+requested connectors, it will not send this event, instead sending the
+finished event.
+
+The compositor will send this event at most once during this objects
+lifetime.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:wp_drm_lease_v1:finished">
+                <a href="#e:wp_drm_lease_v1:finished" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  finished
+                </div>
+                <div class="f5 ml2">
+                  sent when the lease has been revoked
+                </div>
+              </div>
+
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">The compositor uses this event to either reject a lease request, or if
+it previously sent a lease_fd, to notify the client that the lease has
+been revoked. If the client requires a new lease, they should destroy
+this object and submit a new lease request. The compositor will send
+no further events for this object after sending the finish event.
+Compositors should revoke the lease when any of the leased resources
+become unavailable, namely when a hot-unplug occurs or when the
+compositor loses DRM master.
+</div>
+            </li>
+            
+          </ul>
+
+        
+
+        
+
+        
+
+      </li>
+      
+    </ul>
+
+    <h2 class="f4 lh-title">Copyright Info</h2>
+    <div class="f7 lh-copy ws-pre-line code">Copyright © 2018 NXP
+Copyright © 2019 Status Research &amp; Development GmbH.
+Copyright © 2021 Xaver Hugl
+
+Permission is hereby granted, free of charge, to any person obtaining a
+copy of this software and associated documentation files (the &quot;Software&quot;),
+to deal in the Software without restriction, including without limitation
+the rights to use, copy, modify, merge, publish, distribute, sublicense,
+and/or sell copies of the Software, and to permit persons to whom the
+Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice (including the next
+paragraph) shall be included in all copies or substantial portions of the
+Software.
+
+THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL
+THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+DEALINGS IN THE SOFTWARE.
+</div>
+  </div>
+
+    </main>
+
+  </body>
+</html>

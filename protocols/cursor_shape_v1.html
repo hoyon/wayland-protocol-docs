@@ -1,0 +1,512 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>cursor_shape_v1</title>
+
+    <link rel="stylesheet" href="/wayland-protocol-docs/main.css">
+     
+  </head>
+  <body class="black-70 flex sans-serif ph4-l">
+    <div id="sidebar" class="w-20">
+      <div class="fixed vh-100 overflow-y-auto w-20">
+        <a href="/wayland-protocol-docs/" class="f4 link near-black dim lh-title db mt3">
+          Home
+        </a>
+        
+  <div class="ph2">
+    
+
+<div>
+  <ul class="list pl0">
+  
+    <li>
+      <a href="#i:wp_cursor_shape_manager_v1" class="link blue underline-hover lh-copy">wp_cursor_shape_manager_v1</a>
+
+      
+        <div>
+          <a href="#rh:wp_cursor_shape_manager_v1" class="link blue underline-hover lh-copy pl3">Requests</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#r:wp_cursor_shape_manager_v1:destroy" class="link blue underline-hover lh-copy">destroy</a>
+          </li>
+          
+          <li>
+            <a href="#r:wp_cursor_shape_manager_v1:get_pointer" class="link blue underline-hover lh-copy">get_pointer</a>
+          </li>
+          
+          <li>
+            <a href="#r:wp_cursor_shape_manager_v1:get_tablet_tool_v2" class="link blue underline-hover lh-copy">get_tablet_tool_v2</a>
+          </li>
+          
+        </ul>
+      
+
+      
+      
+
+      
+      
+    </li>
+  
+    <li>
+      <a href="#i:wp_cursor_shape_device_v1" class="link blue underline-hover lh-copy">wp_cursor_shape_device_v1</a>
+
+      
+        <div>
+          <a href="#rh:wp_cursor_shape_device_v1" class="link blue underline-hover lh-copy pl3">Requests</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#r:wp_cursor_shape_device_v1:destroy" class="link blue underline-hover lh-copy">destroy</a>
+          </li>
+          
+          <li>
+            <a href="#r:wp_cursor_shape_device_v1:set_shape" class="link blue underline-hover lh-copy">set_shape</a>
+          </li>
+          
+        </ul>
+      
+
+      
+      
+
+      
+        <div>
+          <a href="#enumh:wp_cursor_shape_device_v1" class="link blue underline-hover lh-copy pl3">Enums</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#enum:wp_cursor_shape_device_v1:shape" class="link blue underline-hover lh-copy">shape</a>
+          </li>
+          
+          <li>
+            <a href="#enum:wp_cursor_shape_device_v1:error" class="link blue underline-hover lh-copy">error</a>
+          </li>
+          
+        </ul>
+      
+    </li>
+  
+  </ul>
+</div>
+  </div>
+
+      </div>
+    </div>
+
+    <main id="content" class="mh4 w-80">
+      
+  <div class="ph2">
+    <h1 class="f1 lh-title">cursor_shape_v1</h1>
+    <ul class="list pl0">
+      
+      <li class="mt4">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:wp_cursor_shape_manager_v1">
+          <a href="#i:wp_cursor_shape_manager_v1" class="link dim black-70 child pr2 absolute left--2">#</a>
+          wp_cursor_shape_manager_v1
+        </h2>
+        <div class="f6 lh-copy ws-pre-line code">This global offers an alternative, optional way to set cursor images. This
+new way uses enumerated cursors instead of a wl_surface like
+wl_pointer.set_cursor does.
+
+Warning! The protocol described in this file is currently in the testing
+phase. Backward compatible changes may be added together with the
+corresponding interface version bump. Backward incompatible changes can
+only be done by creating a new major version of the extension.
+</div>
+
+        
+          <h3 class=" f5 lh-title" id="rh:wp_cursor_shape_manager_v1">Requests</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:wp_cursor_shape_manager_v1:destroy">
+                <a href="#r:wp_cursor_shape_manager_v1:destroy" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  destroy
+                </div>
+                <div class="f5 ml2">
+                  destroy the manager
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">wp_cursor_shape_manager_v1_destroy</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wp_cursor_shape_manager_v1*</span> wp_cursor_shape_manager_v1</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Destroy the cursor shape manager.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:wp_cursor_shape_manager_v1:get_pointer">
+                <a href="#r:wp_cursor_shape_manager_v1:get_pointer" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  get_pointer
+                </div>
+                <div class="f5 ml2">
+                  manage the cursor shape of a pointer device
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>struct wp_cursor_shape_device_v1* </span><span class="dark-blue">wp_cursor_shape_manager_v1_get_pointer</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wp_cursor_shape_manager_v1*</span> wp_cursor_shape_manager_v1,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_pointer*</span> pointer</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Obtain a wp_cursor_shape_device_v1 for a wl_pointer object.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:wp_cursor_shape_manager_v1:get_tablet_tool_v2">
+                <a href="#r:wp_cursor_shape_manager_v1:get_tablet_tool_v2" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  get_tablet_tool_v2
+                </div>
+                <div class="f5 ml2">
+                  manage the cursor shape of a tablet tool device
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>struct wp_cursor_shape_device_v1* </span><span class="dark-blue">wp_cursor_shape_manager_v1_get_tablet_tool_v2</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wp_cursor_shape_manager_v1*</span> wp_cursor_shape_manager_v1,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwp_tablet_tool_v2*</span> tablet_tool</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Obtain a wp_cursor_shape_device_v1 for a zwp_tablet_tool_v2 object.
+</div>
+            </li>
+            
+          </ul>
+        
+
+        
+
+        
+
+        
+
+        
+
+      </li>
+      
+      <li class="mt4">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:wp_cursor_shape_device_v1">
+          <a href="#i:wp_cursor_shape_device_v1" class="link dim black-70 child pr2 absolute left--2">#</a>
+          wp_cursor_shape_device_v1
+        </h2>
+        <div class="f6 lh-copy ws-pre-line code">This interface allows clients to set the cursor shape.
+</div>
+
+        
+          <h3 class=" f5 lh-title" id="rh:wp_cursor_shape_device_v1">Requests</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:wp_cursor_shape_device_v1:destroy">
+                <a href="#r:wp_cursor_shape_device_v1:destroy" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  destroy
+                </div>
+                <div class="f5 ml2">
+                  destroy the cursor shape device
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">wp_cursor_shape_device_v1_destroy</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wp_cursor_shape_device_v1*</span> wp_cursor_shape_device_v1</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Destroy the cursor shape device.
+
+The device cursor shape remains unchanged.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:wp_cursor_shape_device_v1:set_shape">
+                <a href="#r:wp_cursor_shape_device_v1:set_shape" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  set_shape
+                </div>
+                <div class="f5 ml2">
+                  set device cursor to the shape
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">wp_cursor_shape_device_v1_set_shape</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wp_cursor_shape_device_v1*</span> wp_cursor_shape_device_v1,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> serial, <span class="green">/* serial number of the enter event */</span></div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> shape</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Sets the device cursor to the specified shape. The compositor will
+change the cursor image based on the specified shape.
+
+The cursor actually changes only if the input device focus is one of
+the requesting client&#x27;s surfaces. If any, the previous cursor image
+(surface or shape) is replaced.
+
+The &quot;shape&quot; argument must be a valid enum entry, otherwise the
+invalid_shape protocol error is raised.
+
+This is similar to the wl_pointer.set_cursor and
+zwp_tablet_tool_v2.set_cursor requests, but this request accepts a
+shape instead of contents in the form of a surface. Clients can mix
+set_cursor and set_shape requests.
+
+The serial parameter must match the latest wl_pointer.enter or
+zwp_tablet_tool_v2.proximity_in serial number sent to the client.
+Otherwise the request will be ignored.
+</div>
+            </li>
+            
+          </ul>
+        
+
+        
+
+        
+
+        
+          <h3 class=" f5 lh-title" id="enumh:wp_cursor_shape_device_v1">Enums</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="enum:wp_cursor_shape_device_v1:shape">
+                <a href="#enum:wp_cursor_shape_device_v1:shape" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  shape
+                </div>
+                <div class="f5 ml2">
+                  cursor shapes
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  WP_CURSOR_SHAPE_DEVICE_V1_SHAPE_DEFAULT  <span class="green">/* default cursor */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  WP_CURSOR_SHAPE_DEVICE_V1_SHAPE_CONTEXT_MENU  <span class="green">/* a context menu is available for the object under the cursor */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  WP_CURSOR_SHAPE_DEVICE_V1_SHAPE_HELP  <span class="green">/* help is available for the object under the cursor */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  WP_CURSOR_SHAPE_DEVICE_V1_SHAPE_POINTER  <span class="green">/* pointer that indicates a link or another interactive element */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  WP_CURSOR_SHAPE_DEVICE_V1_SHAPE_PROGRESS  <span class="green">/* progress indicator */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  WP_CURSOR_SHAPE_DEVICE_V1_SHAPE_WAIT  <span class="green">/* program is busy, user should wait */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  WP_CURSOR_SHAPE_DEVICE_V1_SHAPE_CELL  <span class="green">/* a cell or set of cells may be selected */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  WP_CURSOR_SHAPE_DEVICE_V1_SHAPE_CROSSHAIR  <span class="green">/* simple crosshair */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  WP_CURSOR_SHAPE_DEVICE_V1_SHAPE_TEXT  <span class="green">/* text may be selected */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  WP_CURSOR_SHAPE_DEVICE_V1_SHAPE_VERTICAL_TEXT  <span class="green">/* vertical text may be selected */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  WP_CURSOR_SHAPE_DEVICE_V1_SHAPE_ALIAS  <span class="green">/* drag-and-drop: alias of/shortcut to something is to be created */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  WP_CURSOR_SHAPE_DEVICE_V1_SHAPE_COPY  <span class="green">/* drag-and-drop: something is to be copied */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  WP_CURSOR_SHAPE_DEVICE_V1_SHAPE_MOVE  <span class="green">/* drag-and-drop: something is to be moved */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  WP_CURSOR_SHAPE_DEVICE_V1_SHAPE_NO_DROP  <span class="green">/* drag-and-drop: the dragged item cannot be dropped at the current cursor location */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  WP_CURSOR_SHAPE_DEVICE_V1_SHAPE_NOT_ALLOWED  <span class="green">/* drag-and-drop: the requested action will not be carried out */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  WP_CURSOR_SHAPE_DEVICE_V1_SHAPE_GRAB  <span class="green">/* drag-and-drop: something can be grabbed */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  WP_CURSOR_SHAPE_DEVICE_V1_SHAPE_GRABBING  <span class="green">/* drag-and-drop: something is being grabbed */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  WP_CURSOR_SHAPE_DEVICE_V1_SHAPE_E_RESIZE  <span class="green">/* resizing: the east border is to be moved */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  WP_CURSOR_SHAPE_DEVICE_V1_SHAPE_N_RESIZE  <span class="green">/* resizing: the north border is to be moved */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  WP_CURSOR_SHAPE_DEVICE_V1_SHAPE_NE_RESIZE  <span class="green">/* resizing: the north-east corner is to be moved */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  WP_CURSOR_SHAPE_DEVICE_V1_SHAPE_NW_RESIZE  <span class="green">/* resizing: the north-west corner is to be moved */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  WP_CURSOR_SHAPE_DEVICE_V1_SHAPE_S_RESIZE  <span class="green">/* resizing: the south border is to be moved */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  WP_CURSOR_SHAPE_DEVICE_V1_SHAPE_SE_RESIZE  <span class="green">/* resizing: the south-east corner is to be moved */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  WP_CURSOR_SHAPE_DEVICE_V1_SHAPE_SW_RESIZE  <span class="green">/* resizing: the south-west corner is to be moved */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  WP_CURSOR_SHAPE_DEVICE_V1_SHAPE_W_RESIZE  <span class="green">/* resizing: the west border is to be moved */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  WP_CURSOR_SHAPE_DEVICE_V1_SHAPE_EW_RESIZE  <span class="green">/* resizing: the east and west borders are to be moved */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  WP_CURSOR_SHAPE_DEVICE_V1_SHAPE_NS_RESIZE  <span class="green">/* resizing: the north and south borders are to be moved */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  WP_CURSOR_SHAPE_DEVICE_V1_SHAPE_NESW_RESIZE  <span class="green">/* resizing: the north-east and south-west corners are to be moved */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  WP_CURSOR_SHAPE_DEVICE_V1_SHAPE_NWSE_RESIZE  <span class="green">/* resizing: the north-west and south-east corners are to be moved */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  WP_CURSOR_SHAPE_DEVICE_V1_SHAPE_COL_RESIZE  <span class="green">/* resizing: that the item/column can be resized horizontally */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  WP_CURSOR_SHAPE_DEVICE_V1_SHAPE_ROW_RESIZE  <span class="green">/* resizing: that the item/row can be resized vertically */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  WP_CURSOR_SHAPE_DEVICE_V1_SHAPE_ALL_SCROLL  <span class="green">/* something can be scrolled in any direction */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  WP_CURSOR_SHAPE_DEVICE_V1_SHAPE_ZOOM_IN  <span class="green">/* something can be zoomed in */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  WP_CURSOR_SHAPE_DEVICE_V1_SHAPE_ZOOM_OUT  <span class="green">/* something can be zoomed out */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">This enum describes cursor shapes.
+
+The names are taken from the CSS W3C specification:
+https://w3c.github.io/csswg-drafts/css-ui/#cursor
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="enum:wp_cursor_shape_device_v1:error">
+                <a href="#enum:wp_cursor_shape_device_v1:error" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  error
+                </div>
+                <div class="f5 ml2">
+                  
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  WP_CURSOR_SHAPE_DEVICE_V1_ERROR_INVALID_SHAPE  <span class="green">/* the specified shape value is invalid */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3"></div>
+            </li>
+            
+          </ul>
+
+        
+
+      </li>
+      
+    </ul>
+
+    <h2 class="f4 lh-title">Copyright Info</h2>
+    <div class="f7 lh-copy ws-pre-line code">Copyright 2018 The Chromium Authors
+Copyright 2023 Simon Ser
+
+Permission is hereby granted, free of charge, to any person obtaining a
+copy of this software and associated documentation files (the &quot;Software&quot;),
+to deal in the Software without restriction, including without limitation
+the rights to use, copy, modify, merge, publish, distribute, sublicense,
+and/or sell copies of the Software, and to permit persons to whom the
+Software is furnished to do so, subject to the following conditions:
+The above copyright notice and this permission notice (including the next
+paragraph) shall be included in all copies or substantial portions of the
+Software.
+THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL
+THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+DEALINGS IN THE SOFTWARE.
+</div>
+  </div>
+
+    </main>
+
+  </body>
+</html>

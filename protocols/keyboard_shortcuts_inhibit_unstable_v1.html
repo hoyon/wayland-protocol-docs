@@ -1,0 +1,370 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>keyboard_shortcuts_inhibit_unstable_v1</title>
+
+    <link rel="stylesheet" href="/wayland-protocol-docs/main.css">
+     
+  </head>
+  <body class="black-70 flex sans-serif ph4-l">
+    <div id="sidebar" class="w-20">
+      <div class="fixed vh-100 overflow-y-auto w-20">
+        <a href="/wayland-protocol-docs/" class="f4 link near-black dim lh-title db mt3">
+          Home
+        </a>
+        
+  <div class="ph2">
+    
+
+<div>
+  <ul class="list pl0">
+  
+    <li>
+      <a href="#i:zwp_keyboard_shortcuts_inhibit_manager_v1" class="link blue underline-hover lh-copy">zwp_keyboard_shortcuts_inhibit_manager_v1</a>
+
+      
+        <div>
+          <a href="#rh:zwp_keyboard_shortcuts_inhibit_manager_v1" class="link blue underline-hover lh-copy pl3">Requests</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#r:zwp_keyboard_shortcuts_inhibit_manager_v1:destroy" class="link blue underline-hover lh-copy">destroy</a>
+          </li>
+          
+          <li>
+            <a href="#r:zwp_keyboard_shortcuts_inhibit_manager_v1:inhibit_shortcuts" class="link blue underline-hover lh-copy">inhibit_shortcuts</a>
+          </li>
+          
+        </ul>
+      
+
+      
+      
+
+      
+        <div>
+          <a href="#enumh:zwp_keyboard_shortcuts_inhibit_manager_v1" class="link blue underline-hover lh-copy pl3">Enums</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#enum:zwp_keyboard_shortcuts_inhibit_manager_v1:error" class="link blue underline-hover lh-copy">error</a>
+          </li>
+          
+        </ul>
+      
+    </li>
+  
+    <li>
+      <a href="#i:zwp_keyboard_shortcuts_inhibitor_v1" class="link blue underline-hover lh-copy">zwp_keyboard_shortcuts_inhibitor_v1</a>
+
+      
+        <div>
+          <a href="#rh:zwp_keyboard_shortcuts_inhibitor_v1" class="link blue underline-hover lh-copy pl3">Requests</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#r:zwp_keyboard_shortcuts_inhibitor_v1:destroy" class="link blue underline-hover lh-copy">destroy</a>
+          </li>
+          
+        </ul>
+      
+
+      
+        <div>
+          <a href="#eh:zwp_keyboard_shortcuts_inhibitor_v1" class="link blue underline-hover lh-copy pl3">Events</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#e:zwp_keyboard_shortcuts_inhibitor_v1:active" class="link blue underline-hover lh-copy">active</a>
+          </li>
+          
+          <li>
+            <a href="#e:zwp_keyboard_shortcuts_inhibitor_v1:inactive" class="link blue underline-hover lh-copy">inactive</a>
+          </li>
+          
+        </ul>
+      
+
+      
+      
+    </li>
+  
+  </ul>
+</div>
+  </div>
+
+      </div>
+    </div>
+
+    <main id="content" class="mh4 w-80">
+      
+  <div class="ph2">
+    <h1 class="f1 lh-title">keyboard_shortcuts_inhibit_unstable_v1</h1>
+    <ul class="list pl0">
+      
+      <li class="mt4">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:zwp_keyboard_shortcuts_inhibit_manager_v1">
+          <a href="#i:zwp_keyboard_shortcuts_inhibit_manager_v1" class="link dim black-70 child pr2 absolute left--2">#</a>
+          zwp_keyboard_shortcuts_inhibit_manager_v1
+        </h2>
+        <div class="f6 lh-copy ws-pre-line code">A global interface used for inhibiting the compositor keyboard shortcuts.
+</div>
+
+        
+          <h3 class=" f5 lh-title" id="rh:zwp_keyboard_shortcuts_inhibit_manager_v1">Requests</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zwp_keyboard_shortcuts_inhibit_manager_v1:destroy">
+                <a href="#r:zwp_keyboard_shortcuts_inhibit_manager_v1:destroy" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  destroy
+                </div>
+                <div class="f5 ml2">
+                  destroy the keyboard shortcuts inhibitor object
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">zwp_keyboard_shortcuts_inhibit_manager_v1_destroy</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwp_keyboard_shortcuts_inhibit_manager_v1*</span> zwp_keyboard_shortcuts_inhibit_manager_v1</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Destroy the keyboard shortcuts inhibitor manager.
+  </div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zwp_keyboard_shortcuts_inhibit_manager_v1:inhibit_shortcuts">
+                <a href="#r:zwp_keyboard_shortcuts_inhibit_manager_v1:inhibit_shortcuts" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  inhibit_shortcuts
+                </div>
+                <div class="f5 ml2">
+                  create a new keyboard shortcuts inhibitor object
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>struct zwp_keyboard_shortcuts_inhibitor_v1* </span><span class="dark-blue">zwp_keyboard_shortcuts_inhibit_manager_v1_inhibit_shortcuts</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwp_keyboard_shortcuts_inhibit_manager_v1*</span> zwp_keyboard_shortcuts_inhibit_manager_v1,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_surface*</span> surface, <span class="green">/* the surface that inhibits the keyboard shortcuts behavior */</span></div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_seat*</span> seat <span class="green">/* the wl_seat for which keyboard shortcuts should be disabled */</span></div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Create a new keyboard shortcuts inhibitor object associated with
+the given surface for the given seat.
+
+If shortcuts are already inhibited for the specified seat and surface,
+a protocol error &quot;already_inhibited&quot; is raised by the compositor.
+  </div>
+            </li>
+            
+          </ul>
+        
+
+        
+
+        
+
+        
+          <h3 class=" f5 lh-title" id="enumh:zwp_keyboard_shortcuts_inhibit_manager_v1">Enums</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="enum:zwp_keyboard_shortcuts_inhibit_manager_v1:error">
+                <a href="#enum:zwp_keyboard_shortcuts_inhibit_manager_v1:error" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  error
+                </div>
+                <div class="f5 ml2">
+                  
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  ZWP_KEYBOARD_SHORTCUTS_INHIBIT_MANAGER_V1_ERROR_ALREADY_INHIBITED  <span class="green">/* the shortcuts are already inhibited for this surface */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3"></div>
+            </li>
+            
+          </ul>
+
+        
+
+      </li>
+      
+      <li class="mt4">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:zwp_keyboard_shortcuts_inhibitor_v1">
+          <a href="#i:zwp_keyboard_shortcuts_inhibitor_v1" class="link dim black-70 child pr2 absolute left--2">#</a>
+          zwp_keyboard_shortcuts_inhibitor_v1
+        </h2>
+        <div class="f6 lh-copy ws-pre-line code">A keyboard shortcuts inhibitor instructs the compositor to ignore
+its own keyboard shortcuts when the associated surface has keyboard
+focus. As a result, when the surface has keyboard focus on the given
+seat, it will receive all key events originating from the specified
+seat, even those which would normally be caught by the compositor for
+its own shortcuts.
+
+The Wayland compositor is however under no obligation to disable
+all of its shortcuts, and may keep some special key combo for its own
+use, including but not limited to one allowing the user to forcibly
+restore normal keyboard events routing in the case of an unwilling
+client. The compositor may also use the same key combo to reactivate
+an existing shortcut inhibitor that was previously deactivated on
+user request.
+
+When the compositor restores its own keyboard shortcuts, an
+&quot;inactive&quot; event is emitted to notify the client that the keyboard
+shortcuts inhibitor is not effectively active for the surface and
+seat any more, and the client should not expect to receive all
+keyboard events.
+
+When the keyboard shortcuts inhibitor is inactive, the client has
+no way to forcibly reactivate the keyboard shortcuts inhibitor.
+
+The user can chose to re-enable a previously deactivated keyboard
+shortcuts inhibitor using any mechanism the compositor may offer,
+in which case the compositor will send an &quot;active&quot; event to notify
+the client.
+
+If the surface is destroyed, unmapped, or loses the seat&#x27;s keyboard
+focus, the keyboard shortcuts inhibitor becomes irrelevant and the
+compositor will restore its own keyboard shortcuts but no &quot;inactive&quot;
+event is emitted in this case.
+</div>
+
+        
+          <h3 class=" f5 lh-title" id="rh:zwp_keyboard_shortcuts_inhibitor_v1">Requests</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zwp_keyboard_shortcuts_inhibitor_v1:destroy">
+                <a href="#r:zwp_keyboard_shortcuts_inhibitor_v1:destroy" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  destroy
+                </div>
+                <div class="f5 ml2">
+                  destroy the keyboard shortcuts inhibitor object
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">zwp_keyboard_shortcuts_inhibitor_v1_destroy</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwp_keyboard_shortcuts_inhibitor_v1*</span> zwp_keyboard_shortcuts_inhibitor_v1</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Remove the keyboard shortcuts inhibitor from the associated wl_surface.
+  </div>
+            </li>
+            
+          </ul>
+        
+
+        
+          <h3 class=" f5 lh-title" id="eh:zwp_keyboard_shortcuts_inhibitor_v1">Events</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:zwp_keyboard_shortcuts_inhibitor_v1:active">
+                <a href="#e:zwp_keyboard_shortcuts_inhibitor_v1:active" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  active
+                </div>
+                <div class="f5 ml2">
+                  shortcuts are inhibited
+                </div>
+              </div>
+
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">This event indicates that the shortcut inhibitor is active.
+
+The compositor sends this event every time compositor shortcuts
+are inhibited on behalf of the surface. When active, the client
+may receive input events normally reserved by the compositor
+(see zwp_keyboard_shortcuts_inhibitor_v1).
+
+This occurs typically when the initial request &quot;inhibit_shortcuts&quot;
+first becomes active or when the user instructs the compositor to
+re-enable and existing shortcuts inhibitor using any mechanism
+offered by the compositor.
+  </div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:zwp_keyboard_shortcuts_inhibitor_v1:inactive">
+                <a href="#e:zwp_keyboard_shortcuts_inhibitor_v1:inactive" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  inactive
+                </div>
+                <div class="f5 ml2">
+                  shortcuts are restored
+                </div>
+              </div>
+
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">This event indicates that the shortcuts inhibitor is inactive,
+normal shortcuts processing is restored by the compositor.
+   </div>
+            </li>
+            
+          </ul>
+
+        
+
+        
+
+        
+
+      </li>
+      
+    </ul>
+
+    <h2 class="f4 lh-title">Copyright Info</h2>
+    <div class="f7 lh-copy ws-pre-line code">Copyright © 2017 Red Hat Inc.
+
+Permission is hereby granted, free of charge, to any person obtaining a
+copy of this software and associated documentation files (the &quot;Software&quot;),
+to deal in the Software without restriction, including without limitation
+the rights to use, copy, modify, merge, publish, distribute, sublicense,
+and/or sell copies of the Software, and to permit persons to whom the
+Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice (including the next
+paragraph) shall be included in all copies or substantial portions of the
+Software.
+
+THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL
+THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+DEALINGS IN THE SOFTWARE.
+</div>
+  </div>
+
+    </main>
+
+  </body>
+</html>

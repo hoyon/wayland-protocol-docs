@@ -1,0 +1,1332 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ext_image_copy_capture_v1</title>
+
+    <link rel="stylesheet" href="/wayland-protocol-docs/main.css">
+     
+  </head>
+  <body class="black-70 flex sans-serif ph4-l">
+    <div id="sidebar" class="w-20">
+      <div class="fixed vh-100 overflow-y-auto w-20">
+        <a href="/wayland-protocol-docs/" class="f4 link near-black dim lh-title db mt3">
+          Home
+        </a>
+        
+  <div class="ph2">
+    
+
+<div>
+  <ul class="list pl0">
+  
+    <li>
+      <a href="#i:ext_image_copy_capture_manager_v1" class="link blue underline-hover lh-copy">ext_image_copy_capture_manager_v1</a>
+
+      
+        <div>
+          <a href="#rh:ext_image_copy_capture_manager_v1" class="link blue underline-hover lh-copy pl3">Requests</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#r:ext_image_copy_capture_manager_v1:create_session" class="link blue underline-hover lh-copy">create_session</a>
+          </li>
+          
+          <li>
+            <a href="#r:ext_image_copy_capture_manager_v1:create_pointer_cursor_session" class="link blue underline-hover lh-copy">create_pointer_cursor_session</a>
+          </li>
+          
+          <li>
+            <a href="#r:ext_image_copy_capture_manager_v1:destroy" class="link blue underline-hover lh-copy">destroy</a>
+          </li>
+          
+        </ul>
+      
+
+      
+      
+
+      
+        <div>
+          <a href="#enumh:ext_image_copy_capture_manager_v1" class="link blue underline-hover lh-copy pl3">Enums</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#enum:ext_image_copy_capture_manager_v1:error" class="link blue underline-hover lh-copy">error</a>
+          </li>
+          
+          <li>
+            <a href="#enum:ext_image_copy_capture_manager_v1:options" class="link blue underline-hover lh-copy">options</a>
+          </li>
+          
+        </ul>
+      
+    </li>
+  
+    <li>
+      <a href="#i:ext_image_copy_capture_session_v1" class="link blue underline-hover lh-copy">ext_image_copy_capture_session_v1</a>
+
+      
+        <div>
+          <a href="#rh:ext_image_copy_capture_session_v1" class="link blue underline-hover lh-copy pl3">Requests</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#r:ext_image_copy_capture_session_v1:create_frame" class="link blue underline-hover lh-copy">create_frame</a>
+          </li>
+          
+          <li>
+            <a href="#r:ext_image_copy_capture_session_v1:destroy" class="link blue underline-hover lh-copy">destroy</a>
+          </li>
+          
+        </ul>
+      
+
+      
+        <div>
+          <a href="#eh:ext_image_copy_capture_session_v1" class="link blue underline-hover lh-copy pl3">Events</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#e:ext_image_copy_capture_session_v1:buffer_size" class="link blue underline-hover lh-copy">buffer_size</a>
+          </li>
+          
+          <li>
+            <a href="#e:ext_image_copy_capture_session_v1:shm_format" class="link blue underline-hover lh-copy">shm_format</a>
+          </li>
+          
+          <li>
+            <a href="#e:ext_image_copy_capture_session_v1:dmabuf_device" class="link blue underline-hover lh-copy">dmabuf_device</a>
+          </li>
+          
+          <li>
+            <a href="#e:ext_image_copy_capture_session_v1:dmabuf_format" class="link blue underline-hover lh-copy">dmabuf_format</a>
+          </li>
+          
+          <li>
+            <a href="#e:ext_image_copy_capture_session_v1:done" class="link blue underline-hover lh-copy">done</a>
+          </li>
+          
+          <li>
+            <a href="#e:ext_image_copy_capture_session_v1:stopped" class="link blue underline-hover lh-copy">stopped</a>
+          </li>
+          
+        </ul>
+      
+
+      
+        <div>
+          <a href="#enumh:ext_image_copy_capture_session_v1" class="link blue underline-hover lh-copy pl3">Enums</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#enum:ext_image_copy_capture_session_v1:error" class="link blue underline-hover lh-copy">error</a>
+          </li>
+          
+        </ul>
+      
+    </li>
+  
+    <li>
+      <a href="#i:ext_image_copy_capture_frame_v1" class="link blue underline-hover lh-copy">ext_image_copy_capture_frame_v1</a>
+
+      
+        <div>
+          <a href="#rh:ext_image_copy_capture_frame_v1" class="link blue underline-hover lh-copy pl3">Requests</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#r:ext_image_copy_capture_frame_v1:destroy" class="link blue underline-hover lh-copy">destroy</a>
+          </li>
+          
+          <li>
+            <a href="#r:ext_image_copy_capture_frame_v1:attach_buffer" class="link blue underline-hover lh-copy">attach_buffer</a>
+          </li>
+          
+          <li>
+            <a href="#r:ext_image_copy_capture_frame_v1:damage_buffer" class="link blue underline-hover lh-copy">damage_buffer</a>
+          </li>
+          
+          <li>
+            <a href="#r:ext_image_copy_capture_frame_v1:capture" class="link blue underline-hover lh-copy">capture</a>
+          </li>
+          
+        </ul>
+      
+
+      
+        <div>
+          <a href="#eh:ext_image_copy_capture_frame_v1" class="link blue underline-hover lh-copy pl3">Events</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#e:ext_image_copy_capture_frame_v1:transform" class="link blue underline-hover lh-copy">transform</a>
+          </li>
+          
+          <li>
+            <a href="#e:ext_image_copy_capture_frame_v1:damage" class="link blue underline-hover lh-copy">damage</a>
+          </li>
+          
+          <li>
+            <a href="#e:ext_image_copy_capture_frame_v1:presentation_time" class="link blue underline-hover lh-copy">presentation_time</a>
+          </li>
+          
+          <li>
+            <a href="#e:ext_image_copy_capture_frame_v1:ready" class="link blue underline-hover lh-copy">ready</a>
+          </li>
+          
+          <li>
+            <a href="#e:ext_image_copy_capture_frame_v1:failed" class="link blue underline-hover lh-copy">failed</a>
+          </li>
+          
+        </ul>
+      
+
+      
+        <div>
+          <a href="#enumh:ext_image_copy_capture_frame_v1" class="link blue underline-hover lh-copy pl3">Enums</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#enum:ext_image_copy_capture_frame_v1:error" class="link blue underline-hover lh-copy">error</a>
+          </li>
+          
+          <li>
+            <a href="#enum:ext_image_copy_capture_frame_v1:failure_reason" class="link blue underline-hover lh-copy">failure_reason</a>
+          </li>
+          
+        </ul>
+      
+    </li>
+  
+    <li>
+      <a href="#i:ext_image_copy_capture_cursor_session_v1" class="link blue underline-hover lh-copy">ext_image_copy_capture_cursor_session_v1</a>
+
+      
+        <div>
+          <a href="#rh:ext_image_copy_capture_cursor_session_v1" class="link blue underline-hover lh-copy pl3">Requests</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#r:ext_image_copy_capture_cursor_session_v1:destroy" class="link blue underline-hover lh-copy">destroy</a>
+          </li>
+          
+          <li>
+            <a href="#r:ext_image_copy_capture_cursor_session_v1:get_capture_session" class="link blue underline-hover lh-copy">get_capture_session</a>
+          </li>
+          
+        </ul>
+      
+
+      
+        <div>
+          <a href="#eh:ext_image_copy_capture_cursor_session_v1" class="link blue underline-hover lh-copy pl3">Events</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#e:ext_image_copy_capture_cursor_session_v1:enter" class="link blue underline-hover lh-copy">enter</a>
+          </li>
+          
+          <li>
+            <a href="#e:ext_image_copy_capture_cursor_session_v1:leave" class="link blue underline-hover lh-copy">leave</a>
+          </li>
+          
+          <li>
+            <a href="#e:ext_image_copy_capture_cursor_session_v1:position" class="link blue underline-hover lh-copy">position</a>
+          </li>
+          
+          <li>
+            <a href="#e:ext_image_copy_capture_cursor_session_v1:hotspot" class="link blue underline-hover lh-copy">hotspot</a>
+          </li>
+          
+        </ul>
+      
+
+      
+        <div>
+          <a href="#enumh:ext_image_copy_capture_cursor_session_v1" class="link blue underline-hover lh-copy pl3">Enums</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#enum:ext_image_copy_capture_cursor_session_v1:error" class="link blue underline-hover lh-copy">error</a>
+          </li>
+          
+        </ul>
+      
+    </li>
+  
+  </ul>
+</div>
+  </div>
+
+      </div>
+    </div>
+
+    <main id="content" class="mh4 w-80">
+      
+  <div class="ph2">
+    <h1 class="f1 lh-title">ext_image_copy_capture_v1</h1>
+    <ul class="list pl0">
+      
+      <li class="mt4">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:ext_image_copy_capture_manager_v1">
+          <a href="#i:ext_image_copy_capture_manager_v1" class="link dim black-70 child pr2 absolute left--2">#</a>
+          ext_image_copy_capture_manager_v1
+        </h2>
+        <div class="f6 lh-copy ws-pre-line code">This object is a manager which offers requests to start capturing from a
+source.
+</div>
+
+        
+          <h3 class=" f5 lh-title" id="rh:ext_image_copy_capture_manager_v1">Requests</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:ext_image_copy_capture_manager_v1:create_session">
+                <a href="#r:ext_image_copy_capture_manager_v1:create_session" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  create_session
+                </div>
+                <div class="f5 ml2">
+                  capture an image capture source
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>struct ext_image_copy_capture_session_v1* </span><span class="dark-blue">ext_image_copy_capture_manager_v1_create_session</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct ext_image_copy_capture_manager_v1*</span> ext_image_copy_capture_manager_v1,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct ext_image_capture_source_v1*</span> source,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> options</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Create a capturing session for an image capture source.
+
+If the paint_cursors option is set, cursors shall be composited onto
+the captured frame. The cursor must not be composited onto the frame
+if this flag is not set.
+
+If the options bitfield is invalid, the invalid_option protocol error
+is sent.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:ext_image_copy_capture_manager_v1:create_pointer_cursor_session">
+                <a href="#r:ext_image_copy_capture_manager_v1:create_pointer_cursor_session" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  create_pointer_cursor_session
+                </div>
+                <div class="f5 ml2">
+                  capture the pointer cursor of an image capture source
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>struct ext_image_copy_capture_cursor_session_v1* </span><span class="dark-blue">ext_image_copy_capture_manager_v1_create_pointer_cursor_session</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct ext_image_copy_capture_manager_v1*</span> ext_image_copy_capture_manager_v1,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct ext_image_capture_source_v1*</span> source,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_pointer*</span> pointer</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Create a cursor capturing session for the pointer of an image capture
+source.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:ext_image_copy_capture_manager_v1:destroy">
+                <a href="#r:ext_image_copy_capture_manager_v1:destroy" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  destroy
+                </div>
+                <div class="f5 ml2">
+                  destroy the manager
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">ext_image_copy_capture_manager_v1_destroy</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct ext_image_copy_capture_manager_v1*</span> ext_image_copy_capture_manager_v1</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Destroy the manager object.
+
+Other objects created via this interface are unaffected.
+</div>
+            </li>
+            
+          </ul>
+        
+
+        
+
+        
+
+        
+          <h3 class=" f5 lh-title" id="enumh:ext_image_copy_capture_manager_v1">Enums</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="enum:ext_image_copy_capture_manager_v1:error">
+                <a href="#enum:ext_image_copy_capture_manager_v1:error" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  error
+                </div>
+                <div class="f5 ml2">
+                  
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  EXT_IMAGE_COPY_CAPTURE_MANAGER_V1_ERROR_INVALID_OPTION  <span class="green">/* invalid option flag */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3"></div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="enum:ext_image_copy_capture_manager_v1:options">
+                <a href="#enum:ext_image_copy_capture_manager_v1:options" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  options
+                </div>
+                <div class="f5 ml2">
+                  
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  EXT_IMAGE_COPY_CAPTURE_MANAGER_V1_OPTIONS_PAINT_CURSORS  <span class="green">/* paint cursors onto captured frames */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3"></div>
+            </li>
+            
+          </ul>
+
+        
+
+      </li>
+      
+      <li class="mt4">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:ext_image_copy_capture_session_v1">
+          <a href="#i:ext_image_copy_capture_session_v1" class="link dim black-70 child pr2 absolute left--2">#</a>
+          ext_image_copy_capture_session_v1
+        </h2>
+        <div class="f6 lh-copy ws-pre-line code">This object represents an active image copy capture session.
+
+After a capture session is created, buffer constraint events will be
+emitted from the compositor to tell the client which buffer types and
+formats are supported for reading from the session. The compositor may
+re-send buffer constraint events whenever they change.
+
+The advertise buffer constraints, the compositor must send in no
+particular order: zero or more shm_format and dmabuf_format events, zero
+or one dmabuf_device event, and exactly one buffer_size event. Then the
+compositor must send a done event.
+
+When the client has received all the buffer constraints, it can create a
+buffer accordingly, attach it to the capture session using the
+attach_buffer request, set the buffer damage using the damage_buffer
+request and then send the capture request.
+</div>
+
+        
+          <h3 class=" f5 lh-title" id="rh:ext_image_copy_capture_session_v1">Requests</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:ext_image_copy_capture_session_v1:create_frame">
+                <a href="#r:ext_image_copy_capture_session_v1:create_frame" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  create_frame
+                </div>
+                <div class="f5 ml2">
+                  create a frame
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>struct ext_image_copy_capture_frame_v1* </span><span class="dark-blue">ext_image_copy_capture_session_v1_create_frame</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct ext_image_copy_capture_session_v1*</span> ext_image_copy_capture_session_v1</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Create a capture frame for this session.
+
+At most one frame object can exist for a given session at any time. If
+a client sends a create_frame request before a previous frame object
+has been destroyed, the duplicate_frame protocol error is raised.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:ext_image_copy_capture_session_v1:destroy">
+                <a href="#r:ext_image_copy_capture_session_v1:destroy" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  destroy
+                </div>
+                <div class="f5 ml2">
+                  delete this object
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">ext_image_copy_capture_session_v1_destroy</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct ext_image_copy_capture_session_v1*</span> ext_image_copy_capture_session_v1</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Destroys the session. This request can be sent at any time by the
+client.
+
+This request doesn&#x27;t affect ext_image_copy_capture_frame_v1 objects created by
+this object.
+</div>
+            </li>
+            
+          </ul>
+        
+
+        
+          <h3 class=" f5 lh-title" id="eh:ext_image_copy_capture_session_v1">Events</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:ext_image_copy_capture_session_v1:buffer_size">
+                <a href="#e:ext_image_copy_capture_session_v1:buffer_size" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  buffer_size
+                </div>
+                <div class="f5 ml2">
+                  image capture source dimensions
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  <span class="purple">uint32_t</span> width <span class="green">/* buffer width */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  <span class="purple">uint32_t</span> height <span class="green">/* buffer height */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">Provides the dimensions of the source image in buffer pixel coordinates.
+
+The client must attach buffers that match this size.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:ext_image_copy_capture_session_v1:shm_format">
+                <a href="#e:ext_image_copy_capture_session_v1:shm_format" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  shm_format
+                </div>
+                <div class="f5 ml2">
+                  shm buffer format
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  <span class="purple">uint32_t</span> format <span class="green">/* shm format */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">Provides the format that must be used for shared-memory buffers.
+
+This event may be emitted multiple times, in which case the client may
+choose any given format.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:ext_image_copy_capture_session_v1:dmabuf_device">
+                <a href="#e:ext_image_copy_capture_session_v1:dmabuf_device" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  dmabuf_device
+                </div>
+                <div class="f5 ml2">
+                  dma-buf device
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  <span class="purple">struct wl_array*</span> device <span class="green">/* device dev_t value */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">This event advertises the device buffers must be allocated on for
+dma-buf buffers.
+
+In general the device is a DRM node. The DRM node type (primary vs.
+render) is unspecified. Clients must not rely on the compositor sending
+a particular node type. Clients cannot check two devices for equality
+by comparing the dev_t value.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:ext_image_copy_capture_session_v1:dmabuf_format">
+                <a href="#e:ext_image_copy_capture_session_v1:dmabuf_format" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  dmabuf_format
+                </div>
+                <div class="f5 ml2">
+                  dma-buf format
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  <span class="purple">uint32_t</span> format <span class="green">/* drm format code */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  <span class="purple">struct wl_array*</span> modifiers <span class="green">/* drm format modifiers */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">Provides the format that must be used for dma-buf buffers.
+
+The client may choose any of the modifiers advertised in the array of
+64-bit unsigned integers.
+
+This event may be emitted multiple times, in which case the client may
+choose any given format.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:ext_image_copy_capture_session_v1:done">
+                <a href="#e:ext_image_copy_capture_session_v1:done" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  done
+                </div>
+                <div class="f5 ml2">
+                  all constraints have been sent
+                </div>
+              </div>
+
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">This event is sent once when all buffer constraint events have been
+sent.
+
+The compositor must always end a batch of buffer constraint events with
+this event, regardless of whether it sends the initial constraints or
+an update.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:ext_image_copy_capture_session_v1:stopped">
+                <a href="#e:ext_image_copy_capture_session_v1:stopped" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  stopped
+                </div>
+                <div class="f5 ml2">
+                  session is no longer available
+                </div>
+              </div>
+
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">This event indicates that the capture session has stopped and is no
+longer available. This can happen in a number of cases, e.g. when the
+underlying source is destroyed, if the user decides to end the image
+capture, or if an unrecoverable runtime error has occurred.
+
+The client should destroy the session after receiving this event.
+</div>
+            </li>
+            
+          </ul>
+
+        
+
+        
+          <h3 class=" f5 lh-title" id="enumh:ext_image_copy_capture_session_v1">Enums</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="enum:ext_image_copy_capture_session_v1:error">
+                <a href="#enum:ext_image_copy_capture_session_v1:error" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  error
+                </div>
+                <div class="f5 ml2">
+                  
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  EXT_IMAGE_COPY_CAPTURE_SESSION_V1_ERROR_DUPLICATE_FRAME  <span class="green">/* create_frame sent before destroying previous frame */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3"></div>
+            </li>
+            
+          </ul>
+
+        
+
+      </li>
+      
+      <li class="mt4">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:ext_image_copy_capture_frame_v1">
+          <a href="#i:ext_image_copy_capture_frame_v1" class="link dim black-70 child pr2 absolute left--2">#</a>
+          ext_image_copy_capture_frame_v1
+        </h2>
+        <div class="f6 lh-copy ws-pre-line code">This object represents an image capture frame.
+
+The client should attach a buffer, damage the buffer, and then send a
+capture request.
+
+If the capture is successful, the compositor must send the frame metadata
+(transform, damage, presentation_time in any order) followed by the ready
+event.
+
+If the capture fails, the compositor must send the failed event.
+</div>
+
+        
+          <h3 class=" f5 lh-title" id="rh:ext_image_copy_capture_frame_v1">Requests</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:ext_image_copy_capture_frame_v1:destroy">
+                <a href="#r:ext_image_copy_capture_frame_v1:destroy" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  destroy
+                </div>
+                <div class="f5 ml2">
+                  destroy this object
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">ext_image_copy_capture_frame_v1_destroy</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct ext_image_copy_capture_frame_v1*</span> ext_image_copy_capture_frame_v1</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Destroys the session. This request can be sent at any time by the
+client.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:ext_image_copy_capture_frame_v1:attach_buffer">
+                <a href="#r:ext_image_copy_capture_frame_v1:attach_buffer" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  attach_buffer
+                </div>
+                <div class="f5 ml2">
+                  attach buffer to session
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">ext_image_copy_capture_frame_v1_attach_buffer</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct ext_image_copy_capture_frame_v1*</span> ext_image_copy_capture_frame_v1,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_buffer*</span> buffer</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Attach a buffer to the session.
+
+The wl_buffer.release request is unused.
+
+The new buffer replaces any previously attached buffer.
+
+This request must not be sent after capture, or else the
+already_captured protocol error is raised.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:ext_image_copy_capture_frame_v1:damage_buffer">
+                <a href="#r:ext_image_copy_capture_frame_v1:damage_buffer" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  damage_buffer
+                </div>
+                <div class="f5 ml2">
+                  damage buffer
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">ext_image_copy_capture_frame_v1_damage_buffer</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct ext_image_copy_capture_frame_v1*</span> ext_image_copy_capture_frame_v1,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> x, <span class="green">/* region x coordinate */</span></div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> y, <span class="green">/* region y coordinate */</span></div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> width, <span class="green">/* region width */</span></div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> height <span class="green">/* region height */</span></div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Apply damage to the buffer which is to be captured next. This request
+may be sent multiple times to describe a region.
+
+The client indicates the accumulated damage since this wl_buffer was
+last captured. During capture, the compositor will update the buffer
+with at least the union of the region passed by the client and the
+region advertised by ext_image_copy_capture_frame_v1.damage.
+
+When a wl_buffer is captured for the first time, or when the client
+doesn&#x27;t track damage, the client must damage the whole buffer.
+
+This is for optimisation purposes. The compositor may use this
+information to reduce copying.
+
+These coordinates originate from the upper left corner of the buffer.
+
+If x or y are strictly negative, or if width or height are negative or
+zero, the invalid_buffer_damage protocol error is raised.
+
+This request must not be sent after capture, or else the
+already_captured protocol error is raised.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:ext_image_copy_capture_frame_v1:capture">
+                <a href="#r:ext_image_copy_capture_frame_v1:capture" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  capture
+                </div>
+                <div class="f5 ml2">
+                  capture a frame
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">ext_image_copy_capture_frame_v1_capture</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct ext_image_copy_capture_frame_v1*</span> ext_image_copy_capture_frame_v1</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Capture a frame.
+
+Unless this is the first successful captured frame performed in this
+session, the compositor may wait an indefinite amount of time for the
+source content to change before performing the copy.
+
+This request may only be sent once, or else the already_captured
+protocol error is raised. A buffer must be attached before this request
+is sent, or else the no_buffer protocol error is raised.
+</div>
+            </li>
+            
+          </ul>
+        
+
+        
+          <h3 class=" f5 lh-title" id="eh:ext_image_copy_capture_frame_v1">Events</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:ext_image_copy_capture_frame_v1:transform">
+                <a href="#e:ext_image_copy_capture_frame_v1:transform" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  transform
+                </div>
+                <div class="f5 ml2">
+                  buffer transform
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  <span class="purple">uint32_t</span> transform  
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">This event is sent before the ready event and holds the transform that
+the compositor has applied to the buffer contents.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:ext_image_copy_capture_frame_v1:damage">
+                <a href="#e:ext_image_copy_capture_frame_v1:damage" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  damage
+                </div>
+                <div class="f5 ml2">
+                  buffer damaged region
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  <span class="purple">int32_t</span> x <span class="green">/* damage x coordinate */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  <span class="purple">int32_t</span> y <span class="green">/* damage y coordinate */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  <span class="purple">int32_t</span> width <span class="green">/* damage width */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  <span class="purple">int32_t</span> height <span class="green">/* damage height */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">This event is sent before the ready event. It may be generated multiple
+times to describe a region.
+
+The first captured frame in a session will always carry full damage.
+Subsequent frames&#x27; damaged regions describe which parts of the buffer
+have changed since the last ready event.
+
+These coordinates originate in the upper left corner of the buffer.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:ext_image_copy_capture_frame_v1:presentation_time">
+                <a href="#e:ext_image_copy_capture_frame_v1:presentation_time" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  presentation_time
+                </div>
+                <div class="f5 ml2">
+                  presentation time of the frame
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  <span class="purple">uint32_t</span> tv_sec_hi <span class="green">/* high 32 bits of the seconds part of the timestamp */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  <span class="purple">uint32_t</span> tv_sec_lo <span class="green">/* low 32 bits of the seconds part of the timestamp */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  <span class="purple">uint32_t</span> tv_nsec <span class="green">/* nanoseconds part of the timestamp */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">This event indicates the time at which the frame is presented to the
+output in system monotonic time. This event is sent before the ready
+event.
+
+The timestamp is expressed as tv_sec_hi, tv_sec_lo, tv_nsec triples,
+each component being an unsigned 32-bit value. Whole seconds are in
+tv_sec which is a 64-bit value combined from tv_sec_hi and tv_sec_lo,
+and the additional fractional part in tv_nsec as nanoseconds. Hence,
+for valid timestamps tv_nsec must be in [0, 999999999].
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:ext_image_copy_capture_frame_v1:ready">
+                <a href="#e:ext_image_copy_capture_frame_v1:ready" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  ready
+                </div>
+                <div class="f5 ml2">
+                  frame is available for reading
+                </div>
+              </div>
+
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">Called as soon as the frame is copied, indicating it is available
+for reading.
+
+The buffer may be re-used by the client after this event.
+
+After receiving this event, the client must destroy the object.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:ext_image_copy_capture_frame_v1:failed">
+                <a href="#e:ext_image_copy_capture_frame_v1:failed" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  failed
+                </div>
+                <div class="f5 ml2">
+                  capture failed
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  <span class="purple">uint32_t</span> reason  
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">This event indicates that the attempted frame copy has failed.
+
+After receiving this event, the client must destroy the object.
+</div>
+            </li>
+            
+          </ul>
+
+        
+
+        
+          <h3 class=" f5 lh-title" id="enumh:ext_image_copy_capture_frame_v1">Enums</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="enum:ext_image_copy_capture_frame_v1:error">
+                <a href="#enum:ext_image_copy_capture_frame_v1:error" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  error
+                </div>
+                <div class="f5 ml2">
+                  
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  EXT_IMAGE_COPY_CAPTURE_FRAME_V1_ERROR_NO_BUFFER  <span class="green">/* capture sent without attach_buffer */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  EXT_IMAGE_COPY_CAPTURE_FRAME_V1_ERROR_INVALID_BUFFER_DAMAGE  <span class="green">/* invalid buffer damage */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  EXT_IMAGE_COPY_CAPTURE_FRAME_V1_ERROR_ALREADY_CAPTURED  <span class="green">/* capture request has been sent */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3"></div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="enum:ext_image_copy_capture_frame_v1:failure_reason">
+                <a href="#enum:ext_image_copy_capture_frame_v1:failure_reason" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  failure_reason
+                </div>
+                <div class="f5 ml2">
+                  
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  EXT_IMAGE_COPY_CAPTURE_FRAME_V1_FAILURE_REASON_UNKNOWN  
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  EXT_IMAGE_COPY_CAPTURE_FRAME_V1_FAILURE_REASON_BUFFER_CONSTRAINTS  
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  EXT_IMAGE_COPY_CAPTURE_FRAME_V1_FAILURE_REASON_STOPPED  
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3"></div>
+            </li>
+            
+          </ul>
+
+        
+
+      </li>
+      
+      <li class="mt4">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:ext_image_copy_capture_cursor_session_v1">
+          <a href="#i:ext_image_copy_capture_cursor_session_v1" class="link dim black-70 child pr2 absolute left--2">#</a>
+          ext_image_copy_capture_cursor_session_v1
+        </h2>
+        <div class="f6 lh-copy ws-pre-line code">This object represents a cursor capture session. It extends the base
+capture session with cursor-specific metadata.
+</div>
+
+        
+          <h3 class=" f5 lh-title" id="rh:ext_image_copy_capture_cursor_session_v1">Requests</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:ext_image_copy_capture_cursor_session_v1:destroy">
+                <a href="#r:ext_image_copy_capture_cursor_session_v1:destroy" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  destroy
+                </div>
+                <div class="f5 ml2">
+                  delete this object
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">ext_image_copy_capture_cursor_session_v1_destroy</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct ext_image_copy_capture_cursor_session_v1*</span> ext_image_copy_capture_cursor_session_v1</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Destroys the session. This request can be sent at any time by the
+client.
+
+This request doesn&#x27;t affect ext_image_copy_capture_frame_v1 objects created by
+this object.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:ext_image_copy_capture_cursor_session_v1:get_capture_session">
+                <a href="#r:ext_image_copy_capture_cursor_session_v1:get_capture_session" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  get_capture_session
+                </div>
+                <div class="f5 ml2">
+                  get image copy captuerer session
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>struct ext_image_copy_capture_session_v1* </span><span class="dark-blue">ext_image_copy_capture_cursor_session_v1_get_capture_session</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct ext_image_copy_capture_cursor_session_v1*</span> ext_image_copy_capture_cursor_session_v1</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Gets the image copy capture session for this cursor session.
+
+The session will produce frames of the cursor image. The compositor may
+pause the session when the cursor leaves the captured area.
+
+This request must not be sent more than once, or else the
+duplicate_session protocol error is raised.
+</div>
+            </li>
+            
+          </ul>
+        
+
+        
+          <h3 class=" f5 lh-title" id="eh:ext_image_copy_capture_cursor_session_v1">Events</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:ext_image_copy_capture_cursor_session_v1:enter">
+                <a href="#e:ext_image_copy_capture_cursor_session_v1:enter" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  enter
+                </div>
+                <div class="f5 ml2">
+                  cursor entered captured area
+                </div>
+              </div>
+
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">Sent when a cursor enters the captured area. It shall be generated
+before the &quot;position&quot; and &quot;hotspot&quot; events when and only when a cursor
+enters the area.
+
+The cursor enters the captured area when the cursor image intersects
+with the captured area. Note, this is different from e.g.
+wl_pointer.enter.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:ext_image_copy_capture_cursor_session_v1:leave">
+                <a href="#e:ext_image_copy_capture_cursor_session_v1:leave" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  leave
+                </div>
+                <div class="f5 ml2">
+                  cursor left captured area
+                </div>
+              </div>
+
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">Sent when a cursor leaves the captured area. No &quot;position&quot; or &quot;hotspot&quot;
+event is generated for the cursor until the cursor enters the captured
+area again.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:ext_image_copy_capture_cursor_session_v1:position">
+                <a href="#e:ext_image_copy_capture_cursor_session_v1:position" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  position
+                </div>
+                <div class="f5 ml2">
+                  position changed
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  <span class="purple">int32_t</span> x <span class="green">/* position x coordinates */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  <span class="purple">int32_t</span> y <span class="green">/* position y coordinates */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">Cursors outside the image capture source do not get captured and no
+event will be generated for them.
+
+The given position is the position of the cursor&#x27;s hotspot and it is
+relative to the main buffer&#x27;s top left corner in transformed buffer
+pixel coordinates. The coordinates may be negative or greater than the
+main buffer size.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:ext_image_copy_capture_cursor_session_v1:hotspot">
+                <a href="#e:ext_image_copy_capture_cursor_session_v1:hotspot" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  hotspot
+                </div>
+                <div class="f5 ml2">
+                  hotspot changed
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  <span class="purple">int32_t</span> x <span class="green">/* hotspot x coordinates */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  <span class="purple">int32_t</span> y <span class="green">/* hotspot y coordinates */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">The hotspot describes the offset between the cursor image and the
+position of the input device.
+
+The given coordinates are the hotspot&#x27;s offset from the origin in
+buffer coordinates.
+
+Clients should not apply the hotspot immediately: the hotspot becomes
+effective when the next ext_image_copy_capture_frame_v1.ready event is received.
+
+Compositors may delay this event until the client captures a new frame.
+</div>
+            </li>
+            
+          </ul>
+
+        
+
+        
+          <h3 class=" f5 lh-title" id="enumh:ext_image_copy_capture_cursor_session_v1">Enums</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="enum:ext_image_copy_capture_cursor_session_v1:error">
+                <a href="#enum:ext_image_copy_capture_cursor_session_v1:error" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  error
+                </div>
+                <div class="f5 ml2">
+                  
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  EXT_IMAGE_COPY_CAPTURE_CURSOR_SESSION_V1_ERROR_DUPLICATE_SESSION  <span class="green">/* get_captuerer_session sent twice */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3"></div>
+            </li>
+            
+          </ul>
+
+        
+
+      </li>
+      
+    </ul>
+
+    <h2 class="f4 lh-title">Copyright Info</h2>
+    <div class="f7 lh-copy ws-pre-line code">Copyright © 2021-2023 Andri Yngvason
+Copyright © 2024 Simon Ser
+
+Permission is hereby granted, free of charge, to any person obtaining a
+copy of this software and associated documentation files (the &quot;Software&quot;),
+to deal in the Software without restriction, including without limitation
+the rights to use, copy, modify, merge, publish, distribute, sublicense,
+and/or sell copies of the Software, and to permit persons to whom the
+Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice (including the next
+paragraph) shall be included in all copies or substantial portions of the
+Software.
+
+THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL
+THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+DEALINGS IN THE SOFTWARE.
+</div>
+  </div>
+
+    </main>
+
+  </body>
+</html>

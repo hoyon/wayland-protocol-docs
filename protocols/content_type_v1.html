@@ -1,0 +1,370 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>content_type_v1</title>
+
+    <link rel="stylesheet" href="/wayland-protocol-docs/main.css">
+     
+  </head>
+  <body class="black-70 flex sans-serif ph4-l">
+    <div id="sidebar" class="w-20">
+      <div class="fixed vh-100 overflow-y-auto w-20">
+        <a href="/wayland-protocol-docs/" class="f4 link near-black dim lh-title db mt3">
+          Home
+        </a>
+        
+  <div class="ph2">
+    
+
+<div>
+  <ul class="list pl0">
+  
+    <li>
+      <a href="#i:wp_content_type_manager_v1" class="link blue underline-hover lh-copy">wp_content_type_manager_v1</a>
+
+      
+        <div>
+          <a href="#rh:wp_content_type_manager_v1" class="link blue underline-hover lh-copy pl3">Requests</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#r:wp_content_type_manager_v1:destroy" class="link blue underline-hover lh-copy">destroy</a>
+          </li>
+          
+          <li>
+            <a href="#r:wp_content_type_manager_v1:get_surface_content_type" class="link blue underline-hover lh-copy">get_surface_content_type</a>
+          </li>
+          
+        </ul>
+      
+
+      
+      
+
+      
+        <div>
+          <a href="#enumh:wp_content_type_manager_v1" class="link blue underline-hover lh-copy pl3">Enums</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#enum:wp_content_type_manager_v1:error" class="link blue underline-hover lh-copy">error</a>
+          </li>
+          
+        </ul>
+      
+    </li>
+  
+    <li>
+      <a href="#i:wp_content_type_v1" class="link blue underline-hover lh-copy">wp_content_type_v1</a>
+
+      
+        <div>
+          <a href="#rh:wp_content_type_v1" class="link blue underline-hover lh-copy pl3">Requests</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#r:wp_content_type_v1:destroy" class="link blue underline-hover lh-copy">destroy</a>
+          </li>
+          
+          <li>
+            <a href="#r:wp_content_type_v1:set_content_type" class="link blue underline-hover lh-copy">set_content_type</a>
+          </li>
+          
+        </ul>
+      
+
+      
+      
+
+      
+        <div>
+          <a href="#enumh:wp_content_type_v1" class="link blue underline-hover lh-copy pl3">Enums</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#enum:wp_content_type_v1:type" class="link blue underline-hover lh-copy">type</a>
+          </li>
+          
+        </ul>
+      
+    </li>
+  
+  </ul>
+</div>
+  </div>
+
+      </div>
+    </div>
+
+    <main id="content" class="mh4 w-80">
+      
+  <div class="ph2">
+    <h1 class="f1 lh-title">content_type_v1</h1>
+    <ul class="list pl0">
+      
+      <li class="mt4">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:wp_content_type_manager_v1">
+          <a href="#i:wp_content_type_manager_v1" class="link dim black-70 child pr2 absolute left--2">#</a>
+          wp_content_type_manager_v1
+        </h2>
+        <div class="f6 lh-copy ws-pre-line code">This interface allows a client to describe the kind of content a surface
+will display, to allow the compositor to optimize its behavior for it.
+
+Warning! The protocol described in this file is currently in the testing
+phase. Backward compatible changes may be added together with the
+corresponding interface version bump. Backward incompatible changes can
+only be done by creating a new major version of the extension.
+</div>
+
+        
+          <h3 class=" f5 lh-title" id="rh:wp_content_type_manager_v1">Requests</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:wp_content_type_manager_v1:destroy">
+                <a href="#r:wp_content_type_manager_v1:destroy" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  destroy
+                </div>
+                <div class="f5 ml2">
+                  destroy the content type manager object
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">wp_content_type_manager_v1_destroy</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wp_content_type_manager_v1*</span> wp_content_type_manager_v1</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Destroy the content type manager. This doesn&#x27;t destroy objects created
+with the manager.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:wp_content_type_manager_v1:get_surface_content_type">
+                <a href="#r:wp_content_type_manager_v1:get_surface_content_type" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  get_surface_content_type
+                </div>
+                <div class="f5 ml2">
+                  create a new toplevel decoration object
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>struct wp_content_type_v1* </span><span class="dark-blue">wp_content_type_manager_v1_get_surface_content_type</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wp_content_type_manager_v1*</span> wp_content_type_manager_v1,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_surface*</span> surface</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Create a new content type object associated with the given surface.
+
+Creating a wp_content_type_v1 from a wl_surface which already has one
+attached is a client error: already_constructed.
+</div>
+            </li>
+            
+          </ul>
+        
+
+        
+
+        
+
+        
+          <h3 class=" f5 lh-title" id="enumh:wp_content_type_manager_v1">Enums</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="enum:wp_content_type_manager_v1:error">
+                <a href="#enum:wp_content_type_manager_v1:error" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  error
+                </div>
+                <div class="f5 ml2">
+                  
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  WP_CONTENT_TYPE_MANAGER_V1_ERROR_ALREADY_CONSTRUCTED  <span class="green">/* wl_surface already has a content type object */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3"></div>
+            </li>
+            
+          </ul>
+
+        
+
+      </li>
+      
+      <li class="mt4">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:wp_content_type_v1">
+          <a href="#i:wp_content_type_v1" class="link dim black-70 child pr2 absolute left--2">#</a>
+          wp_content_type_v1
+        </h2>
+        <div class="f6 lh-copy ws-pre-line code">The content type object allows the compositor to optimize for the kind
+of content shown on the surface. A compositor may for example use it to
+set relevant drm properties like &quot;content type&quot;.
+
+The client may request to switch to another content type at any time.
+When the associated surface gets destroyed, this object becomes inert and
+the client should destroy it.
+</div>
+
+        
+          <h3 class=" f5 lh-title" id="rh:wp_content_type_v1">Requests</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:wp_content_type_v1:destroy">
+                <a href="#r:wp_content_type_v1:destroy" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  destroy
+                </div>
+                <div class="f5 ml2">
+                  destroy the content type object
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">wp_content_type_v1_destroy</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wp_content_type_v1*</span> wp_content_type_v1</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Switch back to not specifying the content type of this surface. This is
+equivalent to setting the content type to none, including double
+buffering semantics. See set_content_type for details.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:wp_content_type_v1:set_content_type">
+                <a href="#r:wp_content_type_v1:set_content_type" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  set_content_type
+                </div>
+                <div class="f5 ml2">
+                  specify the content type
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">wp_content_type_v1_set_content_type</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wp_content_type_v1*</span> wp_content_type_v1,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> content_type <span class="green">/* the content type */</span></div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Set the surface content type. This informs the compositor that the
+client believes it is displaying buffers matching this content type.
+
+This is purely a hint for the compositor, which can be used to adjust
+its behavior or hardware settings to fit the presented content best.
+
+The content type is double-buffered state, see wl_surface.commit for
+details.
+</div>
+            </li>
+            
+          </ul>
+        
+
+        
+
+        
+
+        
+          <h3 class=" f5 lh-title" id="enumh:wp_content_type_v1">Enums</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="enum:wp_content_type_v1:type">
+                <a href="#enum:wp_content_type_v1:type" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  type
+                </div>
+                <div class="f5 ml2">
+                  possible content types
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  WP_CONTENT_TYPE_V1_TYPE_NONE  
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  WP_CONTENT_TYPE_V1_TYPE_PHOTO  
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  WP_CONTENT_TYPE_V1_TYPE_VIDEO  
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  WP_CONTENT_TYPE_V1_TYPE_GAME  
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">These values describe the available content types for a surface.
+</div>
+            </li>
+            
+          </ul>
+
+        
+
+      </li>
+      
+    </ul>
+
+    <h2 class="f4 lh-title">Copyright Info</h2>
+    <div class="f7 lh-copy ws-pre-line code">Copyright © 2021 Emmanuel Gil Peyrot
+Copyright © 2022 Xaver Hugl
+
+Permission is hereby granted, free of charge, to any person obtaining a
+copy of this software and associated documentation files (the &quot;Software&quot;),
+to deal in the Software without restriction, including without limitation
+the rights to use, copy, modify, merge, publish, distribute, sublicense,
+and/or sell copies of the Software, and to permit persons to whom the
+Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice (including the next
+paragraph) shall be included in all copies or substantial portions of the
+Software.
+
+THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL
+THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+DEALINGS IN THE SOFTWARE.
+</div>
+  </div>
+
+    </main>
+
+  </body>
+</html>

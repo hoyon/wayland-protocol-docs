@@ -1,0 +1,1087 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>input_method_unstable_v1</title>
+
+    <link rel="stylesheet" href="/wayland-protocol-docs/main.css">
+     
+  </head>
+  <body class="black-70 flex sans-serif ph4-l">
+    <div id="sidebar" class="w-20">
+      <div class="fixed vh-100 overflow-y-auto w-20">
+        <a href="/wayland-protocol-docs/" class="f4 link near-black dim lh-title db mt3">
+          Home
+        </a>
+        
+  <div class="ph2">
+    
+
+<div>
+  <ul class="list pl0">
+  
+    <li>
+      <a href="#i:zwp_input_method_context_v1" class="link blue underline-hover lh-copy">zwp_input_method_context_v1</a>
+
+      
+        <div>
+          <a href="#rh:zwp_input_method_context_v1" class="link blue underline-hover lh-copy pl3">Requests</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#r:zwp_input_method_context_v1:destroy" class="link blue underline-hover lh-copy">destroy</a>
+          </li>
+          
+          <li>
+            <a href="#r:zwp_input_method_context_v1:commit_string" class="link blue underline-hover lh-copy">commit_string</a>
+          </li>
+          
+          <li>
+            <a href="#r:zwp_input_method_context_v1:preedit_string" class="link blue underline-hover lh-copy">preedit_string</a>
+          </li>
+          
+          <li>
+            <a href="#r:zwp_input_method_context_v1:preedit_styling" class="link blue underline-hover lh-copy">preedit_styling</a>
+          </li>
+          
+          <li>
+            <a href="#r:zwp_input_method_context_v1:preedit_cursor" class="link blue underline-hover lh-copy">preedit_cursor</a>
+          </li>
+          
+          <li>
+            <a href="#r:zwp_input_method_context_v1:delete_surrounding_text" class="link blue underline-hover lh-copy">delete_surrounding_text</a>
+          </li>
+          
+          <li>
+            <a href="#r:zwp_input_method_context_v1:cursor_position" class="link blue underline-hover lh-copy">cursor_position</a>
+          </li>
+          
+          <li>
+            <a href="#r:zwp_input_method_context_v1:modifiers_map" class="link blue underline-hover lh-copy">modifiers_map</a>
+          </li>
+          
+          <li>
+            <a href="#r:zwp_input_method_context_v1:keysym" class="link blue underline-hover lh-copy">keysym</a>
+          </li>
+          
+          <li>
+            <a href="#r:zwp_input_method_context_v1:grab_keyboard" class="link blue underline-hover lh-copy">grab_keyboard</a>
+          </li>
+          
+          <li>
+            <a href="#r:zwp_input_method_context_v1:key" class="link blue underline-hover lh-copy">key</a>
+          </li>
+          
+          <li>
+            <a href="#r:zwp_input_method_context_v1:modifiers" class="link blue underline-hover lh-copy">modifiers</a>
+          </li>
+          
+          <li>
+            <a href="#r:zwp_input_method_context_v1:language" class="link blue underline-hover lh-copy">language</a>
+          </li>
+          
+          <li>
+            <a href="#r:zwp_input_method_context_v1:text_direction" class="link blue underline-hover lh-copy">text_direction</a>
+          </li>
+          
+        </ul>
+      
+
+      
+        <div>
+          <a href="#eh:zwp_input_method_context_v1" class="link blue underline-hover lh-copy pl3">Events</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#e:zwp_input_method_context_v1:surrounding_text" class="link blue underline-hover lh-copy">surrounding_text</a>
+          </li>
+          
+          <li>
+            <a href="#e:zwp_input_method_context_v1:reset" class="link blue underline-hover lh-copy">reset</a>
+          </li>
+          
+          <li>
+            <a href="#e:zwp_input_method_context_v1:content_type" class="link blue underline-hover lh-copy">content_type</a>
+          </li>
+          
+          <li>
+            <a href="#e:zwp_input_method_context_v1:invoke_action" class="link blue underline-hover lh-copy">invoke_action</a>
+          </li>
+          
+          <li>
+            <a href="#e:zwp_input_method_context_v1:commit_state" class="link blue underline-hover lh-copy">commit_state</a>
+          </li>
+          
+          <li>
+            <a href="#e:zwp_input_method_context_v1:preferred_language" class="link blue underline-hover lh-copy">preferred_language</a>
+          </li>
+          
+        </ul>
+      
+
+      
+      
+    </li>
+  
+    <li>
+      <a href="#i:zwp_input_method_v1" class="link blue underline-hover lh-copy">zwp_input_method_v1</a>
+
+      
+      
+
+      
+        <div>
+          <a href="#eh:zwp_input_method_v1" class="link blue underline-hover lh-copy pl3">Events</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#e:zwp_input_method_v1:activate" class="link blue underline-hover lh-copy">activate</a>
+          </li>
+          
+          <li>
+            <a href="#e:zwp_input_method_v1:deactivate" class="link blue underline-hover lh-copy">deactivate</a>
+          </li>
+          
+        </ul>
+      
+
+      
+      
+    </li>
+  
+    <li>
+      <a href="#i:zwp_input_panel_v1" class="link blue underline-hover lh-copy">zwp_input_panel_v1</a>
+
+      
+        <div>
+          <a href="#rh:zwp_input_panel_v1" class="link blue underline-hover lh-copy pl3">Requests</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#r:zwp_input_panel_v1:get_input_panel_surface" class="link blue underline-hover lh-copy">get_input_panel_surface</a>
+          </li>
+          
+        </ul>
+      
+
+      
+      
+
+      
+      
+    </li>
+  
+    <li>
+      <a href="#i:zwp_input_panel_surface_v1" class="link blue underline-hover lh-copy">zwp_input_panel_surface_v1</a>
+
+      
+        <div>
+          <a href="#rh:zwp_input_panel_surface_v1" class="link blue underline-hover lh-copy pl3">Requests</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#r:zwp_input_panel_surface_v1:set_toplevel" class="link blue underline-hover lh-copy">set_toplevel</a>
+          </li>
+          
+          <li>
+            <a href="#r:zwp_input_panel_surface_v1:set_overlay_panel" class="link blue underline-hover lh-copy">set_overlay_panel</a>
+          </li>
+          
+        </ul>
+      
+
+      
+      
+
+      
+        <div>
+          <a href="#enumh:zwp_input_panel_surface_v1" class="link blue underline-hover lh-copy pl3">Enums</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#enum:zwp_input_panel_surface_v1:position" class="link blue underline-hover lh-copy">position</a>
+          </li>
+          
+        </ul>
+      
+    </li>
+  
+  </ul>
+</div>
+  </div>
+
+      </div>
+    </div>
+
+    <main id="content" class="mh4 w-80">
+      
+  <div class="ph2">
+    <h1 class="f1 lh-title">input_method_unstable_v1</h1>
+    <ul class="list pl0">
+      
+      <li class="mt4">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:zwp_input_method_context_v1">
+          <a href="#i:zwp_input_method_context_v1" class="link dim black-70 child pr2 absolute left--2">#</a>
+          zwp_input_method_context_v1
+        </h2>
+        <div class="f6 lh-copy ws-pre-line code">Corresponds to a text input on the input method side. An input method context
+is created on text input activation on the input method side. It allows
+receiving information about the text input from the application via events.
+Input method contexts do not keep state after deactivation and should be
+destroyed after deactivation is handled.
+
+Text is generally UTF-8 encoded, indices and lengths are in bytes.
+
+Serials are used to synchronize the state between the text input and
+an input method. New serials are sent by the text input in the
+commit_state request and are used by the input method to indicate
+the known text input state in events like preedit_string, commit_string,
+and keysym. The text input can then ignore events from the input method
+which are based on an outdated state (for example after a reset).
+
+Warning! The protocol described in this file is experimental and
+backward incompatible changes may be made. Backward compatible changes
+may be added together with the corresponding interface version bump.
+Backward incompatible changes are done by bumping the version number in
+the protocol and interface names and resetting the interface version.
+Once the protocol is to be declared stable, the &#x27;z&#x27; prefix and the
+version number in the protocol and interface names are removed and the
+interface version number is reset.
+</div>
+
+        
+          <h3 class=" f5 lh-title" id="rh:zwp_input_method_context_v1">Requests</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zwp_input_method_context_v1:destroy">
+                <a href="#r:zwp_input_method_context_v1:destroy" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  destroy
+                </div>
+                <div class="f5 ml2">
+                  
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">zwp_input_method_context_v1_destroy</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwp_input_method_context_v1*</span> zwp_input_method_context_v1</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code"></div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zwp_input_method_context_v1:commit_string">
+                <a href="#r:zwp_input_method_context_v1:commit_string" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  commit_string
+                </div>
+                <div class="f5 ml2">
+                  commit string
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">zwp_input_method_context_v1_commit_string</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwp_input_method_context_v1*</span> zwp_input_method_context_v1,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> serial, <span class="green">/* serial of the latest known text input state */</span></div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">const char*</span> text</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Send the commit string text for insertion to the application.
+
+The text to commit could be either just a single character after a key
+press or the result of some composing (pre-edit). It could be also an
+empty text when some text should be removed (see
+delete_surrounding_text) or when the input cursor should be moved (see
+cursor_position).
+
+Any previously set composing text will be removed.
+  </div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zwp_input_method_context_v1:preedit_string">
+                <a href="#r:zwp_input_method_context_v1:preedit_string" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  preedit_string
+                </div>
+                <div class="f5 ml2">
+                  pre-edit string
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">zwp_input_method_context_v1_preedit_string</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwp_input_method_context_v1*</span> zwp_input_method_context_v1,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> serial, <span class="green">/* serial of the latest known text input state */</span></div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">const char*</span> text,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">const char*</span> commit</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Send the pre-edit string text to the application text input.
+
+The commit text can be used to replace the pre-edit text on reset (for
+example on unfocus).
+
+Previously sent preedit_style and preedit_cursor requests are also
+processed by the text_input.
+  </div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zwp_input_method_context_v1:preedit_styling">
+                <a href="#r:zwp_input_method_context_v1:preedit_styling" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  preedit_styling
+                </div>
+                <div class="f5 ml2">
+                  pre-edit styling
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">zwp_input_method_context_v1_preedit_styling</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwp_input_method_context_v1*</span> zwp_input_method_context_v1,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> index,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> length,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> style</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Set the styling information on composing text. The style is applied for
+length in bytes from index relative to the beginning of
+the composing text (as byte offset). Multiple styles can
+be applied to a composing text.
+
+This request should be sent before sending a preedit_string request.
+  </div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zwp_input_method_context_v1:preedit_cursor">
+                <a href="#r:zwp_input_method_context_v1:preedit_cursor" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  preedit_cursor
+                </div>
+                <div class="f5 ml2">
+                  pre-edit cursor
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">zwp_input_method_context_v1_preedit_cursor</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwp_input_method_context_v1*</span> zwp_input_method_context_v1,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> index</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Set the cursor position inside the composing text (as byte offset)
+relative to the start of the composing text.
+
+When index is negative no cursor should be displayed.
+
+This request should be sent before sending a preedit_string request.
+  </div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zwp_input_method_context_v1:delete_surrounding_text">
+                <a href="#r:zwp_input_method_context_v1:delete_surrounding_text" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  delete_surrounding_text
+                </div>
+                <div class="f5 ml2">
+                  delete text
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">zwp_input_method_context_v1_delete_surrounding_text</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwp_input_method_context_v1*</span> zwp_input_method_context_v1,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> index,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> length</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Remove the surrounding text.
+
+This request will be handled on the text_input side directly following
+a commit_string request.
+  </div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zwp_input_method_context_v1:cursor_position">
+                <a href="#r:zwp_input_method_context_v1:cursor_position" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  cursor_position
+                </div>
+                <div class="f5 ml2">
+                  set cursor to a new position
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">zwp_input_method_context_v1_cursor_position</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwp_input_method_context_v1*</span> zwp_input_method_context_v1,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> index,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> anchor</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Set the cursor and anchor to a new position. Index is the new cursor
+position in bytes (when &gt;= 0 this is relative to the end of the inserted text,
+otherwise it is relative to the beginning of the inserted text). Anchor is
+the new anchor position in bytes (when &gt;= 0 this is relative to the end of the
+inserted text, otherwise it is relative to the beginning of the inserted
+text). When there should be no selected text, anchor should be the same
+as index.
+
+This request will be handled on the text_input side directly following
+a commit_string request.
+  </div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zwp_input_method_context_v1:modifiers_map">
+                <a href="#r:zwp_input_method_context_v1:modifiers_map" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  modifiers_map
+                </div>
+                <div class="f5 ml2">
+                  
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">zwp_input_method_context_v1_modifiers_map</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwp_input_method_context_v1*</span> zwp_input_method_context_v1,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_array*</span> map</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code"></div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zwp_input_method_context_v1:keysym">
+                <a href="#r:zwp_input_method_context_v1:keysym" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  keysym
+                </div>
+                <div class="f5 ml2">
+                  keysym
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">zwp_input_method_context_v1_keysym</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwp_input_method_context_v1*</span> zwp_input_method_context_v1,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> serial, <span class="green">/* serial of the latest known text input state */</span></div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> time,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> sym,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> state,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> modifiers</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Notify when a key event was sent. Key events should not be used for
+normal text input operations, which should be done with commit_string,
+delete_surrounding_text, etc. The key event follows the wl_keyboard key
+event convention. Sym is an XKB keysym, state is a wl_keyboard key_state.
+  </div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zwp_input_method_context_v1:grab_keyboard">
+                <a href="#r:zwp_input_method_context_v1:grab_keyboard" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  grab_keyboard
+                </div>
+                <div class="f5 ml2">
+                  grab hardware keyboard
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>struct wl_keyboard* </span><span class="dark-blue">zwp_input_method_context_v1_grab_keyboard</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwp_input_method_context_v1*</span> zwp_input_method_context_v1</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Allow an input method to receive hardware keyboard input and process
+key events to generate text events (with pre-edit) over the wire. This
+allows input methods which compose multiple key events for inputting
+text like it is done for CJK languages.
+  </div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zwp_input_method_context_v1:key">
+                <a href="#r:zwp_input_method_context_v1:key" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  key
+                </div>
+                <div class="f5 ml2">
+                  forward key event
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">zwp_input_method_context_v1_key</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwp_input_method_context_v1*</span> zwp_input_method_context_v1,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> serial, <span class="green">/* serial from wl_keyboard::key */</span></div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> time, <span class="green">/* time from wl_keyboard::key */</span></div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> key, <span class="green">/* key from wl_keyboard::key */</span></div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> state <span class="green">/* state from wl_keyboard::key */</span></div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Forward a wl_keyboard::key event to the client that was not processed
+by the input method itself. Should be used when filtering key events
+with grab_keyboard.  The arguments should be the ones from the
+wl_keyboard::key event.
+
+For generating custom key events use the keysym request instead.
+  </div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zwp_input_method_context_v1:modifiers">
+                <a href="#r:zwp_input_method_context_v1:modifiers" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  modifiers
+                </div>
+                <div class="f5 ml2">
+                  forward modifiers event
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">zwp_input_method_context_v1_modifiers</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwp_input_method_context_v1*</span> zwp_input_method_context_v1,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> serial, <span class="green">/* serial from wl_keyboard::modifiers */</span></div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> mods_depressed, <span class="green">/* mods_depressed from wl_keyboard::modifiers */</span></div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> mods_latched, <span class="green">/* mods_latched from wl_keyboard::modifiers */</span></div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> mods_locked, <span class="green">/* mods_locked from wl_keyboard::modifiers */</span></div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> group <span class="green">/* group from wl_keyboard::modifiers */</span></div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Forward a wl_keyboard::modifiers event to the client that was not
+processed by the input method itself.  Should be used when filtering
+key events with grab_keyboard. The arguments should be the ones
+from the wl_keyboard::modifiers event.
+  </div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zwp_input_method_context_v1:language">
+                <a href="#r:zwp_input_method_context_v1:language" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  language
+                </div>
+                <div class="f5 ml2">
+                  
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">zwp_input_method_context_v1_language</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwp_input_method_context_v1*</span> zwp_input_method_context_v1,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> serial, <span class="green">/* serial of the latest known text input state */</span></div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">const char*</span> language</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code"></div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zwp_input_method_context_v1:text_direction">
+                <a href="#r:zwp_input_method_context_v1:text_direction" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  text_direction
+                </div>
+                <div class="f5 ml2">
+                  
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">zwp_input_method_context_v1_text_direction</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwp_input_method_context_v1*</span> zwp_input_method_context_v1,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> serial, <span class="green">/* serial of the latest known text input state */</span></div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> direction</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code"></div>
+            </li>
+            
+          </ul>
+        
+
+        
+          <h3 class=" f5 lh-title" id="eh:zwp_input_method_context_v1">Events</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:zwp_input_method_context_v1:surrounding_text">
+                <a href="#e:zwp_input_method_context_v1:surrounding_text" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  surrounding_text
+                </div>
+                <div class="f5 ml2">
+                  surrounding text event
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  <span class="purple">const char*</span> text  
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  <span class="purple">uint32_t</span> cursor  
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  <span class="purple">uint32_t</span> anchor  
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">The plain surrounding text around the input position. Cursor is the
+position in bytes within the surrounding text relative to the beginning
+of the text. Anchor is the position in bytes of the selection anchor
+within the surrounding text relative to the beginning of the text. If
+there is no selected text then anchor is the same as cursor.
+  </div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:zwp_input_method_context_v1:reset">
+                <a href="#e:zwp_input_method_context_v1:reset" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  reset
+                </div>
+                <div class="f5 ml2">
+                  
+                </div>
+              </div>
+
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3"></div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:zwp_input_method_context_v1:content_type">
+                <a href="#e:zwp_input_method_context_v1:content_type" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  content_type
+                </div>
+                <div class="f5 ml2">
+                  
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  <span class="purple">uint32_t</span> hint  
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  <span class="purple">uint32_t</span> purpose  
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3"></div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:zwp_input_method_context_v1:invoke_action">
+                <a href="#e:zwp_input_method_context_v1:invoke_action" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  invoke_action
+                </div>
+                <div class="f5 ml2">
+                  
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  <span class="purple">uint32_t</span> button  
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  <span class="purple">uint32_t</span> index  
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3"></div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:zwp_input_method_context_v1:commit_state">
+                <a href="#e:zwp_input_method_context_v1:commit_state" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  commit_state
+                </div>
+                <div class="f5 ml2">
+                  
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  <span class="purple">uint32_t</span> serial <span class="green">/* serial of text input state */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3"></div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:zwp_input_method_context_v1:preferred_language">
+                <a href="#e:zwp_input_method_context_v1:preferred_language" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  preferred_language
+                </div>
+                <div class="f5 ml2">
+                  
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  <span class="purple">const char*</span> language  
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3"></div>
+            </li>
+            
+          </ul>
+
+        
+
+        
+
+        
+
+      </li>
+      
+      <li class="mt4">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:zwp_input_method_v1">
+          <a href="#i:zwp_input_method_v1" class="link dim black-70 child pr2 absolute left--2">#</a>
+          zwp_input_method_v1
+        </h2>
+        <div class="f6 lh-copy ws-pre-line code">An input method object is responsible for composing text in response to
+input from hardware or virtual keyboards. There is one input method
+object per seat. On activate there is a new input method context object
+created which allows the input method to communicate with the text input.
+</div>
+
+        
+        
+
+        
+          <h3 class=" f5 lh-title" id="eh:zwp_input_method_v1">Events</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:zwp_input_method_v1:activate">
+                <a href="#e:zwp_input_method_v1:activate" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  activate
+                </div>
+                <div class="f5 ml2">
+                  activate event
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  <span class="purple">struct zwp_input_method_context_v1*</span> id  
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">A text input was activated. Creates an input method context object
+which allows communication with the text input.
+  </div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:zwp_input_method_v1:deactivate">
+                <a href="#e:zwp_input_method_v1:deactivate" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  deactivate
+                </div>
+                <div class="f5 ml2">
+                  deactivate event
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  <span class="purple">struct zwp_input_method_context_v1*</span> context  
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">The text input corresponding to the context argument was deactivated.
+The input method context should be destroyed after deactivation is
+handled.
+  </div>
+            </li>
+            
+          </ul>
+
+        
+
+        
+
+        
+
+      </li>
+      
+      <li class="mt4">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:zwp_input_panel_v1">
+          <a href="#i:zwp_input_panel_v1" class="link dim black-70 child pr2 absolute left--2">#</a>
+          zwp_input_panel_v1
+        </h2>
+        <div class="f6 lh-copy ws-pre-line code">Only one client can bind this interface at a time.
+</div>
+
+        
+          <h3 class=" f5 lh-title" id="rh:zwp_input_panel_v1">Requests</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zwp_input_panel_v1:get_input_panel_surface">
+                <a href="#r:zwp_input_panel_v1:get_input_panel_surface" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  get_input_panel_surface
+                </div>
+                <div class="f5 ml2">
+                  
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>struct zwp_input_panel_surface_v1* </span><span class="dark-blue">zwp_input_panel_v1_get_input_panel_surface</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwp_input_panel_v1*</span> zwp_input_panel_v1,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_surface*</span> surface</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code"></div>
+            </li>
+            
+          </ul>
+        
+
+        
+
+        
+
+        
+
+        
+
+      </li>
+      
+      <li class="mt4">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:zwp_input_panel_surface_v1">
+          <a href="#i:zwp_input_panel_surface_v1" class="link dim black-70 child pr2 absolute left--2">#</a>
+          zwp_input_panel_surface_v1
+        </h2>
+        <div class="f6 lh-copy ws-pre-line code"></div>
+
+        
+          <h3 class=" f5 lh-title" id="rh:zwp_input_panel_surface_v1">Requests</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zwp_input_panel_surface_v1:set_toplevel">
+                <a href="#r:zwp_input_panel_surface_v1:set_toplevel" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  set_toplevel
+                </div>
+                <div class="f5 ml2">
+                  set the surface type as a keyboard
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">zwp_input_panel_surface_v1_set_toplevel</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwp_input_panel_surface_v1*</span> zwp_input_panel_surface_v1,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_output*</span> output,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> position</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Set the input_panel_surface type to keyboard.
+
+A keyboard surface is only shown when a text input is active.
+  </div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zwp_input_panel_surface_v1:set_overlay_panel">
+                <a href="#r:zwp_input_panel_surface_v1:set_overlay_panel" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  set_overlay_panel
+                </div>
+                <div class="f5 ml2">
+                  set the surface type as an overlay panel
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">zwp_input_panel_surface_v1_set_overlay_panel</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwp_input_panel_surface_v1*</span> zwp_input_panel_surface_v1</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Set the input_panel_surface to be an overlay panel.
+
+This is shown near the input cursor above the application window when
+a text input is active.
+  </div>
+            </li>
+            
+          </ul>
+        
+
+        
+
+        
+
+        
+          <h3 class=" f5 lh-title" id="enumh:zwp_input_panel_surface_v1">Enums</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="enum:zwp_input_panel_surface_v1:position">
+                <a href="#enum:zwp_input_panel_surface_v1:position" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  position
+                </div>
+                <div class="f5 ml2">
+                  
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  ZWP_INPUT_PANEL_SURFACE_V1_POSITION_CENTER_BOTTOM  
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3"></div>
+            </li>
+            
+          </ul>
+
+        
+
+      </li>
+      
+    </ul>
+
+    <h2 class="f4 lh-title">Copyright Info</h2>
+    <div class="f7 lh-copy ws-pre-line code">Copyright © 2012, 2013 Intel Corporation
+
+Permission is hereby granted, free of charge, to any person obtaining a
+copy of this software and associated documentation files (the &quot;Software&quot;),
+to deal in the Software without restriction, including without limitation
+the rights to use, copy, modify, merge, publish, distribute, sublicense,
+and/or sell copies of the Software, and to permit persons to whom the
+Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice (including the next
+paragraph) shall be included in all copies or substantial portions of the
+Software.
+
+THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL
+THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+DEALINGS IN THE SOFTWARE.
+</div>
+  </div>
+
+    </main>
+
+  </body>
+</html>

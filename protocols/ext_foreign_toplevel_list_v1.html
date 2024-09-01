@@ -1,0 +1,511 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ext_foreign_toplevel_list_v1</title>
+
+    <link rel="stylesheet" href="/wayland-protocol-docs/main.css">
+     
+  </head>
+  <body class="black-70 flex sans-serif ph4-l">
+    <div id="sidebar" class="w-20">
+      <div class="fixed vh-100 overflow-y-auto w-20">
+        <a href="/wayland-protocol-docs/" class="f4 link near-black dim lh-title db mt3">
+          Home
+        </a>
+        
+  <div class="ph2">
+    
+
+<div>
+  <ul class="list pl0">
+  
+    <li>
+      <a href="#i:ext_foreign_toplevel_list_v1" class="link blue underline-hover lh-copy">ext_foreign_toplevel_list_v1</a>
+
+      
+        <div>
+          <a href="#rh:ext_foreign_toplevel_list_v1" class="link blue underline-hover lh-copy pl3">Requests</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#r:ext_foreign_toplevel_list_v1:stop" class="link blue underline-hover lh-copy">stop</a>
+          </li>
+          
+          <li>
+            <a href="#r:ext_foreign_toplevel_list_v1:destroy" class="link blue underline-hover lh-copy">destroy</a>
+          </li>
+          
+        </ul>
+      
+
+      
+        <div>
+          <a href="#eh:ext_foreign_toplevel_list_v1" class="link blue underline-hover lh-copy pl3">Events</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#e:ext_foreign_toplevel_list_v1:toplevel" class="link blue underline-hover lh-copy">toplevel</a>
+          </li>
+          
+          <li>
+            <a href="#e:ext_foreign_toplevel_list_v1:finished" class="link blue underline-hover lh-copy">finished</a>
+          </li>
+          
+        </ul>
+      
+
+      
+      
+    </li>
+  
+    <li>
+      <a href="#i:ext_foreign_toplevel_handle_v1" class="link blue underline-hover lh-copy">ext_foreign_toplevel_handle_v1</a>
+
+      
+        <div>
+          <a href="#rh:ext_foreign_toplevel_handle_v1" class="link blue underline-hover lh-copy pl3">Requests</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#r:ext_foreign_toplevel_handle_v1:destroy" class="link blue underline-hover lh-copy">destroy</a>
+          </li>
+          
+        </ul>
+      
+
+      
+        <div>
+          <a href="#eh:ext_foreign_toplevel_handle_v1" class="link blue underline-hover lh-copy pl3">Events</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#e:ext_foreign_toplevel_handle_v1:closed" class="link blue underline-hover lh-copy">closed</a>
+          </li>
+          
+          <li>
+            <a href="#e:ext_foreign_toplevel_handle_v1:done" class="link blue underline-hover lh-copy">done</a>
+          </li>
+          
+          <li>
+            <a href="#e:ext_foreign_toplevel_handle_v1:title" class="link blue underline-hover lh-copy">title</a>
+          </li>
+          
+          <li>
+            <a href="#e:ext_foreign_toplevel_handle_v1:app_id" class="link blue underline-hover lh-copy">app_id</a>
+          </li>
+          
+          <li>
+            <a href="#e:ext_foreign_toplevel_handle_v1:identifier" class="link blue underline-hover lh-copy">identifier</a>
+          </li>
+          
+        </ul>
+      
+
+      
+      
+    </li>
+  
+  </ul>
+</div>
+  </div>
+
+      </div>
+    </div>
+
+    <main id="content" class="mh4 w-80">
+      
+  <div class="ph2">
+    <h1 class="f1 lh-title">ext_foreign_toplevel_list_v1</h1>
+    <ul class="list pl0">
+      
+      <li class="mt4">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:ext_foreign_toplevel_list_v1">
+          <a href="#i:ext_foreign_toplevel_list_v1" class="link dim black-70 child pr2 absolute left--2">#</a>
+          ext_foreign_toplevel_list_v1
+        </h2>
+        <div class="f6 lh-copy ws-pre-line code">A toplevel is defined as a surface with a role similar to xdg_toplevel.
+XWayland surfaces may be treated like toplevels in this protocol.
+
+After a client binds the ext_foreign_toplevel_list_v1, each mapped
+toplevel window will be sent using the ext_foreign_toplevel_list_v1.toplevel
+event.
+
+Clients which only care about the current state can perform a roundtrip after
+binding this global.
+
+For each instance of ext_foreign_toplevel_list_v1, the compositor must
+create a new ext_foreign_toplevel_handle_v1 object for each mapped toplevel.
+
+If a compositor implementation sends the ext_foreign_toplevel_list_v1.finished
+event after the global is bound, the compositor must not send any
+ext_foreign_toplevel_list_v1.toplevel events.
+</div>
+
+        
+          <h3 class=" f5 lh-title" id="rh:ext_foreign_toplevel_list_v1">Requests</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:ext_foreign_toplevel_list_v1:stop">
+                <a href="#r:ext_foreign_toplevel_list_v1:stop" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  stop
+                </div>
+                <div class="f5 ml2">
+                  stop sending events
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">ext_foreign_toplevel_list_v1_stop</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct ext_foreign_toplevel_list_v1*</span> ext_foreign_toplevel_list_v1</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">This request indicates that the client no longer wishes to receive
+events for new toplevels.
+
+The Wayland protocol is asynchronous, meaning the compositor may send
+further toplevel events until the stop request is processed.
+The client should wait for a ext_foreign_toplevel_list_v1.finished
+event before destroying this object.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:ext_foreign_toplevel_list_v1:destroy">
+                <a href="#r:ext_foreign_toplevel_list_v1:destroy" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  destroy
+                </div>
+                <div class="f5 ml2">
+                  destroy the ext_foreign_toplevel_list_v1 object
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">ext_foreign_toplevel_list_v1_destroy</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct ext_foreign_toplevel_list_v1*</span> ext_foreign_toplevel_list_v1</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">This request should be called either when the client will no longer
+use the ext_foreign_toplevel_list_v1 or after the finished event
+has been received to allow destruction of the object.
+
+If a client wishes to destroy this object it should send a
+ext_foreign_toplevel_list_v1.stop request and wait for a ext_foreign_toplevel_list_v1.finished
+event, then destroy the handles and then this object.
+</div>
+            </li>
+            
+          </ul>
+        
+
+        
+          <h3 class=" f5 lh-title" id="eh:ext_foreign_toplevel_list_v1">Events</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:ext_foreign_toplevel_list_v1:toplevel">
+                <a href="#e:ext_foreign_toplevel_list_v1:toplevel" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  toplevel
+                </div>
+                <div class="f5 ml2">
+                  a toplevel has been created
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  <span class="purple">struct ext_foreign_toplevel_handle_v1*</span> toplevel  
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">This event is emitted whenever a new toplevel window is created. It is
+emitted for all toplevels, regardless of the app that has created them.
+
+All initial properties of the toplevel (identifier, title, app_id) will be sent
+immediately after this event using the corresponding events for
+ext_foreign_toplevel_handle_v1. The compositor will use the
+ext_foreign_toplevel_handle_v1.done event to indicate when all data has
+been sent.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:ext_foreign_toplevel_list_v1:finished">
+                <a href="#e:ext_foreign_toplevel_list_v1:finished" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  finished
+                </div>
+                <div class="f5 ml2">
+                  the compositor has finished with the toplevel manager
+                </div>
+              </div>
+
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">This event indicates that the compositor is done sending events
+to this object. The client should destroy the object.
+See ext_foreign_toplevel_list_v1.destroy for more information.
+
+The compositor must not send any more toplevel events after this event.
+</div>
+            </li>
+            
+          </ul>
+
+        
+
+        
+
+        
+
+      </li>
+      
+      <li class="mt4">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:ext_foreign_toplevel_handle_v1">
+          <a href="#i:ext_foreign_toplevel_handle_v1" class="link dim black-70 child pr2 absolute left--2">#</a>
+          ext_foreign_toplevel_handle_v1
+        </h2>
+        <div class="f6 lh-copy ws-pre-line code">A ext_foreign_toplevel_handle_v1 object represents a mapped toplevel
+window. A single app may have multiple mapped toplevels.
+</div>
+
+        
+          <h3 class=" f5 lh-title" id="rh:ext_foreign_toplevel_handle_v1">Requests</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:ext_foreign_toplevel_handle_v1:destroy">
+                <a href="#r:ext_foreign_toplevel_handle_v1:destroy" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  destroy
+                </div>
+                <div class="f5 ml2">
+                  destroy the ext_foreign_toplevel_handle_v1 object
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">ext_foreign_toplevel_handle_v1_destroy</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct ext_foreign_toplevel_handle_v1*</span> ext_foreign_toplevel_handle_v1</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">This request should be used when the client will no longer use the handle
+or after the closed event has been received to allow destruction of the
+object.
+
+When a handle is destroyed, a new handle may not be created by the server
+until the toplevel is unmapped and then remapped. Destroying a toplevel handle
+is not recommended unless the client is cleaning up child objects
+before destroying the ext_foreign_toplevel_list_v1 object, the toplevel
+was closed or the toplevel handle will not be used in the future.
+
+Other protocols which extend the ext_foreign_toplevel_handle_v1
+interface should require destructors for extension interfaces be
+called before allowing the toplevel handle to be destroyed.
+</div>
+            </li>
+            
+          </ul>
+        
+
+        
+          <h3 class=" f5 lh-title" id="eh:ext_foreign_toplevel_handle_v1">Events</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:ext_foreign_toplevel_handle_v1:closed">
+                <a href="#e:ext_foreign_toplevel_handle_v1:closed" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  closed
+                </div>
+                <div class="f5 ml2">
+                  the toplevel has been closed
+                </div>
+              </div>
+
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">The server will emit no further events on the ext_foreign_toplevel_handle_v1
+after this event. Any requests received aside from the destroy request must
+be ignored. Upon receiving this event, the client should destroy the handle.
+
+Other protocols which extend the ext_foreign_toplevel_handle_v1
+interface must also ignore requests other than destructors.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:ext_foreign_toplevel_handle_v1:done">
+                <a href="#e:ext_foreign_toplevel_handle_v1:done" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  done
+                </div>
+                <div class="f5 ml2">
+                  all information about the toplevel has been sent
+                </div>
+              </div>
+
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">This event is sent after all changes in the toplevel state have
+been sent.
+
+This allows changes to the ext_foreign_toplevel_handle_v1 properties
+to be atomically applied. Other protocols which extend the
+ext_foreign_toplevel_handle_v1 interface may use this event to also
+atomically apply any pending state.
+
+This event must not be sent after the ext_foreign_toplevel_handle_v1.closed
+event.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:ext_foreign_toplevel_handle_v1:title">
+                <a href="#e:ext_foreign_toplevel_handle_v1:title" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  title
+                </div>
+                <div class="f5 ml2">
+                  title change
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  <span class="purple">const char*</span> title  
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">The title of the toplevel has changed.
+
+The configured state must not be applied immediately. See
+ext_foreign_toplevel_handle_v1.done for details.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:ext_foreign_toplevel_handle_v1:app_id">
+                <a href="#e:ext_foreign_toplevel_handle_v1:app_id" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  app_id
+                </div>
+                <div class="f5 ml2">
+                  app_id change
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  <span class="purple">const char*</span> app_id  
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">The app id of the toplevel has changed.
+
+The configured state must not be applied immediately. See
+ext_foreign_toplevel_handle_v1.done for details.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:ext_foreign_toplevel_handle_v1:identifier">
+                <a href="#e:ext_foreign_toplevel_handle_v1:identifier" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  identifier
+                </div>
+                <div class="f5 ml2">
+                  a stable identifier for a toplevel
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  <span class="purple">const char*</span> identifier  
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">This identifier is used to check if two or more toplevel handles belong
+to the same toplevel.
+
+The identifier is useful for command line tools or privileged clients
+which may need to reference an exact toplevel across processes or
+instances of the ext_foreign_toplevel_list_v1 global.
+
+The compositor must only send this event when the handle is created.
+
+The identifier must be unique per toplevel and it&#x27;s handles. Two different
+toplevels must not have the same identifier. The identifier is only valid
+as long as the toplevel is mapped. If the toplevel is unmapped the identifier
+must not be reused. An identifier must not be reused by the compositor to
+ensure there are no races when sharing identifiers between processes.
+
+An identifier is a string that contains up to 32 printable ASCII bytes.
+An identifier must not be an empty string. It is recommended that a
+compositor includes an opaque generation value in identifiers. How the
+generation value is used when generating the identifier is implementation
+dependent.
+</div>
+            </li>
+            
+          </ul>
+
+        
+
+        
+
+        
+
+      </li>
+      
+    </ul>
+
+    <h2 class="f4 lh-title">Copyright Info</h2>
+    <div class="f7 lh-copy ws-pre-line code">Copyright © 2018 Ilia Bozhinov
+Copyright © 2020 Isaac Freund
+Copyright © 2022 wb9688
+Copyright © 2023 i509VCB
+
+Permission to use, copy, modify, distribute, and sell this
+software and its documentation for any purpose is hereby granted
+without fee, provided that the above copyright notice appear in
+all copies and that both that copyright notice and this permission
+notice appear in supporting documentation, and that the name of
+the copyright holders not be used in advertising or publicity
+pertaining to distribution of the software without specific,
+written prior permission.  The copyright holders make no
+representations about the suitability of this software for any
+purpose.  It is provided &quot;as is&quot; without express or implied
+warranty.
+
+THE COPYRIGHT HOLDERS DISCLAIM ALL WARRANTIES WITH REGARD TO THIS
+SOFTWARE, INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND
+FITNESS, IN NO EVENT SHALL THE COPYRIGHT HOLDERS BE LIABLE FOR ANY
+SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN
+AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION,
+ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF
+THIS SOFTWARE.
+</div>
+  </div>
+
+    </main>
+
+  </body>
+</html>

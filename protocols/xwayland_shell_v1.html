@@ -1,0 +1,390 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>xwayland_shell_v1</title>
+
+    <link rel="stylesheet" href="/wayland-protocol-docs/main.css">
+     
+  </head>
+  <body class="black-70 flex sans-serif ph4-l">
+    <div id="sidebar" class="w-20">
+      <div class="fixed vh-100 overflow-y-auto w-20">
+        <a href="/wayland-protocol-docs/" class="f4 link near-black dim lh-title db mt3">
+          Home
+        </a>
+        
+  <div class="ph2">
+    
+
+<div>
+  <ul class="list pl0">
+  
+    <li>
+      <a href="#i:xwayland_shell_v1" class="link blue underline-hover lh-copy">xwayland_shell_v1</a>
+
+      
+        <div>
+          <a href="#rh:xwayland_shell_v1" class="link blue underline-hover lh-copy pl3">Requests</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#r:xwayland_shell_v1:destroy" class="link blue underline-hover lh-copy">destroy</a>
+          </li>
+          
+          <li>
+            <a href="#r:xwayland_shell_v1:get_xwayland_surface" class="link blue underline-hover lh-copy">get_xwayland_surface</a>
+          </li>
+          
+        </ul>
+      
+
+      
+      
+
+      
+        <div>
+          <a href="#enumh:xwayland_shell_v1" class="link blue underline-hover lh-copy pl3">Enums</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#enum:xwayland_shell_v1:error" class="link blue underline-hover lh-copy">error</a>
+          </li>
+          
+        </ul>
+      
+    </li>
+  
+    <li>
+      <a href="#i:xwayland_surface_v1" class="link blue underline-hover lh-copy">xwayland_surface_v1</a>
+
+      
+        <div>
+          <a href="#rh:xwayland_surface_v1" class="link blue underline-hover lh-copy pl3">Requests</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#r:xwayland_surface_v1:set_serial" class="link blue underline-hover lh-copy">set_serial</a>
+          </li>
+          
+          <li>
+            <a href="#r:xwayland_surface_v1:destroy" class="link blue underline-hover lh-copy">destroy</a>
+          </li>
+          
+        </ul>
+      
+
+      
+      
+
+      
+        <div>
+          <a href="#enumh:xwayland_surface_v1" class="link blue underline-hover lh-copy pl3">Enums</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#enum:xwayland_surface_v1:error" class="link blue underline-hover lh-copy">error</a>
+          </li>
+          
+        </ul>
+      
+    </li>
+  
+  </ul>
+</div>
+  </div>
+
+      </div>
+    </div>
+
+    <main id="content" class="mh4 w-80">
+      
+  <div class="ph2">
+    <h1 class="f1 lh-title">xwayland_shell_v1</h1>
+    <ul class="list pl0">
+      
+      <li class="mt4">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:xwayland_shell_v1">
+          <a href="#i:xwayland_shell_v1" class="link dim black-70 child pr2 absolute left--2">#</a>
+          xwayland_shell_v1
+        </h2>
+        <div class="f6 lh-copy ws-pre-line code">xwayland_shell_v1 is a singleton global object that
+provides the ability to create a xwayland_surface_v1 object
+for a given wl_surface.
+
+This interface is intended to be bound by the Xwayland server.
+
+A compositor must not allow clients other than Xwayland to
+bind to this interface. A compositor should hide this global
+from other clients&#x27; wl_registry.
+A client the compositor does not consider to be an Xwayland
+server attempting to bind this interface will result in
+an implementation-defined error.
+
+An Xwayland server that has bound this interface must not
+set the `WL_SURFACE_ID` atom on a window.
+</div>
+
+        
+          <h3 class=" f5 lh-title" id="rh:xwayland_shell_v1">Requests</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:xwayland_shell_v1:destroy">
+                <a href="#r:xwayland_shell_v1:destroy" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  destroy
+                </div>
+                <div class="f5 ml2">
+                  destroy the Xwayland shell object
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">xwayland_shell_v1_destroy</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct xwayland_shell_v1*</span> xwayland_shell_v1</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Destroy the xwayland_shell_v1 object.
+
+The child objects created via this interface are unaffected.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:xwayland_shell_v1:get_xwayland_surface">
+                <a href="#r:xwayland_shell_v1:get_xwayland_surface" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  get_xwayland_surface
+                </div>
+                <div class="f5 ml2">
+                  assign the xwayland_surface surface role
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>struct xwayland_surface_v1* </span><span class="dark-blue">xwayland_shell_v1_get_xwayland_surface</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct xwayland_shell_v1*</span> xwayland_shell_v1,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_surface*</span> surface</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Create an xwayland_surface_v1 interface for a given wl_surface
+object and gives it the xwayland_surface role.
+
+It is illegal to create an xwayland_surface_v1 for a wl_surface
+which already has an assigned role and this will result in the
+`role` protocol error.
+
+See the documentation of xwayland_surface_v1 for more details
+about what an xwayland_surface_v1 is and how it is used.
+</div>
+            </li>
+            
+          </ul>
+        
+
+        
+
+        
+
+        
+          <h3 class=" f5 lh-title" id="enumh:xwayland_shell_v1">Enums</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="enum:xwayland_shell_v1:error">
+                <a href="#enum:xwayland_shell_v1:error" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  error
+                </div>
+                <div class="f5 ml2">
+                  
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  XWAYLAND_SHELL_V1_ERROR_ROLE  <span class="green">/* given wl_surface has another role */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3"></div>
+            </li>
+            
+          </ul>
+
+        
+
+      </li>
+      
+      <li class="mt4">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:xwayland_surface_v1">
+          <a href="#i:xwayland_surface_v1" class="link dim black-70 child pr2 absolute left--2">#</a>
+          xwayland_surface_v1
+        </h2>
+        <div class="f6 lh-copy ws-pre-line code">An Xwayland surface is a surface managed by an Xwayland server.
+It is used for associating surfaces to Xwayland windows.
+
+The Xwayland server associated with actions in this interface is
+determined by the Wayland client making the request.
+
+The client must call wl_surface.commit on the corresponding wl_surface
+for the xwayland_surface_v1 state to take effect.
+</div>
+
+        
+          <h3 class=" f5 lh-title" id="rh:xwayland_surface_v1">Requests</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:xwayland_surface_v1:set_serial">
+                <a href="#r:xwayland_surface_v1:set_serial" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  set_serial
+                </div>
+                <div class="f5 ml2">
+                  associates a Xwayland window to a wl_surface
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">xwayland_surface_v1_set_serial</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct xwayland_surface_v1*</span> xwayland_surface_v1,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> serial_lo, <span class="green">/* The lower 32-bits of the serial number associated with the X11 window */</span></div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> serial_hi <span class="green">/* The upper 32-bits of the serial number associated with the X11 window */</span></div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Associates an Xwayland window to a wl_surface.
+The association state is double-buffered, see wl_surface.commit.
+
+The `serial_lo` and `serial_hi` parameters specify a non-zero
+monotonic serial number which is entirely unique and provided by the
+Xwayland server equal to the serial value provided by a client message
+with a message type of the `WL_SURFACE_SERIAL` atom on the X11 window
+for this surface to be associated to.
+
+The serial value in the `WL_SURFACE_SERIAL` client message is specified
+as having the lo-bits specified in `l[0]` and the hi-bits specified
+in `l[1]`.
+
+If the serial value provided by `serial_lo` and `serial_hi` is not
+valid, the `invalid_serial` protocol error will be raised.
+
+An X11 window may be associated with multiple surfaces throughout its
+lifespan. (eg. unmapping and remapping a window).
+
+For each wl_surface, this state must not be committed more than once,
+otherwise the `already_associated` protocol error will be raised.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:xwayland_surface_v1:destroy">
+                <a href="#r:xwayland_surface_v1:destroy" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  destroy
+                </div>
+                <div class="f5 ml2">
+                  destroy the Xwayland surface object
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">xwayland_surface_v1_destroy</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct xwayland_surface_v1*</span> xwayland_surface_v1</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Destroy the xwayland_surface_v1 object.
+
+Any already existing associations are unaffected by this action.
+</div>
+            </li>
+            
+          </ul>
+        
+
+        
+
+        
+
+        
+          <h3 class=" f5 lh-title" id="enumh:xwayland_surface_v1">Enums</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="enum:xwayland_surface_v1:error">
+                <a href="#enum:xwayland_surface_v1:error" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  error
+                </div>
+                <div class="f5 ml2">
+                  
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  XWAYLAND_SURFACE_V1_ERROR_ALREADY_ASSOCIATED  <span class="green">/* given wl_surface is already associated with an X11 window */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  XWAYLAND_SURFACE_V1_ERROR_INVALID_SERIAL  <span class="green">/* serial was not valid */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3"></div>
+            </li>
+            
+          </ul>
+
+        
+
+      </li>
+      
+    </ul>
+
+    <h2 class="f4 lh-title">Copyright Info</h2>
+    <div class="f7 lh-copy ws-pre-line code">Copyright © 2022 Joshua Ashton
+
+Permission is hereby granted, free of charge, to any person obtaining a
+copy of this software and associated documentation files (the &quot;Software&quot;),
+to deal in the Software without restriction, including without limitation
+the rights to use, copy, modify, merge, publish, distribute, sublicense,
+and/or sell copies of the Software, and to permit persons to whom the
+Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice (including the next
+paragraph) shall be included in all copies or substantial portions of the
+Software.
+
+THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL
+THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+DEALINGS IN THE SOFTWARE.
+</div>
+  </div>
+
+    </main>
+
+  </body>
+</html>

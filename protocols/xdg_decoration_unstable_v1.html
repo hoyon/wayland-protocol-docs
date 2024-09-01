@@ -1,0 +1,455 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>xdg_decoration_unstable_v1</title>
+
+    <link rel="stylesheet" href="/wayland-protocol-docs/main.css">
+     
+  </head>
+  <body class="black-70 flex sans-serif ph4-l">
+    <div id="sidebar" class="w-20">
+      <div class="fixed vh-100 overflow-y-auto w-20">
+        <a href="/wayland-protocol-docs/" class="f4 link near-black dim lh-title db mt3">
+          Home
+        </a>
+        
+  <div class="ph2">
+    
+
+<div>
+  <ul class="list pl0">
+  
+    <li>
+      <a href="#i:zxdg_decoration_manager_v1" class="link blue underline-hover lh-copy">zxdg_decoration_manager_v1</a>
+
+      
+        <div>
+          <a href="#rh:zxdg_decoration_manager_v1" class="link blue underline-hover lh-copy pl3">Requests</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#r:zxdg_decoration_manager_v1:destroy" class="link blue underline-hover lh-copy">destroy</a>
+          </li>
+          
+          <li>
+            <a href="#r:zxdg_decoration_manager_v1:get_toplevel_decoration" class="link blue underline-hover lh-copy">get_toplevel_decoration</a>
+          </li>
+          
+        </ul>
+      
+
+      
+      
+
+      
+      
+    </li>
+  
+    <li>
+      <a href="#i:zxdg_toplevel_decoration_v1" class="link blue underline-hover lh-copy">zxdg_toplevel_decoration_v1</a>
+
+      
+        <div>
+          <a href="#rh:zxdg_toplevel_decoration_v1" class="link blue underline-hover lh-copy pl3">Requests</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#r:zxdg_toplevel_decoration_v1:destroy" class="link blue underline-hover lh-copy">destroy</a>
+          </li>
+          
+          <li>
+            <a href="#r:zxdg_toplevel_decoration_v1:set_mode" class="link blue underline-hover lh-copy">set_mode</a>
+          </li>
+          
+          <li>
+            <a href="#r:zxdg_toplevel_decoration_v1:unset_mode" class="link blue underline-hover lh-copy">unset_mode</a>
+          </li>
+          
+        </ul>
+      
+
+      
+        <div>
+          <a href="#eh:zxdg_toplevel_decoration_v1" class="link blue underline-hover lh-copy pl3">Events</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#e:zxdg_toplevel_decoration_v1:configure" class="link blue underline-hover lh-copy">configure</a>
+          </li>
+          
+        </ul>
+      
+
+      
+        <div>
+          <a href="#enumh:zxdg_toplevel_decoration_v1" class="link blue underline-hover lh-copy pl3">Enums</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#enum:zxdg_toplevel_decoration_v1:error" class="link blue underline-hover lh-copy">error</a>
+          </li>
+          
+          <li>
+            <a href="#enum:zxdg_toplevel_decoration_v1:mode" class="link blue underline-hover lh-copy">mode</a>
+          </li>
+          
+        </ul>
+      
+    </li>
+  
+  </ul>
+</div>
+  </div>
+
+      </div>
+    </div>
+
+    <main id="content" class="mh4 w-80">
+      
+  <div class="ph2">
+    <h1 class="f1 lh-title">xdg_decoration_unstable_v1</h1>
+    <ul class="list pl0">
+      
+      <li class="mt4">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:zxdg_decoration_manager_v1">
+          <a href="#i:zxdg_decoration_manager_v1" class="link dim black-70 child pr2 absolute left--2">#</a>
+          zxdg_decoration_manager_v1
+        </h2>
+        <div class="f6 lh-copy ws-pre-line code">This interface allows a compositor to announce support for server-side
+decorations.
+
+A window decoration is a set of window controls as deemed appropriate by
+the party managing them, such as user interface components used to move,
+resize and change a window&#x27;s state.
+
+A client can use this protocol to request being decorated by a supporting
+compositor.
+
+If compositor and client do not negotiate the use of a server-side
+decoration using this protocol, clients continue to self-decorate as they
+see fit.
+
+Warning! The protocol described in this file is experimental and
+backward incompatible changes may be made. Backward compatible changes
+may be added together with the corresponding interface version bump.
+Backward incompatible changes are done by bumping the version number in
+the protocol and interface names and resetting the interface version.
+Once the protocol is to be declared stable, the &#x27;z&#x27; prefix and the
+version number in the protocol and interface names are removed and the
+interface version number is reset.
+</div>
+
+        
+          <h3 class=" f5 lh-title" id="rh:zxdg_decoration_manager_v1">Requests</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zxdg_decoration_manager_v1:destroy">
+                <a href="#r:zxdg_decoration_manager_v1:destroy" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  destroy
+                </div>
+                <div class="f5 ml2">
+                  destroy the decoration manager object
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">zxdg_decoration_manager_v1_destroy</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zxdg_decoration_manager_v1*</span> zxdg_decoration_manager_v1</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Destroy the decoration manager. This doesn&#x27;t destroy objects created
+with the manager.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zxdg_decoration_manager_v1:get_toplevel_decoration">
+                <a href="#r:zxdg_decoration_manager_v1:get_toplevel_decoration" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  get_toplevel_decoration
+                </div>
+                <div class="f5 ml2">
+                  create a new toplevel decoration object
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>struct zxdg_toplevel_decoration_v1* </span><span class="dark-blue">zxdg_decoration_manager_v1_get_toplevel_decoration</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zxdg_decoration_manager_v1*</span> zxdg_decoration_manager_v1,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct xdg_toplevel*</span> toplevel</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Create a new decoration object associated with the given toplevel.
+
+Creating an xdg_toplevel_decoration from an xdg_toplevel which has a
+buffer attached or committed is a client error, and any attempts by a
+client to attach or manipulate a buffer prior to the first
+xdg_toplevel_decoration.configure event must also be treated as
+errors.
+</div>
+            </li>
+            
+          </ul>
+        
+
+        
+
+        
+
+        
+
+        
+
+      </li>
+      
+      <li class="mt4">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:zxdg_toplevel_decoration_v1">
+          <a href="#i:zxdg_toplevel_decoration_v1" class="link dim black-70 child pr2 absolute left--2">#</a>
+          zxdg_toplevel_decoration_v1
+        </h2>
+        <div class="f6 lh-copy ws-pre-line code">The decoration object allows the compositor to toggle server-side window
+decorations for a toplevel surface. The client can request to switch to
+another mode.
+
+The xdg_toplevel_decoration object must be destroyed before its
+xdg_toplevel.
+</div>
+
+        
+          <h3 class=" f5 lh-title" id="rh:zxdg_toplevel_decoration_v1">Requests</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zxdg_toplevel_decoration_v1:destroy">
+                <a href="#r:zxdg_toplevel_decoration_v1:destroy" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  destroy
+                </div>
+                <div class="f5 ml2">
+                  destroy the decoration object
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">zxdg_toplevel_decoration_v1_destroy</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zxdg_toplevel_decoration_v1*</span> zxdg_toplevel_decoration_v1</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Switch back to a mode without any server-side decorations at the next
+commit.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zxdg_toplevel_decoration_v1:set_mode">
+                <a href="#r:zxdg_toplevel_decoration_v1:set_mode" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  set_mode
+                </div>
+                <div class="f5 ml2">
+                  set the decoration mode
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">zxdg_toplevel_decoration_v1_set_mode</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zxdg_toplevel_decoration_v1*</span> zxdg_toplevel_decoration_v1,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> mode <span class="green">/* the decoration mode */</span></div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Set the toplevel surface decoration mode. This informs the compositor
+that the client prefers the provided decoration mode.
+
+After requesting a decoration mode, the compositor will respond by
+emitting an xdg_surface.configure event. The client should then update
+its content, drawing it without decorations if the received mode is
+server-side decorations. The client must also acknowledge the configure
+when committing the new content (see xdg_surface.ack_configure).
+
+The compositor can decide not to use the client&#x27;s mode and enforce a
+different mode instead.
+
+Clients whose decoration mode depend on the xdg_toplevel state may send
+a set_mode request in response to an xdg_surface.configure event and wait
+for the next xdg_surface.configure event to prevent unwanted state.
+Such clients are responsible for preventing configure loops and must
+make sure not to send multiple successive set_mode requests with the
+same decoration mode.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zxdg_toplevel_decoration_v1:unset_mode">
+                <a href="#r:zxdg_toplevel_decoration_v1:unset_mode" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  unset_mode
+                </div>
+                <div class="f5 ml2">
+                  unset the decoration mode
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">zxdg_toplevel_decoration_v1_unset_mode</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zxdg_toplevel_decoration_v1*</span> zxdg_toplevel_decoration_v1</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Unset the toplevel surface decoration mode. This informs the compositor
+that the client doesn&#x27;t prefer a particular decoration mode.
+
+This request has the same semantics as set_mode.
+</div>
+            </li>
+            
+          </ul>
+        
+
+        
+          <h3 class=" f5 lh-title" id="eh:zxdg_toplevel_decoration_v1">Events</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:zxdg_toplevel_decoration_v1:configure">
+                <a href="#e:zxdg_toplevel_decoration_v1:configure" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  configure
+                </div>
+                <div class="f5 ml2">
+                  notify a decoration mode change
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  <span class="purple">uint32_t</span> mode <span class="green">/* the decoration mode */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">The configure event configures the effective decoration mode. The
+configured state should not be applied immediately. Clients must send an
+ack_configure in response to this event. See xdg_surface.configure and
+xdg_surface.ack_configure for details.
+
+A configure event can be sent at any time. The specified mode must be
+obeyed by the client.
+</div>
+            </li>
+            
+          </ul>
+
+        
+
+        
+          <h3 class=" f5 lh-title" id="enumh:zxdg_toplevel_decoration_v1">Enums</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="enum:zxdg_toplevel_decoration_v1:error">
+                <a href="#enum:zxdg_toplevel_decoration_v1:error" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  error
+                </div>
+                <div class="f5 ml2">
+                  
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  ZXDG_TOPLEVEL_DECORATION_V1_ERROR_UNCONFIGURED_BUFFER  <span class="green">/* xdg_toplevel has a buffer attached before configure */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  ZXDG_TOPLEVEL_DECORATION_V1_ERROR_ALREADY_CONSTRUCTED  <span class="green">/* xdg_toplevel already has a decoration object */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  ZXDG_TOPLEVEL_DECORATION_V1_ERROR_ORPHANED  <span class="green">/* xdg_toplevel destroyed before the decoration object */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3"></div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="enum:zxdg_toplevel_decoration_v1:mode">
+                <a href="#enum:zxdg_toplevel_decoration_v1:mode" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  mode
+                </div>
+                <div class="f5 ml2">
+                  window decoration modes
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  ZXDG_TOPLEVEL_DECORATION_V1_MODE_CLIENT_SIDE  <span class="green">/* no server-side window decoration */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  ZXDG_TOPLEVEL_DECORATION_V1_MODE_SERVER_SIDE  <span class="green">/* server-side window decoration */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">These values describe window decoration modes.
+</div>
+            </li>
+            
+          </ul>
+
+        
+
+      </li>
+      
+    </ul>
+
+    <h2 class="f4 lh-title">Copyright Info</h2>
+    <div class="f7 lh-copy ws-pre-line code">Copyright © 2018 Simon Ser
+
+Permission is hereby granted, free of charge, to any person obtaining a
+copy of this software and associated documentation files (the &quot;Software&quot;),
+to deal in the Software without restriction, including without limitation
+the rights to use, copy, modify, merge, publish, distribute, sublicense,
+and/or sell copies of the Software, and to permit persons to whom the
+Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice (including the next
+paragraph) shall be included in all copies or substantial portions of the
+Software.
+
+THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL
+THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+DEALINGS IN THE SOFTWARE.
+</div>
+  </div>
+
+    </main>
+
+  </body>
+</html>
