@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 rm -rf data
 mkdir data
 cd data
@@ -14,7 +16,7 @@ CURRENT_DIR=`pwd`
 DIR=`mktemp -d`
 
 pushd $DIR
-git clone git://anongit.freedesktop.org/wayland/wayland-protocols
+git clone https://gitlab.freedesktop.org/wayland/wayland-protocols.git
 find wayland-protocols -name "*.xml" | xargs cp -t $CURRENT_DIR/wayland-protocols
 
 git clone https://github.com/swaywm/wlr-protocols.git
