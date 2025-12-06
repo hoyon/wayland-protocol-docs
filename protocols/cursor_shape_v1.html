@@ -169,6 +169,9 @@ only be done by creating a new major version of the extension.
   )
 </div>
               <div class="f6 lh-copy ws-pre-line code">Obtain a wp_cursor_shape_device_v1 for a wl_pointer object.
+
+When the pointer capability is removed from the wl_seat, the
+wp_cursor_shape_device_v1 object becomes inert.
 </div>
             </li>
             
@@ -193,6 +196,9 @@ only be done by creating a new major version of the extension.
   )
 </div>
               <div class="f6 lh-copy ws-pre-line code">Obtain a wp_cursor_shape_device_v1 for a zwp_tablet_tool_v2 object.
+
+When the zwp_tablet_tool_v2 is removed, the wp_cursor_shape_device_v1
+object becomes inert.
 </div>
             </li>
             
@@ -447,11 +453,27 @@ Otherwise the request will be ignored.
                   WP_CURSOR_SHAPE_DEVICE_V1_SHAPE_ZOOM_OUT  <span class="green">/* something can be zoomed out */</span> 
                 </div>
               
+                <div class="f6 lh-copy code">
+                  WP_CURSOR_SHAPE_DEVICE_V1_SHAPE_DND_ASK  <span class="green">/* drag-and-drop: the user will select which action will be carried out (non-css value) */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  WP_CURSOR_SHAPE_DEVICE_V1_SHAPE_ALL_RESIZE  <span class="green">/* resizing: something can be moved or resized in any direction (non-css value) */</span> 
+                </div>
+              
 
               <div class="f6 lh-copy ws-pre-line code mt3">This enum describes cursor shapes.
 
 The names are taken from the CSS W3C specification:
 https://w3c.github.io/csswg-drafts/css-ui/#cursor
+with a few additions.
+
+Note that there are some groups of cursor shapes that are related:
+The first group is drag-and-drop cursors which are used to indicate
+the selected action during dnd operations. The second group is resize
+cursors which are used to indicate resizing and moving possibilities
+on window borders. It is recommended that the shapes in these groups
+should use visually compatible images and metaphors.
 </div>
             </li>
             

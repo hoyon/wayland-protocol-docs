@@ -219,12 +219,10 @@
           <a href="#i:zwp_linux_dmabuf_v1" class="link dim black-70 child pr2 absolute left--2">#</a>
           zwp_linux_dmabuf_v1
         </h2>
-        <div class="f6 lh-copy ws-pre-line code">Following the interfaces from:
-https://www.khronos.org/registry/egl/extensions/EXT/EGL_EXT_image_dma_buf_import.txt
-https://www.khronos.org/registry/EGL/extensions/EXT/EGL_EXT_image_dma_buf_import_modifiers.txt
-and the Linux DRM sub-system&#x27;s AddFb2 ioctl.
+        <div class="f6 lh-copy ws-pre-line code">This interface offers ways to create generic dmabuf-based wl_buffers.
 
-This interface offers ways to create generic dmabuf-based wl_buffers.
+For more information about dmabuf, see:
+https://www.kernel.org/doc/html/next/userspace-api/dma-buf-alloc-exchange.html
 
 Clients can use the get_surface_feedback request to get dmabuf feedback
 for a particular surface. If the client wants to retrieve feedback not
@@ -508,7 +506,9 @@ underlying dmabuf fd is identical).
 You must use consecutive plane indices (&#x27;plane_idx&#x27; argument for &#x27;add&#x27;)
 from zero to the number of planes used by the drm_fourcc format code.
 All planes required by the format must be given exactly once, but can
-be given in any order. Each plane index can be set only once.
+be given in any order. Each plane index can only be set once; subsequent
+calls with a plane index which has already been set will result in a
+plane_set error being generated.
 </div>
 
         

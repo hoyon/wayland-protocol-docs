@@ -1198,7 +1198,8 @@ committed is a client error, and any attempts by a client to attach or
 manipulate a buffer prior to the first xdg_surface.configure call must
 also be treated as errors.
 
-After creating a role-specific object and setting it up, the client must
+After creating a role-specific object and setting it up (e.g. by sending
+the title, app ID, size constraints, parent, etc), the client must
 perform an initial commit without any buffer attached. The compositor
 will reply with initial wl_surface state such as
 wl_surface.preferred_buffer_scale followed by an xdg_surface.configure
@@ -1338,7 +1339,10 @@ xdg_popup is and how it is used.
               <div class="f6 lh-copy ws-pre-line code">The window geometry of a surface is its &quot;visible bounds&quot; from the
 user&#x27;s perspective. Client-side decorations often have invisible
 portions like drop-shadows which should be ignored for the
-purposes of aligning, placing and constraining windows.
+purposes of aligning, placing and constraining windows. Note that
+in some situations, compositors may clip rendering to the window
+geometry, so the client should avoid putting functional elements
+outside of it.
 
 The window geometry is double-buffered state, see wl_surface.commit.
 
@@ -2446,6 +2450,22 @@ is being dragged in a resize operation.
               
                 <div class="f6 lh-copy code">
                   XDG_TOPLEVEL_STATE_SUSPENDED  
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  XDG_TOPLEVEL_STATE_CONSTRAINED_LEFT  
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  XDG_TOPLEVEL_STATE_CONSTRAINED_RIGHT  
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  XDG_TOPLEVEL_STATE_CONSTRAINED_TOP  
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  XDG_TOPLEVEL_STATE_CONSTRAINED_BOTTOM  
                 </div>
               
 

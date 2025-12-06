@@ -1,0 +1,1151 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ext_workspace_v1</title>
+
+    <link rel="stylesheet" href="/wayland-protocol-docs/main.css">
+     
+  </head>
+  <body class="black-70 flex sans-serif ph4-l">
+    <div id="sidebar" class="w-20">
+      <div class="fixed vh-100 overflow-y-auto w-20">
+        <a href="/wayland-protocol-docs/" class="f4 link near-black dim lh-title db mt3">
+          Home
+        </a>
+        
+  <div class="ph2">
+    
+
+<div>
+  <ul class="list pl0">
+  
+    <li>
+      <a href="#i:ext_workspace_manager_v1" class="link blue underline-hover lh-copy">ext_workspace_manager_v1</a>
+
+      
+        <div>
+          <a href="#rh:ext_workspace_manager_v1" class="link blue underline-hover lh-copy pl3">Requests</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#r:ext_workspace_manager_v1:commit" class="link blue underline-hover lh-copy">commit</a>
+          </li>
+          
+          <li>
+            <a href="#r:ext_workspace_manager_v1:stop" class="link blue underline-hover lh-copy">stop</a>
+          </li>
+          
+        </ul>
+      
+
+      
+        <div>
+          <a href="#eh:ext_workspace_manager_v1" class="link blue underline-hover lh-copy pl3">Events</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#e:ext_workspace_manager_v1:workspace_group" class="link blue underline-hover lh-copy">workspace_group</a>
+          </li>
+          
+          <li>
+            <a href="#e:ext_workspace_manager_v1:workspace" class="link blue underline-hover lh-copy">workspace</a>
+          </li>
+          
+          <li>
+            <a href="#e:ext_workspace_manager_v1:done" class="link blue underline-hover lh-copy">done</a>
+          </li>
+          
+          <li>
+            <a href="#e:ext_workspace_manager_v1:finished" class="link blue underline-hover lh-copy">finished</a>
+          </li>
+          
+        </ul>
+      
+
+      
+      
+    </li>
+  
+    <li>
+      <a href="#i:ext_workspace_group_handle_v1" class="link blue underline-hover lh-copy">ext_workspace_group_handle_v1</a>
+
+      
+        <div>
+          <a href="#rh:ext_workspace_group_handle_v1" class="link blue underline-hover lh-copy pl3">Requests</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#r:ext_workspace_group_handle_v1:create_workspace" class="link blue underline-hover lh-copy">create_workspace</a>
+          </li>
+          
+          <li>
+            <a href="#r:ext_workspace_group_handle_v1:destroy" class="link blue underline-hover lh-copy">destroy</a>
+          </li>
+          
+        </ul>
+      
+
+      
+        <div>
+          <a href="#eh:ext_workspace_group_handle_v1" class="link blue underline-hover lh-copy pl3">Events</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#e:ext_workspace_group_handle_v1:capabilities" class="link blue underline-hover lh-copy">capabilities</a>
+          </li>
+          
+          <li>
+            <a href="#e:ext_workspace_group_handle_v1:output_enter" class="link blue underline-hover lh-copy">output_enter</a>
+          </li>
+          
+          <li>
+            <a href="#e:ext_workspace_group_handle_v1:output_leave" class="link blue underline-hover lh-copy">output_leave</a>
+          </li>
+          
+          <li>
+            <a href="#e:ext_workspace_group_handle_v1:workspace_enter" class="link blue underline-hover lh-copy">workspace_enter</a>
+          </li>
+          
+          <li>
+            <a href="#e:ext_workspace_group_handle_v1:workspace_leave" class="link blue underline-hover lh-copy">workspace_leave</a>
+          </li>
+          
+          <li>
+            <a href="#e:ext_workspace_group_handle_v1:removed" class="link blue underline-hover lh-copy">removed</a>
+          </li>
+          
+        </ul>
+      
+
+      
+        <div>
+          <a href="#enumh:ext_workspace_group_handle_v1" class="link blue underline-hover lh-copy pl3">Enums</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#enum:ext_workspace_group_handle_v1:group_capabilities" class="link blue underline-hover lh-copy">group_capabilities</a>
+          </li>
+          
+        </ul>
+      
+    </li>
+  
+    <li>
+      <a href="#i:ext_workspace_handle_v1" class="link blue underline-hover lh-copy">ext_workspace_handle_v1</a>
+
+      
+        <div>
+          <a href="#rh:ext_workspace_handle_v1" class="link blue underline-hover lh-copy pl3">Requests</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#r:ext_workspace_handle_v1:destroy" class="link blue underline-hover lh-copy">destroy</a>
+          </li>
+          
+          <li>
+            <a href="#r:ext_workspace_handle_v1:activate" class="link blue underline-hover lh-copy">activate</a>
+          </li>
+          
+          <li>
+            <a href="#r:ext_workspace_handle_v1:deactivate" class="link blue underline-hover lh-copy">deactivate</a>
+          </li>
+          
+          <li>
+            <a href="#r:ext_workspace_handle_v1:assign" class="link blue underline-hover lh-copy">assign</a>
+          </li>
+          
+          <li>
+            <a href="#r:ext_workspace_handle_v1:remove" class="link blue underline-hover lh-copy">remove</a>
+          </li>
+          
+        </ul>
+      
+
+      
+        <div>
+          <a href="#eh:ext_workspace_handle_v1" class="link blue underline-hover lh-copy pl3">Events</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#e:ext_workspace_handle_v1:id" class="link blue underline-hover lh-copy">id</a>
+          </li>
+          
+          <li>
+            <a href="#e:ext_workspace_handle_v1:name" class="link blue underline-hover lh-copy">name</a>
+          </li>
+          
+          <li>
+            <a href="#e:ext_workspace_handle_v1:coordinates" class="link blue underline-hover lh-copy">coordinates</a>
+          </li>
+          
+          <li>
+            <a href="#e:ext_workspace_handle_v1:state" class="link blue underline-hover lh-copy">state</a>
+          </li>
+          
+          <li>
+            <a href="#e:ext_workspace_handle_v1:capabilities" class="link blue underline-hover lh-copy">capabilities</a>
+          </li>
+          
+          <li>
+            <a href="#e:ext_workspace_handle_v1:removed" class="link blue underline-hover lh-copy">removed</a>
+          </li>
+          
+        </ul>
+      
+
+      
+        <div>
+          <a href="#enumh:ext_workspace_handle_v1" class="link blue underline-hover lh-copy pl3">Enums</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#enum:ext_workspace_handle_v1:state" class="link blue underline-hover lh-copy">state</a>
+          </li>
+          
+          <li>
+            <a href="#enum:ext_workspace_handle_v1:workspace_capabilities" class="link blue underline-hover lh-copy">workspace_capabilities</a>
+          </li>
+          
+        </ul>
+      
+    </li>
+  
+  </ul>
+</div>
+  </div>
+
+      </div>
+    </div>
+
+    <main id="content" class="mh4 w-80">
+      
+  <div class="ph2">
+    <h1 class="f1 lh-title">ext_workspace_v1</h1>
+    <ul class="list pl0">
+      
+      <li class="mt4">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:ext_workspace_manager_v1">
+          <a href="#i:ext_workspace_manager_v1" class="link dim black-70 child pr2 absolute left--2">#</a>
+          ext_workspace_manager_v1
+        </h2>
+        <div class="f6 lh-copy ws-pre-line code">Workspaces, also called virtual desktops, are groups of surfaces. A
+compositor with a concept of workspaces may only show some such groups of
+surfaces (those of &#x27;active&#x27; workspaces) at a time. &#x27;Activating&#x27; a
+workspace is a request for the compositor to display that workspace&#x27;s
+surfaces as normal, whereas the compositor may hide or otherwise
+de-emphasise surfaces that are associated only with &#x27;inactive&#x27; workspaces.
+Workspaces are grouped by which sets of outputs they correspond to, and
+may contain surfaces only from those outputs. In this way, it is possible
+for each output to have its own set of workspaces, or for all outputs (or
+any other arbitrary grouping) to share workspaces. Compositors may
+optionally conceptually arrange each group of workspaces in an
+N-dimensional grid.
+
+The purpose of this protocol is to enable the creation of taskbars and
+docks by providing them with a list of workspaces and their properties,
+and allowing them to activate and deactivate workspaces.
+
+After a client binds the ext_workspace_manager_v1, each workspace will be
+sent via the workspace event.
+</div>
+
+        
+          <h3 class=" f5 lh-title" id="rh:ext_workspace_manager_v1">Requests</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:ext_workspace_manager_v1:commit">
+                <a href="#r:ext_workspace_manager_v1:commit" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  commit
+                </div>
+                <div class="f5 ml2">
+                  all requests about the workspaces have been sent
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">ext_workspace_manager_v1_commit</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct ext_workspace_manager_v1*</span> ext_workspace_manager_v1</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">The client must send this request after it has finished sending other
+requests. The compositor must process a series of requests preceding a
+commit request atomically.
+
+This allows changes to the workspace properties to be seen as atomic,
+even if they happen via multiple events, and even if they involve
+multiple ext_workspace_handle_v1 objects, for example, deactivating one
+workspace and activating another.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:ext_workspace_manager_v1:stop">
+                <a href="#r:ext_workspace_manager_v1:stop" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  stop
+                </div>
+                <div class="f5 ml2">
+                  stop sending events
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">ext_workspace_manager_v1_stop</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct ext_workspace_manager_v1*</span> ext_workspace_manager_v1</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Indicates the client no longer wishes to receive events for new
+workspace groups. However the compositor may emit further workspace
+events, until the finished event is emitted. The compositor is expected
+to send the finished event eventually once the stop request has been processed.
+
+The client must not send any requests after this one, doing so will raise a wl_display
+invalid_object error.
+</div>
+            </li>
+            
+          </ul>
+        
+
+        
+          <h3 class=" f5 lh-title" id="eh:ext_workspace_manager_v1">Events</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:ext_workspace_manager_v1:workspace_group">
+                <a href="#e:ext_workspace_manager_v1:workspace_group" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  workspace_group
+                </div>
+                <div class="f5 ml2">
+                  a workspace group has been created
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  <span class="purple">struct ext_workspace_group_handle_v1*</span> workspace_group  
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">This event is emitted whenever a new workspace group has been created.
+
+All initial details of the workspace group (outputs) will be
+sent immediately after this event via the corresponding events in
+ext_workspace_group_handle_v1 and ext_workspace_handle_v1.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:ext_workspace_manager_v1:workspace">
+                <a href="#e:ext_workspace_manager_v1:workspace" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  workspace
+                </div>
+                <div class="f5 ml2">
+                  workspace has been created
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  <span class="purple">struct ext_workspace_handle_v1*</span> workspace  
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">This event is emitted whenever a new workspace has been created.
+
+All initial details of the workspace (name, coordinates, state) will
+be sent immediately after this event via the corresponding events in
+ext_workspace_handle_v1.
+
+Workspaces start off unassigned to any workspace group.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:ext_workspace_manager_v1:done">
+                <a href="#e:ext_workspace_manager_v1:done" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  done
+                </div>
+                <div class="f5 ml2">
+                  all information about the workspaces and workspace groups has been sent
+                </div>
+              </div>
+
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">This event is sent after all changes in all workspaces and workspace groups have been
+sent.
+
+This allows changes to one or more ext_workspace_group_handle_v1
+properties and ext_workspace_handle_v1 properties
+to be seen as atomic, even if they happen via multiple events.
+In particular, an output moving from one workspace group to
+another sends an output_enter event and an output_leave event to the two
+ext_workspace_group_handle_v1 objects in question. The compositor sends
+the done event only after updating the output information in both
+workspace groups.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:ext_workspace_manager_v1:finished">
+                <a href="#e:ext_workspace_manager_v1:finished" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  finished
+                </div>
+                <div class="f5 ml2">
+                  the compositor has finished with the workspace_manager
+                </div>
+              </div>
+
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">This event indicates that the compositor is done sending events to the
+ext_workspace_manager_v1. The server will destroy the object
+immediately after sending this request.
+</div>
+            </li>
+            
+          </ul>
+
+        
+
+        
+
+        
+
+      </li>
+      
+      <li class="mt4">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:ext_workspace_group_handle_v1">
+          <a href="#i:ext_workspace_group_handle_v1" class="link dim black-70 child pr2 absolute left--2">#</a>
+          ext_workspace_group_handle_v1
+        </h2>
+        <div class="f6 lh-copy ws-pre-line code">A ext_workspace_group_handle_v1 object represents a workspace group
+that is assigned a set of outputs and contains a number of workspaces.
+
+The set of outputs assigned to the workspace group is conveyed to the client via
+output_enter and output_leave events, and its workspaces are conveyed with
+workspace events.
+
+For example, a compositor which has a set of workspaces for each output may
+advertise a workspace group (and its workspaces) per output, whereas a compositor
+where a workspace spans all outputs may advertise a single workspace group for all
+outputs.
+</div>
+
+        
+          <h3 class=" f5 lh-title" id="rh:ext_workspace_group_handle_v1">Requests</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:ext_workspace_group_handle_v1:create_workspace">
+                <a href="#r:ext_workspace_group_handle_v1:create_workspace" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  create_workspace
+                </div>
+                <div class="f5 ml2">
+                  create a new workspace
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">ext_workspace_group_handle_v1_create_workspace</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct ext_workspace_group_handle_v1*</span> ext_workspace_group_handle_v1,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">const char*</span> workspace</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Request that the compositor create a new workspace with the given name
+and assign it to this group.
+
+There is no guarantee that the compositor will create a new workspace,
+or that the created workspace will have the provided name.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:ext_workspace_group_handle_v1:destroy">
+                <a href="#r:ext_workspace_group_handle_v1:destroy" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  destroy
+                </div>
+                <div class="f5 ml2">
+                  destroy the ext_workspace_group_handle_v1 object
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">ext_workspace_group_handle_v1_destroy</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct ext_workspace_group_handle_v1*</span> ext_workspace_group_handle_v1</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Destroys the ext_workspace_group_handle_v1 object.
+
+This request should be send either when the client does not want to
+use the workspace group object any more or after the removed event to finalize
+the destruction of the object.
+</div>
+            </li>
+            
+          </ul>
+        
+
+        
+          <h3 class=" f5 lh-title" id="eh:ext_workspace_group_handle_v1">Events</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:ext_workspace_group_handle_v1:capabilities">
+                <a href="#e:ext_workspace_group_handle_v1:capabilities" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  capabilities
+                </div>
+                <div class="f5 ml2">
+                  compositor capabilities
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  <span class="purple">uint32_t</span> capabilities <span class="green">/* capabilities */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">This event advertises the capabilities supported by the compositor. If
+a capability isn&#x27;t supported, clients should hide or disable the UI
+elements that expose this functionality. For instance, if the
+compositor doesn&#x27;t advertise support for creating workspaces, a button
+triggering the create_workspace request should not be displayed.
+
+The compositor will ignore requests it doesn&#x27;t support. For instance,
+a compositor which doesn&#x27;t advertise support for creating workspaces will ignore
+create_workspace requests.
+
+Compositors must send this event once after creation of an
+ext_workspace_group_handle_v1. When the capabilities change, compositors
+must send this event again.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:ext_workspace_group_handle_v1:output_enter">
+                <a href="#e:ext_workspace_group_handle_v1:output_enter" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  output_enter
+                </div>
+                <div class="f5 ml2">
+                  output assigned to workspace group
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  <span class="purple">struct wl_output*</span> output  
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">This event is emitted whenever an output is assigned to the workspace
+group or a new `wl_output` object is bound by the client, which was already
+assigned to this workspace_group.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:ext_workspace_group_handle_v1:output_leave">
+                <a href="#e:ext_workspace_group_handle_v1:output_leave" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  output_leave
+                </div>
+                <div class="f5 ml2">
+                  output removed from workspace group
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  <span class="purple">struct wl_output*</span> output  
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">This event is emitted whenever an output is removed from the workspace
+group.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:ext_workspace_group_handle_v1:workspace_enter">
+                <a href="#e:ext_workspace_group_handle_v1:workspace_enter" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  workspace_enter
+                </div>
+                <div class="f5 ml2">
+                  workspace added to workspace group
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  <span class="purple">struct ext_workspace_handle_v1*</span> workspace  
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">This event is emitted whenever a workspace is assigned to this group.
+A workspace may only ever be assigned to a single group at a single point
+in time, but can be re-assigned during it&#x27;s lifetime.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:ext_workspace_group_handle_v1:workspace_leave">
+                <a href="#e:ext_workspace_group_handle_v1:workspace_leave" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  workspace_leave
+                </div>
+                <div class="f5 ml2">
+                  workspace removed from workspace group
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  <span class="purple">struct ext_workspace_handle_v1*</span> workspace  
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">This event is emitted whenever a workspace is removed from this group.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:ext_workspace_group_handle_v1:removed">
+                <a href="#e:ext_workspace_group_handle_v1:removed" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  removed
+                </div>
+                <div class="f5 ml2">
+                  this workspace group has been removed
+                </div>
+              </div>
+
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">This event is send when the group associated with the ext_workspace_group_handle_v1
+has been removed. After sending this request the compositor will immediately consider
+the object inert. Any requests will be ignored except the destroy request.
+It is guaranteed there won&#x27;t be any more events referencing this
+ext_workspace_group_handle_v1.
+
+The compositor must remove all workspaces belonging to a workspace group
+via a workspace_leave event before removing the workspace group.
+</div>
+            </li>
+            
+          </ul>
+
+        
+
+        
+          <h3 class=" f5 lh-title" id="enumh:ext_workspace_group_handle_v1">Enums</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="enum:ext_workspace_group_handle_v1:group_capabilities">
+                <a href="#enum:ext_workspace_group_handle_v1:group_capabilities" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  group_capabilities
+                </div>
+                <div class="f5 ml2">
+                  
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  EXT_WORKSPACE_GROUP_HANDLE_V1_GROUP_CAPABILITIES_CREATE_WORKSPACE  <span class="green">/* create_workspace request is available */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3"></div>
+            </li>
+            
+          </ul>
+
+        
+
+      </li>
+      
+      <li class="mt4">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:ext_workspace_handle_v1">
+          <a href="#i:ext_workspace_handle_v1" class="link dim black-70 child pr2 absolute left--2">#</a>
+          ext_workspace_handle_v1
+        </h2>
+        <div class="f6 lh-copy ws-pre-line code">A ext_workspace_handle_v1 object represents a workspace that handles a
+group of surfaces.
+
+Each workspace has:
+- a name, conveyed to the client with the name event
+- potentially an id conveyed with the id event
+- a list of states, conveyed to the client with the state event
+- and optionally a set of coordinates, conveyed to the client with the
+coordinates event
+
+The client may request that the compositor activate or deactivate the workspace.
+
+Each workspace can belong to only a single workspace group.
+Depending on the compositor policy, there might be workspaces with
+the same name in different workspace groups, but these workspaces are still
+separate (e.g. one of them might be active while the other is not).
+</div>
+
+        
+          <h3 class=" f5 lh-title" id="rh:ext_workspace_handle_v1">Requests</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:ext_workspace_handle_v1:destroy">
+                <a href="#r:ext_workspace_handle_v1:destroy" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  destroy
+                </div>
+                <div class="f5 ml2">
+                  destroy the ext_workspace_handle_v1 object
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">ext_workspace_handle_v1_destroy</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct ext_workspace_handle_v1*</span> ext_workspace_handle_v1</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Destroys the ext_workspace_handle_v1 object.
+
+This request should be made either when the client does not want to
+use the workspace object any more or after the remove event to finalize
+the destruction of the object.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:ext_workspace_handle_v1:activate">
+                <a href="#r:ext_workspace_handle_v1:activate" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  activate
+                </div>
+                <div class="f5 ml2">
+                  activate the workspace
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">ext_workspace_handle_v1_activate</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct ext_workspace_handle_v1*</span> ext_workspace_handle_v1</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Request that this workspace be activated.
+
+There is no guarantee the workspace will be actually activated, and
+behaviour may be compositor-dependent. For example, activating a
+workspace may or may not deactivate all other workspaces in the same
+group.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:ext_workspace_handle_v1:deactivate">
+                <a href="#r:ext_workspace_handle_v1:deactivate" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  deactivate
+                </div>
+                <div class="f5 ml2">
+                  deactivate the workspace
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">ext_workspace_handle_v1_deactivate</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct ext_workspace_handle_v1*</span> ext_workspace_handle_v1</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Request that this workspace be deactivated.
+
+There is no guarantee the workspace will be actually deactivated.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:ext_workspace_handle_v1:assign">
+                <a href="#r:ext_workspace_handle_v1:assign" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  assign
+                </div>
+                <div class="f5 ml2">
+                  assign workspace to group
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">ext_workspace_handle_v1_assign</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct ext_workspace_handle_v1*</span> ext_workspace_handle_v1,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct ext_workspace_group_handle_v1*</span> workspace_group</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Requests that this workspace is assigned to the given workspace group.
+
+There is no guarantee the workspace will be assigned.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:ext_workspace_handle_v1:remove">
+                <a href="#r:ext_workspace_handle_v1:remove" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  remove
+                </div>
+                <div class="f5 ml2">
+                  remove the workspace
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">ext_workspace_handle_v1_remove</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct ext_workspace_handle_v1*</span> ext_workspace_handle_v1</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Request that this workspace be removed.
+
+There is no guarantee the workspace will be actually removed.
+</div>
+            </li>
+            
+          </ul>
+        
+
+        
+          <h3 class=" f5 lh-title" id="eh:ext_workspace_handle_v1">Events</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:ext_workspace_handle_v1:id">
+                <a href="#e:ext_workspace_handle_v1:id" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  id
+                </div>
+                <div class="f5 ml2">
+                  workspace id
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  <span class="purple">const char*</span> id  
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">If this event is emitted, it will be send immediately after the
+ext_workspace_handle_v1 is created or when an id is assigned to
+a workspace (at most once during it&#x27;s lifetime).
+
+An id will never change during the lifetime of the `ext_workspace_handle_v1`
+and is guaranteed to be unique during it&#x27;s lifetime.
+
+Ids are not human-readable and shouldn&#x27;t be displayed, use `name` for that purpose.
+
+Compositors are expected to only send ids for workspaces likely stable across multiple
+sessions and can be used by clients to store preferences for workspaces. Workspaces without
+ids should be considered temporary and any data associated with them should be deleted once
+the respective object is lost.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:ext_workspace_handle_v1:name">
+                <a href="#e:ext_workspace_handle_v1:name" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  name
+                </div>
+                <div class="f5 ml2">
+                  workspace name changed
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  <span class="purple">const char*</span> name  
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">This event is emitted immediately after the ext_workspace_handle_v1 is
+created and whenever the name of the workspace changes.
+
+A name is meant to be human-readable and can be displayed to a user.
+Unlike the id it is neither stable nor unique.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:ext_workspace_handle_v1:coordinates">
+                <a href="#e:ext_workspace_handle_v1:coordinates" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  coordinates
+                </div>
+                <div class="f5 ml2">
+                  workspace coordinates changed
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  <span class="purple">struct wl_array*</span> coordinates  
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">This event is used to organize workspaces into an N-dimensional grid
+within a workspace group, and if supported, is emitted immediately after
+the ext_workspace_handle_v1 is created and whenever the coordinates of
+the workspace change. Compositors may not send this event if they do not
+conceptually arrange workspaces in this way. If compositors simply
+number workspaces, without any geometric interpretation, they may send
+1D coordinates, which clients should not interpret as implying any
+geometry. Sending an empty array means that the compositor no longer
+orders the workspace geometrically.
+
+Coordinates have an arbitrary number of dimensions N with an uint32
+position along each dimension. By convention if N &gt; 1, the first
+dimension is X, the second Y, the third Z, and so on. The compositor may
+chose to utilize these events for a more novel workspace layout
+convention, however. No guarantee is made about the grid being filled or
+bounded; there may be a workspace at coordinate 1 and another at
+coordinate 1000 and none in between. Within a workspace group, however,
+workspaces must have unique coordinates of equal dimensionality.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:ext_workspace_handle_v1:state">
+                <a href="#e:ext_workspace_handle_v1:state" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  state
+                </div>
+                <div class="f5 ml2">
+                  the state of the workspace changed
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  <span class="purple">uint32_t</span> state  
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">This event is emitted immediately after the ext_workspace_handle_v1 is
+created and each time the workspace state changes, either because of a
+compositor action or because of a request in this protocol.
+
+Missing states convey the opposite meaning, e.g. an unset active bit
+means the workspace is currently inactive.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:ext_workspace_handle_v1:capabilities">
+                <a href="#e:ext_workspace_handle_v1:capabilities" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  capabilities
+                </div>
+                <div class="f5 ml2">
+                  compositor capabilities
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  <span class="purple">uint32_t</span> capabilities <span class="green">/* capabilities */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">This event advertises the capabilities supported by the compositor. If
+a capability isn&#x27;t supported, clients should hide or disable the UI
+elements that expose this functionality. For instance, if the
+compositor doesn&#x27;t advertise support for removing workspaces, a button
+triggering the remove request should not be displayed.
+
+The compositor will ignore requests it doesn&#x27;t support. For instance,
+a compositor which doesn&#x27;t advertise support for remove will ignore
+remove requests.
+
+Compositors must send this event once after creation of an
+ext_workspace_handle_v1 . When the capabilities change, compositors
+must send this event again.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:ext_workspace_handle_v1:removed">
+                <a href="#e:ext_workspace_handle_v1:removed" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  removed
+                </div>
+                <div class="f5 ml2">
+                  this workspace has been removed
+                </div>
+              </div>
+
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">This event is send when the workspace associated with the ext_workspace_handle_v1
+has been removed. After sending this request, the compositor will immediately consider
+the object inert. Any requests will be ignored except the destroy request.
+
+It is guaranteed there won&#x27;t be any more events referencing this
+ext_workspace_handle_v1.
+
+The compositor must only remove a workspaces not currently belonging to any
+workspace_group.
+</div>
+            </li>
+            
+          </ul>
+
+        
+
+        
+          <h3 class=" f5 lh-title" id="enumh:ext_workspace_handle_v1">Enums</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="enum:ext_workspace_handle_v1:state">
+                <a href="#enum:ext_workspace_handle_v1:state" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  state
+                </div>
+                <div class="f5 ml2">
+                  types of states on the workspace
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  EXT_WORKSPACE_HANDLE_V1_STATE_ACTIVE  <span class="green">/* the workspace is active */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  EXT_WORKSPACE_HANDLE_V1_STATE_URGENT  <span class="green">/* the workspace requests attention */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  EXT_WORKSPACE_HANDLE_V1_STATE_HIDDEN  
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">The different states that a workspace can have.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="enum:ext_workspace_handle_v1:workspace_capabilities">
+                <a href="#enum:ext_workspace_handle_v1:workspace_capabilities" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  workspace_capabilities
+                </div>
+                <div class="f5 ml2">
+                  
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  EXT_WORKSPACE_HANDLE_V1_WORKSPACE_CAPABILITIES_ACTIVATE  <span class="green">/* activate request is available */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  EXT_WORKSPACE_HANDLE_V1_WORKSPACE_CAPABILITIES_DEACTIVATE  <span class="green">/* deactivate request is available */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  EXT_WORKSPACE_HANDLE_V1_WORKSPACE_CAPABILITIES_REMOVE  <span class="green">/* remove request is available */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  EXT_WORKSPACE_HANDLE_V1_WORKSPACE_CAPABILITIES_ASSIGN  <span class="green">/* assign request is available */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3"></div>
+            </li>
+            
+          </ul>
+
+        
+
+      </li>
+      
+    </ul>
+
+    <h2 class="f4 lh-title">Copyright Info</h2>
+    <div class="f7 lh-copy ws-pre-line code">Copyright © 2019 Christopher Billington
+Copyright © 2020 Ilia Bozhinov
+Copyright © 2022 Victoria Brekenfeld
+
+Permission to use, copy, modify, distribute, and sell this
+software and its documentation for any purpose is hereby granted
+without fee, provided that the above copyright notice appear in
+all copies and that both that copyright notice and this permission
+notice appear in supporting documentation, and that the name of
+the copyright holders not be used in advertising or publicity
+pertaining to distribution of the software without specific,
+written prior permission.  The copyright holders make no
+representations about the suitability of this software for any
+purpose.  It is provided &quot;as is&quot; without express or implied
+warranty.
+
+THE COPYRIGHT HOLDERS DISCLAIM ALL WARRANTIES WITH REGARD TO THIS
+SOFTWARE, INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND
+FITNESS, IN NO EVENT SHALL THE COPYRIGHT HOLDERS BE LIABLE FOR ANY
+SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN
+AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION,
+ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF
+THIS SOFTWARE.
+</div>
+  </div>
+
+    </main>
+
+  </body>
+</html>

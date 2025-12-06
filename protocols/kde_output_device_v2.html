@@ -134,6 +134,46 @@
             <a href="#e:kde_output_device_v2:brightness" class="link blue underline-hover lh-copy">brightness</a>
           </li>
           
+          <li>
+            <a href="#e:kde_output_device_v2:color_power_tradeoff" class="link blue underline-hover lh-copy">color_power_tradeoff</a>
+          </li>
+          
+          <li>
+            <a href="#e:kde_output_device_v2:dimming" class="link blue underline-hover lh-copy">dimming</a>
+          </li>
+          
+          <li>
+            <a href="#e:kde_output_device_v2:replication_source" class="link blue underline-hover lh-copy">replication_source</a>
+          </li>
+          
+          <li>
+            <a href="#e:kde_output_device_v2:ddc_ci_allowed" class="link blue underline-hover lh-copy">ddc_ci_allowed</a>
+          </li>
+          
+          <li>
+            <a href="#e:kde_output_device_v2:max_bits_per_color" class="link blue underline-hover lh-copy">max_bits_per_color</a>
+          </li>
+          
+          <li>
+            <a href="#e:kde_output_device_v2:max_bits_per_color_range" class="link blue underline-hover lh-copy">max_bits_per_color_range</a>
+          </li>
+          
+          <li>
+            <a href="#e:kde_output_device_v2:automatic_max_bits_per_color_limit" class="link blue underline-hover lh-copy">automatic_max_bits_per_color_limit</a>
+          </li>
+          
+          <li>
+            <a href="#e:kde_output_device_v2:edr_policy" class="link blue underline-hover lh-copy">edr_policy</a>
+          </li>
+          
+          <li>
+            <a href="#e:kde_output_device_v2:sharpness" class="link blue underline-hover lh-copy">sharpness</a>
+          </li>
+          
+          <li>
+            <a href="#e:kde_output_device_v2:priority" class="link blue underline-hover lh-copy">priority</a>
+          </li>
+          
         </ul>
       
 
@@ -169,6 +209,14 @@
           
           <li>
             <a href="#enum:kde_output_device_v2:color_profile_source" class="link blue underline-hover lh-copy">color_profile_source</a>
+          </li>
+          
+          <li>
+            <a href="#enum:kde_output_device_v2:color_power_tradeoff" class="link blue underline-hover lh-copy">color_power_tradeoff</a>
+          </li>
+          
+          <li>
+            <a href="#enum:kde_output_device_v2:edr_policy" class="link blue underline-hover lh-copy">edr_policy</a>
           </li>
           
         </ul>
@@ -881,6 +929,234 @@ This is currently only supported / meaningful while HDR is active.
 </div>
             </li>
             
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:kde_output_device_v2:color_power_tradeoff">
+                <a href="#e:kde_output_device_v2:color_power_tradeoff" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  color_power_tradeoff
+                </div>
+                <div class="f5 ml2">
+                  the preferred color/power tradeoff
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  <span class="purple">uint32_t</span> preference  
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3"></div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:kde_output_device_v2:dimming">
+                <a href="#e:kde_output_device_v2:dimming" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  dimming
+                </div>
+                <div class="f5 ml2">
+                  dimming multiplier
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  <span class="purple">uint32_t</span> multiplier <span class="green">/* multiplier in 0-10000 */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">This is the dimming multiplier of the output. This is similar to
+the brightness setting, except it&#x27;s meant to be a temporary setting
+only, not persistent and may be implemented differently depending
+on the display.
+0 is the minimum dimming factor (not completely dark) and 10000
+means the output is not dimmed.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:kde_output_device_v2:replication_source">
+                <a href="#e:kde_output_device_v2:replication_source" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  replication_source
+                </div>
+                <div class="f5 ml2">
+                  source output for mirroring
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  <span class="purple">const char*</span> source <span class="green">/* uuid of the source output */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3"></div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:kde_output_device_v2:ddc_ci_allowed">
+                <a href="#e:kde_output_device_v2:ddc_ci_allowed" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  ddc_ci_allowed
+                </div>
+                <div class="f5 ml2">
+                  if DDC/CI should be used to control brightness etc.
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  <span class="purple">uint32_t</span> allowed <span class="green">/* 1 if allowed, 0 if disabled */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">If the ddc_ci capability is present, this determines if settings
+such as brightness, contrast or others should be set using DDC/CI.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:kde_output_device_v2:max_bits_per_color">
+                <a href="#e:kde_output_device_v2:max_bits_per_color" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  max_bits_per_color
+                </div>
+                <div class="f5 ml2">
+                  override max bpc
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  <span class="purple">uint32_t</span> max_bpc <span class="green">/* 0 for the default / automatic */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">This limits the amount of bits per color that are sent to the display.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:kde_output_device_v2:max_bits_per_color_range">
+                <a href="#e:kde_output_device_v2:max_bits_per_color_range" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  max_bits_per_color_range
+                </div>
+                <div class="f5 ml2">
+                  range of max bits per color value
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  <span class="purple">uint32_t</span> min_value <span class="green">/* the minimum supported by the driver */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  <span class="purple">uint32_t</span> max_value <span class="green">/* the maximum supported by the driver */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3"></div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:kde_output_device_v2:automatic_max_bits_per_color_limit">
+                <a href="#e:kde_output_device_v2:automatic_max_bits_per_color_limit" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  automatic_max_bits_per_color_limit
+                </div>
+                <div class="f5 ml2">
+                  if and to what value automatic max bpc is limited
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  <span class="purple">uint32_t</span> max_bpc_limit <span class="green">/* which value automatic bpc gets limited to. 0 if not limited */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3"></div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:kde_output_device_v2:edr_policy">
+                <a href="#e:kde_output_device_v2:edr_policy" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  edr_policy
+                </div>
+                <div class="f5 ml2">
+                  when the compositor may apply EDR
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  <span class="purple">uint32_t</span> policy  
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">When EDR is enabled, the compositor may increase the backlight beyond
+the user-specified setting, in order to present HDR content on displays
+without native HDR support.
+This will usually result in better visuals, but also increases battery
+usage.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:kde_output_device_v2:sharpness">
+                <a href="#e:kde_output_device_v2:sharpness" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  sharpness
+                </div>
+                <div class="f5 ml2">
+                  sharpness strength
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  <span class="purple">uint32_t</span> sharpness <span class="green">/* sharpness in 0-10000 */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">This is the sharpness modifier of the output.
+0 is sharpness disabled and 10000 is the maximum sharpness
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:kde_output_device_v2:priority">
+                <a href="#e:kde_output_device_v2:priority" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  priority
+                </div>
+                <div class="f5 ml2">
+                  output priority
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  <span class="purple">uint32_t</span> priority <span class="green">/* priority */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">Describes the position of the output in the output order list,
+with lower values being earlier in the list. There&#x27;s no specific
+value the list has to start at, this value is only used in sorting
+outputs.
+
+Note that the output order protocol is not sufficient for this,
+as an output may not be in the output order if it&#x27;s disabled or
+mirroring another screen.
+</div>
+            </li>
+            
           </ul>
 
         
@@ -1033,6 +1309,26 @@ compositor is still able to scan out directly client surfaces.
                   KDE_OUTPUT_DEVICE_V2_CAPABILITY_BRIGHTNESS  <span class="green">/* if this outputdevice supports the brightness setting */</span> 
                 </div>
               
+                <div class="f6 lh-copy code">
+                  KDE_OUTPUT_DEVICE_V2_CAPABILITY_BUILT_IN_COLOR  <span class="green">/* if this outputdevice supports the built-in color profile */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  KDE_OUTPUT_DEVICE_V2_CAPABILITY_DDC_CI  <span class="green">/* if this outputdevice supports DDC/CI */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  KDE_OUTPUT_DEVICE_V2_CAPABILITY_MAX_BITS_PER_COLOR  <span class="green">/* if this outputdevice supports setting max bpc */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  KDE_OUTPUT_DEVICE_V2_CAPABILITY_EDR  <span class="green">/* if this outputdevice supports EDR */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  KDE_OUTPUT_DEVICE_V2_CAPABILITY_SHARPNESS  <span class="green">/* if this outputdevice supports the sharpness setting */</span> 
+                </div>
+              
 
               <div class="f6 lh-copy ws-pre-line code mt3">Describes what capabilities this device has.
 </div>
@@ -1146,6 +1442,58 @@ compositor is still able to scan out directly client surfaces.
               
                 <div class="f6 lh-copy code">
                   KDE_OUTPUT_DEVICE_V2_COLOR_PROFILE_SOURCE_EDID  
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3"></div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="enum:kde_output_device_v2:color_power_tradeoff">
+                <a href="#enum:kde_output_device_v2:color_power_tradeoff" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  color_power_tradeoff
+                </div>
+                <div class="f5 ml2">
+                  tradeoff between power and accuracy
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  KDE_OUTPUT_DEVICE_V2_COLOR_POWER_TRADEOFF_EFFICIENCY  <span class="green">/* prefer efficiency and performance */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  KDE_OUTPUT_DEVICE_V2_COLOR_POWER_TRADEOFF_ACCURACY  <span class="green">/* prefer accuracy */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">The compositor can do a lot of things that trade between
+performance, power and color accuracy. This setting describes
+a high level preference from the user about in which direction
+that tradeoff should be made.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="enum:kde_output_device_v2:edr_policy">
+                <a href="#enum:kde_output_device_v2:edr_policy" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  edr_policy
+                </div>
+                <div class="f5 ml2">
+                  when the compositor may make use of EDR
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  KDE_OUTPUT_DEVICE_V2_EDR_POLICY_NEVER  
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  KDE_OUTPUT_DEVICE_V2_EDR_POLICY_ALWAYS  
                 </div>
               
 

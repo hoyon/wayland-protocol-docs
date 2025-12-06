@@ -191,7 +191,7 @@ manager.
     
       <div class="ws-pre-wrap">    <span class="purple">int32_t</span> listen_fd, <span class="green">/* listening socket FD */</span></div>
     
-      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> close_fd <span class="green">/* FD closed when done */</span></div>
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> close_fd <span class="green">/* FD signaling when done */</span></div>
     
   )
 </div>
@@ -202,7 +202,7 @@ listen_fd must be ready to accept new connections when this request is
 sent by the client. In other words, the client must call bind(2) and
 listen(2) before sending the FD.
 
-close_fd is a FD closed by the client when the compositor should stop
+close_fd is a FD that will signal hangup when the compositor should stop
 accepting new connections on listen_fd.
 
 The compositor must continue to accept connections on listen_fd when

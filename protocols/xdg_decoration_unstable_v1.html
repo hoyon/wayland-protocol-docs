@@ -294,6 +294,9 @@ for the next xdg_surface.configure event to prevent unwanted state.
 Such clients are responsible for preventing configure loops and must
 make sure not to send multiple successive set_mode requests with the
 same decoration mode.
+
+If an invalid mode is supplied by the client, the invalid_mode protocol
+error is raised by the compositor.
 </div>
             </li>
             
@@ -386,6 +389,10 @@ obeyed by the client.
               
                 <div class="f6 lh-copy code">
                   ZXDG_TOPLEVEL_DECORATION_V1_ERROR_ORPHANED  <span class="green">/* xdg_toplevel destroyed before the decoration object */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  ZXDG_TOPLEVEL_DECORATION_V1_ERROR_INVALID_MODE  <span class="green">/* invalid mode */</span> 
                 </div>
               
 

@@ -121,6 +121,10 @@
             <a href="#e:org_kde_plasma_virtual_desktop:removed" class="link blue underline-hover lh-copy">removed</a>
           </li>
           
+          <li>
+            <a href="#e:org_kde_plasma_virtual_desktop:position" class="link blue underline-hover lh-copy">position</a>
+          </li>
+          
         </ul>
       
 
@@ -295,11 +299,14 @@ version of the extension.
 
               
 
-              <div class="f6 lh-copy ws-pre-line code mt3">This event is sent after all other properties has been
-sent after binding to the desktop manager object and after any
-other property changes done after that. This allows
-changes to the org_kde_plasma_virtual_desktop_management properties to be seen as
-atomic, even if they happen via multiple events.
+              <div class="f6 lh-copy ws-pre-line code mt3">This event is sent after all other properties have been sent after
+binding to the desktop manager global and after all changes to
+org_kde_plasma_virtual_desktop_management and org_kde_plasma_virtual_desktop
+properties have been sent.
+
+This allows changes to org_kde_plasma_virtual_desktop_management and
+org_kde_plasma_virtual_desktop properties to be seen as atomic, even
+if they happen via multiple events.
 </div>
             </li>
             
@@ -485,6 +492,29 @@ atomic, even if they happen via multiple events.
 
               <div class="f6 lh-copy ws-pre-line code mt3">This virtual desktop has just been removed by the server:
 All windows will lose the association to this desktop.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:org_kde_plasma_virtual_desktop:position">
+                <a href="#e:org_kde_plasma_virtual_desktop:position" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  position
+                </div>
+                <div class="f5 ml2">
+                  virtual desktop position
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  <span class="purple">uint32_t</span> index <span class="green">/* virtual desktop position */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">The position of the virtual desktop in the desktop list. The virtual
+desktop position is in the [0, N - 1] range, where N is the number of
+virtual desktops.
 </div>
             </li>
             

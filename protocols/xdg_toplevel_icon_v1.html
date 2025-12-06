@@ -412,7 +412,9 @@ overrides the preexisting pixel data.
 The wl_buffer must be kept alive for as long as the xdg_toplevel_icon
 it is associated with is not destroyed, otherwise a &#x27;no_buffer&#x27; error
 is raised. The buffer contents must not be modified after it was
-assigned to the icon.
+assigned to the icon. As a result, the region of the wl_shm_pool&#x27;s
+backing storage used for the wl_buffer must not be modified after this
+request is sent. The wl_buffer.release event is unused.
 
 If this request is made after the icon has been assigned to a toplevel
 via &#x27;set_icon&#x27;, a &#x27;immutable&#x27; error must be raised.

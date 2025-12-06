@@ -78,6 +78,14 @@
             <a href="#r:kde_external_brightness_device_v1:commit" class="link blue underline-hover lh-copy">commit</a>
           </li>
           
+          <li>
+            <a href="#r:kde_external_brightness_device_v1:set_observed_brightness" class="link blue underline-hover lh-copy">set_observed_brightness</a>
+          </li>
+          
+          <li>
+            <a href="#r:kde_external_brightness_device_v1:set_uses_ddc_ci" class="link blue underline-hover lh-copy">set_uses_ddc_ci</a>
+          </li>
+          
         </ul>
       
 
@@ -187,7 +195,8 @@ process outside of the compositor.
           kde_external_brightness_device_v1
         </h2>
         <div class="f6 lh-copy ws-pre-line code">After creating this object, the client should issue all relevant setup requests
-(set_internal, set_edid, set_max_brightness) and finish the sequence with commit.
+(set_internal, set_edid, set_max_brightness, optionally set_observed_brightness)
+and finish the sequence with commit.
 Afterwards, for each change in values, the client must call commit again.
 </div>
 
@@ -306,6 +315,60 @@ Afterwards, for each change in values, the client must call commit again.
               <div class="f6 lh-copy ws-pre-line code"></div>
             </li>
             
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:kde_external_brightness_device_v1:set_observed_brightness">
+                <a href="#r:kde_external_brightness_device_v1:set_observed_brightness" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  set_observed_brightness
+                </div>
+                <div class="f5 ml2">
+                  notifies the compositor of the brightness that was read from this device
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">kde_external_brightness_device_v1_set_observed_brightness</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct kde_external_brightness_device_v1*</span> kde_external_brightness_device_v1,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> value <span class="green">/* the observed value that was read */</span></div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">The client can set this to notify the compositor of the device&#x27;s initial brightness.
+It can also set this again after the initial commit to notify the compositor that
+the brightness level has changed due to external factors.
+The compositor is free to use or ignore this value as it sees fit.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:kde_external_brightness_device_v1:set_uses_ddc_ci">
+                <a href="#r:kde_external_brightness_device_v1:set_uses_ddc_ci" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  set_uses_ddc_ci
+                </div>
+                <div class="f5 ml2">
+                  notifies the compositor that DDC/CI is used to control brightness etc.
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">kde_external_brightness_device_v1_set_uses_ddc_ci</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct kde_external_brightness_device_v1*</span> kde_external_brightness_device_v1,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> value <span class="green">/* 1 if it uses DDC/CI, 0 if not (assumed by default) */</span></div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">The compositor can use this information to ignore this object if its commands
+expose monitor issues. The compositor may also reduce the amount of brightness
+requests given potentially slow response times and concerns about monitor EEPROM
+longevity/wear-out.
+</div>
+            </li>
+            
           </ul>
         
 
@@ -331,7 +394,8 @@ Afterwards, for each change in values, the client must call commit again.
               
 
               <div class="f6 lh-copy ws-pre-line code mt3">The client must ensure that if the brightness level changes due to external factors,
-that it overwrites those changes with what the compositor last requested.
+that it either overwrites those changes with what the compositor last requested,
+or commit again with set_observed_brightness specifying the changed brightness.
 </div>
             </li>
             

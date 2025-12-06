@@ -1,0 +1,195 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>pointer_warp_v1</title>
+
+    <link rel="stylesheet" href="/wayland-protocol-docs/main.css">
+     
+  </head>
+  <body class="black-70 flex sans-serif ph4-l">
+    <div id="sidebar" class="w-20">
+      <div class="fixed vh-100 overflow-y-auto w-20">
+        <a href="/wayland-protocol-docs/" class="f4 link near-black dim lh-title db mt3">
+          Home
+        </a>
+        
+  <div class="ph2">
+    
+
+<div>
+  <ul class="list pl0">
+  
+    <li>
+      <a href="#i:wp_pointer_warp_v1" class="link blue underline-hover lh-copy">wp_pointer_warp_v1</a>
+
+      
+        <div>
+          <a href="#rh:wp_pointer_warp_v1" class="link blue underline-hover lh-copy pl3">Requests</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#r:wp_pointer_warp_v1:destroy" class="link blue underline-hover lh-copy">destroy</a>
+          </li>
+          
+          <li>
+            <a href="#r:wp_pointer_warp_v1:warp_pointer" class="link blue underline-hover lh-copy">warp_pointer</a>
+          </li>
+          
+        </ul>
+      
+
+      
+      
+
+      
+      
+    </li>
+  
+  </ul>
+</div>
+  </div>
+
+      </div>
+    </div>
+
+    <main id="content" class="mh4 w-80">
+      
+  <div class="ph2">
+    <h1 class="f1 lh-title">pointer_warp_v1</h1>
+    <ul class="list pl0">
+      
+      <li class="mt4">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:wp_pointer_warp_v1">
+          <a href="#i:wp_pointer_warp_v1" class="link dim black-70 child pr2 absolute left--2">#</a>
+          wp_pointer_warp_v1
+        </h2>
+        <div class="f6 lh-copy ws-pre-line code">This global interface allows applications to request the pointer to be
+moved to a position relative to a wl_surface.
+
+Note that if the desired behavior is to constrain the pointer to an area
+or lock it to a position, this protocol does not provide a reliable way
+to do that. The pointer constraint and pointer lock protocols should be
+used for those use cases instead.
+
+Warning! The protocol described in this file is currently in the testing
+phase. Backward compatible changes may be added together with the
+corresponding interface version bump. Backward incompatible changes can
+only be done by creating a new major version of the extension.
+</div>
+
+        
+          <h3 class=" f5 lh-title" id="rh:wp_pointer_warp_v1">Requests</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:wp_pointer_warp_v1:destroy">
+                <a href="#r:wp_pointer_warp_v1:destroy" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  destroy
+                </div>
+                <div class="f5 ml2">
+                  destroy the warp manager
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">wp_pointer_warp_v1_destroy</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wp_pointer_warp_v1*</span> wp_pointer_warp_v1</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Destroy the pointer warp manager.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:wp_pointer_warp_v1:warp_pointer">
+                <a href="#r:wp_pointer_warp_v1:warp_pointer" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  warp_pointer
+                </div>
+                <div class="f5 ml2">
+                  reposition the pointer
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">wp_pointer_warp_v1_warp_pointer</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wp_pointer_warp_v1*</span> wp_pointer_warp_v1,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_surface*</span> surface, <span class="green">/* surface to position the pointer on */</span></div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_pointer*</span> pointer, <span class="green">/* the pointer that should be repositioned */</span></div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">wl_fixed_t</span> x,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">wl_fixed_t</span> y,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> serial <span class="green">/* serial number of the enter event */</span></div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Request the compositor to move the pointer to a surface-local position.
+Whether or not the compositor honors the request is implementation defined,
+but it should
+- honor it if the surface has pointer focus, including
+  when it has an implicit pointer grab
+- reject it if the enter serial is incorrect
+- reject it if the requested position is outside of the surface
+
+Note that the enter serial is valid for any surface of the client,
+and does not have to be from the surface the pointer is warped to.
+
+</div>
+            </li>
+            
+          </ul>
+        
+
+        
+
+        
+
+        
+
+        
+
+      </li>
+      
+    </ul>
+
+    <h2 class="f4 lh-title">Copyright Info</h2>
+    <div class="f7 lh-copy ws-pre-line code">Copyright © 2024 Neal Gompa
+Copyright © 2024 Xaver Hugl
+Copyright © 2024 Matthias Klumpp
+Copyright © 2024 Vlad Zahorodnii
+
+Permission is hereby granted, free of charge, to any person obtaining a
+copy of this software and associated documentation files (the &quot;Software&quot;),
+to deal in the Software without restriction, including without limitation
+the rights to use, copy, modify, merge, publish, distribute, sublicense,
+and/or sell copies of the Software, and to permit persons to whom the
+Software is furnished to do so, subject to the following conditions:
+The above copyright notice and this permission notice (including the next
+paragraph) shall be included in all copies or substantial portions of the
+Software.
+THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL
+THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+DEALINGS IN THE SOFTWARE.
+</div>
+  </div>
+
+    </main>
+
+  </body>
+</html>

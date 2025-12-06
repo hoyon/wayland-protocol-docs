@@ -447,7 +447,7 @@ emitted from the compositor to tell the client which buffer types and
 formats are supported for reading from the session. The compositor may
 re-send buffer constraint events whenever they change.
 
-The advertise buffer constraints, the compositor must send in no
+To advertise buffer constraints, the compositor must send in no
 particular order: zero or more shm_format and dmabuf_format events, zero
 or one dmabuf_device event, and exactly one buffer_size event. Then the
 compositor must send a done event.
@@ -747,7 +747,7 @@ If the capture fails, the compositor must send the failed event.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line code">Destroys the session. This request can be sent at any time by the
+              <div class="f6 lh-copy ws-pre-line code">Destroys the frame. This request can be sent at any time by the
 client.
 </div>
             </li>
@@ -1130,7 +1130,7 @@ this object.
                   get_capture_session
                 </div>
                 <div class="f5 ml2">
-                  get image copy captuerer session
+                  get image copy capturer session
                 </div>
               </div>
               
@@ -1286,7 +1286,7 @@ Compositors may delay this event until the client captures a new frame.
 
               
                 <div class="f6 lh-copy code">
-                  EXT_IMAGE_COPY_CAPTURE_CURSOR_SESSION_V1_ERROR_DUPLICATE_SESSION  <span class="green">/* get_captuerer_session sent twice */</span> 
+                  EXT_IMAGE_COPY_CAPTURE_CURSOR_SESSION_V1_ERROR_DUPLICATE_SESSION  <span class="green">/* get_capture_session sent twice */</span> 
                 </div>
               
 

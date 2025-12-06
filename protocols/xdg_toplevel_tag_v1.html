@@ -1,0 +1,228 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>xdg_toplevel_tag_v1</title>
+
+    <link rel="stylesheet" href="/wayland-protocol-docs/main.css">
+     
+  </head>
+  <body class="black-70 flex sans-serif ph4-l">
+    <div id="sidebar" class="w-20">
+      <div class="fixed vh-100 overflow-y-auto w-20">
+        <a href="/wayland-protocol-docs/" class="f4 link near-black dim lh-title db mt3">
+          Home
+        </a>
+        
+  <div class="ph2">
+    
+
+<div>
+  <ul class="list pl0">
+  
+    <li>
+      <a href="#i:xdg_toplevel_tag_manager_v1" class="link blue underline-hover lh-copy">xdg_toplevel_tag_manager_v1</a>
+
+      
+        <div>
+          <a href="#rh:xdg_toplevel_tag_manager_v1" class="link blue underline-hover lh-copy pl3">Requests</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#r:xdg_toplevel_tag_manager_v1:destroy" class="link blue underline-hover lh-copy">destroy</a>
+          </li>
+          
+          <li>
+            <a href="#r:xdg_toplevel_tag_manager_v1:set_toplevel_tag" class="link blue underline-hover lh-copy">set_toplevel_tag</a>
+          </li>
+          
+          <li>
+            <a href="#r:xdg_toplevel_tag_manager_v1:set_toplevel_description" class="link blue underline-hover lh-copy">set_toplevel_description</a>
+          </li>
+          
+        </ul>
+      
+
+      
+      
+
+      
+      
+    </li>
+  
+  </ul>
+</div>
+  </div>
+
+      </div>
+    </div>
+
+    <main id="content" class="mh4 w-80">
+      
+  <div class="ph2">
+    <h1 class="f1 lh-title">xdg_toplevel_tag_v1</h1>
+    <ul class="list pl0">
+      
+      <li class="mt4">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:xdg_toplevel_tag_manager_v1">
+          <a href="#i:xdg_toplevel_tag_manager_v1" class="link dim black-70 child pr2 absolute left--2">#</a>
+          xdg_toplevel_tag_manager_v1
+        </h2>
+        <div class="f6 lh-copy ws-pre-line code">In order to make some window properties like position, size,
+&quot;always on top&quot; or user defined rules for window behavior persistent, the
+compositor needs some way to identify windows even after the application
+has been restarted.
+This protocol allows clients to make this possible by setting a tag for
+toplevels.
+
+Warning! The protocol described in this file is currently in the testing
+phase. Backward compatible changes may be added together with the
+corresponding interface version bump. Backward incompatible changes can
+only be done by creating a new major version of the extension.
+</div>
+
+        
+          <h3 class=" f5 lh-title" id="rh:xdg_toplevel_tag_manager_v1">Requests</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:xdg_toplevel_tag_manager_v1:destroy">
+                <a href="#r:xdg_toplevel_tag_manager_v1:destroy" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  destroy
+                </div>
+                <div class="f5 ml2">
+                  destroy toplevel tag object
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">xdg_toplevel_tag_manager_v1_destroy</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct xdg_toplevel_tag_manager_v1*</span> xdg_toplevel_tag_manager_v1</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Destroy this toplevel tag manager object. This request has no other
+effects.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:xdg_toplevel_tag_manager_v1:set_toplevel_tag">
+                <a href="#r:xdg_toplevel_tag_manager_v1:set_toplevel_tag" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  set_toplevel_tag
+                </div>
+                <div class="f5 ml2">
+                  set tag
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">xdg_toplevel_tag_manager_v1_set_toplevel_tag</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct xdg_toplevel_tag_manager_v1*</span> xdg_toplevel_tag_manager_v1,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct xdg_toplevel*</span> toplevel,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">const char*</span> tag <span class="green">/* untranslated tag */</span></div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Set a tag for a toplevel. The tag may be shown to the user in UI, so
+it&#x27;s preferable for it to be human readable, but it must be suitable
+for configuration files and should not be translated.
+Suitable tags would for example be &quot;main window&quot;, &quot;settings&quot;,
+&quot;e-mail composer&quot; or similar.
+
+The tag does not need to be unique across applications, and the client
+may set the same tag for multiple windows, for example if the user has
+opened the same UI twice. How the potentially resulting conflicts are
+handled is compositor policy.
+
+The client should set the tag as part of the initial commit on the
+associated toplevel, but it may set it at any time afterwards as well,
+for example if the purpose of the toplevel changes.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:xdg_toplevel_tag_manager_v1:set_toplevel_description">
+                <a href="#r:xdg_toplevel_tag_manager_v1:set_toplevel_description" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  set_toplevel_description
+                </div>
+                <div class="f5 ml2">
+                  set description
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">xdg_toplevel_tag_manager_v1_set_toplevel_description</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct xdg_toplevel_tag_manager_v1*</span> xdg_toplevel_tag_manager_v1,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct xdg_toplevel*</span> toplevel,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">const char*</span> description <span class="green">/* translated description */</span></div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Set a description for a toplevel. This description may be shown to the
+user in UI or read by a screen reader for accessibility purposes, and
+should be translated.
+It is recommended to make the description the translation of the tag.
+
+The client should set the description as part of the initial commit on
+the associated toplevel, but it may set it at any time afterwards as
+well, for example if the purpose of the toplevel changes.
+</div>
+            </li>
+            
+          </ul>
+        
+
+        
+
+        
+
+        
+
+        
+
+      </li>
+      
+    </ul>
+
+    <h2 class="f4 lh-title">Copyright Info</h2>
+    <div class="f7 lh-copy ws-pre-line code">Copyright © 2024 Xaver Hugl
+
+Permission is hereby granted, free of charge, to any person obtaining a
+copy of this software and associated documentation files (the &quot;Software&quot;),
+to deal in the Software without restriction, including without limitation
+the rights to use, copy, modify, merge, publish, distribute, sublicense,
+and/or sell copies of the Software, and to permit persons to whom the
+Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice (including the next
+paragraph) shall be included in all copies or substantial portions of the
+Software.
+
+THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL
+THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+DEALINGS IN THE SOFTWARE.
+</div>
+  </div>
+
+    </main>
+
+  </body>
+</html>

@@ -583,6 +583,10 @@ wp_drm_lease_v1.finished without issuing a lease fd. Compositors are
 encouraged to send this event when they lose access to connector, for
 example when the connector is hot-unplugged, when the connector gets
 leased to a client or when the compositor loses DRM master.
+
+If a client holds a lease for the connector, the status of the lease
+remains the same. The client should destroy the object after receiving
+this event.
 </div>
             </li>
             
@@ -757,6 +761,10 @@ event.
               <div class="f6 lh-copy ws-pre-line code">The client should send this to indicate that it no longer wishes to use
 this lease. The compositor should use drmModeRevokeLease on the
 appropriate file descriptor, if necessary.
+
+Upon destruction, the compositor should advertise the connector for
+leasing again by sending the connector event through the
+wp_drm_lease_device_v1 interface.
 </div>
             </li>
             
@@ -817,7 +825,9 @@ this object and submit a new lease request. The compositor will send
 no further events for this object after sending the finish event.
 Compositors should revoke the lease when any of the leased resources
 become unavailable, namely when a hot-unplug occurs or when the
-compositor loses DRM master.
+compositor loses DRM master. Compositors may advertise the connector
+for leasing again, if the resource is available, by sending the
+connector event through the wp_drm_lease_device_v1 interface.
 </div>
             </li>
             

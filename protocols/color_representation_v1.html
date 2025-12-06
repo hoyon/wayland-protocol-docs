@@ -1,0 +1,754 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>color_representation_v1</title>
+
+    <link rel="stylesheet" href="/wayland-protocol-docs/main.css">
+     
+  </head>
+  <body class="black-70 flex sans-serif ph4-l">
+    <div id="sidebar" class="w-20">
+      <div class="fixed vh-100 overflow-y-auto w-20">
+        <a href="/wayland-protocol-docs/" class="f4 link near-black dim lh-title db mt3">
+          Home
+        </a>
+        
+  <div class="ph2">
+    
+
+<div>
+  <ul class="list pl0">
+  
+    <li>
+      <a href="#i:wp_color_representation_manager_v1" class="link blue underline-hover lh-copy">wp_color_representation_manager_v1</a>
+
+      
+        <div>
+          <a href="#rh:wp_color_representation_manager_v1" class="link blue underline-hover lh-copy pl3">Requests</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#r:wp_color_representation_manager_v1:destroy" class="link blue underline-hover lh-copy">destroy</a>
+          </li>
+          
+          <li>
+            <a href="#r:wp_color_representation_manager_v1:get_surface" class="link blue underline-hover lh-copy">get_surface</a>
+          </li>
+          
+        </ul>
+      
+
+      
+        <div>
+          <a href="#eh:wp_color_representation_manager_v1" class="link blue underline-hover lh-copy pl3">Events</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#e:wp_color_representation_manager_v1:supported_alpha_mode" class="link blue underline-hover lh-copy">supported_alpha_mode</a>
+          </li>
+          
+          <li>
+            <a href="#e:wp_color_representation_manager_v1:supported_coefficients_and_ranges" class="link blue underline-hover lh-copy">supported_coefficients_and_ranges</a>
+          </li>
+          
+          <li>
+            <a href="#e:wp_color_representation_manager_v1:done" class="link blue underline-hover lh-copy">done</a>
+          </li>
+          
+        </ul>
+      
+
+      
+        <div>
+          <a href="#enumh:wp_color_representation_manager_v1" class="link blue underline-hover lh-copy pl3">Enums</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#enum:wp_color_representation_manager_v1:error" class="link blue underline-hover lh-copy">error</a>
+          </li>
+          
+        </ul>
+      
+    </li>
+  
+    <li>
+      <a href="#i:wp_color_representation_surface_v1" class="link blue underline-hover lh-copy">wp_color_representation_surface_v1</a>
+
+      
+        <div>
+          <a href="#rh:wp_color_representation_surface_v1" class="link blue underline-hover lh-copy pl3">Requests</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#r:wp_color_representation_surface_v1:destroy" class="link blue underline-hover lh-copy">destroy</a>
+          </li>
+          
+          <li>
+            <a href="#r:wp_color_representation_surface_v1:set_alpha_mode" class="link blue underline-hover lh-copy">set_alpha_mode</a>
+          </li>
+          
+          <li>
+            <a href="#r:wp_color_representation_surface_v1:set_coefficients_and_range" class="link blue underline-hover lh-copy">set_coefficients_and_range</a>
+          </li>
+          
+          <li>
+            <a href="#r:wp_color_representation_surface_v1:set_chroma_location" class="link blue underline-hover lh-copy">set_chroma_location</a>
+          </li>
+          
+        </ul>
+      
+
+      
+      
+
+      
+        <div>
+          <a href="#enumh:wp_color_representation_surface_v1" class="link blue underline-hover lh-copy pl3">Enums</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#enum:wp_color_representation_surface_v1:error" class="link blue underline-hover lh-copy">error</a>
+          </li>
+          
+          <li>
+            <a href="#enum:wp_color_representation_surface_v1:alpha_mode" class="link blue underline-hover lh-copy">alpha_mode</a>
+          </li>
+          
+          <li>
+            <a href="#enum:wp_color_representation_surface_v1:coefficients" class="link blue underline-hover lh-copy">coefficients</a>
+          </li>
+          
+          <li>
+            <a href="#enum:wp_color_representation_surface_v1:range" class="link blue underline-hover lh-copy">range</a>
+          </li>
+          
+          <li>
+            <a href="#enum:wp_color_representation_surface_v1:chroma_location" class="link blue underline-hover lh-copy">chroma_location</a>
+          </li>
+          
+        </ul>
+      
+    </li>
+  
+  </ul>
+</div>
+  </div>
+
+      </div>
+    </div>
+
+    <main id="content" class="mh4 w-80">
+      
+  <div class="ph2">
+    <h1 class="f1 lh-title">color_representation_v1</h1>
+    <ul class="list pl0">
+      
+      <li class="mt4">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:wp_color_representation_manager_v1">
+          <a href="#i:wp_color_representation_manager_v1" class="link dim black-70 child pr2 absolute left--2">#</a>
+          wp_color_representation_manager_v1
+        </h2>
+        <div class="f6 lh-copy ws-pre-line code">A singleton global interface used for getting color representation
+extensions for wl_surface. The extension interfaces allow setting the
+color representation of surfaces.
+
+Compositors should never remove this global.
+</div>
+
+        
+          <h3 class=" f5 lh-title" id="rh:wp_color_representation_manager_v1">Requests</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:wp_color_representation_manager_v1:destroy">
+                <a href="#r:wp_color_representation_manager_v1:destroy" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  destroy
+                </div>
+                <div class="f5 ml2">
+                  destroy the manager
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">wp_color_representation_manager_v1_destroy</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wp_color_representation_manager_v1*</span> wp_color_representation_manager_v1</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Destroy the wp_color_representation_manager_v1 object. This does not
+affect any other objects in any way.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:wp_color_representation_manager_v1:get_surface">
+                <a href="#r:wp_color_representation_manager_v1:get_surface" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  get_surface
+                </div>
+                <div class="f5 ml2">
+                  create a color representation interface for a wl_surface
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>struct wp_color_representation_surface_v1* </span><span class="dark-blue">wp_color_representation_manager_v1_get_surface</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wp_color_representation_manager_v1*</span> wp_color_representation_manager_v1,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_surface*</span> surface</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">If a wp_color_representation_surface_v1 object already exists for the
+given wl_surface, the protocol error surface_exists is raised.
+
+This creates a new color wp_color_representation_surface_v1 object for
+the given wl_surface.
+
+See the wp_color_representation_surface_v1 interface for more details.
+</div>
+            </li>
+            
+          </ul>
+        
+
+        
+          <h3 class=" f5 lh-title" id="eh:wp_color_representation_manager_v1">Events</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:wp_color_representation_manager_v1:supported_alpha_mode">
+                <a href="#e:wp_color_representation_manager_v1:supported_alpha_mode" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  supported_alpha_mode
+                </div>
+                <div class="f5 ml2">
+                  supported alpha modes
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  <span class="purple">uint32_t</span> alpha_mode <span class="green">/* supported alpha mode */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">When this object is created, it shall immediately send this event once
+for each alpha mode the compositor supports.
+
+For the definition of the supported values, see the
+wp_color_representation_surface_v1::alpha_mode enum.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:wp_color_representation_manager_v1:supported_coefficients_and_ranges">
+                <a href="#e:wp_color_representation_manager_v1:supported_coefficients_and_ranges" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  supported_coefficients_and_ranges
+                </div>
+                <div class="f5 ml2">
+                  supported matrix coefficients and ranges
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  <span class="purple">uint32_t</span> coefficients <span class="green">/* supported matrix coefficients */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  <span class="purple">uint32_t</span> range <span class="green">/* full range flag */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">When this object is created, it shall immediately send this event once
+for each matrix coefficient and color range combination the compositor
+supports.
+
+For the definition of the supported values, see the
+wp_color_representation_surface_v1::coefficients and
+wp_color_representation_surface_v1::range enums.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:wp_color_representation_manager_v1:done">
+                <a href="#e:wp_color_representation_manager_v1:done" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  done
+                </div>
+                <div class="f5 ml2">
+                  all features have been sent
+                </div>
+              </div>
+
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">This event is sent when all supported features have been sent.
+</div>
+            </li>
+            
+          </ul>
+
+        
+
+        
+          <h3 class=" f5 lh-title" id="enumh:wp_color_representation_manager_v1">Enums</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="enum:wp_color_representation_manager_v1:error">
+                <a href="#enum:wp_color_representation_manager_v1:error" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  error
+                </div>
+                <div class="f5 ml2">
+                  protocol errors
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  WP_COLOR_REPRESENTATION_MANAGER_V1_ERROR_SURFACE_EXISTS  <span class="green">/* color representation surface exists already */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3"></div>
+            </li>
+            
+          </ul>
+
+        
+
+      </li>
+      
+      <li class="mt4">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:wp_color_representation_surface_v1">
+          <a href="#i:wp_color_representation_surface_v1" class="link dim black-70 child pr2 absolute left--2">#</a>
+          wp_color_representation_surface_v1
+        </h2>
+        <div class="f6 lh-copy ws-pre-line code">A wp_color_representation_surface_v1 allows the client to set the color
+representation metadata of a surface.
+
+By default, a surface does not have any color representation metadata set.
+The reconstruction of R, G, B signals on such surfaces is compositor
+implementation defined. The alpha mode is assumed to be
+premultiplied_electrical when the alpha mode is unset.
+
+If the wl_surface associated with the wp_color_representation_surface_v1
+is destroyed, the wp_color_representation_surface_v1 object becomes inert.
+</div>
+
+        
+          <h3 class=" f5 lh-title" id="rh:wp_color_representation_surface_v1">Requests</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:wp_color_representation_surface_v1:destroy">
+                <a href="#r:wp_color_representation_surface_v1:destroy" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  destroy
+                </div>
+                <div class="f5 ml2">
+                  destroy the color representation
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">wp_color_representation_surface_v1_destroy</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wp_color_representation_surface_v1*</span> wp_color_representation_surface_v1</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Destroy the wp_color_representation_surface_v1 object.
+
+Destroying this object unsets all the color representation metadata from
+the surface. See the wp_color_representation_surface_v1 interface
+description for how a compositor handles a surface without color
+representation metadata. Unsetting is double-buffered state, see
+wl_surface.commit.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:wp_color_representation_surface_v1:set_alpha_mode">
+                <a href="#r:wp_color_representation_surface_v1:set_alpha_mode" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  set_alpha_mode
+                </div>
+                <div class="f5 ml2">
+                  set the surface alpha mode
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">wp_color_representation_surface_v1_set_alpha_mode</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wp_color_representation_surface_v1*</span> wp_color_representation_surface_v1,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> alpha_mode <span class="green">/* alpha mode */</span></div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">If this protocol object is inert, the protocol error inert is raised.
+
+Assuming an alpha channel exists, it is always linear. The alpha mode
+determines whether and how the color channels include pre-multiplied
+alpha. Using straight alpha might have performance benefits.
+
+Only alpha modes advertised by the compositor are allowed to be used as
+argument for this request. The &quot;alpha_mode&quot; protocol error is raised
+otherwise.
+
+Alpha mode is double buffered, see wl_surface.commit.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:wp_color_representation_surface_v1:set_coefficients_and_range">
+                <a href="#r:wp_color_representation_surface_v1:set_coefficients_and_range" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  set_coefficients_and_range
+                </div>
+                <div class="f5 ml2">
+                  set the matrix coefficients and range
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">wp_color_representation_surface_v1_set_coefficients_and_range</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wp_color_representation_surface_v1*</span> wp_color_representation_surface_v1,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> coefficients, <span class="green">/* matrix coefficients */</span></div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> range <span class="green">/* range */</span></div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">If this protocol object is inert, the protocol error inert is raised.
+
+Set the matrix coefficients and video range which defines the formula
+and the related constants used to derive red, green and blue signals.
+Usually coefficients correspond to MatrixCoefficients code points in
+H.273.
+
+Only combinations advertised by the compositor are allowed to be used as
+argument for this request. The &quot;coefficients&quot; protocol error is raised
+otherwise.
+
+A call to wl_surface.commit verifies that the pixel format and the
+coefficients-range combination in the committed surface contents are
+compatible, if contents exist. The &quot;pixel_format&quot; protocol error is
+raised otherwise.
+
+A pixel format is compatible with the coefficients-range combination if
+the related equations and conventions as defined in H.273 can produce
+the color channels (RGB or YCbCr) of the pixel format.
+
+For the definition of the supported combination, see the
+wp_color_representation_surface_v1::coefficients and
+wp_color_representation_surface_v1::range enums.
+
+The coefficients-range combination is double-buffered, see
+wl_surface.commit.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:wp_color_representation_surface_v1:set_chroma_location">
+                <a href="#r:wp_color_representation_surface_v1:set_chroma_location" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  set_chroma_location
+                </div>
+                <div class="f5 ml2">
+                  set the chroma location
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">wp_color_representation_surface_v1_set_chroma_location</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wp_color_representation_surface_v1*</span> wp_color_representation_surface_v1,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> chroma_location <span class="green">/* chroma sample location */</span></div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">If this protocol object is inert, the protocol error inert is raised.
+
+Set the chroma location type which defines the position of downsampled
+chroma samples, corresponding to Chroma420SampleLocType code points in
+H.273.
+
+An invalid chroma location enum value raises the &quot;chroma_location&quot;
+protocol error.
+
+A call to wl_surface.commit verifies that the pixel format and chroma
+location type in the committed surface contents are compatible, if
+contents exist. The &quot;pixel_format&quot; protocol error is raised otherwise.
+
+For the definition of the supported chroma location types, see the
+wp_color_representation_surface_v1::chroma_location enum.
+
+The chroma location type is double-buffered, see wl_surface.commit.
+</div>
+            </li>
+            
+          </ul>
+        
+
+        
+
+        
+
+        
+          <h3 class=" f5 lh-title" id="enumh:wp_color_representation_surface_v1">Enums</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="enum:wp_color_representation_surface_v1:error">
+                <a href="#enum:wp_color_representation_surface_v1:error" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  error
+                </div>
+                <div class="f5 ml2">
+                  protocol errors
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  WP_COLOR_REPRESENTATION_SURFACE_V1_ERROR_ALPHA_MODE  <span class="green">/* unsupported alpha mode */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  WP_COLOR_REPRESENTATION_SURFACE_V1_ERROR_COEFFICIENTS  <span class="green">/* unsupported coefficients */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  WP_COLOR_REPRESENTATION_SURFACE_V1_ERROR_PIXEL_FORMAT  <span class="green">/* the pixel format and a set value are incompatible */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  WP_COLOR_REPRESENTATION_SURFACE_V1_ERROR_INERT  <span class="green">/* forbidden request on inert object */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  WP_COLOR_REPRESENTATION_SURFACE_V1_ERROR_CHROMA_LOCATION  <span class="green">/* invalid chroma location */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3"></div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="enum:wp_color_representation_surface_v1:alpha_mode">
+                <a href="#enum:wp_color_representation_surface_v1:alpha_mode" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  alpha_mode
+                </div>
+                <div class="f5 ml2">
+                  alpha mode
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  WP_COLOR_REPRESENTATION_SURFACE_V1_ALPHA_MODE_PREMULTIPLIED_ELECTRICAL  
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  WP_COLOR_REPRESENTATION_SURFACE_V1_ALPHA_MODE_PREMULTIPLIED_OPTICAL  
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  WP_COLOR_REPRESENTATION_SURFACE_V1_ALPHA_MODE_STRAIGHT  
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">Specifies how the alpha channel affects the color channels.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="enum:wp_color_representation_surface_v1:coefficients">
+                <a href="#enum:wp_color_representation_surface_v1:coefficients" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  coefficients
+                </div>
+                <div class="f5 ml2">
+                  named coefficients
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  WP_COLOR_REPRESENTATION_SURFACE_V1_COEFFICIENTS_IDENTITY  
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  WP_COLOR_REPRESENTATION_SURFACE_V1_COEFFICIENTS_BT709  
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  WP_COLOR_REPRESENTATION_SURFACE_V1_COEFFICIENTS_FCC  
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  WP_COLOR_REPRESENTATION_SURFACE_V1_COEFFICIENTS_BT601  
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  WP_COLOR_REPRESENTATION_SURFACE_V1_COEFFICIENTS_SMPTE240  
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  WP_COLOR_REPRESENTATION_SURFACE_V1_COEFFICIENTS_BT2020  
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  WP_COLOR_REPRESENTATION_SURFACE_V1_COEFFICIENTS_BT2020_CL  
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  WP_COLOR_REPRESENTATION_SURFACE_V1_COEFFICIENTS_ICTCP  
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">Named matrix coefficients used to encode well-known sets of
+coefficients. H.273 is the authority, when it comes to the exact values
+of coefficients and authoritative specifications, where an equivalent
+code point exists.
+
+A value of 0 is invalid and will never be present in the list of enums.
+
+Descriptions do list the specifications for convenience.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="enum:wp_color_representation_surface_v1:range">
+                <a href="#enum:wp_color_representation_surface_v1:range" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  range
+                </div>
+                <div class="f5 ml2">
+                  Color range values
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  WP_COLOR_REPRESENTATION_SURFACE_V1_RANGE_FULL  <span class="green">/* Full color range */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  WP_COLOR_REPRESENTATION_SURFACE_V1_RANGE_LIMITED  <span class="green">/* Limited color range */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">Possible color range values.
+
+A value of 0 is invalid and will never be present in the list of enums.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="enum:wp_color_representation_surface_v1:chroma_location">
+                <a href="#enum:wp_color_representation_surface_v1:chroma_location" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  chroma_location
+                </div>
+                <div class="f5 ml2">
+                  Chroma sample location for 4:2:0 YCbCr
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  WP_COLOR_REPRESENTATION_SURFACE_V1_CHROMA_LOCATION_TYPE_0  
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  WP_COLOR_REPRESENTATION_SURFACE_V1_CHROMA_LOCATION_TYPE_1  
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  WP_COLOR_REPRESENTATION_SURFACE_V1_CHROMA_LOCATION_TYPE_2  
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  WP_COLOR_REPRESENTATION_SURFACE_V1_CHROMA_LOCATION_TYPE_3  
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  WP_COLOR_REPRESENTATION_SURFACE_V1_CHROMA_LOCATION_TYPE_4  
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  WP_COLOR_REPRESENTATION_SURFACE_V1_CHROMA_LOCATION_TYPE_5  
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">Chroma sample location as defined by H.273 Chroma420SampleLocType.
+
+A value of 0 is invalid and will never be present in the list of enums.
+
+The descriptions list the matching Vulkan VkChromaLocation combinations
+for convenience.
+</div>
+            </li>
+            
+          </ul>
+
+        
+
+      </li>
+      
+    </ul>
+
+    <h2 class="f4 lh-title">Copyright Info</h2>
+    <div class="f7 lh-copy ws-pre-line code">Copyright 2022 Simon Ser
+Copyright 2022 Red Hat, Inc.
+Copyright 2022 Collabora, Ltd.
+Copyright 2022-2025 Red Hat, Inc.
+
+Permission is hereby granted, free of charge, to any person obtaining a
+copy of this software and associated documentation files (the &quot;Software&quot;),
+to deal in the Software without restriction, including without limitation
+the rights to use, copy, modify, merge, publish, distribute, sublicense,
+and/or sell copies of the Software, and to permit persons to whom the
+Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice (including the next
+paragraph) shall be included in all copies or substantial portions of the
+Software.
+
+THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL
+THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+DEALINGS IN THE SOFTWARE.
+</div>
+  </div>
+
+    </main>
+
+  </body>
+</html>

@@ -138,6 +138,34 @@
             <a href="#r:kde_output_configuration_v2:set_brightness" class="link blue underline-hover lh-copy">set_brightness</a>
           </li>
           
+          <li>
+            <a href="#r:kde_output_configuration_v2:set_color_power_tradeoff" class="link blue underline-hover lh-copy">set_color_power_tradeoff</a>
+          </li>
+          
+          <li>
+            <a href="#r:kde_output_configuration_v2:set_dimming" class="link blue underline-hover lh-copy">set_dimming</a>
+          </li>
+          
+          <li>
+            <a href="#r:kde_output_configuration_v2:set_replication_source" class="link blue underline-hover lh-copy">set_replication_source</a>
+          </li>
+          
+          <li>
+            <a href="#r:kde_output_configuration_v2:set_ddc_ci_allowed" class="link blue underline-hover lh-copy">set_ddc_ci_allowed</a>
+          </li>
+          
+          <li>
+            <a href="#r:kde_output_configuration_v2:set_max_bits_per_color" class="link blue underline-hover lh-copy">set_max_bits_per_color</a>
+          </li>
+          
+          <li>
+            <a href="#r:kde_output_configuration_v2:set_edr_policy" class="link blue underline-hover lh-copy">set_edr_policy</a>
+          </li>
+          
+          <li>
+            <a href="#r:kde_output_configuration_v2:set_sharpness" class="link blue underline-hover lh-copy">set_sharpness</a>
+          </li>
+          
         </ul>
       
 
@@ -153,6 +181,10 @@
           
           <li>
             <a href="#e:kde_output_configuration_v2:failed" class="link blue underline-hover lh-copy">failed</a>
+          </li>
+          
+          <li>
+            <a href="#e:kde_output_configuration_v2:failure_reason" class="link blue underline-hover lh-copy">failure_reason</a>
           </li>
           
         </ul>
@@ -182,6 +214,14 @@
           
           <li>
             <a href="#enum:kde_output_configuration_v2:color_profile_source" class="link blue underline-hover lh-copy">color_profile_source</a>
+          </li>
+          
+          <li>
+            <a href="#enum:kde_output_configuration_v2:color_power_tradeoff" class="link blue underline-hover lh-copy">color_power_tradeoff</a>
+          </li>
+          
+          <li>
+            <a href="#enum:kde_output_configuration_v2:edr_policy" class="link blue underline-hover lh-copy">edr_policy</a>
           </li>
           
         </ul>
@@ -622,9 +662,14 @@ variable refresh rate.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line code">The order of outputs can be used to assign desktop environment components to a specific screen,
-see kde_output_order_v1 for details. The priority is 1-based for outputs that will be enabled after
-this changeset is applied, all outputs that are disabled need to have the index set to zero.
+              <div class="f6 lh-copy ws-pre-line code">Set the position of the output in the output order list, with lower values
+being earlier in the list. There&#x27;s no specific value the list has to start
+at, this value is only used in sorting outputs.
+
+The order of outputs can be used to assign desktop environment components
+to a specific screen, see kde_output_order_v1 and kde-output-device-v2 for
+details. Note that for consistent behavior, the priority value needs to be
+unique among all enabled outputs.
 </div>
             </li>
             
@@ -866,8 +911,202 @@ brightness values, like sdr_brightness and brightness_metadata.
 0 is the minimum brightness (not completely dark) and 10000 is
 the maximum brightness.
 This is supported while HDR is active in versions 8 and below,
-or when the device supports the brightness_control capability in
+or when the device supports the &quot;brightness&quot; capability in
 versions 9 and above.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:kde_output_configuration_v2:set_color_power_tradeoff">
+                <a href="#r:kde_output_configuration_v2:set_color_power_tradeoff" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  set_color_power_tradeoff
+                </div>
+                <div class="f5 ml2">
+                  set the preferred color/power tradeoff
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">kde_output_configuration_v2_set_color_power_tradeoff</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct kde_output_configuration_v2*</span> kde_output_configuration_v2,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct kde_output_device_v2*</span> outputdevice, <span class="green">/* outputdevice this setting applies to */</span></div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> preference</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code"></div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:kde_output_configuration_v2:set_dimming">
+                <a href="#r:kde_output_configuration_v2:set_dimming" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  set_dimming
+                </div>
+                <div class="f5 ml2">
+                  dimming multiplier
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">kde_output_configuration_v2_set_dimming</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct kde_output_configuration_v2*</span> kde_output_configuration_v2,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct kde_output_device_v2*</span> outputdevice, <span class="green">/* outputdevice this setting applies to */</span></div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> multiplier <span class="green">/* multiplier in 0-10000 */</span></div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Set the dimming multiplier of the output. This is similar to the
+brightness setting, except it&#x27;s meant to be a temporary setting
+only, not persistent and may be implemented differently depending
+on the display.
+0 is the minimum dimming factor (not completely dark) and 10000
+means the output is not dimmed.
+
+This is supported only when the &quot;brightness&quot; capability is
+also supported.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:kde_output_configuration_v2:set_replication_source">
+                <a href="#r:kde_output_configuration_v2:set_replication_source" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  set_replication_source
+                </div>
+                <div class="f5 ml2">
+                  source output for mirroring
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">kde_output_configuration_v2_set_replication_source</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct kde_output_configuration_v2*</span> kde_output_configuration_v2,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct kde_output_device_v2*</span> outputdevice, <span class="green">/* outputdevice this setting applies to */</span></div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">const char*</span> source <span class="green">/* uuid of the source output */</span></div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Set the source output that the outputdevice should mirror its
+viewport from.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:kde_output_configuration_v2:set_ddc_ci_allowed">
+                <a href="#r:kde_output_configuration_v2:set_ddc_ci_allowed" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  set_ddc_ci_allowed
+                </div>
+                <div class="f5 ml2">
+                  if DDC/CI should be used to control brightness etc.
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">kde_output_configuration_v2_set_ddc_ci_allowed</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct kde_output_configuration_v2*</span> kde_output_configuration_v2,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct kde_output_device_v2*</span> outputdevice, <span class="green">/* outputdevice this setting applies to */</span></div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> allowed <span class="green">/* 1 if allowed, 0 if disabled */</span></div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code"></div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:kde_output_configuration_v2:set_max_bits_per_color">
+                <a href="#r:kde_output_configuration_v2:set_max_bits_per_color" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  set_max_bits_per_color
+                </div>
+                <div class="f5 ml2">
+                  override the max bpc
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">kde_output_configuration_v2_set_max_bits_per_color</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct kde_output_configuration_v2*</span> kde_output_configuration_v2,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct kde_output_device_v2*</span> outputdevice, <span class="green">/* outputdevice this setting applies to */</span></div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> max_bpc <span class="green">/* 0 for the default / automatic */</span></div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">This limits the amount of bits per color that are sent to the display.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:kde_output_configuration_v2:set_edr_policy">
+                <a href="#r:kde_output_configuration_v2:set_edr_policy" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  set_edr_policy
+                </div>
+                <div class="f5 ml2">
+                  set when the compositor may apply EDR
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">kde_output_configuration_v2_set_edr_policy</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct kde_output_configuration_v2*</span> kde_output_configuration_v2,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct kde_output_device_v2*</span> outputdevice, <span class="green">/* outputdevice this setting applies to */</span></div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> policy</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">When EDR is enabled, the compositor may increase the backlight beyond
+the user-specified setting, in order to present HDR content on displays
+without native HDR support.
+This will usually result in better visuals, but also increases battery
+usage.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:kde_output_configuration_v2:set_sharpness">
+                <a href="#r:kde_output_configuration_v2:set_sharpness" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  set_sharpness
+                </div>
+                <div class="f5 ml2">
+                  sharpness strength
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">kde_output_configuration_v2_set_sharpness</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct kde_output_configuration_v2*</span> kde_output_configuration_v2,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct kde_output_device_v2*</span> outputdevice, <span class="green">/* outputdevice this setting applies to */</span></div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> sharpness <span class="green">/* sharpness in 0-10000 */</span></div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">This is the sharpness modifier of the output.
+0 is sharpness disabled and 10000 is the maximum sharpness
 </div>
             </li>
             
@@ -910,6 +1149,28 @@ versions 9 and above.
               
 
               <div class="f6 lh-copy ws-pre-line code mt3">Sent if the server rejects the changes or failed to apply them.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:kde_output_configuration_v2:failure_reason">
+                <a href="#e:kde_output_configuration_v2:failure_reason" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  failure_reason
+                </div>
+                <div class="f5 ml2">
+                  reason for failure
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  <span class="purple">const char*</span> reason <span class="green">/* reason for failure */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">Describes why applying the output configuration failed. Is only
+sent before the failure event.
 </div>
             </li>
             
@@ -1050,6 +1311,58 @@ versions 9 and above.
               
                 <div class="f6 lh-copy code">
                   KDE_OUTPUT_CONFIGURATION_V2_COLOR_PROFILE_SOURCE_EDID  
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3"></div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="enum:kde_output_configuration_v2:color_power_tradeoff">
+                <a href="#enum:kde_output_configuration_v2:color_power_tradeoff" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  color_power_tradeoff
+                </div>
+                <div class="f5 ml2">
+                  tradeoff between power and accuracy
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  KDE_OUTPUT_CONFIGURATION_V2_COLOR_POWER_TRADEOFF_EFFICIENCY  <span class="green">/* prefer efficiency and performance */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  KDE_OUTPUT_CONFIGURATION_V2_COLOR_POWER_TRADEOFF_ACCURACY  <span class="green">/* prefer accuracy */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">The compositor can do a lot of things that trade between
+performance, power and color accuracy. This setting describes
+a high level preference from the user about in which direction
+that tradeoff should be made.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="enum:kde_output_configuration_v2:edr_policy">
+                <a href="#enum:kde_output_configuration_v2:edr_policy" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  edr_policy
+                </div>
+                <div class="f5 ml2">
+                  when the compositor may make use of EDR
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  KDE_OUTPUT_CONFIGURATION_V2_EDR_POLICY_NEVER  
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  KDE_OUTPUT_CONFIGURATION_V2_EDR_POLICY_ALWAYS  
                 </div>
               
 
