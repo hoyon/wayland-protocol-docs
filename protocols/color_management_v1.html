@@ -59,6 +59,10 @@
             <a href="#r:wp_color_manager_v1:create_windows_scrgb" class="link blue underline-hover lh-copy">create_windows_scrgb</a>
           </li>
           
+          <li>
+            <a href="#r:wp_color_manager_v1:get_image_description" class="link blue underline-hover lh-copy">get_image_description</a>
+          </li>
+          
         </ul>
       
 
@@ -233,6 +237,10 @@
             <a href="#e:wp_color_management_surface_feedback_v1:preferred_changed" class="link blue underline-hover lh-copy">preferred_changed</a>
           </li>
           
+          <li>
+            <a href="#e:wp_color_management_surface_feedback_v1:preferred_changed2" class="link blue underline-hover lh-copy">preferred_changed2</a>
+          </li>
+          
         </ul>
       
 
@@ -390,6 +398,10 @@
             <a href="#e:wp_image_description_v1:ready" class="link blue underline-hover lh-copy">ready</a>
           </li>
           
+          <li>
+            <a href="#e:wp_image_description_v1:ready2" class="link blue underline-hover lh-copy">ready2</a>
+          </li>
+          
         </ul>
       
 
@@ -468,6 +480,29 @@
           </li>
           
         </ul>
+      
+
+      
+      
+    </li>
+  
+    <li>
+      <a href="#i:wp_image_description_reference_v1" class="link blue underline-hover lh-copy">wp_image_description_reference_v1</a>
+
+      
+        <div>
+          <a href="#rh:wp_image_description_reference_v1" class="link blue underline-hover lh-copy pl3">Requests</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#r:wp_image_description_reference_v1:destroy" class="link blue underline-hover lh-copy">destroy</a>
+          </li>
+          
+        </ul>
+      
+
+      
       
 
       
@@ -736,6 +771,33 @@ request. The wp_image_description_v1.ready event shall be sent.
 </div>
             </li>
             
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:wp_color_manager_v1:get_image_description">
+                <a href="#r:wp_color_manager_v1:get_image_description" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  get_image_description
+                </div>
+                <div class="f5 ml2">
+                  create an image description from a reference
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>struct wp_image_description_v1* </span><span class="dark-blue">wp_color_manager_v1_get_image_description</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wp_color_manager_v1*</span> wp_color_manager_v1,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wp_image_description_reference_v1*</span> reference</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">This request retrieves the image description backing a reference.
+
+The get_information request can be used if and only if the request that
+creates the reference allows it.
+</div>
+            </li>
+            
           </ul>
         
 
@@ -762,6 +824,9 @@ request. The wp_image_description_v1.ready event shall be sent.
 
               <div class="f6 lh-copy ws-pre-line code mt3">When this object is created, it shall immediately send this event once
 for each rendering intent the compositor supports.
+
+A compositor must not advertise intents that are deprecated in the
+bound version of the interface.
 </div>
             </li>
             
@@ -784,6 +849,9 @@ for each rendering intent the compositor supports.
 
               <div class="f6 lh-copy ws-pre-line code mt3">When this object is created, it shall immediately send this event once
 for each compositor supported feature listed in the enumeration.
+
+A compositor must not advertise features that are deprecated in the
+bound version of the interface.
 </div>
             </li>
             
@@ -807,6 +875,9 @@ for each compositor supported feature listed in the enumeration.
               <div class="f6 lh-copy ws-pre-line code mt3">When this object is created, it shall immediately send this event once
 for each named transfer function the compositor supports with the
 parametric image description creator.
+
+A compositor must not advertise transfer functions that are deprecated
+in the bound version of the interface.
 </div>
             </li>
             
@@ -830,6 +901,9 @@ parametric image description creator.
               <div class="f6 lh-copy ws-pre-line code mt3">When this object is created, it shall immediately send this event once
 for each named set of primaries the compositor supports with the
 parametric image description creator.
+
+A compositor must not advertise names that are deprecated in the
+bound version of the interface.
 </div>
             </li>
             
@@ -913,6 +987,10 @@ transfer functions and named primaries have been sent.
               
                 <div class="f6 lh-copy code">
                   WP_COLOR_MANAGER_V1_RENDER_INTENT_RELATIVE_BPC  <span class="green">/* media-relative colorimetric + black point compensation */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  WP_COLOR_MANAGER_V1_RENDER_INTENT_ABSOLUTE_NO_ADAPTATION  
                 </div>
               
 
@@ -1096,6 +1174,10 @@ A value of 0 is invalid and will never be present in the list of enums.
               
                 <div class="f6 lh-copy code">
                   WP_COLOR_MANAGER_V1_TRANSFER_FUNCTION_HLG  
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  WP_COLOR_MANAGER_V1_TRANSFER_FUNCTION_COMPOUND_POWER_2_4  
                 </div>
               
 
@@ -1555,13 +1637,39 @@ unsupported_feature error is emitted.
                   preferred_changed
                 </div>
                 <div class="f5 ml2">
+                  the preferred image description changed (32-bit)
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  <span class="purple">uint32_t</span> identity <span class="green">/* the 32-bit image description id number */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">Starting from interface version 2, &#x27;preferred_changed2&#x27; is sent instead
+of this event. See the &#x27;preferred_changed2&#x27; event for the definition.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:wp_color_management_surface_feedback_v1:preferred_changed2">
+                <a href="#e:wp_color_management_surface_feedback_v1:preferred_changed2" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  preferred_changed2
+                </div>
+                <div class="f5 ml2">
                   the preferred image description changed
                 </div>
               </div>
 
               
                 <div class="f6 lh-copy code">
-                  <span class="purple">uint32_t</span> identity <span class="green">/* image description id number */</span> 
+                  <span class="purple">uint32_t</span> identity_hi <span class="green">/* high 32 bits of the 64-bit image description id number */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  <span class="purple">uint32_t</span> identity_lo <span class="green">/* low 32 bits of the 64-bit image description id number */</span> 
                 </div>
               
 
@@ -1887,14 +1995,16 @@ The completeness of the parameter set is verified. If the set is not
 complete, the protocol error incomplete_set is raised. For the
 definition of a complete set, see the description of this interface.
 
-The protocol error invalid_luminance is raised if any of the following
-requirements is not met:
+When both max_cll and max_fall are set, max_fall must be less or equal
+to max_cll otherwise the invalid_luminance protocol error is raised.
+
+In version 1, these following conditions also result in the
+invalid_luminance protocol error. Version 2 and later do not have this
+requirement.
 - When max_cll is set, it must be greater than min L and less or equal
   to max L of the mastering luminance range.
 - When max_fall is set, it must be greater than min L and less or equal
   to max L of the mastering luminance range.
-- When both max_cll and max_fall are set, max_fall must be less or equal
-  to max_cll.
 
 If the particular combination of the parameter set is not supported
 by the compositor, the resulting image description object shall
@@ -2531,13 +2641,47 @@ never become ready and it can only be destroyed.
                   ready
                 </div>
                 <div class="f5 ml2">
-                  indication that the object is ready to be used
+                  the object is ready to be used (32-bit)
                 </div>
               </div>
 
               
                 <div class="f6 lh-copy code">
-                  <span class="purple">uint32_t</span> identity <span class="green">/* image description id number */</span> 
+                  <span class="purple">uint32_t</span> identity <span class="green">/* the 32-bit image description id number */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">Starting from interface version 2, the &#x27;ready2&#x27; event is sent instead
+of this event.
+
+For the definition of this event, see the &#x27;ready2&#x27; event. The
+difference to this event is as follows.
+
+The id number is valid only as long as the protocol object is alive. If
+all protocol objects referring to the same image description record are
+destroyed, the id number may be recycled for a different image
+description record.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:wp_image_description_v1:ready2">
+                <a href="#e:wp_image_description_v1:ready2" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  ready2
+                </div>
+                <div class="f5 ml2">
+                  the object is ready to be used
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  <span class="purple">uint32_t</span> identity_hi <span class="green">/* high 32 bits of the 64-bit image description id number */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  <span class="purple">uint32_t</span> identity_lo <span class="green">/* low 32 bits of the 64-bit image description id number */</span> 
                 </div>
               
 
@@ -2554,16 +2698,13 @@ image description record. Two different image description records
 cannot have the same id number simultaneously. The id number does not
 change during the lifetime of the image description record.
 
-The id number is valid only as long as the protocol object is alive. If
-all protocol objects referring to the same image description record are
-destroyed, the id number may be recycled for a different image
-description record.
-
 Image description id number is not a protocol object id. Zero is
 reserved as an invalid id number. It shall not be possible for a client
 to refer to an image description by its id number in protocol. The id
 numbers might not be portable between Wayland connections. A compositor
 shall not send an invalid id number.
+
+Compositors must not recycle image description id numbers.
 
 This identity allows clients to de-duplicate image description records
 and avoid get_information request if they already have the image
@@ -3032,6 +3173,59 @@ luminance of light emitted on an actual display.
             </li>
             
           </ul>
+
+        
+
+        
+
+        
+
+      </li>
+      
+      <li class="mt4">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:wp_image_description_reference_v1">
+          <a href="#i:wp_image_description_reference_v1" class="link dim black-70 child pr2 absolute left--2">#</a>
+          wp_image_description_reference_v1
+        </h2>
+        <div class="f6 lh-copy ws-pre-line code">This object is a reference to an image description. This interface is
+frozen at version 1 to allow other protocols to create
+wp_image_description_v1 objects.
+
+The wp_color_manager_v1.get_image_description request can be used to
+retrieve the underlying image description.
+</div>
+
+        
+          <h3 class=" f5 lh-title" id="rh:wp_image_description_reference_v1">Requests</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:wp_image_description_reference_v1:destroy">
+                <a href="#r:wp_image_description_reference_v1:destroy" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  destroy
+                </div>
+                <div class="f5 ml2">
+                  destroy the reference
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">wp_image_description_reference_v1_destroy</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wp_image_description_reference_v1*</span> wp_image_description_reference_v1</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Destroy this object. This has no effect on the referenced image
+description.
+</div>
+            </li>
+            
+          </ul>
+        
+
+        
 
         
 

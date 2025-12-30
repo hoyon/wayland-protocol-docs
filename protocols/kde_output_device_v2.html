@@ -174,6 +174,10 @@
             <a href="#e:kde_output_device_v2:priority" class="link blue underline-hover lh-copy">priority</a>
           </li>
           
+          <li>
+            <a href="#e:kde_output_device_v2:auto_brightness" class="link blue underline-hover lh-copy">auto_brightness</a>
+          </li>
+          
         </ul>
       
 
@@ -251,10 +255,24 @@
             <a href="#e:kde_output_device_mode_v2:removed" class="link blue underline-hover lh-copy">removed</a>
           </li>
           
+          <li>
+            <a href="#e:kde_output_device_mode_v2:flags" class="link blue underline-hover lh-copy">flags</a>
+          </li>
+          
         </ul>
       
 
       
+        <div>
+          <a href="#enumh:kde_output_device_mode_v2" class="link blue underline-hover lh-copy pl3">Enums</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#enum:kde_output_device_mode_v2:flags" class="link blue underline-hover lh-copy">flags</a>
+          </li>
+          
+        </ul>
       
     </li>
   
@@ -1157,6 +1175,26 @@ mirroring another screen.
 </div>
             </li>
             
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:kde_output_device_v2:auto_brightness">
+                <a href="#e:kde_output_device_v2:auto_brightness" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  auto_brightness
+                </div>
+                <div class="f5 ml2">
+                  whether or not automatic brightness is enabled
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  <span class="purple">uint32_t</span> enabled <span class="green">/* 1 for enabled, 0 for disabled */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3"></div>
+            </li>
+            
           </ul>
 
         
@@ -1327,6 +1365,14 @@ compositor is still able to scan out directly client surfaces.
               
                 <div class="f6 lh-copy code">
                   KDE_OUTPUT_DEVICE_V2_CAPABILITY_SHARPNESS  <span class="green">/* if this outputdevice supports the sharpness setting */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  KDE_OUTPUT_DEVICE_V2_CAPABILITY_CUSTOM_MODES  <span class="green">/* if this outputdevice supports custom modes */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  KDE_OUTPUT_DEVICE_V2_CAPABILITY_AUTO_BRIGHTNESS  
                 </div>
               
 
@@ -1614,11 +1660,60 @@ resources associated with it.
 </div>
             </li>
             
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:kde_output_device_mode_v2:flags">
+                <a href="#e:kde_output_device_mode_v2:flags" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  flags
+                </div>
+                <div class="f5 ml2">
+                  mode flags
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  <span class="purple">uint32_t</span> flags  
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">This event describes the mode&#x27;s flags.
+</div>
+            </li>
+            
           </ul>
 
         
 
         
+          <h3 class=" f5 lh-title" id="enumh:kde_output_device_mode_v2">Enums</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="enum:kde_output_device_mode_v2:flags">
+                <a href="#enum:kde_output_device_mode_v2:flags" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  flags
+                </div>
+                <div class="f5 ml2">
+                  mode flags
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  KDE_OUTPUT_DEVICE_MODE_V2_FLAGS_CUSTOM  
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  KDE_OUTPUT_DEVICE_MODE_V2_FLAGS_REDUCED_BLANKING  
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3"></div>
+            </li>
+            
+          </ul>
 
         
 

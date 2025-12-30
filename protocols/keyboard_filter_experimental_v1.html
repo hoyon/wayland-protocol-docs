@@ -1,0 +1,467 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>keyboard_filter_experimental_v1</title>
+
+    <link rel="stylesheet" href="/wayland-protocol-docs/main.css">
+     
+  </head>
+  <body class="black-70 flex sans-serif ph4-l">
+    <div id="sidebar" class="w-20">
+      <div class="fixed vh-100 overflow-y-auto w-20">
+        <a href="/wayland-protocol-docs/" class="f4 link near-black dim lh-title db mt3">
+          Home
+        </a>
+        
+  <div class="ph2">
+    
+
+<div>
+  <ul class="list pl0">
+  
+    <li>
+      <a href="#i:xx_keyboard_filter_v1" class="link blue underline-hover lh-copy">xx_keyboard_filter_v1</a>
+
+      
+        <div>
+          <a href="#rh:xx_keyboard_filter_v1" class="link blue underline-hover lh-copy pl3">Requests</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#r:xx_keyboard_filter_v1:unbind" class="link blue underline-hover lh-copy">unbind</a>
+          </li>
+          
+          <li>
+            <a href="#r:xx_keyboard_filter_v1:filter" class="link blue underline-hover lh-copy">filter</a>
+          </li>
+          
+          <li>
+            <a href="#r:xx_keyboard_filter_v1:destroy" class="link blue underline-hover lh-copy">destroy</a>
+          </li>
+          
+        </ul>
+      
+
+      
+      
+
+      
+        <div>
+          <a href="#enumh:xx_keyboard_filter_v1" class="link blue underline-hover lh-copy pl3">Enums</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#enum:xx_keyboard_filter_v1:error" class="link blue underline-hover lh-copy">error</a>
+          </li>
+          
+          <li>
+            <a href="#enum:xx_keyboard_filter_v1:filter_action" class="link blue underline-hover lh-copy">filter_action</a>
+          </li>
+          
+        </ul>
+      
+    </li>
+  
+    <li>
+      <a href="#i:xx_keyboard_filter_manager_v1" class="link blue underline-hover lh-copy">xx_keyboard_filter_manager_v1</a>
+
+      
+        <div>
+          <a href="#rh:xx_keyboard_filter_manager_v1" class="link blue underline-hover lh-copy pl3">Requests</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#r:xx_keyboard_filter_manager_v1:bind_to_input_method" class="link blue underline-hover lh-copy">bind_to_input_method</a>
+          </li>
+          
+          <li>
+            <a href="#r:xx_keyboard_filter_manager_v1:destroy" class="link blue underline-hover lh-copy">destroy</a>
+          </li>
+          
+        </ul>
+      
+
+      
+      
+
+      
+        <div>
+          <a href="#enumh:xx_keyboard_filter_manager_v1" class="link blue underline-hover lh-copy pl3">Enums</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#enum:xx_keyboard_filter_manager_v1:error" class="link blue underline-hover lh-copy">error</a>
+          </li>
+          
+        </ul>
+      
+    </li>
+  
+  </ul>
+</div>
+  </div>
+
+      </div>
+    </div>
+
+    <main id="content" class="mh4 w-80">
+      
+  <div class="ph2">
+    <h1 class="f1 lh-title">keyboard_filter_experimental_v1</h1>
+    <ul class="list pl0">
+      
+      <li class="mt4">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:xx_keyboard_filter_v1">
+          <a href="#i:xx_keyboard_filter_v1" class="link dim black-70 child pr2 absolute left--2">#</a>
+          xx_keyboard_filter_v1
+        </h2>
+        <div class="f6 lh-copy ws-pre-line code">Manages the filtering of key presses.
+</div>
+
+        
+          <h3 class=" f5 lh-title" id="rh:xx_keyboard_filter_v1">Requests</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:xx_keyboard_filter_v1:unbind">
+                <a href="#r:xx_keyboard_filter_v1:unbind" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  unbind
+                </div>
+                <div class="f5 ml2">
+                  Stop intercepting
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">xx_keyboard_filter_v1_unbind</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct xx_keyboard_filter_v1*</span> xx_keyboard_filter_v1</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Unbind the keyboard and stop intercepting events.
+
+Unbinds the bound keyboard and the input method. the compositor must stop redirecting keyboard events. Events that the keyboard_filter client has not yet responded to are treated as if they received the &quot;passthrough&quot; action.
+
+This request takes effect immediately.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:xx_keyboard_filter_v1:filter">
+                <a href="#r:xx_keyboard_filter_v1:filter" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  filter
+                </div>
+                <div class="f5 ml2">
+                  decide the processing of a keyboard event
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">xx_keyboard_filter_v1_filter</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct xx_keyboard_filter_v1*</span> xx_keyboard_filter_v1,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> serial,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> action</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">This request controls the filtering of keyboard input events before reaching the focused surface.
+
+Usage:
+
+While keyboard_filter is intercepting, the compositor must send every intercepted event to its bound wl_keyboard, and hold a copy of it in an internal queue.
+When the client responds with the .filter request, the compositor either removes the event from the queue (filter_action.consume), or sends the copy to the original wl_keyboard objects (filter_action.passthrough).
+
+The compositor must process .filter the oldest event in the queue before processing more recent ones.
+For this reason, the client sets the argument &quot;serial&quot; to the serial of the corresponding event it received.
+
+Exceptions:
+
+If the event is other than wl_keyboard.key or contains no serial, it cannot be filtered. The keyboard_filter client must not respond to it with .filter request. When such an event is oldest in the queue, the compositor must proceed as if the event had received a &quot;passthrough&quot; reply.
+
+As of wl_keyboard v10 and keyboard_filter_v1, the only event that can be filtered is the wl_keyboard.key event.
+
+Sequence:
+
+The wl_keyboard begins to receive events after input_method.activate is committed.
+The valid serial is the serial of the oldest wl_keyboard event which has been sent after input_method.activate but which hasn&#x27;t yet received a .filter confirmation.
+The compositor may raise the invalid_serial error in response to events with serials it had not issued.
+The compositor must ignore events with all other serials. (Particularly, this means events with repeating serials are accepted normally and are not ignored).
+Events must be filtered in order of arrival.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:xx_keyboard_filter_v1:destroy">
+                <a href="#r:xx_keyboard_filter_v1:destroy" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  destroy
+                </div>
+                <div class="f5 ml2">
+                  destroy the keyboard
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">xx_keyboard_filter_v1_destroy</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct xx_keyboard_filter_v1*</span> xx_keyboard_filter_v1</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Destroys the keyboard_filter object, stops event interception, and unbinds the wl_keyboard and input_method objects bound to it.
+</div>
+            </li>
+            
+          </ul>
+        
+
+        
+
+        
+
+        
+          <h3 class=" f5 lh-title" id="enumh:xx_keyboard_filter_v1">Enums</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="enum:xx_keyboard_filter_v1:error">
+                <a href="#enum:xx_keyboard_filter_v1:error" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  error
+                </div>
+                <div class="f5 ml2">
+                  
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  XX_KEYBOARD_FILTER_V1_ERROR_INVALID_SERIAL  <span class="green">/* compositor received serial not adhering to requirements */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3"></div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="enum:xx_keyboard_filter_v1:filter_action">
+                <a href="#enum:xx_keyboard_filter_v1:filter_action" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  filter_action
+                </div>
+                <div class="f5 ml2">
+                  
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  XX_KEYBOARD_FILTER_V1_FILTER_ACTION_CONSUME  <span class="green">/* consume the key event */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  XX_KEYBOARD_FILTER_V1_FILTER_ACTION_PASSTHROUGH  <span class="green">/* pass the key event to the text input client */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3"></div>
+            </li>
+            
+          </ul>
+
+        
+
+      </li>
+      
+      <li class="mt4">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:xx_keyboard_filter_manager_v1">
+          <a href="#i:xx_keyboard_filter_manager_v1" class="link dim black-70 child pr2 absolute left--2">#</a>
+          xx_keyboard_filter_manager_v1
+        </h2>
+        <div class="f6 lh-copy ws-pre-line code"></div>
+
+        
+          <h3 class=" f5 lh-title" id="rh:xx_keyboard_filter_manager_v1">Requests</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:xx_keyboard_filter_manager_v1:bind_to_input_method">
+                <a href="#r:xx_keyboard_filter_manager_v1:bind_to_input_method" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  bind_to_input_method
+                </div>
+                <div class="f5 ml2">
+                  Bind a keyboard to an input method
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>struct xx_keyboard_filter_v1* </span><span class="dark-blue">xx_keyboard_filter_manager_v1_bind_to_input_method</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct xx_keyboard_filter_manager_v1*</span> xx_keyboard_filter_manager_v1,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_keyboard*</span> keyboard,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct xx_input_method_v1*</span> input_method,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_surface*</span> surface</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Bind a keyboard to an input method for the purpose of capturing key presses before they reach the text input client.
+
+When a wl_keyboard is bound, the compositor must redirect to it the input events intended for the focused surface with text input enabled. The wl_keyboard instance receives no other events from then on.
+See keyboard_filter.filter.
+
+For the bound wl_keyboard instance to intercept events, the following conditions must be fulfilled:
+- there&#x27;s a focused surface,
+- the surface has an enabled text input object,
+- the bound input method is active (for the meaning of &quot;active&quot;, see input_method.activate, input_method.deactivate).
+
+When those conditions are fulfilled, the compositor must start redirecting input events intended for the text input surface to the wl_keyboard bound with this request. Otherwise, the text input surface receives events without intercepting them.
+
+Be aware that the text input client might use a wl_keyboard object(s) of different version(s) than the one used by the input method. The compositor should issue events as it would normally do for the versions in question. This protocol assumes that events to multiple keyboards of different protocol versions are equivalent.
+
+Background:
+
+Whenever the input method is activated, the compositor must start sending it keyboard events intended for the text-input client, so that the input method can be controlled using a keyboard.
+Traditionally, from the user perspective, input methods receive keys as if they were an overlay: keys which are interesting to the input method gain a special input method meaning, all others work as usual.
+The binding and the keyboard_filter.filter request together make this possible by letting the input method indicate which events it is interested in.
+
+Conceptually, when a wl_keyboard is bound to an input_method, the compositor prevents all keyboard events directed to the text input client from reaching it. They are delayed until the input method decides how to filter them using the keyboard_filter.filter request.
+
+Arguments:
+
+The wl_keyboard must not be already bound to another interface.
+The wl_keyboard must only receive events between committed .activate and .deactivate.
+
+The surface argument represents an arbitrary wl_surface. When issuing wl_keyboard.enter and wl_keyboard.leave on the bound wl_keyboard, the compositor must replace the original surface argument with the one provided by the input method in this request.
+
+Because the wl_keyboard.enter and wl_keyboard.leave events require a surface as the target, one must be provided even if the input method doesn&#x27;t display one. A dummy one is sufficient. The provided wl_surface will not be used for any other purpose than explained above.
+
+The surface must outlive the input method.
+
+NOTE: This feature works much better with compositor-side key repeat introduced in wl_seat version 10. This protocol doesn&#x27;t provide controls for filtering repeat key events generated client-side.
+A compositor implementing this protocol should implement compositor-side key repeat.
+
+This request takes effect immediately.
+
+Attempting to bind a keyboard to an input method which is already bound must cause the already_bound error.
+Attempting to bind a keyboard object which was already bound must cause the already_bound error.
+Attempting to bind a keyboard object to an input method acting on a different seat must cause the wrong_seat error.
+
+When the input method gets destroyed, the compositor must stop issuing events to the keyboard and ignore any further requests to keyboard_filter, except keyboard_filter.destroy.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:xx_keyboard_filter_manager_v1:destroy">
+                <a href="#r:xx_keyboard_filter_manager_v1:destroy" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  destroy
+                </div>
+                <div class="f5 ml2">
+                  destroy the input method manager
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">xx_keyboard_filter_manager_v1_destroy</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct xx_keyboard_filter_manager_v1*</span> xx_keyboard_filter_manager_v1</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Destroys the xx_keyboard_filter_manager_v1 object.
+
+The xx_keyboard_filter_v1 objects originating from it remain unaffected.
+</div>
+            </li>
+            
+          </ul>
+        
+
+        
+
+        
+
+        
+          <h3 class=" f5 lh-title" id="enumh:xx_keyboard_filter_manager_v1">Enums</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="enum:xx_keyboard_filter_manager_v1:error">
+                <a href="#enum:xx_keyboard_filter_manager_v1:error" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  error
+                </div>
+                <div class="f5 ml2">
+                  
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  XX_KEYBOARD_FILTER_MANAGER_V1_ERROR_ALREADY_BOUND  <span class="green">/* an argument is already bound */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  XX_KEYBOARD_FILTER_MANAGER_V1_ERROR_WRONG_SEAT  <span class="green">/* the keyboard i attached to the wrong seat for this operation */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3"></div>
+            </li>
+            
+          </ul>
+
+        
+
+      </li>
+      
+    </ul>
+
+    <h2 class="f4 lh-title">Copyright Info</h2>
+    <div class="f7 lh-copy ws-pre-line code">Copyright 2018 Mike Blumenkrantz
+Copyright 2018 Samsung Electronics Co., Ltd
+Copyright 2018 Red Hat Inc.
+Copyright 2025 DorotaC
+
+Permission is hereby granted, free of charge, to any person obtaining a
+copy of this software and associated documentation files (the &quot;Software&quot;),
+to deal in the Software without restriction, including without limitation
+the rights to use, copy, modify, merge, publish, distribute, sublicense,
+and/or sell copies of the Software, and to permit persons to whom the
+Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice (including the next
+paragraph) shall be included in all copies or substantial portions of the
+Software.
+
+THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL
+THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+DEALINGS IN THE SOFTWARE.
+</div>
+  </div>
+
+    </main>
+
+  </body>
+</html>

@@ -35,6 +35,10 @@
             <a href="#r:kde_output_management_v2:create_configuration" class="link blue underline-hover lh-copy">create_configuration</a>
           </li>
           
+          <li>
+            <a href="#r:kde_output_management_v2:create_mode_list" class="link blue underline-hover lh-copy">create_mode_list</a>
+          </li>
+          
         </ul>
       
 
@@ -166,6 +170,14 @@
             <a href="#r:kde_output_configuration_v2:set_sharpness" class="link blue underline-hover lh-copy">set_sharpness</a>
           </li>
           
+          <li>
+            <a href="#r:kde_output_configuration_v2:set_custom_modes" class="link blue underline-hover lh-copy">set_custom_modes</a>
+          </li>
+          
+          <li>
+            <a href="#r:kde_output_configuration_v2:set_auto_brightness" class="link blue underline-hover lh-copy">set_auto_brightness</a>
+          </li>
+          
         </ul>
       
 
@@ -222,6 +234,55 @@
           
           <li>
             <a href="#enum:kde_output_configuration_v2:edr_policy" class="link blue underline-hover lh-copy">edr_policy</a>
+          </li>
+          
+        </ul>
+      
+    </li>
+  
+    <li>
+      <a href="#i:kde_mode_list_v2" class="link blue underline-hover lh-copy">kde_mode_list_v2</a>
+
+      
+        <div>
+          <a href="#rh:kde_mode_list_v2" class="link blue underline-hover lh-copy pl3">Requests</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#r:kde_mode_list_v2:destroy" class="link blue underline-hover lh-copy">destroy</a>
+          </li>
+          
+          <li>
+            <a href="#r:kde_mode_list_v2:add_mode" class="link blue underline-hover lh-copy">add_mode</a>
+          </li>
+          
+          <li>
+            <a href="#r:kde_mode_list_v2:set_resolution" class="link blue underline-hover lh-copy">set_resolution</a>
+          </li>
+          
+          <li>
+            <a href="#r:kde_mode_list_v2:set_refresh_rate" class="link blue underline-hover lh-copy">set_refresh_rate</a>
+          </li>
+          
+          <li>
+            <a href="#r:kde_mode_list_v2:set_reduced_blanking" class="link blue underline-hover lh-copy">set_reduced_blanking</a>
+          </li>
+          
+        </ul>
+      
+
+      
+      
+
+      
+        <div>
+          <a href="#enumh:kde_mode_list_v2" class="link blue underline-hover lh-copy pl3">Enums</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#enum:kde_mode_list_v2:error" class="link blue underline-hover lh-copy">error</a>
           </li>
           
         </ul>
@@ -314,6 +375,29 @@ changes may be added without bumping the major version of the extension.
 </div>
               <div class="f6 lh-copy ws-pre-line code">Request an outputconfiguration object through which the client can configure
 output devices.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:kde_output_management_v2:create_mode_list">
+                <a href="#r:kde_output_management_v2:create_mode_list" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  create_mode_list
+                </div>
+                <div class="f5 ml2">
+                  create a list of custom modes
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>struct kde_mode_list_v2* </span><span class="dark-blue">kde_output_management_v2_create_mode_list</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct kde_output_management_v2*</span> kde_output_management_v2</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">For details, see the description of kde_mode_list_v2 and
+kde_output_configuration_v2.set_custom_modes.
 </div>
             </li>
             
@@ -1110,6 +1194,65 @@ usage.
 </div>
             </li>
             
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:kde_output_configuration_v2:set_custom_modes">
+                <a href="#r:kde_output_configuration_v2:set_custom_modes" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  set_custom_modes
+                </div>
+                <div class="f5 ml2">
+                  set the custom mode list
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">kde_output_configuration_v2_set_custom_modes</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct kde_output_configuration_v2*</span> kde_output_configuration_v2,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct kde_output_device_v2*</span> outputdevice, <span class="green">/* outputdevice this setting applies to */</span></div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct kde_mode_list_v2*</span> modes</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Set the list of custom modes for this output. The compositor
+will in response generate the requested modes and add them to
+the output (or delete ones no longer in the list).
+This can be useful for overclocking displays, or for working
+around broken EDIDs.
+Note that there is no guarantee for any custom mode to
+actually work, or even to leave the display undamaged (in the
+case of CRTs). It&#x27;s entirely the responsibility of the user
+to ensure each added mode is the right one for their display.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:kde_output_configuration_v2:set_auto_brightness">
+                <a href="#r:kde_output_configuration_v2:set_auto_brightness" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  set_auto_brightness
+                </div>
+                <div class="f5 ml2">
+                  whether or not automatic brightness is enabled
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">kde_output_configuration_v2_set_auto_brightness</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct kde_output_configuration_v2*</span> kde_output_configuration_v2,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct kde_output_device_v2*</span> outputdevice, <span class="green">/* outputdevice this setting applies to */</span></div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> enabled <span class="green">/* 1 for enabled, 0 for disabled */</span></div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code"></div>
+            </li>
+            
           </ul>
         
 
@@ -1367,6 +1510,188 @@ that tradeoff should be made.
               
 
               <div class="f6 lh-copy ws-pre-line code mt3"></div>
+            </li>
+            
+          </ul>
+
+        
+
+      </li>
+      
+      <li class="mt4">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:kde_mode_list_v2">
+          <a href="#i:kde_mode_list_v2" class="link dim black-70 child pr2 absolute left--2">#</a>
+          kde_mode_list_v2
+        </h2>
+        <div class="f6 lh-copy ws-pre-line code">This list is populated by first setting each relevant property,
+and then calling add_mode to add a mode with these properties.
+One would for example call
+- set_resolution
+- set_refresh_rate
+- set_reduced_blanking
+- add_mode
+
+add_mode does not reset the properties that were previously set,
+they are valid until the object is destroyed.
+The compositor may additionally have sensible defaults for some
+properties like reduced_blanking, but for consistent results,
+it&#x27;s best to always set each known property every time.
+
+The parameters resolution and refresh rate are required, if they
+are not set, the missing_parameters error will be emitted.
+</div>
+
+        
+          <h3 class=" f5 lh-title" id="rh:kde_mode_list_v2">Requests</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:kde_mode_list_v2:destroy">
+                <a href="#r:kde_mode_list_v2:destroy" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  destroy
+                </div>
+                <div class="f5 ml2">
+                  destroy the mode list object
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">kde_mode_list_v2_destroy</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct kde_mode_list_v2*</span> kde_mode_list_v2</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code"></div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:kde_mode_list_v2:add_mode">
+                <a href="#r:kde_mode_list_v2:add_mode" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  add_mode
+                </div>
+                <div class="f5 ml2">
+                  Add the current mode configuration to the list
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">kde_mode_list_v2_add_mode</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct kde_mode_list_v2*</span> kde_mode_list_v2</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code"></div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:kde_mode_list_v2:set_resolution">
+                <a href="#r:kde_mode_list_v2:set_resolution" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  set_resolution
+                </div>
+                <div class="f5 ml2">
+                  
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">kde_mode_list_v2_set_resolution</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct kde_mode_list_v2*</span> kde_mode_list_v2,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> width,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> height</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code"></div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:kde_mode_list_v2:set_refresh_rate">
+                <a href="#r:kde_mode_list_v2:set_refresh_rate" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  set_refresh_rate
+                </div>
+                <div class="f5 ml2">
+                  
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">kde_mode_list_v2_set_refresh_rate</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct kde_mode_list_v2*</span> kde_mode_list_v2,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> rate <span class="green">/* in milliHz */</span></div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code"></div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:kde_mode_list_v2:set_reduced_blanking">
+                <a href="#r:kde_mode_list_v2:set_reduced_blanking" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  set_reduced_blanking
+                </div>
+                <div class="f5 ml2">
+                  whether or not the mode should have reduced blanking
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">kde_mode_list_v2_set_reduced_blanking</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct kde_mode_list_v2*</span> kde_mode_list_v2,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> reduced <span class="green">/* 1 for reduced blanking, 0 for normal vblank duration */</span></div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Reduced blanking is an optimization that can reduce bandwidth / timing
+requirements for a display mode by reducing the time vblank takes.
+As not all displays support it, it may be desired to still turn it off
+though (like with CRTs, where full blanking is required).
+</div>
+            </li>
+            
+          </ul>
+        
+
+        
+
+        
+
+        
+          <h3 class=" f5 lh-title" id="enumh:kde_mode_list_v2">Enums</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="enum:kde_mode_list_v2:error">
+                <a href="#enum:kde_mode_list_v2:error" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  error
+                </div>
+                <div class="f5 ml2">
+                  kde_mode_list_v2 error values
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  KDE_MODE_LIST_V2_ERROR_MISSING_PARAMETERS  <span class="green">/* a required parameter wasn&#x27;t set */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">These errors can be emitted in response to add_mode requests.
+</div>
             </li>
             
           </ul>

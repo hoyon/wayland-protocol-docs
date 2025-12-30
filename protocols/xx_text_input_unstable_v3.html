@@ -63,6 +63,14 @@
             <a href="#r:xx_text_input_v3:commit" class="link blue underline-hover lh-copy">commit</a>
           </li>
           
+          <li>
+            <a href="#r:xx_text_input_v3:set_available_actions" class="link blue underline-hover lh-copy">set_available_actions</a>
+          </li>
+          
+          <li>
+            <a href="#r:xx_text_input_v3:announce_supported_features" class="link blue underline-hover lh-copy">announce_supported_features</a>
+          </li>
+          
         </ul>
       
 
@@ -93,7 +101,15 @@
           </li>
           
           <li>
+            <a href="#e:xx_text_input_v3:move_cursor" class="link blue underline-hover lh-copy">move_cursor</a>
+          </li>
+          
+          <li>
             <a href="#e:xx_text_input_v3:done" class="link blue underline-hover lh-copy">done</a>
+          </li>
+          
+          <li>
+            <a href="#e:xx_text_input_v3:perform_action" class="link blue underline-hover lh-copy">perform_action</a>
           </li>
           
         </ul>
@@ -115,6 +131,14 @@
           
           <li>
             <a href="#enum:xx_text_input_v3:content_purpose" class="link blue underline-hover lh-copy">content_purpose</a>
+          </li>
+          
+          <li>
+            <a href="#enum:xx_text_input_v3:action" class="link blue underline-hover lh-copy">action</a>
+          </li>
+          
+          <li>
+            <a href="#enum:xx_text_input_v3:supported_features" class="link blue underline-hover lh-copy">supported_features</a>
           </li>
           
         </ul>
@@ -256,7 +280,8 @@ must be ignored by compositor.
 This request resets all state associated with previous enable, disable,
 set_surrounding_text, set_text_change_cause, set_content_type, and
 set_cursor_rectangle requests, as well as the state associated with
-preedit_string, commit_string, and delete_surrounding_text events.
+preedit_string, commit_string, delete_surrounding_text, and action
+events.
 
 The set_surrounding_text, set_content_type and set_cursor_rectangle
 requests must follow if the text input supports the necessary
@@ -518,6 +543,70 @@ events.
 </div>
             </li>
             
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:xx_text_input_v3:set_available_actions">
+                <a href="#r:xx_text_input_v3:set_available_actions" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  set_available_actions
+                </div>
+                <div class="f5 ml2">
+                  announce the available actions
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">xx_text_input_v3_set_available_actions</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct xx_text_input_v3*</span> xx_text_input_v3,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_array*</span> available_actions <span class="green">/* available actions */</span></div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Announces the actions available for the currently active text input.
+
+Values set with this event are double-buffered. They will get applied
+on the next .done event.
+They get reset to the initial value on the next committed deactivate event.
+
+The initial value is an empty set: no actions are available.
+
+Values in the available_actions array come from text-input-v3.action.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:xx_text_input_v3:announce_supported_features">
+                <a href="#r:xx_text_input_v3:announce_supported_features" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  announce_supported_features
+                </div>
+                <div class="f5 ml2">
+                  announce extra supported features
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">xx_text_input_v3_announce_supported_features</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct xx_text_input_v3*</span> xx_text_input_v3,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> features</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Notifies the input method what the currently active text input client is able to do.
+
+This event should come within the same .done sequence as .activate. Otherwise, the input method may ignore it.
+
+Values set with this event are double-buffered. They will get applied
+on the next .done event.
+They get reset to initial on the next committed deactivate event.
+
+The initial value for features is none.
+</div>
+            </li>
+            
           </ul>
         
 
@@ -697,6 +786,53 @@ The initial values of both before_length and after_length are 0.
             </li>
             
             <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:xx_text_input_v3:move_cursor">
+                <a href="#e:xx_text_input_v3:move_cursor" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  move_cursor
+                </div>
+                <div class="f5 ml2">
+                  move cursor and change selection
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  <span class="purple">int32_t</span> cursor  
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  <span class="purple">int32_t</span> anchor  
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">Unselects text, moves the cursor and selects text.
+
+This is equivalent to dragging the mouse over some text: it deselects whatever might be currently selected and selects a new range of text.
+
+The offsets used in arguments are in bytes relative to the current cursor position. Cursor is the new position of the cursor, and anchor is the opposite end of selection. If there&#x27;s no selection, anchor should be equal to cursor.
+In terms of dragging the mouse, the anchor is the start, and cursor the end.
+
+The offsets do not take preedit contents into account, nor is preedit changed in any way with this request.
+
+Both cursor and anchor must fall on code point boundaries, otherwise text input client may ignore the request. It is therefore not recommended for an input method to move any of them beyond the text received in surrounding_text.
+
+
+When surrounding_text is not supported, the offsets must not be interpreted as bytes, but as some human-readable unit at least as big as a code point, for example a grapheme.
+
+The cursor and anchor arguments can also take the following special values:
+BEGINNING := 0x8000_0000 = i32::MIN
+END := 0x7fff_ffff = i32::MAX
+meaning, respectively, the beginning and the end of of all text in the input field.
+
+Values set with this event are double-buffered. They must be applied
+and reset to initial on the next commit request.
+
+The initial values of both cursor and anchor are 0.
+</div>
+            </li>
+            
+            <li class="mt3">
               <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:xx_text_input_v3:done">
                 <a href="#e:xx_text_input_v3:done" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
@@ -714,8 +850,9 @@ The initial values of both before_length and after_length are 0.
               
 
               <div class="f6 lh-copy ws-pre-line code mt3">Instruct the application to apply changes to state requested by the
-preedit_string, commit_string and delete_surrounding_text events. The
-state relating to these events is double-buffered, and each one
+preedit_string, commit_string delete_surrounding_text, and action
+events.
+The state relating to these events is double-buffered, and each one
 modifies the pending state. This event replaces the current state with
 the pending state.
 
@@ -725,9 +862,11 @@ order:
 1. Replace existing preedit string with the cursor.
 2. Delete requested surrounding text.
 3. Insert commit string with the cursor at its end.
-4. Calculate surrounding text to send.
-5. Insert new preedit text in cursor position.
-6. Place cursor inside preedit text.
+4. Move the cursor and selection.
+5. Calculate surrounding text to send.
+6. Insert new preedit text in cursor position.
+7. Place cursor inside preedit text.
+8. Perform the requested action.
 
 The serial number reflects the last state of the xx_text_input_v3
 object known to the compositor. The value of the serial argument must
@@ -740,6 +879,32 @@ state of the xx_text_input_v3 object. All pending state requests
 (set_surrounding_text, set_content_type and set_cursor_rectangle) on
 the xx_text_input_v3 object should be sent and committed after
 receiving a xx_text_input_v3.done event with a matching serial.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:xx_text_input_v3:perform_action">
+                <a href="#e:xx_text_input_v3:perform_action" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  perform_action
+                </div>
+                <div class="f5 ml2">
+                  action performed
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  <span class="purple">uint32_t</span> action <span class="green">/* action performed */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">The input method issued an action to perform on this text input.
+
+Values set with this event are double-buffered. They must be applied
+and reset to initial on the next .done event.
+
+The initial value of action is none.
 </div>
             </li>
             
@@ -912,6 +1077,58 @@ input.
 
 This allows an input method to show special purpose input panels with
 extra characters or to disallow some characters.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="enum:xx_text_input_v3:action">
+                <a href="#enum:xx_text_input_v3:action" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  action
+                </div>
+                <div class="f5 ml2">
+                  action
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  XX_TEXT_INPUT_V3_ACTION_FINISH  
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">A possible action to perform on a text input.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="enum:xx_text_input_v3:supported_features">
+                <a href="#enum:xx_text_input_v3:supported_features" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  supported_features
+                </div>
+                <div class="f5 ml2">
+                  possible supported features
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  XX_TEXT_INPUT_V3_SUPPORTED_FEATURES_NONE  <span class="green">/* no extra functionality supported */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  XX_TEXT_INPUT_V3_SUPPORTED_FEATURES_MOVE_CURSOR  <span class="green">/* the move_cursor request */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">Client functionality over the baseline that isn&#x27;t indicated implicitly.
+
+This does not include events coming with .enable: when the input method receives such an event, it is clear the text input supports it, e.g. content_type, available_actions.
+
+Baseline functionality like commit_string, set_preedit_string must always be supported for the protocol to be useful.
+
+The flags match text-input protocol versions, but should be kept general enough to support other protocols.
 </div>
             </li>
             
