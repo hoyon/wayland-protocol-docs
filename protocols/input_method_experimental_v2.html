@@ -101,6 +101,10 @@
           </li>
           
           <li>
+            <a href="#e:xx_input_method_v1:announce_protocol_compat" class="link blue underline-hover lh-copy">announce_protocol_compat</a>
+          </li>
+          
+          <li>
             <a href="#e:xx_input_method_v1:done" class="link blue underline-hover lh-copy">done</a>
           </li>
           
@@ -119,6 +123,10 @@
           
           <li>
             <a href="#enum:xx_input_method_v1:error" class="link blue underline-hover lh-copy">error</a>
+          </li>
+          
+          <li>
+            <a href="#enum:xx_input_method_v1:protocol_compat" class="link blue underline-hover lh-copy">protocol_compat</a>
           </li>
           
         </ul>
@@ -431,7 +439,7 @@ cursor_begin.
 
 Values set with this request are double-buffered. They must be applied on
 the next xx_input_method_v1.commit request.
-They must be reset to initial on the next committed disable event.
+They must be reset to initial on the next committed .deactivate event.
 
 The initial value of text is an empty string. The initial value of
 cursor_begin, and cursor_end are both 0.
@@ -464,6 +472,11 @@ cursor_begin, and cursor_end are both 0.
 
 before_length and after_length are the number of bytes before and after
 the current cursor index (excluding the preedit text) to delete.
+
+If text is selected, it must be deleted.
+
+If indices exceed the available text boundaries, they should be adjusted to fit in boundaries and deletion reattempted.
+If indices do not lie on byte boundaries, then the text input client should delete at least that many bytes. In this case, the client decides the end point, but a character boundary same as when deleting using the keyboard is recommended.
 
 If any preedit text is present, it is replaced with the cursor for the
 purpose of this event. In effect before_length is counted from the
@@ -563,6 +576,12 @@ changes in the following order:
 8. Perform the requested action.
 
 Note that the input method can not receive more than 4000 bytes of selection text, which might be the case for example when the entire document is selected. Nevertheless, the text input must delete the entire selected range before inserting the commit string.
+
+Serial handling with protocol_compat == xx_text_input
+
+The serial number should be set to 0.
+
+Serial handling with protocol_compat == text_input_v3
 
 The serial number reflects the last state of the xx_input_method_v1
 object known to the client. The value of the serial argument must be
@@ -883,6 +902,37 @@ The initial value for features is none.
             </li>
             
             <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:xx_input_method_v1:announce_protocol_compat">
+                <a href="#e:xx_input_method_v1:announce_protocol_compat" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  announce_protocol_compat
+                </div>
+                <div class="f5 ml2">
+                  set text input&#x27;s compatibility level
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  <span class="purple">uint32_t</span> compat_level  
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">Tells the input method client what kinds of events the text input client supports.
+
+
+
+Values set with this event are double-buffered. They will get applied
+on the next .done event.
+They get reset to initial on the next committed deactivate event.
+
+The compositor may send this event as part of a .done chain that switches the active state from inactive to active. It must not send this event otherwise.
+
+The initial value for version is text_input_v3.
+</div>
+            </li>
+            
+            <li class="mt3">
               <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:xx_input_method_v1:done">
                 <a href="#e:xx_input_method_v1:done" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
                 <div class="f4">
@@ -935,7 +985,7 @@ there was another input_method object associated with the same seat at
 the time of its creation.
 
 The compositor must issue this request when the object is no longer
-useable, e.g. due to seat removal.
+usable, e.g. due to seat removal.
 
 The input method context becomes inert and should be destroyed after
 deactivation is handled. Any further requests and events except for the
@@ -973,6 +1023,31 @@ destroy request must be ignored.
               
 
               <div class="f6 lh-copy ws-pre-line code mt3"></div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="enum:xx_input_method_v1:protocol_compat">
+                <a href="#enum:xx_input_method_v1:protocol_compat" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  protocol_compat
+                </div>
+                <div class="f5 ml2">
+                  protocol compatibility value
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  XX_INPUT_METHOD_V1_PROTOCOL_COMPAT_TEXT_INPUT_V3  <span class="green">/* zwp-text-input-v3 semantics */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  XX_INPUT_METHOD_V1_PROTOCOL_COMPAT_XX_TEXT_INPUT  
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">Tells the input method client what kinds of events the text input client supports.
+</div>
             </li>
             
           </ul>
@@ -1022,7 +1097,7 @@ input_popup_surfaces associated with the same text input.
 
 A typical sequence resulting from the user selecting a new text field and typing some text:
 
-1. compositor (Co): input_method.enable()
+1. compositor (Co): input_method.activate()
 2. Co: input_method.done()
 3. [init sequence]
 4. Co: input_method.set_surrounding_text(&quot;new text&quot;)
@@ -1031,7 +1106,7 @@ A typical sequence resulting from the user selecting a new text field and typing
 7. client (Cl): ack_configure()
 8. Cl: wl_surface.commit()
 
-When the corresponding input_method receives a commited .disable event, the popup gets destroyed and becomes invalid and its surface gets unmapped.
+When the corresponding input_method receives a committed .deactivate event, the popup gets destroyed and becomes invalid and its surface gets unmapped.
 
 The client must not destroy the underlying wl_surface while the
 xx_input_popup_surface_v2 object exists.
@@ -1064,7 +1139,7 @@ xx_input_popup_surface_v2 object exists.
               <div class="f6 lh-copy ws-pre-line code">This request notifies the compositor that the client updated its surface in response to a configure sequence.
 
 The purpose of this request is to synchronize the updates of the surface geometry with the surface contents.
-For example, when the compositor assigns a size larger than prevously, the client must fill the additional space before the popup gets displayed to the user with the new size. When the compositor receives .ack_configure, it can proceed to draw the new size.
+For example, when the compositor assigns a size larger than previously, the client must fill the additional space before the popup gets displayed to the user with the new size. When the compositor receives .ack_configure, it can proceed to draw the new size.
 
 .ack_configure should be sent after every submitted configure sequence, passing along the serial received in it.
 
@@ -1583,7 +1658,7 @@ configure sequence is sent with updated geometry.
 
               
                 <div class="f6 lh-copy code">
-                  XX_INPUT_POPUP_POSITIONER_V1_ANCHOR_NONE  <span class="green">/* no edge, specfies center */</span> 
+                  XX_INPUT_POPUP_POSITIONER_V1_ANCHOR_NONE  <span class="green">/* no edge, specifies center */</span> 
                 </div>
               
                 <div class="f6 lh-copy code">

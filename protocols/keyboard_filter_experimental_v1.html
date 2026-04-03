@@ -363,6 +363,8 @@ Attempting to bind a keyboard to an input method which is already bound must cau
 Attempting to bind a keyboard object which was already bound must cause the already_bound error.
 Attempting to bind a keyboard object to an input method acting on a different seat must cause the wrong_seat error.
 
+Once any of the bound objects are destroyed, the xx_keyboard_filter_v1 instance becomes disabled and it must ignore all following requests.
+
 When the input method gets destroyed, the compositor must stop issuing events to the keyboard and ignore any further requests to keyboard_filter, except keyboard_filter.destroy.
 </div>
             </li>

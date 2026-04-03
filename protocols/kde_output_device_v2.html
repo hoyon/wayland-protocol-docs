@@ -23,9 +23,66 @@
   <ul class="list pl0">
   
     <li>
+      <a href="#i:kde_output_device_registry_v2" class="link blue underline-hover lh-copy">kde_output_device_registry_v2</a>
+
+      
+        <div>
+          <a href="#rh:kde_output_device_registry_v2" class="link blue underline-hover lh-copy pl3">Requests</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#r:kde_output_device_registry_v2:stop" class="link blue underline-hover lh-copy">stop</a>
+          </li>
+          
+        </ul>
+      
+
+      
+        <div>
+          <a href="#eh:kde_output_device_registry_v2" class="link blue underline-hover lh-copy pl3">Events</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#e:kde_output_device_registry_v2:finished" class="link blue underline-hover lh-copy">finished</a>
+          </li>
+          
+          <li>
+            <a href="#e:kde_output_device_registry_v2:output" class="link blue underline-hover lh-copy">output</a>
+          </li>
+          
+        </ul>
+      
+
+      
+        <div>
+          <a href="#enumh:kde_output_device_registry_v2" class="link blue underline-hover lh-copy pl3">Enums</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#enum:kde_output_device_registry_v2:error" class="link blue underline-hover lh-copy">error</a>
+          </li>
+          
+        </ul>
+      
+    </li>
+  
+    <li>
       <a href="#i:kde_output_device_v2" class="link blue underline-hover lh-copy">kde_output_device_v2</a>
 
       
+        <div>
+          <a href="#rh:kde_output_device_v2" class="link blue underline-hover lh-copy pl3">Requests</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#r:kde_output_device_v2:release" class="link blue underline-hover lh-copy">release</a>
+          </li>
+          
+        </ul>
       
 
       
@@ -178,6 +235,10 @@
             <a href="#e:kde_output_device_v2:auto_brightness" class="link blue underline-hover lh-copy">auto_brightness</a>
           </li>
           
+          <li>
+            <a href="#e:kde_output_device_v2:removed" class="link blue underline-hover lh-copy">removed</a>
+          </li>
+          
         </ul>
       
 
@@ -290,6 +351,129 @@
     <ul class="list pl0">
       
       <li class="mt4">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:kde_output_device_registry_v2">
+          <a href="#i:kde_output_device_registry_v2" class="link dim black-70 child pr2 absolute left--2">#</a>
+          kde_output_device_registry_v2
+        </h2>
+        <div class="f6 lh-copy ws-pre-line code">This interface can be used to list output devices.
+
+If this global is bound with a version less than 21, the unsupported_version
+protocol error will be posted.
+</div>
+
+        
+          <h3 class=" f5 lh-title" id="rh:kde_output_device_registry_v2">Requests</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:kde_output_device_registry_v2:stop">
+                <a href="#r:kde_output_device_registry_v2:stop" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  stop
+                </div>
+                <div class="f5 ml2">
+                  stop receiving updates
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">kde_output_device_registry_v2_stop</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct kde_output_device_registry_v2*</span> kde_output_device_registry_v2</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">This request indicates that the client no longer wants to receive new
+output announcements. The compositor will send the
+kde_output_device_registry_v2.finished event in response to this request.
+The compositor may still send new output announcements after calling this
+request until the kde_output_device_registry_v2.finished event is sent.
+</div>
+            </li>
+            
+          </ul>
+        
+
+        
+          <h3 class=" f5 lh-title" id="eh:kde_output_device_registry_v2">Events</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:kde_output_device_registry_v2:finished">
+                <a href="#e:kde_output_device_registry_v2:finished" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  finished
+                </div>
+                <div class="f5 ml2">
+                  no new output announcements
+                </div>
+              </div>
+
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">This event is sent in response to the stop request. The compositor will
+immediately destroy the object after sending this event.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:kde_output_device_registry_v2:output">
+                <a href="#e:kde_output_device_registry_v2:output" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  output
+                </div>
+                <div class="f5 ml2">
+                  new available output
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  <span class="purple">struct kde_output_device_v2*</span> output  
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">This event is sent when a new output is connected or after binding this
+global to list all available outputs.
+</div>
+            </li>
+            
+          </ul>
+
+        
+
+        
+          <h3 class=" f5 lh-title" id="enumh:kde_output_device_registry_v2">Enums</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="enum:kde_output_device_registry_v2:error">
+                <a href="#enum:kde_output_device_registry_v2:error" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  error
+                </div>
+                <div class="f5 ml2">
+                  kde_output_device_registry_v2 error values
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  KDE_OUTPUT_DEVICE_REGISTRY_V2_ERROR_UNSUPPORTED_VERSION  <span class="green">/* the registry was bound with an unsupported version */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">These errors can be emitted in response to some requests.
+</div>
+            </li>
+            
+          </ul>
+
+        
+
+      </li>
+      
+      <li class="mt4">
         <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:kde_output_device_v2">
           <a href="#i:kde_output_device_v2" class="link dim black-70 child pr2 absolute left--2">#</a>
           kde_output_device_v2
@@ -318,6 +502,33 @@ version of the extension.
 </div>
 
         
+          <h3 class=" f5 lh-title" id="rh:kde_output_device_v2">Requests</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:kde_output_device_v2:release">
+                <a href="#r:kde_output_device_v2:release" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  release
+                </div>
+                <div class="f5 ml2">
+                  destroy the output device
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">kde_output_device_v2_release</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct kde_output_device_v2*</span> kde_output_device_v2</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">This notifies the compositor that the client no longer wishes to use
+the kde_output_device_v2 object.
+</div>
+            </li>
+            
+          </ul>
         
 
         
@@ -1193,6 +1404,25 @@ mirroring another screen.
               
 
               <div class="f6 lh-copy ws-pre-line code mt3"></div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:kde_output_device_v2:removed">
+                <a href="#e:kde_output_device_v2:removed" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  removed
+                </div>
+                <div class="f5 ml2">
+                  the output has been removed
+                </div>
+              </div>
+
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">This event is sent when the output device is disconnected and no new
+updates will be sent. The client should call the kde_output_device_v2.release
+request after receiving this event.
+</div>
             </li>
             
           </ul>

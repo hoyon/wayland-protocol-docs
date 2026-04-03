@@ -63,6 +63,18 @@
             <a href="#r:zwp_text_input_v3:commit" class="link blue underline-hover lh-copy">commit</a>
           </li>
           
+          <li>
+            <a href="#r:zwp_text_input_v3:set_available_actions" class="link blue underline-hover lh-copy">set_available_actions</a>
+          </li>
+          
+          <li>
+            <a href="#r:zwp_text_input_v3:show_input_panel" class="link blue underline-hover lh-copy">show_input_panel</a>
+          </li>
+          
+          <li>
+            <a href="#r:zwp_text_input_v3:hide_input_panel" class="link blue underline-hover lh-copy">hide_input_panel</a>
+          </li>
+          
         </ul>
       
 
@@ -96,6 +108,18 @@
             <a href="#e:zwp_text_input_v3:done" class="link blue underline-hover lh-copy">done</a>
           </li>
           
+          <li>
+            <a href="#e:zwp_text_input_v3:action" class="link blue underline-hover lh-copy">action</a>
+          </li>
+          
+          <li>
+            <a href="#e:zwp_text_input_v3:language" class="link blue underline-hover lh-copy">language</a>
+          </li>
+          
+          <li>
+            <a href="#e:zwp_text_input_v3:preedit_hint" class="link blue underline-hover lh-copy">preedit_hint</a>
+          </li>
+          
         </ul>
       
 
@@ -115,6 +139,18 @@
           
           <li>
             <a href="#enum:zwp_text_input_v3:content_purpose" class="link blue underline-hover lh-copy">content_purpose</a>
+          </li>
+          
+          <li>
+            <a href="#enum:zwp_text_input_v3:error" class="link blue underline-hover lh-copy">error</a>
+          </li>
+          
+          <li>
+            <a href="#enum:zwp_text_input_v3:action" class="link blue underline-hover lh-copy">action</a>
+          </li>
+          
+          <li>
+            <a href="#enum:zwp_text_input_v3:preedit_hint" class="link blue underline-hover lh-copy">preedit_hint</a>
           </li>
           
         </ul>
@@ -470,6 +506,19 @@ The initial values describing a cursor rectangle are empty. That means
 the text input does not support describing the cursor area. If the
 empty values get applied, subsequent attempts to change them may have
 no effect.
+
+As of version 2, the zwp_text_input_v3.commit request does not apply
+values sent with this request. Instead, it stores them in a separate
+&quot;committed&quot; area. The committed values, if still valid, get applied on
+the next wl_surface.commit request on the surface with text-input focus.
+Both committed and applied values get invalidated on:
+
+- the next committed enable or disable request, or
+- a change of the focused surface of the text-input (leave or enter events).
+
+This double stage application allows the compositor to position
+the input method popup in the same frame as the contents
+of the text on the surface are updated.
 </div>
             </li>
             
@@ -515,6 +564,91 @@ The compositor must count the number of commit requests coming from
 each zwp_text_input_v3 object and use the count as the serial in done
 events.
 </div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zwp_text_input_v3:set_available_actions">
+                <a href="#r:zwp_text_input_v3:set_available_actions" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  set_available_actions
+                </div>
+                <div class="f5 ml2">
+                  set the available actions
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">zwp_text_input_v3_set_available_actions</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwp_text_input_v3*</span> zwp_text_input_v3,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_array*</span> available_actions <span class="green">/* available actions */</span></div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Set the actions available for this text input.
+
+Values set with this request are double-buffered. They will get applied
+on the next zwp_text_input_v3.commit request.
+
+If the available_actions array contains the none action, or contains the
+same action multiple times, the compositor must raise the invalid_action
+protocol error.
+
+Initially, no actions are available.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zwp_text_input_v3:show_input_panel">
+                <a href="#r:zwp_text_input_v3:show_input_panel" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  show_input_panel
+                </div>
+                <div class="f5 ml2">
+                  show input panel
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">zwp_text_input_v3_show_input_panel</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwp_text_input_v3*</span> zwp_text_input_v3</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Requests an input panel to be shown (e.g. a on-screen keyboard).
+
+This request only hints the desired interaction pattern from the
+client side, and its effect may be ignored by compositors given
+other environmental factors. Repeated calls will be ignored.
+  </div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:zwp_text_input_v3:hide_input_panel">
+                <a href="#r:zwp_text_input_v3:hide_input_panel" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  hide_input_panel
+                </div>
+                <div class="f5 ml2">
+                  hide input panel
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">zwp_text_input_v3_hide_input_panel</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct zwp_text_input_v3*</span> zwp_text_input_v3</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Requests an input panel to be hidden.
+
+This request only hints the desired interaction pattern from the
+client side, and its effect may be ignored by compositors given
+other environmental factors. Repeated calls will be ignored.
+  </div>
             </li>
             
           </ul>
@@ -713,8 +847,10 @@ The initial values of both before_length and after_length are 0.
               
 
               <div class="f6 lh-copy ws-pre-line code mt3">Instruct the application to apply changes to state requested by the
-preedit_string, commit_string and delete_surrounding_text events. The
-state relating to these events is double-buffered, and each one
+preedit_string, commit_string delete_surrounding_text, and action
+events.
+
+The state relating to these events is double-buffered, and each one
 modifies the pending state. This event replaces the current state with
 the pending state.
 
@@ -727,6 +863,7 @@ order:
 4. Calculate surrounding text to send.
 5. Insert new preedit text in cursor position.
 6. Place cursor inside preedit text.
+7. Perform the requested action.
 
 The serial number reflects the last state of the zwp_text_input_v3
 object known to the compositor. The value of the serial argument must
@@ -739,6 +876,111 @@ state of the zwp_text_input_v3 object. All pending state requests
 (set_surrounding_text, set_content_type and set_cursor_rectangle) on
 the zwp_text_input_v3 object should be sent and committed after
 receiving a zwp_text_input_v3.done event with a matching serial.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:zwp_text_input_v3:action">
+                <a href="#e:zwp_text_input_v3:action" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  action
+                </div>
+                <div class="f5 ml2">
+                  action performed
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  <span class="purple">uint32_t</span> action <span class="green">/* action performed */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  <span class="purple">uint32_t</span> serial <span class="green">/* serial number of the action event */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">An action was performed on this text input.
+
+Values set with this event are double-buffered. They must be applied
+and reset to initial on the next zwp_text_input_v3.done event.
+
+The initial value of action is none.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:zwp_text_input_v3:language">
+                <a href="#e:zwp_text_input_v3:language" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  language
+                </div>
+                <div class="f5 ml2">
+                  notify of language selection
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  <span class="purple">const char*</span> language <span class="green">/* new language set by IME */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">Notify the application of language used by the input method.
+
+This event will be sent on creation if known and for all subsequent changes.
+
+The language should be specified as an IETF BCP 47 tag.
+Setting an empty string will reset any known language back to the default unknown state.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:zwp_text_input_v3:preedit_hint">
+                <a href="#e:zwp_text_input_v3:preedit_hint" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  preedit_hint
+                </div>
+                <div class="f5 ml2">
+                  pre-edit
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  <span class="purple">uint32_t</span> start <span class="green">/* starting point of the affected substring */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  <span class="purple">uint32_t</span> end <span class="green">/* end point of the affected substring */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  <span class="purple">uint32_t</span> hint <span class="green">/* hint to apply */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">Notify of contextual hints for the pre-edit string. This
+event is always sent together with a zwp_text_input_v3.preedit_string
+event.
+
+The parameters start and end are counted in bytes relative to the
+beginning of the text buffer submitted through
+zwp_text_input_v3.preedit_string, and represent the substring in the
+pre-edit text affected by the hint.
+
+Multiple events may be submitted if the preedit string has different
+sections. The extent of hints may overlap. The parts of the preedit
+string that are not covered by any zwp_text_input_v3.preedit_hint event,
+the text will be considered unhinted. This is also the case if no
+preedit_hint event is sent.
+
+Clients should provide recognizable visuals to these hints. if they are
+unable to comply with this requisition, it may be preferable for them
+keep the preedit_shown content hint disabled.
+
+Values set with this event are double-buffered. They must be applied
+and reset on the next zwp_text_input_v3.done event.
 </div>
             </li>
             
@@ -831,6 +1073,18 @@ receiving a zwp_text_input_v3.done event with a matching serial.
                   ZWP_TEXT_INPUT_V3_CONTENT_HINT_MULTILINE  <span class="green">/* the text input is multiline */</span> 
                 </div>
               
+                <div class="f6 lh-copy code">
+                  ZWP_TEXT_INPUT_V3_CONTENT_HINT_ON_SCREEN_INPUT_PROVIDED  <span class="green">/* an on-screen way to fill in the input is already provided by the client */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  ZWP_TEXT_INPUT_V3_CONTENT_HINT_NO_EMOJI  <span class="green">/* prefer not offering emoji support */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  ZWP_TEXT_INPUT_V3_CONTENT_HINT_PREEDIT_SHOWN  <span class="green">/* the text input will display preedit text in place */</span> 
+                </div>
+              
 
               <div class="f6 lh-copy ws-pre-line code mt3">Content hint is a bitmask to allow to modify the behavior of the text
 input.
@@ -912,6 +1166,99 @@ input.
 This allows an input method to show special purpose input panels with
 extra characters or to disallow some characters.
 </div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="enum:zwp_text_input_v3:error">
+                <a href="#enum:zwp_text_input_v3:error" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  error
+                </div>
+                <div class="f5 ml2">
+                  
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  ZWP_TEXT_INPUT_V3_ERROR_INVALID_ACTION  <span class="green">/* an invalid or duplicate action was specified */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3"></div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="enum:zwp_text_input_v3:action">
+                <a href="#enum:zwp_text_input_v3:action" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  action
+                </div>
+                <div class="f5 ml2">
+                  action
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  ZWP_TEXT_INPUT_V3_ACTION_NONE  <span class="green">/* no action */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  ZWP_TEXT_INPUT_V3_ACTION_SUBMIT  <span class="green">/* the action is submitted */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">A possible action to perform on a text input.
+
+The submit action is intended for input entries that expect some sort of
+activation after user interaction, e.g. the URL entry in a browser.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="enum:zwp_text_input_v3:preedit_hint">
+                <a href="#enum:zwp_text_input_v3:preedit_hint" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  preedit_hint
+                </div>
+                <div class="f5 ml2">
+                  preedit style hint
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  ZWP_TEXT_INPUT_V3_PREEDIT_HINT_WHOLE  <span class="green">/* simple pre-edit text style, typically underlined */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  ZWP_TEXT_INPUT_V3_PREEDIT_HINT_SELECTION  <span class="green">/* hint for a selected piece of text, e.g. per-character navigation and composition */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  ZWP_TEXT_INPUT_V3_PREEDIT_HINT_PREDICTION  <span class="green">/* predicted text, not typed by the user */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  ZWP_TEXT_INPUT_V3_PREEDIT_HINT_PREFIX  <span class="green">/* prefixed text not being currently edited, e.g. prior to a &#x27;selection&#x27; section */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  ZWP_TEXT_INPUT_V3_PREEDIT_HINT_SUFFIX  <span class="green">/* suffixed text not being currently edited, e.g. after a &#x27;selection&#x27; section */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  ZWP_TEXT_INPUT_V3_PREEDIT_HINT_SPELLING_ERROR  <span class="green">/* spelling error */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  ZWP_TEXT_INPUT_V3_PREEDIT_HINT_COMPOSE_ERROR  <span class="green">/* wrong composition, e.g. user input that can not be transliterated */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">Style hints for the preedit string.
+  </div>
             </li>
             
           </ul>

@@ -774,6 +774,11 @@ deleted.
 Before_length and after_length are the number of bytes before and after
 the current cursor index (excluding the selection) to delete.
 
+If text is selected, it must be deleted.
+
+If indices exceed the available text boundaries, they should be adjusted to fit in boundaries and deletion reattempted.
+If indices do not lie on byte boundaries, then the text input client should delete at least that many bytes. In this case, the client decides the end point, but a character boundary same as when deleting using the keyboard is recommended.
+
 If a preedit text is present, in effect before_length is counted from
 the beginning of it, and after_length from its end (see done event
 sequence).
@@ -867,6 +872,12 @@ order:
 6. Insert new preedit text in cursor position.
 7. Place cursor inside preedit text.
 8. Perform the requested action.
+
+Serial handling starting version 2:
+
+The argument &quot;serial&quot; is ignored.
+
+Serial handling version 1:
 
 The serial number reflects the last state of the xx_text_input_v3
 object known to the compositor. The value of the serial argument must
@@ -1093,6 +1104,10 @@ extra characters or to disallow some characters.
 
               
                 <div class="f6 lh-copy code">
+                  XX_TEXT_INPUT_V3_ACTION_NONE  
+                </div>
+              
+                <div class="f6 lh-copy code">
                   XX_TEXT_INPUT_V3_ACTION_FINISH  
                 </div>
               
@@ -1216,6 +1231,7 @@ The flags match text-input protocol versions, but should be kept general enough 
 Copyright © 2015, 2016 Jan Arne Petersen
 Copyright © 2017, 2018 Red Hat, Inc.
 Copyright © 2018       Purism SPC
+Copyright © 2025       DorotaC
 
 Permission to use, copy, modify, distribute, and sell this
 software and its documentation for any purpose is hereby granted

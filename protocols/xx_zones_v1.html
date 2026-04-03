@@ -1,0 +1,1042 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>xx_zones_v1</title>
+
+    <link rel="stylesheet" href="/wayland-protocol-docs/main.css">
+     
+  </head>
+  <body class="black-70 flex sans-serif ph4-l">
+    <div id="sidebar" class="w-20">
+      <div class="fixed vh-100 overflow-y-auto w-20">
+        <a href="/wayland-protocol-docs/" class="f4 link near-black dim lh-title db mt3">
+          Home
+        </a>
+        
+  <div class="ph2">
+    
+
+<div>
+  <ul class="list pl0">
+  
+    <li>
+      <a href="#i:xx_zone_manager_v1" class="link blue underline-hover lh-copy">xx_zone_manager_v1</a>
+
+      
+        <div>
+          <a href="#rh:xx_zone_manager_v1" class="link blue underline-hover lh-copy pl3">Requests</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#r:xx_zone_manager_v1:destroy" class="link blue underline-hover lh-copy">destroy</a>
+          </li>
+          
+          <li>
+            <a href="#r:xx_zone_manager_v1:get_zone_item" class="link blue underline-hover lh-copy">get_zone_item</a>
+          </li>
+          
+          <li>
+            <a href="#r:xx_zone_manager_v1:get_zone" class="link blue underline-hover lh-copy">get_zone</a>
+          </li>
+          
+          <li>
+            <a href="#r:xx_zone_manager_v1:get_zone_from_handle" class="link blue underline-hover lh-copy">get_zone_from_handle</a>
+          </li>
+          
+        </ul>
+      
+
+      
+      
+
+      
+      
+    </li>
+  
+    <li>
+      <a href="#i:xx_zone_item_v1" class="link blue underline-hover lh-copy">xx_zone_item_v1</a>
+
+      
+        <div>
+          <a href="#rh:xx_zone_item_v1" class="link blue underline-hover lh-copy pl3">Requests</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#r:xx_zone_item_v1:destroy" class="link blue underline-hover lh-copy">destroy</a>
+          </li>
+          
+          <li>
+            <a href="#r:xx_zone_item_v1:set_position" class="link blue underline-hover lh-copy">set_position</a>
+          </li>
+          
+        </ul>
+      
+
+      
+        <div>
+          <a href="#eh:xx_zone_item_v1" class="link blue underline-hover lh-copy pl3">Events</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#e:xx_zone_item_v1:frame_extents" class="link blue underline-hover lh-copy">frame_extents</a>
+          </li>
+          
+          <li>
+            <a href="#e:xx_zone_item_v1:position" class="link blue underline-hover lh-copy">position</a>
+          </li>
+          
+          <li>
+            <a href="#e:xx_zone_item_v1:position_failed" class="link blue underline-hover lh-copy">position_failed</a>
+          </li>
+          
+          <li>
+            <a href="#e:xx_zone_item_v1:closed" class="link blue underline-hover lh-copy">closed</a>
+          </li>
+          
+        </ul>
+      
+
+      
+      
+    </li>
+  
+    <li>
+      <a href="#i:xx_zone_v1" class="link blue underline-hover lh-copy">xx_zone_v1</a>
+
+      
+        <div>
+          <a href="#rh:xx_zone_v1" class="link blue underline-hover lh-copy pl3">Requests</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#r:xx_zone_v1:destroy" class="link blue underline-hover lh-copy">destroy</a>
+          </li>
+          
+          <li>
+            <a href="#r:xx_zone_v1:add_item" class="link blue underline-hover lh-copy">add_item</a>
+          </li>
+          
+          <li>
+            <a href="#r:xx_zone_v1:remove_item" class="link blue underline-hover lh-copy">remove_item</a>
+          </li>
+          
+        </ul>
+      
+
+      
+        <div>
+          <a href="#eh:xx_zone_v1" class="link blue underline-hover lh-copy pl3">Events</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#e:xx_zone_v1:size" class="link blue underline-hover lh-copy">size</a>
+          </li>
+          
+          <li>
+            <a href="#e:xx_zone_v1:handle" class="link blue underline-hover lh-copy">handle</a>
+          </li>
+          
+          <li>
+            <a href="#e:xx_zone_v1:done" class="link blue underline-hover lh-copy">done</a>
+          </li>
+          
+          <li>
+            <a href="#e:xx_zone_v1:item_blocked" class="link blue underline-hover lh-copy">item_blocked</a>
+          </li>
+          
+          <li>
+            <a href="#e:xx_zone_v1:item_entered" class="link blue underline-hover lh-copy">item_entered</a>
+          </li>
+          
+          <li>
+            <a href="#e:xx_zone_v1:item_left" class="link blue underline-hover lh-copy">item_left</a>
+          </li>
+          
+        </ul>
+      
+
+      
+        <div>
+          <a href="#enumh:xx_zone_v1" class="link blue underline-hover lh-copy pl3">Enums</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#enum:xx_zone_v1:error" class="link blue underline-hover lh-copy">error</a>
+          </li>
+          
+        </ul>
+      
+    </li>
+  
+  </ul>
+</div>
+  </div>
+
+      </div>
+    </div>
+
+    <main id="content" class="mh4 w-80">
+      
+  <div class="ph2">
+    <h1 class="f1 lh-title">xx_zones_v1</h1>
+    <ul class="list pl0">
+      
+      <li class="mt4">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:xx_zone_manager_v1">
+          <a href="#i:xx_zone_manager_v1" class="link dim black-70 child pr2 absolute left--2">#</a>
+          xx_zone_manager_v1
+        </h2>
+        <div class="f6 lh-copy ws-pre-line code">The &#x27;xx_zone_manager&#x27; interface defines base requests for obtaining and
+managing zones for a client.
+</div>
+
+        
+          <h3 class=" f5 lh-title" id="rh:xx_zone_manager_v1">Requests</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:xx_zone_manager_v1:destroy">
+                <a href="#r:xx_zone_manager_v1:destroy" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  destroy
+                </div>
+                <div class="f5 ml2">
+                  Destroy this object
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">xx_zone_manager_v1_destroy</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct xx_zone_manager_v1*</span> xx_zone_manager_v1</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">This has no effect other than to destroy the xx_zone_manager object.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:xx_zone_manager_v1:get_zone_item">
+                <a href="#r:xx_zone_manager_v1:get_zone_item" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  get_zone_item
+                </div>
+                <div class="f5 ml2">
+                  create a positionable item representing a toplevel
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>struct xx_zone_item_v1* </span><span class="dark-blue">xx_zone_manager_v1_get_zone_item</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct xx_zone_manager_v1*</span> xx_zone_manager_v1,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct xdg_toplevel*</span> toplevel <span class="green">/* the toplevel window */</span></div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Create a new positionable zone item from an &#x27;xdg_toplevel&#x27;.
+The resulting wrapper object can then be used to position the
+toplevel window in a zone.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:xx_zone_manager_v1:get_zone">
+                <a href="#r:xx_zone_manager_v1:get_zone" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  get_zone
+                </div>
+                <div class="f5 ml2">
+                  join a zone or request a new one
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>struct xx_zone_v1* </span><span class="dark-blue">xx_zone_manager_v1_get_zone</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct xx_zone_manager_v1*</span> xx_zone_manager_v1,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_output*</span> output <span class="green">/* the preferred output to place the zone on, or NULL */</span></div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Create a new zone. While the zone object exists, the compositor
+must consider it &quot;used&quot; and keep track of it.
+
+A zone is represented by a string &#x27;handle&#x27;.
+
+The compositor must keep zone handles valid while any client is
+referencing the corresponding zone.
+The compositor may always give a client the same zone for a given
+output, and remember its position and size for the client, but
+clients should not rely on this behavior.
+
+A client can request a zone to be placed on a specific
+output by passing a wl_output as &#x27;output&#x27;. If a valid output
+is set, the compositor should place the zone on that output.
+If NULL is passed, the compositor decides the output.
+
+The compositor should provide the biggest reasonable zone space
+for the client, governed by its own policy.
+
+If the compositor wants to deny zone creation (e.g. on a specific
+output), the returned zone must be &quot;invalid&quot;. A zone is invalid
+if it has a negative size, in which case the client is forbidden
+to place items in it.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:xx_zone_manager_v1:get_zone_from_handle">
+                <a href="#r:xx_zone_manager_v1:get_zone_from_handle" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  get_zone_from_handle
+                </div>
+                <div class="f5 ml2">
+                  join a zone via its handle
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>struct xx_zone_v1* </span><span class="dark-blue">xx_zone_manager_v1_get_zone_from_handle</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct xx_zone_manager_v1*</span> xx_zone_manager_v1,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">const char*</span> handle <span class="green">/* the handle of a zone */</span></div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Create a new zone object using the zone&#x27;s handle.
+For the returned zone, the same rules as described in
+&#x27;get_zone&#x27; apply.
+
+This request returns a reference to an existing or remembered zone
+that is represented by &#x27;handle&#x27;.
+The zone may potentially have been created by a different client.
+
+This allows cooperating clients to share the same coordinate space.
+
+If the zone handle was invalid or unknown, a new zone must
+be created and returned instead, following the rules outlined
+in &#x27;get_zone&#x27; and assuming no output preference.
+
+Every new zone object created by this request emits its initial event
+sequence, including the &#x27;handle&#x27; event, which must return a different
+handle from the one passed to this request in case the existing zone
+could not be joined.
+</div>
+            </li>
+            
+          </ul>
+        
+
+        
+
+        
+
+        
+
+        
+
+      </li>
+      
+      <li class="mt4">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:xx_zone_item_v1">
+          <a href="#i:xx_zone_item_v1" class="link dim black-70 child pr2 absolute left--2">#</a>
+          xx_zone_item_v1
+        </h2>
+        <div class="f6 lh-copy ws-pre-line code">The zone item object is an opaque descriptor for a positionable
+element, such as a toplevel window.
+It currently can only be created from an &#x27;xdg_toplevel&#x27; via the
+&#x27;get_zone_item&#x27; request on a &#x27;xx_zone_manager&#x27;.
+
+The lifetime of a zone item is tied to its referenced item (usually
+a toplevel).
+When the reference is destroyed, the compositor must send a &#x27;closed&#x27;
+event and the zone item becomes inert.
+</div>
+
+        
+          <h3 class=" f5 lh-title" id="rh:xx_zone_item_v1">Requests</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:xx_zone_item_v1:destroy">
+                <a href="#r:xx_zone_item_v1:destroy" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  destroy
+                </div>
+                <div class="f5 ml2">
+                  delete this object
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">xx_zone_item_v1_destroy</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct xx_zone_item_v1*</span> xx_zone_item_v1</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Destroys the zone item. This request may be sent at any time by the
+client.
+By destroying the object, the respective item surface remains at its
+last position, but its association with its zone is lost.
+This will also cause it to lose any other attached state described by
+this protocol.
+
+If the item was associated with a zone when this request is sent,
+the compositor must emit &#x27;item_left&#x27; on the respective zone, unless
+it had already been emitted before a &#x27;closed&#x27; event.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:xx_zone_item_v1:set_position">
+                <a href="#r:xx_zone_item_v1:set_position" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  set_position
+                </div>
+                <div class="f5 ml2">
+                  set a preferred item surface position
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">xx_zone_item_v1_set_position</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct xx_zone_item_v1*</span> xx_zone_item_v1,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> x, <span class="green">/* x position relative to zone */</span></div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> y <span class="green">/* y position relative to zone */</span></div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Request a preferred position (x, y) for the specified item
+surface to be placed at, relative to its associated zone.
+This state is double-buffered and is applied on the next
+wl_surface.commit of the surface represented by &#x27;item&#x27;.
+
+X and Y coordinates are relative to the zone this item is associated
+with, and must not be larger than the dimensions set by the zone size.
+They may be smaller than zero, if the item&#x27;s top-left edge is to be
+placed beyond the zone&#x27;s top-left sides, but clients should expect the
+compositor to more aggressively sanitize the coordinate values in that
+case.
+If a coordinate exceeds the zone&#x27;s maximum bounds, the compositor must
+sanitize it to more appropriate values (e.g. by clamping the values to
+the maximum size).
+For infinite zones, the client may pick any coordinate.
+
+Compositors implementing this protocol should try to place an item
+at the requested coordinates relative to the item&#x27;s zone, unless doing
+so is not allowed by compositor policy (because e.g. the user has set
+custom rules for the surface represented by the respective item, the
+surface overlaps with a protected shell component, session management
+has loaded previous surface positions or the placement request would
+send the item out of bounds).
+
+Clients should be aware that their placement preferences might not
+always be followed and must be prepared to handle the case where the
+item is placed at a different position by the compositor.
+
+Once an item has been mapped, a change to its preferred placement can
+still be requested and should be applied, but must not be followed
+by the compositor while the user is interacting with the affected item
+surface (e.g. clicking &amp; dragging within the window, or resizing it).
+
+After a call to this request, a &#x27;position&#x27; event must be emitted with the
+item&#x27;s new actual position.
+If the current item has no zone associated with it, a &#x27;position_failed&#x27;
+event must be emitted.
+If the compositor did not move the item at all, not even with sanitized
+values, a &#x27;position_failed&#x27; event must be emitted as well.
+</div>
+            </li>
+            
+          </ul>
+        
+
+        
+          <h3 class=" f5 lh-title" id="eh:xx_zone_item_v1">Events</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:xx_zone_item_v1:frame_extents">
+                <a href="#e:xx_zone_item_v1:frame_extents" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  frame_extents
+                </div>
+                <div class="f5 ml2">
+                  the extents of the frame bordering the item
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  <span class="purple">int32_t</span> top <span class="green">/* current height of the frame bordering the top of the item */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  <span class="purple">int32_t</span> bottom <span class="green">/* current height of the frame bordering the bottom of the item */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  <span class="purple">int32_t</span> left <span class="green">/* current width of the frame bordering the left of the item */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  <span class="purple">int32_t</span> right <span class="green">/* current width of the frame bordering the right of the item */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">The &#x27;frame_extents&#x27; event describes the current extents of the frame
+bordering the item&#x27;s content area.
+
+This event is sent immediately after the item joins a zone, or if
+the item frame extents have been changed by other means (e.g. toggled
+by a client request, or compositor involvement). The dimensions are in
+the same coordinate space as the item&#x27;s zone (the surface coordinate
+space).
+
+This event must be followed by a &#x27;position&#x27; event, even if the item&#x27;s
+coordinates did not change as a result of the frame extents changing.
+
+If the item has no associated frame, the event should still be sent,
+but extents must be set to zero.
+
+This event can only be emitted if the item is currently associated
+with a zone.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:xx_zone_item_v1:position">
+                <a href="#e:xx_zone_item_v1:position" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  position
+                </div>
+                <div class="f5 ml2">
+                  notify about the position of an item
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  <span class="purple">int32_t</span> x <span class="green">/* current x position relative to zone */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  <span class="purple">int32_t</span> y <span class="green">/* current y position relative to zone */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">This event notifies the client of the current position (x, y) of
+the item relative to its zone.
+Coordinates are relative to the zone this item belongs to, and only
+valid within it.
+Negative coordinates are possible, if the user has moved an item
+surface beyond the zone&#x27;s top-left boundary.
+
+This event is sent in response to a &#x27;set_position&#x27; request,
+or if the item position has been changed by other means
+(e.g. user interaction or compositor involvement).
+
+This event can only be emitted if the item is currently associated
+with a zone.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:xx_zone_item_v1:position_failed">
+                <a href="#e:xx_zone_item_v1:position_failed" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  position_failed
+                </div>
+                <div class="f5 ml2">
+                  a set_position request has failed
+                </div>
+              </div>
+
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">The compositor was unable to set the position of this item entirely,
+and could not even find sanitized coordinates to place the item at
+instead.
+
+This event will also be emitted if &#x27;set_position&#x27; was called while the
+item had no zone associated with it.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:xx_zone_item_v1:closed">
+                <a href="#e:xx_zone_item_v1:closed" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  closed
+                </div>
+                <div class="f5 ml2">
+                  the underlying surface has been destroyed
+                </div>
+              </div>
+
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">This event indicates that the surface wrapped by this
+zone item has been destroyed.
+
+The &#x27;xx_zone_item_v1&#x27; object becomes inert and the client should
+destroy it. Any requests made on an inert zone item must be silently
+ignored by the compositor, and no further events will be sent for this
+item.
+
+If the item was associated with a zone when this event is sent,
+the compositor must also emit &#x27;item_left&#x27; on the respective zone
+before sending this event.
+</div>
+            </li>
+            
+          </ul>
+
+        
+
+        
+
+        
+
+      </li>
+      
+      <li class="mt4">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:xx_zone_v1">
+          <a href="#i:xx_zone_v1" class="link dim black-70 child pr2 absolute left--2">#</a>
+          xx_zone_v1
+        </h2>
+        <div class="f6 lh-copy ws-pre-line code">An &#x27;xx_zone&#x27; describes a display area provided by the compositor in
+which a client can place windows and move them around.
+
+A zone&#x27;s area could, for example, correspond to the space usable for
+placing windows on a specific output (space without panels or other
+restricted elements) or it could be an area of the output the compositor
+has specifically chosen for a client to place its surfaces in.
+
+Clients should make no assumptions about how a zone is presented to the
+user (e.g. compositors may visually distinguish what makes up a zone).
+
+Items are added to a zone as &#x27;xx_zone_item&#x27; objects.
+
+All item surface position coordinates (x, y) are relative to the selected
+zone.
+They are using the &#x27;size&#x27; of the respective zone as coordinate system,
+with (0, 0) being in the top left corner.
+
+If a zone item is moved out of the top/left boundaries of the zone by
+user interaction, its coordinates must become negative, relative to the
+zone&#x27;s top-left coordinate origin. A client may position an item at negative
+coordinates.
+
+The compositor must ensure that any item positioned by the client is
+visible and accessible to the user, and is not moved into invisible space
+outside of a zone.
+Positioning requests may be rejected or altered by the compositor, depending
+on its policy.
+
+The absolute position of the zone within the compositor&#x27;s coordinate space
+is opaque to the client and the compositor may move the entire zone without
+the client noticing it. A zone may also be arbitrarily resized, in which
+case the respective &#x27;size&#x27; event must be emitted again to notify the client.
+
+A zone is always tied to an output and does not extend beyond it.
+
+A zone may be &quot;invalid&quot;. An invalid zone is created with a negative
+&#x27;size&#x27; and must not be used for item arrangement.
+
+Upon creation the compositor must emit &#x27;size&#x27; and &#x27;handle&#x27; events for the
+newly created &#x27;xx_zone&#x27;, followed by &#x27;done&#x27;.
+</div>
+
+        
+          <h3 class=" f5 lh-title" id="rh:xx_zone_v1">Requests</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:xx_zone_v1:destroy">
+                <a href="#r:xx_zone_v1:destroy" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  destroy
+                </div>
+                <div class="f5 ml2">
+                  destroy the xx_zone object
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">xx_zone_v1_destroy</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct xx_zone_v1*</span> xx_zone_v1</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Using this request a client can tell the compositor that it is not
+going to use the &#x27;xx_zone&#x27; object anymore.
+The zone itself must only be destroyed if no other client
+is currently referencing it, so this request may only destroy the
+object reference owned by the client.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:xx_zone_v1:add_item">
+                <a href="#r:xx_zone_v1:add_item" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  add_item
+                </div>
+                <div class="f5 ml2">
+                  associate an item with this zone
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">xx_zone_v1_add_item</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct xx_zone_v1*</span> xx_zone_v1,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct xx_zone_item_v1*</span> item <span class="green">/* the zone item */</span></div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Make &#x27;item&#x27; a member of this zone.
+This state is double-buffered and is applied on the next
+&#x27;wl_surface.commit&#x27; of the surface represented by &#x27;item&#x27;.
+
+This request associates an item with this zone.
+If this request is called on an item that already has a zone
+association with a different zone, the item must leave its old zone
+(with &#x27;item_left&#x27; being emitted on its old zone) and will instead
+be associated with this zone.
+
+Upon receiving this request and if the target zone is allowed for &#x27;item&#x27;,
+a compositor must emit &#x27;item_entered&#x27; to confirm the zone association.
+It must even emit this event if the item was already associated with this
+zone before.
+
+The compositor must move the surface represented by &#x27;item&#x27; into the
+boundary of this zone upon receiving this request and accepting it
+(either by extending the zone size, or by moving the item surface).
+
+If the compositor does not allow the item to switch zone associations,
+and wants it to remain in its previous zone, it must emit
+&#x27;item_blocked&#x27; instead.
+Compositors might want to prevent zone associations if they
+perform specialized window management (e.g. autotiling) that would
+make clients moving items between certain zones undesirable.
+
+Once the &#x27;item&#x27; is added to its zone, the compositor must first send
+a &#x27;frame_extents&#x27; event on the item, followed by an initial &#x27;position&#x27;
+event with the item&#x27;s current position.
+The compositor must then send &#x27;position&#x27; events when the position
+of the item in its zone is changed, for as long as the item is
+associated with a zone.
+
+If the zone is invalid, an &#x27;invalid&#x27; error must be raised and the item
+must not be associated with the invalid zone.
+If the referenced item is inert (its underlying surface has been
+destroyed), the request must be silently ignored.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:xx_zone_v1:remove_item">
+                <a href="#r:xx_zone_v1:remove_item" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  remove_item
+                </div>
+                <div class="f5 ml2">
+                  disassociate an item from this zone
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">xx_zone_v1_remove_item</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct xx_zone_v1*</span> xx_zone_v1,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct xx_zone_item_v1*</span> item <span class="green">/* the zone item */</span></div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Remove &#x27;item&#x27; as a member of this zone.
+This state is double-buffered and is applied on the next
+&#x27;wl_surface.commit&#x27; of the surface represented by &#x27;item&#x27;.
+
+This request removes the item from this zone explicitly,
+making the client unable to retrieve coordinates again.
+
+Upon receiving this request, the compositor should not change the
+item surface position on screen, and must emit &#x27;item_left&#x27; to confirm
+the item&#x27;s removal. It must even emit this event if the
+item was never associated with this zone.
+
+If the referenced item is inert (its underlying surface has been
+destroyed), the request must be silently ignored.
+</div>
+            </li>
+            
+          </ul>
+        
+
+        
+          <h3 class=" f5 lh-title" id="eh:xx_zone_v1">Events</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:xx_zone_v1:size">
+                <a href="#e:xx_zone_v1:size" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  size
+                </div>
+                <div class="f5 ml2">
+                  size of the zone
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  <span class="purple">int32_t</span> width <span class="green">/* zone width in logical pixels */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  <span class="purple">int32_t</span> height <span class="green">/* zone height in logical pixels */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">The &#x27;size&#x27; event describes the size of this zone.
+
+It is a rectangle with its origin in the top-left corner, using
+the surface coordinate space (device pixels divided by the scaling
+factor of the output this zone is attached to).
+
+If a width or height value is zero, the zone is infinite
+in that direction.
+
+If the width and height values are negative, the zone is considered
+&quot;invalid&quot; and must not be used.
+A size event declaring the zone invalid may only be emitted immediately
+after the zone was created.
+A zone must not become invalid at a later time by sending a negative
+&#x27;size&#x27; after the zone has been established.
+
+The &#x27;size&#x27; event is sent immediately after creating an &#x27;xx_zone_v1&#x27;,
+and whenever the size of the zone changes. A zone size can change at
+any time, for any reason, for example due to output size or scaling
+changes, or by compositor policy.
+
+Upon subsequent emissions of &#x27;size&#x27; after &#x27;xx_zone&#x27; has already
+been created, the &#x27;done&#x27; event does not have to be sent again.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:xx_zone_v1:handle">
+                <a href="#e:xx_zone_v1:handle" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  handle
+                </div>
+                <div class="f5 ml2">
+                  the zone handle
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  <span class="purple">const char*</span> handle <span class="green">/* the exported zone handle */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">The handle event provides the unique handle of this zone.
+The handle may be shared with any client, which then can use it to
+join this client&#x27;s zone by calling
+&#x27;xx_zone_manager.get_zone_from_handle&#x27;.
+
+This event must only be emitted once after the zone was created.
+If this zone is invalid, the handle must be an empty string.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:xx_zone_v1:done">
+                <a href="#e:xx_zone_v1:done" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  done
+                </div>
+                <div class="f5 ml2">
+                  all information about the zone has been sent
+                </div>
+              </div>
+
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">This event is sent after all other properties (size, handle) of an
+&#x27;xx_zone&#x27; have been sent.
+
+This allows changes to the xx_zone properties to be seen as
+atomic, even if they happen via multiple events.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:xx_zone_v1:item_blocked">
+                <a href="#e:xx_zone_v1:item_blocked" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  item_blocked
+                </div>
+                <div class="f5 ml2">
+                  an item could not be associated with this zone
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  <span class="purple">struct xx_zone_item_v1*</span> item <span class="green">/* the item that was prevented from joining this zone */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">This event notifies the client that an item was prevented from
+joining this zone.
+
+It is emitted as a response to &#x27;add_item&#x27; if the compositor did not
+allow the item to join this particular zone.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:xx_zone_v1:item_entered">
+                <a href="#e:xx_zone_v1:item_entered" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  item_entered
+                </div>
+                <div class="f5 ml2">
+                  notify about an item having joined this zone
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  <span class="purple">struct xx_zone_item_v1*</span> item <span class="green">/* the item that has joined the zone */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">This event notifies the client of an item joining this zone.
+
+It is emitted as a response to &#x27;add_item&#x27; or if the compositor
+automatically had the item surface (re)join an existing zone.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:xx_zone_v1:item_left">
+                <a href="#e:xx_zone_v1:item_left" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  item_left
+                </div>
+                <div class="f5 ml2">
+                  notify about an item having left this zone
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  <span class="purple">struct xx_zone_item_v1*</span> item <span class="green">/* the item that has left the zone */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">This event notifies the client of an item leaving this zone, and
+therefore the client will no longer receive updated coordinates
+or frame extents for this item.
+If the client still wishes to adjust the item surface coordinates, it
+may associate the item with a zone again by calling &#x27;add_item&#x27;.
+
+This event is emitted for example if the user moved an item surface out
+of a smaller zone&#x27;s boundaries, or onto a different screen where the
+previous zone can not expand to. It is also emitted in response to
+explicitly removing an item via &#x27;remove_item&#x27;.
+</div>
+            </li>
+            
+          </ul>
+
+        
+
+        
+          <h3 class=" f5 lh-title" id="enumh:xx_zone_v1">Enums</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="enum:xx_zone_v1:error">
+                <a href="#enum:xx_zone_v1:error" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  error
+                </div>
+                <div class="f5 ml2">
+                  
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  XX_ZONE_V1_ERROR_INVALID  <span class="green">/* an invalid value has been submitted */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3"></div>
+            </li>
+            
+          </ul>
+
+        
+
+      </li>
+      
+    </ul>
+
+    <h2 class="f4 lh-title">Copyright Info</h2>
+    <div class="f7 lh-copy ws-pre-line code">Copyright © 2023-2026 Matthias Klumpp
+Copyright © 2024-2025 Frank Praznik
+Copyright ©      2024 Victoria Brekenfeld
+
+Permission is hereby granted, free of charge, to any person obtaining a
+copy of this software and associated documentation files (the &quot;Software&quot;),
+to deal in the Software without restriction, including without limitation
+the rights to use, copy, modify, merge, publish, distribute, sublicense,
+and/or sell copies of the Software, and to permit persons to whom the
+Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice (including the next
+paragraph) shall be included in all copies or substantial portions of the
+Software.
+
+THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL
+THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+DEALINGS IN THE SOFTWARE.
+</div>
+  </div>
+
+    </main>
+
+  </body>
+</html>
