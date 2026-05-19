@@ -178,6 +178,18 @@
             <a href="#r:kde_output_configuration_v2:set_auto_brightness" class="link blue underline-hover lh-copy">set_auto_brightness</a>
           </li>
           
+          <li>
+            <a href="#r:kde_output_configuration_v2:set_hdr_icc_profile_path" class="link blue underline-hover lh-copy">set_hdr_icc_profile_path</a>
+          </li>
+          
+          <li>
+            <a href="#r:kde_output_configuration_v2:set_hdr_color_profile_source" class="link blue underline-hover lh-copy">set_hdr_color_profile_source</a>
+          </li>
+          
+          <li>
+            <a href="#r:kde_output_configuration_v2:set_abm_level" class="link blue underline-hover lh-copy">set_abm_level</a>
+          </li>
+          
         </ul>
       
 
@@ -868,7 +880,7 @@ Note that while the value is in nits, that doesn&#x27;t necessarily translate to
                   set_icc_profile_path
                 </div>
                 <div class="f5 ml2">
-                  change the used icc profile
+                  change the used icc profile for SDR mode
                 </div>
               </div>
               
@@ -949,7 +961,7 @@ default experience on many modern sRGB screens.
                   set_color_profile_source
                 </div>
                 <div class="f5 ml2">
-                  which source the compositor should use for the color profile on an output
+                  which source the compositor should use for the color profile on an output in SDR mode
                 </div>
               </div>
               
@@ -1251,6 +1263,83 @@ to ensure each added mode is the right one for their display.
   )
 </div>
               <div class="f6 lh-copy ws-pre-line code"></div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:kde_output_configuration_v2:set_hdr_icc_profile_path">
+                <a href="#r:kde_output_configuration_v2:set_hdr_icc_profile_path" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  set_hdr_icc_profile_path
+                </div>
+                <div class="f5 ml2">
+                  change the used icc profile for HDR mode
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">kde_output_configuration_v2_set_hdr_icc_profile_path</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct kde_output_configuration_v2*</span> kde_output_configuration_v2,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct kde_output_device_v2*</span> outputdevice, <span class="green">/* outputdevice this setting applies to */</span></div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">const char*</span> profile_path</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code"></div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:kde_output_configuration_v2:set_hdr_color_profile_source">
+                <a href="#r:kde_output_configuration_v2:set_hdr_color_profile_source" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  set_hdr_color_profile_source
+                </div>
+                <div class="f5 ml2">
+                  which source the compositor should use for the color profile on an output in HDR mode
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">kde_output_configuration_v2_set_hdr_color_profile_source</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct kde_output_configuration_v2*</span> kde_output_configuration_v2,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct kde_output_device_v2*</span> outputdevice, <span class="green">/* outputdevice this setting applies to */</span></div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> color_profile_source <span class="green">/* the color profile source */</span></div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code"></div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:kde_output_configuration_v2:set_abm_level">
+                <a href="#r:kde_output_configuration_v2:set_abm_level" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  set_abm_level
+                </div>
+                <div class="f5 ml2">
+                  set the allowed level of adaptive backlight modulation
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">kde_output_configuration_v2_set_abm_level</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct kde_output_configuration_v2*</span> kde_output_configuration_v2,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct kde_output_device_v2*</span> outputdevice, <span class="green">/* outputdevice this setting applies to */</span></div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> level <span class="green">/* 0 is off, 4 is the maximum level */</span></div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Adaptive backlight modulation is a feature that reduces the backlight
+and increases contrast of colors on the screen to improve power usage.
+</div>
             </li>
             
           </ul>

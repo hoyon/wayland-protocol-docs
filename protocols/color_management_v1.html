@@ -63,6 +63,10 @@
             <a href="#r:wp_color_manager_v1:get_image_description" class="link blue underline-hover lh-copy">get_image_description</a>
           </li>
           
+          <li>
+            <a href="#r:wp_color_manager_v1:create_windows_bt2100" class="link blue underline-hover lh-copy">create_windows_bt2100</a>
+          </li>
+          
         </ul>
       
 
@@ -798,6 +802,51 @@ creates the reference allows it.
 </div>
             </li>
             
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:wp_color_manager_v1:create_windows_bt2100">
+                <a href="#r:wp_color_manager_v1:create_windows_bt2100" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  create_windows_bt2100
+                </div>
+                <div class="f5 ml2">
+                  create Windows-BT.2100 image description object
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>struct wp_image_description_v1* </span><span class="dark-blue">wp_color_manager_v1_create_windows_bt2100</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wp_color_manager_v1*</span> wp_color_manager_v1</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">This creates a pre-defined image description for the so-called
+Windows-BT.2100 stimulus encoding. This comes from the Windows 10
+handling of its own definition of a BT.2100 color space for an HDR
+screen driven in BT.2100/PQ signalling mode.
+
+Windows-BT.2100 uses BT.2020 color primaries and white point.
+The transfer characteristic is st2084_pq.
+
+Windows-BT.2100 is generally displayed by Windows 10 without any
+adjustments to the signal to account for viewing conditions.
+
+The reference white level of Windows-BT.2100 is unknown. If a
+reference white level must be assumed for compositor processing, it
+should be 203 cd/m² of Report ITU-R BT.2408-7.
+
+The target color volume of Windows-BT.2100 is unknown. The color gamut
+may be anything up to BT.2100.
+
+This request can be used when the compositor advertises
+wp_color_manager_v1.feature.windows_bt2100.
+Otherwise this request raises the protocol error unsupported_feature.
+
+The resulting image description object does not allow get_information
+request. The wp_image_description_v1.ready event shall be sent.
+</div>
+            </li>
+            
           </ul>
         
 
@@ -1047,6 +1096,10 @@ rendering intents are optional.
               
                 <div class="f6 lh-copy code">
                   WP_COLOR_MANAGER_V1_FEATURE_WINDOWS_SCRGB  <span class="green">/* create_windows_scrgb request */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  WP_COLOR_MANAGER_V1_FEATURE_WINDOWS_BT2100  <span class="green">/* create_windows_bt2100 request */</span> 
                 </div>
               
 

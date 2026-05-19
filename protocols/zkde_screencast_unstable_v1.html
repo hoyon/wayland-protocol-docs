@@ -109,6 +109,10 @@
             <a href="#e:zkde_screencast_stream_unstable_v1:failed" class="link blue underline-hover lh-copy">failed</a>
           </li>
           
+          <li>
+            <a href="#e:zkde_screencast_stream_unstable_v1:serial" class="link blue underline-hover lh-copy">serial</a>
+          </li>
+          
         </ul>
       
 
@@ -432,7 +436,8 @@ factor for the region if the given scale is 0.0.
                 </div>
               
 
-              <div class="f6 lh-copy ws-pre-line code mt3"></div>
+              <div class="f6 lh-copy ws-pre-line code mt3">Deprecated since version 6, use the object serial from the serial event instead
+</div>
             </li>
             
             <li class="mt3">
@@ -453,6 +458,32 @@ factor for the region if the given scale is 0.0.
               
 
               <div class="f6 lh-copy ws-pre-line code mt3"></div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:zkde_screencast_stream_unstable_v1:serial">
+                <a href="#e:zkde_screencast_stream_unstable_v1:serial" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  serial
+                </div>
+                <div class="f5 ml2">
+                  the pipewire object serial
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  <span class="purple">uint32_t</span> object_serial_hi <span class="green">/* high bits of the pipewire object serial */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  <span class="purple">uint32_t</span> object_serial_low <span class="green">/* low bits of the pipewire object serial */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">The pipewire object serial of the stream. Should be preferred over the node id which is prone to id reuse.
+Will be sent before the created event.
+</div>
             </li>
             
           </ul>

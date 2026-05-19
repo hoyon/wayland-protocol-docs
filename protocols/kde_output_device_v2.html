@@ -239,6 +239,18 @@
             <a href="#e:kde_output_device_v2:removed" class="link blue underline-hover lh-copy">removed</a>
           </li>
           
+          <li>
+            <a href="#e:kde_output_device_v2:hdr_icc_profile_path" class="link blue underline-hover lh-copy">hdr_icc_profile_path</a>
+          </li>
+          
+          <li>
+            <a href="#e:kde_output_device_v2:hdr_color_profile_source" class="link blue underline-hover lh-copy">hdr_color_profile_source</a>
+          </li>
+          
+          <li>
+            <a href="#e:kde_output_device_v2:abm_level" class="link blue underline-hover lh-copy">abm_level</a>
+          </li>
+          
         </ul>
       
 
@@ -1021,7 +1033,7 @@ doesn&#x27;t necessarily translate to the same brightness on the screen.
                   icc_profile_path
                 </div>
                 <div class="f5 ml2">
-                  describes when auto rotate is used
+                  describes the path to the ICC profile used in SDR mode
                 </div>
               </div>
 
@@ -1119,7 +1131,7 @@ default experience on many modern sRGB screens.
                   color_profile_source
                 </div>
                 <div class="f5 ml2">
-                  describes which source the compositor uses for the color profile on an output
+                  describes which source the compositor uses for the color profile on an output in SDR mode
                 </div>
               </div>
 
@@ -1425,6 +1437,68 @@ request after receiving this event.
 </div>
             </li>
             
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:kde_output_device_v2:hdr_icc_profile_path">
+                <a href="#e:kde_output_device_v2:hdr_icc_profile_path" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  hdr_icc_profile_path
+                </div>
+                <div class="f5 ml2">
+                  describes the path to the ICC profile used in HDR mode
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  <span class="purple">const char*</span> profile_path  
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3"></div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:kde_output_device_v2:hdr_color_profile_source">
+                <a href="#e:kde_output_device_v2:hdr_color_profile_source" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  hdr_color_profile_source
+                </div>
+                <div class="f5 ml2">
+                  describes which source the compositor uses for the color profile on an output in HDR mode
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  <span class="purple">uint32_t</span> source  
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3"></div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:kde_output_device_v2:abm_level">
+                <a href="#e:kde_output_device_v2:abm_level" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  abm_level
+                </div>
+                <div class="f5 ml2">
+                  allowed level of adaptive backlight modulation
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  <span class="purple">uint32_t</span> level <span class="green">/* 0 is off, 4 is the maximum level */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">Adaptive backlight modulation is a feature that reduces the backlight
+and increases contrast of colors on the screen to improve power usage.
+</div>
+            </li>
+            
           </ul>
 
         
@@ -1603,6 +1677,14 @@ compositor is still able to scan out directly client surfaces.
               
                 <div class="f6 lh-copy code">
                   KDE_OUTPUT_DEVICE_V2_CAPABILITY_AUTO_BRIGHTNESS  
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  KDE_OUTPUT_DEVICE_V2_CAPABILITY_HDR_ICC_PROFILE  <span class="green">/* if this outputdevice supports HDR ICC profiles */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  KDE_OUTPUT_DEVICE_V2_CAPABILITY_ABM_LEVEL  <span class="green">/* if this outputdevice supports the abm level setting */</span> 
                 </div>
               
 

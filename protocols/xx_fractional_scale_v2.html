@@ -1,0 +1,406 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>xx_fractional_scale_v2</title>
+
+    <link rel="stylesheet" href="/wayland-protocol-docs/main.css">
+     
+  </head>
+  <body class="black-70 flex sans-serif ph4-l">
+    <div id="sidebar" class="w-20">
+      <div class="fixed vh-100 overflow-y-auto w-20">
+        <a href="/wayland-protocol-docs/" class="f4 link near-black dim lh-title db mt3">
+          Home
+        </a>
+        
+  <div class="ph2">
+    
+
+<div>
+  <ul class="list pl0">
+  
+    <li>
+      <a href="#i:xx_fractional_scale_manager_v2" class="link blue underline-hover lh-copy">xx_fractional_scale_manager_v2</a>
+
+      
+        <div>
+          <a href="#rh:xx_fractional_scale_manager_v2" class="link blue underline-hover lh-copy pl3">Requests</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#r:xx_fractional_scale_manager_v2:destroy" class="link blue underline-hover lh-copy">destroy</a>
+          </li>
+          
+          <li>
+            <a href="#r:xx_fractional_scale_manager_v2:get_fractional_scale" class="link blue underline-hover lh-copy">get_fractional_scale</a>
+          </li>
+          
+        </ul>
+      
+
+      
+      
+
+      
+        <div>
+          <a href="#enumh:xx_fractional_scale_manager_v2" class="link blue underline-hover lh-copy pl3">Enums</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#enum:xx_fractional_scale_manager_v2:error" class="link blue underline-hover lh-copy">error</a>
+          </li>
+          
+        </ul>
+      
+    </li>
+  
+    <li>
+      <a href="#i:xx_fractional_scale_v2" class="link blue underline-hover lh-copy">xx_fractional_scale_v2</a>
+
+      
+        <div>
+          <a href="#rh:xx_fractional_scale_v2" class="link blue underline-hover lh-copy pl3">Requests</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#r:xx_fractional_scale_v2:set_scale_factor" class="link blue underline-hover lh-copy">set_scale_factor</a>
+          </li>
+          
+          <li>
+            <a href="#r:xx_fractional_scale_v2:destroy" class="link blue underline-hover lh-copy">destroy</a>
+          </li>
+          
+        </ul>
+      
+
+      
+        <div>
+          <a href="#eh:xx_fractional_scale_v2" class="link blue underline-hover lh-copy pl3">Events</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#e:xx_fractional_scale_v2:scale_factor" class="link blue underline-hover lh-copy">scale_factor</a>
+          </li>
+          
+        </ul>
+      
+
+      
+        <div>
+          <a href="#enumh:xx_fractional_scale_v2" class="link blue underline-hover lh-copy pl3">Enums</a>
+        </div>
+        <ul class="list pl4">
+          
+          <li>
+            <a href="#enum:xx_fractional_scale_v2:error" class="link blue underline-hover lh-copy">error</a>
+          </li>
+          
+        </ul>
+      
+    </li>
+  
+  </ul>
+</div>
+  </div>
+
+      </div>
+    </div>
+
+    <main id="content" class="mh4 w-80">
+      
+  <div class="ph2">
+    <h1 class="f1 lh-title">xx_fractional_scale_v2</h1>
+    <ul class="list pl0">
+      
+      <li class="mt4">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:xx_fractional_scale_manager_v2">
+          <a href="#i:xx_fractional_scale_manager_v2" class="link dim black-70 child pr2 absolute left--2">#</a>
+          xx_fractional_scale_manager_v2
+        </h2>
+        <div class="f6 lh-copy ws-pre-line code">A global interface to create xx_fractional_scale_v2 interfaces.
+</div>
+
+        
+          <h3 class=" f5 lh-title" id="rh:xx_fractional_scale_manager_v2">Requests</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:xx_fractional_scale_manager_v2:destroy">
+                <a href="#r:xx_fractional_scale_manager_v2:destroy" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  destroy
+                </div>
+                <div class="f5 ml2">
+                  release the global
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">xx_fractional_scale_manager_v2_destroy</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct xx_fractional_scale_manager_v2*</span> xx_fractional_scale_manager_v2</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Informs the server that the client will not be using this protocol
+object anymore. This does not affect any other objects.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:xx_fractional_scale_manager_v2:get_fractional_scale">
+                <a href="#r:xx_fractional_scale_manager_v2:get_fractional_scale" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  get_fractional_scale
+                </div>
+                <div class="f5 ml2">
+                  create an interface to enable fractional scaling
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>struct xx_fractional_scale_v2* </span><span class="dark-blue">xx_fractional_scale_manager_v2_get_fractional_scale</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct xx_fractional_scale_manager_v2*</span> xx_fractional_scale_manager_v2,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_surface*</span> surface <span class="green">/* the surface */</span></div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Create an interface object for a wl_surface to communicate scale.
+If the given wl_surface already has a xx_fractional_scale_v2 object
+associated, the fractional_scale_exists protocol error is raised.
+</div>
+            </li>
+            
+          </ul>
+        
+
+        
+
+        
+
+        
+          <h3 class=" f5 lh-title" id="enumh:xx_fractional_scale_manager_v2">Enums</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="enum:xx_fractional_scale_manager_v2:error">
+                <a href="#enum:xx_fractional_scale_manager_v2:error" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  error
+                </div>
+                <div class="f5 ml2">
+                  
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  XX_FRACTIONAL_SCALE_MANAGER_V2_ERROR_FRACTIONAL_SCALE_EXISTS  <span class="green">/* xx_fractional_scale_v2 for the surface already exists */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3"></div>
+            </li>
+            
+          </ul>
+
+        
+
+      </li>
+      
+      <li class="mt4">
+        <h2 class="f2 lh-copy hide-child relative flex items-baseline" id="i:xx_fractional_scale_v2">
+          <a href="#i:xx_fractional_scale_v2" class="link dim black-70 child pr2 absolute left--2">#</a>
+          xx_fractional_scale_v2
+        </h2>
+        <div class="f6 lh-copy ws-pre-line code">An additional interface for a wl_surface object that allows compositor and
+client to communicate in a different coordinate space, in order to enable
+them to accurately describe coordinates and sizes in pixels.
+The two coordinate spaces in consideration are logical and pixels, where
+logical coordinates describe the size content should have and pixels
+describe the size of buffers.
+
+A scale of one equals a lack of scaling, where the communicated values
+define both logical coordinates and pixels.
+A scale greater than one describes that for every logical coordinate,
+more than one pixel is used, and a scale less than one describes that
+multiple logical coordinates make up one pixel.
+In mathematical terms, logical coordinates can be obtained by dividing
+the provided values by the currently active scale.
+
+The initial compositor and client coordinate scale factors are 1.
+</div>
+
+        
+          <h3 class=" f5 lh-title" id="rh:xx_fractional_scale_v2">Requests</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:xx_fractional_scale_v2:set_scale_factor">
+                <a href="#r:xx_fractional_scale_v2:set_scale_factor" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  set_scale_factor
+                </div>
+                <div class="f5 ml2">
+                  set the client coordinate space scale factor
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">xx_fractional_scale_v2_set_scale_factor</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct xx_fractional_scale_v2*</span> xx_fractional_scale_v2,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> scale_8_24 <span class="green">/* surface scale factor */</span></div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">This request sets a scale factor for the associated wl_surface that
+describes the coordinate system the client uses for requests following
+xx_fractional_scale_v2.set_scale_factor.
+
+The scale factor is encoded in a 8.24 fixed point format.
+
+If this scale factor does not match the scale factor provided by the
+compositor with xx_fractional_scale_v2.scale_factor, the compositor may
+apply transformations to the wl_surface that can result in blurriness
+or other artifacts.
+
+If scale_8_24 is zero, the error invalid_scale will be raised.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:xx_fractional_scale_v2:destroy">
+                <a href="#r:xx_fractional_scale_v2:destroy" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  destroy
+                </div>
+                <div class="f5 ml2">
+                  remove the scale interface from the surface
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">xx_fractional_scale_v2_destroy</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct xx_fractional_scale_v2*</span> xx_fractional_scale_v2</div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">The wl_surface&#x27;s xx_fractional_scale_v2 object is destroyed, and the
+associated scale is reset to 1.
+</div>
+            </li>
+            
+          </ul>
+        
+
+        
+          <h3 class=" f5 lh-title" id="eh:xx_fractional_scale_v2">Events</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:xx_fractional_scale_v2:scale_factor">
+                <a href="#e:xx_fractional_scale_v2:scale_factor" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  scale_factor
+                </div>
+                <div class="f5 ml2">
+                  set the compositor coordinate space scale factor
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  <span class="purple">uint32_t</span> scale_8_24 <span class="green">/* surface scale factor */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">This event sets a scale factor for the associated wl_surface that
+describes the coordinate system the compositor will use for events
+following xx_fractional_scale_v2.scale_factor.
+
+The scale factor is encoded in a 8.24 fixed point format.
+
+The compositor must not send a scale of zero.
+
+The client should re-render and commit a new buffer with the new scale
+as soon as possible, in order to avoid artifacts caused by the mismatch
+in compositor and client scales.
+</div>
+            </li>
+            
+          </ul>
+
+        
+
+        
+          <h3 class=" f5 lh-title" id="enumh:xx_fractional_scale_v2">Enums</h3>
+          <ul class="list pl0">
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="enum:xx_fractional_scale_v2:error">
+                <a href="#enum:xx_fractional_scale_v2:error" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  error
+                </div>
+                <div class="f5 ml2">
+                  
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  XX_FRACTIONAL_SCALE_V2_ERROR_INVALID_SCALE  <span class="green">/* scale value is not valid */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3"></div>
+            </li>
+            
+          </ul>
+
+        
+
+      </li>
+      
+    </ul>
+
+    <h2 class="f4 lh-title">Copyright Info</h2>
+    <div class="f7 lh-copy ws-pre-line code">Copyright © 2022 Xaver Hugl
+
+Permission is hereby granted, free of charge, to any person obtaining a
+copy of this software and associated documentation files (the &quot;Software&quot;),
+to deal in the Software without restriction, including without limitation
+the rights to use, copy, modify, merge, publish, distribute, sublicense,
+and/or sell copies of the Software, and to permit persons to whom the
+Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice (including the next
+paragraph) shall be included in all copies or substantial portions of the
+Software.
+
+THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL
+THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+DEALINGS IN THE SOFTWARE.
+</div>
+  </div>
+
+    </main>
+
+  </body>
+</html>

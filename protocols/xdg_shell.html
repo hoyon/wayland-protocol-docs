@@ -494,16 +494,15 @@ and xdg_surface.get_popup for details.
     
   )
 </div>
-              <div class="f6 lh-copy ws-pre-line code">This creates an xdg_surface for the given surface. While xdg_surface
-itself is not a role, the corresponding surface may only be assigned
-a role extending xdg_surface, such as xdg_toplevel or xdg_popup. It is
-illegal to create an xdg_surface for a wl_surface which already has an
-assigned role and this will result in a role error.
-
-This creates an xdg_surface for the given surface. An xdg_surface is
+              <div class="f6 lh-copy ws-pre-line code">This creates an xdg_surface for the given surface. An xdg_surface is
 used as basis to define a role to a given surface, such as xdg_toplevel
 or xdg_popup. It also manages functionality shared between xdg_surface
 based surface roles.
+
+While xdg_surface itself is not a role, the corresponding surface may
+only be assigned a role extending xdg_surface, such as xdg_toplevel or
+xdg_popup. It is illegal to create an xdg_surface for a wl_surface which
+already has anassigned role and this will result in a role error.
 
 See the documentation of xdg_surface for more details about what an
 xdg_surface is and how it is used.
@@ -771,12 +770,12 @@ If a negative size is set the invalid_input error is raised.
     
       <div class="ws-pre-wrap">    <span class="purple">struct xdg_positioner*</span> xdg_positioner,</div>
     
-      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> anchor <span class="green">/* anchor */</span></div>
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> anchor <span class="green">/* anchor point */</span></div>
     
   )
 </div>
               <div class="f6 lh-copy ws-pre-line code">Defines the anchor point for the anchor rectangle. The specified anchor
-is used derive an anchor point that the child surface will be
+is used to derive an anchor point that the child surface will be
 positioned relative to. If a corner anchor is set (e.g. &#x27;top_left&#x27; or
 &#x27;bottom_right&#x27;), the anchor point will be at the specified corner;
 otherwise, the derived anchor point will be centered on the specified
@@ -920,7 +919,7 @@ xdg_surface.configure event.
                   set_parent_size
                 </div>
                 <div class="f5 ml2">
-                  
+                  set parent size
                 </div>
               </div>
               
@@ -1293,9 +1292,9 @@ xdg_toplevel is and how it is used.
     
       <div class="ws-pre-wrap">    <span class="purple">struct xdg_surface*</span> xdg_surface,</div>
     
-      <div class="ws-pre-wrap">    <span class="purple">struct xdg_surface*</span> parent,</div>
+      <div class="ws-pre-wrap">    <span class="purple">struct xdg_surface*</span> parent, <span class="green">/* parent surface for this popup */</span></div>
     
-      <div class="ws-pre-wrap">    <span class="purple">struct xdg_positioner*</span> positioner</div>
+      <div class="ws-pre-wrap">    <span class="purple">struct xdg_positioner*</span> positioner <span class="green">/* positioner for this popup */</span></div>
     
   )
 </div>
@@ -1326,13 +1325,13 @@ xdg_popup is and how it is used.
     
       <div class="ws-pre-wrap">    <span class="purple">struct xdg_surface*</span> xdg_surface,</div>
     
-      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> x,</div>
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> x, <span class="green">/* x coordinate of the top-left corner of the window inside this surface */</span></div>
     
-      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> y,</div>
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> y, <span class="green">/* y coordinate of the top-left corner of the window inside this surface */</span></div>
     
-      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> width,</div>
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> width, <span class="green">/* width of the window */</span></div>
     
-      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> height</div>
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> height <span class="green">/* height of the window */</span></div>
     
   )
 </div>
@@ -1542,7 +1541,7 @@ fullscreen, and minimize, set application-specific metadata like title and
 id, and well as trigger user interactive operations such as interactive
 resize and move.
 
-A xdg_toplevel by default is responsible for providing the full intended
+An xdg_toplevel by default is responsible for providing the full intended
 visual representation of the toplevel, which depending on the window
 state, may mean things like a title bar, window controls and drop shadow.
 
@@ -1602,7 +1601,7 @@ see &quot;Unmapping&quot; behavior in interface section for details.
     
       <div class="ws-pre-wrap">    <span class="purple">struct xdg_toplevel*</span> xdg_toplevel,</div>
     
-      <div class="ws-pre-wrap">    <span class="purple">struct xdg_toplevel*</span> parent</div>
+      <div class="ws-pre-wrap">    <span class="purple">struct xdg_toplevel*</span> parent <span class="green">/* parent surface for this surface */</span></div>
     
   )
 </div>
@@ -1645,7 +1644,7 @@ otherwise the invalid_parent protocol error is raised.
     
       <div class="ws-pre-wrap">    <span class="purple">struct xdg_toplevel*</span> xdg_toplevel,</div>
     
-      <div class="ws-pre-wrap">    <span class="purple">const char*</span> title</div>
+      <div class="ws-pre-wrap">    <span class="purple">const char*</span> title <span class="green">/* title of the surface */</span></div>
     
   )
 </div>
@@ -1675,7 +1674,7 @@ The string must be encoded in UTF-8.
     
       <div class="ws-pre-wrap">    <span class="purple">struct xdg_toplevel*</span> xdg_toplevel,</div>
     
-      <div class="ws-pre-wrap">    <span class="purple">const char*</span> app_id</div>
+      <div class="ws-pre-wrap">    <span class="purple">const char*</span> app_id <span class="green">/* application identifier surface belongs to */</span></div>
     
   )
 </div>
@@ -1861,9 +1860,9 @@ cursor image.
     
       <div class="ws-pre-wrap">    <span class="purple">struct xdg_toplevel*</span> xdg_toplevel,</div>
     
-      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> width,</div>
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> width, <span class="green">/* maximum width of the window */</span></div>
     
-      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> height</div>
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> height <span class="green">/* maximum height of the window */</span></div>
     
   )
 </div>
@@ -1898,7 +1897,7 @@ Requesting a maximum size to be smaller than the minimum size of
 a surface is illegal and will result in an invalid_size error.
 
 The width and height must be greater than or equal to zero. Using
-strictly negative values for width or height will result in a
+strictly negative values for width or height will result in an
 invalid_size error.
   </div>
             </li>
@@ -1919,9 +1918,9 @@ invalid_size error.
     
       <div class="ws-pre-wrap">    <span class="purple">struct xdg_toplevel*</span> xdg_toplevel,</div>
     
-      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> width,</div>
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> width, <span class="green">/* minimum width of the window */</span></div>
     
-      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> height</div>
+      <div class="ws-pre-wrap">    <span class="purple">int32_t</span> height <span class="green">/* minimum height of the window */</span></div>
     
   )
 </div>
@@ -1956,7 +1955,7 @@ Requesting a minimum size to be larger than the maximum size of
 a surface is illegal and will result in an invalid_size error.
 
 The width and height must be greater than or equal to zero. Using
-strictly negative values for width and height will result in a
+strictly negative values for width and height will result in an
 invalid_size error.
   </div>
             </li>
@@ -2059,7 +2058,7 @@ unmaximized unless overridden by the compositor.
     
       <div class="ws-pre-wrap">    <span class="purple">struct xdg_toplevel*</span> xdg_toplevel,</div>
     
-      <div class="ws-pre-wrap">    <span class="purple">struct wl_output*</span> output</div>
+      <div class="ws-pre-wrap">    <span class="purple">struct wl_output*</span> output <span class="green">/* preferred output to place surface on */</span></div>
     
   )
 </div>
@@ -2078,7 +2077,7 @@ this surface.
 
 If the surface doesn&#x27;t cover the whole output, the compositor will
 position the surface in the center of the output and compensate with
-with border fill covering the rest of the output. The content of the
+border fill covering the rest of the output. The content of the
 border fill is undefined, but should be assumed to be in some way that
 attempts to blend into the surrounding area (e.g. solid black).
 
@@ -2176,15 +2175,15 @@ similar compositor features.
 
               
                 <div class="f6 lh-copy code">
-                  <span class="purple">int32_t</span> width  
+                  <span class="purple">int32_t</span> width <span class="green">/* suggested width of window */</span> 
                 </div>
               
                 <div class="f6 lh-copy code">
-                  <span class="purple">int32_t</span> height  
+                  <span class="purple">int32_t</span> height <span class="green">/* suggested height of window */</span> 
                 </div>
               
                 <div class="f6 lh-copy code">
-                  <span class="purple">struct wl_array*</span> states  
+                  <span class="purple">struct wl_array*</span> states <span class="green">/* suggested states of the window */</span> 
                 </div>
               
 
@@ -2247,11 +2246,11 @@ a dialog to ask the user to save their data, etc.
 
               
                 <div class="f6 lh-copy code">
-                  <span class="purple">int32_t</span> width  
+                  <span class="purple">int32_t</span> width <span class="green">/* suggested maximum width of surface */</span> 
                 </div>
               
                 <div class="f6 lh-copy code">
-                  <span class="purple">int32_t</span> height  
+                  <span class="purple">int32_t</span> height <span class="green">/* suggested maximum height of surface */</span> 
                 </div>
               
 
