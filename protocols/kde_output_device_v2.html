@@ -332,6 +332,10 @@
             <a href="#e:kde_output_device_mode_v2:flags" class="link blue underline-hover lh-copy">flags</a>
           </li>
           
+          <li>
+            <a href="#e:kde_output_device_mode_v2:cvt" class="link blue underline-hover lh-copy">cvt</a>
+          </li>
+          
         </ul>
       
 
@@ -1990,6 +1994,73 @@ resources associated with it.
               
 
               <div class="f6 lh-copy ws-pre-line code mt3">This event describes the mode&#x27;s flags.
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="e:kde_output_device_mode_v2:cvt">
+                <a href="#e:kde_output_device_mode_v2:cvt" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  cvt
+                </div>
+                <div class="f5 ml2">
+                  cvt timings
+                </div>
+              </div>
+
+              
+                <div class="f6 lh-copy code">
+                  <span class="purple">uint32_t</span> dot_clock <span class="green">/* pixel clock in kHz */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  <span class="purple">uint32_t</span> hdisplay <span class="green">/* horizontal display size */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  <span class="purple">uint32_t</span> hsync_start <span class="green">/* horizontal sync start */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  <span class="purple">uint32_t</span> hsync_end <span class="green">/* horizontal sync end */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  <span class="purple">uint32_t</span> htotal <span class="green">/* horizontal total size */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  <span class="purple">uint32_t</span> hskew <span class="green">/* horizontal skew */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  <span class="purple">uint32_t</span> vdisplay <span class="green">/* vertical display size */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  <span class="purple">uint32_t</span> vsync_start <span class="green">/* vertical sync start */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  <span class="purple">uint32_t</span> vsync_end <span class="green">/* vertical sync end */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  <span class="purple">uint32_t</span> vtotal <span class="green">/* vertical total size */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  <span class="purple">uint32_t</span> vscan <span class="green">/* vertical scan */</span> 
+                </div>
+              
+                <div class="f6 lh-copy code">
+                  <span class="purple">uint32_t</span> flags <span class="green">/* flags, see DRM_MODE_FLAG_* */</span> 
+                </div>
+              
+
+              <div class="f6 lh-copy ws-pre-line code mt3">This event describes the CVT timings associated with the mode.
+
+If an output mode has no CVT timings, this event will not be sent.
 </div>
             </li>
             

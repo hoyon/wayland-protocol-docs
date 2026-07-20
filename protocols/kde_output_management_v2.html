@@ -281,6 +281,10 @@
             <a href="#r:kde_mode_list_v2:set_reduced_blanking" class="link blue underline-hover lh-copy">set_reduced_blanking</a>
           </li>
           
+          <li>
+            <a href="#r:kde_mode_list_v2:add_cvt" class="link blue underline-hover lh-copy">add_cvt</a>
+          </li>
+          
         </ul>
       
 
@@ -1626,6 +1630,10 @@ The compositor may additionally have sensible defaults for some
 properties like reduced_blanking, but for consistent results,
 it&#x27;s best to always set each known property every time.
 
+One can also specify custom modes with CVT timings, for example
+- add_cvt
+- add_cvt
+
 The parameters resolution and refresh rate are required, if they
 are not set, the missing_parameters error will be emitted.
 </div>
@@ -1748,6 +1756,52 @@ are not set, the missing_parameters error will be emitted.
 requirements for a display mode by reducing the time vblank takes.
 As not all displays support it, it may be desired to still turn it off
 though (like with CRTs, where full blanking is required).
+</div>
+            </li>
+            
+            <li class="mt3">
+              <div class="flex items-baseline lh-title mb2 hide-child relative" id="r:kde_mode_list_v2:add_cvt">
+                <a href="#r:kde_mode_list_v2:add_cvt" class="link dim black-70 child pr1 absolute left--1 hash-link-entry">#</a>
+                <div class="f4">
+                  add_cvt
+                </div>
+                <div class="f5 ml2">
+                  new mode with CVT timings
+                </div>
+              </div>
+              
+<div class="f6 lh-copy code">
+  <span>void </span><span class="dark-blue">kde_mode_list_v2_add_cvt</span>(
+    
+      <div class="ws-pre-wrap">    <span class="purple">struct kde_mode_list_v2*</span> kde_mode_list_v2,</div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> dot_clock, <span class="green">/* pixel clock in kHz */</span></div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> hdisplay, <span class="green">/* horizontal display size */</span></div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> hsync_start, <span class="green">/* horizontal sync start */</span></div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> hsync_end, <span class="green">/* horizontal sync end */</span></div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> htotal, <span class="green">/* horizontal total size */</span></div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> hskew, <span class="green">/* horizontal skew */</span></div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> vdisplay, <span class="green">/* vertical display size */</span></div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> vsync_start, <span class="green">/* vertical sync start */</span></div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> vsync_end, <span class="green">/* vertical sync end */</span></div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> vtotal, <span class="green">/* vertical total size */</span></div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> vscan, <span class="green">/* vertical scan */</span></div>
+    
+      <div class="ws-pre-wrap">    <span class="purple">uint32_t</span> flags <span class="green">/* flags, see DRM_MODE_FLAG_* */</span></div>
+    
+  )
+</div>
+              <div class="f6 lh-copy ws-pre-line code">Adds a new mode with the specified CVT timings.
 </div>
             </li>
             
